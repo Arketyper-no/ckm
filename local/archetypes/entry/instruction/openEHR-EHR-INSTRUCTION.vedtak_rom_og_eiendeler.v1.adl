@@ -1,0 +1,58 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.vedtak_rom_og_eiendeler.v1
+
+concept
+	[at0000]	-- Vedtak rom og eiendeler
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2B4AC8A199490D36F1870F039242CC4B">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Vedtak rom og eiendeler
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Current Activity
+				action_archetype_id matches {/openEHR-EHR-ACTION\.vedta_us_av_rom_og_eiendeler\.v1/}
+				description matches {
+					ITEM_TREE[at0002] matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vedtak rom og eiendeler">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

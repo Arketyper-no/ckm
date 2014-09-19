@@ -1,0 +1,279 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.biopsy_taking.v1
+
+concept
+	[at0000]	-- Biopsitaking
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Bergen Hospital Trust (Helse Bergen HF)">
+		["email"] = <"silje.ljosland.bakke@helse-bergen.no">
+		["date"] = <"2014-02-17">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*For bruk sammen med openEHR-EHR-ACTION.procedure.v1.(nb)">
+			use = <"*(nb)">
+			keywords = <"*biopsi(nb)", ...>
+			misuse = <"*(nb)">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For bruk sammen med openEHR-EHR-ACTION.procedure.v1.">
+			use = <"">
+			keywords = <"biopsi", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B822C36F48221D7B6E31A7EB7FC9A958">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Biopsitaking
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0013] matches {	-- Biopsitype
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0021] occurrences matches {0..1} matches {	-- Leie
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Lokalisering
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0009, 	-- Ultralyd
+							at0010, 	-- CT
+							at0011, 	-- Gjennomlysning
+							at0016, 	-- Åpen biopsi
+							at0017, 	-- Palpatorisk
+							at0018, 	-- Mammografi
+							at0019, 	-- Endoskopisk
+							at0020]	-- Visuelt på kroppsoverflate
+						}
+					}
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0022] occurrences matches {0..*} matches {	-- Biopsifeltgruppe
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0027] occurrences matches {0..*} matches {	-- Retning for inngrepet
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {	-- Prøvedetaljer
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+					ELEMENT[at0001] occurrences matches {0..1} matches {	-- Antall biopsiforsøk
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- Biopsifelt
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0025] occurrences matches {0..1} matches {	-- Visuell kontroll
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0026] occurrences matches {0..1} matches {	-- Bedømmelse
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Biopsy taking">
+					description = <"Reusable elements for describing the taking of a biopsy.">
+				>
+				["at0001"] = <
+					text = <"Number of trials">
+					description = <"Number of punches, shaves, etc performed.">
+				>
+				["at0008"] = <
+					text = <"Localisation">
+					description = <"How was the organ in question localised during the procedure?">
+				>
+				["at0009"] = <
+					text = <"Ultrasound">
+					description = <"Localisation by ultrasound.">
+				>
+				["at0010"] = <
+					text = <"CT">
+					description = <"Localisation by computer tomography.">
+				>
+				["at0011"] = <
+					text = <"Radioscopy">
+					description = <"Localisation by radioscopy.">
+				>
+				["at0012"] = <
+					text = <"Sample details">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Biopsy type">
+					description = <"For specifying the type of biopsy performed.">
+				>
+				["at0016"] = <
+					text = <"Open biopsy">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Palpatory">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Mammograpy">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Endoscopy">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Visually on body surface">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+				["at0022"] = <
+					text = <"*New cluster(nb)">
+					description = <"**(nb)">
+				>
+				["at0023"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+				["at0025"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+				["at0026"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+				["at0027"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Biopsitaking">
+					description = <"Gjenbrukbare elementer for å beskrive en biopsitaking.">
+				>
+				["at0001"] = <
+					text = <"Antall biopsiforsøk">
+					description = <"Antall stikk, shaves, tangavknip, etc.">
+				>
+				["at0008"] = <
+					text = <"Lokalisering">
+					description = <"Hvordan ble organet det ble tatt biopsi av lokalisert under prosedyren?">
+				>
+				["at0009"] = <
+					text = <"Ultralyd">
+					description = <"Lokalisering ved hjelp av ultralyd.">
+				>
+				["at0010"] = <
+					text = <"CT">
+					description = <"Lokalisering ved hjelp av CT.">
+				>
+				["at0011"] = <
+					text = <"Gjennomlysning">
+					description = <"Lokalisering ved hjelp av gjennomlysning.">
+				>
+				["at0012"] = <
+					text = <"Prøvedetaljer">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Biopsitype">
+					description = <"Spesifisering av type biopsitaking.">
+				>
+				["at0016"] = <
+					text = <"Åpen biopsi">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Palpatorisk">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Mammografi">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Endoskopisk">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Visuelt på kroppsoverflate">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Leie">
+					description = <"Pasientens leie under biopsitakingen">
+				>
+				["at0022"] = <
+					text = <"Biopsifeltgruppe">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Biopsifelt">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Visuell kontroll">
+					description = <"Bedømmelse av visuell kontroll under biopsitakingen.">
+				>
+				["at0026"] = <
+					text = <"Bedømmelse">
+					description = <"Bedømmelse av prosedyrens vanskelighetsgrad.">
+				>
+				["at0027"] = <
+					text = <"Retning for inngrepet">
+					description = <"Beskrivelse av hvilken retning biopsiinngrepet er utført fra.">
+				>
+			>
+		>
+	>

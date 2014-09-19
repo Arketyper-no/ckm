@@ -1,0 +1,493 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.pasi_score.v1
+
+concept
+	[at0000]	-- PASI-score
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"Heather Leslie">
+				["organisation"] = <"Ocean Informatics, Australia">
+				["email"] = <"heather.leslie@oceaninformatics.com">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Helse Bergen HF, Norway">
+		["email"] = <"silje.ljosland.bakke@helse-bergen.no">
+		["date"] = <"2014-02-18">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Psoriasis Area Severity Index (PASI) is an index used to express the severity of psoriasis. It combines the severity (redness, thickness and scaling) and the percentage of affected area.">
+			use = <"The PASI Score is a quantitateive measurement of the severity of psoriasis base on area coverage and plaque appearance. All components must be completed to calculate a valid total score.
+This archetype enables recording of the relevant data elements. The application will need to appliy the algorithm correctly, including the weighting factors for each body region.">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Psoriasis Area Severity Index (PASI) er en indeks som brukes til å uttrykke alvorlighetsgraden av psoriasis. Det kombinerer alvorlighetsgrad (rødhet, tykkelse og skjelling) og andel av berørt område.">
+			use = <"PASI-Score er en kvantitativ måling av alvorlighetsgraden av psoriasis basert på dekningsområde og plakk utseende. Alle komponenter må være gjennomført for å beregne en gyldig total poengsum. 
+
+Denne arketypen muliggjør opptak av de aktuelle dataelementer. Applikasjonen må beregne algoritmen riktig, inklusive vekting for hver kroppsdel.">
+			keywords = <"psoriasis", "PASI">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Bjørn Næss, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia">
+	other_details = <
+		["references"] = <"http://www.hudlegekontoret.no/pasientinstruksjoner_a_aa/pasi_score
+
+http://www.medicareaustralia.gov.au/provider/pbs/drugs1/files/ma_4178_PASI_calculation_and_whole_body_diagram.pdf
+
+">
+		["MD5-CAM-1.0.1"] = <"9E8245BA4B8AF7E1016FF444AAE5C8E6">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- PASI Score
+		data matches {
+			HISTORY[at0001] matches {	-- *Event Series(en)
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- *Point in Time event(en)
+						data matches {
+							ITEM_TREE[at0003] matches {	-- *Tree(en)
+								items cardinality matches {4..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {1..4} matches {	-- *Body Region(en)
+										name matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0011, 	-- *Head(en)
+													at0012, 	-- *Upper limbs(en)
+													at0013, 	-- *Trunk(en)
+													at0014]	-- *Lower limbs(en)
+												}
+											}
+										}
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Rødhet
+												value matches {
+													0|[local::at0015], 	-- *None(en)
+													1|[local::at0016], 	-- *Mild(en)
+													2|[local::at0017], 	-- *Moderate(en)
+													3|[local::at0018], 	-- *Severe(en)
+													4|[local::at0019]  	-- *Very severe(en)
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Tykkelse
+												value matches {
+													0|[local::at0020], 	-- *None(en)
+													1|[local::at0021], 	-- *Mild(en)
+													2|[local::at0022], 	-- *Moderate(en)
+													3|[local::at0023], 	-- *Severe(en)
+													4|[local::at0024]  	-- *Very severe(en)
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Skjelling
+												value matches {
+													0|[local::at0025], 	-- *None(en)
+													1|[local::at0026], 	-- *Mild(en)
+													2|[local::at0027], 	-- *Moderate(en)
+													3|[local::at0028], 	-- *Severe(en)
+													4|[local::at0029]  	-- *Very severe(en)
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Grad av involvering
+												value matches {
+													0|[local::at0030], 	-- None
+													1|[local::at0031], 	-- 1-9%
+													2|[local::at0032], 	-- 10-29%
+													3|[local::at0033], 	-- 30-49%
+													4|[local::at0034], 	-- 50-69%
+													5|[local::at0035], 	-- 70-89%
+													6|[local::at0037]  	-- 90-100%
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {	-- *Body Region Total(en)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|0.0..30.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Total Score
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..72.0|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..*} matches {	-- *Multimedia(en)
+										value matches {
+											DV_MULTIMEDIA matches {
+												media_type matches {
+													[openEHR::
+													425, 
+													426, 
+													427, 
+													428, 
+													429, 
+													401, 
+													402, 
+													404, 
+													405, 
+													406, 
+													407, 
+													414]
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"PASI Score">
+					description = <"A quantitative rating scale for measureing the severity of psoriatic lesions based on area coverage and plaque appearance.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Point in Time event">
+					description = <"Any assessment of PASI recorded at a specified point in time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Body Region">
+					description = <"Identification of the body region being assessed as part of the PASI Score.">
+					comment = <"Each region is identified by a run-time name constraint. Each value for each region must be recorded in order to calculate a correct PASI Score.">
+				>
+				["at0005"] = <
+					text = <"Erythema">
+					description = <"Assessment of the redness/erythema of the psoriatic plaques.">
+				>
+				["at0006"] = <
+					text = <"Thickening">
+					description = <"Assessment of thickening of the psoriatic plaques.">
+				>
+				["at0007"] = <
+					text = <"Scaling">
+					description = <"Assessment of scaling of the psoriatic plaques.">
+				>
+				["at0008"] = <
+					text = <"Degree of Involvement">
+					description = <"The amount of body surface area affected by the psoriasis.">
+				>
+				["at0009"] = <
+					text = <"Total Score">
+					description = <"The total PASI score.">
+				>
+				["at0010"] = <
+					text = <"Multimedia">
+					description = <"Image or video taken during the physical examination or digital diagram of the body involvement.">
+				>
+				["at0011"] = <
+					text = <"Head">
+					description = <"Assessment of psoriatic involvement of the head.">
+				>
+				["at0012"] = <
+					text = <"Upper limbs">
+					description = <"Assessment of psoriatic involvement of the upper limbs.">
+				>
+				["at0013"] = <
+					text = <"Trunk">
+					description = <"Assessment of psoriatic involvement of the trunk.">
+				>
+				["at0014"] = <
+					text = <"Lower limbs">
+					description = <"Assessment of psoriatic involvement of the lower limbs.">
+				>
+				["at0015"] = <
+					text = <"None">
+					description = <"No redness/erythema present.">
+				>
+				["at0016"] = <
+					text = <"Mild">
+					description = <"Mild redness/erythema present.">
+				>
+				["at0017"] = <
+					text = <"Moderate">
+					description = <"Moderate redness/erythema present.">
+				>
+				["at0018"] = <
+					text = <"Severe">
+					description = <"Severe redness/erythema present.">
+				>
+				["at0019"] = <
+					text = <"Very severe">
+					description = <"Very severe redness/erythema present.">
+				>
+				["at0020"] = <
+					text = <"None">
+					description = <"No plaque thickening present.">
+				>
+				["at0021"] = <
+					text = <"Mild">
+					description = <"Mild plaque thickening present.">
+				>
+				["at0022"] = <
+					text = <"Moderate">
+					description = <"Moderate plaque thickening present.">
+				>
+				["at0023"] = <
+					text = <"Severe">
+					description = <"Severe plaque thickening present.">
+				>
+				["at0024"] = <
+					text = <"Very severe">
+					description = <"Very severe plaque thickening present.">
+				>
+				["at0025"] = <
+					text = <"None">
+					description = <"No scaling present.">
+				>
+				["at0026"] = <
+					text = <"Mild">
+					description = <"Mild scaling present.">
+				>
+				["at0027"] = <
+					text = <"Moderate">
+					description = <"Moderate scaling present.">
+				>
+				["at0028"] = <
+					text = <"Severe">
+					description = <"Severe scaling present.">
+				>
+				["at0029"] = <
+					text = <"Very severe">
+					description = <"Very severe scaling present.">
+				>
+				["at0030"] = <
+					text = <"None">
+					description = <"No involvement.">
+				>
+				["at0031"] = <
+					text = <"1-9%">
+					description = <"1-9% degree of involvement.">
+				>
+				["at0032"] = <
+					text = <"10-29%">
+					description = <"10-29% degree of involvement.">
+				>
+				["at0033"] = <
+					text = <"30-49%">
+					description = <"30-49% degree of involvement.">
+				>
+				["at0034"] = <
+					text = <"50-69%">
+					description = <"50-69% degree of involvement.">
+				>
+				["at0035"] = <
+					text = <"70-89%">
+					description = <"70-89% degree of involvement.">
+				>
+				["at0036"] = <
+					text = <"Body Region Total">
+					description = <"The total score for the body region">
+				>
+				["at0037"] = <
+					text = <"90-100%">
+					description = <"90-100% degree of involvement.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"PASI-score">
+					description = <"En kvantitativ skala for å måle alvorlighetsgraden av psoriasislesjoner basert på dekningsområde og plakk utseende.">
+				>
+				["at0001"] = <
+					text = <"Hendelseforløp">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Enhver vurdering av PASI utført på et angitt tidspunkt.">
+				>
+				["at0003"] = <
+					text = <"Tre">
+					description = <"*@ internal @(en)">
+				>
+				["at0004"] = <
+					text = <"Kroppsdel">
+					description = <"Identifisering av kroppens områder vurderes som en del av PASI-score.">
+					comment = <"Hver kroppsdel identifiseres ved en run-time avgrensning. Hver verdi for hver kroppsdel må registreres for å kunne beregne en korrekt PASI-score.">
+				>
+				["at0005"] = <
+					text = <"Rødhet">
+					description = <"Vurdering av rødhet i huden i aktuell kroppsdel.">
+				>
+				["at0006"] = <
+					text = <"Tykkelse">
+					description = <"Vurdering av tykkelse av huden i aktuell kroppsdel.">
+				>
+				["at0007"] = <
+					text = <"Skjelling">
+					description = <"Vurdering av skjelling av huden i aktuell kroppsdel.">
+				>
+				["at0008"] = <
+					text = <"Grad av involvering">
+					description = <"Prosentdelen av arealet med psoriasis av det totale området gradert på en skala fra 0 til 6.">
+				>
+				["at0009"] = <
+					text = <"Total PASI-score">
+					description = <"Total PASI-score = Summert PASI-score for hode, trunkus, overekstremiteter og underekstremiteter.">
+				>
+				["at0010"] = <
+					text = <"Multimedia">
+					description = <"Bilde eller video tatt under undersøkelse eller digitalt diagram av omfang av involvering.">
+				>
+				["at0011"] = <
+					text = <"Hode">
+					description = <"Vurdering av omfang av psoriasis på hodet.">
+				>
+				["at0012"] = <
+					text = <"Overekstremiteter">
+					description = <"Vurdering av omfang av psoriasis på overekstremiteter.">
+				>
+				["at0013"] = <
+					text = <"Trunkus">
+					description = <"Vurdering av omfang av psoriasis på trunkus.">
+				>
+				["at0014"] = <
+					text = <"Underekstremiteter">
+					description = <"Vurdering av omfang av psoriasis på underekstremiteter.">
+				>
+				["at0015"] = <
+					text = <"Ingen">
+					description = <"Ingen rødhet.">
+				>
+				["at0016"] = <
+					text = <"Lett">
+					description = <"Lett rødhet.">
+				>
+				["at0017"] = <
+					text = <"Moderat">
+					description = <"Moderat rødhet.">
+				>
+				["at0018"] = <
+					text = <"Alvorlig">
+					description = <"Alvorlig rødhet.">
+				>
+				["at0019"] = <
+					text = <"Veldig alvorlig">
+					description = <"Veldig alvorlig rødhet">
+				>
+				["at0020"] = <
+					text = <"Ingen">
+					description = <"Ingen tykkelse">
+				>
+				["at0021"] = <
+					text = <"Lett">
+					description = <"Lett tykkelse.">
+				>
+				["at0022"] = <
+					text = <"Moderat">
+					description = <"Moderat tykkelse.">
+				>
+				["at0023"] = <
+					text = <"Alvorlig">
+					description = <"Alvorlig tykkelse.">
+				>
+				["at0024"] = <
+					text = <"Veldig alvorlig">
+					description = <"Veldig alvorlig tykkelse.">
+				>
+				["at0025"] = <
+					text = <"Ingen">
+					description = <"Ingen skjelling.">
+				>
+				["at0026"] = <
+					text = <"Lett">
+					description = <"Lett skjelling.">
+				>
+				["at0027"] = <
+					text = <"Moderat">
+					description = <"Moderat skjelling.">
+				>
+				["at0028"] = <
+					text = <"Alvorlig">
+					description = <"Alvorlig skjelling.">
+				>
+				["at0029"] = <
+					text = <"Veldig alvorlig">
+					description = <"Veldig alvorlig skjelling.">
+				>
+				["at0030"] = <
+					text = <"Ingen">
+					description = <"Ingen grad av involvering.">
+				>
+				["at0031"] = <
+					text = <"1-9%">
+					description = <"Under 10% grad av involvering.">
+				>
+				["at0032"] = <
+					text = <"10-29%">
+					description = <"10-29% grad av involvering.">
+				>
+				["at0033"] = <
+					text = <"30-49%">
+					description = <"30-49% grad av involvering.">
+				>
+				["at0034"] = <
+					text = <"50-69%">
+					description = <"50-69% grad av involvering.">
+				>
+				["at0035"] = <
+					text = <"70-89%">
+					description = <"70-89% grad av involvering.">
+				>
+				["at0036"] = <
+					text = <"Total PASI-score kroppsdel">
+					description = <"Total PASI-score for aktuell kroppsdel.">
+				>
+				["at0037"] = <
+					text = <"90-100%">
+					description = <"90-100% grad av involvering.">
+				>
+			>
+		>
+	>

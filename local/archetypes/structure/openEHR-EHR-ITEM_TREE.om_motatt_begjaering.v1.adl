@@ -1,0 +1,146 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.om_motatt_begjaering.v1
+
+concept
+	[at0000]	-- Om motatt begjaering
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2EC6358ACB3E8CFF5022C4B1A5181C11">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- *Om motatt begjaering
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- *Dato begjæringen ble motatt
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Tvangsform begjæringen gjelder
+				value matches {
+					0|[local::at0003], 	-- Tvungen observasjon
+					1|[local::at0004]  	-- Tvungent psykisk helsevern
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Instans som fremsatte begjæringen
+				value matches {
+					0|[local::at0006], 	-- Kommunelegen
+					1|[local::at0007], 	-- Sosialtjenesten
+					2|[local::at0008], 	-- Politiet
+					3|[local::at0009]  	-- Ansvarlig fengselsmyndighet
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {	-- Kontaktopplysninger til begjærer
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Supplerende opplysninger/merknad
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Faglig ansvarlig
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[ac0001]}		-- *New constraint
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	terminologies_available = <"DIPS", ...>
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Om motatt begjaering">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Dato begjæringen ble motatt">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Tvangsform begjæringen gjelder">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tvungen observasjon">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Tvungent psykisk helsevern">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Instans som fremsatte begjæringen">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Kommunelegen">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Sosialtjenesten">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Politiet">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Ansvarlig fengselsmyndighet">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Kontaktopplysninger til begjærer">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Supplerende opplysninger/merknad">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Faglig ansvarlig">
+					description = <"*">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["nb"] = <
+			items = <
+				["ac0001"] = <
+					text = <"New constraint">
+					description = <"">
+				>
+			>
+		>
+	>
+	constraint_bindings = <
+		["DIPS"] = <
+			items = <
+				["ac0001"] = <terminology:DIPS?subset=healthcareparty>
+			>
+		>
+	>

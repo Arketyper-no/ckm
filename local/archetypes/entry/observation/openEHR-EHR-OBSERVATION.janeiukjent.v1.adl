@@ -1,0 +1,99 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.janeiukjent.v1
+
+concept
+	[at0000]	-- Janeiukjent
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["date"] = <"2014-04-25">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ja.">
+			use = <"Ja.">
+			misuse = <"Nei.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"1673A73901315900F7BF6571F38820B5">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Janeiukjent
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- New element
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 1: Ja
+													at0006, 	-- 2: Nei
+													at0007]	-- 9: Ukjent
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Janeiukjent">
+					description = <"Generell arketype for enkle spørsmål med alternativene ja, nei og ukjent.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Ja.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"New element">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"1: Ja">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"2: Nei">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"9: Ukjent">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

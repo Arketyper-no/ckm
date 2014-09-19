@@ -1,0 +1,312 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.oppfolging.v1
+
+concept
+	[at0000]	-- Oppfølging
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Inneholder opplysninger om hvilke tiltak/oppfølging som er planlagt etter utredning/aktuell behandling">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2A0E125D0B92B317C3A1C278FEF0E6DC">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Oppfølging
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {1; unordered} matches {
+					ELEMENT[at0002] matches {	-- Oppfølging/tiltak
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0016, 	-- Behandling ved samme institusjon
+									at0017, 	-- Behandling ved annen institusjon
+									at0018, 	-- Ingen videre behandling
+									at0003, 	-- Direkte til reseksjon
+									at0004, 	-- Forbehandling før planlagt reseksjon
+									at0005, 	-- Palliativ, tumorrettet behandling (onkolog)
+									at0006, 	-- Palliativ, kirurgisk behandling (eksklusiv reseksjon)
+									at0007, 	-- Kun symptomlindrende behandling/Ingen tumorrettet behandling
+									at0008]	-- Ukjent
+								}
+							}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Neste trinn i behandlingen
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0010, 	-- Eget sykehus
+									at0011, 	-- Onkologisk avdeling annet sykehus
+									at0012, 	-- Kirurgisk avdeling annet sykehus
+									at0013, 	-- Primærlege
+									at0014]	-- Ukjent
+								}
+							}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Sykehus
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0019] occurrences matches {0..1} matches {	-- Planlagt etterbehandling
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0032] occurrences matches {0..1} matches {	-- Planlagt etterbehandling avklart
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0033, 	-- Ja
+											at0034]	-- Nei
+										}
+									}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {	-- Strålebehandling
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0021, 	-- Planlagt
+											at0022]	-- Ikke planlagt
+										}
+									}
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {	-- Kjemoterapi
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0024, 	-- Planlagt
+											at0025]	-- Ikke planlagt
+										}
+									}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {	-- Strålebehandling med kjemoterapi
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0027, 	-- Planlagt
+											at0028]	-- Ikke planlagt
+										}
+									}
+								}
+							}
+							ELEMENT[at0029] occurrences matches {0..1} matches {	-- Kirurgi for metastaser
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0030, 	-- Planlagt
+											at0031]	-- Ikke planlagt
+										}
+									}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {	-- Annen etterbehandling
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0036, 	-- Planlagt
+											at0037]	-- Ikke planlagt
+										}
+									}
+								}
+							}
+							ELEMENT[at0038] occurrences matches {0..1} matches {	-- Spesifier annen etterbehandling
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Oppfølging">
+					description = <"Inneholder opplysninger om hvilke tiltak/oppfølging som er planlagt etter utredning/aktuell behandling">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Oppfølging/tiltak">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Direkte til reseksjon">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Forbehandling før planlagt reseksjon">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Palliativ, tumorrettet behandling (onkolog)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Palliativ, kirurgisk behandling (eksklusiv reseksjon)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Kun symptomlindrende behandling/Ingen tumorrettet behandling">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Neste trinn i behandlingen">
+					description = <"Hvor skjer neste trinn i behandlingen">
+				>
+				["at0010"] = <
+					text = <"Eget sykehus">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Onkologisk avdeling annet sykehus">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Kirurgisk avdeling annet sykehus">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Primærlege">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Sykehus">
+					description = <"Navn på behandlende sykehus">
+				>
+				["at0016"] = <
+					text = <"Behandling ved samme institusjon">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Behandling ved annen institusjon">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Ingen videre behandling">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Planlagt etterbehandling">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Strålebehandling">
+					description = <"Vises når Planlagt etterbehandling avklart = Ja">
+				>
+				["at0021"] = <
+					text = <"Planlagt">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Ikke planlagt">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Kjemoterapi">
+					description = <"Vises når Planlagt etterbehandling avklart = Ja">
+				>
+				["at0024"] = <
+					text = <"Planlagt">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Ikke planlagt">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Strålebehandling med kjemoterapi">
+					description = <"Vises når Planlagt etterbehandling avklart = Ja">
+				>
+				["at0027"] = <
+					text = <"Planlagt">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Ikke planlagt">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Kirurgi for metastaser">
+					description = <"Vises når Planlagt etterbehandling avklart = Ja">
+				>
+				["at0030"] = <
+					text = <"Planlagt">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Ikke planlagt">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Planlagt etterbehandling avklart">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Annen etterbehandling">
+					description = <"Vises når Planlagt etterbehandling avklart = Ja">
+				>
+				["at0036"] = <
+					text = <"Planlagt">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Ikke planlagt">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Spesifier annen etterbehandling">
+					description = <"*">
+				>
+			>
+		>
+	>

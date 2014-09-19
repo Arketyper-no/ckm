@@ -1,0 +1,206 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.laboratorium.v1
+
+concept
+	[at0000]	-- Laboratorium
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Navnet på laboratoriet der prøven er sendt">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"0A0EB86946EC1C5E0E3634D6272FF7E1">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- Laboratorium
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Patologilaboratorium
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006, 	-- 21 AHUS, Akershus Universitetssykehus
+									at0007, 	-- 28 Gades Institutt, Rettsmedisin
+									at0008, 	-- 11 Gyn Lab A/S
+									at0009, 	-- 07 Haukeland Universitetssykehus, Bergen
+									at0010, 	-- 34 Helse Fonna, Haugesund sykehus
+									at0011, 	-- 26 Helse Førde, Førde sjukehus
+									at0012, 	-- 10 Helse Nordmøre og Romsdal, Molde sjukehus
+									at0013, 	-- 17 Helse Sunnmøre, Ålesund sjukehus
+									at0014, 	-- 03 Laboratorium for patologi
+									at0015, 	-- 18 Nordlandssykehuset, Bodø
+									at0016, 	-- 06 OUS, Aker
+									at0017, 	-- 02 OUS, Rikshospitalet, Gaustad
+									at0018, 	-- 04 OUS/Rikshospitalet - Gaustad, Autopsi
+									at0019, 	-- 09 OUS/Rikshospitalet - Gaustad, Nevropat
+									at0020, 	-- 27 OUS/Rikshospitalet - Gaustad, Rettsmedisin
+									at0021, 	-- 01 OUS, Rikshospitalet, Montebello
+									at0022, 	-- 05 OUS, Ullevål
+									at0023, 	-- 19 Stavanger Universitetssykehus
+									at0024, 	-- 08 St. Olavs Hospital
+									at0025, 	-- 15 Sykehuset Innlandet, Lillehammer
+									at0026, 	-- 14 Sykehuset i Telemark, Skien
+									at0027, 	-- 23 Sykehuset i Vestfold, Tønsberg
+									at0028, 	-- 12 Sykehuset Østfold, Fredrikstad
+									at0029, 	-- 31 Sørlandet sykehus, Arendal
+									at0030, 	-- 20 Sørlandet sykehus, Kristiansand
+									at0031, 	-- 13 UNN, Universitetssykehuset i Nord-Norge
+									at0032, 	-- 16 Vestre Viken HF, Sykehuset Buskerud, Drammen
+									at0033; 	-- 1 Annet laboratorium
+									at0006]	-- assumed value
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Laboratorium">
+					description = <"Navnet på laboratoriet der prøven er sendt">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Patologilaboratorium">
+					description = <"Navnet på laboratoriet der prøven er sendt">
+				>
+				["at0006"] = <
+					text = <"21 AHUS, Akershus Universitetssykehus">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"28 Gades Institutt, Rettsmedisin">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"11 Gyn Lab A/S">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"07 Haukeland Universitetssykehus, Bergen">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"34 Helse Fonna, Haugesund sykehus">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"26 Helse Førde, Førde sjukehus">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"10 Helse Nordmøre og Romsdal, Molde sjukehus">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"17 Helse Sunnmøre, Ålesund sjukehus">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"03 Laboratorium for patologi">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"18 Nordlandssykehuset, Bodø">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"06 OUS, Aker">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"02 OUS, Rikshospitalet, Gaustad">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"04 OUS/Rikshospitalet - Gaustad, Autopsi">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"09 OUS/Rikshospitalet - Gaustad, Nevropat">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"27 OUS/Rikshospitalet - Gaustad, Rettsmedisin">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"01 OUS, Rikshospitalet, Montebello">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"05 OUS, Ullevål">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"19 Stavanger Universitetssykehus">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"08 St. Olavs Hospital">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"15 Sykehuset Innlandet, Lillehammer">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"14 Sykehuset i Telemark, Skien">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"23 Sykehuset i Vestfold, Tønsberg">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"12 Sykehuset Østfold, Fredrikstad">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"31 Sørlandet sykehus, Arendal">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"20 Sørlandet sykehus, Kristiansand">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"13 UNN, Universitetssykehuset i Nord-Norge">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"16 Vestre Viken HF, Sykehuset Buskerud, Drammen">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"1 Annet laboratorium">
+					description = <"*">
+				>
+			>
+		>
+	>

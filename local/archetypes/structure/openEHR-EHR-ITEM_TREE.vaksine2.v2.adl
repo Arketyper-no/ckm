@@ -1,0 +1,188 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.vaksine2.v2
+
+concept
+	[at0000]	-- Vaksine2
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"10.08.2012">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"56A18D14CF25AEF001E0A3961A76CA4D">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Vaksine2
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] matches {	-- Vaksine
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Preparat
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Vaksine gjennomført?
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Årsak til manglende vaksinering
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Kommentar til manglende vaksinering
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Er vaksine satt på stedet?
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Kommentar til vaksine ikke satt på stedet
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0285] occurrences matches {0..1} matches {	-- Annen beskjed
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {	-- Varighet
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {	-- Fiktiv dato
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			CLUSTER[at0013] occurrences matches {0..1} matches {	-- Administrativ informasjon
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Batch nummer
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Pasienten har samtykke
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Kommentar til samtykke
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vaksine2">
+					description = <"For dokumentasjon av vaksine og som grunnlag for rapportering til SYSVAK.">
+				>
+				["at0002"] = <
+					text = <"Vaksine">
+					description = <"Vaksinen som ble gitt">
+				>
+				["at0003"] = <
+					text = <"Preparat">
+					description = <"Kode for preparat. Begrunnelsen av koden representerer hvilken vaksinekode preparatet tilhører. Eksempelvis: DIF01_001.  Preparatet bør oppgis når vaksinasjonen er satt på stedet. Altså at helseenheten som registrerer vaksinasjonen også er helseenheten som har utført selve vaksinasjonen. OID: 9554">
+				>
+				["at0004"] = <
+					text = <"Er vaksine satt på stedet?">
+					description = <"Angir om vaksinasjonen er utført av registrerende helseenhet. Ved 
+etterregistreringer er vaksinasjonen ofte ikke satt på stedet, men ved en 
+annen helseenhet.">
+				>
+				["at0005"] = <
+					text = <"Vaksine gjennomført?">
+					description = <"Sjekk på om angitt vaksine ble satt. Om ikke satt vil feltet årsak til manglende vaksinering og kommentar til kontraindikasjon lastes">
+				>
+				["at0006"] = <
+					text = <"Årsak til manglende vaksinering">
+					description = <"Kode for årsak til manglende vaksinering. 
+Angir om det er en medisinsk kontraindikasjon eller 
+andre grunner til den manglende vaksineringen.  OID: 9551">
+				>
+				["at0007"] = <
+					text = <"Kommentar til manglende vaksinering">
+					description = <"Fritekstfelt for kommentar til manglende vaksinering.">
+				>
+				["at0008"] = <
+					text = <"Kommentar til vaksine ikke satt på stedet">
+					description = <"Kode for dokumentasjon. Oppgis når vaksinasjonen ikke er satt på 
+stedet, men typisk er en etterregistrering basert på vaksinasjonskort, 
+muntlig informasjon etc. OID: 9555">
+				>
+				["at0009"] = <
+					text = <"Varighet">
+					description = <"Kode for varighet. 
+Om tilstand som gav opphav til den manglende 
+vaksineringen er varig, midlertidig etc.">
+				>
+				["at0010"] = <
+					text = <"Fiktiv dato">
+					description = <"Hvis vaksinasjonsdato er ukjent settes det en fiktiv vaksinasjonsdato. Dette gjelder etterregistrering av vaksinasjoner.">
+				>
+				["at0011"] = <
+					text = <"Pasienten har samtykke">
+					description = <"Angir om pasienten har samtykket i at vaksine skal settes">
+				>
+				["at0012"] = <
+					text = <"Kommentar til samtykke">
+					description = <"Eventuelle kommentarer til samtykke">
+				>
+				["at0013"] = <
+					text = <"Administrativ informasjon">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Batch nummer">
+					description = <"Batchnummer for preparatet registreres hvis dette er tilgjengelig.">
+				>
+				["at0285"] = <
+					text = <"Annen beskjed">
+					description = <"Fylles ut dersom ABE (Annen beskjed) er valgt i feltet Kommentar til vaksine ikke satt på stedet.">
+				>
+			>
+		>
+	>

@@ -1,0 +1,109 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.boligforhold.v1
+
+concept
+	[at0000]	-- Boligforhold
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["date"] = <"2014-04-24">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Beskrive hvordan en person bor.">
+			use = <"Ja.">
+			misuse = <"Nei.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"EBA7BD21E2B1D0D56AD1BAECA36BDA43">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Boligforhold
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_SINGLE[at0003] matches {	-- Single
+								item matches {
+									ELEMENT[at0004] matches {	-- Boligforhold
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 1 - Egen bolig uten hjemmesykepleie/hjemmehjelp
+													at0006, 	-- 2 - Egen bolig med hjemmesykepleie/hjemmehjelp
+													at0007, 	-- 3 - Omsorgsbolig med døgnkontinuerlige tjenester og personale
+													at0008, 	-- 4 - Sykehjem
+													at0009]	-- 9 - Ukjent
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Boligforhold">
+					description = <"Beskrive hvordan en person bor.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Ja.">
+				>
+				["at0003"] = <
+					text = <"Single">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Boligforhold">
+					description = <"[Boligforhold].">
+				>
+				["at0005"] = <
+					text = <"1 - Egen bolig uten hjemmesykepleie/hjemmehjelp">
+					description = <"Hjemmehjelp/hjemmesykepleie:Man koder hjemmesykepleie/ hjemmehjelp om tjenesten, uansett hva den omfatter, er utført av kommunen eller private. Gjelder ikke bruk av trygghetsalarm eller matombringing.">
+				>
+				["at0006"] = <
+					text = <"2 - Egen bolig med hjemmesykepleie/hjemmehjelp">
+					description = <"Hjemmehjelp/hjemmesykepleie:Man koder hjemmesykepleie/ hjemmehjelp om tjenesten, uansett hva den omfatter, er utført av kommunen eller private. Gjelder ikke bruk av trygghetsalarm eller matombringing.">
+				>
+				["at0007"] = <
+					text = <"3 - Omsorgsbolig med døgnkontinuerlige tjenester og personale">
+					description = <"Omsorgsbolig: Bolig m/døgnkontinuerlige tjenester og personale, uansett om de benyttes eller ikke. Også aldershjem.">
+				>
+				["at0008"] = <
+					text = <"4 - Sykehjem">
+					description = <"Sykehjem:Kun dersom pasienten har sannsynlig fast bopel på sykehjem. Avlastningsopphold på sykehjem registreres ikke(i svaralternativ 4).">
+				>
+				["at0009"] = <
+					text = <"9 - Ukjent">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

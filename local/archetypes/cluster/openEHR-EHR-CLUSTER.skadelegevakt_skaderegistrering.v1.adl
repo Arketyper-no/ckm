@@ -1,0 +1,57 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.skadelegevakt_skaderegistrering.v1
+
+concept
+	[at0000]	-- Lokal aktivitet
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2014-02-01">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å kunne legge til felter mer dynamisk for Skadelegevakt ved OUS">
+			use = <"Benyttes for lokale registreringer (dybdestudie) ved Skadelegevakten på OUS ">
+			keywords = <"personskade", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"70A8F416F9286EB5A5BE764EAD2905DC">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Lokal aktivitet
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Lokal aktivitet ved skade
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lokal aktivitet">
+					description = <"Lokale felter for definisjon av skade ved Skadelegevakt på OUS ">
+				>
+				["at0002"] = <
+					text = <"Lokal aktivitet ved skade">
+					description = <"Lokal registrering av aktivitet ved skade. Kan knyttes til lokalt kodeverk i EPJ. ">
+				>
+			>
+		>
+	>

@@ -1,0 +1,227 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.om_vedtak_innskrenket_forbindelse.v1
+
+concept
+	[at0000]	-- Om innskrenket forbindelse
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E04285AFEAF106045CFEBD9FFB2D0393">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Om innskrenket forbindelse
+		items cardinality matches {0..*; unordered} matches {
+			CLUSTER[at0020] occurrences matches {0..1} matches {	-- Vedtakstype
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {	-- Cluster
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.vedtakstype(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			CLUSTER[at0005] occurrences matches {0..1} matches {	-- Vedtak om innskrenket forbindelse med omverden
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0001] occurrences matches {0..1} matches {	-- Innskrenkninger i retten til å motta besøk
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Innskrenkninger i retten til å benytte telefon
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Innskrenkninger i retten til å motta brev og pakker
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Innskrenkninger i retten til å sende brev og pakker
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0006] occurrences matches {0..1} matches {	-- Begrunnelse for vedtaket
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Sterke behandlingsmessige hensyn
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Sterke velferdsmessige hensyn
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Sterke hensyn til nærstående person
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Begrunnelse er gitt i journalnotat av dato
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0015] occurrences matches {0..1} matches {	-- Varighet
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Vedtaksstart
+						value matches {
+							DV_DATE_TIME matches {
+								value matches {yyyy-mm-ddTHH:MM:SS}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Utløpstidspunkt
+						value matches {
+							DV_DATE_TIME matches {
+								value matches {yyyy-mm-ddTHH:MM:SS}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0016] occurrences matches {0..1} matches {	-- Bekreftelse på døgnopphold
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Pasienten er under tvungent psykisk helsevern i form av døgnopphold i institusjon
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0018] occurrences matches {0..1} matches {	-- Faglig ansvarlig
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			allow_archetype CLUSTER[at0019] occurrences matches {0..1} matches {	-- Informasjon om vedtaket
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.uttalerett_og_klageadgang(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Om innskrenket forbindelse">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Innskrenkninger i retten til å motta besøk">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Innskrenkninger i retten til å benytte telefon">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Innskrenkninger i retten til å motta brev og pakker">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Innskrenkninger i retten til å sende brev og pakker">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Vedtak om innskrenket forbindelse med omverden">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Begrunnelse for vedtaket">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Sterke behandlingsmessige hensyn">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Sterke velferdsmessige hensyn">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Sterke hensyn til nærstående person">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Begrunnelse er gitt i journalnotat av dato">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Vedtaksstart">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Utløpstidspunkt">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Varighet">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Bekreftelse på døgnopphold">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Pasienten er under tvungent psykisk helsevern i form av døgnopphold i institusjon">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Informasjon om vedtaket">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Vedtakstype">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+			>
+		>
+	>

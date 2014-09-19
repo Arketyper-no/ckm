@@ -1,0 +1,48 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.gjennomfoert_tvangsbehandling.v1
+
+concept
+	[at0000]	-- Gjennomført tvangsbehandling
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av gjennomført tvangsbehandling.">
+			use = <"Brukes til registrering av gjennomført tvangsbehandling.">
+			misuse = <"Alt annet.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"AD2831D07F37F24B70727E07A5C5A80F">
+	>
+
+definition
+	ACTION[at0000] matches {	-- *Gjennomført tvangsbehandling
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.gjennomfoert_tvangsbehandling(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Gjennomført tvangsbehandling">
+					description = <"">
+				>
+			>
+		>
+	>

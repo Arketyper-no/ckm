@@ -1,0 +1,146 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.sannsynligmet.v1
+
+concept
+	[at0000]	-- Sannsynligmet
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"BD327A86182CDE2DF09ABD48749277DF">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Sannsynligmet
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- SannsynligLymfeknutemet
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- Ja
+													at0006, 	-- Nei
+													at0007]	-- Ukjent
+												}
+											}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- DatoSannsynligLymfeknutemet
+										value matches {
+											DV_DATE matches {
+												value matches {yyyy-mm-dd}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- SannsynligFjernmet
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0009, 	-- Ja
+													at0010, 	-- Nei
+													at0011]	-- Ukjent
+												}
+											}
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- DatoSannsynligFjernmet
+										value matches {
+											DV_DATE matches {
+												value matches {yyyy-mm-dd}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sannsynligmet">
+					description = <"Brukes sammen med TNM. Ved NX og MX, vil man vite om det er sannsynlig om det foreligger regionale lymfeknutemetastase eller fjernmetastaser">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"SannsynligLymfeknutemet">
+					description = <"Sannsynlig forekomst av regionale lymfeknutemetastaser">
+				>
+				["at0005"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"SannsynligFjernmet">
+					description = <"Sannsynlig forekomst av fjernmetastaser">
+				>
+				["at0009"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"DatoSannsynligLymfeknutemet">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"DatoSannsynligFjernmet">
+					description = <"*">
+				>
+			>
+		>
+	>

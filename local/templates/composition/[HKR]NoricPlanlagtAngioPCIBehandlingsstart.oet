@@ -1,0 +1,1003 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>c211a574-5851-45a9-90e8-e66b4809de0a</id>
+  <name>[HKR]NoricPlanlagtAngioPCIBehandlingsstart</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Klinisk bakgrunn']/items[openEHR-EHR-OBSERVATION.height.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi pasientens høyde (estimert eller målt). Enklest er å spørre pasienten ved innkomst.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Klinisk bakgrunn']/items[openEHR-EHR-OBSERVATION.body_weight.v1]/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi pasientens vekt (estimert eller målt). Denne parameteren er obligatorisk, da vekt sammen med kreatinin (og alder) gjør at kreatininclearance kan regnes ut, hvilket bidrar til en mer korrekt beregning av pasientens bakgrunnsrisiko. Vi er vel kjent med problemet med å få korrekt vektopplysning på svært syke pasienter, men det er bedre med en omtrentlig estimert vekt enn ingen vekt i det hele tatt. I de få tilfellene der det absolutt ikke går an å få fram noen vekt, marker i boksen "Ukjent"</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Risikofaktorer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Røyking']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten røyker eller ikke. - Aldri røykt: aldri røykt. - Eks-røyker: Pasienten betraktes som eks-røyker dersom det har gått &gt; 1 mnd siden røykeslutt. Noen øvre grense (preskripsjonstid) finnes ikke. - Festrøykere betraktes som eks-røykere. - Røyker: Pasienten betraktes som røyker også ved eventuelt røykeslutt i løpet av siste måned før innleggelse/opphold på sykehus. - Ukjent: oppgis bare dersom opplysninger om røyking ikke går an å få tak i f.eks pga hjerneslag, demens eller at pas døde umiddelbart.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Risikofaktorer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Familiær belastning']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value> Førstegrads slektning (mannlig &lt; 55 år, kvinnelig &lt; 65 år) med kjent koronar hjertesykdom (tidligere ACB, PCI eller gjennomgått hjerteinfarkt)</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere hjerteinfarkt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har hatt minst et tidligere dokumentert hjerteinfarkt før innkomst. - Nei: pasienten har ikke hatt noen tidligere hjerteinfarkt. - Ja: pasienten har tidigere hatt hjerteinfarkt, hvilket år dokumentert i pasiententjournal, eller at pasienten selv oppgir at han/hun tidligere har hatt et hjerteinfarkt. Bekreft hjerteinfarkt selv om den har vært stumt, d.v.s. pasienten er uvitende om det men EKG eller ekkokardiografi viser tydlige infarktforandringer. - Ukjent: Det er ukjent om pasienten tidligere har hatt et hjerteinfarkt før innkomst.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Kjent nedsatt venstre ventrikkelfunksjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har en dokumentert nedsatt venstre ventrikkelfunksjon, f eks gjennom EKKO.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere PCI']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har fått gjort PCI (Percutaneous Coronary Intervention) av noen type før aktuelle innleggelse (ballongdilatasjon, atherectomi, stent eller annet)</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere ACB-operasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har fått gjort en ACB-operasjon (Aorta-Coronary-Bypass operasjon) før aktuell innleggelse.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Annen tidligere hjertekirurgi (ikke pacemaker)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har gjennomgått andre typer åpen hjertekirurgi enn ACB-operasjon før denne innleggelsen. Innlagt pacemaker skal noteres med "0 = Nei". - Nei: ingen tidligere hjertekirurgi - Annen hjertekirurgi kan være: Trauma, PostinfarktVSD, Myxom, Venstrekammerinngrep, Perikardektomi mm</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hypertoni']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Medikamentell behandling mot hypertoni nå eller tidligere</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere hjerneslag (ikke TIA)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har hatt et ischemisk hjerneslag eller blødning. Ikke TIA.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Perifer karsykdom']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Ekstrakardiell karsykdom. En eller flere av følgende: Claudicatio, Carotisokklusjon el &gt; 50% stenose, tidligere eller planlagt inngrep på bukaorta, ekstremitetsarterier eller carotider</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har en kjent diabetes, uavhengig av hvilken behandling som gis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='NSAID']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Brukt siste uke.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='ACE-hemmere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt ACE-hemmere før sykehusinnleggelsen - OBS at A2-hemmere har blitt en egen parameter! - - Nedenfor finnes noen ACE-hemmere listet opp.Hvis det er et kombinasjonspreparat står kombinert medikamentgruppe i (parentes): - - Captopril, Enalapril, Enalapril Comp (Diuretika), Gopten, Lisinopril, Lisinopril/hydroklortiazid (Diuretika), Ramipril, Renitec, Renitec comp (Diuretika), Triatec, Zestoretic (Diuretika), Zestril, Zanipress (kalsiumantaginist).</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='A2- blokkere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt A2-blokkere før sykehusinnleggelsen - - Nedenfor finnes noen A2-blokkere listet opp .Om det er ett kombinasjonspreparat står kombinert medikamentgruppe i (parentes): - - Amias, Aprovel, CoAprovel (Diuretika), Atacand, Atacand Plus (Diuretika), Candesartan, Candesartan/hydrochlortiazide (Diuretika), Cozaar, Cozaar comp(Diuretika), Diovan, Diovan comp (Diuretika), Exforge (Ca-blokker), Exforge HCT (Diuretika og Ca-blokker), Irbesartan, Losartan, Losartan/hydrochlortiazid (Diuretika), Micardis, Micardis Plus (Diuretika), Olmetec, Olmetec Comp (Diuretika), Sevikar (Ca-blokker), Teveten, Teveten Comp (Diuretika), Valsartan, Valsartan/hydrochlorthiazide (Diuretika).</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Antikoagulantia']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt antikoagulantia (i så fall hvilken) før sykehusinnleggelsen. - - OBS! Heparin iv samt Fragmin sc før innkomst er tatt bort! - - Følgende perorale Antikoagulantia finnes: - - Marevan, Pradaxa, Eliquis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='ASA']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt ASA før sykehusinnleggelsen - - OBS at øvrige trombocythemmere (Plavix/Efient mm)er blitt en egen parameter! - - Nedenfor finnes noen ASA-preparat listet opp. Om det er ett kombinasjonspreparat står kombinert medikamentgruppe i (parentes): - - Albyl, Aspirin, Magnyl-E.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Øvrige trombocythemmere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt noen annet trombocythemmende medikamenter enn ASA før sykehusinnleggelsen.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Betablokkere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt betablokkere før sykehusinnleggelsen. - - Nedenfor finnes noen Betablokkere listet opp. - - Atenolol, Brevibloc, Bisoprolol, Carvedilol, Emconcor, Emconcor CHF, Inderal, Lodoz (Diuretika) Metoprolol, Propanolol, Selo-Zok, Seloken, Sotalol, Tenormin, Trandate, Uniloc,.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Ca-hemmere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt calciumblokkere før sykehusinnleggelsen. - - Nedenfor finnes noen Ca-hemmere listet opp. Om det er ett kombinasjonspreparat står kombinert medikamentgruppe i (parentes): - - Adalat, Adalat Oros, Amlodipin, Cardizem, Exforge (A2-blokkere), Felodipin, Isoptin, Isoptin Retard, Lomir, Lerkanidip, Nimotop, Norvasc, Plendil, Verakard, Verapamil, Zanidip.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes behandling insulin']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt insulin før sykehusinnleggelsen. - - Nedenfor finnes noen Insulinpreparat listet opp. - - Actrapid, Apidra, Humulin, Humalog, Insulatard, Insuman, Lantus, Levemir, NovoMix, Novo Rapid.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes behandling per oral']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt diabetesmedisiner per oralt før sykehusinnleggelsen. - - Nedenfor finnes noen perorale Diabetesmedisiner listet opp. - - Actos, Amaryl, Byetta, Bydureon, Competact, Eucreas, Galvus, Glibenklamid, Glimepirid, Glucobay, Glucophage, Janumet, Januvia, Metformin, Mindiab, NovoNorm, Onglyza Pioglitazon, Starlix, Trajenta, Victoza.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Digitalis']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt digitalis før sykehusinnleggelsen. - - Nedenfor finnes noen Digitalispreparat listet opp. - - Digoxin, Digitoxin, Lanoxin</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diuretika']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt diuretika før sykehusinnleggelsen. - - Nedenfor finnes noen Diuretikamedisiner listet opp. Om det er ett kombinasjonspreparat står kombinert medikamentgruppe i (parentes): - - Atacand Plus (A2-blokkere), Burinex, Centyl, CoAprovel (A2-blokkere), Cozaar comp (A2-blokkere), Diovan comp (A2-blokkere), Enalapril comp (ACE-hemmere), Enalapril Hydrochlortiazid (ACE-hemmere), Esidrex, Furix, Furosemid, Lasix Retard, Lisinopril Hydrochlortiazid (ACE-hemmere), Micardis Plus (A2-blokkere), Moduretic mite(amilorid), Normorix mite (amilorid), Renitec comp (ACE-hemmere), Samsca, Triatec comp (ACE-hemmere), Zestoretic.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Aldosteronantagonist']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi hva pasienten oppgir som regelmessig medisinering, d.v.s. spørre aktivt hva pasienten faktiskt tar selv om det finns en medisinliste tilgjengelig. - - Spironolakton: Aldactone, Spironolakton - Eplerenon: Inspra</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Statiner']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt statiner før sykehusinnleggelsen. - - OBS inndelingen av Lipidsenkere i Statiner og Øvrige Lipidsenkere. - - Nedenfor finnes noen Statiner listet opp: - - Crestor, Lescol, Lipitor, Lovastatin, Pravastatin, Pravachol, Simvastatin, Zocor.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Øvrige lipidsenkere']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt Ezetrol, fibrater eller andre lipidsenkendre medikamenter utenom statiner før sykehusinnleggelsen. - - Nedenfor fines noen Övriga lipidsenkere listet. - - 1. Ezetrol, Omacor. - 2. Fibrater. - 3. Övrigt: Cholestagel Lestid, Nicangin, Tredaptive, Questran</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Nitroglycerin langtidsvirkende']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Angi om pasienten regelmessig har tatt langtidsvirkende Nitro før sykehusinnleggelsen eller stod på Nitroinfusion/-injektion ved ankomst. - - Nedenfor finns en liste over langtidsvirkende Nitropreparater: - - Imdur, Ismo, Isosorbidmononitrat, Monoket, Sorbangil. - Depotplaster (24h): Minitran, Nitro-Dur, Transiderm-Nitro, - - Preparat for injektion/infusion: Glycerylnitrat, Nitroven.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal den mest spesifikke infarktmarkøren oppgis, dvs den markøren som best verifiserer diagnosen hjerteinfarkt. Dette innebærer i de fleste tilfeller at det er Troponin som skal angis. - Troponin I + T stiger også ved annen sykdom som belaster hjertet slik som: nyresvikt, myokarditt og lungeemboli.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Infarktmarkør - maksimalverdi']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Det er markørens maksimalverdi som skal oppgis - ikke det første patologiske. - • OBS! Det er av stor betydning at den maksimale verdien for hjertemarkøren fylles ut siden dette bidrar til å anslå om det foreligger et AMI, samt størrelsen på infarktet da reperfusjon ennå ikke er utført. - • Dersom analyse kun skjer opp til en viss maksimal verdi, angis denne.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Kolesterol']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi fastende verdi. Bør være målt under første behandlingsdøgn ved hjerteinfarkt.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Triglycerider']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi fastende verdi. Bør være målt under første behandlingsdøgn ved hjerteinfarkt. - Ved triglyseridverdier &gt; 4,5 blir ikke LDL beregnet automatisk.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='HDL']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi fastende verdi. Bør være målt under første behandlingsdøgn ved hjerteinfarkt. - Ved triglyceridverdier &gt; 4,5 blir ikke LDL beregnet automatisk.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Beregnet LDL']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>LDL beregnes automatisk, med unntak av triglyceridverdier &gt; 4,5 mmol/L.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Beregnet LDL/HDL kvote']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Beregnet LDL/HDL kvote regnes ut automatisk.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Målt LDL']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>LDL - Angi verdi. Bør være målt under første behandlingsdøgn ved infarkt.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='S-Glukose']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi først og fremst S-Glukose målt ved ankomst, eventuelt oppgi den første verdien som blir analysert.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='HbA1c']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>HbA1c - Ankomstverdi skal angis. - God samstemmighet mellom aktuell HbA1c og gjennomsnittlig blodsukkernivå 2-12 uker tilbake i tid.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Kreatinin']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Kreatinin - Ankomstverdien skal angis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='CRP']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>CRP - Ankomstverdien skal angis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Laboratorieresultat']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Hemoglobin']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Hb - Ankomstverdien skal angis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Fullfør registreringen']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Generell fri kommentar, max 2000 tegn.</value>
+      </item>
+    </items>
+  </annotations>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Encounter" name="Noric Planlagt- Start behandlingskjede, Ang+PCI">
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Klinisk bakgrunn">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height.v1" concept_name="Høyde/lengde" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" name="Høyde">
+          <constraint xsi:type="quantityConstraint">
+            <unitMagnitude>
+              <unit>cm</unit>
+              <maxMagnitude>250</maxMagnitude>
+              <minMagnitude>50</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0018]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]/items[at0014]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]/items[at0019]" max="0" />
+        <Rule path="/data[at0001]/events[at0021]" max="0" />
+        <Rule path="/protocol[at0007]" hide_on_form="true" />
+        <Rule path="/protocol[at0007]/items[at0022]" max="0" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1" concept_name="Kroppsvekt" path="/items" hide_on_form="true">
+        <Rule path="/data[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
+          <constraint xsi:type="quantityConstraint">
+            <unitMagnitude>
+              <unit>kg</unit>
+              <maxMagnitude>250</maxMagnitude>
+              <minMagnitude>3</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0038]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0024]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]/items[at0009]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]/items[at0025]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]/items[at0040]" max="0" />
+        <Rule path="/data[at0002]/events[at0026]" max="0" />
+        <Rule path="/protocol[at0015]" hide_on_form="true" />
+        <Rule path="/protocol[at0015]/items[at0037]" max="0" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v1" concept_name="Body mass index" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" name="BMI">
+          <constraint xsi:type="quantityConstraint">
+            <excludedUnits>lb/in2</excludedUnits>
+          </constraint>
+        </Rule>
+        <Rule path="/protocol[at0005]" hide_on_form="true" />
+        <Rule path="/protocol[at0005]/items[at0006]" max="0" />
+        <Rule path="/protocol[at0005]/items[at0010]" max="0" />
+        <Rule path="/protocol[at0005]/items[at0011]" max="0" />
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Risikofaktorer">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Røyking" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Røyking">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Aldri røykt</includedValues>
+            <includedValues>1 - Eks-røyker &gt;1 mnd</includedValues>
+            <includedValues>2 - Røyker</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Familiær belastning" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Familiær belastning">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Tidligere hjertesykdom">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Tidligere hjerteinfarkt" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Tidligere hjerteinfarkt">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Kjent nedsatt venstre ventrikkelfunksjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Kjent nedsatt venstre ventrikkelfunksjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>2 - Ja, Lett nedsatt (40-49%)</includedValues>
+            <includedValues>3 - Ja, Moderat nedsatt (30-39%)</includedValues>
+            <includedValues>4 - Kraftig nedsatt (&lt;30%)</includedValues>
+            <includedValues>5 - Ja, men ukjent grad</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Tidligere PCI" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Tidligere PCI">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Tidligere ACB-operasjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Tidligere ACB-operasjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Annen tidligere hjertekirurgi (ikke pacemaker)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Annen tidligere hjertekirurgi (ikke pacemaker)">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Mekanisk ventil</includedValues>
+            <includedValues>2 - Biologisk klaff</includedValues>
+            <includedValues>3 - Hjertetransplantasjon</includedValues>
+            <includedValues>4 - Annen hjertekirurgi</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Tidligere sykdommer">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Diabetes" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Diabetes">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Hypertoni" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Hypertoni">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Tidligere hjerneslag (ikke TIA)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Tidligere hjerneslag (ikke TIA)">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Perifer karsykdom" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Perifer karsykdom">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Medikamenter ved ankomst">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="NSAID" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="NSAID">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="ACE-hemmere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="ACE-hemmere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="A2- blokkere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="A2- blokkere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Antikoagulantia" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Antikoagulantia">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Marevan</includedValues>
+            <includedValues>2 - Exanta</includedValues>
+            <includedValues>3 - Pradaxa</includedValues>
+            <includedValues>4 - Eliquis</includedValues>
+            <includedValues>5 - Xarelto</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="ASA" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="ASA">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Øvrige trombocythemmere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Øvrige trombocythemmere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Clopidogrel (Plavix)</includedValues>
+            <includedValues>2 - Tiklopidin (Ticlid)</includedValues>
+            <includedValues>3 - Prasugrel (Efient)</includedValues>
+            <includedValues>4 - Ticagrelor (Brilique)</includedValues>
+            <includedValues>8 - Øvrig</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Betablokkere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Betablokkere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Ca-hemmere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Ca-blokkere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Diabetes behandling insulin" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Diabetes behandling insulin">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Insulin</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Diabetes behandling per oral" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Diabetes behandling per oral">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Tablettbehandlet</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Digitalis" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Digitalis">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Diuretika" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Diuretika">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Aldosteronantagonist" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Aldosteronantagonist">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Spironolakton (Aldactone)</includedValues>
+            <includedValues>2 - Eplerenon (Inspra)</includedValues>
+            <includedValues>8 - Øvrig</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Statiner" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Statiner">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Øvrige lipidsenkere" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Øvrige lipidsenkere">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ezetrol</includedValues>
+            <includedValues>2 - Fibrater</includedValues>
+            <includedValues>8 - Øvrig</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Nitroglycerin langtidsvirkende" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Nitroglycerin langtidsvirkende">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Laboratorieresultat">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Infarktmarkør" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Infarktmarkør">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Ikke utført</includedValues>
+            <includedValues>1 - Troponin-T</includedValues>
+            <includedValues>2 - Troponin-I</includedValues>
+            <includedValues>3 - CKMB</includedValues>
+            <includedValues>4 - Myoglobin</includedValues>
+            <includedValues>5 - HS Troponin-T (ng)</includedValues>
+            <includedValues>9 - UKjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Infarktmarkør - maksimalverdi" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Infarktmarkør - maksimalverdi">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Kolesterol" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Kolesterol">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Triglycerider" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Triglycerider">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>{AMOUNT (mole)/VOLUME}</includedUnits>
+            <unitMagnitude>
+              <unit>{AMOUNT (mole)/VOLUME}</unit>
+              <maxMagnitude>0</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="HDL" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="HDL">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Beregnet LDL" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Beregnet LDL">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Beregnet LDL/HDL kvote" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Beregnet LDL/HDL kvote">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Målt LDL" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Målt LDL">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="S-Glukose" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="S-Glukose">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="HbA1c" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="HbA1c">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Kreatinin" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Kreatinin">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="CRP" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="CRP">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Hemoglobin" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Hemoglobin">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Fullfør registreringen">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Kommentar til eget bruk:" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Kommentar til eget bruk:">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">747EB21D627718468D04F2F1EFE43A80</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-SECTION.adhoc.v1">
+    <digest id="MD5-CAM-1.0.1">6FD3128A583EB7081153D0265245E1FA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.height.v1">
+    <digest id="MD5-CAM-1.0.1">06E5A22CB502D9BB081C0197CEE4188A</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1">
+    <digest id="MD5-CAM-1.0.1">C575D81CFCAFF07D121CE54AA72A76CF</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v1">
+    <digest id="MD5-CAM-1.0.1">361412E9CC6A4FE18B28D7869FA3B28A</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1">
+    <digest id="MD5-CAM-1.0.1">67AFBDABDCF91AB1D5E45CF7A1FDA7A0</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1">
+    <digest id="MD5-CAM-1.0.1">1F79B3AA7D3C424DBD8B67C79956E4C4</digest>
+  </integrity_checks>
+</template>

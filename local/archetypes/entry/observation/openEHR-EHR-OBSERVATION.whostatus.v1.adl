@@ -1,0 +1,122 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.whostatus.v1
+
+concept
+	[at0000]	-- Whostatus
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ikke kjent ">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"3FC08AFEF10DDB59BD66F612E03EB153">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Whostatus
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- WHOstatus
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 0: Normal aktivitet, uten begrensningser
+													at0006, 	-- 1: Lett redusert arbeidskapasitet
+													at0007, 	-- 2: > 50 % av dagen oppegående
+													at0008, 	-- 3: > 50 % av dagen i seng/stillesittende
+													at0009, 	-- 4: Totalt stillesittende eller i seng hele dagen
+													at0010]	-- Ukjent/har ikke informasjon
+												}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- DatoWHOstatus
+										value matches {
+											DV_DATE matches {
+												value matches {yyyy-mm-dd}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Whostatus">
+					description = <"Funksjonsstatus">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"WHOstatus">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"0: Normal aktivitet, uten begrensningser">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"1: Lett redusert arbeidskapasitet">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"2: > 50 % av dagen oppegående">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"3: > 50 % av dagen i seng/stillesittende">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"4: Totalt stillesittende eller i seng hele dagen">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Ukjent/har ikke informasjon">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"DatoWHOstatus">
+					description = <"*">
+				>
+			>
+		>
+	>

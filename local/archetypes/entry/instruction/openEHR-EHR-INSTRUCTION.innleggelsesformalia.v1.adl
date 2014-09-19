@@ -1,0 +1,57 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.innleggelsesformalia.v1
+
+concept
+	[at0000]	-- Innleggelsesformalia
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"EE9784EABE55C805FB4D6691FEF13471">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Innleggelsesformalia
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] matches {	-- Innleggelsesformalia
+				action_archetype_id matches {/openEHR-EHR-ACTION\.registrer_innleggelsesformalia\.v1/}
+				description matches {
+					allow_archetype ITEM_TREE matches {
+						include
+							archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.innleggelsesformaila(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Innleggelsesformalia">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Innleggelsesformalia">
+					description = <"">
+				>
+			>
+		>
+	>

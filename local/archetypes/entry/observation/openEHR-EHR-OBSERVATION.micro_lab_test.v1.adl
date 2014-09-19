@@ -1,0 +1,310 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.micro_lab_test.v1
+
+concept
+	[at0000]	-- micro_lab_test
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Luis Marco Ruiz">
+		["organisation"] = <"Norwegian Center for Integrated Care and Telemedicine, Norway">
+		["email"] = <"Luis.Marco.Ruiz@telemed.no">
+		["date"] = <"2014-06-09">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Create a summary of the microbiology laboratory test to aggregates data of an ordered test for decision support. This concept also contains the results and the associated tests added by other party than the GP due to be considered relevant.">
+			use = <"Record the set of tests related to one request and aggregate into a decision support  useful interpretation. Both the original request result and the added tests by third parties will be recorded.">
+			keywords = <"Microlab result test", "Laboratory result">
+			misuse = <"Record of detailed one instance microbiology tests. For this aim use specializations of openEHR-EHR-OBSERVATION.lab_test.v1">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <"David Moner Cano", ...>
+	other_details = <
+		["current_contact"] = <"Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway, Luis.Marco.Ruiz@telemed.no">
+		["MD5-CAM-1.0.1"] = <"D0E2A29CFB778B2A62CE518B241E0BBC">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- micro_lab_test
+		data matches {
+			HISTORY[at0001] matches {	-- HISTORY
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- POINT_EVENT
+						data matches {
+							ITEM_TREE[at0003] matches {	-- ITEM_TREE
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0010] occurrences matches {0..*} matches {	-- Battery tests
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0043] occurrences matches {1..*} matches {	-- Simple test
+												items cardinality matches {1..*; ordered} matches {
+													ELEMENT[at0037] occurrences matches {0..1} matches {	-- test_result
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0036] occurrences matches {0..1} matches {	-- infectious_agent
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0035] occurrences matches {0..1} matches {	-- orig_test_result
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0034] occurrences matches {0..1} matches {	-- analysis_name_at_lab
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0033] occurrences matches {0..1} matches {	-- analysis_type
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0032] occurrences matches {0..1} matches {	-- sub_category
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0028] occurrences matches {0..1} matches {	-- symptom_group
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0031] occurrences matches {0..1} matches {	-- result_sent_date
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0030] occurrences matches {0..1} matches {	-- analysis_date
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0038] occurrences matches {0..1} matches {	-- analysis_name
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- patient_municipality_code
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- patient_gender
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {[ac0001]}		-- New constraint
+											}
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- patient_id
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {[ac0002]}		-- Patient-related Identification code (observable entity)
+											}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- patient_birth_year
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {[ac0003]}		-- Date of birth (observable entity)
+											}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {	-- registration_date
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- material
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {[ac0004]}		-- New constraint
+											}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- test_requester_id
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {	-- test_requester_municipality_code
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {	-- global_result
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"micro_lab_test">
+					description = <"micro_lab_test">
+				>
+				["at0001"] = <
+					text = <"HISTORY">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"POINT_EVENT">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"ITEM_TREE">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Battery tests">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"patient_municipality_code">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"patient_gender">
+					description = <"Gender">
+				>
+				["at0022"] = <
+					text = <"patient_id">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"patient_birth_year">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"registration_date">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"material">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"test_requester_id">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"test_requester_municipality_code">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"symptom_group">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"global_result">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"analysis_date">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"result_sent_date">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"sub_category">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"analysis_type">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"analysis_name_at_lab">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"orig_test_result">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"infectious_agent">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"test_result">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"analysis_name">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Simple test">
+					description = <"*">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["en"] = <
+			items = <
+				["ac0001"] = <
+					text = <"New constraint">
+					description = <"*">
+				>
+				["ac0002"] = <
+					text = <"Patient-related Identification code (observable entity)">
+					description = <"Patient-related Identification code (observable entity)">
+				>
+				["ac0003"] = <
+					text = <"Date of birth (observable entity)">
+					description = <"*">
+				>
+				["ac0004"] = <
+					text = <"New constraint">
+					description = <"*">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0021"] = <[SNOMED-CT::263495000]>
+				["at0022"] = <[SNOMED-CT::422549004]>
+				["at0023"] = <[SNOMED-CT::184099003]>
+				["at0025"] = <[SNOMED-CT::91720002]>
+			>
+		>
+	>
+	constraint_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["ac0001"] = <terminology:SNOMED-CT>
+				["ac0002"] = <terminology:SNOMED-CT>
+				["ac0003"] = <terminology:SNOMED-CT>
+			>
+		>
+	>

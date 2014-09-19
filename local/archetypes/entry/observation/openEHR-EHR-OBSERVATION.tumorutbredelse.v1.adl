@@ -1,0 +1,151 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.tumorutbredelse.v1
+
+concept
+	[at0000]	-- Tumorutbredelse
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ikke kjent ">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8FED25FA969AF679B655075E2E5C3D32">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Tumorutbredelse
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- IngenInnvekst
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0062] occurrences matches {0..1} matches {	-- Innvekst
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {	-- InnvekstSpesifiser
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Gjennomvekst
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- TumorUkjent
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0011, 	-- Ikke avkrysset
+													at0012]	-- Avkrysset
+												}
+											}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- StorrelsePrimaertumor
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"'">
+														magnitude = <|0.0..999.9|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tumorutbredelse">
+					description = <"Tumorutbredelse på diagnosetidspunktet">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"IngenInnvekst">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Gjennomvekst">
+					description = <"Gjennomvekst av naturlig organbegrensning">
+				>
+				["at0010"] = <
+					text = <"TumorUkjent">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0012"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0015"] = <
+					text = <"StorrelsePrimaertumor">
+					description = <"Største diameter primærtumor, målt i mm">
+				>
+				["at0061"] = <
+					text = <"InnvekstSpesifiser">
+					description = <"Hvilket naboorgan">
+				>
+				["at0062"] = <
+					text = <"Innvekst">
+					description = <"*">
+				>
+			>
+		>
+	>

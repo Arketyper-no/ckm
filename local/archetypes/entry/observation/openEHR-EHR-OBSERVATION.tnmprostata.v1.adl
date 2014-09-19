@@ -1,0 +1,217 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.tnmprostata.v1
+
+concept
+	[at0000]	-- Tnmprostata
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"15DD393030BA35B9133837E4C82DBEC8">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Tnmprostata
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- cT
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- TX
+													at0006, 	-- T0
+													at0007, 	-- T1
+													at0008, 	-- T1a
+													at0009, 	-- T1b
+													at0010, 	-- T1c
+													at0011, 	-- T2
+													at0012, 	-- T2a
+													at0013, 	-- T2b
+													at0014, 	-- T2c
+													at0015, 	-- T3
+													at0016, 	-- T3a
+													at0017, 	-- T3b
+													at0018]	-- T4
+												}
+											}
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- cN
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0020, 	-- NX
+													at0021, 	-- N0
+													at0022]	-- N1
+												}
+											}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- cM
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0024, 	-- M0
+													at0025, 	-- M1a
+													at0026, 	-- M1b
+													at0027, 	-- M1c
+													at0028]	-- MX
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tnmprostata">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"cT">
+					description = <"Primærtumor">
+				>
+				["at0005"] = <
+					text = <"TX">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"T0">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"T1">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"T1a">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"T1b">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"T1c">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"T2">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"T2a">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"T2b">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"T2c">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"T3">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"T3a">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"T3b">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"T4">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"cN">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"NX">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"N0">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"N1">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"cM">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"M0">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"M1a">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"M1b">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"M1c">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"MX">
+					description = <"*">
+				>
+			>
+		>
+	>

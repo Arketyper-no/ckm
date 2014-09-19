@@ -1,0 +1,144 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.om_samtykke_til_forlengelse_av_tph.v1
+
+concept
+	[at0000]	-- Om samtykke til forlengelse av tph
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9E9CD76BBC79284E71FB51DE477F0F0D">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- *Om samtykke til forlengelse av tph
+		items cardinality matches {0..*; unordered} matches {
+			CLUSTER[at0002] occurrences matches {0..1} matches {	-- Forespørsel sendt
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Dato forespørsel ble sendt
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Datoen faglig ansvarlig har forespurt om forlengelse til
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {0..1} matches {	-- Kontrollkommisjonens svar
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Den dato kontrollkommisjonen har fattet vedtak i saken.
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Kontrollkommisjonen sitt svar
+						value matches {
+							0|[local::at0015], 	-- Kontrollkommisjonen har samtykket til forlengelse av tvungent psykisk helsevern til den dato som ble forespurt
+							1|[local::at0016], 	-- Kontrollkommisjonen har samtykket til forlengelse av tvungent psykisk helsevern men med en kortere varighet enn den som ble forespurt
+							2|[local::at0017]  	-- Forespørselen om forlengelse av tvungent psykisk helsevern ble avslått av kontrollkommisjonen
+						}
+					}
+					CLUSTER[at0018] occurrences matches {0..1} matches {	-- Ny gyldighetsdato
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0013] occurrences matches {0..1} matches {	-- Den dato kontrollkommisjonen har samtykket til at tvungent psykisk helsevern kan forlenges til.
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Merknad
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {	-- *Faglig ansvarlig
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Om samtykke til forlengelse av tph">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Forespørsel sendt">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Kontrollkommisjonens svar">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Dato forespørsel ble sendt">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Datoen faglig ansvarlig har forespurt om forlengelse til">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Den dato kontrollkommisjonen har fattet vedtak i saken.">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Kontrollkommisjonen sitt svar">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Den dato kontrollkommisjonen har samtykket til at tvungent psykisk helsevern kan forlenges til.">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Merknad">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Kontrollkommisjonen har samtykket til forlengelse av tvungent psykisk helsevern til den dato som ble forespurt">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Kontrollkommisjonen har samtykket til forlengelse av tvungent psykisk helsevern men med en kortere varighet enn den som ble forespurt">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Forespørselen om forlengelse av tvungent psykisk helsevern ble avslått av kontrollkommisjonen">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Ny gyldighetsdato">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+			>
+		>
+	>

@@ -1,0 +1,366 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.tvangsform_institusjon.v1
+
+concept
+	[at0000]	-- Tvangsform og institusjon
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8CD0AEA5DCCB147F562C578742CFD804">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Tvangsform og institusjon
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype CLUSTER[at0030] occurrences matches {0..1} matches {	-- Vedtakstype
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.vedtakstype(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			CLUSTER[at0052] occurrences matches {0..1} matches {	-- Forrige tvangsform
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Tvangsform
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.hjemmel(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0024] occurrences matches {0..1} matches {	-- Tvangsform
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.hjemmel(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0018] occurrences matches {0..1} matches {	-- Startdato for tvangsinnleggelsen
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			ELEMENT[at0021] occurrences matches {0..1} matches {	-- Utløpstidspunkt
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			CLUSTER[at0028] occurrences matches {0..1} matches {	-- Overføring til annen tvangsform
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Ny tvangsform er et bedre alternativ for pasienten.
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Ved overføring fra "med døgnopphold" til "uten døgnopphold" er det tatt tilbørlig hensyn til pårørende som pasienten bor sammen med. 
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- En overføring fra "uten døgnopphold" til "med døgnopphold" er et bedre alternativ for pasienten.
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0027] occurrences matches {0..1} matches {	-- Overføring til annen institusjon
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Mottakende enhet
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Institusjonen som pasienten skal overføres til er faglig og materielt i stand til å tilby pasienten tilfredsstillende behandling og omsorg og er godkjent i henhold til psykisk helsevernloven paragraf 3-5.
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0035] occurrences matches {0..1} matches {	-- Vilkår
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0037] occurrences matches {0..1} matches {	-- Hovedvilkår
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0038, 	-- Frivillig psykisk helsevern er blitt forsøkt uten at dette har ført frem
+									at0039]	-- Det er åpenbart formålsløst å forsøke frivillig psykisk helsevern
+								}
+							}
+						}
+					}
+					ELEMENT[at0040] occurrences matches {0..1} matches {	-- Pasienten er undersøkt av to leger, hvorav en skal være uavhengig av den ansvarlige institusjon, jfr paragraf 3-1
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					CLUSTER[at0050] occurrences matches {0..1} matches {	-- Vilkår ved TPH
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0046] occurrences matches {0..1} matches {	-- Pasienten har en alvorlig sinnslidelse
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0036] occurrences matches {0..1} matches {	-- Vilkår ved tvungen observasjon
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0047] occurrences matches {0..1} matches {	-- Det anses som overveiende sannsynlig at pasienten fyller hovedvilkåret om alvorlig sinnslidelse
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0048] occurrences matches {0..1} matches {	-- Det er overveiende sannsynlig at pasienten fyller vilkårene for tvungent psykisk helsevern etter paragraf 3-3
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0049] occurrences matches {0..1} matches {	-- Tvungen observasjon fremtrer etter en helhetsvurdering som den klart beste løsningen for pasienten
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0041] occurrences matches {0..1} matches {	-- Etablering av psykisk helsevern er nødvendig for å hindre at vedkommende på grunn av sinnslidelsen enten
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0042] occurrences matches {0..1} matches {	-- Får sin utsikt til helbredelse eller vesentlig bedring i betydelig grad redusert
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0043] occurrences matches {0..1} matches {	-- Med stor sannsynlighet i meget nær fremtid får sin tilstand vesentlig forverret
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0044] occurrences matches {0..1} matches {	-- Utgjør en nærliggende og alvorlig fare for eget liv og helse
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0045] occurrences matches {0..1} matches {	-- Utgjør en nærliggende og alvorlig fare for andres liv og helse
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..1} matches {	-- Begrunnelse foreligger i journalnotat av dato
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Om iverksettelse av vedtaket
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0009, 	-- Vedtak om overføring settes ikke i verk før klagefristen er ute eller klagesaken er avgjort.
+							at0010, 	-- Umiddelbar overføring er strengt nødvendig, og iverksettes. 
+							at0011]	-- Det er klart at vedtaket ikke vil bli påklaget og overføringen. 
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0034] occurrences matches {0..1} matches {	-- Uttalerett og klageadgang
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.uttalerett_og_klageadgang(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tvangsform og institusjon">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Mottakende enhet">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Institusjonen som pasienten skal overføres til er faglig og materielt i stand til å tilby pasienten tilfredsstillende behandling og omsorg og er godkjent i henhold til psykisk helsevernloven paragraf 3-5.">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Ny tvangsform er et bedre alternativ for pasienten.">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Om iverksettelse av vedtaket">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Vedtak om overføring settes ikke i verk før klagefristen er ute eller klagesaken er avgjort.">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Umiddelbar overføring er strengt nødvendig, og iverksettes. ">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Det er klart at vedtaket ikke vil bli påklaget og overføringen. ">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Startdato for tvangsinnleggelsen">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Utløpstidspunkt">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Ved overføring fra \"med døgnopphold\" til \"uten døgnopphold\" er det tatt tilbørlig hensyn til pårørende som pasienten bor sammen med. ">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"En overføring fra \"uten døgnopphold\" til \"med døgnopphold\" er et bedre alternativ for pasienten.">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Tvangsform">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Overføring til annen institusjon">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Overføring til annen tvangsform">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Vedtakstype">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Begrunnelse foreligger i journalnotat av dato">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Uttalerett og klageadgang">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Vilkår">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Vilkår ved tvungen observasjon">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Hovedvilkår">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Frivillig psykisk helsevern er blitt forsøkt uten at dette har ført frem">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Det er åpenbart formålsløst å forsøke frivillig psykisk helsevern">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Pasienten er undersøkt av to leger, hvorav en skal være uavhengig av den ansvarlige institusjon, jfr paragraf 3-1">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Etablering av psykisk helsevern er nødvendig for å hindre at vedkommende på grunn av sinnslidelsen enten">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Får sin utsikt til helbredelse eller vesentlig bedring i betydelig grad redusert">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Med stor sannsynlighet i meget nær fremtid får sin tilstand vesentlig forverret">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Utgjør en nærliggende og alvorlig fare for eget liv og helse">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Utgjør en nærliggende og alvorlig fare for andres liv og helse">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Pasienten har en alvorlig sinnslidelse">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Det anses som overveiende sannsynlig at pasienten fyller hovedvilkåret om alvorlig sinnslidelse">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Det er overveiende sannsynlig at pasienten fyller vilkårene for tvungent psykisk helsevern etter paragraf 3-3">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Tvungen observasjon fremtrer etter en helhetsvurdering som den klart beste løsningen for pasienten">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Vilkår ved TPH">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Forrige tvangsform">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Tvangsform">
+					description = <"">
+				>
+			>
+		>
+	>

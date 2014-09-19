@@ -1,0 +1,391 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.sykdomsutbredelse.v1
+
+concept
+	[at0000]	-- Sykdomsutbredelse
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Inneholder opplysninger om utbredelse av sykdommen på diagnosetidspunktet (før behandlingstart)">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"89A304025A80405525CF624BC0470DB4">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Sykdomsutbredelse
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {	-- Sykdomsutbredelse
+						items cardinality matches {3..*; unordered} matches {
+							CLUSTER[at0005] matches {	-- Tumor
+								items cardinality matches {3; unordered} matches {
+									ELEMENT[at0006] matches {	-- I tarmvegg
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0007, 	-- Ja
+													at0008, 	-- Nei
+													at0009]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] matches {	-- Gjennom tarmvegg
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0046, 	-- Ja
+													at0047, 	-- Nei
+													at0048]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0011] matches {	-- Innvekst i naboorgan
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0049, 	-- Ja
+													at0050, 	-- Nei
+													at0051]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+								}
+							}
+							CLUSTER[at0012] matches {	-- Lymfeknuter
+								items cardinality matches {2; unordered} matches {
+									ELEMENT[at0013] matches {	-- Regionale lymfeknutemetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0014, 	-- Ja
+													at0015, 	-- Nei
+													at0016]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0017] matches {	-- Fjerne lymfeknutemetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0018, 	-- Ja
+													at0019, 	-- Nei
+													at0020]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+								}
+							}
+							CLUSTER[at0021] matches {	-- Organmetastaser
+								items cardinality matches {5; unordered} matches {
+									ELEMENT[at0026] matches {	-- Lungemetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0027, 	-- Ja
+													at0029, 	-- Nei
+													at0028]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0022] matches {	-- Levermetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0023, 	-- Ja
+													at0024, 	-- Nei
+													at0025]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0030] matches {	-- Peritoneum/peritoneal carcinomatose
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0031, 	-- Ja
+													at0032, 	-- Nei
+													at0033]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0034] matches {	-- Skjelettmetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0035, 	-- Ja
+													at0036, 	-- Nei
+													at0037]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0038] matches {	-- Andre organmetastaser
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0039, 	-- Ja
+													at0040, 	-- Nei
+													at0041]	-- Ikke undersøkt
+												}
+											}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {	-- Spesifiser andre organmetastaser
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0044] occurrences matches {0..1} matches {	-- Avstand til mesorectale fascie
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+										magnitude = <|0.0..100.0|>
+										precision = <|1|>
+									>
+								>
+							>
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sykdomsutbredelse">
+					description = <"Inneholder opplysninger om utbredelse av sykdommen på diagnosetidspunktet (før behandlingstart)">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Sykdomsutbredelse">
+					description = <"Sykdomsutbredelse på diagnosetidspunktet (før behandlingstart)">
+				>
+				["at0005"] = <
+					text = <"Tumor">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"I tarmvegg">
+					description = <"I tarmvegg (T1-T2)">
+				>
+				["at0007"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Gjennom tarmvegg">
+					description = <"Gjennom tarmvegg (T3)">
+				>
+				["at0011"] = <
+					text = <"Innvekst i naboorgan">
+					description = <"Innvekst i naboorgan (T4)">
+				>
+				["at0012"] = <
+					text = <"Lymfeknuter">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Regionale lymfeknutemetastaser">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Fjerne lymfeknutemetastaser">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Organmetastaser">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Levermetastaser">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Lungemetastaser">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Peritoneum/peritoneal carcinomatose">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Skjelettmetastaser">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Andre organmetastaser">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Avstand til mesorectale fascie">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Ikke undersøkt">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Spesifiser andre organmetastaser">
+					description = <"*">
+				>
+			>
+		>
+	>

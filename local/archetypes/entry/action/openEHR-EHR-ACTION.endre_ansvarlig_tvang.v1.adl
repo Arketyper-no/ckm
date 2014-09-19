@@ -1,0 +1,78 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.endre_ansvarlig_tvang.v1
+
+concept
+	[at0000]	-- Endre ansvarlig tvang
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"88A58657E1DBBAC705B2CED616DE3ED3">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Endre ansvarlig tvang
+		ism_transition matches {
+			ISM_TRANSITION[at0003] matches {	-- Ansvarlig endret
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0003]}		-- Ansvarlig endret
+					}
+				}
+			}
+		}
+		description matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- Cluster
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Endre ansvarlig tvang">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Ansvarlig endret">
+					description = <"">
+				>
+			>
+		>
+	>

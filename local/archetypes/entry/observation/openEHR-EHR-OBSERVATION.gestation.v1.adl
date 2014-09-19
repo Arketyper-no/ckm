@@ -1,0 +1,281 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.gestation.v1
+
+concept
+	[at0000]	-- Gestation
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Ingrid Heitmann">
+				["organisation"] = <"NTNU and OUS">
+			>
+			accreditation = <"Registered Nurse and master student in health informatics">
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"NT mEHR Project">
+		["email"] = <"sam.heard@oceaninformatics.com">
+		["date"] = <"2012-01-04">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the estimated or known gestation age of a current pregnancy or new born at a point in time.">
+			use = <"To record the estimated or known gestational age of a pregnancy or new born.">
+			keywords = <"gestation", "gestational age", "conceptional age", "maturity">
+			misuse = <"Not to record the historical gestational age of the fetus at birth. This is recorded in the pregnancy summary.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av estimert, eller kjent, svangerskapslengde av nåværende graviditet eller nyfødt på tidspunktet.">
+			use = <"For registrering av estimert, eller kjent, svangerskapslenge eller nyfødt.">
+			keywords = <"svangerskap", "gestasjonsalder", "tid fra unnfangelse", "modenhet", "svangerskapslengde">
+			misuse = <"Anvendes ikke for å registrere historisk svangerskapslengde for fosteret ved fødselen. Dette dokumenteres i oppsummering av svangerskapet.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Mongelli M. Evaluation of Gestation. Medscape Reference. See http://emedicine.medscape.com/article/259269-overview#showall (accessed Jan 2012)
+
+Peek MJ, Devonald KJ, Beilby R, Ellwood D. The value of routine early pregnancy ultrasound in the antenatal booking clinic. Aust N Z J Obstet Gynaecol. May 1994;34(2):140-3.
+
+Geirsson RT, Busby-Earle RM. Certain dates may not provide a reliable estimate of gestational age. Br J Obstet Gynaecol. Jan 1991;98(1):108-9.
+
+Guerrero R, Florez PE. The duration of pregnancy. Lancet. Aug 2 1969;2(7614):268-9.">
+		["MD5-CAM-1.0.1"] = <"B42CC42482FA85BB951F7964F43C36FB">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Svangerskap
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {1..*} matches {	-- Dato for måling
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Svangerskapslengde
+										value matches {
+											DV_DURATION matches {
+												value matches {PWD/|P0W..P60W|}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Tid fra unnfangelse
+										value matches {
+											DV_DURATION matches {
+												value matches {PWD/|P0W..P60W|}
+											}
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Kommentar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0017] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Beregning basert på
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0007, 	-- Ultralyd i 1.trimester
+									at0008, 	-- Ultralyd i 2. trimester
+									at0009, 	-- Ultralyd i 3.trimester
+									at0010, 	-- Dato for siste menstruasjon
+									at0011, 	-- Unnfangelsesdato
+									at0012, 	-- Undersøkelse av livmor i 1.trimester
+									at0013, 	-- Undersøkelse av livmor i 2.trimester
+									at0014, 	-- Undersøkelse av livmor i 3. trimester
+									at0015, 	-- Dato for første positive graviditetstest
+									at0016]	-- Beregnet fra estimert termindato
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Gestation">
+					description = <"The estimate or known period or duration of the pregnancy or gestational age of the fetus or new born.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Date of measurement">
+					description = <"The date and time of the measurement of gestation.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Gestational age">
+					description = <"Estimate of time since conception + 2 weeks.">
+				>
+				["at0005"] = <
+					text = <"Conceptional age">
+					description = <"The time since conception.">
+				>
+				["at0006"] = <
+					text = <"Calculation based on">
+					description = <"The base for the calculation of the durataion of pregnancy.">
+				>
+				["at0007"] = <
+					text = <"Ultrasound - first trimester">
+					description = <"An ultrasound done before 14 weeks gestation.">
+				>
+				["at0008"] = <
+					text = <"Ultrasound - second trimester">
+					description = <"An ultrasound done between 14 and 28 weeks gestation.">
+				>
+				["at0009"] = <
+					text = <"Ultrasound - third trimester">
+					description = <"An ultrasound done greater than 28 weeks gestation.">
+				>
+				["at0010"] = <
+					text = <"Date of last menstrual period">
+					description = <"The date of the first day of the last menstruation.">
+				>
+				["at0011"] = <
+					text = <"Date of conception">
+					description = <"The date of conception is known.">
+				>
+				["at0012"] = <
+					text = <"Uterine examination - first trimester">
+					description = <"The size of the uterus before 14 weeks gestation.">
+				>
+				["at0013"] = <
+					text = <"Uterine examination - second trimester">
+					description = <"The fundal height measured between 14 and 28 weeks gestation.">
+				>
+				["at0014"] = <
+					text = <"Uterine examination - third trimester">
+					description = <"The fundal height after 28 weeks gestation.">
+				>
+				["at0015"] = <
+					text = <"Date of first positive pregnancy test">
+					description = <"Date of first positive pregnancy test, ideally involving serial pregnancy tests with a known sensitivity.">
+				>
+				["at0016"] = <
+					text = <"Calculated from expected date of birth (EDB)">
+					description = <"Calculated back from the expected date of birth.">
+				>
+				["at0017"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Comment">
+					description = <"Clinical comment on gestational or conceptional age.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Svangerskap">
+					description = <"Estimert eller kjent svangerskapslengde, fosterets gestasjonsalder eller nyfødt.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Dato for måling">
+					description = <"Dato og tidspunkt for svangerskapsmåling.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Svangerskapslengde">
+					description = <"Estimert tid siden unnfangelse + 2 uker.">
+				>
+				["at0005"] = <
+					text = <"Tid fra unnfangelse">
+					description = <"Tid fra unnfangelse.">
+				>
+				["at0006"] = <
+					text = <"Beregning basert på">
+					description = <"Grunnlaget for beregning av svangerskapslengde.">
+				>
+				["at0007"] = <
+					text = <"Ultralyd i 1.trimester">
+					description = <"Ultralyd gjennomført før 14. svangerskapsuke.">
+				>
+				["at0008"] = <
+					text = <"Ultralyd i 2. trimester">
+					description = <"Ultralyd gjennomført mellom 18. og 28. svangerskapsuke.">
+				>
+				["at0009"] = <
+					text = <"Ultralyd i 3.trimester">
+					description = <"Ultralyd gjennomført etter 28. svangerskapsuke.">
+				>
+				["at0010"] = <
+					text = <"Dato for siste menstruasjon">
+					description = <"Dato for første dag i siste menstruasjon.">
+				>
+				["at0011"] = <
+					text = <"Unnfangelsesdato">
+					description = <"Dato for unnfangelse er kjent.">
+				>
+				["at0012"] = <
+					text = <"Undersøkelse av livmor i 1.trimester">
+					description = <"Størrelse på livmor før 14. svangerskapsuke.">
+				>
+				["at0013"] = <
+					text = <"Undersøkelse av livmor i 2.trimester">
+					description = <"Symfyse-fundusmåling målt mellom 14. og 28. svangerskapsuke.">
+				>
+				["at0014"] = <
+					text = <"Undersøkelse av livmor i 3. trimester">
+					description = <"Symfyse-fundusmåling målt etter 28. svangerskapsuke.">
+				>
+				["at0015"] = <
+					text = <"Dato for første positive graviditetstest">
+					description = <"Dato for første positive graviditetstest, ideelt sett inkludert flere graviditetstester med kjent følsomhet.">
+				>
+				["at0016"] = <
+					text = <"Beregnet fra estimert termindato">
+					description = <"Tilbakeberegning fra estimert termindato.">
+				>
+				["at0017"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til unnfangelsesdato eller svangerskapslengde.">
+				>
+			>
+		>
+	>

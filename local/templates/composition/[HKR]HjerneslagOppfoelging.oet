@@ -1,0 +1,508 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>d5efd319-8844-435c-aac4-62f5401a13f7</id>
+  <name>[HKR]HjerneslagOppfoelging</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Encounter" name="Norsk hjerneslagregister - Oppfølgingsskjema">
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Verdier fra akuttskjema">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Innleggelsestidspunkt" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Innleggelsestidspunkt">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Date_Time</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Utskrevet fra sykehus">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Date_Time</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Utskrevet til" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Utskrevet til">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Egen bolig uten hjemmesykepleie/hjemmehjelp</includedValues>
+            <includedValues>2: Egen bolig med hjemmesykepleie/hjemmehjelp</includedValues>
+            <includedValues>3: Omsorgsbolig med døgnkontinuerlige tjenester og personale</includedValues>
+            <includedValues>4: Sykehjem</includedValues>
+            <includedValues>5: Annen avdeling for videre behandling</includedValues>
+            <includedValues>6: Annen avdeling i påvente av sykehjem/rehabilitering</includedValues>
+            <includedValues>7: Rehab.avd./-institusjon – inkludert i sykehjem</includedValues>
+            <includedValues>8: Opptreningssenter</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+            <includedValues>10: Død i løpet av oppholdet</includedValues>
+            <includedValues>11: Annet</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name=".">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Er oppfølging utført?" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Er oppfølging utført?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Årsak">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Får ikke tak i pasienten</includedValues>
+            <includedValues>2: Pasienten ønsker ikke å svare</includedValues>
+            <includedValues>3: Død</includedValues>
+            <includedValues>4: Annet</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Dødsdato" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Dødsdato">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Date_Time</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Annet spesifisert" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Annet spesifisert">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Oppfølgingsdato" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Oppfølgingsdato">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Date_Time</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Antall dager mellom innleggelse og død">
+          <constraint xsi:type="countConstraint">
+            <minMagnitude>0</minMagnitude>
+            <includesMaximum>false</includesMaximum>
+            <includesMinimum>true</includesMinimum>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Antall dager mellom innleggelse og oppfølging">
+          <constraint xsi:type="countConstraint">
+            <minMagnitude>0</minMagnitude>
+            <includesMaximum>false</includesMaximum>
+            <includesMinimum>true</includesMinimum>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Status">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.boligforhold.v1" concept_name="Boligforhold" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.bosituasjon.v1" concept_name="Bosituasjon" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.sivilstatus.v1" concept_name="Sivilstatus" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Reinnleggelser og rehabilitering etter utskriving (flere alternativer mulig)">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Enkle svar" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Innlagt sykehus etter utskriving">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Hele tiden</includedValues>
+            <includedValues>2: Reinnlagt for nytt slag</includedValues>
+            <includedValues>3: Reinnlagt annen årsak</includedValues>
+            <includedValues>4: Ikke reinnlagt</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Er du operert i halspulsåre?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Døgnopphold i rehab. avd">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Opptreningssenter">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Døgnrehabilitering i sykehjem">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Dagrehabilitering">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Hjemmerehabilitering">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Rehabilitering i fysikalsk institutt">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Behandling hos logoped">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Ukjent">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Annet (Spesifiser under)">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Hvis reinnlagt for nytt hjerneslag, hvilken type hjerneslag?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Infarkt</includedValues>
+            <includedValues>2: Blødning</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Hjelp i daglige gjøremål (ADL) (flere alternativer mulig)">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Familie">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Hjemmesykepleien">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Institusjon">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Andre">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Hjemmehjelp">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Spesielle funksjoner">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.forflytning.v1" concept_name="Forflytning" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.toalettbesoek.v1" concept_name="Toalettbesoek" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.paakledning.v1" concept_name="Paakledning" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Vurdering av oppfølging og livskvalitet etter hjerneslaget">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Har du problemer med å lese og skrive (som ikke var tilstede før hjerneslaget)?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du problemer med å snakke (som ikke var tilstede før hjerneslaget)?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du synsproblemer (som ikke var tilstede før hjerneslaget)?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du kommet deg helt etter hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du fått tilstrekkelig hjelp etter hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du fått så mye trening som du ønsker etter hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>3: Har ikke behov</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du vært til legekontroll etter hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Er du like fornøyd med tilværelsen etter hjerneslaget som før hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Tar du medisin mot høyt blodtrykk?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Tar du blodfortynnende medisin mot blodpropp?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Tar du medisin mot høyt kolesterol?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Røykestatus">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0: Aldri</includedValues>
+            <includedValues>1: Røyker</includedValues>
+            <includedValues>2: Eks-røyker (røykfri &gt;1 mnd)</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Var du yrkesaktiv da du fikk hjerneslaget?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Er du yrkesaktiv nå?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Kjørte du bil før du fikk hjerneslag?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Kjører du bil nå?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Ukjent</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Har du problemer med å svelge (som ikke var tilstede før hjerneslaget)?">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Ja</includedValues>
+            <includedValues>2: Nei</includedValues>
+            <includedValues>9: Vet ikke/Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.modified_rankin_scale.v1" concept_name="Modified rankin scale" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Besvart av">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Pasient">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Helsepersonell">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Andre (Spesifiser under)">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Hvordan ble oppfølgingsskjema etter 3 måneder registrert">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1: Per telefon</includedValues>
+            <includedValues>2: Per brev</includedValues>
+            <includedValues>3: Ved besøk på poliklinikk</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" clone="true" name="Familie">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Boolean</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">747EB21D627718468D04F2F1EFE43A80</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-SECTION.adhoc.v1">
+    <digest id="MD5-CAM-1.0.1">6FD3128A583EB7081153D0265245E1FA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1">
+    <digest id="MD5-CAM-1.0.1">1F79B3AA7D3C424DBD8B67C79956E4C4</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1">
+    <digest id="MD5-CAM-1.0.1">67AFBDABDCF91AB1D5E45CF7A1FDA7A0</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.boligforhold.v1">
+    <digest id="MD5-CAM-1.0.1">EBA7BD21E2B1D0D56AD1BAECA36BDA43</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.bosituasjon.v1">
+    <digest id="MD5-CAM-1.0.1">E8324241BCCB9CB9D16C381C500C591D</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.sivilstatus.v1">
+    <digest id="MD5-CAM-1.0.1">F96540E828FE974711F63F95187765B4</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.forflytning.v1">
+    <digest id="MD5-CAM-1.0.1">E59C4F4A57B4C71FAC8A3B7B0886F0CE</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.toalettbesoek.v1">
+    <digest id="MD5-CAM-1.0.1">B9D06CB3D45FE1CC294771F1AC5B49DB</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.paakledning.v1">
+    <digest id="MD5-CAM-1.0.1">7ACEF4027909D1A75252279F4413FC9C</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.modified_rankin_scale.v1">
+    <digest id="MD5-CAM-1.0.1">D71DAF5774A0815AF1AD3B03DD35A2FC</digest>
+  </integrity_checks>
+</template>

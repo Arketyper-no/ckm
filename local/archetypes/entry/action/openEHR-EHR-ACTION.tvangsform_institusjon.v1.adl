@@ -1,0 +1,98 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.tvangsform_institusjon.v1
+
+concept
+	[at0000]	-- Tvangsform og institusjon
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"42E6B5CBF4D462AFD231F623D9D6A506">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Tvangsform og institusjon
+		ism_transition matches {
+			ISM_TRANSITION[at0002] matches {	-- Tvungen observasjon
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0002]}		-- Tvungen observasjon
+					}
+				}
+			}
+			ISM_TRANSITION[at0004] matches {	-- Tvungent psykisk helsevern
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0004]}		-- Tvungent psykisk helsevern
+					}
+				}
+			}
+			ISM_TRANSITION[at0003] matches {	-- Opphørt
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0003]}		-- Opphørt
+					}
+				}
+			}
+		}
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.tvangsform_institusjon(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tvangsform og institusjon">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Tvungen observasjon">
+					description = <"Pågående tvungen observasjon">
+				>
+				["at0003"] = <
+					text = <"Opphørt">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Tvungent psykisk helsevern">
+					description = <"Pågående tvungent psykisk helsevern">
+				>
+			>
+		>
+	>

@@ -1,0 +1,343 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.nutritional_risk_screening.v1
+
+concept
+	[at0000]	-- Nutritional risk screening
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en-gb"] = <
+			language = <[ISO_639-1::en-gb]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Micaela Thierley">
+		["organisation"] = <"Helse Bergen">
+		["email"] = <"micaela.thierley@helse-bergen.no">
+		["date"] = <"2014-07-11">
+	>
+	details = <
+		["en-gb"] = <
+			language = <[ISO_639-1::en-gb]>
+			purpose = <"Tool for screening of patiens nutritional status.">
+			use = <"To be used in adults 
+The first 4 questions are prescreening, if any of theses questions is answered YES
+Calculate the total score:
+  1. Find score (0–3) for Impaired nutritional status (only one: choose the variable with highest score) and Severity of disease (≈stress metabolism, i.e. increase in nutritional requirements).
+  2. Add the two scores (→ total score)
+  3. If age ≥70 years: add 1 to the total score to correct for frailty of elderly
+  4. If age-corrected total ≥3: start nutritional support">
+			misuse = <"Not to be used in children">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Verktøy for screening av ernæringsstatus.">
+			use = <"Brukes for voksne personer.
+De først 4 spørsmål er forhåndsscreening.
+Dersom svaret er JA på noen av disse spørsmålene, gjennomføres hovedscreeningen.
+Dersom svaret er NEI på alle svarene, gjennomføres innledende screening ukentlig. 
+Dersom pasienten skal gjennomgå planlagt større kirurgi, skal en forebyggende ernæringsplan vurderes 
+for å unngå assosiert ernæringsrisiko.">
+			misuse = <"Brukes ikke til barn.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <"Heather Leslie", "Silje Bakke">
+	other_details = <
+		["current_contact"] = <"Micaela Thierley, Helse Bergen, micaela.thierley@helse-bergen.no">
+		["references"] = <"http://helsedirektoratet.no/publikasjoner/nasjonal-faglig-retningslinje-for-forebygging-og-behandling-av-underernering/Publikasjoner/nasjonal-faglig-retningslinje-for-forebygging-og-behandling-av-underernering.PDF">
+		["MD5-CAM-1.0.1"] = <"DE437834013DF81F9B9F4722E1E91188">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Nutritional risk screening
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Er BMI < 20,5?
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Har pasienten tapt vekt i løpet av de siste ukene?
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Har pasienten hatt redusert næringsinntak de siste ukene?
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Er pasienten alvorlig syk.
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Ernæringstilstand
+										value matches {
+											0|[local::at0018], 	-- Normal
+											1|[local::at0019], 	-- Mild
+											2|[local::at0020], 	-- Moderat
+											3|[local::at0021]  	-- Alvorlig
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {	-- Sykdommens alvorlighetsgrad
+										value matches {
+											0|[local::at0022], 	-- Normal
+											1|[local::at0023], 	-- Mild
+											2|[local::at0024], 	-- Moderat
+											3|[local::at0025]  	-- Alvorlig
+										}
+									}
+									ELEMENT[at0030] occurrences matches {0..6} matches {	-- Total score
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {	-- Er pasienten over 70 år?
+										value matches {
+											0|[local::at0028], 	-- Nei
+											1|[local::at0029], 	-- Ja
+											2|[local::at0032]  	-- (nb)
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..7} matches {	-- Endelig aldersjustert score
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en-gb"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Nutritional risk screening(nb)">
+					description = <"*Screening for malnutrition usin the tool NRS 2002.(nb)">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Any event(nb)">
+					description = <"*(nb)">
+				>
+				["at0003"] = <
+					text = <"*Tree(nb)">
+					description = <"*@ internal @(nb).(nb)">
+				>
+				["at0004"] = <
+					text = <"*Er BMI < 20,5?(nb)">
+					description = <"*Er pasientens BMI under 20,5?(nb)">
+				>
+				["at0005"] = <
+					text = <"*Har pasienten tapt vekt i løpet av de siste ukene?(nb)">
+					description = <"*Vekttap de siste ukene?(nb)">
+				>
+				["at0006"] = <
+					text = <"*Har pasienten hatt redusert næringsinntak de siste ukene?(nb)">
+					description = <"*Redusert ernæringsinntak siste uken?(nb)">
+				>
+				["at0007"] = <
+					text = <"*Er pasienten alvorlig syk.(nb)">
+					description = <"*Alvorlig sykdom?(nb)">
+				>
+				["at0016"] = <
+					text = <"*Ernæringstilstand(nb)">
+					description = <"*Kartlegging av ernæringstilstand.(nb)">
+				>
+				["at0017"] = <
+					text = <"Severity of disease.">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Normal(nb)">
+					description = <"*Normal ernæringstilstand.(nb)">
+				>
+				["at0019"] = <
+					text = <"Mild.">
+					description = <"Weigt loss >5% in 3 month or food inntake below 50-75% of normal requirements.">
+				>
+				["at0020"] = <
+					text = <"Moderat. ">
+					description = <"Weight loss > 5% in 2 month or BMI 18.5-20.5 + impaired general condition or food .intake  25-60% of normal requirement in preceding week">
+				>
+				["at0021"] = <
+					text = <"Severe.">
+					description = <"Weight loss > 5% in 1 month or BMI <18.5 + impaired general condition or food .intake  0-25% of normal requirement in preceding week">
+				>
+				["at0022"] = <
+					text = <"Absent.">
+					description = <" Normal nutritional requirements.">
+				>
+				["at0023"] = <
+					text = <"*Mild(nb)">
+					description = <"*En pasient med kronisk sykdom eller en pasient som har 
+gjennomgått et mindre kirurgisk inngrep.(nb)">
+				>
+				["at0024"] = <
+					text = <"*Moderat(nb)">
+					description = <"*En pasient med tydelig redusert allmenntilstand pga sin sykdom.(nb)">
+				>
+				["at0025"] = <
+					text = <"*Alvorlig(nb)">
+					description = <"*En pasient som er alvorlig syk.(nb)">
+				>
+				["at0027"] = <
+					text = <"Age 70 and over.">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Nei(nb)">
+					description = <"*Pasienten er yngre enn 70 år.(nb)">
+				>
+				["at0029"] = <
+					text = <"*Ja(nb)">
+					description = <"*Pasienten er 70 år eller eldre.(nb)">
+				>
+				["at0030"] = <
+					text = <"Tolal score.">
+					description = <"Sum of scores from nutritional status and severity of disease.">
+				>
+				["at0031"] = <
+					text = <"Age adjustet final score">
+					description = <"Sum of total score and scre from agefaktor.">
+				>
+				["at0032"] = <
+					text = <"*(nb)(nb)">
+					description = <"*(nb).(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nutritional risk screening">
+					description = <"Screening for malnutrition usin the tool NRS 2002.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @(nb).">
+				>
+				["at0004"] = <
+					text = <"Er BMI < 20,5?">
+					description = <"Er pasientens BMI under 20,5?">
+				>
+				["at0005"] = <
+					text = <"Har pasienten tapt vekt i løpet av de siste ukene?">
+					description = <"Vekttap de siste ukene?">
+				>
+				["at0006"] = <
+					text = <"Har pasienten hatt redusert næringsinntak de siste ukene?">
+					description = <"Redusert ernæringsinntak siste uken?">
+				>
+				["at0007"] = <
+					text = <"Er pasienten alvorlig syk.">
+					description = <"Alvorlig sykdom?">
+				>
+				["at0016"] = <
+					text = <"Ernæringstilstand">
+					description = <"Kartlegging av ernæringstilstand.">
+				>
+				["at0017"] = <
+					text = <"Sykdommens alvorlighetsgrad">
+					description = <"Kartlegging av syklighetsgrad.">
+				>
+				["at0018"] = <
+					text = <"Normal">
+					description = <"Normal ernæringstilstand.">
+				>
+				["at0019"] = <
+					text = <"Mild">
+					description = <"Vekttap 5–10 % siste 3 mnd. og/eller 1 Matinntak 50–75 % av behov i mer enn en uke.
+av behov i mer enn en uke.">
+				>
+				["at0020"] = <
+					text = <"Moderat">
+					description = <"Vekttap 10–15 % siste 3 mnd. og/eller BMI 18.5–20.5 og/eller Matinntak 25–50 % av behov i mer enn en uke.">
+				>
+				["at0021"] = <
+					text = <"Alvorlig">
+					description = <"Vekttap > 15 % siste 3 mnd. og/eller BMI < 18.5 og/eller Matinntak 0–25 % av behov i mer enn en uke.">
+				>
+				["at0022"] = <
+					text = <"Normal">
+					description = <"Ikke syk.">
+				>
+				["at0023"] = <
+					text = <"Mild">
+					description = <"En pasient med kronisk sykdom eller en pasient som har 
+gjennomgått et mindre kirurgisk inngrep.">
+				>
+				["at0024"] = <
+					text = <"Moderat">
+					description = <"En pasient med tydelig redusert allmenntilstand pga sin sykdom.">
+				>
+				["at0025"] = <
+					text = <"Alvorlig">
+					description = <"En pasient som er alvorlig syk.">
+				>
+				["at0027"] = <
+					text = <"Er pasienten over 70 år?">
+					description = <"Er pasienten 70 år eller eldre?">
+				>
+				["at0028"] = <
+					text = <"Nei">
+					description = <"Pasienten er yngre enn 70 år.">
+				>
+				["at0029"] = <
+					text = <"Ja">
+					description = <"Pasienten er 70 år eller eldre.">
+				>
+				["at0030"] = <
+					text = <"Total score">
+					description = <"Summen av score fra ernæringstilstand og sykdommens alvorlighetsgrad.">
+				>
+				["at0031"] = <
+					text = <"Endelig aldersjustert score">
+					description = <"Summen av total score og aldersjustering.">
+				>
+				["at0032"] = <
+					text = <"(nb)">
+					description = <"(nb).">
+				>
+			>
+		>
+	>

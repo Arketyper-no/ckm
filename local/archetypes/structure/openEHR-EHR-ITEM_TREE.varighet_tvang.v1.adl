@@ -1,0 +1,99 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.varighet_tvang.v1
+
+concept
+	[at0000]	-- Varighet tvang
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"885F952FC4787BC4E756D8009143B784">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Varighet tvang
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Utløpsdato
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Første 3-månederskontroll
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Andre 3-månederskontroll
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Tredje  3-månederskontroll
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Neste årskontroll
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Varighet tvang">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Utløpsdato">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Første 3-månederskontroll">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Neste årskontroll">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Andre 3-månederskontroll">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Tredje  3-månederskontroll">
+					description = <"">
+				>
+			>
+		>
+	>

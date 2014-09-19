@@ -1,0 +1,197 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.lokalisasjonprimaertumor.v1
+
+concept
+	[at0000]	-- Lokalisasjonprimaertumor
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2B4018FB578CE6A86C9C462C5FA0F6E3">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Lokalisasjonprimaertumor
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- LokalisasjonPrimaer
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Side
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0006, 	-- Venstre
+													at0007, 	-- Høyre
+													at0008, 	-- Begge
+													at0009, 	-- Ikke relevant
+													at0010]	-- Ukjent
+												}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Kreft
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0012, 	-- Ja
+													at0013, 	-- Usikker
+													at0014]	-- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- AvstandSkop
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"'">
+														magnitude = <|0.0..99.9|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {	-- AvstandSkopUkjent
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- AvstandMR
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"'">
+														magnitude = <|0.0..99.9|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {	-- AvstandMRUkjent
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lokalisasjonprimaertumor">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"LokalisasjonPrimaer">
+					description = <"ICD-10 koder. Koder som skal rapporteres til Kreftregisteret er alle C-koder unntatt c44 Basalcellecarcinom. I tillegg skal disse meldes inn: D050, D051, D090, D091, D32, D33, D352, D353, D354, D391, D392, D42, D43, D443, D444, D445, D45.">
+				>
+				["at0005"] = <
+					text = <"Side">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Venstre">
+					description = <"Venstre">
+				>
+				["at0007"] = <
+					text = <"Høyre">
+					description = <"Høyre">
+				>
+				["at0008"] = <
+					text = <"Begge">
+					description = <"Begge">
+				>
+				["at0009"] = <
+					text = <"Ikke relevant">
+					description = <"Ikke relevant">
+				>
+				["at0010"] = <
+					text = <"Ukjent">
+					description = <"Ukjent">
+				>
+				["at0011"] = <
+					text = <"Kreft">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Ja">
+					description = <"Ja">
+				>
+				["at0013"] = <
+					text = <"Usikker">
+					description = <"Usikker">
+				>
+				["at0014"] = <
+					text = <"Nei">
+					description = <"Nei">
+				>
+				["at0015"] = <
+					text = <"AvstandSkop">
+					description = <"Avstand fra analåpningen til nedre kant av tumor (målt på stivt skop)">
+				>
+				["at0016"] = <
+					text = <"AvstandMR">
+					description = <"Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)">
+				>
+				["at0017"] = <
+					text = <"AvstandSkopUkjent">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"AvstandMRUkjent">
+					description = <"*">
+				>
+			>
+		>
+	>

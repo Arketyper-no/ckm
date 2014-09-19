@@ -1,0 +1,146 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.ais_scale.v1
+
+concept
+	[at0000]	-- AIS Scala
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"The Abbreviated Injury Scale (AIS©) is an anatomically-based, consensus-derived global severity scoring system that classifies each injury by body region according to its relative importance on a 6-point ordinal scale (1=minor and 6=maximal). AIS© is the basis for the Injury Severity Score (ISS) calculation of the multiply injured patient.">
+			use = <"To classify and describe the severity of specific individual injuries">
+			keywords = <"AIS", ...>
+			misuse = <"*(nb)">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"The Abbreviated Injury Scale (AIS©) is an anatomically-based, consensus-derived global severity scoring system that classifies each injury by body region according to its relative importance on a 6-point ordinal scale (1=minor and 6=maximal). AIS© is the basis for the Injury Severity Score (ISS) calculation of the multiply injured patient.">
+			use = <"To classify and describe the severity of specific individual injuries">
+			keywords = <"AIS", ...>
+			misuse = <"??">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"3F955052FCB373331D25ECC2DFBE2FDB">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- AIS Scala
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Alvorlighet ved skade
+				value matches {
+					1|[local::at0002], 	-- 1- Ingen/ubetydelig skade
+					2|[local::at0003], 	-- 2- Liten skade
+					3|[local::at0004], 	-- 3- Moderat skade
+					4|[local::at0005], 	-- 4 - Alvorlig skade
+					5|[local::at0006], 	-- 5 - Kritisk skade
+					6|[local::at0007], 	-- 6- Maksimal
+					9|[local::at0008]  	-- 9 - Ikke videre spesifisert
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Abbreviated injury scale">
+					description = <"To describe the severity of specific individual injuries. ">
+				>
+				["at0001"] = <
+					text = <"Severity">
+					description = <"Abbreviated Injury Score-Code is on a scale of one to six, one being a minor injury and six being maximal (currently untreatable).[1] An AIS-Code of 6 is not the arbitrary code for a deceased patient or fatal injury, but the code for injuries specifically assigned an AIS 6 severity.[1] An AIS-Code of 9 is used to describe injuries for which not enough information is available for more detailed coding, e.g. crush injury to the head.
+The AIS scale is a measurement tool for single injuries. A universally accepted injury aggregation function has not yet been proposed, though the injury severity score and its derivatives are better aggregators for use in clinical settings.[1][5] In other settings such as automotive design and occupant protection, MAIS is a useful tool for the comparison of specific injuries and their relative severity and the changes in those frequencies that may result from evolving motor vehicle design.">
+				>
+				["at0002"] = <
+					text = <"Minor">
+					description = <"Eg. superficial laceration">
+				>
+				["at0003"] = <
+					text = <"Moderate">
+					description = <"Eg. fractured sternum">
+				>
+				["at0004"] = <
+					text = <"Serious">
+					description = <"Eg. open fracture of humerus">
+				>
+				["at0005"] = <
+					text = <"Severe">
+					description = <"Eg. perforated trachea">
+				>
+				["at0006"] = <
+					text = <"Critical">
+					description = <"Eg. ruptured liver with tissue loss">
+				>
+				["at0007"] = <
+					text = <"Maximum">
+					description = <"Eg. total severance of aorta">
+				>
+				["at0008"] = <
+					text = <"Not further specified (NFS)">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"AIS Scala">
+					description = <"Benyttes for å beskrive alvorligheten ved personskade ">
+				>
+				["at0001"] = <
+					text = <"Alvorlighet ved skade">
+					description = <"Abbreviated Injury Score-Code is on a scale of one to six, one being a minor injury and six being maximal (currently untreatable).[1] An AIS-Code of 6 is not the arbitrary code for a deceased patient or fatal injury, but the code for injuries specifically assigned an AIS 6 severity.[1] An AIS-Code of 9 is used to describe injuries for which not enough information is available for more detailed coding, e.g. crush injury to the head.
+The AIS scale is a measurement tool for single injuries. A universally accepted injury aggregation function has not yet been proposed, though the injury severity score and its derivatives are better aggregators for use in clinical settings.[1][5] In other settings such as automotive design and occupant protection, MAIS is a useful tool for the comparison of specific injuries and their relative severity and the changes in those frequencies that may result from evolving motor vehicle design.">
+				>
+				["at0002"] = <
+					text = <"1- Ingen/ubetydelig skade">
+					description = <"Eg. superficial laceration">
+				>
+				["at0003"] = <
+					text = <"2- Liten skade">
+					description = <"Eg. fractured sternum">
+				>
+				["at0004"] = <
+					text = <"3- Moderat skade">
+					description = <"Eg. open fracture of humerus">
+				>
+				["at0005"] = <
+					text = <"4 - Alvorlig skade">
+					description = <"Eg. perforated trachea">
+				>
+				["at0006"] = <
+					text = <"5 - Kritisk skade">
+					description = <"Eg. ruptured liver with tissue loss">
+				>
+				["at0007"] = <
+					text = <"6- Maksimal">
+					description = <"Eg. total severance of aorta">
+				>
+				["at0008"] = <
+					text = <"9 - Ikke videre spesifisert">
+					description = <"*">
+				>
+			>
+		>
+	>

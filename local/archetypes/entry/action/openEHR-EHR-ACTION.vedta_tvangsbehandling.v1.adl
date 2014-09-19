@@ -1,0 +1,85 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.vedta_tvangsbehandling.v1
+
+concept
+	[at0000]	-- Vedta tvangsbehandling
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Arne Løberg Sæter">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"asa@dips.no">
+		["date"] = <"2014-02-07">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av vedtak om tvangsbehandling.">
+			use = <"Brukes til registrering av vedtak om tvangsbehandling.">
+			misuse = <"Alt annet.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"A25F54ED62DA288B6168FE3402714438">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Vedta tvangsbehandling
+		ism_transition matches {
+			ISM_TRANSITION[at0002] matches {	-- Pågående
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0002]}		-- Pågående
+					}
+				}
+			}
+			ISM_TRANSITION[at0001] matches {	-- Opphørt
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0001]}		-- Opphørt
+					}
+				}
+			}
+		}
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.om_vedtak_om_us_og_behandling_uten_samtykke(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vedta tvangsbehandling">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Opphørt">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Pågående">
+					description = <"">
+				>
+			>
+		>
+	>

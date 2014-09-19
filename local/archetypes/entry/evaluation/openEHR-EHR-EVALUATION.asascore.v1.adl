@@ -1,0 +1,95 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.asascore.v1
+
+concept
+	[at0000]	-- Asascore
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"American Society of Anesthesiologists klassifikasjonssystem for pasientens preoperative helsetilstand">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"433F0E04E00A71F3466DC079BD9EA836">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Asascore
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {1; unordered} matches {
+					ELEMENT[at0002] matches {	-- ASA score
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003, 	-- I - Frisk pasient
+									at0004, 	-- II - Pasient med mild systemsykdom
+									at0005, 	-- III - Pasient med alvorlig systemsykdom som ikke gir nedsatt funksjon
+									at0006, 	-- IV - Pasient med alvorlig systemsykdom som er livstruende
+									at0007, 	-- V - Moribund pasient som ikke vil overleve 24 t med eller uten kirurgi
+									at0008]	-- Ukjent
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Asascore">
+					description = <"American Society of Anesthesiologists klassifikasjonssystem for pasientens preoperative helsetilstand">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"ASA score">
+					description = <"ASA score">
+				>
+				["at0003"] = <
+					text = <"I - Frisk pasient">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"II - Pasient med mild systemsykdom">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"III - Pasient med alvorlig systemsykdom som ikke gir nedsatt funksjon">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"IV - Pasient med alvorlig systemsykdom som er livstruende">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"V - Moribund pasient som ikke vil overleve 24 t med eller uten kirurgi">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+			>
+		>
+	>

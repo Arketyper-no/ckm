@@ -1,0 +1,61 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.skjermingsvedtak.v1
+
+concept
+	[at0000]	-- Skjermingsvedtak
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Arne Løberg Sæter">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"asa@dips.no">
+		["date"] = <"2014-06-18">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Benyttes til dokumentasjon av skjerming i henhold til psykisk helsevernloven.">
+			use = <"Benyttes til dokumentasjon av skjerming i henhold til psykisk helsevernloven.">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6A3B367579478B9F9365B1CEC0042B00">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Skjermingsvedtak
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Current Activity
+				action_archetype_id matches {/openEHR-EHR-ACTION\.skjermingsvedtak\.v1/}
+				description matches {
+					ITEM_TREE[at0002] matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Skjermingsvedtak">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

@@ -1,0 +1,99 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.paakledning.v1
+
+concept
+	[at0000]	-- Paakledning
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["date"] = <"2014-04-25">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ja.">
+			use = <"Ja.">
+			misuse = <"Nei.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"7ACEF4027909D1A75252279F4413FC9C">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Paakledning
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Påkledning
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 1 - Alene
+													at0006, 	-- 2 - Med hjelp
+													at0007]	-- 9 - Ukjent
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Paakledning">
+					description = <"Påkledningsevne.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Ja.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Påkledning">
+					description = <"[Paakledning].">
+				>
+				["at0005"] = <
+					text = <"1 - Alene">
+					description = <"Alene: Pasienten klarte av- og påkledning selv, også ytterklær, sko og strømper.">
+				>
+				["at0006"] = <
+					text = <"2 - Med hjelp">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"9 - Ukjent">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

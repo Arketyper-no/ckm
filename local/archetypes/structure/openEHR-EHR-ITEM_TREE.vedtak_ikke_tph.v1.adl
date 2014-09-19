@@ -1,0 +1,110 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.vedtak_ikke_tph.v1
+
+concept
+	[at0000]	-- Vedtak ikke tph
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2DDD944F8874083E5C0287D3B3729BD0">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Vedtak ikke tph
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {	-- Vedtakstype
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.vedtakstype(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Pasientens ankomst til institusjonen
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {0..1} matches {	-- Registrer oppstartstidspunkt av tvungen observasjon
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Oppstart av tvungen observasjon
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0013] occurrences matches {0..1} matches {	-- Uttalerett og klageadgang
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0010] occurrences matches {0..1} matches {	-- Uttalerett og klageadgang
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.uttalerett_og_klageadgang(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			CLUSTER[at0012] occurrences matches {0..1} matches {	-- Faglig ansvarlig
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {	-- Faglig ansvarlig
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vedtak ikke tph">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Pasientens ankomst til institusjonen">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Registrer oppstartstidspunkt av tvungen observasjon">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Oppstart av tvungen observasjon">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Uttalerett og klageadgang">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Vedtakstype">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Uttalerett og klageadgang">
+					description = <"">
+				>
+			>
+		>
+	>

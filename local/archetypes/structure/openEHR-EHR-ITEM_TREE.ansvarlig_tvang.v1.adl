@@ -1,0 +1,81 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.ansvarlig_tvang.v1
+
+concept
+	[at0000]	-- Ansvarlig tvang
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"50CD56F707C1B692400C6A416269057B">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Ansvarlig tvang
+		items cardinality matches {0..*; unordered} matches {
+			CLUSTER[at0002] occurrences matches {0..1} matches {	-- Vedtaksansvarlig
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Navn
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[ac0001]}		-- New constraint
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	terminologies_available = <"DIPS", ...>
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ansvarlig tvang">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Vedtaksansvarlig">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Navn">
+					description = <"">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["nb"] = <
+			items = <
+				["ac0001"] = <
+					text = <"New constraint">
+					description = <"">
+				>
+			>
+		>
+	>
+	constraint_bindings = <
+		["DIPS"] = <
+			items = <
+				["ac0001"] = <terminology:DIPS?subset=healthcareparty>
+			>
+		>
+	>

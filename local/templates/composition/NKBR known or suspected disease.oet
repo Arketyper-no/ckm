@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>53217e5a-c501-437f-a26d-2fdd154a6d8c</id>
+  <name>NKBR known or suspected disease</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report">
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Known or suspected systemic disease">
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]/items[at0002]" name="Systemic disease">
+          <constraint xsi:type="textConstraint">
+            <includedValues>Systemic lupus erythematosus</includedValues>
+            <includedValues>Wegeners granulomatosis</includedValues>
+            <includedValues>Henoch Schönleins purpura</includedValues>
+            <includedValues>Polyarteritis nodosa</includedValues>
+            <includedValues>Vasculitis other</includedValues>
+            <includedValues>Malign tumor</includedValues>
+            <includedValues>Chronic infections</includedValues>
+            <includedValues>Acute infections</includedValues>
+            <includedValues>Diabetes mellitus</includedValues>
+            <includedValues>Rheumatoid arthritis</includedValues>
+            <includedValues>Hepatitis B</includedValues>
+            <includedValues>Hepatitis C</includedValues>
+            <includedValues>Hereditary kidney disease</includedValues>
+            <includedValues>Other systemic disease</includedValues>
+          </constraint>
+          <nullFlavourConstraint>
+            <excludedValues>openehr::253</excludedValues>
+            <excludedValues>openehr::272</excludedValues>
+            <excludedValues>openehr::273</excludedValues>
+          </nullFlavourConstraint>
+        </Rule>
+        <Rule path="/data[at0001]/items[at0009]" max="0" />
+        <Rule path="/data[at0001]/items[at0082]" max="0" />
+        <Rule path="/data[at0001]/items[at0010]" max="0" />
+        <Rule path="/data[at0001]/items[at0037]" max="0" />
+        <Rule path="/data[at0001]/items[at0018]" max="0" />
+        <Rule path="/data[at0001]/items[at0026]" max="0" />
+        <Rule path="/data[at0001]/items[at0030]" max="0" />
+        <Rule path="/data[at0001]/items[at0031]" max="0" />
+        <Rule path="/data[at0001]/items[at0069]" name="Specify" />
+        <Rule path="/protocol[at0074]" hide_on_form="true" />
+        <Rule path="/protocol[at0074]/items[at0075]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.problem_status.v1" concept_name="Problem context qualifiers" path="/protocol[at0074]/items[at0076]" hide_on_form="true">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <excludedValues>local::at0045</excludedValues>
+              <excludedValues>local::at0047</excludedValues>
+              <excludedValues>local::at0049</excludedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0024]" max="0" />
+          <Rule path="/items[at0051]" max="0" />
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0043]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0060]" max="0" />
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+        </Items>
+      </Item>
+    </Content>
+    <Context>
+      <Rule path="/context/other_context[at0001]" hide_on_form="true" />
+      <Rule path="/context/other_context[at0001]/items[at0002]" hide_on_form="true" />
+      <Rule path="/context/other_context[at0001]/items[at0005]" hide_on_form="true" />
+      <hide_on_form>true</hide_on_form>
+    </Context>
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.report.v1">
+    <digest id="MD5-CAM-1.0.1">88F460F92F80BBC99C78E88B92CAF457</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-SECTION.adhoc.v1">
+    <digest id="MD5-CAM-1.0.1">6FD3128A583EB7081153D0265245E1FA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1">
+    <digest id="MD5-CAM-1.0.1">5AB451990B6E294D6A916A6072C5AFEE</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.problem_status.v1">
+    <digest id="MD5-CAM-1.0.1">F683FB4691EC3FFEE37CCEB3166ECD76</digest>
+  </integrity_checks>
+</template>

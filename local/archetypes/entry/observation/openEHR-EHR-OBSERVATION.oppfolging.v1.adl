@@ -1,0 +1,747 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.oppfolging.v1
+
+concept
+	[at0000]	-- Oppfølging
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ikke kjent ">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"7BE520AC8ED8409F04845498E8FB1385">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Oppfølging
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0046] occurrences matches {0..1} matches {	-- OppfolgingBehandling
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0004] occurrences matches {0..1} matches {	-- VidereTiltakUtredning
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0005, 	-- Henvist for videre utredning/vurdering av behandling
+															at0006, 	-- Behandling ved samme institusjon
+															at0007, 	-- Behandling ved annen institusjon
+															at0008, 	-- Aktiv monitorering
+															at0009, 	-- Direkte til reseksjon
+															at0010, 	-- Forbehandling før planlagt reseksjon
+															at0011, 	-- Palliativ tumorrettet behandling
+															at0012, 	-- Palliativ kirurgisk behandling
+															at0013, 	-- Ingen behandling uten metastaser
+															at0014, 	-- Ingen behandling ved metastaser
+															at0015, 	-- Ingen behandling
+															at0025]	-- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- VidereTiltakUtredning2
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0028, 	-- Eget sykehus
+															at0029, 	-- Onkologisk avdeling annet sykehus
+															at0030, 	-- Kirurgisk avdeling annet sykehus
+															at0031, 	-- Primærlege
+															at0032]	-- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- VidereTiltakBehandling
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0017, 	-- Henvist for videre utredning/vurdering av behandling
+															at0018, 	-- Behandling ved samme institusjon
+															at0019, 	-- Behandling ved annen institusjon
+															at0020, 	-- Ingen videre behandling
+															at0026]	-- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- VidereTiltakKontroll
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0022, 	-- Henvist videre for utredning/vurdering av behandling
+															at0023, 	-- Ingen ytterligere tiltak
+															at0024]	-- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- SykehusOppfolging
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- SykehusOppfolgingSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- AvdelingSykehus
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {	-- AvdelingSykehusSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											CLUSTER[at0037] occurrences matches {0..1} matches {	-- Årsak ingen behandling
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0038] occurrences matches {0..1} matches {	-- FerdigBehandlet
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0039] occurrences matches {0..1} matches {	-- Pasientonske
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {	-- Komorbiditet
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0041] occurrences matches {0..1} matches {	-- Alder
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {	-- NedsattAT
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {	-- IkkeIndikasjonRetningslinjer
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0044] occurrences matches {0..1} matches {	-- AvansertKreftsykdom
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0045] occurrences matches {0..1} matches {	-- Doed
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0047] occurrences matches {0..1} matches {	-- Toksisitet
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0048] occurrences matches {0..1} matches {	-- BehandlingsplanGjennomfort
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0052] occurrences matches {0..1} matches {	-- BehandlingsplanGjennomfort
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0051] occurrences matches {0..1} matches {	-- Behandlingspause
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0053] occurrences matches {0..1} matches {	-- AnnenMedisinskAarsak
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0054] occurrences matches {0..1} matches {	-- AnnenAarsakIngenBehandling
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0055] occurrences matches {0..1} matches {	-- AnnenAarsakIngenBehandlingSpesifiser
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0056] occurrences matches {0..1} matches {	-- AarsakIngenBehandlingUkjent
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0057] occurrences matches {0..1} matches {	-- PlanlagtVidereBeh
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0058] occurrences matches {0..1} matches {	-- KirurgiVidereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0059] occurrences matches {0..1} matches {	-- StraaleVIdereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0060] occurrences matches {0..1} matches {	-- HormonVidereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0061] occurrences matches {0..1} matches {	-- KjemoVidereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0062] occurrences matches {0..1} matches {	-- RadioKjemoVidereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0063] occurrences matches {0..1} matches {	-- IkkeAvklartVidereBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0064] occurrences matches {0..1} matches {	-- AnnetViderBeh
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0066] occurrences matches {0..1} matches {	-- AnnetViderBehSpesifiser
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {[local::]}
+															}
+														}
+													}
+													ELEMENT[at0065] occurrences matches {0..1} matches {	-- VidereBehUkjent
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0067] occurrences matches {0..1} matches {	-- OppfolgingKontroll
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0068] occurrences matches {0..1} matches {	-- StedKontroll
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0069, 	-- Ja, samme sted
+															at0070, 	-- Annet sykehus
+															at0071, 	-- Ingen
+															at0072]	-- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- SykehusKontroll
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- SykehusKontrollSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											CLUSTER[at0075] occurrences matches {0..1} matches {	-- AarsakIngenKontroll
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0076] occurrences matches {0..1} matches {	-- AlderKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0077] occurrences matches {0..1} matches {	-- KreftsykdomKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0078] occurrences matches {0..1} matches {	-- PasientonskeKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0079] occurrences matches {0..1} matches {	-- FullfortBehandlingKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0080] occurrences matches {0..1} matches {	-- KomorbiditetKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0081] occurrences matches {0..1} matches {	-- DoedKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0082] occurrences matches {0..1} matches {	-- AnnenMedisinskAarsakKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0083] occurrences matches {0..1} matches {	-- AnnetKontroll
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0084] occurrences matches {0..1} matches {	-- AnnetKontrollSpesifiser
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0085] occurrences matches {0..1} matches {	-- KontrollUkjent
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Oppfølging">
+					description = <"Inneholder informasjon om videre tiltak og oppfølging">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"VidereTiltakUtredning">
+					description = <"Videre tiltak for utredningsmedinger">
+				>
+				["at0005"] = <
+					text = <"Henvist for videre utredning/vurdering av behandling">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Behandling ved samme institusjon">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Behandling ved annen institusjon">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Aktiv monitorering">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Direkte til reseksjon">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Forbehandling før planlagt reseksjon">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Palliativ tumorrettet behandling">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Palliativ kirurgisk behandling">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Ingen behandling uten metastaser">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Ingen behandling ved metastaser">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Ingen behandling">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"VidereTiltakBehandling">
+					description = <"Videre tiltak for behandlingsmeldinger">
+				>
+				["at0017"] = <
+					text = <"Henvist for videre utredning/vurdering av behandling">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Behandling ved samme institusjon">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Behandling ved annen institusjon">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Ingen videre behandling">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"VidereTiltakKontroll">
+					description = <"Videre tiltak for kontrollmeldinger">
+				>
+				["at0022"] = <
+					text = <"Henvist videre for utredning/vurdering av behandling">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Ingen ytterligere tiltak">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"VidereTiltakUtredning2">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Eget sykehus">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Onkologisk avdeling annet sykehus">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Kirurgisk avdeling annet sykehus">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Primærlege">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"SykehusOppfolging">
+					description = <"Sykehus hvor planlagt behandling skal foregå">
+				>
+				["at0034"] = <
+					text = <"AvdelingSykehus">
+					description = <"Avdeling hvor planlagt behandling skal foregå">
+				>
+				["at0035"] = <
+					text = <"SykehusOppfolgingSpesifiser">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"AvdelingSykehusSpesifiser">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Årsak ingen behandling">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"FerdigBehandlet">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Pasientonske">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Komorbiditet">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Alder">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"NedsattAT">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"IkkeIndikasjonRetningslinjer">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"AvansertKreftsykdom">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Doed">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"OppfolgingBehandling">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Toksisitet">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"BehandlingsplanGjennomfort">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Behandlingspause">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"BehandlingsplanGjennomfort">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"AnnenMedisinskAarsak">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"AnnenAarsakIngenBehandling">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"AnnenAarsakIngenBehandlingSpesifiser">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"AarsakIngenBehandlingUkjent">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"PlanlagtVidereBeh">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"KirurgiVidereBeh">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"StraaleVIdereBeh">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"HormonVidereBeh">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"KjemoVidereBeh">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"RadioKjemoVidereBeh">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"IkkeAvklartVidereBeh">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"AnnetViderBeh">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"VidereBehUkjent">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"AnnetViderBehSpesifiser">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"OppfolgingKontroll">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"StedKontroll">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Ja, samme sted">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Annet sykehus">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Ingen">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"SykehusKontroll">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"SykehusKontrollSpesifiser">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"AarsakIngenKontroll">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"AlderKontroll">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"KreftsykdomKontroll">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"PasientonskeKontroll">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"FullfortBehandlingKontroll">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"KomorbiditetKontroll">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"DoedKontroll">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"AnnenMedisinskAarsakKontroll">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"AnnetKontroll">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"AnnetKontrollSpesifiser">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"KontrollUkjent">
+					description = <"*">
+				>
+			>
+		>
+	>

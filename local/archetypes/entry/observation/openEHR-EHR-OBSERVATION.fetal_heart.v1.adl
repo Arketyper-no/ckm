@@ -1,0 +1,313 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.fetal_heart.v1
+
+concept
+	[at0000]	-- Fetal Heart Rate
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Ingrid Heitmann">
+				["organisation"] = <"NTNU and OUS">
+			>
+			accreditation = <"Registered Nurse">
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2011-12-20">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about the fetal heart rate via intermittent observations.">
+			use = <"Use to record the intermittent observations of the heart rate and heart beat characteristics of a fetus during pregnancy.
+
+Only to be used where the subject of care is the fetus.">
+			keywords = <"fetal", "heart", "beat", "rate", "rhythm">
+			misuse = <"Not to be used to record more the complex details required for intervals of electronic fetal heart monitoring - use the specialisation OBSERVATION.fetal_heart-monitoring instead.
+
+Not to be used for recording the heart rate of infants, children or adults.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å registrere detaljer om fosterets hjertelyd ved hjelp av periodiske observasjoner.">
+			use = <"Anvendes til å registrere periodiske observasjoner av fosterets hjertelyd og –frekvens i svangerskapet. 
+
+Skal kun anvendes når individet som skal måles er fosteret.">
+			keywords = <"foster", "hjerte", "slag", "frekvens", "rytme", "hjertelyd">
+			misuse = <"Skal ikke anvendes for å registrere komplekse intervallmålinger av fosterhjerterytme og –frekvens. Bruk da spesialiseringen OBSERVATION.fetal_heart-monitoring.
+Skal ikke anvendes for å registrere hjertelyd til nyfødte, barn eller voksne.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"CommitteeDraft">
+	other_contributors = <"Rita Apelt, Department of Health,NT, Australia", "Stephen Chu, NEHTA, Australia", "Margaret Cotter, AMSANT, Australia", "Tanya Gardner, CAAC, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Chunlan Ma, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jo Wright, NT Dept of Health, Australia (Editor)">
+	other_details = <
+		["references"] = <"SOGC Fetal health Surveillance: antepartum and intrapartum Consensus Guideline: http://www.sogc.org/guidelines/documents/gui197CPG0709r.pdf
+
+Intrapartum care: management and delivery of care to women in labour: http://www.nice.org.uk/nicemedia/live/11837/36275/36275.pdf">
+		["MD5-CAM-1.0.1"] = <"68C2C37D445A3BA8A7982840E3A42858">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Fosterhjertelyd
+		subject matches {
+			PARTY_RELATED matches {
+				relationship matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::3]}
+					}
+				}
+			}
+		}
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Uspesifisert hendelse
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Er hjertelyd tilstede?
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Frekvens
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::382]>
+												list = <
+													["1"] = <
+														units = <"/min">
+														magnitude = <|>=0.0|>
+														precision = <|0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Kommentar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Konklusjon
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0011] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Mors posisjon
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0013, 	-- Stående
+													at0014, 	-- Sittende
+													at0015, 	-- Tilbakelent
+													at0016, 	-- Liggende
+													at0017]	-- Liggende lent mot venstre
+												}
+											}
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Kompliserende faktorer i svangerskapet
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0018] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {	-- Måleapparat
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fetal Heart Rate">
+					description = <"Characteristics about the fetal heart rate.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Any unspecified event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Heart beat present?">
+					description = <"The fetal heart beat is detected.">
+					comment = <"Implied as true if fetal heart rate > 0.">
+				>
+				["at0005"] = <
+					text = <"Heart Rate">
+					description = <"The measured rate of the fetal heart.">
+				>
+				["at0009"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the fetal heart rate not captured in other fields.">
+				>
+				["at0010"] = <
+					text = <"Conclusion">
+					description = <"Concise and clinically contextualised narrative interpretation of the fetal heart rate.">
+					comment = <"For example, bradycardia or tachycardia.">
+				>
+				["at0011"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"Position of Mother">
+					description = <"The position of the mother when the fetal heart rate was measured.">
+				>
+				["at0013"] = <
+					text = <"Standing">
+					description = <"Mother standing at the time of fetal heart rate measurement.">
+				>
+				["at0014"] = <
+					text = <"Sitting">
+					description = <"Mother sitting at the time of fetail heart rate measurement.">
+				>
+				["at0015"] = <
+					text = <"Reclining">
+					description = <"Mother reclining at the time of fetal heart rate measurement.">
+				>
+				["at0016"] = <
+					text = <"Lying">
+					description = <"Lying flat at the time of fetal heart rate measurement.">
+				>
+				["at0017"] = <
+					text = <"Lying with tilt to left">
+					description = <"Mother lying flat with some lateral tilt towards the left.">
+				>
+				["at0018"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Maternal Confounding Factors">
+					description = <"Description of incidental maternal factors, not recorded elsewhere, that may be influencing the fetal heart rate measurement.">
+					comment = <"For example, maternal fever or exertion.">
+				>
+				["at0020"] = <
+					text = <"Device">
+					description = <"Details about the device used to detect the fetal heart rate. For example, Pinard's stethoscope or Doppler Ultrasound.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fosterhjertelyd">
+					description = <"Detaljer om fosterets hjertelyd.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Alle uspesifiserte hendelser.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Er hjertelyd tilstede?">
+					description = <"Fosterhjertelyd er funnet.">
+					comment = <"Merkes som sant dersom fosterets hjertelyd > 0.">
+				>
+				["at0005"] = <
+					text = <"Frekvens">
+					description = <"Den målte frekvensen av fosterets hjertelyd.">
+				>
+				["at0009"] = <
+					text = <"Kommentar">
+					description = <"Tilleggskommentarer vedrørende fosterets hjertelyd, som ikke kan dokumenteres i andre felt.">
+				>
+				["at0010"] = <
+					text = <"Konklusjon">
+					description = <"Kontekstualiserende, kortfattet beskrivelse av den kliniske vurdering av fosterets hjertelyd.">
+					comment = <"For eksempel, bradycardi eller tachycardi.">
+				>
+				["at0011"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"Mors posisjon">
+					description = <"Posisjonen til mor ved tidspunktet for målingen av fosterets hjertelyd.">
+				>
+				["at0013"] = <
+					text = <"Stående">
+					description = <"Mor er stående på tidspunktet for målingen av fosterets hjertelyd.">
+				>
+				["at0014"] = <
+					text = <"Sittende">
+					description = <"Mor sitter på tidspunktet for målingen av fosterets hjertelyd.">
+				>
+				["at0015"] = <
+					text = <"Tilbakelent">
+					description = <"Mor er tilbakelent på tidspunktet for målingen av fosterets hjertelyd.">
+				>
+				["at0016"] = <
+					text = <"Liggende">
+					description = <"Mor ligger flatt på tidspunktet for målingen av fosterets hjertelyd.">
+				>
+				["at0017"] = <
+					text = <"Liggende lent mot venstre">
+					description = <"Mor ligger flatt med noe lateral tilt, vinklet mot venstre side.">
+				>
+				["at0018"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Kompliserende faktorer i svangerskapet">
+					description = <"Beskrivelse av tilfeldige faktorer i svangerskapet, ikke registrert i andre felt, som kan ha en påvirkning på målingen av fosterets hjertelyd.">
+					comment = <"For eksempel, feber hos mor eller grad av anstrengelse.">
+				>
+				["at0020"] = <
+					text = <"Måleapparat">
+					description = <"Detaljer om måleapparat brukt til å måle fosterets hjertelyd. For eksempel jordmorstetoskop eller Doppler ultralydapparat.">
+				>
+			>
+		>
+	>

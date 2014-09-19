@@ -1,0 +1,115 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.patient_priority.v1
+
+concept
+	[at0000]	-- Prioritet
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2014-02-17">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Prioritet av pasient til Skadelegevakten ved OUS ">
+			use = <"For å prioritere pasient til Skadelegevakten ved OUS ">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"Prioritet av pasient til Skadelegevakten ved OUS ">
+			use = <"For å prioritere pasient til Skadelegevakten ved OUS ">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+
+definition
+    EVALUATION[at0000] matches {
+        data matches {
+            ITEM_TREE[at0001] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0002] occurrences matches {0..1} matches {
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0003,
+                                    at0004,
+                                    at0005]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prioritet">
+					description = <"Prioritet av pasient til Skadelegevakten ved OUS ">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Prioritet">
+					description = <"Prioritering av pasient ">
+				>
+				["at0003"] = <
+					text = <"1">
+					description = <"Prioritet 1">
+				>
+				["at0004"] = <
+					text = <"2">
+					description = <"Prioritet 2">
+				>
+				["at0005"] = <
+					text = <"3">
+					description = <"Prioritet 3">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prioritet">
+					description = <"Prioritet av pasient til Skadelegevakten ved OUS ">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Prioritet">
+					description = <"Prioritering av pasient ">
+				>
+				["at0003"] = <
+					text = <"1">
+					description = <"Prioritet 1">
+				>
+				["at0004"] = <
+					text = <"2">
+					description = <"Prioritet 2">
+				>
+				["at0005"] = <
+					text = <"3">
+					description = <"Prioritet 3">
+				>
+			>
+		>
+	>

@@ -1,0 +1,101 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.skjermingsvedtak.v1
+
+concept
+	[at0000]	-- Skjermingsvedtak
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Arne Løberg Sæter">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"asa@dips.no">
+		["date"] = <"2014-06-18">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Benyttes til dokumentasjon av skjerming i henhold til psykisk helsevernloven.">
+			use = <"Benyttes til dokumentasjon av skjerming i henhold til psykisk helsevernloven.">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E7DE83185C60126C74F4C57B66C98A81">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Skjermingsvedtak
+		ism_transition matches {
+			ISM_TRANSITION[at0004] matches {	-- Skjerming uten vedtak
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0004]}		-- Skjerming uten vedtak
+					}
+				}
+			}
+			ISM_TRANSITION[at0005] matches {	-- Skjerming med vedtak
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0005]}		-- Skjerming med vedtak
+					}
+				}
+			}
+			ISM_TRANSITION[at0006] matches {	-- Skjerming avsluttet
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0006]}		-- Skjerming avsluttet
+					}
+				}
+			}
+		}
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.om_skjermingsvedtak(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Skjermingsvedtak">
+					description = <"unknown">
+				>
+				["at0004"] = <
+					text = <"Skjerming uten vedtak">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Skjerming med vedtak">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Skjerming avsluttet">
+					description = <"">
+				>
+			>
+		>
+	>

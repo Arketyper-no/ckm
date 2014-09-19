@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>4cf56ade-62cd-474d-a2d0-27beb01445f9</id>
+  <name>Tvangsbehandling</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Kontakt" name="Vedtak om tvangsbehandling">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.vedta_tvangsbehandling.v1" concept_name="Vedta tvangsbehandling" max="1" min="1" path="/content" hide_on_form="true" annotation="ShowActionTime=false;">
+      <description xsi:type="ITEM_TREE" archetype_id="openEHR-EHR-ITEM_TREE.om_vedtak_om_us_og_behandling_uten_samtykke.v1" max="1" path="/description" hide_on_form="true">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1" concept_name="Vedtakstype" path="/items[at0002]/items[at0051]">
+          <Rule path="/items[at0008]">
+            <constraint xsi:type="ordinalConstraint">
+              <excludedValues>5|Vedtak om overføring til annen institusjon</excludedValues>
+              <excludedValues>6|Vedtak om overføring til annen tvangsform</excludedValues>
+              <excludedValues>7|Vedtak om overføring til annen tvangsform og annen institusjon</excludedValues>
+              <excludedValues>8|Vedtak om tvungen observasjon med døgnopphold</excludedValues>
+              <excludedValues>9|Vedtak om tvungen observasjon uten døgnopphold</excludedValues>
+              <excludedValues>10|Vedtak om opphør av tvungen observasjon</excludedValues>
+              <excludedValues>11|Vedtak om å ikke etablere tvungen observasjon</excludedValues>
+              <excludedValues>12|Vedtak om TPH med døgnopphold</excludedValues>
+              <excludedValues>13|Vedtak om TPH uten døgnopphold</excludedValues>
+              <excludedValues>14|Vedtak om opphør av tvungent psykisk helsevern</excludedValues>
+              <excludedValues>15|Vedtak om å ikke etablere psykisk helsevern</excludedValues>
+              <excludedValues>16|Skjerming av mindre inngripende karakter, jf. psykisk helsevernloven  4-3 annet ledd første punktum</excludedValues>
+              <excludedValues>17|Pasienten overføres til skjermet enhet eller liknende som innebærer en betydelig endring av vedkommendes omgivelser eller bevegelsesfrihet, jf. psykisk helsevernloven  4-3 annet ledd annet punktum</excludedValues>
+              <excludedValues>18|Mekaniske tvangsmidler som hindrer pasientens bevegelsesfrihet: Belter/remmer</excludedValues>
+              <excludedValues>19|Mekaniske tvangsmidler som hindrer pasientens bevegelsesfrihet: Skadeforebyggende spesialklær</excludedValues>
+              <excludedValues>20|Kortvarig anbringelse bak låst eller stengt dør uten personale til stede</excludedValues>
+              <excludedValues>21|Enkeltstående bruk av korttidsvirkende legemidler i beroligende eller bedøvende hensikt</excludedValues>
+              <excludedValues>22|Kortvarig fastholding</excludedValues>
+              <excludedValues>23|Vedtak om innskrenket forbindelse med omverdenen</excludedValues>
+              <excludedValues>24|Vedtak om åpning og kontroll av post</excludedValues>
+              <excludedValues>25|Vedtak om undersøkelse av rom og eiendeler og/eller kroppsvisitasjon</excludedValues>
+              <excludedValues>26|Vedtak om beslag og eventuell tilintetgjørelse</excludedValues>
+              <excludedValues>27|Vedtak om urinprøve</excludedValues>
+            </constraint>
+          </Rule>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.faglig_ansvarlig.v1" concept_name="Faglig ansvarlig" path="/items[at0054]/items[at0053]">
+          <Rule path="/items[at0001]" annotation="ShowAs=healthcarepartysearch;" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.uttalerett_og_klageadgang.v1" concept_name="Uttalerett og klageadgang" max="1" path="/items[at0050]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0002]/items[at0003]" annotation="ShowAs=checkbox;" />
+        </Items>
+        <Rule path="/items[at0002]" min="1" />
+        <Rule path="/items[at0002]/items[at0003]" min="1" />
+        <Rule path="/items[at0002]/items[at0003]/items[at0007]" annotation="ShowAs=checkbox;" />
+        <Rule path="/items[at0002]/items[at0003]/items[at0008]" annotation="ShowAs=checkbox;" />
+        <Rule path="/items[at0002]/items[at0003]/items[at0009]" min="1" />
+        <Rule path="/items[at0002]/items[at0003]/items[at0012]" min="1" />
+        <Rule path="/items[at0002]/items[at0003]/items[at0021]" min="1" />
+        <Rule path="/items[at0002]/items[at0028]" min="1" />
+        <Rule path="/items[at0031]/items[at0042]" annotation="ShowAs=checkbox;" />
+        <Rule path="/items[at0054]" hide_on_form="true" />
+      </description>
+    </Content>
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.vedtak_tvangsbehandling.v1" concept_name="Vedtak tvangsbehandling" max="1" min="1" path="/content" annotation="ShowNarrative=false;ShowStartTime=false;ShowExpiryTime=false;" />
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">0832C67F874EEE1A9ABC4C40F48CDB7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.vedta_tvangsbehandling.v1">
+    <digest id="MD5-CAM-1.0.1">A25F54ED62DA288B6168FE3402714438</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ITEM_TREE.om_vedtak_om_us_og_behandling_uten_samtykke.v1">
+    <digest id="MD5-CAM-1.0.1">EA53B6FFEE4A6ABCF5118F9990FF9395</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1">
+    <digest id="MD5-CAM-1.0.1">C34EC05E1F0BD9CCA25E80F50E5982E8</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.faglig_ansvarlig.v1">
+    <digest id="MD5-CAM-1.0.1">A97FABCF47155DB84B0517FF8BB8586B</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.uttalerett_og_klageadgang.v1">
+    <digest id="MD5-CAM-1.0.1">72EF1831B6CF081975DBDC8E3984C777</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-INSTRUCTION.vedtak_tvangsbehandling.v1">
+    <digest id="MD5-CAM-1.0.1">7E9B3486FDFD6D8871ADEFA5D333F72E</digest>
+  </integrity_checks>
+</template>

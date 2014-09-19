@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>a199c8e6-bce1-4196-b42f-a0a6cb8adefd</id>
+  <name>Mottaker av informasjon om tvang</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Kontakt" name="Mottaker av informasjon om tvang">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.mottaker_tvangsinformasjon.v1" concept_name="Mottaker av informasjon om tvang" path="/content" hide_on_form="true" annotation="ShowActionTime=false;">
+      <description xsi:type="ITEM_TREE" archetype_id="openEHR-EHR-ITEM_TREE.mottaker_informasjon_tvang.v1" max="1" path="/description" hide_on_form="true">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1" concept_name="Vedtakstype" path="/items[at0058]" />
+      </description>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">0832C67F874EEE1A9ABC4C40F48CDB7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.mottaker_tvangsinformasjon.v1">
+    <digest id="MD5-CAM-1.0.1">9B115DAF850BC7128E8DA3FF7164925D</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ITEM_TREE.mottaker_informasjon_tvang.v1">
+    <digest id="MD5-CAM-1.0.1">530FE837BB5BC07695BF0F0EC46986B1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1">
+    <digest id="MD5-CAM-1.0.1">C34EC05E1F0BD9CCA25E80F50E5982E8</digest>
+  </integrity_checks>
+</template>

@@ -1,0 +1,88 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.ultrasound_result.v1
+
+concept
+	[at0000]	-- Ultralydresultat
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Bergen Hospital Trust (Helse Bergen HF)">
+		["email"] = <"silje.ljosland.bakke@helse-bergen.no">
+		["date"] = <"2014-03-20">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å beskrive detaljerte funn fra en ultralydundersøkelse.">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E7227936DD2A79D1DCC3ADBCA8856419">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Ultralydresultat
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0002] occurrences matches {0..*} matches {	-- Ekkogenesitet
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0003] occurrences matches {0..1} matches {	-- Detaljert lokalisering
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location-precise(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+					ELEMENT[at0001] matches {	-- Ekkogenesitet
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::380]>
+								list = <
+									["1"] = <
+										units = <"1">
+									>
+								>
+							>
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- Organdetaljer
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ultralydresultat">
+					description = <"For å registrere detaljerte opplysninger fra en ultralydundersøkelse. Brukes i openEHR-EHR-OBSERVATION.imaging_exam.v1.">
+				>
+				["at0001"] = <
+					text = <"Ekkogenesitet">
+					description = <"Semikvantifisert vevstetthet av undersøkt organ.">
+				>
+				["at0002"] = <
+					text = <"Ekkogenesitet">
+					description = <"Ekkogenesitet beskrevet i tekst eller kvantitet.">
+				>
+				["at0003"] = <
+					text = <"Detaljert lokalisering">
+					description = <"Detaljert beskrivelse av lokalisering dersom nødvendig.">
+				>
+				["at0004"] = <
+					text = <"Organdetaljer">
+					description = <"Detaljerte funn ved undersøkt organ.">
+				>
+			>
+		>
+	>

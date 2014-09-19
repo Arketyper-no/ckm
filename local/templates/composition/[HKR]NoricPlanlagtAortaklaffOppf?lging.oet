@@ -1,0 +1,1114 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>61132fcb-e343-418b-9e78-bc8dfc375f8a</id>
+  <name>[HKR]NoricPlanlagtAortaklaffOppfølging</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Klinisk bakgrunn']/items[openEHR-EHR-OBSERVATION.height.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi pasientens høyde (estimert eller målt). Enklest er å spørre pasienten ved innkomst.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Klinisk bakgrunn']/items[openEHR-EHR-OBSERVATION.body_weight.v1]/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi pasientens vekt (estimert eller målt). Denne parameteren er obligatorisk, da vekt sammen med kreatinin (og alder) gjør at kreatininclearance kan regnes ut, hvilket bidrar til en mer korrekt beregning av pasientens bakgrunnsrisiko. Vi er vel kjent med problemet med å få korrekt vektopplysning på svært syke pasienter, men det er bedre med en omtrentlig estimert vekt enn ingen vekt i det hele tatt. I de få tilfellene der det absolutt ikke går an å få fram noen vekt, marker i boksen "Ukjent"</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Risikofaktorer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Røyking']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten røyker eller ikke. - Aldri røykt: aldri røykt. - Eks-røyker: Pasienten betraktes som eks-røyker dersom det har gått &gt; 1 mnd siden røykeslutt. Noen øvre grense (preskripsjonstid) finnes ikke. - Festrøykere betraktes som eks-røykere. - Røyker: Pasienten betraktes som røyker også ved eventuelt røykeslutt i løpet av siste måned før innleggelse/opphold på sykehus. - Ukjent: oppgis bare dersom opplysninger om røyking ikke går an å få tak i f.eks pga hjerneslag, demens eller at pas døde umiddelbart.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Risikofaktorer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Familiær belastning']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value> Førstegrads slektning (mannlig &lt; 55 år, kvinnelig &lt; 65 år) med kjent koronar hjertesykdom (tidligere ACB, PCI eller gjennomgått hjerteinfarkt)</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere hjerteinfarkt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har hatt minst et tidligere dokumentert hjerteinfarkt før innkomst. - Nei: pasienten har ikke hatt noen tidligere hjerteinfarkt. - Ja: pasienten har tidigere hatt hjerteinfarkt, hvilket år dokumentert i pasiententjournal, eller at pasienten selv oppgir at han/hun tidligere har hatt et hjerteinfarkt. Bekreft hjerteinfarkt selv om den har vært stumt, d.v.s. pasienten er uvitende om det men EKG eller ekkokardiografi viser tydlige infarktforandringer. - Ukjent: Det er ukjent om pasienten tidligere har hatt et hjerteinfarkt før innkomst.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Kjent nedsatt venstre ventrikkelfunksjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har en dokumentert nedsatt venstre ventrikkelfunksjon, f eks gjennom EKKO.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere PCI']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har fått gjort PCI (Percutaneous Coronary Intervention) av noen type før aktuelle innleggelse (ballongdilatasjon, atherectomi, stent eller annet)</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere ACB-operasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har fått gjort en ACB-operasjon (Aorta-Coronary-Bypass operasjon) før aktuell innleggelse.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere hjertesykdom']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Annen tidligere hjertekirurgi (ikke pacemaker)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har gjennomgått andre typer åpen hjertekirurgi enn ACB-operasjon før denne innleggelsen. Innlagt pacemaker skal noteres med "0 = Nei". - Nei: ingen tidligere hjertekirurgi - Annen hjertekirurgi kan være: Trauma, PostinfarktVSD, Myxom, Venstrekammerinngrep, Perikardektomi mm</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hypertoni']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Medikamentell behandling mot hypertoni nå eller tidligere</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere hjerneslag (ikke TIA)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har hatt et ischemisk hjerneslag eller blødning. Ikke TIA.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Perifer karsykdom']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Ekstrakardiell karsykdom. En eller flere av følgende: Claudicatio, Carotisokklusjon el &gt; 50% stenose, tidligere eller planlagt inngrep på bukaorta, ekstremitetsarterier eller carotider</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Tidligere sykdommer']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har en kjent diabetes, uavhengig av hvilken behandling som gis.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes behandling insulin']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt insulin før sykehusinnleggelsen. - - Nedenfor finnes noen Insulinpreparat listet opp. - - Actrapid, Apidra, Humulin, Humalog, Insulatard, Insuman, Lantus, Levemir, NovoMix, Novo Rapid.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Medikamenter ved ankomst']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Statiner']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten regelmessig har tatt statiner før sykehusinnleggelsen. - - OBS inndelingen av Lipidsenkere i Statiner og Øvrige Lipidsenkere. - - Nedenfor finnes noen Statiner listet opp: - - Crestor, Lescol, Lipitor, Lovastatin, Pravastatin, Pravachol, Simvastatin, Zocor.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Fullfør registreringen']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Generell fri kommentar, max 2000 tegn.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Grunnopplysninger']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Dato den aktuelle prosedyren ble gjennomført.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Grunnopplysninger']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Registreringstype']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Kontroller hvilken prosedyre du vil gjøre. Alternativ tre er eneste intressante ved etterregistering når man vet resultatet av angio, ellers skjer omskriving automatisk om den primære beslutningen settes til PCI ad hoc. - - En prosedyre regnes som PCI selv om bare en guidewire har vært ute i en kransåre.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere PCI']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har gjort en PCI</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Diabetes']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten har en kjent diabetes, uavhengig av hvilken behandling som gis, også om den bare er kostregulert.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Insulin']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten bruker insulin eller ikke.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere hjerneslag (ikke TIA)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten tidligere har hatt et ischemisk hjerneslag eller blødning. Ikke TIA.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Røyking']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om pasienten røyker eller ikke. Pasienten betraktes som eks-røyker dersom det har gått &gt; 1 mnd siden røykeslutt. Noen øvre grense (preskripsjonstid) finnes ikke. </value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Behandlet hypertoni']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Medikamentell behandling pga hypertoni nå eller tidligere.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Kliniske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Tidligere infarkt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Før aktuell behandling. Bekreft hjerteinfarkt selv om det har vært stumt dvs. pasienten ikke er klar over det, men EKG eller ekkokardiografi viser tydlige infarktforandringer.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Angiografør']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Angiografører legges til pr enhet av en bruker med LC (Local Coordinator) rolle. Hvis en person mangler må de legges inn via Adminstrere menyen.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Laboratorieassistent']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Laboratorieassistent ved PCI</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Indikasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Grunnen til at undersøkelsen gjøres. - Bare hovedindikasjon. - Stabil angina: - Typisk eller trolig symptomatisk angina pectoris (definitiv angina eller sannsynlig angina iht. CASS). - Ustabilt koronarsyndrom (NSTEMI/UAP): - Typiske symptom med/uten nye EKG-forandringer og med/uten lett forhøyede infarktmarkører. - Symptom: - • kjent angina som i løpet av de siste 4 ukene har markert endret karakter; blitt daglige, mer lettutløst, mer langvarig, reagerer dårlig på nitroglycerin eller kommer i hvile - • nyoppstått angina med progredierende symptom i løpet av de siste 4 ukene - • lettutløst angina pectoris i løpet av de 4 første ukene etter akutt hjerteinfarkt - • forbigående eller vedvarende ST- og/eller T-veggforandringer uten Q- veggutvikling eller R- veggtap - • biokjemiske markører eventuelt stigende men ikke slik at definisjonen for infarkt oppfylles. - ST-elevasjon infarkt/Direkte PCI: - ST-elevasjon eller nytilkommet venstre grenblokk og samtidig mistanke om pågående ischemi. - ST-elevasjons infarkt/Rescue PCI: - Etter mislykket trombolyse. Mistanke om gjenværende eller tilbakevendende (innen ett døgn) ST-elevasjon og mistanke om pågående ischemi. - ST-elevasjons infarkt uten pågaående ischemi: - Der angiografien gjøres for risikovurdering eller PCI hovedsakelig gjøres for risikominimering. Angina etter ST-elevasjonsinfarkt referer til ustabil kransåresykdom. - Hjertestans: - Hjertestans som ikke oppfyller annen indikasjon.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Stikksted']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Stikksted.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Canadian Class']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Bare ved stabil kransåresykdom (symptomatisk angina pectoris). - - Canadian Class I: - Normal fysisk aktivitet utløser ikke angina, f eks gange på flat mark eller i trapper. Angina utløses av kraftig eller plutselig eller langvarig anstrengelse. - - Canadian Class II: - Lett begrensning av normal fysisk aktivitet. Angina ved rask gange i oppoverbakker, ved anstrengelse etter måltider eller i kaldt/blåsende vær eller ved emosjonell belastning eller bare i de første timene etter oppvåking Kan - gå mer enn 2 kvarter på flat mark eller mer enn en trappe i normalt tempo under normale ytre forutsetninger. - - Canadian Class III: - Tydelig begrensning av normal fysisk aktivitet, f eks gange 1-2 kvarter på flat mark eller en trappe i normalt tempo under normale ytre forutsetninger. - - Canadian Class IV: - Kan ikke gjøre noen fysisk aktivitet uten brystsmerter og angina kan også opptre i hvile. Ref: Circulation 1976 54:522-3.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='NYHA klasse']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>New York Heart Association spesielt med tanke på dyspnoe og kraftløshet . - - NYHA Class I: - Ingen symptomer ved normal aktivitet, eventuelt symptomer bare ved kraftige anstrengelser. - - NYHA Class II: - Milde symptomer og lett begrensning av vanlig aktivitet. - - NYHA Class III: - Markert begrensing i aktivitet på grunn av symptomer, også ved mindre enn vanlige anstrengelser som å gå kortere avstander eller lett innendørs aktivitet. - - NYHA Class IV: - Betydelige begrensninger av aktivitet. Symptomer ved minste anstrengelser, evetuelt i hvile.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Myokardskademarkør']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Bare ved indikasjonen ustabil kransåresykdom. - Ved aktuell sykdomstart CKMB, Troponin T eller I over lokalt referansområde.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='ST-segment senkning']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Bare ved indikasjonen ustabil kransåresykdom. - Accentuering, nytilkommet eller tidligere ukjent, minst 1 mm (0,1 mV) på hvile - EKG, en avledning holder.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Symptomdebut']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi dato og klokkeslett for symptomdebut som førte til at pasienten oppsøkte medisinsk behandling. - • Ved gjentatte smertetilfeller skal siste smerte-episode oppgis eller - • da symptomene økte så pass at de fikk pasienten til å søke behandling. - Ved symptom som varer lengre enn 3 døgn og ikke forverres, er nøyaktig tidspunkt mindre viktig.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografiske bakgrunnsdata']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Beslutningsutløsende EKG']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>1. Refererer i første omgang til dato og tidspunkt for det EKG som ligger til grunn for beslutningen om revaskularisering (EKG tatt i ambulanse, hos fastlege, på akuttmottak eller avd. som pasienten overflyttes fra). - &lt;b&gt;2. I øvrige tilfeller gjelder dato og tid for Ambulanse EKG.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Annen diagnostikk ved angiografi']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='FFR']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Intrakoronar trykkmåling.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Annen diagnostikk ved angiografi']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Doppler']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Intracoronar dopplerregistrering.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Annen diagnostikk ved angiografi']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='IVUS']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Intracoronar ultralydsundersøkelse.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Annen diagnostikk ved angiografi']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='OCT']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Optical coherence tomography(OCT)</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Annen diagnostikk ved angiografi']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Annen']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Annen</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='PCI']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Operatør']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Hovedoperatør ved PCI</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='PCI']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Laboratorieassistent']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Laboratorieassistent ved PCI</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Labnummer']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Labnummer skal angi hvilken lab som er brukt. </value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Stråledose (µGym^2)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Total stråledose, inkluderer gjennomlysning og eksponeringsdose. OBS hvis stråledosen på laben er angitt i mGycm^2, må denne multipliseres med 0,1 før den legges inn - altså flytte komma en plass til venstre.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Gjennomlysningstid (mmm:ss)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgis på formen m:ss, mm:ss, mmm:ss eller ss. Det går også an å skrive mss, mmss eller mmmss. - - Tenk på at de to siste sifferne alltid er sekunder.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Kontrastmiddelsmengde (ml)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Til pasienten gitt mengde i (ml). - Total mengde røntgenkontrastmiddel som gis til pasienten. Inkluderer også kontrastmiddel som gis ved eks. vis samtidig venstrekammerangiografi.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Annen kontrastmiddels undersøkelse']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi om annen kontrastmiddelsundersøkelse har skjedd samtidig. Mengden av kontrastmiddel inkluderes under kontrastmiddelsmengde.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Komplett revaskularisering']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Høyst ca 10 % av venstrekammeret forsynes av stenoserende kransåre (minst 60% - diameterstenose) Ref:Cowley MJ, Vandermael M, Topol EJ, Whitlow PL, Dean LS, - Bulle TM og Ellis SG. J Am Coll Cardiol 1993: 22: 1289-97.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Prosedyredata']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Arteriell lukning']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>OBS! Om pasienten går til sengepost med gjenværende arteriehylse som skal fjernes etter noen timer så skal "Gjenværende arteriehylse" markeres.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Allergisk reaksjon lett/moderat']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Ikke direkte livstruende, ikke varige men eller Ikke forlenget opphold.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Allergisk reaksjon alvorlig']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Livstruende, varige men eller krever forlenget opphold. Eks. anafylaktisk sjokk.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hemodynamisk komplikasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Gjelder ikke enklere vasovagal reaksjon, der pasienten er upåvirket når han/hun forlater - lab.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Vaskulær (men ikke koronare kar)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>(bare ikke koronare kar) Bare om behandlingskrevende, forlenger sykehusinnleggelsen - eller gir permanent men for pasienten.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Vedvarende sidegrensokklusjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Ocklusin av sidegren som bedømmes som større enn 1 mm i diameter eller som resulterer i signifikant arytmi som AV blokk 2-3 eller sinusarrest.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Perforasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Blødning eller kontrastpassasje gjenom kransåreveggen.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjon på Lab']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Prosedyrerelatert død']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Død på angiolab prosedyre-relatert.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Angiografi - Angiografiske funn']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>I følge angiograførens bedømmelse, signifikante lesjoner i 0 - 3 av de native kransårene (LAD, LCX og RCA) respektive i hovedstammen, før eventuell prosedyre. - Eksempel på effekt av tidligere kransåre-intervensjon: - 3-karsyk pasient som har gjennomgått ACB med graft til samtlige karpartier defineres fremdeles som 3-karsyk. Tidligere 2-karsyk pasient som tidligere har fått samtlige stenoser PCI-behandlet og som nå har et gjenværende godt resultat (uten signifikante stenoser) defineres nå som normalt / ateromatos. - Ved PCI og om bare ufullstendig angiografi gjøres ved dette tilfellet, hent kompletterende informasjon fra tidligere angiografi. - Fyll inn kransårebildet og/eller Funn variabelen. Om det finnes data fra både bilde og Funn variabel, så er det variabelen som anvendes i analysen. - Kransårebildet må utfylles om man forventer en utskrift av undersøkelse med funn. Det er dessuten bra om bildet er komplett utfylt. Bruk med fordel den grønne knappen først for da normalstilles alle kransårene. Endre deretter de som ikke er normale. - Det går ikke an å markere en ikke-konklusiv undersøkelse i bildet. Bruk istedet Funn variabelen i dette tilfellet.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner på avdelingen']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Komplikasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Komplikasjon(er) eller uønsket hendelse som nedefor, på avdeling.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner på avdelingen']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Vaskulær']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Intervensjonskrevende komplikasjon</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='EQ-5D score']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Automatisk utregnet</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Perkutane aortaklaffer']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Dato for prosedyre']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Angir dato når prosedyren gjøres alternativ dato da beslutningen om annen behandling ble tatt. Bør være samme dato som beslutningsdato ovenfor i det siste tilfellet.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='EKKO funn']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Høyre ventrikkeltrykk (mmHg)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Hvis høyre ventrikkeltrykk ikke kan måles men antas å være lavt, angis verdien 0.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Aktuell preoperativ status']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='NYHA klasse']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi mest passende alternativ, av alt. 0-9. - (1) I = helt upåvirket, - (2) II = tretthet/dyspné eller andre hjertesviktssymptomer ved moderat anstrengelse f.eks. bare ved rask gange eller ved gange i bakker, - (3) III = tretthet/dyspné eller andre hjertesviktssymptomer ved lettere anstrengelse f.eks. på flat mark, - (4) IV = tretthet/dyspné eller andre hjertesviktsymptomer i hvile eller ved den minste anstrengelse, - 9 = Ukjent</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Mobilitet']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal pasienten oppgi hvilken påstand som best beskriver hans/hennes bevegelsesevne &lt;B&gt;i dag&lt;/B&gt;. - 1 = går uten vanskelighet - 2 = kan gå med noen vansker - 3 = er sengeliggende</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hygiene']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal pasienten oppgi hvilket utsagn som best beskriver hans/hennes evne til å ivareta sin daglig hygiene&lt;B&gt;i dag&lt;/B&gt;. - 1 = ingen behov for hjelp til personlig stell - 2 = har noe behov for hjelp til personlig stell - 3 = har stort behov for hjelp til personlig stell</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Aktiviteter']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal pasienten oppgi hvilken utsagn som best beskriver hans/hennes aktiviteter &lt;B&gt;i dag&lt;/B&gt;. - 1 = klarer av sine daglige aktiviteter - 2 = har noen problem med å klare av sine daglige aktiviteter - 3 = klarer ikke av sine daglige aktiviteter</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Smerter/ubehag']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal pasienten oppgi hvilket utsagn som best beskriver hans/hennes helsetilstand &lt;B&gt;i dag&lt;/B&gt;. - 1 = ingen smerter/ubehag - 2 = moderate smerter/ubehag - 3 = sterke smerter/ubehag</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Angst/depresjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Her skal pasienten oppgi hvilket utsagn som best beskriver hans/hennes helsetilstand&lt;B&gt;i dag&lt;/B&gt;. - 1 = ingen angst eller nedstemthet - 2 = noe angst eller nedstemthet - 3 = høy grad av angst eller nedstemthet</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Livskvalitet iflg EQ-5D']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Nåværende helsetilstand']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Pasienten skal angi en verdi mellom 0 og 100 der 0 = verst tenkelige helsetilstand og 100 = best tenkelige helsetilstand</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Postoperative EKKO-funn']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Høyrekammertrykk (mm Hg)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Hvis høyre ventrikkeltrykk ikke kan måles men antas å være lavt, angis verdien 0.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Postoperative EKKO-funn']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Mitralinsuffisiens']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>0 = Ingen - I = Lett - II = Moderat - III = Betydelig - IV = Alvorlig med lungereversering</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Oppfølging Aorta']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='NYHA klasse']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Oppgi mest passende alternativ, av alt. 0-9. - (1) I = helt upåvirket, - (2) II = tretthet/dyspné eller andre hjertesviktssymptomer ved moderat anstrengelse f.eks. bare ved rask gange eller ved gange i bakker, - (3) III = tretthet/dyspné eller andre hjertesviktssymptomer ved lettere anstrengelse f.eks. på flat mark, - (4) IV = tretthet/dyspné eller andre hjertesviktsymptomer i hvile eller ved den minste anstrengelse, - 9 = Ukjent</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='EKKO funn']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Venstre ventrikkel funksjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Normal: EF &gt;= 50% - Lett nedsatt: EF 40 - 49% - Moderat nedsatt: EF 30 -39% - Betydelig nedsatt: EF 21-29% - Alvorlig nedsatt: EF &lt;= 20%</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='EKKO funn']/items[openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1 and name/value='Høyrekammertrykk (mm Hg)']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Hvis høyre ventrikkeltrykk ikke kan måles men antas å være lavt, angis verdien 0</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Komplikasjon']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Noen komplikasjoner i det hele tatt eller uønskete hendelser som listet nedenfor</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Dialyse – nyresvikt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Nytilkommet dialysebehov siden forrige kontroll.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Endokarditt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Behandlingskrevende endokarditt siden forrige kontroll.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hjerteinfarkt']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Nytilkommet diagnostisert hjerteinfarkt siden siste kontroll.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Hjerneslag']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Nytilkommet hjerneslag siden forrige kontroll.</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-SECTION.adhoc.v1 and name/value='Komplikasjoner']/items[openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1 and name/value='Pacemaker']/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Nytilkommet permanent pacemaker siden forrige kontroll.</value>
+      </item>
+    </items>
+  </annotations>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Encounter" name="Noric planlagt - Aortaklaff Oppfølging">
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Oppfølging Aorta">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Avdød" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Avdød">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Oppfølgingsdato" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Oppfølgingsdato">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Date_Time</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="NYHA klasse" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="NYHA klasse">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - I</includedValues>
+            <includedValues>2 - II</includedValues>
+            <includedValues>3 - III</includedValues>
+            <includedValues>4 - IV</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="6 min gangtest (meter)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="6 min gangtest (meter)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>m</includedUnits>
+            <unitMagnitude>
+              <unit>m</unit>
+              <maxMagnitude>2000</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <precision>0</precision>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="proBNP før (pmol/L)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="proBNP før (pmol/L)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>{AMOUNT (mole)/VOLUME}</includedUnits>
+            <unitMagnitude>
+              <unit>{AMOUNT (mole)/VOLUME}</unit>
+              <maxMagnitude>35000</maxMagnitude>
+              <minMagnitude>10</minMagnitude>
+              <precision>0</precision>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="EKKO funn">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Maxgradient (mm Hg)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Maxgradient (mm Hg)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>mm[Hg]</includedUnits>
+            <unitMagnitude>
+              <unit>mm[Hg]</unit>
+              <maxMagnitude>200</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Max hastighet (m/s)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Max hastighet (m/s)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>m/s</includedUnits>
+            <unitMagnitude>
+              <unit>m/s</unit>
+              <maxMagnitude>8</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <precision>0</precision>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Middelgradient (mm Hg)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Middelgradient (mm Hg)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>mm[Hg]</includedUnits>
+            <unitMagnitude>
+              <unit>mm[Hg]</unit>
+              <maxMagnitude>200</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Venstre ventrikkel funksjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Venstre ventrikkel funksjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - Normal</includedValues>
+            <includedValues>2 - Lett nedsatt: EF 40 - 49%</includedValues>
+            <includedValues>3 - Moderat nedsatt: EF 30 - 39%</includedValues>
+            <includedValues>4 - Betydelig nedsatt: EF 21 - 29%</includedValues>
+            <includedValues>5 - Alvorlig nedsatt: EF &lt;= 20%</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Høyre ventrikkeltrykk (mmHg)" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Høyre ventrikkeltrykk (mmHg)">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>mm[Hg]</includedUnits>
+            <unitMagnitude>
+              <unit>mm[Hg]</unit>
+              <maxMagnitude>100</maxMagnitude>
+              <minMagnitude>0</minMagnitude>
+              <includesMaximum>true</includesMaximum>
+              <includesMinimum>true</includesMinimum>
+            </unitMagnitude>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Aortainsuffisiens" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Aortainsuffisiens">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - 0</includedValues>
+            <includedValues>1 - I</includedValues>
+            <includedValues>2 - II</includedValues>
+            <includedValues>3 - III</includedValues>
+            <includedValues>4 - IV</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Mitralinsuffisiens" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Mitralinsuffisiens">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - 0</includedValues>
+            <includedValues>1 - I</includedValues>
+            <includedValues>2 - II</includedValues>
+            <includedValues>3 - III</includedValues>
+            <includedValues>4 - IV</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Livskvalitet iflg EQ-5D">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Mobilitet" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Mobilitet">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - En (1)</includedValues>
+            <includedValues>2 - To (2)</includedValues>
+            <includedValues>3 - Tre (3)</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Hygiene" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Hygiene">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - En (1)</includedValues>
+            <includedValues>2 - To (2)</includedValues>
+            <includedValues>3 - Tre (3)</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Aktiviteter" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Aktiviteter">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - En (1)</includedValues>
+            <includedValues>2 - To (2)</includedValues>
+            <includedValues>3 - Tre (3)</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Smerter/ubehag" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Smerter/ubehag">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - En (1)</includedValues>
+            <includedValues>2 - To (2)</includedValues>
+            <includedValues>3 - Tre (3)</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Angst/depresjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Angst/depresjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>1 - En (1)</includedValues>
+            <includedValues>2 - To (2)</includedValues>
+            <includedValues>3 - Tre (3)</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="Nåværende helsetilstand" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Nåværende helsetilstand">
+          <constraint xsi:type="countConstraint">
+            <maxMagnitude>100</maxMagnitude>
+            <minMagnitude>0</minMagnitude>
+            <includesMaximum>true</includesMaximum>
+            <includesMinimum>true</includesMinimum>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1" concept_name="Enkel numerisk registrering" max="1" path="/items" name="EQ-5D score" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="EQ-5D score">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Komplikasjoner">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Komplikasjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Komplikasjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Endokarditt" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Endokarditt">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Dialyse – nyresvikt" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Dialyse – nyresvikt">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Hjerteinfarkt" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Hjerteinfarkt">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Hjerneslag" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Hjerneslag">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Pacemaker" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Pacemaker">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Klaffeprotese dysfunksjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Klaffeprotese dysfunksjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Sen karkomplikasjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Sen karkomplikasjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Annen alvorlig komplikasjon" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Annen alvorlig komplikasjon">
+          <constraint xsi:type="textConstraint">
+            <includedValues>0 - Nei</includedValues>
+            <includedValues>1 - Ja</includedValues>
+            <includedValues>9 - Ukjent</includedValues>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Fullfør registreringen">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1" concept_name="Enkelt svar med forklaring" max="1" path="/items" name="Kommentar til eget bruk:" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="1" name="Kommentar til eget bruk:">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+      </Item>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">747EB21D627718468D04F2F1EFE43A80</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-SECTION.adhoc.v1">
+    <digest id="MD5-CAM-1.0.1">6FD3128A583EB7081153D0265245E1FA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkelt_svar_med_forklaring.v1">
+    <digest id="MD5-CAM-1.0.1">67AFBDABDCF91AB1D5E45CF7A1FDA7A0</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.enkel_numerisk_registrering.v1">
+    <digest id="MD5-CAM-1.0.1">1F79B3AA7D3C424DBD8B67C79956E4C4</digest>
+  </integrity_checks>
+</template>

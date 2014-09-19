@@ -1,0 +1,854 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.sykdomsutbredelse.v1
+
+concept
+	[at0000]	-- Sykdomsutbredelse
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ikke kjent ">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"5021DDC7873BAB0169C450B68F15189D">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Sykdomsutbredelse
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0005] occurrences matches {0..1} matches {	-- Tumor
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- IngenInnvekst
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											CLUSTER[at0007] occurrences matches {0..1} matches {	-- Innvekst
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0061] occurrences matches {0..1} matches {	-- InnvekstSpesifiser
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Gjennomvekst
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0010] occurrences matches {0..1} matches {	-- TumorUkjent
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0011, 	-- Ikke avkrysset
+															at0012]	-- Avkrysset
+														}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- StorrelsePrimaertumor
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::497]>
+														list = <
+															["1"] = <
+																units = <"'">
+																magnitude = <|0.0..999.9|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0013] occurrences matches {0..1} matches {	-- Lymfeknuter
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- IngenLK
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- RegionaleLK
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- RegionaleLKSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- FjerneLK
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- FjerneLKSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {	-- LymfeknuterUkjent
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0019, 	-- Ikke avkrysset
+															at0020]	-- Avkrysset
+														}
+													}
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- StorrelseLK
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::497]>
+														list = <
+															["1"] = <
+																units = <"'">
+																magnitude = <|0.0..999.9|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0022] occurrences matches {0..1} matches {	-- Fjernmetastaser
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- IngenFjernmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Skjelettmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {	-- Levermet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- Lungemet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {	-- Hjernemet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {	-- Bekkenmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0029] occurrences matches {0..1} matches {	-- UtenforBekkenmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Peritoneummet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Hudmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {	-- AnnetFjernmet
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- AnnetFjernmetSpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- StorrelseFjernmet
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::497]>
+														list = <
+															["1"] = <
+																units = <"'">
+																magnitude = <|0.0..999.9|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- FjernmetUkjent
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0035] occurrences matches {0..1} matches {	-- Utredningmetode
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0039] occurrences matches {0..1} matches {	-- UtredningsmetodePrimaer
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0036] occurrences matches {0..1} matches {	-- Bildediagnostikk
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0037] occurrences matches {0..1} matches {	-- ULPrimaer
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {	-- CTPrimaer
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0041] occurrences matches {0..1} matches {	-- MRPrimaer
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {	-- AnnenDiagnostikkPrimaer
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {	-- DiagnostikkPrimaerUkjent
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0080, 	-- Ikke avkrysset
+																	at0081]	-- Avkrysset
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0044] occurrences matches {0..1} matches {	-- UtredningsmetodeMetastaser
+												items cardinality matches {1..*; unordered} matches {
+													CLUSTER[at0045] occurrences matches {0..1} matches {	-- UtredningsmetodeLK
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0047] occurrences matches {0..1} matches {	-- BildediagnostikkLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0046] occurrences matches {0..1} matches {	-- ULLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0048] occurrences matches {0..1} matches {	-- CTLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															CLUSTER[at0049] occurrences matches {0..1} matches {*}
+															ELEMENT[at0050] occurrences matches {0..1} matches {	-- CytolgiLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0051] occurrences matches {0..1} matches {	-- BiopsiLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0052] occurrences matches {0..1} matches {	-- ReseksjonLK
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0053] occurrences matches {0..1} matches {	-- Lymfadenektomi
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0077] occurrences matches {0..1} matches {	-- UtredningsmetodeLKUkjent
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0078, 	-- Ikke avkrysset
+																			at0079]	-- Avkrysset
+																		}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0054] occurrences matches {0..1} matches {	-- UtredningsmetodeFjernmet
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0055] occurrences matches {0..1} matches {	-- BildediagnostikkMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0056] occurrences matches {0..1} matches {	-- ULMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0057] occurrences matches {0..1} matches {	-- MRMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0068] occurrences matches {0..1} matches {	-- CTMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0058] occurrences matches {0..1} matches {	-- PETMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0059] occurrences matches {0..1} matches {	-- SkjelettscintigrafiMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0060] occurrences matches {0..1} matches {	-- RtgThoraxMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0069] occurrences matches {0..1} matches {	-- RtgBekkenMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0070] occurrences matches {0..1} matches {	-- CytologiMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0071] occurrences matches {0..1} matches {	-- BiopsiMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0072] occurrences matches {0..1} matches {	-- ReseksjonMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0073] occurrences matches {0..1} matches {	-- AnnenDiagnostikkMet
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0074] occurrences matches {0..1} matches {	-- UtredningsmetodeFjernmetUkjent
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0075, 	-- Ikke avkrysset
+																			at0076]	-- Avkrysset
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0082] occurrences matches {0..1} matches {	-- ResultatSkjelettscintigrafi
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0083, 	-- Positive funn
+																			at0084, 	-- Negative funn
+																			at0085, 	-- Usikkert funn
+																			at0086]	-- Ukjent
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0087] occurrences matches {0..1} matches {	-- ResultatBildediagnostikk
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0088, 	-- Positive funn
+																			at0089, 	-- Negative funn
+																			at0090, 	-- Usikkert funn
+																			at0091]	-- Ukjent
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sykdomsutbredelse">
+					description = <"Sykdomsutbredelse på diagnosetidspunktet">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Tumor">
+					description = <"Tumors vekstmønster">
+				>
+				["at0006"] = <
+					text = <"IngenInnvekst">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Innvekst">
+					description = <"Innvekst i naboorgan/struktur">
+				>
+				["at0009"] = <
+					text = <"Gjennomvekst">
+					description = <"Gjennomvekst av naturlig organbegrensning">
+				>
+				["at0010"] = <
+					text = <"TumorUkjent">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0012"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0013"] = <
+					text = <"Lymfeknuter">
+					description = <"Lokalisasjon lymfeknutemetastaser">
+				>
+				["at0014"] = <
+					text = <"IngenLK">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"StorrelsePrimaertumor">
+					description = <"Største diameter primærtumor, målt i mm">
+				>
+				["at0016"] = <
+					text = <"RegionaleLK">
+					description = <"Regionale lymfeknuter">
+				>
+				["at0017"] = <
+					text = <"FjerneLK">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"LymfeknuterUkjent">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0020"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0021"] = <
+					text = <"StorrelseLK">
+					description = <"Diameter på største lymfeknutemetastase, målt i mm">
+				>
+				["at0022"] = <
+					text = <"Fjernmetastaser">
+					description = <"Lokalisasjon fjernmetastaser">
+				>
+				["at0023"] = <
+					text = <"IngenFjernmet">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Skjelettmet">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Levermet">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Hjernemet">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Lungemet">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Bekkenmet">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"UtenforBekkenmet">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"AnnetFjernmet">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"AnnetFjernmetSpesifiser">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"FjernmetUkjent">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"StorrelseFjernmet">
+					description = <"Diameter på største fjernmetastase, målt i mm">
+				>
+				["at0035"] = <
+					text = <"Utredningmetode">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Bildediagnostikk">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"ULPrimaer">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"UtredningsmetodePrimaer">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"CTPrimaer">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"MRPrimaer">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"AnnenDiagnostikkPrimaer">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"DiagnostikkPrimaerUkjent">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"UtredningsmetodeMetastaser">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"UtredningsmetodeLK">
+					description = <"Utredningsmetode for lymfeknutemetastaser">
+				>
+				["at0046"] = <
+					text = <"ULLK">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"BildediagnostikkLK">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"CTLK">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"MRLK">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"CytolgiLK">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"BiopsiLK">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"ReseksjonLK">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Lymfadenektomi">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"UtredningsmetodeFjernmet">
+					description = <"Utredningsmetode for fjernmetastaser">
+				>
+				["at0055"] = <
+					text = <"BildediagnostikkMet">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"ULMet">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"MRMet">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"PETMet">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"SkjelettscintigrafiMet">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"RtgThoraxMet">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"InnvekstSpesifiser">
+					description = <"Hvilket naboorgan">
+				>
+				["at0062"] = <
+					text = <"RegionaleLKSpesifiser">
+					description = <"Lokalisasjon regionale lymfeknuter">
+				>
+				["at0063"] = <
+					text = <"FjerneLKSpesifiser">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Peritoneummet">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Hudmet">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"CTMet">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"RtgBekkenMet">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"CytologiMet">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"BiopsiMet">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"ReseksjonMet">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"AnnenDiagnostikkMet">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"UtredningsmetodeFjernmetUkjent">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0076"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0077"] = <
+					text = <"UtredningsmetodeLKUkjent">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0079"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0080"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+				["at0081"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0082"] = <
+					text = <"ResultatSkjelettscintigrafi">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Positive funn">
+					description = <"Positive funn">
+				>
+				["at0084"] = <
+					text = <"Negative funn">
+					description = <"Negative funn">
+				>
+				["at0085"] = <
+					text = <"Usikkert funn">
+					description = <"Usikkert funn">
+				>
+				["at0086"] = <
+					text = <"Ukjent">
+					description = <"Ukjent">
+				>
+				["at0087"] = <
+					text = <"ResultatBildediagnostikk">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Positive funn">
+					description = <"Positive funn">
+				>
+				["at0089"] = <
+					text = <"Negative funn">
+					description = <"Negative funn">
+				>
+				["at0090"] = <
+					text = <"Usikkert funn">
+					description = <"Usikkert funn">
+				>
+				["at0091"] = <
+					text = <"Ukjent">
+					description = <"Ukjent">
+				>
+			>
+		>
+	>

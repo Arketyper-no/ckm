@@ -1,0 +1,266 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.om_tvangsmiddelvedtak.v1
+
+concept
+	[at0000]	-- Om tvangsmiddelvedtak
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2649C0264E7201D63069DFE46773B3C8">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Om tvangsmiddelvedtak
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Løpenummer
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			CLUSTER[at0035] occurrences matches {0..1} matches {	-- Vedtakstype
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {	-- Vedtakstype
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.vedtakstype(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+					ELEMENT[at0037] occurrences matches {0..1} matches {	-- Hastevedtak
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0008] occurrences matches {0..1} matches {	-- Bruk av tvangsmiddel er uomgjengelig nødvendig for å
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- hindre pasienten i å skade seg selv
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- hindre pasienten i å skade andre
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- avverge betydelig skade på bygninger, klær, inventar eller andre ting
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Vedtaket er begrunnet i journalnotat av
+				value matches {
+					DV_DATE_TIME matches {
+						value matches {yyyy-mm-ddTHH:MM:SS}
+					}
+				}
+			}
+			CLUSTER[at0034] occurrences matches {0..1} matches {	-- Varighet
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Vedtaksstart
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Utløpstidspunkt
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0033] occurrences matches {0..1} matches {	-- Informasjon om vedtaket
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {	-- Informasjon om vedtaket
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.uttalerett_og_klageadgang(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			CLUSTER[at0016] occurrences matches {0..1} matches {	-- Hastevedtak besluttet av
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0038] occurrences matches {0..1} matches {	-- Tidspunkt den faglig ansvarlige ble informert hastevedtaket
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {	-- *Ansvarlig for hastevedtaket
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			CLUSTER[at0022] occurrences matches {0..1} matches {	-- Vedtak besluttet av faglig ansvarlig
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0028] occurrences matches {0..1} matches {	-- Oppfølging av hastevedtaket
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0029, 	-- Det er foretatt en vurdering av hastevedtaket på grunnlag av personlig kontakt med pasienten samt dokumentasjon i pasientens journal og eventuelt kontakt med den som fattet hastevedtaket
+									at0030, 	-- Det er foretatt en vurdering av hastevedtaket på grunnlag av kontakt med den som fattet hastevedtaket
+									at0031, 	-- Det er foretatt en vurdering av hastevedtaket utelukkende på grunnlag av opplysninger i pasientens journal
+									at0032]	-- Det er foretatt en vurdering av hastevedtaket på grunnlag av opplysninger i pasientens journal samt kontakt med den som fattet hastevedtaket
+								}
+							}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {	-- Tidspunkt ansvarlige fattet vedtaket
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0023] occurrences matches {0..*} matches {	-- Faglig ansvarlig
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Merknad
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Om tvangsmiddelvedtak">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Løpenummer">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Bruk av tvangsmiddel er uomgjengelig nødvendig for å">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"hindre pasienten i å skade seg selv">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"hindre pasienten i å skade andre">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"avverge betydelig skade på bygninger, klær, inventar eller andre ting">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Vedtaket er begrunnet i journalnotat av">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Vedtaksstart">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Utløpstidspunkt">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Hastevedtak besluttet av">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Ansvarlig for hastevedtaket">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Vedtak besluttet av faglig ansvarlig">
+					description = <"Benyttes når det er vedtak som er fattet av den faglig ansvarlige selv,  samt for hastevedtak som den faglig ansvarlige har besluttet å opprettholde.">
+				>
+				["at0023"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Tidspunkt ansvarlige fattet vedtaket">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Merknad">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Informasjon om vedtaket">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Vedtakstype">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Oppfølging av hastevedtaket">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Det er foretatt en vurdering av hastevedtaket på grunnlag av personlig kontakt med pasienten samt dokumentasjon i pasientens journal og eventuelt kontakt med den som fattet hastevedtaket">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Det er foretatt en vurdering av hastevedtaket på grunnlag av kontakt med den som fattet hastevedtaket">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Det er foretatt en vurdering av hastevedtaket utelukkende på grunnlag av opplysninger i pasientens journal">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Det er foretatt en vurdering av hastevedtaket på grunnlag av opplysninger i pasientens journal samt kontakt med den som fattet hastevedtaket">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Informasjon om vedtaket">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Varighet">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Vedtakstype">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Hastevedtak">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Tidspunkt den faglig ansvarlige ble informert hastevedtaket">
+					description = <"">
+				>
+			>
+		>
+	>

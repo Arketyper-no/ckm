@@ -1,0 +1,96 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.gjennomfoert_tvangsbehandling.v1
+
+concept
+	[at0000]	-- Gjennomfoert tvangsbehandling
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8BC68760174EB36DDC3DDC6EF3B659DE">
+	>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- Gjennomfoert tvangsbehandling
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Løpenummer
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Tidspunkt for start
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			CLUSTER[at0004] occurrences matches {0..1} matches {	-- Ved varighet over 15 min registrer slutttid
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Tidspunkt for slutt
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {	-- *Faglig ansvarlig
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.faglig_ansvarlig(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Merknad
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Gjennomfoert tvangsbehandling">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Løpenummer">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Tidspunkt for start">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tidspunkt for slutt">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Ved varighet over 15 min registrer slutttid">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Faglig ansvarlig">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Merknad">
+					description = <"">
+				>
+			>
+		>
+	>

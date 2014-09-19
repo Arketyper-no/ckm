@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>bb5c9daf-b99d-4acc-9834-bb192695515b</id>
+  <name>Overfoeringsvedtak</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Kontakt" name="Overføring mellom institusjoner">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.tvangsform_institusjon.v1" concept_name="Tvangsform og institusjon" path="/content" hide_on_form="true" annotation="ShowActionTime=false;">
+      <description xsi:type="ITEM_TREE" archetype_id="openEHR-EHR-ITEM_TREE.tvangsform_institusjon.v1" max="1" path="/description" hide_on_form="true">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1" concept_name="Vedtakstype" path="/items[at0030]">
+          <Rule path="/items[at0008]">
+            <constraint xsi:type="ordinalConstraint">
+              <excludedValues>0|Undersøkelse uten eget samtykke</excludedValues>
+              <excludedValues>1|Behandling med legemidler uten eget samtykke</excludedValues>
+              <excludedValues>2|Ernæring uten eget samtykke</excludedValues>
+              <excludedValues>3|Ernæring uten eget samtykke kombinert med annen behandlingsform</excludedValues>
+              <excludedValues>4|Annen behandlingsform</excludedValues>
+              <excludedValues>6|Vedtak om overføring til annen tvangsform</excludedValues>
+              <excludedValues>7|Vedtak om overføring til annen tvangsform og annen institusjon</excludedValues>
+              <excludedValues>8|Vedtak om tvungen observasjon med døgnopphold</excludedValues>
+              <excludedValues>9|Vedtak om tvungen observasjon uten døgnopphold</excludedValues>
+              <excludedValues>10|Vedtak om opphør av tvungen observasjon</excludedValues>
+              <excludedValues>11|Vedtak om å ikke etablere tvungen observasjon</excludedValues>
+              <excludedValues>12|Vedtak om TPH med døgnopphold</excludedValues>
+              <excludedValues>13|Vedtak om TPH uten døgnopphold</excludedValues>
+              <excludedValues>14|Vedtak om opphør av tvungent psykisk helsevern</excludedValues>
+              <excludedValues>15|Vedtak om å ikke etablere psykisk helsevern</excludedValues>
+              <excludedValues>16|Skjerming av mindre inngripende karakter, jf. psykisk helsevernloven  4-3 annet ledd første punktum</excludedValues>
+              <excludedValues>17|Pasienten overføres til skjermet enhet eller liknende som innebærer en betydelig endring av vedkommendes omgivelser eller bevegelsesfrihet, jf. psykisk helsevernloven  4-3 annet ledd annet punktum</excludedValues>
+              <excludedValues>18|Mekaniske tvangsmidler som hindrer pasientens bevegelsesfrihet: Belter/remmer</excludedValues>
+              <excludedValues>19|Mekaniske tvangsmidler som hindrer pasientens bevegelsesfrihet: Skadeforebyggende spesialklær</excludedValues>
+              <excludedValues>20|Kortvarig anbringelse bak låst eller stengt dør uten personale til stede</excludedValues>
+              <excludedValues>21|Enkeltstående bruk av korttidsvirkende legemidler i beroligende eller bedøvende hensikt</excludedValues>
+              <excludedValues>22|Kortvarig fastholding</excludedValues>
+              <excludedValues>23|Vedtak om innskrenket forbindelse med omverdenen</excludedValues>
+              <excludedValues>24|Vedtak om åpning og kontroll av post</excludedValues>
+              <excludedValues>25|Vedtak om undersøkelse av rom og eiendeler og/eller kroppsvisitasjon</excludedValues>
+              <excludedValues>26|Vedtak om beslag og eventuell tilintetgjørelse</excludedValues>
+            </constraint>
+          </Rule>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.hjemmel.v1" concept_name="Hjemmel" path="/items[at0052]/items[at0053]">
+          <Rule path="/items[at0001]">
+            <constraint xsi:type="ordinalConstraint">
+              <excludedValues>0| 2-1	Frivillig psykisk helsevern. Psykisk helsevernloven  2-1.</excludedValues>
+              <excludedValues>1| 2-1	Representert samtykke, jf. psykisk helsevernloven  2-1, jf. pasientrettighetsloven kapittel 4	</excludedValues>
+              <excludedValues>2| 2-2	Samtykke til å være undergitt reglene om tvungent psykisk helsevern i  3 5. Psykisk helsevernloven  2-2.</excludedValues>
+              <excludedValues>7| 6-2	Tilbakehold i institusjon uten eget samtykke. Sosialtjenesteloven  6-2, jf spesialisthelsetjenesteloven  3 12 og 2-1a.	</excludedValues>
+              <excludedValues>8| 6-2a	Tilbakeholdelse av gravide rusmiddelmisbrukere. Sosialtjenesteloven  6-2a, jf spesialisthelsetjenesteloven  3 12 og 2-1a.</excludedValues>
+              <excludedValues>9| 4-24	Plassering og tilbakehold i institusjon uten eget samtykke. Barnevernloven  4-24 jf psykisk helsevernloven kapittel 5.</excludedValues>
+              <excludedValues>10| 39	Dom på overføring til tvungent psykisk helsevern. Straffeloven  39.</excludedValues>
+              <excludedValues>11| 39a	Dom på tvungen omsorg. Straffeloven  39a, jf psykisk helsevernloven kapittel 5.</excludedValues>
+              <excludedValues>12| 167	Rettsbestemt innlegges til undersøkelse på psykiatrisk sykehus eller annet egnet undersøkelsessted. Straffeprosessloven  167.</excludedValues>
+            </constraint>
+          </Rule>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.hjemmel.v1" concept_name="Hjemmel" path="/items[at0030]">
+          <Rule path="/items[at0001]">
+            <constraint xsi:type="ordinalConstraint">
+              <excludedValues>0| 2-1	Frivillig psykisk helsevern. Psykisk helsevernloven  2-1.</excludedValues>
+              <excludedValues>1| 2-1	Representert samtykke, jf. psykisk helsevernloven  2-1, jf. pasientrettighetsloven kapittel 4	</excludedValues>
+              <excludedValues>2| 2-2	Samtykke til å være undergitt reglene om tvungent psykisk helsevern i  3 5. Psykisk helsevernloven  2-2.</excludedValues>
+              <excludedValues>7| 6-2	Tilbakehold i institusjon uten eget samtykke. Sosialtjenesteloven  6-2, jf spesialisthelsetjenesteloven  3 12 og 2-1a.	</excludedValues>
+              <excludedValues>8| 6-2a	Tilbakeholdelse av gravide rusmiddelmisbrukere. Sosialtjenesteloven  6-2a, jf spesialisthelsetjenesteloven  3 12 og 2-1a.</excludedValues>
+              <excludedValues>9| 4-24	Plassering og tilbakehold i institusjon uten eget samtykke. Barnevernloven  4-24 jf psykisk helsevernloven kapittel 5.</excludedValues>
+              <excludedValues>10| 39	Dom på overføring til tvungent psykisk helsevern. Straffeloven  39.</excludedValues>
+              <excludedValues>11| 39a	Dom på tvungen omsorg. Straffeloven  39a, jf psykisk helsevernloven kapittel 5.</excludedValues>
+              <excludedValues>12| 167	Rettsbestemt innlegges til undersøkelse på psykiatrisk sykehus eller annet egnet undersøkelsessted. Straffeprosessloven  167.</excludedValues>
+            </constraint>
+          </Rule>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.uttalerett_og_klageadgang.v1" concept_name="Uttalerett og klageadgang" max="1" path="/items[at0030]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0002]/items[at0003]" annotation="ShowAs=checkbox;" />
+        </Items>
+        <Rule path="/items[at0052]" max="0" />
+        <Rule path="/items[at0028]" max="0" />
+        <Rule path="/items[at0027]" min="1" />
+        <Rule path="/items[at0027]/items[at0005]" annotation="ShowAs=checkbox;" />
+        <Rule path="/items[at0035]" max="0" />
+      </description>
+    </Content>
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.endre_ansvarlig_tvang.v1" concept_name="Endre ansvarlig tvang" max="1" path="/content" name="Faglig ansvarlig" hide_on_form="true" annotation="ShowActionTime=false;">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.faglig_ansvarlig.v1" concept_name="Faglig ansvarlig" path="/description[at0001]/items[at0002]">
+        <Rule path="/items[at0001]" annotation="ShowAs=healthcarepartysearch;" />
+      </Items>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">0832C67F874EEE1A9ABC4C40F48CDB7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.tvangsform_institusjon.v1">
+    <digest id="MD5-CAM-1.0.1">42E6B5CBF4D462AFD231F623D9D6A506</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ITEM_TREE.tvangsform_institusjon.v1">
+    <digest id="MD5-CAM-1.0.1">8CD0AEA5DCCB147F562C578742CFD804</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.vedtakstype.v1">
+    <digest id="MD5-CAM-1.0.1">C34EC05E1F0BD9CCA25E80F50E5982E8</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.hjemmel.v1">
+    <digest id="MD5-CAM-1.0.1">F0C05118C1AC1BB7AFAEF54771FB39D6</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.uttalerett_og_klageadgang.v1">
+    <digest id="MD5-CAM-1.0.1">72EF1831B6CF081975DBDC8E3984C777</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.endre_ansvarlig_tvang.v1">
+    <digest id="MD5-CAM-1.0.1">88A58657E1DBBAC705B2CED616DE3ED3</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.faglig_ansvarlig.v1">
+    <digest id="MD5-CAM-1.0.1">A97FABCF47155DB84B0517FF8BB8586B</digest>
+  </integrity_checks>
+</template>

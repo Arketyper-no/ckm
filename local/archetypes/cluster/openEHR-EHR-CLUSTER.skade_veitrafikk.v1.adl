@@ -1,0 +1,310 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.skade_veitrafikk.v1
+
+concept
+	[at0000]	-- Veitrafikkskade
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2013-08-08">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Dokumenterer ekstra informasjon dersom skaden er knyttet til veitrafikk
+
+En veitrafikkskade er en personskade som har skjedd på offentlig eller privat veg, gate eller plass åpen for alminnelig ferdsel og som involverer minst ett kjøretøy i bevegelse. Inkluderer også sykkelvelt.
+
+Kommentar:
+At et kjøretøy må være i bevegelse inkluderer også tilfeller hvor intensjonen for kjøretøyet er å være i bevegelse, eksempelvis rutegående buss som stopper på bussholdeplass.
+">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"Dokumenterer ekstra informasjon dersom skaden er knyttet til veitrafikk
+
+En veitrafikkskade er en personskade som har skjedd på offentlig eller privat veg, gate eller plass åpen for alminnelig ferdsel og som involverer minst ett kjøretøy i bevegelse. Inkluderer også sykkelvelt.
+
+Kommentar:
+At et kjøretøy må være i bevegelse inkluderer også tilfeller hvor intensjonen for kjøretøyet er å være i bevegelse, eksempelvis rutegående buss som stopper på bussholdeplass.
+">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+
+definition
+    CLUSTER[at0000] matches {
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] occurrences matches {0..1} matches {
+                value matches {
+                    DV_BOOLEAN matches {
+                        value matches {true, false}
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {
+                value matches {
+                    DV_BOOLEAN matches {
+                        value matches {true, false}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0005,
+                            at0006,
+                            at0007,
+                            at0008,
+                            at0009,
+                            at0010,
+                            at0011,
+                            at0012,
+                            at0013,
+                            at0014,
+                            at0015]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0017,
+                            at0018,
+                            at0019,
+                            at0020,
+                            at0021,
+                            at0022,
+                            at0023]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0024] occurrences matches {0..1} matches {
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+        }
+    }
+
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Veitrafikkskade">
+					description = <"Dokumenterer ekstra informasjon dersom skaden er knyttet til veitrafikk">
+				>
+				["at0001"] = <
+					text = <"Fører">
+					description = <"Benyttes for å angi om den skadede var fører eller ikke dersom fremkomstmiddel i FMDS er registrert som person-/vare-/lastebil, motorsykkel eller sykkel.">
+				>
+				["at0002"] = <
+					text = <"Beskyttelse">
+					description = <"Benyttes for å angi om den skadede brukte beskyttelse dersom fremkomstmiddel i FMDS er registrert som sykkel (sykkelhjelm), personbil, lastebil, buss (bilbelte), moped, motorsykkel (MC-hjelm).">
+				>
+				["at0003"] = <
+					text = <"Motpart i trafikkulykke">
+					description = <"Benyttes for å registrere trafikal motpart.">
+				>
+				["at0005"] = <
+					text = <"I Ingen motpart">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"F Fotgjenger">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"S Sykkel">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"M Moped">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"O Motorsykkel">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"P Personbil/varebil">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"L Lastebil">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"B Buss">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"T Trikk/tog/bane">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"A Annet spesifisert">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"U Ukjent">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Trafikksituasjon">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"1 Motpart i samme kjøreretning">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"2 Motpart i motsatt kjøreretning">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"3 Motpart i kryssende kjøreretning">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"4 Fotgjenger og kjøretøty">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"5 Eneulykke, ingen motpart inkl. sykkelvelt">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"8 Annen trafikksituasjon">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"9 Ukjent trafikksituasjon">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Beskrivelse">
+					description = <"En beskrivelse av hendelsen. Man bør eventuelt supplere med fritekst som beskriver hendelsen">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Veitrafikkskade">
+					description = <"Dokumenterer ekstra informasjon dersom skaden er knyttet til veitrafikk">
+				>
+				["at0001"] = <
+					text = <"Fører">
+					description = <"Benyttes for å angi om den skadede var fører eller ikke dersom fremkomstmiddel i FMDS er registrert som person-/vare-/lastebil, motorsykkel eller sykkel.">
+				>
+				["at0002"] = <
+					text = <"Beskyttelse">
+					description = <"Benyttes for å angi om den skadede brukte beskyttelse dersom fremkomstmiddel i FMDS er registrert som sykkel (sykkelhjelm), personbil, lastebil, buss (bilbelte), moped, motorsykkel (MC-hjelm).">
+				>
+				["at0003"] = <
+					text = <"Motpart i trafikkulykke">
+					description = <"Benyttes for å registrere trafikal motpart.">
+				>
+				["at0005"] = <
+					text = <"I Ingen motpart">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"F Fotgjenger">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"S Sykkel">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"M Moped">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"O Motorsykkel">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"P Personbil/varebil">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"L Lastebil">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"B Buss">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"T Trikk/tog/bane">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"A Annet spesifisert">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"U Ukjent">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Trafikksituasjon">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"1 Motpart i samme kjøreretning">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"2 Motpart i motsatt kjøreretning">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"3 Motpart i kryssende kjøreretning">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"4 Fotgjenger og kjøretøty">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"5 Eneulykke, ingen motpart inkl. sykkelvelt">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"8 Annen trafikksituasjon">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"9 Ukjent trafikksituasjon">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Beskrivelse">
+					description = <"En beskrivelse av hendelsen. Man bør eventuelt supplere med fritekst som beskriver hendelsen">
+				>
+			>
+		>
+	>

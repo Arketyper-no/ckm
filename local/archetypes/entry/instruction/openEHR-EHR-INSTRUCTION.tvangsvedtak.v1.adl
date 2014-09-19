@@ -1,0 +1,58 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.tvangsvedtak.v1
+
+concept
+	[at0000]	-- Tvungent psykisk helsevern
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E7E51E598331E8052EAC4DC3850C8230">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Tvungent psykisk helsevern
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0004] matches {	-- Tvungent psykisk helsevern
+				action_archetype_id matches {/openEHR-EHR-ACTION\.tvangsform_institusjon\.v1/}
+				description matches {
+					ITEM_TREE[at0005] matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tvungent psykisk helsevern">
+					description = <"unknown">
+				>
+				["at0004"] = <
+					text = <"Tvungent psykisk helsevern">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

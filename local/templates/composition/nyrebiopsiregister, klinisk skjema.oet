@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>435c49c7-a13d-4a32-a3a2-f3f1625d5a9d</id>
+  <name>nyrebiopsiregister, klinisk skjema</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report-procedure.v1" concept_name="Procedure Report" name="Norsk nyrebiopsiregister, klinisk skjema">
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Generelle opplysninger" />
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Biopsiteknikk og lokalisering">
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure undertaken" path="/items" />
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Kliniske indikasjoner for biopsi" />
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Kliniske og laboratoriedata">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height.v1" concept_name="Høyde/lengde" path="/items" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" name="Høyde" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0018]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]/items[at0014]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]/items[at0019]" max="0" />
+        <Rule path="/protocol[at0007]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1" concept_name="Kroppsvekt" path="/items" hide_on_form="true">
+        <Rule path="/data[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0024]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]/items[at0009]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0008]/items[at0025]" max="0" />
+        <Rule path="/protocol[at0015]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v1" concept_name="Blodtrykk" max="1" path="/items">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0006]" max="1" />
+        <Rule path="/data[at0001]/events[at0006]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at1006]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at1007]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at0033]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/state[at0007]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at0008]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1052]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1043]" max="0" />
+        <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1005]" max="0" />
+        <Rule path="/data[at0001]/events[at1042]" max="0" />
+        <Rule path="/protocol[at0011]" hide_on_form="true" />
+        <Rule path="/protocol[at0011]/items[at0013]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1033]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1035]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1038]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1010]" max="0" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.pathology_test.v1" concept_name="Pathology Test Result" max="1" path="/items" name="Blodprøver">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" name="S-kreatinin" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0005]" default="NPU04998" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0077]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0073]" hide_on_form="true">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0107</excludedValues>
+            <excludedValues>local::at0037</excludedValues>
+            <excludedValues>local::at0074</excludedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0099]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0100]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0095]/items[at0096]/items[at0078]">
+          <constraint xsi:type="quantityConstraint">
+            <includedUnits>{AMOUNT (mole)/VOLUME}</includedUnits>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0095]/items[at0096]/items[at0102]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0095]/items[at0096]/items[at0103]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0095]/items[at0096]/items[at0108]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0057]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0098]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0010]" max="0" />
+        <Rule path="/data[at0001]/events[at0002 and name/value='S-kreatinin']/data[at0003]/items[at0101]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="S-kolesterol" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="S-albumin" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="ANA" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Anti-GBM" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Proteinase3-ANCA" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Myeloperoksidase-ANCA " />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="C3" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="C4" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="IgG" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="IgA" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="IgM" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Målt GFR" />
+        <Rule path="/protocol[at0004]" hide_on_form="true" />
+        <Rule path="/protocol[at0004]/items[at0094]" max="0" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.pathology_test.v1" concept_name="Pathology Test Result" max="1" path="/items" name="Urinprøver">
+        <Rule path="/data[at0001]/events[at0002]" max="1" name="Protein/kreatinin ratio" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Protein" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Albumin" />
+        <Rule path="/data[at0001]/events[at0002]" max="1" clone="true" name="Albumin/kreatinin ratio" />
+      </Item>
+    </Content>
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Antatt diagnose" />
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="Rapportert av" />
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.report-procedure.v1">
+    <digest id="MD5-CAM-1.0.1">A158BB6DE8284F674B65C6D6C0BC5345</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-SECTION.adhoc.v1">
+    <digest id="MD5-CAM-1.0.1">6FD3128A583EB7081153D0265245E1FA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.procedure.v1">
+    <digest id="MD5-CAM-1.0.1">3D7A4FCD75127BBE8C9873FF487C6C44</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.height.v1">
+    <digest id="MD5-CAM-1.0.1">116F16643A80ACE89C0C045F20936A62</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1">
+    <digest id="MD5-CAM-1.0.1">74F234DBED2572BC1563A7C4CBA16A1D</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v1">
+    <digest id="MD5-CAM-1.0.1">727587C441D19203FE503C507ACF9BD4</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.pathology_test.v1">
+    <digest id="MD5-CAM-1.0.1">B694D226A38342CC4A0F0789411CC6B5</digest>
+  </integrity_checks>
+</template>

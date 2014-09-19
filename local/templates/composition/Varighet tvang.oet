@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>9ca61aeb-05ec-462c-973d-4d257796152f</id>
+  <name>Varighet tvang</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Kontakt" name="Varighet tvang">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.endre_varighet_tvang.v1" concept_name="Endre varighet tvang" max="1" min="1" path="/content" annotation="ShowActionTime=false;">
+      <description xsi:type="ITEM_TREE" archetype_id="openEHR-EHR-ITEM_TREE.varighet_tvang.v1" path="/description" />
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">0832C67F874EEE1A9ABC4C40F48CDB7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.endre_varighet_tvang.v1">
+    <digest id="MD5-CAM-1.0.1">ED4BEE7A38BACB5B066DAA7BC4A0B5D7</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ITEM_TREE.varighet_tvang.v1">
+    <digest id="MD5-CAM-1.0.1">885F952FC4787BC4E756D8009143B784</digest>
+  </integrity_checks>
+</template>

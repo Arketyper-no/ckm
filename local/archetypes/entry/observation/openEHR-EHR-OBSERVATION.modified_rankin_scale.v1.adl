@@ -1,0 +1,119 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.modified_rankin_scale.v1
+
+concept
+	[at0000]	-- Modified rankin scale
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["date"] = <"2014-04-25">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ja.">
+			use = <"Ja.">
+			misuse = <"Nei.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"D71DAF5774A0815AF1AD3B03DD35A2FC">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Modified rankin scale
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Modified Rankin Scale
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 0: Ingen symptomer
+													at0006, 	-- 1: Ikke betydelig funksjonssvikt
+													at0007, 	-- 2: Lett funksjonssvikt
+													at0008, 	-- 3: Moderat funksjonssvikt
+													at0009, 	-- 4: Alvorlig funksjonssvikt
+													at0010, 	-- 5: Svært alvorlig funksjonssvikt
+													at0011]	-- 6: Død
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Modified rankin scale">
+					description = <"Modified Rankin Scale.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Ja.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Modified Rankin Scale">
+					description = <"[RankinScale].">
+				>
+				["at0005"] = <
+					text = <"0: Ingen symptomer">
+					description = <"Ingen symtomer.">
+				>
+				["at0006"] = <
+					text = <"1: Ikke betydelig funksjonssvikt">
+					description = <"Ingen betydningsfull funksjonssvikt til tross for symptomer klarer å utføre alle oppgaver og aktiviteter som før.">
+				>
+				["at0007"] = <
+					text = <"2: Lett funksjonssvikt">
+					description = <"Lett funksjonssvikt klarer ikke å utføre alle aktiviteter som før, men klarer sine daglige gjøremål.">
+				>
+				["at0008"] = <
+					text = <"3: Moderat funksjonssvikt">
+					description = <"Moderat funksjonssvikt: trenger noe hjelp, men går uten hjelp.">
+				>
+				["at0009"] = <
+					text = <"4: Alvorlig funksjonssvikt">
+					description = <"Alvorlig funksjonssvikt klarer ikke å gå uten hjelp og klarer ikke å ivareta sine grunnleggende behov uten hjelp.">
+				>
+				["at0010"] = <
+					text = <"5: Svært alvorlig funksjonssvikt">
+					description = <"Svært alvorlig funksjonssvikt sengeliggende og trenger konstant tilsyn og hjelp.">
+				>
+				["at0011"] = <
+					text = <"6: Død">
+					description = <"Død.">
+				>
+			>
+		>
+	>

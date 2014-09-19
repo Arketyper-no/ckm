@@ -1,0 +1,224 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.spsa.v1
+
+concept
+	[at0000]	-- Spsa
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ikke kjent ">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E78C747FE745C6FCC7F00719AD597A5D">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Spsa
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- PSAMaalt
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0010, 	-- Ja
+													at0011]	-- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- AarsakIkkeMaalt
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- PSAVerdi
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"'">
+														magnitude = <|0.0..999999.9|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									CLUSTER[at0008] occurrences matches {0..1} matches {	-- AarsakPSA
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- MistankeKreft
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Helseskjekk
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- UtredningLUTS
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- OpphopningProstata
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- PasientenOenske
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- AnnenAarsakPSA
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {	-- AnnenAarsakPSASpesifiser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0019] occurrences matches {0..1} matches {	-- AarsakPSAUkjent
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0021, 	-- Ikke avkrysset
+															at0020]	-- Avkrysset
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Spsa">
+					description = <"Ikke kjent ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"PSAMaalt">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"PSAVerdi">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"AarsakPSA">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Helseskjekk">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Ja">
+					description = <"Ja">
+				>
+				["at0011"] = <
+					text = <"Nei">
+					description = <"Nei">
+				>
+				["at0012"] = <
+					text = <"AarsakIkkeMaalt">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"MistankeKreft">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"UtredningLUTS">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"OpphopningProstata">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"PasientenOenske">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"AnnenAarsakPSA">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"AnnenAarsakPSASpesifiser">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"AarsakPSAUkjent">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Avkrysset">
+					description = <"Avkrysset">
+				>
+				["at0021"] = <
+					text = <"Ikke avkrysset">
+					description = <"Ikke avkrysset">
+				>
+			>
+		>
+	>

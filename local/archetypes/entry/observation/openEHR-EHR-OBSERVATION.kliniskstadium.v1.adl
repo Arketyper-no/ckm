@@ -1,0 +1,207 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.kliniskstadium.v1
+
+concept
+	[at0000]	-- Kliniskstadium
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Klinisk stadium på diagnosetidspunktet">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C1A4E6659966B342B839ABA8DFE1EFCC">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Kliniskstadium
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Klinisk stadium
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- X
+													at0006, 	-- 0
+													at0007, 	-- 0A
+													at0008, 	-- 0is
+													at0009, 	-- I
+													at0010, 	-- IA1
+													at0011, 	-- IA2
+													at0012, 	-- IB
+													at0013, 	-- IB1
+													at0014, 	-- IB2
+													at0015, 	-- IC
+													at0016, 	-- II
+													at0017, 	-- IIA
+													at0018, 	-- IIA1
+													at0019, 	-- IIA2
+													at0020, 	-- IIB
+													at0021, 	-- IIC
+													at0022, 	-- III
+													at0023, 	-- IIIA
+													at0024, 	-- IIIB
+													at0025, 	-- IIIC
+													at0026, 	-- IV
+													at0027, 	-- IVA
+													at0028, 	-- IVB
+													at0029; 	-- IVC
+													at0017]	-- assumed value
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kliniskstadium">
+					description = <"Klinisk stadium på diagnosetidspunktet">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Klinisk stadium">
+					description = <"Klinisk stadium på diagnosetidspunktet">
+				>
+				["at0005"] = <
+					text = <"X">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"0A">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"0is">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"I">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"IA1">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"IA2">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"IB">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"IB1">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"IB2">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"IC">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"II">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"IIA">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"IIA1">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"IIA2">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"IIB">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"IIC">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"III">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"IIIA">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"IIIB">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"IIIC">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"IV">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"IVA">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"IVB">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"IVC">
+					description = <"*">
+				>
+			>
+		>
+	>

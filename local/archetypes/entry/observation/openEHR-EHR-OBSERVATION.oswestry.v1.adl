@@ -1,0 +1,478 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.oswestry.v1
+
+concept
+	[at0000]	-- Oswestry
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["email"] = <"kevin.thon@skde.no">
+		["date"] = <"2014-03-03">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Disse spørsmålene er utarbeidet for å gi oss informasjon om hvordan dine smerter har påvirket dine muligheter til å klare dagliglivet ditt. Vær snill å besvare spørsmålene ved å sette kryss (kun ett kryss for hvert avsnitt) i de rutene som passer best for deg.">
+			use = <"Ett kryss i hvert avsnitt.">
+			keywords = <"Oswestry", ...>
+			misuse = <"Ingen eller mer enn ett kryss per avsnitt.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"F63A7AE9DFB42DA2FB80D01993871C19">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Oswestry
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {10..*; ordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Smerte
+										value matches {
+											0|[local::at0007], 	-- Jeg har ingen smerter for øyeblikket
+											1|[local::at0008], 	-- Smertene er veldig svake for øyeblikket
+											2|[local::at0009], 	-- Smertene er moderate for øyeblikket
+											3|[local::at0010], 	-- Smertene er temmelig sterke for øyeblikket
+											4|[local::at0011], 	-- Smertene er veldig sterke for øyeblikket
+											5|[local::at0012]  	-- Smertene er det verste jeg kan tenke meg for øyeblikket
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Personlig stell
+										value matches {
+											0|[local::at0013], 	-- Jeg kan stelle meg selv på vanlig måte uten at det forårsaker ekstra smerter
+											1|[local::at0014], 	-- Jeg kan stelle meg selv på vanlig måte, men det er veldig smertefullt
+											2|[local::at0015], 	-- Det er smertefullt å stelle seg selv, og jeg gjør det langsomt og forsiktig
+											3|[local::at0016], 	-- Jeg trenger noe hjelp, men klarer det meste av mitt personlige stell
+											4|[local::at0017], 	-- Jeg trenger hjelp hver dag til det meste av eget stell
+											5|[local::at0018]  	-- Jeg kler ikke på meg, har vanskeligheter med å vaske meg og holder sengen
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Å løfte
+										value matches {
+											0|[local::at0020], 	-- Jeg kan løfte tunge ting uten å få mer smerter
+											1|[local::at0021], 	-- Jeg kan løfte tunge ting, men får mer smerter
+											2|[local::at0022], 	-- Smertene hindrer meg i å løfte tunge ting opp fra gulvet, men jeg greier det hvis det som skal løftes er gunstig plassert, for eksempel på et bord
+											3|[local::at0023], 	-- Smertene hindrer meg i å løfte tunge ting, men jeg klarer lette og middels tunge ting, hvis det er gunstig plassert
+											4|[local::at0024], 	-- Jeg kan bare løfte noe som er veldig lett
+											5|[local::at0025]  	-- Jeg kan ikke løfte eller bære noe i det hele tatt
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Å gå
+										value matches {
+											0|[local::at0027], 	-- Smerter hindrer meg ikke i å gå i det hele tatt
+											1|[local::at0028], 	-- Smerter hindrer meg i å gå mer enn 1,5 km
+											2|[local::at0029], 	-- Smerter hindrer meg i å gå mer enn 3/4 km
+											3|[local::at0030], 	-- Smerter hindrer meg i å gå mer enn 100 m
+											4|[local::at0031], 	-- Jeg kan bare gå med stokk eller krykker
+											5|[local::at0032]  	-- Jeg ligger for det meste i sengen, og jeg må krabbe til toalettet
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Å sitte
+										value matches {
+											0|[local::at0034], 	-- Jeg kan sitte så lenge jeg vil i en hvilken som helst stol
+											1|[local::at0035], 	-- Jeg kan sitte så lenge jeg vil i min favorittstol
+											2|[local::at0036], 	-- Smerter hindrer meg i å sitte mer enn en time
+											3|[local::at0037], 	-- Smerter hindrer meg i å sitte mer enn en halv time
+											4|[local::at0038], 	-- Smerter hindrer meg i å sitte mer enn ti minutter
+											5|[local::at0039]  	-- Smerter hindrer meg i å sitte i det hele tatt
+										}
+									}
+									ELEMENT[at0068] occurrences matches {0..1} matches {	-- Å stå
+										value matches {
+											0|[local::at0069], 	-- Jeg kan stå så lenge jeg vil uten å få smerter
+											1|[local::at0070], 	-- Jeg kan stå så lenge jeg vil, men får mer smerter
+											2|[local::at0071], 	-- Smerter hindrer meg i å stå mer enn en time
+											3|[local::at0072], 	-- Smerter hindrer meg i å stå mer enn en halv time
+											4|[local::at0073], 	-- Smerter hindrer meg i å stå mer enn ti minutter
+											5|[local::at0074]  	-- Smerter hindrer meg i å stå i det hele tatt
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Å sove
+										value matches {
+											0|[local::at0041], 	-- Søvnen min forstyrres aldri av smerter
+											1|[local::at0042], 	-- Søvnen min forstyrres av og til av smerter
+											2|[local::at0043], 	-- På grunn av smerter får jeg mindre enn seks timers søvn
+											3|[local::at0044], 	-- På grunn av smerter får jeg mindre enn fire timers søvn
+											4|[local::at0045], 	-- På grunn av smerter får jeg mindre enn to timers søvn
+											5|[local::at0046]  	-- Smerter hindrer all søvn
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {	-- Seksualliv
+										value matches {
+											0|[local::at0048], 	-- Seksuallivet mitt er normalt og forårsaker ikke mer smerter
+											1|[local::at0049], 	-- Seksuallivet mitt er normalt, men forårsaker noe mer smerter
+											2|[local::at0050], 	-- Seksuallivet mitt er normalt, men svært smertefullt
+											3|[local::at0051], 	-- Seksuallivet mitt er svært begrenset av smerter
+											4|[local::at0052], 	-- Seksuallivet mitt er nesten borte på grunn av smerter
+											5|[local::at0053]  	-- Smerter forhindrer alt seksualliv
+										}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {	-- Sosialt liv (omgang med venner og kjente)
+										value matches {
+											0|[local::at0055], 	-- Det sosiale livet mitt er normalt og forårsaker ikke mer smerter
+											1|[local::at0056], 	-- Det sosiale livet mitt er normalt, men øker graden av smerter
+											2|[local::at0057], 	-- Smerter har ingen betydelig innvirkning på mitt sosiale liv, bortsett fra at de begrenser mine mer fysisk aktive sider, som sport osv.
+											3|[local::at0058], 	-- Smerter har begrenset mitt sosiale liv, og jeg går ikke så ofte ut
+											4|[local::at0059], 	-- Smerter har begrenset mitt sosiale liv til hjemmet
+											5|[local::at0060]  	-- På grunn av smerter har jeg ikke noe sosialt liv
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {	-- Å reise
+										value matches {
+											0|[local::at0062], 	-- Jeg kan reise hvor som helst uten smerter
+											1|[local::at0063], 	-- Jeg kan reise hvor som helst, men det gir mer smerter
+											2|[local::at0064], 	-- Smertene er ille, men jeg klarer reiser på to timer
+											3|[local::at0065], 	-- Smerter begrenser meg til korte reiser på under en time
+											4|[local::at0066], 	-- Smerter begrenser meg til korte, nødvendige reiser på under 30 minutter
+											5|[local::at0067]  	-- Smerter forhindrer meg fra å reise, unntatt for å få behandling
+										}
+									}
+									ELEMENT[at0075] occurrences matches {0..1} matches {	-- Oswestry score
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"%">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Oswestry">
+					description = <"Oswestry funksjonsscore.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Smerte">
+					description = <"Beskrivelse av smertetilstand [Funksjonsscore_Smerte].">
+				>
+				["at0006"] = <
+					text = <"Personlig stell">
+					description = <"Evne til personlig stell [Funksjonsscore_Stell].">
+				>
+				["at0007"] = <
+					text = <"Jeg har ingen smerter for øyeblikket">
+					description = <"Jeg har ingen smerter for øyeblikket.">
+				>
+				["at0008"] = <
+					text = <"Smertene er veldig svake for øyeblikket">
+					description = <"Smertene er veldig svake for øyeblikket.">
+				>
+				["at0009"] = <
+					text = <"Smertene er moderate for øyeblikket">
+					description = <"Smertene er moderate for øyeblikket.">
+				>
+				["at0010"] = <
+					text = <"Smertene er temmelig sterke for øyeblikket">
+					description = <"Smertene er temmelig sterke for øyeblikket.">
+				>
+				["at0011"] = <
+					text = <"Smertene er veldig sterke for øyeblikket">
+					description = <"Smertene er veldig sterke for øyeblikket.">
+				>
+				["at0012"] = <
+					text = <"Smertene er det verste jeg kan tenke meg for øyeblikket">
+					description = <"Smertene er det verste jeg kan tenke meg for øyeblikket.">
+				>
+				["at0013"] = <
+					text = <"Jeg kan stelle meg selv på vanlig måte uten at det forårsaker ekstra smerter">
+					description = <"Jeg kan stelle meg selv på vanlig måte uten at det forårsaker ekstra smerter.">
+				>
+				["at0014"] = <
+					text = <"Jeg kan stelle meg selv på vanlig måte, men det er veldig smertefullt">
+					description = <"Jeg kan stelle meg selv på vanlig måte, men det er veldig smertefullt.">
+				>
+				["at0015"] = <
+					text = <"Det er smertefullt å stelle seg selv, og jeg gjør det langsomt og forsiktig">
+					description = <"Det er smertefullt å stelle seg selv, og jeg gjør det langsomt og forsiktig.">
+				>
+				["at0016"] = <
+					text = <"Jeg trenger noe hjelp, men klarer det meste av mitt personlige stell">
+					description = <"Jeg trenger noe hjelp, men klarer det meste av mitt personlige stell.">
+				>
+				["at0017"] = <
+					text = <"Jeg trenger hjelp hver dag til det meste av eget stell">
+					description = <"Jeg trenger hjelp hver dag til det meste av eget stell.">
+				>
+				["at0018"] = <
+					text = <"Jeg kler ikke på meg, har vanskeligheter med å vaske meg og holder sengen">
+					description = <"Jeg kler ikke på meg, har vanskeligheter med å vaske meg og holder sengen.">
+				>
+				["at0019"] = <
+					text = <"Å løfte">
+					description = <"Løfteevne [Funksjonsscore_Loefte].">
+				>
+				["at0020"] = <
+					text = <"Jeg kan løfte tunge ting uten å få mer smerter">
+					description = <"Jeg kan løfte tunge ting uten å få mer smerter.">
+				>
+				["at0021"] = <
+					text = <"Jeg kan løfte tunge ting, men får mer smerter">
+					description = <"Jeg kan løfte tunge ting, men får mer smerter.">
+				>
+				["at0022"] = <
+					text = <"Smertene hindrer meg i å løfte tunge ting opp fra gulvet, men jeg greier det hvis det som skal løftes er gunstig plassert, for eksempel på et bord">
+					description = <"Smertene hindrer meg i å løfte tunge ting opp fra gulvet, men jeg greier det hvis det som skal løftes er gunstig plassert, for eksempel på et bord.">
+				>
+				["at0023"] = <
+					text = <"Smertene hindrer meg i å løfte tunge ting, men jeg klarer lette og middels tunge ting, hvis det er gunstig plassert">
+					description = <"Smertene hindrer meg i å løfte tunge ting, men jeg klarer lette og middels tunge ting, hvis det er gunstig plassert.">
+				>
+				["at0024"] = <
+					text = <"Jeg kan bare løfte noe som er veldig lett">
+					description = <"Jeg kan bare løfte noe som er veldig lett.">
+				>
+				["at0025"] = <
+					text = <"Jeg kan ikke løfte eller bære noe i det hele tatt">
+					description = <"Jeg kan ikke løfte eller bære noe i det hele tatt.">
+				>
+				["at0026"] = <
+					text = <"Å gå">
+					description = <"Gåevne [Funksjonsscore_Gaa].">
+				>
+				["at0027"] = <
+					text = <"Smerter hindrer meg ikke i å gå i det hele tatt">
+					description = <"Smerter hindrer meg ikke i å gå i det hele tatt.">
+				>
+				["at0028"] = <
+					text = <"Smerter hindrer meg i å gå mer enn 1,5 km">
+					description = <"Smerter hindrer meg i å gå mer enn 1,5 km.">
+				>
+				["at0029"] = <
+					text = <"Smerter hindrer meg i å gå mer enn 3/4 km">
+					description = <"Smerter hindrer meg i å gå mer enn 3/4 km.">
+				>
+				["at0030"] = <
+					text = <"Smerter hindrer meg i å gå mer enn 100 m">
+					description = <"Smerter hindrer meg i å gå mer enn 100 m.">
+				>
+				["at0031"] = <
+					text = <"Jeg kan bare gå med stokk eller krykker">
+					description = <"Jeg kan bare gå med stokk eller krykker.">
+				>
+				["at0032"] = <
+					text = <"Jeg ligger for det meste i sengen, og jeg må krabbe til toalettet">
+					description = <"Jeg ligger for det meste i sengen, og jeg må krabbe til toalettet.">
+				>
+				["at0033"] = <
+					text = <"Å sitte">
+					description = <"Sitteevne [Funksjonsscore_Sitte].">
+				>
+				["at0034"] = <
+					text = <"Jeg kan sitte så lenge jeg vil i en hvilken som helst stol">
+					description = <"Jeg kan sitte så lenge jeg vil i en hvilken som helst stol.">
+				>
+				["at0035"] = <
+					text = <"Jeg kan sitte så lenge jeg vil i min favorittstol">
+					description = <"Jeg kan sitte så lenge jeg vil i min favorittstol.">
+				>
+				["at0036"] = <
+					text = <"Smerter hindrer meg i å sitte mer enn en time">
+					description = <"Smerter hindrer meg i å sitte mer enn en time.">
+				>
+				["at0037"] = <
+					text = <"Smerter hindrer meg i å sitte mer enn en halv time">
+					description = <"Smerter hindrer meg i å sitte mer enn en halv time.">
+				>
+				["at0038"] = <
+					text = <"Smerter hindrer meg i å sitte mer enn ti minutter">
+					description = <"Smerter hindrer meg i å sitte mer enn ti minutter.">
+				>
+				["at0039"] = <
+					text = <"Smerter hindrer meg i å sitte i det hele tatt">
+					description = <"Smerter hindrer meg i å sitte i det hele tatt.">
+				>
+				["at0040"] = <
+					text = <"Å sove">
+					description = <"Søvnkvalitet [Funksjonsscore_Sove].">
+				>
+				["at0041"] = <
+					text = <"Søvnen min forstyrres aldri av smerter">
+					description = <"Søvnen min forstyrres aldri av smerter.">
+				>
+				["at0042"] = <
+					text = <"Søvnen min forstyrres av og til av smerter">
+					description = <"Søvnen min forstyrres av og til av smerter.">
+				>
+				["at0043"] = <
+					text = <"På grunn av smerter får jeg mindre enn seks timers søvn">
+					description = <"På grunn av smerter får jeg mindre enn seks timers søvn.">
+				>
+				["at0044"] = <
+					text = <"På grunn av smerter får jeg mindre enn fire timers søvn">
+					description = <"På grunn av smerter får jeg mindre enn fire timers søvn.">
+				>
+				["at0045"] = <
+					text = <"På grunn av smerter får jeg mindre enn to timers søvn">
+					description = <"På grunn av smerter får jeg mindre enn to timers søvn.">
+				>
+				["at0046"] = <
+					text = <"Smerter hindrer all søvn">
+					description = <"Smerter hindrer all søvn.">
+				>
+				["at0047"] = <
+					text = <"Seksualliv">
+					description = <"Kvalitet på seksualliv [Funksjonsscore_Sex].">
+				>
+				["at0048"] = <
+					text = <"Seksuallivet mitt er normalt og forårsaker ikke mer smerter">
+					description = <"Seksuallivet mitt er normalt og forårsaker ikke mer smerter.">
+				>
+				["at0049"] = <
+					text = <"Seksuallivet mitt er normalt, men forårsaker noe mer smerter">
+					description = <"Seksuallivet mitt er normalt, men forårsaker noe mer smerter.">
+				>
+				["at0050"] = <
+					text = <"Seksuallivet mitt er normalt, men svært smertefullt">
+					description = <"Seksuallivet mitt er normalt, men svært smertefullt.">
+				>
+				["at0051"] = <
+					text = <"Seksuallivet mitt er svært begrenset av smerter">
+					description = <"Seksuallivet mitt er svært begrenset av smerter.">
+				>
+				["at0052"] = <
+					text = <"Seksuallivet mitt er nesten borte på grunn av smerter">
+					description = <"Seksuallivet mitt er nesten borte på grunn av smerter.">
+				>
+				["at0053"] = <
+					text = <"Smerter forhindrer alt seksualliv">
+					description = <"Smerter forhindrer alt seksualliv.">
+				>
+				["at0054"] = <
+					text = <"Sosialt liv (omgang med venner og kjente)">
+					description = <"Kvalitet på sosialt liv [Funksjonsscore_Sosialt].">
+				>
+				["at0055"] = <
+					text = <"Det sosiale livet mitt er normalt og forårsaker ikke mer smerter">
+					description = <"Det sosiale livet mitt er normalt og forårsaker ikke mer smerter.">
+				>
+				["at0056"] = <
+					text = <"Det sosiale livet mitt er normalt, men øker graden av smerter">
+					description = <"Det sosiale livet mitt er normalt, men øker graden av smerter.">
+				>
+				["at0057"] = <
+					text = <"Smerter har ingen betydelig innvirkning på mitt sosiale liv, bortsett fra at de begrenser mine mer fysisk aktive sider, som sport osv.">
+					description = <"Smerter har ingen betydelig innvirkning på mitt sosiale liv, bortsett fra at de begrenser mine mer fysisk aktive sider, som sport osv.">
+				>
+				["at0058"] = <
+					text = <"Smerter har begrenset mitt sosiale liv, og jeg går ikke så ofte ut">
+					description = <"Smerter har begrenset mitt sosiale liv, og jeg går ikke så ofte ut.">
+				>
+				["at0059"] = <
+					text = <"Smerter har begrenset mitt sosiale liv til hjemmet">
+					description = <"Smerter har begrenset mitt sosiale liv til hjemmet.">
+				>
+				["at0060"] = <
+					text = <"På grunn av smerter har jeg ikke noe sosialt liv">
+					description = <"På grunn av smerter har jeg ikke noe sosialt liv.">
+				>
+				["at0061"] = <
+					text = <"Å reise">
+					description = <"Reiseevne [Funksjonsscore_Reise].">
+				>
+				["at0062"] = <
+					text = <"Jeg kan reise hvor som helst uten smerter">
+					description = <"Jeg kan reise hvor som helst uten smerter.">
+				>
+				["at0063"] = <
+					text = <"Jeg kan reise hvor som helst, men det gir mer smerter">
+					description = <"Jeg kan reise hvor som helst, men det gir mer smerter.">
+				>
+				["at0064"] = <
+					text = <"Smertene er ille, men jeg klarer reiser på to timer">
+					description = <"Smertene er ille, men jeg klarer reiser på to timer.">
+				>
+				["at0065"] = <
+					text = <"Smerter begrenser meg til korte reiser på under en time">
+					description = <"Smerter begrenser meg til korte reiser på under en time.">
+				>
+				["at0066"] = <
+					text = <"Smerter begrenser meg til korte, nødvendige reiser på under 30 minutter">
+					description = <"Smerter begrenser meg til korte, nødvendige reiser på under 30 minutter.">
+				>
+				["at0067"] = <
+					text = <"Smerter forhindrer meg fra å reise, unntatt for å få behandling">
+					description = <"Smerter forhindrer meg fra å reise, unntatt for å få behandling.">
+				>
+				["at0068"] = <
+					text = <"Å stå">
+					description = <"Ståevne [Funksjonsscore_Staa].">
+				>
+				["at0069"] = <
+					text = <"Jeg kan stå så lenge jeg vil uten å få smerter">
+					description = <"Jeg kan stå så lenge jeg vil uten å få smerter.">
+				>
+				["at0070"] = <
+					text = <"Jeg kan stå så lenge jeg vil, men får mer smerter">
+					description = <"Jeg kan stå så lenge jeg vil, men får mer smerter.">
+				>
+				["at0071"] = <
+					text = <"Smerter hindrer meg i å stå mer enn en time">
+					description = <"Smerter hindrer meg i å stå mer enn en time.">
+				>
+				["at0072"] = <
+					text = <"Smerter hindrer meg i å stå mer enn en halv time">
+					description = <"Smerter hindrer meg i å stå mer enn en halv time.">
+				>
+				["at0073"] = <
+					text = <"Smerter hindrer meg i å stå mer enn ti minutter">
+					description = <"Smerter hindrer meg i å stå mer enn ti minutter.">
+				>
+				["at0074"] = <
+					text = <"Smerter hindrer meg i å stå i det hele tatt">
+					description = <"Smerter hindrer meg i å stå i det hele tatt.">
+				>
+				["at0075"] = <
+					text = <"Oswestry score">
+					description = <"Beregnet Oswestry score.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0000"] = <[SNOMED-CT::446604004]>
+			>
+		>
+	>

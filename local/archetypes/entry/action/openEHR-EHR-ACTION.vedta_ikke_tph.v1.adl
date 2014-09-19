@@ -1,0 +1,69 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.vedta_ikke_tph.v1
+
+concept
+	[at0000]	-- Vedtak om å ikke etablere TPH
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Arne Løberg Sæter">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"asa@dips.no">
+		["date"] = <"2014-02-07">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C7CDD6BA3DAFBB8561E9C64D891B3390">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Vedtak om å ikke etablere TPH
+		ism_transition matches {
+			ISM_TRANSITION[at0001] matches {	-- Vedtatt
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0001]}		-- Vedtatt
+					}
+				}
+			}
+		}
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.vedtak_ikke_tph(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vedtak om å ikke etablere TPH">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"Vedtatt">
+					description = <"">
+				>
+			>
+		>
+	>

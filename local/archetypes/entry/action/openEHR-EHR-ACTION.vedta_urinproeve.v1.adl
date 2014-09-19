@@ -1,0 +1,66 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.vedta_urinproeve.v1
+
+concept
+	[at0000]	-- Vedtak om urinprøve
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E977227E55A82106764C4305ABBD7D6C">
+	>
+
+definition
+	ACTION[at0000] matches {	-- Vedtak om urinprøve
+		ism_transition matches {
+			ISM_TRANSITION[at0001] matches {	-- Vedtak
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::532]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0001]}		-- Vedtak
+					}
+				}
+			}
+		}
+		description matches {
+			allow_archetype ITEM_TREE matches {
+				include
+					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.om_vedtak_om_urinproeve(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vedtak om urinprøve">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Vedtak">
+					description = <"">
+				>
+			>
+		>
+	>

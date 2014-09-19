@@ -1,0 +1,104 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.forflytning.v1
+
+concept
+	[at0000]	-- Forflytning
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kevin Thon">
+		["organisation"] = <"SKDE">
+		["date"] = <"2014-04-25">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Ja.">
+			use = <"Ja.">
+			misuse = <"Nei.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Kevin Thon, SKDE, ">
+		["MD5-CAM-1.0.1"] = <"E59C4F4A57B4C71FAC8A3B7B0886F0CE">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Forflytning
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Forflytning
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- 1 - Alene - ute og inne
+													at0006, 	-- 2 - Alene - inne
+													at0007, 	-- 3 - Med hjelp
+													at0008]	-- 9 - Ukjent
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Forflytning">
+					description = <"Forflytning.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Ja.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Forflytning">
+					description = <"[Forflytning].">
+				>
+				["at0005"] = <
+					text = <"1 - Alene - ute og inne">
+					description = <"Alene - ute og inne: Bruk av hjelpemiddel tillatt.">
+				>
+				["at0006"] = <
+					text = <"2 - Alene - inne">
+					description = <"Alene - ute og inne: Bruk av hjelpemiddel tillatt.">
+				>
+				["at0007"] = <
+					text = <"3 - Med hjelp">
+					description = <"Med hjelp: Pasienten fikk hjelp av en annen person ved forflytning.">
+				>
+				["at0008"] = <
+					text = <"9 - Ukjent">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

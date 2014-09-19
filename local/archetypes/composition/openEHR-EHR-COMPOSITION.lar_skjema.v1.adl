@@ -1,0 +1,50 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.lar_skjema.v1
+
+concept
+	[at0000]	-- LAR Skjema 
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2013-04-15">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"LAR skjema for årlig kontroll av LAR pasienter">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"A999EAB365DA52DBFC0723ECCFE25E9B">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- LAR Skjema
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"LAR Skjema ">
+					description = <"LAR skjema for årlig kontroll av LAR pasienter">
+				>
+			>
+		>
+	>

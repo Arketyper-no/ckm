@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>b0abb683-c4c3-4386-bc14-e5e7019165ee</id>
+  <name>Kontroll av post</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Kontakt" name="Vedtak om kontroll av post">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.vedta_kontroll_av_post.v1" concept_name="Vedta kontroll av post" max="1" path="/content" name="Avslutt vedtak" hide_on_form="true" annotation="ShowActionTime=false;">
+      <description xsi:type="ITEM_TREE" archetype_id="openEHR-EHR-ITEM_TREE.om_vedtak_om_kontroll_av_post.v1" max="1" path="/description" hide_on_form="true">
+        <Rule path="/items[at0017]" max="0" />
+        <Rule path="/items[at0002]" max="0" />
+        <Rule path="/items[at0019]" min="1" hide_on_form="true" />
+        <Rule path="/items[at0019]/items[at0018]" max="0" />
+        <Rule path="/items[at0019]/items[at0015]" min="1" />
+      </description>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">0832C67F874EEE1A9ABC4C40F48CDB7F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.vedta_kontroll_av_post.v1">
+    <digest id="MD5-CAM-1.0.1">C27DBA5C9F21399522A45E72F003CB52</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ITEM_TREE.om_vedtak_om_kontroll_av_post.v1">
+    <digest id="MD5-CAM-1.0.1">B1B15C6C06C4F20C74511C4B1794850C</digest>
+  </integrity_checks>
+</template>
