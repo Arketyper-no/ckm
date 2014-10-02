@@ -15,18 +15,12 @@ language
 			>
 			accreditation = <"?">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Mona Saleh">
-			>
-		>
-		["fa"] = <
-			language = <[ISO_639-1::fa]>
-			author = <
-				["name"] = <"Shahla Foozonkhah">
-				["organisation"] = <"Ocean Informatics">
-				["email"] = <"shahla.foozonkhah@oceaninformatics.com">
+				["name"] = <"Lars Morgan Karlsen">
+				["organisation"] = <"DIPS ASA">
+				["email"] = <"lmk@dips.no">
 			>
 		>
 		["es-ar"] = <
@@ -36,6 +30,20 @@ language
 				["organisation"] = <"Universidad de Morón">
 			>
 			accreditation = <"Universidad de Morón">
+		>
+		["fa"] = <
+			language = <[ISO_639-1::fa]>
+			author = <
+				["name"] = <"Shahla Foozonkhah">
+				["organisation"] = <"Ocean Informatics">
+				["email"] = <"shahla.foozonkhah@oceaninformatics.com">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
 		>
 		["nl"] = <
 			language = <[ISO_639-1::nl]>
@@ -175,6 +183,28 @@ Bij kinderen en tieners, dient de BMI te worden beoordeeld met behulp van leefti
 			misuse = <"Niet bestemd voor het registreren van informatie over de Body Mass Index percentielen - deze zullen worden opgenomen in afzonderlijke archetypen.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å registrere en persons kroppsmasseindeks (KMI). 
+
+Kroppsmasseindeks er et beregnet begrep som beskriver hvordan individets kroppsvekt forholder seg til den vekt som er å anse som normal, eller ønskelig, i forhold til høyden.">
+			use = <"Brukes for å registrere kroppsmasseindeks av både voksne og barn. 
+
+Brukes til manuell registrering av kroppsmasseindeks (dvs. beregnet og skrives inn direkte av legen), eller automatisk (dvs. beregning og oppføring er gjort automatisk av et program, basert på måling av høyde og vekt). 
+
+Formler: Kroppsmasseindeks utregnes på følgende måte: vekt (kg) / [høyde (m) x høyde(m)]. Dette er den antatte formelen med mindre annet er angitt i elementet som beskriver formel i protokollen.
+
+
+
+I enkelte situasjoner kan en modifisert beregning benyttes, for eksempel til bruk for amputerte - denne spesifikke formelen kan tas opp som en del av protokollen. Alternativt kan felles kroppsmasseindeks beregning brukes med amputerte og lignende skader eller funksjonshemninger hvis du bruker justert høyde og / eller justeret vekt. Se openEHR-EHR-OBSERVATION.height justert og openEHR-EHR-OBSERVATION.body_weight justert. 
+
+Se WHO referanse for justeret høyde / lengde for kroppsmasseindeks i pediatri. 
+
+For barn og tenåringer vurderes KMI ved hjelp av aldersjusterte referansediagrammer.">
+			keywords = <"fedme", "indeks", "kroppsmasse", "BMI", "KMI", "anoreksi", "Quetelet indeks", "underernæring", "mistrivsel", "bulimi">
+			misuse = <"Ikke beregnet til å registrere informasjon om kroppsmasseindeks persentiler - disse vil bli registrert i egne arketyper.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"Published">
 	other_contributors = <"Silje Bakke, Helse Bergen HF, Norway (Editor)", "Marja Buur, Medisch Centrum Alkmaar, Netherlands", "Rong Chen, Cambio Healthcare Systems, Sweden", "Angela de Zwart, Orion Health, New Zealand", "Paul Donaldson, Nursing Informatics Australia, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Soon Ghee Yap, Singapore Health Services Pte Ltd, Singapore", "Heather Grain, Llewelyn Grain Informatics, Australia", "Anne Harbison, CPCER, Australia", "Sam Heard, Ocean Informatics, Australia", "Andrew James, University of Toronto, Canada", "Shinji Kobayashi, Ehime University, Japan", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Ian McNicoll, Ocean Informatics, United Kingdom", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Arturo Romero, SESCAM, Spain", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
@@ -188,7 +218,7 @@ WHO Child Growth Standards: Length/height-for-age, weight-for-age, weight-for-le
 Obesity: Preventing and Managing the Global Epidemic: Report of a WHO Consultation [Internet]. Geneva, Switzerland: World Health Organisation; 2000 [cited 2009 Jul 28]. Available from: http://www.who.int/nutrition/publications/obesity/WHO_TRS_894/en/index.html
 
 Tzamaloukas AH, Patron A, Malhotra D. Body Mass Index in Amputees. Journal of Parenteral and Enteral Nutrition [Internet]. 1994 [cited 2009 Jul 28]; 18 (4): 355. Available from: http://pen.sagepub.com/cgi/content/abstract/18/4/355">
-		["MD5-CAM-1.0.1"] = <"1AC18825EB6C057778D3028D29D4A5F8">
+		["MD5-CAM-1.0.1"] = <"CDEB3C0605B72B63407407DE673893E7">
 	>
 
 definition
@@ -588,6 +618,54 @@ ontology
 				["at0011"] = <
 					text = <"Opmerking">
 					description = <"Opmerking over de Body Mass Index meting, b.v. dat de metingen die gebruikt werden voor de berekening, aangepaste lengte/gewicht zijn.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kroppsmasseindeks">
+					description = <"Beregnet måling som sammenligner en persons vekt og høyde.">
+				>
+				["at0001"] = <
+					text = <"history">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"enhver hendelse">
+					description = <"Enhver tidsbestemt registrering av kroppsmasseindeks.">
+				>
+				["at0003"] = <
+					text = <"Single">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Kroppsmasseindeks">
+					description = <"Indeks som beskriver forholdet mellom vekt og høyde.">
+				>
+				["at0005"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Metode">
+					description = <"Metode for registrering av kroppsmasseindeks.">
+				>
+				["at0007"] = <
+					text = <"Automatisk registrering">
+					description = <"Kroppsmasseindeks beregnes og legges inn automatisk, uten brukermedvirkning.">
+				>
+				["at0008"] = <
+					text = <"Direkte registrering">
+					description = <"Kroppsmasseindeks beregnes og registreres direkte av brukeren.">
+				>
+				["at0010"] = <
+					text = <"Formel">
+					description = <"Formel for beregning av kroppsmasseindeks.">
+				>
+				["at0011"] = <
+					text = <"Kommentar">
+					description = <"Kommentar om kroppsmasseindeks målingen f.eks notat om at at målingene som ble brukt var av typen justert vekt / høyde.">
 				>
 			>
 		>
