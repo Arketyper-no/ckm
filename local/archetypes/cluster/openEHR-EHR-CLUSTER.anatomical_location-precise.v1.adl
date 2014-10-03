@@ -7,6 +7,17 @@ concept
 	[at0000.1]	-- Precise anatomical location
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
+				["email"] = <"lbla@helse-bergen.no">
+			>
+			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -21,6 +32,14 @@ description
 			use = <"Use where highly precise localisation information is required, using co-ordinates.">
 			keywords = <"site", "location">
 			misuse = <"The parent OBSERVATION.anatomical_location archetype is generally sufficient for simple gross/surface anatomical location.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av nøy definert anatomisk sted">
+			use = <"Anvendes der svært presis informasjon om den anatomiske lokalisering er nødvendig, ved hjelp av koordinater.">
+			keywords = <"site", "lokasjon", "sted", "lokalitet", "beliggenhet">
+			misuse = <"Den overordnede OBSERVATION.anatomical_location arketypen er som regel tilstrekkelig for enkle grov / overflate anatomisk lokalisering.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -437,6 +456,240 @@ of ({pixel}, UCUM, “Pixels”).">
 				["at0053"] = <
 					text = <"Visual markings/orientation">
 					description = <"Description of any visual markings used to orientate the viewer e.g external reference points, special sutures, ink markings.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0.51"] = <
+					text = <"Koordinater">
+					description = <"DICOM baserte koordinat basert system for nøyaktig objekt lokalisering.">
+				>
+				["at0.52"] = <
+					text = <"Posisjon referanseramme">
+					description = <"Beskrivelse av koordinatsystem og det opprinnelige referansepunkt som brukes for å lokalisere objektet.">
+				>
+				["at0.53"] = <
+					text = <"X offsett">
+					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+
+av ({pixel}, Ucum, \"piksler\").).">
+				>
+				["at0.54"] = <
+					text = <"Y offsett">
+					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+
+av ({pixel}, Ucum, \"piksler\").">
+				>
+				["at0.56"] = <
+					text = <"Z Offsett">
+					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+
+av ({pixel}, Ucum, \"piksler\").">
+				>
+				["at0000"] = <
+					text = <"*Anatomical Location(en)">
+					description = <"*Record details about an anatomical location.(en)">
+				>
+				["at0000.1"] = <
+					text = <"Presis anatomisk lokasjon">
+					description = <"Registrerer detaljer om den anatomiske sted for en prøve eller kroppsdel, inklusiv presis informasjon om lokalitet.">
+				>
+				["at0001"] = <
+					text = <"Navnet til den anatomiske beliggenhet">
+					description = <"Det anatomiske navnet til det anatomiske lokalitet - ideelt bør dette kodes når det er muligt.">
+				>
+				["at0002"] = <
+					text = <"Side">
+					description = <"Spesifikk lateralitet til det anatomiske lokalitet.">
+				>
+				["at0003"] = <
+					text = <"Venstre">
+					description = <"Venstre lokalitet.">
+				>
+				["at0004"] = <
+					text = <"Høyre">
+					description = <"Høyre lokalitet.">
+				>
+				["at0005"] = <
+					text = <"Spesifikk lokalitet">
+					description = <"Spesifikk og identifisert anatomisk lokalitet.">
+				>
+				["at0006"] = <
+					text = <"Retning">
+					description = <"Kvalifikator for å identifisere hvilken retning den anatomiske plasseringen er i forhold til de identifiserte landemerke.">
+				>
+				["at0007"] = <
+					text = <"Medialt for">
+					description = <"Relativ lokalitet medialt for landemerket.">
+				>
+				["at0008"] = <
+					text = <"Lateralt for">
+					description = <"Relativ lokalitet lateralt for landemerket.">
+				>
+				["at0009"] = <
+					text = <"Superior">
+					description = <"Relativ lokalitet over landemerket.">
+				>
+				["at0010"] = <
+					text = <"Inferior">
+					description = <"Relativ lokalitet under landemerket.">
+				>
+				["at0011"] = <
+					text = <"Mitdtlinje">
+					description = <"I det sagittale planet der passerer gjennom midten av kroppen.">
+				>
+				["at0012"] = <
+					text = <"Foran">
+					description = <"Relativ lokalitet foran landemerket.">
+				>
+				["at0013"] = <
+					text = <"Bak">
+					description = <"Relativ lokalitet bak landemerket.">
+				>
+				["at0014"] = <
+					text = <"Nedenfor">
+					description = <"Relativ lokalitet under landemerket.">
+				>
+				["at0015"] = <
+					text = <"Over">
+					description = <"Relativ lokalitet over landemerket.">
+				>
+				["at0016"] = <
+					text = <"Inferolateralt til">
+					description = <"Relativ lokalitet inferiorlateralt til landemerket">
+				>
+				["at0017"] = <
+					text = <"Superiorlateralt til">
+					description = <"Relativ lokalitet superiorlateralt til landemerket">
+				>
+				["at0018"] = <
+					text = <"Inferiorlmedialt til">
+					description = <"Relativ lokalitet inferiormedialt til landemerket">
+				>
+				["at0019"] = <
+					text = <"Superiormedialt til">
+					description = <"Relativ lokalitet superiormedialt til landemerket">
+				>
+				["at0020"] = <
+					text = <"Relativ lokalitet">
+					description = <"Kvalifiikator for å identifisere ikke-spesifikk sted, f.eks 5 cm (avstand) nedenfor (retning) til tibial tuberosity (landemerke). Det kan være mer enn ett relative plassering som kreves for å gi en kryssreferanse .">
+				>
+				["at0021"] = <
+					text = <"Identifisert landemerke">
+					description = <"Identifisert anatomisk landemerke som spesifiserer en relativ anatomisk lokalitet.">
+				>
+				["at0022"] = <
+					text = <"Avstand til landemerket">
+					description = <"Avstand til lokaliteten fra et identifisert landemerke.">
+				>
+				["at0023"] = <
+					text = <"Beskrivelse">
+					description = <"Beskrivelse av den anatomiske lokalitet.">
+				>
+				["at0024"] = <
+					text = <"Anatomisk plan">
+					description = <"Linje som beskriver posisjonen av et vertikalt plan i kroppen.">
+				>
+				["at0025"] = <
+					text = <"Midtklavikulære linjen">
+					description = <"I det sagittale planet der passerer gjennom midtlinjen til klaviklen.">
+				>
+				["at0026"] = <
+					text = <"Midt aksillær linjen">
+					description = <"I den koronale plan som passerer gjennom midten av aksillen.">
+				>
+				["at0027"] = <
+					text = <"Midt skapulær linjen">
+					description = <"I den sagittale plan som passerer gjennom midten av skapula.">
+				>
+				["at0028"] = <
+					text = <"Numerisk idenifikator">
+					description = <"Identifiserer et spesifikt anatomisk lokalitet av flere fx tiende ribben; fjerde vertebra; anden tå.">
+				>
+				["at0029"] = <
+					text = <"Første">
+					description = <"Ordens posisjon én av en anatomisk plassering.">
+				>
+				["at0030"] = <
+					text = <"Annen">
+					description = <"Ordens posisjon to av en anatomisk plassering.">
+				>
+				["at0031"] = <
+					text = <"Tredje">
+					description = <"Ordens posisjon tre av en anatomisk plassering.">
+				>
+				["at0032"] = <
+					text = <"Fjerde">
+					description = <"Ordens posisjon fire av en anatomisk plassering.">
+				>
+				["at0033"] = <
+					text = <"Femte">
+					description = <"Ordens posisjon fem av en anatomisk plassering.">
+				>
+				["at0034"] = <
+					text = <"Sjette">
+					description = <"Ordens posisjon seks av en anatomisk plassering.">
+				>
+				["at0035"] = <
+					text = <"Syvende">
+					description = <"Ordens posisjon syv av en anatomisk plassering.">
+				>
+				["at0036"] = <
+					text = <"Åttende">
+					description = <"Ordens posisjon otte av en anatomisk plassering.">
+				>
+				["at0037"] = <
+					text = <"Niende">
+					description = <"Ordens posisjon ni av en anatomisk plassering.">
+				>
+				["at0038"] = <
+					text = <"Tiende">
+					description = <"Ordens posisjon ti av en anatomisk plassering.">
+				>
+				["at0039"] = <
+					text = <"Elvte">
+					description = <"Ordens posisjon elleve av en anatomisk plassering.">
+				>
+				["at0040"] = <
+					text = <"Tolvte">
+					description = <"Ordens posisjon tolv av en anatomisk plassering.">
+				>
+				["at0041"] = <
+					text = <"Trettende">
+					description = <"Ordens posisjon tretten av en anatomisk plassering.">
+				>
+				["at0042"] = <
+					text = <"Fjortende">
+					description = <"Ordens posisjon fjorten av en anatomisk plassering.">
+				>
+				["at0043"] = <
+					text = <"Femtende">
+					description = <"Ordens posisjon femten av en anatomisk plassering.">
+				>
+				["at0044"] = <
+					text = <"sekstende">
+					description = <"Ordens posisjon seksten av en anatomisk plassering.">
+				>
+				["at0045"] = <
+					text = <"Syttende">
+					description = <"Ordens posisjon sytten av en anatomisk plassering.">
+				>
+				["at0046"] = <
+					text = <"Attende">
+					description = <"Ordens posisjon atten av en anatomisk plassering.">
+				>
+				["at0051"] = <
+					text = <"Bilateralt">
+					description = <"Både venstre og høyre.">
+				>
+				["at0052"] = <
+					text = <"Bilde">
+					description = <"Bilde eller bilder brukt til identifikasjon av lokalitet.">
+				>
+				["at0053"] = <
+					text = <"Visuell markering/orientering">
+					description = <"Beskrivelse av noen visuelle markeringer som brukes til å orientere betrakteren f.eks eksterne referansepunkter, spesielle sting, blekk tegninger.">
 				>
 			>
 		>
