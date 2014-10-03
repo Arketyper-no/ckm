@@ -103,9 +103,9 @@ description
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"Brukes til å registrere et individs målte kroppstemperatur, som uttrykk for kjernetemperaturen.">
-			use = <"Brukes til å dokumentere kjernetemperaturen til en person. Det kan legges til CLUSTERE for å tilføre tillegsinformasjon, inkludert miljømessige forhold (eksponering), detaljer om menstruasjonssyklus og informasjon om fysisk anstrengelse, der hvor dette er relevant. NB: Målemetode og -sted vil ofte måtte vises til sluttbruker for at de dokumenterte temperaturverdiene skal kunne tolkes korrekt.">
+			use = <"Brukes til å dokumentere et individs kjernetemperatur. Det kan legges til CLUSTERE for å tilføre tillegsinformasjon, inkludert miljømessige forhold (eksponering), detaljer om menstruasjonssyklus og informasjon om fysisk anstrengelse, der hvor dette er relevant. NB: Målemetode og -sted vil ofte måtte vises til sluttbruker for at de dokumenterte temperaturverdiene skal kunne tolkes korrekt.">
 			keywords = <"temperatur", "kropp", "kjerne", "feber", "hypotermi", "hypertermi", "temperaturmåling", "overoppheting", "nedkjøling", "solstikk">
-			misuse = <"Arketypen skal ikke brukes til å registrere temperaturen til andre objekter eller en isolert kroppsdel, f.eks. en fot ved oppfølging av diabetes.">
+			misuse = <"Arketypen skal ikke brukes til å registrere andre objekters eller en isolert kroppsdels temperatur.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["es-ar"] = <
@@ -187,15 +187,20 @@ Este arquetipo no debe usarse para registrar la temperatura de una parte del cue
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Knut Bernstein", "Shahla Foozonkhah", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Omer Hotomaroglu", "Sundaresan Jaganathan", "Heather Leslie", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll", "Thomas Schopf, University Hospital of North-Norway, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Knut Bernstein", "Shahla Foozonkhah", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Omer Hotomaroglu", "Sundaresan Jaganathan", "Heather Leslie", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Thomas Schopf, University Hospital of North-Norway, Norway", "Line Sæle, Helse Vest IKT, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E3322459CFDD2C67045D91ADB625AA7B">
+		["MD5-CAM-1.0.1"] = <"2B53A5FCB2E1F987B6D1D5AC094841B3">
 	>
 
 definition
 	OBSERVATION[at0000] matches {	-- Kroppstemperatur
 		data matches {
 			HISTORY[at0002] matches {	-- *History(en)
+				period matches {
+					DV_DURATION matches {
+						value matches {|PT1M|}
+					}
+				}
 				events cardinality matches {1..*; unordered} matches {
 					EVENT[at0003] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
 						data matches {
@@ -234,9 +239,14 @@ definition
 											}
 										}
 									}
-									allow_archetype CLUSTER[at0056] occurrences matches {0..1} matches {	-- Omgivelser
+									ELEMENT[at0041] occurrences matches {0..1} matches {	-- Aktiv temperaturpåvirkning
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0056] occurrences matches {0..*} matches {	-- Detaljer om temperaturpåvirkning
 										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.environmental_conditions\.v1/}
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.environmental_conditions\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
 									}
 									allow_archetype CLUSTER[at0057] occurrences matches {0..1} matches {	-- Fysisk anstrengelse
 										include
@@ -245,11 +255,6 @@ definition
 									allow_archetype ELEMENT[at0058] occurrences matches {0..1} matches {	-- Menstruasjonssyklus
 										include
 											archetype_id/value matches {/openEHR-EHR-ELEMENT\.last_normal_menstrual_period\.v1|openEHR-EHR-ELEMENT\.menstrual_cycle_day\.v1/}
-									}
-									ELEMENT[at0041] occurrences matches {0..1} matches {	-- Annen varmepåvirkning
-										value matches {
-											DV_TEXT matches {*}
-										}
 									}
 								}
 							}
@@ -269,13 +274,13 @@ definition
 									at0022, 	-- Munn
 									at0023, 	-- Øre
 									at0024, 	-- Armhule
-									at0025, 	-- Rektum
-									at0026, 	-- Nasofarynks
+									at0025, 	-- Endetarm
+									at0026, 	-- Nesesvelg
 									at0027, 	-- Urinblære
 									at0028, 	-- Intravaskulært
 									at0043, 	-- Hud
-									at0051, 	-- Vagina
-									at0054, 	-- Øsofagus
+									at0051, 	-- Skjede
+									at0054, 	-- Spiserør
 									at0055, 	-- Lyske
 									at0060, 	-- Tinning
 									at0061]	-- Panne
@@ -595,12 +600,12 @@ ontology
 					description = <"Temperatur er målt i armhulen med armen posisjonert ned langs siden.">
 				>
 				["at0025"] = <
-					text = <"Rektum">
-					description = <"Temperatur målt i rektum.">
+					text = <"Endetarm">
+					description = <"Temperatur målt i endetarm (rektum).">
 				>
 				["at0026"] = <
-					text = <"Nasofarynks">
-					description = <"Temperatur målt i nasofarynks.">
+					text = <"Nesesvelg">
+					description = <"Temperatur målt i nesesvelget (nasofarynks).">
 				>
 				["at0027"] = <
 					text = <"Urinblære">
@@ -616,7 +621,7 @@ ontology
 				>
 				["at0030"] = <
 					text = <"Kroppseksponering">
-					description = <"De temperaturmessige forhold (eksponering) til en person hvor det måles temperatur.">
+					description = <"Grad av tildekking av individet da temperaturen ble målt.">
 				>
 				["at0031"] = <
 					text = <"Naken">
@@ -624,43 +629,43 @@ ontology
 				>
 				["at0032"] = <
 					text = <"Redusert påkledning/tildekking">
-					description = <"Personen er mindre påkledt eller tildekket enn temperaturen i omgivelsene skulle tilsi.">
+					description = <"Individet er mindre påkledt eller tildekket enn temperaturen i omgivelsene skulle tilsi.">
 				>
 				["at0033"] = <
 					text = <"Passende påkleding/tildekking">
-					description = <"Personen er passende påkledt eller tildekket i forhold til hva temperaturen i omgivelsene skulle tilsi.">
+					description = <"Individet er passende påkledt eller tildekket i forhold til hva temperaturen i omgivelsene skulle tilsi.">
 				>
 				["at0034"] = <
 					text = <"Økt påkledning/tildekking">
-					description = <"Personen er mer påkledt eller tildekket enn temperaturen i omgivelsene skulle tilsi.">
+					description = <"Individet er mer påkledt eller tildekket enn temperaturen i omgivelsene skulle tilsi.">
 				>
 				["at0041"] = <
-					text = <"Annen varmepåvirkning">
-					description = <"Beskrivelse av andre faktorer som påvirker den målte kroppstemperaturen, f.eks. bruk av varmeteppe, kalde omslag, isbad eller hjerte/lungemaskin ved oppvarming av hypotermiske pasienter.">
+					text = <"Aktiv temperaturpåvirkning">
+					description = <"Beskrivelse av aktive tiltak som påvirker den målte kroppstemperaturen, f.eks. bruk av varmeteppe, kalde omslag, isbad eller hjerte/lungemaskin ved oppvarming av hypotermiske pasienter.">
 				>
 				["at0043"] = <
 					text = <"Hud">
 					description = <"Temperaturen målt på eksponert hud.">
 				>
 				["at0051"] = <
-					text = <"Vagina">
-					description = <"Temperatur målt i vagina.">
+					text = <"Skjede">
+					description = <"Temperatur målt i skjeden (vagina).">
 				>
 				["at0054"] = <
-					text = <"Øsofagus">
-					description = <"Temperatur målt i øsofagus.">
+					text = <"Spiserør">
+					description = <"Temperatur målt i spiserøret (øsofagus).">
 				>
 				["at0055"] = <
 					text = <"Lyske">
 					description = <"Temperatur målt i lysken.">
 				>
 				["at0056"] = <
-					text = <"Omgivelser">
-					description = <"Detaljer om omgivelsene da temperaturen ble målt.">
+					text = <"Detaljer om temperaturpåvirkning">
+					description = <"Detaljer om omgivelser eller midler for aktiv temperaturpåvirkning da temperaturen ble målt.">
 				>
 				["at0057"] = <
 					text = <"Fysisk anstrengelse">
-					description = <"Detaljer om anstrengelse/aktivitet hos personen da temperaturen ble målt.">
+					description = <"Detaljer om anstrengelse/aktivitet hos individet da temperaturen ble målt.">
 				>
 				["at0058"] = <
 					text = <"Menstruasjonssyklus">
@@ -676,7 +681,7 @@ ontology
 				>
 				["at0061"] = <
 					text = <"Panne">
-					description = <"Temperatur målt i pannen.">
+					description = <"Temperatur målt på pannen.">
 				>
 			>
 		>
