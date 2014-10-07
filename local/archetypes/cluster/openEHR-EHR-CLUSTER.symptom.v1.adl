@@ -27,10 +27,10 @@ Not to be used for diagnoses and problems that form part of a persisting Problem
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Sam Heard, Ocean Informatics", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_contributors = <"Silje Bakke, Helse Bergen HF, Norway (Editor)", "Johan Gustav Bellika, Norwegian Centre for Integrated Care and Telemedicine, Norway (Editor)", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sam Heard, Ocean Informatics", "Nils Kolstrup, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "alberto maldonado, UPV, Spain", "Luis Marco Ruiz, NST, Spain (Editor)", "Ian McNicoll, Ocean Informatics, Norway">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"6FA40B48E4678BA0BBA3F9C8595DCAF6">
+		["MD5-CAM-1.0.1"] = <"D47FC29C784F60E4D1F491067E4597A2">
 	>
 
 definition
@@ -41,24 +41,17 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0035] occurrences matches {0..1} matches {	-- Nil Significant
-				value matches {
-					DV_BOOLEAN matches {
-						value matches {True}
-					}
-				}
-			}
 			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Description
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0151] occurrences matches {0..1} matches {	-- Site
+			ELEMENT[at0151] occurrences matches {0..*} matches {	-- Site
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0147] occurrences matches {0..1} matches {	-- Site Details
+			allow_archetype CLUSTER[at0147] occurrences matches {0..*} matches {	-- Site Details
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1/}
 				exclude
@@ -394,10 +387,6 @@ ontology
 				["at0033"] = <
 					text = <"Course">
 					description = <"Features of the course of the symptom.">
-				>
-				["at0035"] = <
-					text = <"Nil Significant">
-					description = <"The person has not had any significant experience of the symptom.">
 				>
 				["at0036"] = <
 					text = <"Rapid">
