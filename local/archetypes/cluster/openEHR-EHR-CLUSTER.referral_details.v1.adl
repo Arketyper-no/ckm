@@ -1,0 +1,125 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.referral_details.v1
+
+concept
+	[at0000]	-- Henvisningsdetaljer
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Tomas Nordheim Alme">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"tna@dips.no">
+		["date"] = <"2014-10-11">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*To record details related to an admission, to fit in the details slot in the archetype Reason for encounter(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"To record details related to an admission, to fit in the details slot in the archetype Reason for encounter">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
+		["MD5-CAM-1.0.1"] = <"524F32AADA98BA441FADF910FCB44F25">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Referral details
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Reason for referral
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Reason for referral text
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Referred by
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Referred from
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::]}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Referral details">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"Reason for referral">
+					description = <"Use ICPC2 codes">
+				>
+				["at0002"] = <
+					text = <"Reason for referral text">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Referred by">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Referred from">
+					description = <"">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Henvisningsdetaljer">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Henvisningsårsak">
+					description = <"Årsak til henvisning angitt fra henvisende lege, kodes med ICPC2">
+				>
+				["at0002"] = <
+					text = <"Henvisningsårsak_fritekst">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Henvist av">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Henvist fra">
+					description = <"*">
+				>
+			>
+		>
+	>
