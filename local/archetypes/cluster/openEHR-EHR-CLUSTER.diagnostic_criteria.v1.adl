@@ -1,0 +1,95 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.diagnostic_criteria.v1
+
+concept
+	[at0000]	-- Diagnostic criteria
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Sabine Leh">
+		["organisation"] = <"Haukeland University Hospital">
+		["email"] = <"sabine.leh@helse-bergen.no">
+		["date"] = <"2014-10-09">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å dokumentere definisjonen og kriteriene brukt til å lage diagnosen.">
+			use = <"Brukes til å oppgi definisjon og diagnostiske kriterier for en diagnose. Dette vil ofte være forhåndsutfylte datafelt, som dokumenterer definisjonen og kriteriene brukt i timelig og lokal kontekst. Forhåndsutfylte datafelt vil samtidig gi helsepersonell informasjonsstøtte i en diagnostisk situasjon. Kan også brukes til å angi foreldede definisjoner eller diagnostiske kriterier, som ikke skal brukes eller er brukt i den diagnostiske situasjonen.">
+			keywords = <"Diagnose", ...>
+			misuse = <"Skal ikke brukes til å nedtegne observerte data. Til dette brukes relevante OBSERVATION-arketyper.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <"Silje L. Bakke", "Heather Leslie">
+	other_details = <
+		["current_contact"] = <"Sabine Leh, Haukeland University Hospital, sabine.leh@helse-bergen.no">
+		["MD5-CAM-1.0.1"] = <"EDF81F2CFDC5B3044085A5E42D445BCC">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Diagnostic criteria
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Definisjon
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..*} matches {	-- Kilder til definisjonen
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Kriterier
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..*} matches {	-- Utdatert definisjon
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {	-- Utdaterte kriterier
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Diagnostic criteria">
+					description = <"Kriteriene og definisjonen en diagnose er basert på.">
+				>
+				["at0001"] = <
+					text = <"Definisjon">
+					description = <"Sykdomsdefinisjon for tiden brukt av deltakende helseinstitusjon eller 
+av deltakende helsepersonell.">
+				>
+				["at0002"] = <
+					text = <"Kilder til definisjonen">
+					description = <"Kilder for aktuell definisjon. Dette kan for eksempel være referanser til en lærebok, til en artikkel med retningslinjer, til en \"consensus\" artikkel eller til et møteprotokoll.">
+				>
+				["at0003"] = <
+					text = <"Kriterier">
+					description = <"Den spesifikke kombinasjonen av tegn, symptomer eller testresultater, som er brukt for å stille diagnosen.">
+				>
+				["at0005"] = <
+					text = <"Utdatert definisjon">
+					description = <"En definisjon av  sykdommen, som er utdatert eller ikke tatt i bruk.">
+				>
+				["at0006"] = <
+					text = <"Utdaterte kriterier">
+					description = <"Diagnostiske kriterier, som er utdatert eller ikke tatt i bruk.">
+				>
+			>
+		>
+	>
