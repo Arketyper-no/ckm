@@ -1,0 +1,96 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.individual_plan.v1
+
+concept
+	[at0000]	-- Individuell plan
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å registrere om pasienten har individuell plan iht forskrift  og navn på koordinator.">
+			use = <"Brukes for å registrere om pasienten har individuell plan (som regel i kommunen) iht forskrift. ">
+			keywords = <"individuell", "plan", "ip">
+			misuse = <"Skal ikke benyttes for å registrere andre former for plan, kreftforløp etc.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9F7A02ED2960E7C86465537B83BCFCE1">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Individuell plan
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Har pasienten individuell plan?
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Ansvarlig for individuell plan
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Individuell plan">
+					description = <"Use to document if the patient has an individual plan">
+				>
+				["at0001"] = <
+					text = <"Does the patient have an individuall plan?">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"*Ansvarlig for individuell plan(nb)">
+					description = <"*Tilsvarer koordinator(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Individuell plan">
+					description = <"Brukes for å dokumentere om pasienten har individuell plan iht forskrift">
+				>
+				["at0001"] = <
+					text = <"Har pasienten individuell plan?">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Ansvarlig for individuell plan">
+					description = <"Tilsvarer koordinator">
+				>
+			>
+		>
+	>
