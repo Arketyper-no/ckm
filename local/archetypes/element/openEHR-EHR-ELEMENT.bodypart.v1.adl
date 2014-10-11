@@ -1,0 +1,323 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ELEMENT.bodypart.v1
+
+concept
+	[at0000]	-- Kroppsdel
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Tomas Nordheim Alme">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"tna@dips.no">
+		["date"] = <"2014-10-11">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å angi kroppsdel i ulike sammenhenger, for å detaljert spesifisere hvilken kroppsdel et gitt funn eller en gitt anamnestisk opplysning gjelder for">
+			use = <"Brukes for å detaljere kroppsdel i en SLOT i en arketype for funn eller anamnestiske opplysninger">
+			keywords = <"kroppsdel", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
+		["MD5-CAM-1.0.1"] = <"1C12CB7077AA585FC53A095029ADA18B">
+	>
+
+definition
+	ELEMENT[at0000] matches {	-- Kroppsdel
+		value matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[local::
+					at0001, 	-- Øyne
+					at0002, 	-- Nese
+					at0003, 	-- Munn
+					at0004, 	-- Hals
+					at0005, 	-- Ører
+					at0006, 	-- Nakke
+					at0007, 	-- Thorax
+					at0008, 	-- Cor
+					at0009, 	-- Pulm
+					at0010, 	-- Abdomen
+					at0011, 	-- Genitalia externa
+					at0012, 	-- Genitalia interna
+					at0013, 	-- Høyre hånd
+					at0014, 	-- Høyre underarm
+					at0015, 	-- Høyre overarm
+					at0016, 	-- Høyre skulder
+					at0017, 	-- Venstre hånd
+					at0018, 	-- Venstre underarm
+					at0019, 	-- Venstre overarm
+					at0020, 	-- Venstre skulder
+					at0021, 	-- Høyre fot
+					at0022, 	-- Høyre legg
+					at0024, 	-- Høyre kne
+					at0023, 	-- Høyre lår
+					at0025, 	-- Underekstremiteter
+					at0026, 	-- Overekstremiteter
+					at0027, 	-- Rektal eksplorasjon
+					at0028, 	-- Columna
+					at0029]	-- Nervesystemet
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Kroppsdel(nb)">
+					description = <"*unknown(nb)">
+				>
+				["at0001"] = <
+					text = <"*Øyne(nb)">
+					description = <"**(nb)">
+				>
+				["at0002"] = <
+					text = <"*Nese(nb)">
+					description = <"**(nb)">
+				>
+				["at0003"] = <
+					text = <"*Munn(nb)">
+					description = <"**(nb)">
+				>
+				["at0004"] = <
+					text = <"*Hals(nb)">
+					description = <"**(nb)">
+				>
+				["at0005"] = <
+					text = <"*Ører(nb)">
+					description = <"**(nb)">
+				>
+				["at0006"] = <
+					text = <"*Nakke(nb)">
+					description = <"**(nb)">
+				>
+				["at0007"] = <
+					text = <"*Thorax(nb)">
+					description = <"**(nb)">
+				>
+				["at0008"] = <
+					text = <"*Cor(nb)">
+					description = <"**(nb)">
+				>
+				["at0009"] = <
+					text = <"*Pulm(nb)">
+					description = <"**(nb)">
+				>
+				["at0010"] = <
+					text = <"*Abdomen(nb)">
+					description = <"**(nb)">
+				>
+				["at0011"] = <
+					text = <"*Genitalia externa(nb)">
+					description = <"**(nb)">
+				>
+				["at0012"] = <
+					text = <"*Genitalia interna(nb)">
+					description = <"**(nb)">
+				>
+				["at0013"] = <
+					text = <"*Høyre hånd(nb)">
+					description = <"**(nb)">
+				>
+				["at0014"] = <
+					text = <"*Høyre underarm(nb)">
+					description = <"**(nb)">
+				>
+				["at0015"] = <
+					text = <"*Høyre overarm(nb)">
+					description = <"**(nb)">
+				>
+				["at0016"] = <
+					text = <"*Høyre skulder(nb)">
+					description = <"**(nb)">
+				>
+				["at0017"] = <
+					text = <"*Venstre hånd(nb)">
+					description = <"**(nb)">
+				>
+				["at0018"] = <
+					text = <"*Venstre underarm(nb)">
+					description = <"**(nb)">
+				>
+				["at0019"] = <
+					text = <"*Venstre overarm(nb)">
+					description = <"**(nb)">
+				>
+				["at0020"] = <
+					text = <"*Venstre skulder(nb)">
+					description = <"**(nb)">
+				>
+				["at0021"] = <
+					text = <"*Høyre fot(nb)">
+					description = <"**(nb)">
+				>
+				["at0022"] = <
+					text = <"*Høyre legg(nb)">
+					description = <"**(nb)">
+				>
+				["at0023"] = <
+					text = <"*Høyre lår(nb)">
+					description = <"**(nb)">
+				>
+				["at0024"] = <
+					text = <"*Høyre kne(nb)">
+					description = <"**(nb)">
+				>
+				["at0025"] = <
+					text = <"*Underekstremiteter(nb)">
+					description = <"**(nb)">
+				>
+				["at0026"] = <
+					text = <"*Overekstremiteter(nb)">
+					description = <"**(nb)">
+				>
+				["at0027"] = <
+					text = <"*Rektal eksplorasjon(nb)">
+					description = <"**(nb)">
+				>
+				["at0028"] = <
+					text = <"*Columna(nb)">
+					description = <"**(nb)">
+				>
+				["at0029"] = <
+					text = <"*Nervesystemet(nb)">
+					description = <"**(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kroppsdel">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Øyne">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Nese">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Munn">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Hals">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Ører">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Nakke">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Thorax">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Cor">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Pulm">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Abdomen">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Genitalia externa">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Genitalia interna">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Høyre hånd">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Høyre underarm">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Høyre overarm">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Høyre skulder">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Venstre hånd">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Venstre underarm">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Venstre overarm">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Venstre skulder">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Høyre fot">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Høyre legg">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Høyre lår">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Høyre kne">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Underekstremiteter">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Overekstremiteter">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Rektal eksplorasjon">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Columna">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Nervesystemet">
+					description = <"*">
+				>
+			>
+		>
+	>
