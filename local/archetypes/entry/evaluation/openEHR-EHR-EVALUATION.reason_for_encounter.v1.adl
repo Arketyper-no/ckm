@@ -5,6 +5,14 @@ concept
 	[at0000]	-- Reason for Encounter
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -30,12 +38,20 @@ Chief Complaint is another phrase in common usage. In effect it is probably a ty
 Not to be used to record specific diagnosis details that may be required in addition to a Reason for Encounter eg Admission or Pre-operative Diagnosis as part of admission for a hospital procedure. Use the EVALUATION.problem_diagnosis (and related specialisations) for this purpose.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"To record the reason/s for initiation of any type of healthcare contact between a healthcare provider and a patient.
+
+Å dokumentere årsak til iverksettelse av enhver type helsetjeneste mellom et helsepersonell og en pasient.">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Ian McNicoll, Ocean Informatics, Australia", "Sergio Carmona, Chile", "Sebastian Garde, Ocean Informatics, Germany", "Beatriz de Faria Leão, Brazil", "Omer Hotomaroglu, Turkey", "Sundaresan Jagannathan, Scottish NHS, United Kingdom">
+	other_contributors = <>
 	other_details = <
-		["references"] = <"openEHR Foundation. openEHR wiki: Reason for Encountrer or Chief Complaint [Internet]. 2008 Feb 13 [cited June 17 2012];  Available at http://www.openehr.org/wiki/display/healthmod/Reason+for+encounter+or+Chief+complaint.">
-		["MD5-CAM-1.0.1"] = <"A7AD709820469E3A79A0E3ADCB9082C7">
+		["MD5-CAM-1.0.1"] = <"1BD4240629CBD3B5961D3D6409A98810">
 	>
 
 definition
@@ -45,13 +61,27 @@ definition
 				items cardinality matches {0..*; unordered} matches {
 					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Reason for Contact
 						value matches {
-							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0005, 	-- *Akutt innleggelse(en)
+									at0006, 	-- *Akutt poliklinisk kontakt(en)
+									at0007, 	-- *Kontroll(en)
+									at0008, 	-- *Attest/helsekontroll(en)
+									at0009, 	-- *Planlagt innleggelse(en)
+									at0010]	-- *Planlagt poliklinisk kontakt(en)
+								}
+							}
 						}
 					}
 					ELEMENT[at0004] occurrences matches {0..*} matches {	-- Presenting Problem
 						value matches {
 							DV_TEXT matches {*}
 						}
+					}
+					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {	-- Cluster
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -81,6 +111,85 @@ ontology
 					description = <"Identification of the clinical reason for seeking healthcare.">
 					comment = <"Clinical reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking or to lose weight; symptoms - abdominal pain or shortness of breath; physical signs - an altered conscious state. May also be referred to as Presenting Complaint.
  Coding of the Presentic Problem with a terminology is desirable, where possible.">
+				>
+				["at0005"] = <
+					text = <"*Akutt innleggelse(en)">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"*Akutt poliklinisk kontakt(en)">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"*Kontroll(en)">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"*Attest/helsekontroll(en)">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"*Planlagt innleggelse(en)">
+					description = <"**(en)">
+				>
+				["at0010"] = <
+					text = <"*Planlagt poliklinisk kontakt(en)">
+					description = <"**(en)">
+				>
+				["at0011"] = <
+					text = <"Cluster">
+					description = <"**(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kontaktårsak">
+					description = <"Registrer den adminstrative og/eller kliniske årsaken for kontakten">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Kontaktårsak">
+					description = <"Identifisiering av den administrative årsaken til kontakten">
+					comment = <"*For example, a clinical consultation, emergency consultation, pre-employment medical, routine antenatal visit, women's health check, pre-operative assessment, or annual medical check-up. Coding of the Reason for Encounter with a terminology is desirable, where possible.(en)">
+				>
+				["at0004"] = <
+					text = <"Klinisk problemstilling">
+					description = <"Identifikasjon av den kliniske årsaken til kontakten">
+					comment = <"*Clinical reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking or to lose weight; symptoms - abdominal pain or shortness of breath; physical signs - an altered conscious state. May also be referred to as Presenting Complaint.
+ Coding of the Presentic Problem with a terminology is desirable, where possible.(en)">
+				>
+				["at0005"] = <
+					text = <"Akutt innleggelse">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Akutt poliklinisk kontakt">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Kontroll">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Attest/helsekontroll">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Planlagt innleggelse">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Planlagt poliklinisk kontakt">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Cluster(en)">
+					description = <"***(en)(en)">
 				>
 			>
 		>
