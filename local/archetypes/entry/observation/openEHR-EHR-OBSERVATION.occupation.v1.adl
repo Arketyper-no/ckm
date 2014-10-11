@@ -1,0 +1,226 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.occupation.v1
+
+concept
+	[at0000]	-- Arbeid
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Tomas Nordheim Alme">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"tna@dips.no">
+		["date"] = <"2014-10-11">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Used to document information about the patients work status, as part of social history taking.">
+			use = <"Use to document patients work status">
+			misuse = <"Do not use to document work status for other subjects than the patient.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Benyttes for å dokumentere arbeidssituasjon og yrke for pasienten i forbindelse med sosialanamnese. ">
+			use = <"Benyttes til å dokumentere pasientens arbeidssituasjon.">
+			keywords = <"arbeid", "yrke", "ufør", "hjemmeværende">
+			misuse = <"Skal ikke brukes for å dokumentere arbeidssituasjon til andre enn pasienten.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
+		["MD5-CAM-1.0.1"] = <"3A99AE414B0934016D9CEBF84C37B7CC">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Arbeid
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Yrkesstatus
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- Inntektsgivende arbeid
+													at0006, 	-- Hjemmeværende
+													at0007, 	-- Student
+													at0008, 	-- Ufør/trygdet
+													at0009, 	-- Annet
+													at0013, 	-- Arbeidsledig
+													at0014]	-- Alderspensjonist
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Type arbeidsplass
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Stilling/yrke
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {	-- Detaljer arbeid
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Arbeid(nb)">
+					description = <"*Benyttes for å dokumentere yrkesaktivitet(nb)">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"*Yrkesstatus(nb)">
+					description = <"*Angi pasientens yrkesstatus. (Fra definisjonskatalog for allmennhelsetjenesten, KITH 1996)(nb)">
+				>
+				["at0005"] = <
+					text = <"Paid work">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Homemaker">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Student">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Welfare/Social security">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Other">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Workplace type">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Occupation/Profession">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Cluster(nb)">
+					description = <"**(nb)">
+				>
+				["at0013"] = <
+					text = <"*Arbeidsledig(nb)">
+					description = <"**(nb)">
+				>
+				["at0014"] = <
+					text = <"*Alderspensjonist(nb)">
+					description = <"**(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Arbeid">
+					description = <"Benyttes for å dokumentere yrkesaktivitet">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Yrkesstatus">
+					description = <"Angi pasientens yrkesstatus. (Fra definisjonskatalog for allmennhelsetjenesten, KITH 1996)">
+				>
+				["at0005"] = <
+					text = <"Inntektsgivende arbeid">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Hjemmeværende">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Student">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Ufør/trygdet">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Type arbeidsplass">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Stilling/yrke">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Detaljer arbeid">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Arbeidsledig">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Alderspensjonist">
+					description = <"*">
+				>
+			>
+		>
+	>
