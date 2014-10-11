@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>4ed4ef46-c5f9-48c7-8ed6-06297895cf6a</id>
+  <name>Sosialanamnese</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.social_status.v1" concept_name="Sosialanamnese">
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.home_and_institutional_care.v1" concept_name="Kommunale tjenester" path="/content[at0001]">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_plan.v1" concept_name="Individuell plan" path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]" />
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.marietal_status.v1" concept_name="Sivilstatus" max="1" path="/content[at0002]" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.children.v1" concept_name="Barn" path="/content[at0002]" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.parents.v1" concept_name="Foreldre" path="/content[at0002]" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.siblings.v1" concept_name="Søsken" path="/content[at0002]" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.occupation.v1" concept_name="Arbeid" max="1" path="/content[at0003]" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.housing.v1" concept_name="Bolig" max="1" path="/content[at0004]" />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.social_status.v1">
+    <digest id="MD5-CAM-1.0.1">EC3D5726307C2D9C40B44E095E6DB083</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.home_and_institutional_care.v1">
+    <digest id="MD5-CAM-1.0.1">7C4543D5C7C22A208845278392D54547</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.individual_plan.v1">
+    <digest id="MD5-CAM-1.0.1">9F7A02ED2960E7C86465537B83BCFCE1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.marietal_status.v1">
+    <digest id="MD5-CAM-1.0.1">EF0946C19A764DB9DBB86F46F2F75A6B</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.children.v1">
+    <digest id="MD5-CAM-1.0.1">0CC71D6FCC5DE914F87C4FA366E7B675</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.parents.v1">
+    <digest id="MD5-CAM-1.0.1">AC0AFFED339A3CEE52C4F0EBC45CD5AA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.siblings.v1">
+    <digest id="MD5-CAM-1.0.1">6228B5FCD16A916BAE193E0419090492</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.occupation.v1">
+    <digest id="MD5-CAM-1.0.1">3A99AE414B0934016D9CEBF84C37B7CC</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.housing.v1">
+    <digest id="MD5-CAM-1.0.1">A77FA5A7B57B2BE088AF2986DC4DB1BE</digest>
+  </integrity_checks>
+</template>
