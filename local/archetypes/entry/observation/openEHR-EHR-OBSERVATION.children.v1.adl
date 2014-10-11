@@ -1,0 +1,149 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.children.v1
+
+concept
+	[at0000]	-- Barn
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Tomas Nordheim Alme">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"tna@dips.no">
+		["date"] = <"2014-10-11">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Use to document that the patient has children and their date of birth. Age is important in the event that the children of the patient are still children in the legal sense, ie under 18 years old and dob is used to calculate this. Health services may have special operationg procedures for patients with small children, especially within psychatry.">
+			use = <"Use to document that the patient has children and their date of birth. ">
+			misuse = <"Do not use for other than the patients children">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å dokumentere at pasienten har barn og alder på disse. Alder er viktig i de tilfellene der pasientens barn fremdeles er barn (dvs under 18 år) og benyttes til å beregne dette. Det utløser spesielle krav til helsetjenesten når en forelder er syk, spesielt innenfor psykiatri.">
+			use = <"Benyttes til å dokumentere at pasienten har barn, og evt alder på disse">
+			keywords = <"barn", "foreldrerett">
+			misuse = <"Skal ikke benyttes til å dokumentere annet enn pasientens barn.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
+		["MD5-CAM-1.0.1"] = <"0CC71D6FCC5DE914F87C4FA366E7B675">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Barn
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Fødselsdato
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Navn
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Død
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Children">
+					description = <"Use for documenting that the patient has children">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Date of birth">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Name">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Dead">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Barn">
+					description = <"Brukes til å dokumentere barn i familien til pasienten.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Fødselsdato">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Navn">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Død">
+					description = <"*">
+				>
+			>
+		>
+	>
