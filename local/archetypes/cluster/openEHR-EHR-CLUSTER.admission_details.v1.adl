@@ -1,0 +1,65 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.admission_details.v1
+
+concept
+	[at0000]	-- Referral details
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"To record details related to an admission, to fit in the details slot in the archetype Reason for encounter">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"AD6FDEB9CCB0EA351C9A78D05A850BF5">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Referral details
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Henvisningsårsak
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Admission details(nb)">
+					description = <"*unknown(nb)">
+				>
+				["at0001"] = <
+					text = <"*New element(nb)">
+					description = <"**(nb)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Referral details">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Henvisningsårsak">
+					description = <"*">
+				>
+			>
+		>
+	>
