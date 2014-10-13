@@ -6,6 +6,13 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Tomas Alme">
+				["organisation"] = <"DIPS ASA">
+			>
+		>
 		["ko"] = <
 			language = <[ISO_639-1::ko]>
 			author = <
@@ -15,16 +22,16 @@ language
 			>
 			accreditation = <"Certified board of Family medicine">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			author = <
-				["name"] = <"Guillermo Palli">
-			>
-		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			author = <
 				["name"] = <"Mona Saleh">
+			>
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Guillermo Palli">
 			>
 		>
 	>
@@ -74,12 +81,24 @@ Use to record a simple narrative and/or as a container archetype - to provide a 
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å dokumentere en beskrivelse av pasientens sykehistorie/anamnese, som fortalt til kliniker eller dokumentert direkte av pasienten, og for å gi et rammeverk for å nøste inn detaljerte CLUSTER-arketyper, som hver for seg kan detaljere ulike aspekter av sykehistorien.">
+			use = <"Brukes for å dokumentere pasientens anamnese av kliniker, som fortalt av pasient/komparent, eller for å la pasienten selv dokumentere sin anamnese, for eksempel i et personlig helseregister.
+
+Brukes for å kunne gjenbruke beskrivelser av anamnese i eksisterende systemer inn i et arketypeformat ved hjelp av 'Anamnese'-dataelementet.
+
+Brukes for å dokumentere en enkel beskrivelse og/eller som en container-arketype - for å gi en felles ENTRY-arketype som er søkbar/beregnbar og som kan utvides gjennom inklusjon av spesifikke CLUSTER-arketyper med mer detaljert innhold. Eksempler på anamnese-relaterte CLUSTER-arketyper er CLUSTER.symptom og CLUSTER.health_event">
+			keywords = <"anamnese", "sykehistorie", "problem", "helseplage">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Sam Heard, Ocean Informatic, Australia", ...>
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"FE1660C9372AFA772F77A1EA8F028E03">
+		["MD5-CAM-1.0.1"] = <"93456DDA73A96244DC7462050B330ED5">
 	>
 
 definition
@@ -225,6 +244,35 @@ ontology
 					text = <"상세내용">
 					description = <"개인의 이야기 또는 환자의 병력에 대한 추가적인 구조화된 상세내용">
 					comment = <"예를 들어: 구역 또는 통증과 같은 특정한 증상; 자전거에서 낙상과 같은 이벤트; 또는 금연에 대한 욕구와 같은 문제">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Anamnese">
+					description = <"En persons sykehistorie/anamnese, som fortalt til kliniker eller dokumentert direkte av pasienten">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Anamnese">
+					description = <"Tekstlig beskrivelse av sykehistorie/anamnese">
+				>
+				["at0006"] = <
+					text = <"Detaljer">
+					description = <"Ytterligere detaljer i strukturert form, knyttet til pasientens eller personens sykehistorie/anamnese.">
+					comment = <"Eksempel: et spesifikt symptom som kvalme eller smerte; en hendelse så som sykkelvelt; en problemstilling så som ønsket om å slutte med tobakk.">
 				>
 			>
 		>
