@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.nutritional_risk_screening.v1
 
 concept
-	[at0000]	-- Nutritional risk screening
+	[at0000]	-- Nutritional Risk Screening
 language
 	original_language = <[ISO_639-1::nb]>
 	translations = <
@@ -44,6 +44,7 @@ Dersom svaret er JA på noen av disse spørsmålene, gjennomføres hovedscreenin
 Dersom svaret er NEI på alle svarene, gjennomføres innledende screening ukentlig. 
 Dersom pasienten skal gjennomgå planlagt større kirurgi, skal en forebyggende ernæringsplan vurderes 
 for å unngå assosiert ernæringsrisiko.">
+			keywords = <"ernæring", "NRS", "NRS2002">
 			misuse = <"Brukes ikke til barn.">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -53,7 +54,7 @@ for å unngå assosiert ernæringsrisiko.">
 	other_details = <
 		["current_contact"] = <"Micaela Thierley, Helse Bergen, micaela.thierley@helse-bergen.no">
 		["references"] = <"http://www.uniklinik-duesseldorf.de/fileadmin/Datenpool/einrichtungen/klinik_fuer_gastroenterologie_hepatologie_und_infektiologie_id6/Darmzentrum/Formulare_polnisch/ernhrungnrs_schuetz_2002_sept_2006_en.pdf">
-		["MD5-CAM-1.0.1"] = <"D9DA55AD8D7EAAC3297D948F1331B0A5">
+		["MD5-CAM-1.0.1"] = <"311FE329462D806C508EB4157B4D7AF9">
 	>
 
 definition
@@ -233,16 +234,16 @@ gjennomgått et mindre kirurgisk inngrep.(nb)">
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Nutritional risk screening">
-					description = <"Screening for malnutrition using the tool NRS 2002.">
+					text = <"Nutritional Risk Screening">
+					description = <"Verktøyet Nutritional Risk Screening (NRS) 2002 for screening etter feilernæring.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Any event">
-					description = <"*">
+					text = <"Uspesifisert hendelse">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
@@ -261,7 +262,7 @@ gjennomgått et mindre kirurgisk inngrep.(nb)">
 					description = <"Redusert ernæringsinntak siste uken?">
 				>
 				["at0007"] = <
-					text = <"Er pasienten alvorlig syk.">
+					text = <"Er pasienten alvorlig syk?">
 					description = <"Alvorlig sykdom? (Eksempel intensivopphold).">
 				>
 				["at0016"] = <
@@ -278,15 +279,15 @@ gjennomgått et mindre kirurgisk inngrep.(nb)">
 				>
 				["at0019"] = <
 					text = <"Mild">
-					description = <"Vekttap > 5 % siste 3 mnd. eller  matinntak < 50 – 75 % av behov siste uke.">
+					description = <"Vekttap > 5 % siste 3 mnd. eller matinntak < 50 – 75 % av behov siste uke.">
 				>
 				["at0020"] = <
 					text = <"Moderat">
-					description = <"Vekttap  > 5 % siste 2 mnd. eller BMI 18.5 – 20.5 og redusert allmenntilstand eller  matinntak 25–50 % av behov sist uke.">
+					description = <"Vekttap > 5 % siste 2 mnd. eller BMI 18.5 – 20.5 og redusert allmenntilstand eller matinntak 25–50 % av behov sist uke.">
 				>
 				["at0021"] = <
 					text = <"Alvorlig">
-					description = <"Vekttap > 5 % siste mnd. eller BMI < 18.5 og redusert allmenntilstand eller  matinntak 0–25 % av behov siste uke.">
+					description = <"Vekttap > 5 % siste mnd. eller BMI < 18.5 og redusert allmenntilstand eller matinntak 0–25 % av behov siste uke.">
 				>
 				["at0022"] = <
 					text = <"Normal">
@@ -322,8 +323,8 @@ gjennomgått et mindre kirurgisk inngrep.">
 					description = <"Summen av score fra ernæringstilstand, sykdommens alvorlighetsgrad og aldersjustering.">
 				>
 				["at0032"] = <
-					text = <"">
-					description = <"">
+					text = <"*(nb)">
+					description = <"*(nb)">
 				>
 			>
 		>
