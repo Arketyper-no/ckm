@@ -107,6 +107,30 @@
         <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+          <nameConstraint>
+            <excludedValues>local::at0021</excludedValues>
+          </nameConstraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0012]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0026]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0027]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]" max="0" />
+        <Rule path="/data[at0001]/events[at0011]" max="0" />
+        <Rule path="/data[at0001]/events[at0022]" max="0" />
+        <Rule path="/protocol[at0023]" hide_on_form="true" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_segment.v1" concept_name="Measurement of Body Segment" max="1" path="/items" name="Overarmsmål #1" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+          <nameConstraint>
+            <excludedValues>local::at0017</excludedValues>
+          </nameConstraint>
+        </Rule>
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0012]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0026]" max="0" />
@@ -128,13 +152,6 @@
           </constraint>
         </Rule>
       </Item>
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_segment.v1" concept_name="Measurement of Body Segment" max="1" path="/items" name="FJERNES??" hide_on_form="true">
-        <Rule path="/data[at0001]" hide_on_form="true" />
-        <Rule path="/data[at0001]/events[at0002]" max="0" />
-        <Rule path="/data[at0001]/events[at0011]" max="0" />
-        <Rule path="/data[at0001]/events[at0022]" max="0" />
-        <Rule path="/protocol[at0023]" hide_on_form="true" />
-      </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.nutritional_risk_screening.v1" concept_name="Nutritional risk screening" path="/items" hide_on_form="true">
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
@@ -142,26 +159,26 @@
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1" concept_name="Kroppsvekt" max="1" path="/items" name="Vekttap">
         <Rule path="/data[at0002]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003]" max="1" hide_on_form="true" name="Forrige vekt:" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/data[at0001]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/data[at0001]/items[at0004]" name="Forrige vekt:" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/data[at0001]/items[at0038]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/data[at0001]/items[at0024]" max="0" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/state[at0008]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/state[at0008]/items[at0009]" max="0" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Forrige vekt:']/state[at0008]/items[at0025]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]" max="1" hide_on_form="true" clone="true" name="Vekt nå:" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/data[at0001]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/data[at0001]/items[at0004]" name="Vekt nå:" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/data[at0001]/items[at0038]" max="0" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/data[at0001]/items[at0024]" max="0" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/state[at0008]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/state[at0008]/items[at0009]" max="0" />
-        <Rule path="/data[at0002]/events[at0003 and name/value='Vekt nå:']/state[at0008]/items[at0025]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/data[at0001]/items[at0004]" name="Forrige vekt" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/data[at0001]/items[at0038]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/data[at0001]/items[at0024]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/state[at0008]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/state[at0008]/items[at0009]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse']/state[at0008]/items[at0025]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]" hide_on_form="true" clone="true" name="Uspesifisert hendelse #1" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/data[at0001]/items[at0004]" name="Vekt nå" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/data[at0001]/items[at0038]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/data[at0001]/items[at0024]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/state[at0008]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/state[at0008]/items[at0009]" max="0" />
+        <Rule path="/data[at0002]/events[at0003 and name/value='Uspesifisert hendelse #1']/state[at0008]/items[at0025]" max="0" />
         <Rule path="/data[at0002]/events[at0026]" max="0" />
         <Rule path="/protocol[at0015]" hide_on_form="true" />
-        <Rule path="/protocol[at0015]/items[at0037]" max="0" />
-        <Rule path="/protocol[at0015]/items[at0041]" max="0" />
+        <Rule path="/protocol[at0015]/items[at0037]" hide_on_form="true" />
+        <Rule path="/protocol[at0015]/items[at0041]" hide_on_form="true" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Klinisk Sammendrag" max="1" path="/items" name="Food inntake" hide_on_form="true">
         <Rule path="/data[at0001]" hide_on_form="true" />
@@ -187,21 +204,19 @@
         <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
       </Item>
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.barthel.v1" concept_name="Barthel Index" path="/items" hide_on_form="true">
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.barthel.v1" concept_name="Barthel -Indeks" path="/items" hide_on_form="true">
         <Rule path="/data[at0002]" hide_on_form="true" />
         <Rule path="/data[at0002]/events[at0003]" hide_on_form="true" />
         <Rule path="/data[at0002]/events[at0003]/data[at0001]" hide_on_form="true" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0008]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0034]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0030]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0026]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0021]" name="Forflytning - Beskriv pasientens prestasjonsnivå: forflytning fra seng til stol" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0017]" name="Mobilitet/ gangfunksjon - Beskriv pasientens rørlighet/ gangfunksjon" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0012]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0040]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0009]" max="0" />
-        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0016]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0008]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0034]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0030]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0026]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0012]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0040]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0009]" hide_on_form="true" />
+        <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0016]" hide_on_form="true" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.risk.v1" concept_name="Evaluation of risk of condition" path="/items" hide_on_form="true">
         <Rule path="/data[at0001]" hide_on_form="true" />
@@ -286,13 +301,13 @@
     <digest id="MD5-CAM-1.0.1">FB93A7EE4CEBF54AE7477235451C04ED</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.nutritional_risk_screening.v1">
-    <digest id="MD5-CAM-1.0.1">DE437834013DF81F9B9F4722E1E91188</digest>
+    <digest id="MD5-CAM-1.0.1">D9DA55AD8D7EAAC3297D948F1331B0A5</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.stratify_risk_assessment_tool.v1">
-    <digest id="MD5-CAM-1.0.1">41CD776EF876534F16D69D8F94F050CC</digest>
+    <digest id="MD5-CAM-1.0.1">BAC0017BC9DFE54B5ACBFFD688DA3366</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.barthel.v1">
-    <digest id="MD5-CAM-1.0.1">54AB2529EDA6063D1B052755A68AB375</digest>
+    <digest id="MD5-CAM-1.0.1">61963F1775E6170F75BC1B7E360ED628</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.risk.v1">
     <digest id="MD5-CAM-1.0.1">8FBA7C9383CC4DF90868D847DE8F6998</digest>
