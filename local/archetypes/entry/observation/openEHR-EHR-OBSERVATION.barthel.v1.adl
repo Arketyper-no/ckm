@@ -42,23 +42,6 @@ description
 		["date"] = <"2006-03-22">
 	>
 	details = <
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل حرز الاعتماد على المساعدة للقيام بالأنشطة المهمة في الحياة اليومية. 
-الحرز الإجمالي هو مجموع الأحراز الترتيبية لكل صفة.">
-			use = <"لتجميع حرز استقلالية الأشخاص - حتى في دار المسنين.">
-			keywords = <"الحرز", "المعامل", "الأنشطة", "الحياة اليومية", "الاعتمادية">
-			misuse = <"لا يستخدم لتسجيل خصائص الأفراد.">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["nl"] = <
-			language = <[ISO_639-1::nl]>
-			purpose = <"To record a score of dependency on help to undertake important activities of daily living. The total score is the sum of the ordinal scores for each attribute.">
-			use = <"For scoring people's independence - often in a nursing home.">
-			keywords = <"score", "index", "activities", "daily living", "dependency">
-			misuse = <"Not to be used to record individual features.">
-			copyright = <"© Nasjonal IKT HF">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record a score of dependency on help to undertake important activities of daily living. The total score is the sum of the ordinal scores for each attribute.">
@@ -73,12 +56,29 @@ Permission is required to modify the Barthel Index or to use it for commercial p
 			misuse = <"Not to be used to record individual features.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل حرز الاعتماد على المساعدة للقيام بالأنشطة المهمة في الحياة اليومية. 
+الحرز الإجمالي هو مجموع الأحراز الترتيبية لكل صفة.">
+			use = <"لتجميع حرز استقلالية الأشخاص - حتى في دار المسنين.">
+			keywords = <"الحرز", "المعامل", "الأنشطة", "الحياة اليومية", "الاعتمادية">
+			misuse = <"لا يستخدم لتسجيل خصائص الأفراد.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 		["ru"] = <
 			language = <[ISO_639-1::ru]>
 			purpose = <"Для записи оценки зависимости от посторонней помощи в повседневной жизни. Общая оценка - сумма баллов каждого атрибута.">
 			use = <"Для оценки независимости от посторонней помощи. Часто в доме престарелых.">
 			keywords = <"баллы", "индекс", "активность", "независимость", "повседневная жизнь">
 			misuse = <"Не использовать для описания индивидуальных особенностей.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			purpose = <"To record a score of dependency on help to undertake important activities of daily living. The total score is the sum of the ordinal scores for each attribute.">
+			use = <"For scoring people's independence - often in a nursing home.">
+			keywords = <"score", "index", "activities", "daily living", "dependency">
+			misuse = <"Not to be used to record individual features.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
@@ -122,89 +122,89 @@ For modifisering eller kommersiell bruk kreves det tillatelse.
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
 		["references"] = <"Mahoney FI, Barthel D. Functional evaluation: the Barthel Index. Maryland State Med Journal 1965;14:56-61.">
-		["MD5-CAM-1.0.1"] = <"61963F1775E6170F75BC1B7E360ED628">
+		["MD5-CAM-1.0.1"] = <"44BB4215AEC20CD14D7DCC50C2B14B2A">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Barthel Index
+	OBSERVATION[at0000] matches {	-- Barthel ADL-Indeks
 		data matches {
-			HISTORY[at0002] matches {	-- history
+			HISTORY[at0002] matches {	-- History
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0003] occurrences matches {0..*} matches {	-- Any event
+					EVENT[at0003] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
 						data matches {
-							ITEM_LIST[at0001] matches {	-- structure
+							ITEM_LIST[at0001] matches {	-- List
 								items cardinality matches {0..*; ordered} matches {
-									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Continence of bowels
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Tarmkontroll
 										value matches {
-											0|[local::at0037], 	-- Incontinent (or requires enemas)
-											1|[local::at0006], 	-- Occasional accident
-											2|[local::at0038]  	-- Continent
+											0|[local::at0037], 	-- Inkontinens (behov for innlegg/bleie)
+											1|[local::at0006], 	-- Sporadisk hendelse
+											2|[local::at0038]  	-- Kontinent
 										}
 									}
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Bladder control
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Kontroll over blæren
 										value matches {
-											0|[local::at0005], 	-- Incontinent (or unable to manage catheter)
-											1|[local::at0006], 	-- Occasional accident
-											2|[local::at0007]  	-- Continent (manages catheter alone)
+											0|[local::at0005], 	-- Urininkontinens (eller ikke i stand til å styre katetertømming)
+											1|[local::at0006], 	-- Sporadisk hendelse
+											2|[local::at0007]  	-- Kontinent ( kontroll over kateterbruk)
 										}
 									}
-									ELEMENT[at0034] occurrences matches {0..1} matches {	-- Personal care/hygeine
+									ELEMENT[at0034] occurrences matches {0..1} matches {	-- Personlig hygiene
 										value matches {
-											0|[local::at0035], 	-- Needs help
-											1|[local::at0036]  	-- Independent
+											0|[local::at0035], 	-- Trenger hjelp
+											1|[local::at0036]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Toilet use
+									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Toalettbesøk
 										value matches {
-											0|[local::at0031], 	-- Dependent
-											1|[local::at0032], 	-- Needs some help but can do some tasks alone
-											2|[local::at0033]  	-- Independent (on & off, dressing, wiping)
+											0|[local::at0031], 	-- Trenger hjelp til alt
+											1|[local::at0032], 	-- Trenger noe hjelp men kan utføre enkle oppgaver selv
+											2|[local::at0033]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Eating
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Spising
 										value matches {
-											0|[local::at0027], 	-- Unable to eat unassisted
-											1|[local::at0028], 	-- Needs help
-											2|[local::at0029]  	-- Independent
+											0|[local::at0027], 	-- Hjelpebehov ved matinntak
+											1|[local::at0028], 	-- Trenger noe hjelp.
+											2|[local::at0029]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0021] occurrences matches {0..1} matches {	-- Transfer
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- Forflytning mellom seng og stol
 										value matches {
-											0|[local::at0022], 	-- Unable
-											1|[local::at0023], 	-- Major help
-											2|[local::at0024], 	-- Minor help
-											3|[local::at0025]  	-- Independent
+											0|[local::at0022], 	-- Manglende forflytningsevne
+											1|[local::at0023], 	-- Betydelig hjelpebehov
+											2|[local::at0024], 	-- Noe hjelpebehov
+											3|[local::at0025]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0017] occurrences matches {0..1} matches {	-- Mobility
+									ELEMENT[at0017] occurrences matches {0..1} matches {	-- Mobilitet
 										value matches {
-											0|[local::at0018], 	-- Immobile or < 50 meters
-											1|[local::at0019], 	-- Wheel chair independent
-											2|[local::at0020], 	-- Walks with help
-											3|[local::at0039]  	-- Independent
+											0|[local::at0018], 	-- Immobil
+											1|[local::at0019], 	-- Mobil med rullestol
+											2|[local::at0020], 	-- Går med hjelp
+											3|[local::at0039]  	-- Uavhengig av hjelp
 										}
 									}
-									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Dressing/undressing
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Påkledning
 										value matches {
-											0|[local::at0013], 	-- Dependent
-											1|[local::at0014], 	-- Needs help but can do about half unaided
-											2|[local::at0011]  	-- Independent
+											0|[local::at0013], 	-- Hjelpebehov stor
+											1|[local::at0014], 	-- Trenger hjelp men kan gjøre halvparten selv
+											2|[local::at0011]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Stairs
+									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Trappegang
 										value matches {
-											0|[local::at0041], 	-- Unable
-											1|[local::at0042], 	-- Needs help
-											2|[local::at0043]  	-- Independent
+											0|[local::at0041], 	-- Ikke i stand til å gå i trapp
+											1|[local::at0042], 	-- Behov for hjelp
+											2|[local::at0043]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Bathing
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Bading/Dusj
 										value matches {
-											0|[local::at0010], 	-- Dependent
-											1|[local::at0011]  	-- Independent
+											0|[local::at0010], 	-- Behov for hjelp
+											1|[local::at0011]  	-- Selvhjulpen
 										}
 									}
-									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Total
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Sumskår
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..20|}
@@ -219,7 +219,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
@@ -752,6 +751,182 @@ ontology
 				>
 			>
 		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Barthel ADL-Indeks">
+					description = <"Barthel Indeks for hjelpebehov ved daglige gjøremål.">
+				>
+				["at0001"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Standardhendelse">
+				>
+				["at0004"] = <
+					text = <"Kontroll over blæren">
+					description = <"Vurdering av blærekontroll over en ukes tidsrom, sporadisk hendelse er en gang eller mindre per uke.l">
+				>
+				["at0005"] = <
+					text = <"Urininkontinens (eller ikke i stand til å styre katetertømming)">
+					description = <"Inkontinent for urin eller kateterisert.">
+				>
+				["at0006"] = <
+					text = <"Sporadisk hendelse">
+					description = <"En gang per uke eller mer sjeldent.">
+				>
+				["at0007"] = <
+					text = <"Kontinent ( kontroll over kateterbruk)">
+					description = <"Continent for urin inkluderer kontroll over urinkateter.">
+				>
+				["at0008"] = <
+					text = <"Tarmkontroll">
+					description = <"Over flere uker. Sporadiske hendelser regnes som en gang per uke.">
+				>
+				["at0009"] = <
+					text = <"Bading/Dusj">
+					description = <"Helt selvhjulpen.">
+				>
+				["at0010"] = <
+					text = <"Behov for hjelp">
+					description = <"Trenger hjelp.">
+				>
+				["at0011"] = <
+					text = <"Selvhjulpen">
+					description = <"Selvhjulpen i av- og påkledning, klarer selv glidelås, knapper og skolisser.">
+				>
+				["at0012"] = <
+					text = <"Påkledning">
+					description = <"Evne til å velge og ta på seg klær.">
+				>
+				["at0013"] = <
+					text = <"Hjelpebehov stor">
+					description = <"Trenger hjelp til mer enn halvparten ved påkledning.">
+				>
+				["at0014"] = <
+					text = <"Trenger hjelp men kan gjøre halvparten selv">
+					description = <"Trenger hjelp men klarer halvparten innen rimelig tid.">
+				>
+				["at0016"] = <
+					text = <"Sumskår">
+					description = <"Summen av vekting til de 10 elementer i Barthel Index. Tall på 0-9 indikerer høy hjelpebehov, 10-19 moderat hjelpebehov og 20 er selvhjulpen.">
+				>
+				["at0017"] = <
+					text = <"Mobilitet">
+					description = <"Evne til å være mobil.">
+				>
+				["at0018"] = <
+					text = <"Immobil">
+					description = <"Kan ikke kjøre rullestol uten hjelp.">
+				>
+				["at0019"] = <
+					text = <"Mobil med rullestol">
+					description = <"Kan forflytte seg selv med rullestol over 50 meter uten hjelp.">
+				>
+				["at0020"] = <
+					text = <"Går med hjelp">
+					description = <"Kan gå i 50 meter med rullator og/eller støtte/tilsyn av en person.">
+				>
+				["at0021"] = <
+					text = <"Forflytning mellom seng og stol">
+					description = <"Selvhjulpen, kommer seg fra seng til stol.">
+				>
+				["at0022"] = <
+					text = <"Manglende forflytningsevne">
+					description = <"Kan ikke sitte, sengeliggende.">
+				>
+				["at0023"] = <
+					text = <"Betydelig hjelpebehov">
+					description = <"Kan sitte men trenger mye hjelp til forflytning.">
+				>
+				["at0024"] = <
+					text = <"Noe hjelpebehov">
+					description = <"Klarer forflytning med litt hjelp eller tilsyn.">
+				>
+				["at0025"] = <
+					text = <"Selvhjulpen">
+					description = <"Personen kan forflytte seg fra seng til stol på egen hånd.">
+				>
+				["at0026"] = <
+					text = <"Spising">
+					description = <"Evne til å ta til seg mat.">
+				>
+				["at0027"] = <
+					text = <"Hjelpebehov ved matinntak">
+					description = <"Helt avhengig av hjelp ved inntak av mat.">
+				>
+				["at0028"] = <
+					text = <"Trenger noe hjelp.">
+					description = <"Behov for noe hjelp med f.eks. oppskjæring og tilrettelegging, klarer å spise selv.">
+				>
+				["at0029"] = <
+					text = <"Selvhjulpen">
+					description = <"Kan bruke de nødvendige hjelpemidler og spiser innen rimelig tid.">
+				>
+				["at0030"] = <
+					text = <"Toalettbesøk">
+					description = <"Evne til å besøke toalett over de siste 48 timene.">
+				>
+				["at0031"] = <
+					text = <"Trenger hjelp til alt">
+					description = <"Personen er avhengig av hjelp for å kunne gå på toalett.">
+				>
+				["at0032"] = <
+					text = <"Trenger noe hjelp men kan utføre enkle oppgaver selv">
+					description = <"Personen klarer å bidra ved toalettbesøk.">
+				>
+				["at0033"] = <
+					text = <"Selvhjulpen">
+					description = <"Personen klarer toalettbesøk på egen hånd.">
+				>
+				["at0034"] = <
+					text = <"Personlig hygiene">
+					description = <"Evne til å ivareta personlig hygiene over de siste 24-48 timer med f.eks. tannpuss, barbering og kroppsvask.">
+				>
+				["at0035"] = <
+					text = <"Trenger hjelp">
+					description = <"Trenger hjelp til kroppspleie.">
+				>
+				["at0036"] = <
+					text = <"Selvhjulpen">
+					description = <"Klarer selv å pusse tennene, kjemme håret, vaske ansiktet og barbering.">
+				>
+				["at0037"] = <
+					text = <"Inkontinens (behov for innlegg/bleie)">
+					description = <"Inkontinent for avføring (behov for innlegg/bleie)">
+				>
+				["at0038"] = <
+					text = <"Kontinent">
+					description = <"Kontinent for avføring.">
+				>
+				["at0039"] = <
+					text = <"Uavhengig av hjelp">
+					description = <"Klarer å gå 50 meter, kan bruke stokk eller krykker, men ikke annet ganghjelpemiddel.">
+				>
+				["at0040"] = <
+					text = <"Trappegang">
+					description = <"Evne til å gå i trapp.">
+				>
+				["at0041"] = <
+					text = <"Ikke i stand til å gå i trapp">
+					description = <"Kan ikke gå i trapp.">
+				>
+				["at0042"] = <
+					text = <"Behov for hjelp">
+					description = <"Trenger hjelp/tilsyn av en person for å gå i trapp.">
+				>
+				["at0043"] = <
+					text = <"Selvhjulpen">
+					description = <"Selvhjulpen, kan evt. bruke ganghjelpemidler.">
+				>
+			>
+		>
 		["ru"] = <
 			items = <
 				["at0000"] = <
@@ -925,182 +1100,6 @@ ontology
 				["at0043"] = <
 					text = <"Самостоятельно поднимается и опускается">
 					description = <"*">
-				>
-			>
-		>
-		["nb"] = <
-			items = <
-				["at0000"] = <
-					text = <"Barthel -Indeks">
-					description = <"Barthel Indeks for hjelpebehov ved daglige gjøremål.">
-				>
-				["at0001"] = <
-					text = <"List">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"History">
-					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Uspesifisert hendelse">
-					description = <"Standardhendelse">
-				>
-				["at0004"] = <
-					text = <"Kontroll over blæren">
-					description = <"Vurdering av blærekontroll over en ukes tidsrom, sporadisk hendelse er en gang eller mindre per uke.l">
-				>
-				["at0005"] = <
-					text = <"Urininkontinens (eller ikke i stand til å styre katetertømming)">
-					description = <"Inkontinent for urin eller kateterisert.">
-				>
-				["at0006"] = <
-					text = <"Sporadisk hendelse">
-					description = <"En gang per uke eller mer sjeldent.">
-				>
-				["at0007"] = <
-					text = <"Kontinent ( kontroll over kateterbruk)">
-					description = <"Continent for urin inkluderer kontroll over urinkateter.">
-				>
-				["at0008"] = <
-					text = <"Tarmkontroll">
-					description = <"Over flere uker. Sporadiske hendelser regnes som en gang per uke.">
-				>
-				["at0009"] = <
-					text = <"Bading/Dusj">
-					description = <"Helt selvhjulpen.">
-				>
-				["at0010"] = <
-					text = <"Behov for hjelp">
-					description = <"Trenger hjelp.">
-				>
-				["at0011"] = <
-					text = <"Selvhjulpen">
-					description = <"Selvhjulpen i av- og påkledning, klarer selv glidelås, knapper og skolisser.">
-				>
-				["at0012"] = <
-					text = <"Påkledning">
-					description = <"Evne til å velge og ta på seg klær.">
-				>
-				["at0013"] = <
-					text = <"Hjelpebehov stor">
-					description = <"Trenger hjelp til mer enn halvparten ved påkledning.">
-				>
-				["at0014"] = <
-					text = <"Trenger hjelp men kan gjøre halvparten selv">
-					description = <"Trenger hjelp men klarer halvparten innen rimelig tid.">
-				>
-				["at0016"] = <
-					text = <"Sumskår">
-					description = <"Summen av vekting til de 10 elementer i Barthel Index. Tall på 0-9 indikerer høy hjelpebehov, 10-19 moderat hjelpebehov og 20 er selvhjulpen.">
-				>
-				["at0017"] = <
-					text = <"Mobilitet">
-					description = <"Evne til å være mobil.">
-				>
-				["at0018"] = <
-					text = <"Immobil">
-					description = <"Kan ikke kjøre rullestol uten hjelp.">
-				>
-				["at0019"] = <
-					text = <"Mobil med rullestol">
-					description = <"Kan forflytte seg selv med rullestol over 50 meter uten hjelp.">
-				>
-				["at0020"] = <
-					text = <"Går med hjelp">
-					description = <"Kan gå i 50 meter med rullator og/eller støtte/tilsyn av en person.">
-				>
-				["at0021"] = <
-					text = <"Forflytning mellom seng og stol">
-					description = <"Selvhjulpen, kommer seg fra seng til stol.">
-				>
-				["at0022"] = <
-					text = <"Manglende forflytningsevne">
-					description = <"Kan ikke sitte, sengeliggende.">
-				>
-				["at0023"] = <
-					text = <"Betydelig hjelpebehov">
-					description = <"Kan sitte men trenger mye hjelp til forflytning.">
-				>
-				["at0024"] = <
-					text = <"Noe hjelpebehov">
-					description = <"Klarer forflytning med litt hjelp eller tilsyn.">
-				>
-				["at0025"] = <
-					text = <"Selvhjulpen">
-					description = <"Personen kan forflytte seg fra seng til stol på egen hånd.">
-				>
-				["at0026"] = <
-					text = <"Spising">
-					description = <"Evne til å ta til seg mat.">
-				>
-				["at0027"] = <
-					text = <"Hjelpebehov ved matinntak">
-					description = <"Helt avhengig av hjelp ved inntak av mat.">
-				>
-				["at0028"] = <
-					text = <"Trenger noe hjelp.">
-					description = <"Behov for noe hjelp med f.eks. oppskjæring og tilrettelegging, klarer å spise selv.">
-				>
-				["at0029"] = <
-					text = <"Selvhjulpen">
-					description = <"Kan bruke de nødvendige hjelpemidler og spiser innen rimelig tid.">
-				>
-				["at0030"] = <
-					text = <"Toalettbesøk">
-					description = <"Evne til å besøke toalett over de siste 48 timene.">
-				>
-				["at0031"] = <
-					text = <"Trenger hjelp til alt">
-					description = <"Personen er avhengig av hjelp for å kunne gå på toalett.">
-				>
-				["at0032"] = <
-					text = <"Trenger noe hjelp men kan utføre enkle oppgaver selv">
-					description = <"Personen klarer å bidra ved toalettbesøk.">
-				>
-				["at0033"] = <
-					text = <"Selvhjulpen">
-					description = <"Personen klarer toalettbesøk på egen hånd.">
-				>
-				["at0034"] = <
-					text = <"Personlig hygiene">
-					description = <"Evne til å ivareta personlig hygiene over de siste 24-48 timer med f.eks. tannpuss, barbering og kroppsvask.">
-				>
-				["at0035"] = <
-					text = <"Trenger hjelp">
-					description = <"Trenger hjelp til kroppspleie.">
-				>
-				["at0036"] = <
-					text = <"Selvhjulpen">
-					description = <"Klarer selv å pusse tennene, kjemme håret, vaske ansiktet og barbering.">
-				>
-				["at0037"] = <
-					text = <"Inkontinens (behov for innlegg/bleie)">
-					description = <"Inkontinent for avføring (behov for innlegg/bleie)">
-				>
-				["at0038"] = <
-					text = <"Kontinent">
-					description = <"Kontinent for avføring.">
-				>
-				["at0039"] = <
-					text = <"Uavhengig av hjelp">
-					description = <"Klarer å gå 50 meter, kan bruke stokk eller krykker, men ikke annet ganghjelpemiddel.">
-				>
-				["at0040"] = <
-					text = <"Trappegang">
-					description = <"Evne til å gå i trapp.">
-				>
-				["at0041"] = <
-					text = <"Ikke i stand til å gå i trapp">
-					description = <"Kan ikke gå i trapp.">
-				>
-				["at0042"] = <
-					text = <"Behov for hjelp">
-					description = <"Trenger hjelp/tilsyn av en person for å gå i trapp.">
-				>
-				["at0043"] = <
-					text = <"Selvhjulpen">
-					description = <"Selvhjulpen, kan evt. bruke ganghjelpemidler.">
 				>
 			>
 		>
