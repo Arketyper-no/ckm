@@ -27,10 +27,10 @@ Not to be used for diagnoses and problems that form part of a persisting Problem
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Silje Bakke, Helse Bergen HF, Norway (Editor)", "Johan Gustav Bellika, Norwegian Centre for Integrated Care and Telemedicine, Norway (Editor)", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sam Heard, Ocean Informatics", "Nils Kolstrup, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "alberto maldonado, UPV, Spain", "Luis Marco Ruiz, NST, Spain (Editor)", "Ian McNicoll, Ocean Informatics, Norway">
+	other_contributors = <"Sam Heard, Ocean Informatics", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"D47FC29C784F60E4D1F491067E4597A2">
+		["MD5-CAM-1.0.1"] = <"DFB2CCF938B4585F26E6F919109789A4">
 	>
 
 definition
@@ -45,17 +45,6 @@ definition
 				value matches {
 					DV_TEXT matches {*}
 				}
-			}
-			ELEMENT[at0151] occurrences matches {0..*} matches {	-- Site
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0147] occurrences matches {0..*} matches {	-- Site Details
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1/}
-				exclude
-					archetype_id/value matches {/.*/}
 			}
 			ELEMENT[at0021] occurrences matches {0..1} matches {	-- Impact
 				value matches {
@@ -99,6 +88,16 @@ definition
 					DV_DURATION matches {*}
 				}
 			}
+			CLUSTER[at0152] occurrences matches {0..1} matches {	-- Sites Details
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0153] occurrences matches {0..*} matches {	-- Site Details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1/}
+						exclude
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
 			ELEMENT[at0031] occurrences matches {0..1} matches {	-- Number of Occurrences
 				value matches {
 					DV_COUNT matches {*}
@@ -107,6 +106,15 @@ definition
 			ELEMENT[at0032] occurrences matches {0..1} matches {	-- Character
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0154] occurrences matches {0..1} matches {	-- Sites
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0155] occurrences matches {0..1} matches {	-- Site
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
 				}
 			}
 			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Variation
@@ -516,15 +524,23 @@ ontology
 					text = <"Details">
 					description = <"Structured details of symptoms in previous episodes.">
 				>
-				["at0147"] = <
-					text = <"Site Details">
-					description = <"Details of the location in the body.">
-				>
 				["at0150"] = <
 					text = <"Degree">
 					description = <"The intensity of the symptom expressed as a proportion.">
 				>
-				["at0151"] = <
+				["at0152"] = <
+					text = <"Sites Details">
+					description = <"The site details of each site specified">
+				>
+				["at0153"] = <
+					text = <"Site Details">
+					description = <"Details of the location in the body.">
+				>
+				["at0154"] = <
+					text = <"Sites">
+					description = <"*">
+				>
+				["at0155"] = <
 					text = <"Site">
 					description = <"The site on the body where the symptom was located.">
 				>
