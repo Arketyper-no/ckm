@@ -24,7 +24,7 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"7CB2EAD55837B5ED64173946576F079E">
+		["MD5-CAM-1.0.1"] = <"4F6286A793693011531AF2A853803EBA">
 	>
 
 definition
@@ -42,8 +42,8 @@ definition
 							1|[local::at0008], 	-- 1- Ulykkesskade
 							2|[local::at0009], 	-- 2 - Villet egenskade
 							3|[local::at0010], 	-- 3 - Vold, overfall
-							8|[local::at0011], 	-- 8 - Skade etter lovhjemlet inngripen, krigshandling
-							9|[local::at0012]  	-- 9 - Ukjent kontaktårsak
+							98|[local::at0011], 	-- 98 - Skade etter lovhjemlet inngripen, krigshandling
+							99|[local::at0012]  	-- 99 - Ukjent kontaktårsak
 						}
 					}
 					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Skademekanisme
@@ -54,20 +54,22 @@ definition
 							4|[local::at0118], 	-- 4 -Klemt, fanget, knust
 							5|[local::at0119], 	-- 5- Kutt (ikke fall), bitt, stikk, skutt
 							6|[local::at0120], 	-- 6- Kvelning, drukning
-							7|[local::at0121], 	-- 7- Akutt overbelastning
-							8|[local::at0122], 	-- 8- Annen skademekanisme
-							9|[local::at0123]  	-- 9 - Ukjent skademekanisme
+							7|[local::at0137], 	-- 7 - Åpen ild, flamme, røyk
+							8|[local::at0138], 	-- 8 - Forfrysning
+							9|[local::at0121], 	-- 9- Akutt overbelastning
+							98|[local::at0122], 	-- 98 - Annen skademekanisme
+							99|[local::at0123]  	-- 99 - Ukjent skademekanisme
 						}
 					}
 					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Aktivitet ved skade
 						value matches {
 							1|[local::at0027], 	-- 1 - Inntektsgivende arbeid
-							2|[local::at0029], 	-- 2 - Utranning (også i SFO og barnehage)
-							3|[local::at0030], 	-- 3  - Sport, idrett, mosjon i utdanning
+							2|[local::at0029], 	-- 2 - Utdanning (også i SFO og barnehage)
+							3|[local::at0030], 	-- 3 - Sport, idrett, mosjon i utdanning
 							4|[local::at0131], 	-- 4 - Sport, idrett, mosjon i fritid
 							5|[local::at0107], 	-- 5 - Friluftsliv,  jakt og fiske i fritid og i utmark
-							8|[local::at0033], 	-- 8 - Annen aktivitet 
-							9|[local::at0034]  	-- 9  -Ukjent aktivitet
+							98|[local::at0033], 	-- 98 - Annen aktivitet 
+							99|[local::at0034]  	-- 99 - Ukjent aktivitet
 						}
 					}
 					ELEMENT[at0036] occurrences matches {0..1} matches {	-- Arbeidsgivers bransje
@@ -77,8 +79,8 @@ definition
 							3|[local::at0111], 	-- 3- Bygg- og anlegg
 							4|[local::at0112], 	-- 4- Transport
 							5|[local::at0132], 	-- 5 - Helse og sosial
-							8|[local::at0113], 	-- 8 -Annen bransje
-							9|[local::at0114]  	-- 9 - Ukjent bransje
+							98|[local::at0113], 	-- 98 - Annen bransje
+							99|[local::at0114]  	-- 99 - Ukjent bransje
 						}
 					}
 					allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {	-- Lokale registreringer
@@ -104,10 +106,15 @@ definition
 									at0079, 	-- 8 - Skole, barnehage, SFO
 									at0080, 	-- 9 - Sport og idrettsområde (også på skole, universitet)
 									at0081, 	-- 10 - Fri natur, utmark,  hav, sjø og vann
-									at0082, 	-- 11 - Annet skadested
-									at0083]	-- 12 - Ukjent skadested
+									at0082, 	-- 98 - Annet skadested
+									at0083]	-- 99 - Ukjent skadested
 								}
 							}
+						}
+					}
+					ELEMENT[at0102] occurrences matches {0..1} matches {	-- Skadekommune
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 					allow_archetype CLUSTER[at0136] occurrences matches {0..*} matches {	-- Detaljert om skadested
@@ -128,8 +135,8 @@ definition
 									at0093, 	-- 7 - Buss
 									at0094, 	-- 8 - Trikk/tog/bane
 									at0095, 	-- 9 - AVT/firhjuling
-									at0096, 	-- 10 - Annet spesifisert
-									at0097]	-- 11 - Ukjent
+									at0096, 	-- 98 - Annet spesifisert
+									at0097]	-- 99 - Ukjent
 								}
 							}
 						}
@@ -141,13 +148,8 @@ definition
 							3|[local::at0127], 	-- 3- Vannskuter
 							4|[local::at0134], 	-- 4 - Sykkel
 							5|[local::at0135], 	-- 5 - Ski/snøbrett/mv
-							8|[local::at0128], 	-- 8- Annet
-							9|[local::at0129]  	-- 9- Ukjent
-						}
-					}
-					ELEMENT[at0102] occurrences matches {0..1} matches {	-- Skadekommune
-						value matches {
-							DV_TEXT matches {*}
+							98|[local::at0128], 	-- 98 - Annet
+							99|[local::at0129]  	-- 99 - Ukjent
 						}
 					}
 				}
@@ -189,11 +191,11 @@ ontology
 					description = <"*">
 				>
 				["at0011"] = <
-					text = <"8 - Skade etter lovhjemlet inngripen, krigshandling">
+					text = <"98 - Skade etter lovhjemlet inngripen, krigshandling">
 					description = <"Skader som oppstår i sammenstøt med politi, ordensmakt">
 				>
 				["at0012"] = <
-					text = <"9 - Ukjent kontaktårsak">
+					text = <"99 - Ukjent kontaktårsak">
 					description = <"*">
 				>
 				["at0013"] = <
@@ -211,19 +213,19 @@ Kommentar: Selv om det ikke er noe skarpt skille mellom sykdom og skade, oppstå
 					description = <"Dersom ja; angi arbeidsgivers bransje">
 				>
 				["at0029"] = <
-					text = <"2 - Utranning (også i SFO og barnehage)">
+					text = <"2 - Utdanning (også i SFO og barnehage)">
 					description = <"Også skolefritidsordning(SFO) og i barnehage">
 				>
 				["at0030"] = <
-					text = <"3  - Sport, idrett, mosjon i utdanning">
+					text = <"3 - Sport, idrett, mosjon i utdanning">
 					description = <"*">
 				>
 				["at0033"] = <
-					text = <"8 - Annen aktivitet ">
+					text = <"98 - Annen aktivitet ">
 					description = <"Som lek, hobby, hus- og hagearbeid (etc)">
 				>
 				["at0034"] = <
-					text = <"9  -Ukjent aktivitet">
+					text = <"99 - Ukjent aktivitet">
 					description = <"*">
 				>
 				["at0036"] = <
@@ -268,11 +270,11 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 					description = <"Dersom ja, angi type fremkomstmiddel">
 				>
 				["at0082"] = <
-					text = <"11 - Annet skadested">
+					text = <"98 - Annet skadested">
 					description = <"*">
 				>
 				["at0083"] = <
-					text = <"12 - Ukjent skadested">
+					text = <"99 - Ukjent skadested">
 					description = <"*">
 				>
 				["at0086"] = <
@@ -316,11 +318,11 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 					description = <"Også trehjuling, beltegående, uavhengig av slagvolum">
 				>
 				["at0096"] = <
-					text = <"10 - Annet spesifisert">
+					text = <"98 - Annet spesifisert">
 					description = <"*">
 				>
 				["at0097"] = <
-					text = <"11 - Ukjent">
+					text = <"99 - Ukjent">
 					description = <"*">
 				>
 				["at0102"] = <
@@ -356,11 +358,11 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 					description = <"*">
 				>
 				["at0113"] = <
-					text = <"8 -Annen bransje">
+					text = <"98 - Annen bransje">
 					description = <"*">
 				>
 				["at0114"] = <
-					text = <"9 - Ukjent bransje">
+					text = <"99 - Ukjent bransje">
 					description = <"*">
 				>
 				["at0115"] = <
@@ -388,15 +390,15 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 					description = <"*">
 				>
 				["at0121"] = <
-					text = <"7- Akutt overbelastning">
+					text = <"9- Akutt overbelastning">
 					description = <"*">
 				>
 				["at0122"] = <
-					text = <"8- Annen skademekanisme">
+					text = <"98 - Annen skademekanisme">
 					description = <"*">
 				>
 				["at0123"] = <
-					text = <"9 - Ukjent skademekanisme">
+					text = <"99 - Ukjent skademekanisme">
 					description = <"*">
 				>
 				["at0124"] = <
@@ -416,11 +418,11 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 					description = <"*">
 				>
 				["at0128"] = <
-					text = <"8- Annet">
+					text = <"98 - Annet">
 					description = <"*">
 				>
 				["at0129"] = <
-					text = <"9- Ukjent">
+					text = <"99 - Ukjent">
 					description = <"*">
 				>
 				["at0130"] = <
@@ -450,6 +452,14 @@ havner i en elv – da er veien å betrakte som skadestedet. ">
 				["at0136"] = <
 					text = <"Detaljert om skadested">
 					description = <"Bruke for å angi detaljer om skadested. F.eks. X- og Y-koordinat..">
+				>
+				["at0137"] = <
+					text = <"7 - Åpen ild, flamme, røyk">
+					description = <"*">
+				>
+				["at0138"] = <
+					text = <"8 - Forfrysning">
+					description = <"*">
 				>
 			>
 		>
