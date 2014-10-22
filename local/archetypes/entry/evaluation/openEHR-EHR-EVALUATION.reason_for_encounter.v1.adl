@@ -49,37 +49,47 @@ Not to be used to record specific diagnosis details that may be required in addi
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <>
+	other_contributors = <"Silje Bakke, Helse Bergen HF, Norway (Editor)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)", "Jon Tysdahl, Fürst Medlab AS, Norway">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"1BD4240629CBD3B5961D3D6409A98810">
+		["MD5-CAM-1.0.1"] = <"93F520773D73100E3ED3180F77A6D45F">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Reason for Encounter
+	EVALUATION[at0000] matches {	-- Kontaktårsak
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Reason for Contact
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Kontaktårsak
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0005, 	-- *Akutt innleggelse(en)
-									at0006, 	-- *Akutt poliklinisk kontakt(en)
-									at0007, 	-- *Kontroll(en)
-									at0008, 	-- *Attest/helsekontroll(en)
-									at0009, 	-- *Planlagt innleggelse(en)
-									at0010]	-- *Planlagt poliklinisk kontakt(en)
+									at0005, 	-- Akutt innleggelse
+									at0006, 	-- Akutt poliklinisk kontakt
+									at0007, 	-- Kontroll
+									at0008, 	-- Attest/helsekontroll
+									at0009, 	-- Planlagt innleggelse
+									at0010, 	-- Planlagt poliklinisk kontakt
+									at0012, 	-- Ingen pasientkontakt/administrativ kontakt
+									at0013, 	-- Enkel pasientkontakt med fremmøte
+									at0014, 	-- Enkel pasientkontakt uten fremmøte
+									at0015, 	-- Enkel pasientkontakt - e-resept
+									at0016, 	-- Kontakt med samarbeidende instans
+									at0017, 	-- Konsultasjon
+									at0018, 	-- Sykebesøk
+									at0019, 	-- E-konsultasjon
+									at0020]	-- Bedriftsundersøkelse
 								}
 							}
+							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0004] occurrences matches {0..*} matches {	-- Presenting Problem
+					ELEMENT[at0004] occurrences matches {0..*} matches {	-- Klinisk problemstilling
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {	-- Cluster
+					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {	-- *Cluster(en)
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -140,6 +150,42 @@ ontology
 					text = <"Cluster">
 					description = <"**(en)">
 				>
+				["at0012"] = <
+					text = <"*Ingen pasientkontakt/administrativ kontakt(en)">
+					description = <"*Kontakt av administrativ type(en)">
+				>
+				["at0013"] = <
+					text = <"*Enkel pasientkontakt med fremmøte(en)">
+					description = <"*Pasienten møter fysisk på legekontoret.(en)">
+				>
+				["at0014"] = <
+					text = <"*Enkel pasientkontakt uten fremmøte(en)">
+					description = <"*Pasienten henvender seg eksempelvis pr telefon.(en)">
+				>
+				["at0015"] = <
+					text = <"*Enkel pasientkontakt - e-resept(en)">
+					description = <"*Pasienten bestiller e-resept.(en)">
+				>
+				["at0016"] = <
+					text = <"*Kontakt med samarbeidende instans(en)">
+					description = <"*Lege har kontakt med eksempelvis PLO, NAV, multidoseapotek, m.m.(en)">
+				>
+				["at0017"] = <
+					text = <"*Konsultasjon(en)">
+					description = <"*Pasienten møter på legekontor for konsultasjon hos lege.(en)">
+				>
+				["at0018"] = <
+					text = <"*Sykebesøk(en)">
+					description = <"*Lege reiser til pasient for konsultasjon.(en)">
+				>
+				["at0019"] = <
+					text = <"*E-konsultasjon(en)">
+					description = <"*Lege-pasientkontakt via sikker elektronisk løsning.(en)">
+				>
+				["at0020"] = <
+					text = <"*Bedriftsundersøkelse(en)">
+					description = <"*Legekonsultasjon med arbeidstaker i bedrift.(en)">
+				>
 			>
 		>
 		["nb"] = <
@@ -154,12 +200,12 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Kontaktårsak">
-					description = <"Identifisiering av den administrative årsaken til kontakten">
+					description = <"Identifisiering av den administrative årsaken til kontakten.">
 					comment = <"*For example, a clinical consultation, emergency consultation, pre-employment medical, routine antenatal visit, women's health check, pre-operative assessment, or annual medical check-up. Coding of the Reason for Encounter with a terminology is desirable, where possible.(en)">
 				>
 				["at0004"] = <
 					text = <"Klinisk problemstilling">
-					description = <"Identifikasjon av den kliniske årsaken til kontakten">
+					description = <"Identifikasjon av den kliniske årsaken til kontakten.">
 					comment = <"*Clinical reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking or to lose weight; symptoms - abdominal pain or shortness of breath; physical signs - an altered conscious state. May also be referred to as Presenting Complaint.
  Coding of the Presentic Problem with a terminology is desirable, where possible.(en)">
 				>
@@ -190,6 +236,42 @@ ontology
 				["at0011"] = <
 					text = <"*Cluster(en)">
 					description = <"***(en)(en)">
+				>
+				["at0012"] = <
+					text = <"Ingen pasientkontakt/administrativ kontakt">
+					description = <"Kontakt av administrativ type.">
+				>
+				["at0013"] = <
+					text = <"Enkel pasientkontakt med fremmøte">
+					description = <"Pasienten møter fysisk på legekontoret.">
+				>
+				["at0014"] = <
+					text = <"Enkel pasientkontakt uten fremmøte">
+					description = <"Pasienten henvender seg eksempelvis pr telefon.">
+				>
+				["at0015"] = <
+					text = <"Enkel pasientkontakt - e-resept">
+					description = <"Pasienten bestiller e-resept.">
+				>
+				["at0016"] = <
+					text = <"Kontakt med samarbeidende instans">
+					description = <"Lege har kontakt med eksempelvis PLO, NAV, multidoseapotek, m.m.">
+				>
+				["at0017"] = <
+					text = <"Konsultasjon">
+					description = <"Pasienten møter på legekontor for konsultasjon hos lege.">
+				>
+				["at0018"] = <
+					text = <"Sykebesøk">
+					description = <"Lege reiser til pasient for konsultasjon.">
+				>
+				["at0019"] = <
+					text = <"E-konsultasjon">
+					description = <"Lege-pasientkontakt via sikker elektronisk løsning.">
+				>
+				["at0020"] = <
+					text = <"Bedriftsundersøkelse">
+					description = <"Legekonsultasjon med arbeidstaker i bedrift.">
 				>
 			>
 		>
