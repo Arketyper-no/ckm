@@ -7,6 +7,17 @@ concept
 	[at0000.1]	-- Exclusion of Family History
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Micaela Thierley">
+				["organisation"] = <"Helse Bergen seksjon for e-helse">
+				["email"] = <"micaela.thierley@helse-bergen.no">
+			>
+			accreditation = <"MD, nephrologist">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -27,6 +38,18 @@ Exclusion statements can only be considered to be current and accurate at the ti
 			misuse = <"Not to be used to record the exclusion or absence of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of this archetype for this purpose.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For journalregistrering av opplysninger om sykdom i familie som er utelukket på et bestemt tidspunkt.">
+			use = <"Brukes for å journalregistrere fravær av sykdom i familien på et bestemt tidspunkt. For eksempel: for å registrere at et individ ikke har noe signifikant sykdomsforekomst i familien, eller at vedkommende ikke har familiemedlemmer med hjertesykdom.
+
+Denne arketypen har blitt spesielt laget for å unngå bruk av flagg eller termer for å kunne registrere negasjon om familiehistorie i pasientjournalen.
+
+Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i registreringens øyeblikk. For eksempel: registrering av et utelukket sykdom er kun oppdatert i det øyeblikket den blir registrert og kan være foreldet rett etterpå grunnet nye opplysninger.">
+			keywords = <"eksklusjon", "utelukking", "familie", "hereditet">
+			misuse = <"Skal ikke brukes til å registrere fravær av bivirkninger, medikamentbruk, prosedyrer, kliniske problemstillinger eller diagnoser. For disse brukes egne eksitserende arktetyper.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Sam Heard, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics, Australia", "Stephen Chu, NEHTA, Australia", "Stephen Royce, NEHTA, Australia">
@@ -34,7 +57,7 @@ Exclusion statements can only be considered to be current and accurate at the ti
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["references"] = <"Exclusion of Family History, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 02 Mar 2010. Available at: 
 http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1314_1(accessed 3 Sept 2013)">
-		["MD5-CAM-1.0.1"] = <"A7EB66A13879B784929B4EA2915C38C9">
+		["MD5-CAM-1.0.1"] = <"8315632A4A14191634C405B5D87B557B">
 	>
 
 definition
@@ -121,6 +144,47 @@ ontology
 				>
 			>
 		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Exclusion Statement(en)">
+					description = <"*Generic, positive statement/s that need to be recorded as clinically excluded from the health record at a specific point in time.(en)">
+				>
+				["at0000.1"] = <
+					text = <"Eksklusjon av familiær forekomst">
+					description = <"For journalregistrering av opplysninger om sykdom i familie som er utelukket på et bestemt tidspunkt.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uttalelse om manglende forekomst">
+					description = <"Uttalelse om utelukkelse av en tilstand i journalen.">
+					comment = <"Brukes for å definitivt utelukke tilstander i familiehistorien i journalen. Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyper for medikasjon, bivirkniner, problem/diagnose og prosedyrer som eksempel for eksplisitt utforming.">
+				>
+				["at0003"] = <
+					text = <"*Specific Object(en)">
+					description = <"*Identification of the specific object/s to which the Exclusion Statement applies.(en)">
+				>
+				["at0003.1"] = <
+					text = <"Familiehistorie">
+					description = <"Identifisering av den bestemte familiehistorien eksklusjonsuttalelsen refererer til.">
+				>
+				["at0004"] = <
+					text = <"Siste oppdatering">
+					description = <"Dato opplysningene sist ble supplert, vurdert eller bekreftet.">
+				>
+				["at0006"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Tilleggsinformasjon som ikke ble fanget opp i de andre felt.">
+				>
+			>
+		>
 	>
 	constraint_definitions = <
 		["en"] = <
@@ -128,6 +192,14 @@ ontology
 				["ac0.1"] = <
 					text = <"Family History">
 					description = <"All possible findings of Family History">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["ac0.1"] = <
+					text = <"Familiehistorie">
+					description = <"Alle positive funn i familiehistorien.">
 				>
 			>
 		>
