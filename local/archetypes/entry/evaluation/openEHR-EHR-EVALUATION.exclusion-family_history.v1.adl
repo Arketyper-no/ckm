@@ -41,13 +41,13 @@ Exclusion statements can only be considered to be current and accurate at the ti
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For journalregistrering av opplysninger om sykdom i familie som er utelukket på et bestemt tidspunkt.">
-			use = <"Brukes for å journalregistrere fravær av sykdom i familien på et bestemt tidspunkt. For eksempel: for å registrere at et individ ikke har noe signifikant sykdomsforekomst i familien, eller at vedkommende ikke har familiemedlemmer med hjertesykdom.
+			use = <"Brukes for å journalregistrere fravær av sykdom i familien på et bestemt tidspunkt. For eksempel: for å registrere at et individ ikke har signifikant sykdomsforekomst i familien, eller at vedkommende ikke har familiemedlemmer med hjertesykdom.
 
-Denne arketypen har blitt spesielt laget for å unngå bruk av flagg eller termer for å kunne registrere negasjon om familiehistorie i pasientjournalen.
+Denne arketypen har blitt laget for å unngå bruk av flagg eller termer for å kunne registrere negasjon om familiehistorie i pasientjournalen.
 
-Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i registreringens øyeblikk. For eksempel: registrering av et utelukket sykdom er kun oppdatert i det øyeblikket den blir registrert og kan være foreldet rett etterpå grunnet nye opplysninger.">
+Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i det øyeblikket registreringen skjer. For eksempel: registrering av en utelukket sykdom er kun aktuell i det øyeblikket den blir registrert og kan være foreldet rett etterpå grunnet nye opplysninger.">
 			keywords = <"eksklusjon", "utelukking", "familie", "hereditet">
-			misuse = <"Skal ikke brukes til å registrere fravær av bivirkninger, medikamentbruk, prosedyrer, kliniske problemstillinger eller diagnoser. For disse brukes egne eksitserende arktetyper.">
+			misuse = <"Skal ikke brukes til å registrere fravær av bivirkninger, medikamentbruk, prosedyrer, kliniske problemstillinger eller diagnoser. Bruk egne spesialiserte varianter av denne arketypen for en slik registrering.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -57,7 +57,7 @@ Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i registreringens øyebl
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["references"] = <"Exclusion of Family History, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 02 Mar 2010. Available at: 
 http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1314_1(accessed 3 Sept 2013)">
-		["MD5-CAM-1.0.1"] = <"8315632A4A14191634C405B5D87B557B">
+		["MD5-CAM-1.0.1"] = <"E34B6F7655E3937BA59BB9A840FF4761">
 	>
 
 definition
@@ -160,8 +160,9 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Uttalelse om manglende forekomst">
-					description = <"Uttalelse om utelukkelse av en tilstand i journalen.">
-					comment = <"Brukes for å definitivt utelukke tilstander i familiehistorien i journalen. Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyper for medikasjon, bivirkniner, problem/diagnose og prosedyrer som eksempel for eksplisitt utforming.">
+					description = <"Uttalelse om manglende forekomst av en tilstand i journalen.">
+					comment = <"Brukes dersom man vil dokumentere at en gitt sykdom ikke finnes i journalen.
+Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyper for medikasjon, bivirkninger, problem/diagnose og prosedyrer som eksempel for eksplisitt utforming.">
 				>
 				["at0003"] = <
 					text = <"*Specific Object(en)">
