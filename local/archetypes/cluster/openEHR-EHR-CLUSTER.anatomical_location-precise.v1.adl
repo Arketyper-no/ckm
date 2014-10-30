@@ -36,10 +36,10 @@ description
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For registrering av nøy definert anatomisk sted">
-			use = <"Anvendes der svært presis informasjon om den anatomiske lokalisering er nødvendig, ved hjelp av koordinater.">
-			keywords = <"site", "lokasjon", "sted", "lokalitet", "beliggenhet">
-			misuse = <"Den overordnede OBSERVATION.anatomical_location arketypen er som regel tilstrekkelig for enkle grov / overflate anatomisk lokalisering.">
+			purpose = <"Registrering av et svært detaljert anatomisk lokalitet.">
+			use = <"Anvendes der svært presis informasjon om den anatomiske lokalitet er nødvendig, ved hjelp av koordinater.">
+			keywords = <"site", "sted", "lokalitet", "beliggenhet", "anatomisk">
+			misuse = <"Den overordnede OBSERVATION.anatomical_location arketypen er som regel tilstrekkelig for enkle grov / overflate anatomisk lokalitet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -48,7 +48,7 @@ description
 	other_details = <
 		["references"] = <"Digital Imaging and Communications in Medicine (DICOM) Supplement 122: Specimen Module and Revised Pathology SOP Classes
 DICOM Standards Committee, Working Groups 26, Pathology.">
-		["MD5-CAM-1.0.1"] = <"0AC45BF7B611B1F3CEE405A38C69A0BB">
+		["MD5-CAM-1.0.1"] = <"981006052E1DA31A45A9A5A419E223D8">
 	>
 
 definition
@@ -466,33 +466,33 @@ of ({pixel}, UCUM, “Pixels”).">
 					description = <"DICOM baserte koordinat basert system for nøyaktig objekt lokalisering.">
 				>
 				["at0.52"] = <
-					text = <"Posisjon referanseramme">
+					text = <"Posisjons referanseramme">
 					description = <"Beskrivelse av koordinatsystem og det opprinnelige referansepunkt som brukes for å lokalisere objektet.">
 				>
 				["at0.53"] = <
 					text = <"X offsett">
-					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+					description = <"Objektets lokalitet (nominelle senter) i forhold til posisjons referanserammen. Avstanden kan gis i SI-enheter eller piksler. 
 
-av ({pixel}, Ucum, \"piksler\").).">
+av ({pixel}, Ucum, \"Pixels\").">
 				>
 				["at0.54"] = <
 					text = <"Y offsett">
-					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+					description = <"Plassering av objektet (nominelle senter) i forhold til posisjons referanserammen. Avstanden kan gis i SI-enheter eller piksler. 
 
-av ({pixel}, Ucum, \"piksler\").">
+av ({pixel}, Ucum, \"Pixels\").">
 				>
 				["at0.56"] = <
 					text = <"Z Offsett">
-					description = <"Plassering av objektet (nominelle senter) i forhold til posisjonsreferanserammen. Avstanden kan gis i SI-enheter eller piksler. 
+					description = <"Plassering av objektet (nominelle senter) i forhold til posisjons referanserammen. Avstanden kan gis i SI-enheter eller piksler. 
 
-av ({pixel}, Ucum, \"piksler\").">
+av ({pixel}, Ucum, \"Pixels\").">
 				>
 				["at0000"] = <
 					text = <"*Anatomical Location(en)">
 					description = <"*Record details about an anatomical location.(en)">
 				>
 				["at0000.1"] = <
-					text = <"Presis anatomisk lokasjon">
+					text = <"Presis anatomisk lokalitet">
 					description = <"Registrerer detaljer om den anatomiske sted for en prøve eller kroppsdel, inklusiv presis informasjon om lokalitet.">
 				>
 				["at0001"] = <
@@ -505,11 +505,11 @@ av ({pixel}, Ucum, \"piksler\").">
 				>
 				["at0003"] = <
 					text = <"Venstre">
-					description = <"Venstre lokalitet.">
+					description = <"Venstre sidig.">
 				>
 				["at0004"] = <
 					text = <"Høyre">
-					description = <"Høyre lokalitet.">
+					description = <"Høyre sidig.">
 				>
 				["at0005"] = <
 					text = <"Spesifikk lokalitet">
@@ -609,75 +609,75 @@ av ({pixel}, Ucum, \"piksler\").">
 				>
 				["at0029"] = <
 					text = <"Første">
-					description = <"Ordens posisjon én av en anatomisk plassering.">
+					description = <"Ordens posisjon 1 av en anatomisk lokalitet.">
 				>
 				["at0030"] = <
 					text = <"Annen">
-					description = <"Ordens posisjon to av en anatomisk plassering.">
+					description = <"Ordens posisjon 2 av en anatomisk lokalitet.">
 				>
 				["at0031"] = <
 					text = <"Tredje">
-					description = <"Ordens posisjon tre av en anatomisk plassering.">
+					description = <"Ordens posisjon 3 av en anatomisk lokalitet.">
 				>
 				["at0032"] = <
 					text = <"Fjerde">
-					description = <"Ordens posisjon fire av en anatomisk plassering.">
+					description = <"Ordens posisjon 4 av en anatomisk lokalitet.">
 				>
 				["at0033"] = <
 					text = <"Femte">
-					description = <"Ordens posisjon fem av en anatomisk plassering.">
+					description = <"Ordens posisjon 5 av en anatomisk lokalitet.">
 				>
 				["at0034"] = <
 					text = <"Sjette">
-					description = <"Ordens posisjon seks av en anatomisk plassering.">
+					description = <"Ordens posisjon 6 av en anatomisk lokalitet.">
 				>
 				["at0035"] = <
 					text = <"Syvende">
-					description = <"Ordens posisjon syv av en anatomisk plassering.">
+					description = <"Ordens posisjon 7 av en anatomisk lokalitet.">
 				>
 				["at0036"] = <
 					text = <"Åttende">
-					description = <"Ordens posisjon otte av en anatomisk plassering.">
+					description = <"Ordens posisjon 8 av en anatomisk lokalitet.">
 				>
 				["at0037"] = <
 					text = <"Niende">
-					description = <"Ordens posisjon ni av en anatomisk plassering.">
+					description = <"Ordens posisjon 9 av en anatomisk lokalitet.">
 				>
 				["at0038"] = <
 					text = <"Tiende">
-					description = <"Ordens posisjon ti av en anatomisk plassering.">
+					description = <"Ordens posisjon 10 av en anatomisk lokalitet.">
 				>
 				["at0039"] = <
 					text = <"Elvte">
-					description = <"Ordens posisjon elleve av en anatomisk plassering.">
+					description = <"Ordens posisjon 11 av en anatomisk lokalitet.">
 				>
 				["at0040"] = <
 					text = <"Tolvte">
-					description = <"Ordens posisjon tolv av en anatomisk plassering.">
+					description = <"Ordens posisjon 12 av en anatomisk lokalitet.">
 				>
 				["at0041"] = <
 					text = <"Trettende">
-					description = <"Ordens posisjon tretten av en anatomisk plassering.">
+					description = <"Ordens posisjon 13 av en anatomisk lokalitet.">
 				>
 				["at0042"] = <
 					text = <"Fjortende">
-					description = <"Ordens posisjon fjorten av en anatomisk plassering.">
+					description = <"Ordens posisjon 14 av en anatomisk lokalitet.">
 				>
 				["at0043"] = <
 					text = <"Femtende">
-					description = <"Ordens posisjon femten av en anatomisk plassering.">
+					description = <"Ordens posisjon 15 av en anatomisk lokalitet.">
 				>
 				["at0044"] = <
 					text = <"sekstende">
-					description = <"Ordens posisjon seksten av en anatomisk plassering.">
+					description = <"Ordens posisjon 16 av en anatomisk lokalitet.">
 				>
 				["at0045"] = <
 					text = <"Syttende">
-					description = <"Ordens posisjon sytten av en anatomisk plassering.">
+					description = <"Ordens posisjon 17 av en anatomisk lokalitet.">
 				>
 				["at0046"] = <
 					text = <"Attende">
-					description = <"Ordens posisjon atten av en anatomisk plassering.">
+					description = <"Ordens posisjon 18 av en anatomisk lokalitet.">
 				>
 				["at0051"] = <
 					text = <"Bilateralt">
@@ -685,11 +685,11 @@ av ({pixel}, Ucum, \"piksler\").">
 				>
 				["at0052"] = <
 					text = <"Bilde">
-					description = <"Bilde eller bilder brukt til identifikasjon av lokalitet.">
+					description = <"Bilde eller bilder brukt til identifikasjon av en lokalitet.">
 				>
 				["at0053"] = <
 					text = <"Visuell markering/orientering">
-					description = <"Beskrivelse av noen visuelle markeringer som brukes til å orientere betrakteren f.eks eksterne referansepunkter, spesielle sting, blekk tegninger.">
+					description = <"Beskrivelse av noen visuelle markeringer som brukes til å orientere betrakteren f.eks eksterne referansepunkter, spesielle sting, blekk markeringer.">
 				>
 			>
 		>
