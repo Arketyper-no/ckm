@@ -6,11 +6,13 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Mona Saleh">
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
 			>
+			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
@@ -20,6 +22,12 @@ language
 				["email"] = <"amarch@cas.austral.edu.ar">
 			>
 			accreditation = <"MD">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
 		>
 	>
 description
@@ -54,11 +62,19 @@ description
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Generell rekvisisjon for en rekke forskjellige helsetjenester fx. henvisning lab test rekvisisjon, utstyrs rekvisisjon.">
+			use = <"">
+			keywords = <"Rekvisisjon", "henvisning", "ordre", "service", "forsyne", "bestille">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E1D2406529BB9CBF04E676AD427F7183">
+		["MD5-CAM-1.0.1"] = <"1417A446A3B17ACAC2E7F202B9BC0CC7">
 	>
 
 definition
@@ -507,6 +523,114 @@ ontology
 				["at0144"] = <
 					text = <"Fecha límite del servicio solicitado">
 					description = <"La fecha mas tardía aceptable para el cumplimiento del servicio.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Helsetjeneste rekvisisjon">
+					description = <"En generell rekvisisjon for en rekke forskjellige helsetjenester fx. henvisning lab test rekvisisjon, utstyrs rekvisisjon.">
+				>
+				["at0001"] = <
+					text = <"Rekvisisjon">
+					description = <"Aktuell aktivitet.">
+				>
+				["at0008"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Rekvirent identifikator">
+					description = <"Den lokale ID tillagt rekvisisjonen av helsetjeneste leverandør eller organisasjon som rekvirerer tjenesten. Dette kalles også Rekvirent Bestiller Identifikator.">
+				>
+				["at0011"] = <
+					text = <"Mottaker identifikator">
+					description = <"Den ID som tillegges en rekvisisjon av helsetjeneste leverandør eller organisasjon som mottar rekvisisjonen for en tjeneste. Dette kalles også Rekvisisjons Leverandør Identifikator (den der skal levere den rekvirerte tjeneste).">
+				>
+				["at0040"] = <
+					text = <"Dato /tid for den ønskede tjeneste">
+					description = <"Datoen og tidspunkt hvor den rekvirerte tjeneste bør være utført eller avsluttet.">
+				>
+				["at0062"] = <
+					text = <"Begrunnelse for rekvisisjonen">
+					description = <"En kort narrativ beskrivelse av grunnen til rekvisisjonen. Dette kodes ofte i ekstern terminologi.">
+				>
+				["at0064"] = <
+					text = <"Begrunnelse beskrivelse">
+					description = <"En narrativ beskrivelse som forklarer årsaken til rekvisisjonen.">
+				>
+				["at0065"] = <
+					text = <"Hensikt">
+					description = <"Beskrivelse av hensikt for rekvisisjonen av rekvirenten.">
+				>
+				["at0068"] = <
+					text = <"Hast">
+					description = <"I hvilken grad haster rekvisisjonen?">
+				>
+				["at0076"] = <
+					text = <"Supplerende informasjon følger">
+					description = <"SANN: indikerer at supplerende informasjon er blitt identifisert og vil bli fremsendt når det er tilgjengelig fx. ufullstendig lab test resultater.">
+				>
+				["at0078"] = <
+					text = <"Supplerende informasjon forventes">
+					description = <"Detaljer om arten av den supplerende informasjon som følger fx. navnet til lab test resultatet.">
+				>
+				["at0112"] = <
+					text = <"Lokalitet">
+					description = <"Lokale detaljert informasjon som fx fakturerings krav.">
+				>
+				["at0116"] = <
+					text = <"Pasient krav">
+					description = <"Språk, transport eller annen personlige krav som understøtter pasientens oppmøte eller deltakelse i utførelsen av den rekvirerte tjeneste.">
+				>
+				["at0121"] = <
+					text = <"Rekvirert helsetjeneste">
+					description = <"Identifikasjon av den rekvirerte helsetjeneste. Dette kodes ofte i ekstern terminologi.">
+				>
+				["at0127"] = <
+					text = <"Rekvisisjons status">
+					description = <"Status til den helsetjeneste rekvisisjon som er bestilt av rekvirenten. Status anvendes til at vise om dette er den primære rekvisisjon eller en oppfølgende rekvisisjon for endring eller for at gi supplerende informasjon.">
+				>
+				["at0128"] = <
+					text = <"Distribusjons liste for respons.">
+					description = <"En liste av personer eller organisasjon som bør motta noen kommunikasjon.">
+				>
+				["at0132"] = <
+					text = <"Spesiifikke detaljer">
+					description = <"Strukturerte detaljer som definerer den rekvirerte tjeneste fx \"CLUSTER\" arketype som spesifiserer det spesifikke kateter til at legge inn.">
+				>
+				["at0135"] = <
+					text = <"Beskrivelse av service">
+					description = <"Eb detaljert narrativ beskrivelse av den rekvirerte tjeneste.">
+				>
+				["at0136"] = <
+					text = <"Akutt (ØH)">
+					description = <"Rekvisisjonen er akutt.">
+				>
+				["at0137"] = <
+					text = <"Haster">
+					description = <"Rekvisisjonen haster.">
+				>
+				["at0138"] = <
+					text = <"Rutine">
+					description = <"Rekvisisjonen er rutine.">
+				>
+				["at0141"] = <
+					text = <"Rekvirent">
+					description = <"Detaljer om helsetjeneste leverandør eller organisasjon som rekvirerer tjenesten.">
+				>
+				["at0142"] = <
+					text = <"Mottaker">
+					description = <"Detaljer om helsetjeneste leverandør eller organisasjon som mottar rekvisisjonen for en tjeneste.">
+				>
+				["at0144"] = <
+					text = <"Seneste dato for rekvirerte tjeneste">
+					description = <"Den seneste dato som er akseptabel for fullførelse av tjenesten.">
 				>
 			>
 		>
