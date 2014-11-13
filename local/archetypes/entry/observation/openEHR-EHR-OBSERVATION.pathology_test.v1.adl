@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Pathology Test Result
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
+			>
+			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Ian McNicoll">
@@ -35,6 +45,24 @@ This archetype is suitable for representation of general pathology test results,
 This archetype has been designed to support clinical pathology and may not be appropriate for other kinds of pathology use.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Anvendes for å registrere funn og tolkning av laboratorie og patologi tester utført på vev og kropps væsker. Dette gjøres vanligvis i et laboratorium, men kan utføres i andre omgivelser som fx pasientnært.">
+			use = <"Anvendes for å registrere laboratorie og patologi test resultater av en prøve, som en del av en sammensatt prosedyre eller operasjon.
+Multi-analyse paneler kan vises ved anvendelse av maler eller spesialiserte arketyper.
+Mer komplekse tester som histopatologi eller mikrobiologi kan vises ved anvendelse av spesialiserte arketyper hvor ytterligere rapportinnhold kreves.
+Vil normalt bli rapportert tilbake til den rekvirerende klinikker som en komponent innen konteksten av en generell COMPOSITION-basert rapport.
+">
+			keywords = <"lab", "patologi", "biokjemi", "hæmatologi", "mikrobiologi", "immunologi", "laboratorie", "anatomisk", "kjemisk", "klinisk", "immunopatologi", "cytologi", "histopatologi", "test", "prøve", "biopsi", "Test materiale", "restmedisin", "genetikk">
+			misuse = <"Anvendes ikke for rapportering av ikke-laboratorie resultater og funn som fex. diagnostiske bilde behandling, EKG, respirasjons funksjons tester.
+Anvendes ikke for å vise en hel kumulativ rapport. Denne laboratorie test resultat arketype viser bare en av de resultater som normalt vises i en vertikal i en kumulativ test rapport. En kumulativ test rapport er en visning der er konstruert ut fra resultatene i multiple OBSERVATION arktyper.
+
+Anvendes ikke for autopsi rapportering, selv om enkelte test resultater tatt ved autopsi kan vises ved anvendelse av denne arketype.
+Denne arketype er egnet for visning av generelle laboratorie test resultater, men ikke ment å dekke komplette generelle rapporter. For disse er ytterligere spesialiserte arketyper nødvendige for å vise dataene. 
+Denne arketype er designet for 
+Denne arketypen er designet for å støtte klinisk biokjemi, histopatologi og mikrobiologi og passer kanskje ikke for andre typer laboratorie bruk.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"CommitteeDraft">
 	other_contributors = <"Koray Atalag, University of Auckland, New Zealand", "Sharmila Biswas, Dr Sharmila Biswas GP, Australia", "Doug Chesher, PaLMS, Australia", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Andre de Wolf, NeHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heath Frankel, Ocean Informatics, Australia", "Grahame Grieve, Health Intersections Pyty Ltd, Australia (Editor)", "Sam Heard, Ocean Informatics, Australia", "Mary Kelaher, NEHTA, Australia", "Michael Legg, Michael Legg & associates, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Andrew McIntyre, Medical-Objects, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Michael Osborne, Mater Health Services, Australia", "Kyle Shore, Charm Health, Australia", "Michael Thompson, Queensland Health, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia">
@@ -42,7 +70,7 @@ This archetype has been designed to support clinical pathology and may not be ap
 		["references"] = <"Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: National E-Health Transition Authority; 2007 May 29 [cited 2011 Jul 11]; Available at http://www.nehta.gov.au/component/docman/doc_download/962-pathology-v10.
 
 Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory.">
-		["MD5-CAM-1.0.1"] = <"B694D226A38342CC4A0F0789411CC6B5">
+		["MD5-CAM-1.0.1"] = <"D011B3A20B6494D0516CB4805009BCB6">
 	>
 
 definition
@@ -383,6 +411,158 @@ ontology
 				["at0110"] = <
 					text = <"Test Procedure">
 					description = <"Additional structured details of pathology test methodology followed. For example, structured details about the laboratory method and data interpretation used.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Laboratorie test resultat">
+					description = <"Funn og tolkning av laboratorie test resultat utført på på pasient prøver.">
+					comment = <"Denne arketype kan brukes til å registrere enkelte verdier resultater, men vil ofte bli spesialisert eller satt inn i en mal for å vise multiple verdier eller panel tester. Denne arketype fungerer også som grunnlag for spesialiseringer for mer spesifikke laboratorie tester som mikrobiologi, histopatologi.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifiserte hendelser">
+					description = <"Uspesifiserte hendelser.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Navnet til test resultatet">
+					description = <"Identifikasjon av den utførte testen, noen ganger med prøvetype og pasientens tilstand.">
+					comment = <"En test resultat kan være for en enkelt analyse eller en gruppe enheter inklusiv panel tester. Koding med terminologi, helst standardiserte termer som inkluderer prøvetype foretrekkes når mulig. Kan kodes i LOINC eller NOSMED-CT. Eksempler inkluderer \"Glukose\", \"Urea og elektrolytter\", \"vatpinne test\", \"Cortisol (morgen)\" eller \"lever biopsi\".">
+				>
+				["at0010"] = <
+					text = <"*Test Result Representation(en)">
+					description = <"*Rich text representation of the entire result as issued by the diagnostic service.(en)">
+				>
+				["at0017"] = <
+					text = <"*Receiving Laboratory(en)">
+					description = <"*Demographic details of the laboratory with responsibility for the pathology test.(en)">
+				>
+				["at0035"] = <
+					text = <"*Copied Provider(en)">
+					description = <"*Details of the clinician or organisation who will receive a copy of the pathology test result.(en)">
+				>
+				["at0037"] = <
+					text = <"Midlertidig">
+					description = <"Dette er et midlertidig resultat: data kan mangle eller godkjenning er ikke utført.">
+				>
+				["at0038"] = <
+					text = <"Endelig">
+					description = <"Resultatet er komplett og godkjent av ansvarlig fagperson.">
+				>
+				["at0040"] = <
+					text = <"Endret">
+					description = <"Resultatet har blitt endret etter publisering og er komplett og godkjent av ansvarlig fagperson.">
+				>
+				["at0057"] = <
+					text = <"*Conclusion(en)">
+					description = <"*Concise and clinically contextualised narrative interpretation of the pathology test results.(en)">
+				>
+				["at0062"] = <
+					text = <"*Requester Order Identifier(en)">
+					description = <"*The local ID assigned to the order by the order requester.(en)">
+				>
+				["at0063"] = <
+					text = <"*Receiver Order Identifier(en)">
+					description = <"*The local ID assigned to the test order by the order filler, usually by the Laboratory Information System (LIS).(en)">
+				>
+				["at0065"] = <
+					text = <"Prøve detaljer">
+					description = <"Detaljer om prøven, hvis alle de individuelle test resultater stammer fra den samme prøve. Hvis prøven er tilstrekkelig spesifisert med kode i test resultat navnet, så er ytterligere informasjon ikke nødvendig. Hvis der er multiple prøver kan disse vises i \"Result group\"">
+				>
+				["at0068"] = <
+					text = <"*Laboratory Test Result Identifier(en)">
+					description = <"*The identifier given to the laboratory test result of a pathology investigation.(en)">
+				>
+				["at0073"] = <
+					text = <"Generell test resultat status">
+					description = <"Publikasjonen status for det samlede laboratorie testresultatet.">
+				>
+				["at0074"] = <
+					text = <"Kansellert/avbrudt">
+					description = <"Resultatet er ikke tilfjengelig fordi testen ikke er startet eller ikke gjennomført.">
+				>
+				["at0077"] = <
+					text = <"Diagnostisk service">
+					description = <"Den diagnostiske service som utfører undersøkningen.">
+					comment = <"For eksempel biokjemi, hæmatologi. Koding med standard terminologi foretrekkes når mulig.">
+				>
+				["at0078"] = <
+					text = <"*Result Value(en)">
+					description = <"*Actual value of the result.(en)">
+				>
+				["at0090"] = <
+					text = <"*Requester(en)">
+					description = <"*Details of the clinician or organisation requesting the pathology test result.(en)">
+				>
+				["at0094"] = <
+					text = <"*Test Request Details(en)">
+					description = <"*Details concerning a single pathology test requested.(en)">
+				>
+				["at0095"] = <
+					text = <"Resultat gruppe">
+					description = <"En gruppe av resultater">
+					comment = <"Hvis et navn eller kode brukes, er det gitt av forløps re-navngiving av «Results» og kan grupperes etter prøvetype, eller av et annet navn eller kode for å beskrive det som binder alle resultatene sammen, 'Result group' elementet eller kan festes i et spesialisert arketype eller mal. Koding med en standard terminologi, foretrekkes der det er mulig. Børl kodes med LOINC eller SNOMED CT.">
+				>
+				["at0096"] = <
+					text = <"Resultat">
+					description = <"*Specific detailed result, including both the value of the result item, and additional information that may be useful for clinical interpretation.(en)">
+				>
+				["at0097"] = <
+					text = <"*Specimen Detail(en)">
+					description = <"*Details about the individual specimen to which these ‘Result group’ test results refer, where testing of multiple specimens is required.(en)">
+				>
+				["at0098"] = <
+					text = <"*Pathological Diagnosis(en)">
+					description = <"*Single word, phrase or brief description representing the narrative in the 'Conclusion'.(en)">
+				>
+				["at0099"] = <
+					text = <"Dato og tidspunkt for resultat">
+					description = <"Dato og/eller tidspunkt hvor det komplette resultat ble registrert som \"Generell test resultat status\".">
+				>
+				["at0100"] = <
+					text = <"Medfølgende klinisk informasjon">
+					description = <"Beskrivelse av den tilgjengelige kliniske informasjon på tidspunktet for tolkning av resultatene, som kan inkludere lenke til den originale informasjon gitt ved prøve rekvisisjonen.">
+				>
+				["at0101"] = <
+					text = <"*Test Comment(en)">
+					description = <"*Additional narrative about the test not captured in other fields.(en)">
+				>
+				["at0102"] = <
+					text = <"*Result Comment(en)">
+					description = <"*Comment about the Result.(en)">
+				>
+				["at0103"] = <
+					text = <"*Reference Range Guidance(en)">
+					description = <"*Additional advice on the applicability of the reference range.(en)">
+				>
+				["at0106"] = <
+					text = <"*Test Requested Name(en)">
+					description = <"*Identification of pathology test requested, where the test requested differs from the test actually performed.(en)">
+				>
+				["at0107"] = <
+					text = <"Registert">
+					description = <"Ingen resultater tilgjengelig ennå.">
+				>
+				["at0108"] = <
+					text = <"*Result Value Status(en)">
+					description = <"*The status of the result value.(en)">
+				>
+				["at0110"] = <
+					text = <"*Test Procedure(en)">
+					description = <"*Additional structured details of pathology test methodology followed. For example, structured details about the laboratory method and data interpretation used.(en)">
 				>
 			>
 		>
