@@ -14,17 +14,25 @@ language
 				["email"] = <"demski@helmholtz-muenchen.de">
 			>
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Alan March">
-				["organisation"] = <"Hospital Universitario Austral, Pilar, Buenos Aires, Argentina">
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
 			>
+			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			author = <
 				["name"] = <"Mona Saleh">
+			>
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Alan March">
+				["organisation"] = <"Hospital Universitario Austral, Pilar, Buenos Aires, Argentina">
 			>
 		>
 	>
@@ -68,6 +76,14 @@ description
 			misuse = <"Not to be used for primary recording of patient name. Not to be used to identify the individuals who can be uniquely referenced from registers of demographic details eg within the electronic health record, master patient indexes etc.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av pasient navnet, slektning, helsetjeneste eller tredje part.">
+			use = <"Anvendes for registrering av navne detaljer om et individ.">
+			keywords = <"etternavn", "fornavn", "familie navn">
+			misuse = <"Brukes ikke til den primære registrering av pasient navn. Brukes ikke for at identifisere individer som entydig refereres til i registre med demografiske detaljer fx. innen EPJ, pasient indekser mv.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"Initial">
 	other_contributors = <"Rigoleta Dutra, Ministry of Defense, Brazil (Editor)", "Sergio Freire, State University of Rio de Janeiro, Brazil (Editor)", "Heather Leslie, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
@@ -77,7 +93,7 @@ description
 Aligned with openEHR-DEMOGRAPHICS-person_name.v1 http://www.openehr.org/ckm/#showArchetype_1013.1.477_9
 
 ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification- International Organization for Standardization.">
-		["MD5-CAM-1.0.1"] = <"2D8CF370D3AEC6DDC6F9847963051B89">
+		["MD5-CAM-1.0.1"] = <"F451596954FAB4A8336549E328A1B5D3">
 	>
 
 definition
@@ -487,6 +503,88 @@ ontology
 				["at0022"] = <
 					text = <"*Preferred name(en)">
 					description = <"*Indicates that this is the name by which a person chooses to be identified.(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Person navn">
+					description = <"Detaljer om navnet til et individ, tjenesteyter eller tredje part.">
+				>
+				["at0001"] = <
+					text = <"Ustrukturert navn">
+					description = <"Navnet i fri tekst i ustrukturert format.">
+				>
+				["at0002"] = <
+					text = <"Strukturert navn">
+					description = <"Navnet i strukturert format.">
+				>
+				["at0003"] = <
+					text = <"Fornavn">
+					description = <"Fornavn.">
+				>
+				["at0004"] = <
+					text = <"Mellom navn">
+					description = <"Mellom navn/e">
+				>
+				["at0005"] = <
+					text = <"Etternavn">
+					description = <"Etternavn eller familienavnet.">
+				>
+				["at0006"] = <
+					text = <"Navne type">
+					description = <"Type navn som beskrives.">
+				>
+				["at0008"] = <
+					text = <"Tidligere navn">
+					description = <"Det navn som tidligere ble anvendt av personen.">
+				>
+				["at0009"] = <
+					text = <"Føde navn">
+					description = <"Navnet som ble gitt til personen ved fødsel.">
+				>
+				["at0010"] = <
+					text = <"AKA (also called as)">
+					description = <"Personen er også kjent som.">
+				>
+				["at0011"] = <
+					text = <"Alias">
+					description = <"Annet navn som brukes av denne person.">
+				>
+				["at0012"] = <
+					text = <"Pike navn">
+					description = <"Navnet som ble brukt innen giftermål.">
+				>
+				["at0014"] = <
+					text = <"Gyldighets periode">
+					description = <"Perioden for navnets gyldighet.">
+				>
+				["at0017"] = <
+					text = <"Titel">
+					description = <"Prefiks eller titel som personen bruker">
+					comment = <"fx 'Hr,' 'Fr,' 'Fru,' *Dr,'">
+				>
+				["at0018"] = <
+					text = <"Suffiks">
+					description = <"Ytterligere vending som vanligvis følger et person navn.">
+					comment = <"fx *Snr,' (senior)">
+				>
+				["at0019"] = <
+					text = <"Profesjonell navn">
+					description = <"Navnet som brukes av personen for næringsvirksomhet eller profesjonelle årsaker.">
+				>
+				["at0020"] = <
+					text = <"Registrert navn">
+					description = <"Det offisielle navn.">
+				>
+				["at0021"] = <
+					text = <"Bruker navn">
+					description = <"Personens navn når det brukes for rapportering, når det anvendes med en spesifikk identifikator.">
+				>
+				["at0022"] = <
+					text = <"Foretruken navn">
+					description = <"Indikerer at dette er det navn som personen velger som identitet.">
 				>
 			>
 		>
