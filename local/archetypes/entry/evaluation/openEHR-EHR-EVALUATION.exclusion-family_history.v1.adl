@@ -40,14 +40,14 @@ Exclusion statements can only be considered to be current and accurate at the ti
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For journalregistrering av opplysninger om sykdom i familie som er utelukket på et bestemt tidspunkt.">
+			purpose = <"For å registrere i journalen opplysninger om sykdom i familien som er utelukket på et bestemt tidspunkt.">
 			use = <"Brukes for å journalregistrere fravær av sykdom i familien på et bestemt tidspunkt. For eksempel: for å registrere at et individ ikke har signifikant sykdomsforekomst i familien, eller at vedkommende ikke har familiemedlemmer med hjertesykdom.
 
 Denne arketypen har blitt laget for å unngå bruk av flagg eller termer for å kunne registrere negasjon om familiehistorie i pasientjournalen.
 
 Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i det øyeblikket registreringen skjer. For eksempel: registrering av en utelukket sykdom er kun aktuell i det øyeblikket den blir registrert og kan være foreldet rett etterpå grunnet nye opplysninger.">
-			keywords = <"eksklusjon", "utelukking", "familie", "hereditet">
-			misuse = <"Skal ikke brukes til å registrere fravær av bivirkninger, medikamentbruk, prosedyrer, kliniske problemstillinger eller diagnoser. Bruk egne spesialiserte varianter av denne arketypen for en slik registrering.">
+			keywords = <"eksklusjon", "utelukking", "familie", "hereditet", "fravær">
+			misuse = <"Skal ikke brukes til å registrere fravær av uønskede reaksjoner, medikamentbruk, prosedyrer, kliniske problemstillinger eller diagnoser. Bruk egne spesialiserte varianter av denne arketypen for en slik registrering.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -57,7 +57,7 @@ Eksklusjonsopplysninger er kun nøyaktige og oppdaterte i det øyeblikket regist
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["references"] = <"Exclusion of Family History, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 02 Mar 2010. Available at: 
 http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1314_1(accessed 3 Sept 2013)">
-		["MD5-CAM-1.0.1"] = <"E34B6F7655E3937BA59BB9A840FF4761">
+		["MD5-CAM-1.0.1"] = <"08CE5DB8BF9C4A774328F989DB230224">
 	>
 
 definition
@@ -159,10 +159,10 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uttalelse om manglende forekomst">
-					description = <"Uttalelse om manglende forekomst av en tilstand i journalen.">
-					comment = <"Brukes dersom man vil dokumentere at en gitt sykdom ikke finnes i journalen.
-Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyper for medikasjon, bivirkninger, problem/diagnose og prosedyrer som eksempel for eksplisitt utforming.">
+					text = <"Eksklusjonsutsagn">
+					description = <"Utsagn om eksklusjon av en tilstand i journalen.">
+					comment = <"Brukes til å fange opp enhver informasjon i journalen, som dokumenterer positivt at en sykdom er ekskludert.
+Utsagnet kan både være generelt eller om et bestemt objekt. Se også arketyper for medikasjon, bivirkninger, problem/diagnose og prosedyrer som eksempel for eksplisitt utforming.">
 				>
 				["at0003"] = <
 					text = <"*Specific Object(en)">
@@ -170,11 +170,11 @@ Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyp
 				>
 				["at0003.1"] = <
 					text = <"Familiehistorie">
-					description = <"Identifisering av den bestemte familiehistorien eksklusjonsuttalelsen refererer til.">
+					description = <"Beskrivelse av den spesifikke delen av familiehistorien utsagn om eksklusjon referer til.">
 				>
 				["at0004"] = <
 					text = <"Siste oppdatering">
-					description = <"Dato opplysningene sist ble supplert, vurdert eller bekreftet.">
+					description = <"Dato eksklusjonen ble klinisk stadfestet, vurdert eller bekreftet.">
 				>
 				["at0006"] = <
 					text = <"Tree">
@@ -182,7 +182,7 @@ Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyp
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Tilleggsinformasjon som ikke ble fanget opp i de andre felt.">
+					description = <"Tilleggsinformasjon om eksklusjonen som ikke ble registrert i de andre felt.">
 				>
 			>
 		>
@@ -200,7 +200,7 @@ Uttalelsen kan både være generell eller om et bestemt objekt. Se også arketyp
 			items = <
 				["ac0.1"] = <
 					text = <"Familiehistorie">
-					description = <"Alle positive funn i familiehistorien.">
+					description = <"Alle mulige funn i familiehistorien">
 				>
 			>
 		>
