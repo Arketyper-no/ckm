@@ -6,8 +6,8 @@ concept
 language
 	original_language = <[ISO_639-1::nb]>
 	translations = <
-		["en-gb"] = <
-			language = <[ISO_639-1::en-gb]>
+		["en"] = <
+			language = <[ISO_639-1::en]>
 			author = <
 				["name"] = <"?">
 			>
@@ -21,8 +21,8 @@ description
 		["date"] = <"2014-07-11">
 	>
 	details = <
-		["en-gb"] = <
-			language = <[ISO_639-1::en-gb]>
+		["en"] = <
+			language = <[ISO_639-1::en]>
 			purpose = <"Tool for screening of patiens nutritional status.">
 			use = <"To be used in adults 
 The first 4 questions are prescreening, if any of theses questions is answered YES
@@ -46,23 +46,23 @@ Dersom svaret er \"Ja\" på noen av de innledende spørsmålene, gjennomføres h
 Dersom svaret er ”Nei” på alle de innledende spørsmålene skal pasienten rescreenes ukentlig. Dersom pasienten f.eks skal gjennomgå en planlagt stor operasjon, skal en forebyggende ernæringsplan overveies for å unngå den forventede ernæringsrisiko.
 
 Dersom total skår er ≥3 er pasienten i ernæringsmessig risiko og en ernæringsplan skal iverksettes. Dersom total skår er <3 skal pasienten rescreenes ukentlig. Hvis pasienten f.eks skal gjennomgå omfattende kirurgi skal en forebyggende ernæringsplan overveies for å unngå den forventede ernæringsrisiko.">
-			keywords = <"ernæring", "NRS", "NRS2002", "feilernæring", "underernæring", "vekttap", "vekt", "KMI", "BMI">
-			misuse = <"Brukes ikke til barn.">
+			keywords = <"ernæring", "NRS", "NRS2002", "feilernæring", "underernæring", "vekttap", "vekt", "KMI", "BMI", "ernæringsmessig risiko">
+			misuse = <"Brukes ikke til barn under 18 år.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"Initial">
-	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway (Editor)", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Kari Beate Engseth, Finnmarkssykehuset HF + Klinikk Kirkenes, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie", "Eli Taranger Ljønes, Landsgruppen av Helsesøstre NSF, Norway", "Heidi Minne, Haraldsplass Diakonale sykehus, Norway", "Hugo Nilssen, UNN HF K3K/Tromsø, Norway", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway (Editor)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Kari Beate Engseth, Finnmarkssykehuset HF + Klinikk Kirkenes, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie", "Eli Taranger Ljønes, Landsgruppen av Helsesøstre NSF, Norway", "Heidi Minne, Haraldsplass Diakonale sykehus, Norway", "Hugo Nilssen, UNN HF K3K/Tromsø, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Kari Sygnestveit, Helse Bergen, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
 		["current_contact"] = <"Micaela Thierley, Helse Bergen, micaela.thierley@helse-bergen.no">
-		["references"] = <"http://www.uniklinik-duesseldorf.de/fileadmin/Datenpool/einrichtungen/klinik_fuer_gastroenterologie_hepatologie_und_infektiologie_id6/Darmzentrum/Formulare_polnisch/ernhrungnrs_schuetz_2002_sept_2006_en.pdf
+		["references"] = <"Screening for Nutritional Deficiency in the Hospital: Nutritional Risk Screening (NRS 2002) from Kondrup J et al., Clinical Nutrition 2003; 22: 415-421, Recommended by the European Society for Clinical Nutrition and Metabolism (ESPEN) http://www.uniklinik-duesseldorf.de/fileadmin/Datenpool/einrichtungen/klinik_fuer_gastroenterologie_hepatologie_und_infektiologie_id6/Darmzentrum/Formulare_polnisch/ernhrungnrs_schuetz_2002_sept_2006_en.pdf
 
 Kondrup J, Rasmussen HH, Hamberg O, Stanga Z, ad hoc ESPEN working group: Nutritional risk screening (NRS 2002): a new method based on an analysis of controlled clinical trials. Clinical Nutrition (2003) 22(3): 321-336.
 
 Kondrup J, Allison SP, Elia M, Vellas B, Plauth M. ESPEN guidelines for nutritional screening 2002. Clinical Nutrition (2003) 22(4) 415-21.
 
 Thoresen og Wøien (2014), Screening for ernæringsmessig risiko (Nutritional Risk screening NRS 2002). http://arketyper.no/ckm/document?cid=1078.51.49">
-		["MD5-CAM-1.0.1"] = <"99966F4F5B835C38E27F1F62C59FE078">
+		["MD5-CAM-1.0.1"] = <"D302E7D4C7E330EAA62D48119A5EA5A8">
 	>
 
 definition
@@ -74,59 +74,67 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Er BMI < 20,5?
-										value matches {
-											DV_BOOLEAN matches {
-												value matches {True, False}
+									CLUSTER[at0031] occurrences matches {0..1} matches {	-- Innledende screening
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0004] occurrences matches {0..1} matches {	-- Er BMI < 20,5?
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Har pasienten tapt vekt i løpet av de 3 siste månedene?
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Har pasienten hatt redusert næringsinntak i den siste uken?
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Er pasienten alvorlig / kritisk syk?
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
 											}
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Har pasienten tapt vekt i løpet av de 3 siste månedene?
-										value matches {
-											DV_BOOLEAN matches {
-												value matches {True, False}
+									CLUSTER[at0032] occurrences matches {0..1} matches {	-- Hovedscreening
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Ernæringsstatus
+												value matches {
+													0|[local::at0018], 	-- Fraværende
+													1|[local::at0019], 	-- Mild
+													2|[local::at0020], 	-- Moderat
+													3|[local::at0021]  	-- Alvorlig
+												}
 											}
-										}
-									}
-									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Har pasienten hatt redusert næringsinntak i den siste uken?
-										value matches {
-											DV_BOOLEAN matches {
-												value matches {True, False}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Sykdommens alvorlighetsgrad
+												value matches {
+													0|[local::at0022], 	-- Normal
+													1|[local::at0023], 	-- Mild
+													2|[local::at0024], 	-- Moderat
+													3|[local::at0025]  	-- Alvorlig
+												}
 											}
-										}
-									}
-									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Er pasienten alvorlig / kritisk syk?
-										value matches {
-											DV_BOOLEAN matches {
-												value matches {True, False}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- Er pasientens alder ≥ 70 år?
+												value matches {
+													0|[local::at0028], 	-- Nei
+													1|[local::at0029]  	-- Ja
+												}
 											}
-										}
-									}
-									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Ernæringsstatus
-										value matches {
-											0|[local::at0018], 	-- Fraværende
-											1|[local::at0019], 	-- Mild
-											2|[local::at0020], 	-- Moderat
-											3|[local::at0021]  	-- Alvorlig
-										}
-									}
-									ELEMENT[at0017] occurrences matches {0..1} matches {	-- Sykdommens alvorlighetsgrad
-										value matches {
-											0|[local::at0022], 	-- Normal
-											1|[local::at0023], 	-- Mild
-											2|[local::at0024], 	-- Moderat
-											3|[local::at0025]  	-- Alvorlig
-										}
-									}
-									ELEMENT[at0027] occurrences matches {0..1} matches {	-- Er pasientens alder ≥ 70 år?
-										value matches {
-											0|[local::at0028], 	-- Nei
-											1|[local::at0029]  	-- Ja
-										}
-									}
-									ELEMENT[at0030] occurrences matches {0..7} matches {	-- Total score
-										value matches {
-											DV_COUNT matches {*}
+											ELEMENT[at0030] occurrences matches {0..7} matches {	-- Total score
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
 										}
 									}
 								}
@@ -141,7 +149,7 @@ definition
 
 ontology
 	term_definitions = <
-		["en-gb"] = <
+		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"*Nutritional risk screening(nb)">
@@ -231,6 +239,14 @@ gjennomgått et mindre kirurgisk inngrep.(nb)">
 				["at0030"] = <
 					text = <"*Total aldersjustert score(nb)">
 					description = <"*Summen av score fra ernæringstilstand, sykdommens alvorlighetsgrad og aldersjustering.(nb)">
+				>
+				["at0031"] = <
+					text = <"*Innledende screening(nb)">
+					description = <"*Dersom svaret er \"Ja\" på noen av de innledende spørsmålene, gjennomføres hovedscreeningen.(nb)">
+				>
+				["at0032"] = <
+					text = <"*Hovedscreening(nb)">
+					description = <"*Den avsluttende screeningen gjennomføres kun dersom det svares \"Ja\" på noen av spørsmålene i den innledende screeningen.(nb)">
 				>
 			>
 		>
@@ -334,6 +350,14 @@ nitrogentap kan bli betydelig hemmet.">
 				["at0030"] = <
 					text = <"Total score">
 					description = <"Summen av score fra ernæringsstatus, sykdommens alvorlighetsgrad og alder.">
+				>
+				["at0031"] = <
+					text = <"Innledende screening">
+					description = <"Dersom svaret er \"Ja\" på noen av de innledende spørsmålene, gjennomføres hovedscreeningen.">
+				>
+				["at0032"] = <
+					text = <"Hovedscreening">
+					description = <"Den avsluttende screeningen gjennomføres kun dersom det svares \"Ja\" på noen av spørsmålene i den innledende screeningen.">
 				>
 			>
 		>
