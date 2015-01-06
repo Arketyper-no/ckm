@@ -21,11 +21,13 @@ language
 			>
 			accreditation = <"MD, DEAA, specialist in anesthesia and intensive care, specialist in tropical medicine.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
 			author = <
-				["name"] = <"?">
+				["name"] = <"Dr. Leonardo Der Jachadurian">
+				["organisation"] = <"Bitios.com">
 			>
+			accreditation = <"Medical Doctor (Internal Medicine Specialist)">
 		>
 		["fa"] = <
 			language = <[ISO_639-1::fa]>
@@ -34,13 +36,11 @@ language
 				["organisation"] = <"Ocean Informatics">
 			>
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
 			author = <
-				["name"] = <"Dr. Leonardo Der Jachadurian">
-				["organisation"] = <"Bitios.com">
+				["name"] = <"?">
 			>
-			accreditation = <"Medical Doctor (Internal Medicine Specialist)">
 		>
 		["nl"] = <
 			language = <[ISO_639-1::nl]>
@@ -142,9 +142,9 @@ Niet te gebruiken voor de registratie van details, als de persoon beademing onde
 			purpose = <"For å registrere de observerte kjennetegn ved spontant åndedrett.">
 			use = <"Brukes til å registrere tilstedeværelse eller fravær av spontant åndedrett.
 
-Brukes til å registrere de observerte og målte verdier knyttet til et individs spontane åndedrett.">
-			keywords = <"pusting", "respirasjon", "pust", "respirasjoner", "frekvens", "rytme", "vital", "tegn", "livsfunksjoner", "åndedrett", "åndedrag", "ventilasjon", "hyperventilering", "hyperventilasjon", "hypoventilering", "hypoventilasjon", "respirasjon">
-			misuse = <"Ikke egnet til fullstendig undersøkelse av ånderettssystem og dens funksjon. Andre spesifikke arketyper vil bli brukt til å registrere egenskaper som anstrengt åndedrett, auskultatoriske funn etc.
+Brukes til å registrere de observerte verdier knyttet til et individs spontane åndedrettsbevegelser.">
+			keywords = <"pusting", "respirasjon", "pust", "respirasjoner", "frekvens", "rytme", "vital", "tegn", "livsfunksjoner", "åndedrett", "åndedrag", "ventilasjon", "hyperventilering", "hyperventilasjon", "hypoventilering", "hypoventilasjon">
+			misuse = <"Ikke egnet til fullstendig undersøkelse av åndedrettssystem og dets funksjon. Andre spesifikke arketyper vil bli brukt til å registrere auskultatoriske funn etc.
 
 Skal ikke brukes til å registrere detaljer når det anvendes assistert ventilasjon.">
 			copyright = <"© Nasjonal IKT HF">
@@ -163,7 +163,7 @@ Wikipedia contributors. Cheyne-Stokes respiration [Internet]. Wikipedia, The Fre
 Wikipedia contributors. Biot's respiration [Internet]. Wikipedia, The Free Encyclopedia; 2012 Sep 07 [cited  2013 Feb 21]. Available from: http://en.wikipedia.org/wiki/Biot%27s_respiration.
 
 Wikipedia contributors. Apneustic respirations [Internet]. Wikipedia, The Free Encyclopedia; 2011 Oct 15 [cited 2013 Feb 21].  Available from: http://en.wikipedia.org/wiki/Apneustic_respirations.">
-		["MD5-CAM-1.0.1"] = <"7EE2BBAF6809C363F7738BE1D8C20BA0">
+		["MD5-CAM-1.0.1"] = <"F591D8D87AC424CA3A2E5BB92FD836C9">
 	>
 
 definition
@@ -245,7 +245,7 @@ definition
 						state matches {
 							ITEM_TREE[at0022] matches {	-- *List(en)
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0056] occurrences matches {0..*} matches {	-- Kompliserende faktorer
+									ELEMENT[at0056] occurrences matches {0..*} matches {	-- Konfunderende faktorer
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -257,6 +257,20 @@ definition
 									allow_archetype CLUSTER[at0037] occurrences matches {0..1} matches {	-- Fysisk anstrengelse
 										include
 											archetype_id/value matches {/openEHR-EHR-CLUSTER\.level_of_exertion(-[a-zA-Z0-9_]+)*\.v1/}
+									}
+									ELEMENT[at0062] occurrences matches {0..1} matches {	-- Stilling
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0063, 	-- Stående
+													at0064, 	-- Sittende
+													at0065, 	-- Tilbakelent
+													at0066]	-- Liggende
+												}
+											}
+											DV_TEXT matches {*}
+										}
 									}
 								}
 							}
@@ -375,6 +389,26 @@ Cluster breathing [Clusters of irregular breaths that alternate with periods of 
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].">
 				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
+				>
 			>
 		>
 		["es-ar"] = <
@@ -481,6 +515,26 @@ Apneustic respiration [Deep, gasping inspiration with a pause at full inspiratio
 Cluster breathing [Clusters of irregular breaths that alternate with periods of apnoea. Also termed Biot's breathing],
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].(en)">
+				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
 				>
 			>
 		>
@@ -589,6 +643,26 @@ Cluster breathing [Clusters of irregular breaths that alternate with periods of 
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].(en)">
 				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
+				>
 			>
 		>
 		["fa"] = <
@@ -696,6 +770,26 @@ Cluster breathing [Clusters of irregular breaths that alternate with periods of 
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].(en)">
 				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
+				>
 			>
 		>
 		["ar-sy"] = <
@@ -802,6 +896,26 @@ Apneustic respiration [Deep, gasping inspiration with a pause at full inspiratio
 Cluster breathing [Clusters of irregular breaths that alternate with periods of apnoea. Also termed Biot's breathing],
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].(en)">
+				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
 				>
 			>
 		>
@@ -911,6 +1025,26 @@ Cluster breathing [Clusters of irregular breaths that alternate with periods of 
 Apnoea [Breathing has ceased], 
 Prolonged expiratory phase [The respiratory expiratory phase is longer than normal/usual. Associated with obstructive airways disease such as asthma].(en)">
 				>
+				["at0062"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"*Stående(en)">
+					description = <"*Stående ved tidspunktet for målingen.(en)">
+				>
+				["at0064"] = <
+					text = <"*Sittende(en)">
+					description = <"*Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.(en)">
+				>
+				["at0065"] = <
+					text = <"*Tilbakelent(en)">
+					description = <"*Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.(en)">
+				>
+				["at0066"] = <
+					text = <"*Liggende(en)">
+					description = <"*Liggende flatt ved tidspunkt for målingen.(en)">
+				>
 			>
 		>
 		["nb"] = <
@@ -987,14 +1121,14 @@ Prolonged expiratory phase [The respiratory expiratory phase is longer than norm
 					description = <"Detaljer om mengden oksygen som gis pasienten ved observasjonstidspunktet. Hvis ikke oppgitt antas verdier på 21% oksygenkonsentrasjon, Fi02 på 0,21 og oksygenstrømningshastighet på 0,0 l/min.">
 				>
 				["at0056"] = <
-					text = <"Kompliserende faktorer">
+					text = <"Konfunderende faktorer">
 					description = <"Beskrivelse av eventuelle faktorer som kan påvirke den kliniske fortolkning.">
 					comment = <"Anvendelse av standard terminologi for kompliserende faktorer er å foretrekke der det er mulig. F.eks. angst, smerte, mating av spedbarn eller trakeostomi.">
 				>
 				["at0057"] = <
 					text = <"Klinisk fortolkning">
 					description = <"Kort beskrivelse av den kliniske betydningen av funnene.">
-					comment = <"Bruk av standard terminologi er å foretrekke, der det er mulig. For eksempel: Normal pust; Kussmaul respirasjon, Cheyne-Stokes, eller apnéiske episoder. Flere begreper er tillatt.">
+					comment = <"Bruk av standard terminologi er å foretrekke, der det er mulig. Flere begreper er tillatt.">
 				>
 				["at0058"] = <
 					text = <"Spontant åndedrett">
@@ -1023,6 +1157,26 @@ Apné [pusting har opphørt],
 Forlenget ekspirasjonsfase [Den respiratoriske ekspirasjonsfase er lengre enn normalt / vanlig.].
 
 ">
+				>
+				["at0062"] = <
+					text = <"Stilling">
+					description = <"Individets stilling ved tidspunktet for målingen.">
+				>
+				["at0063"] = <
+					text = <"Stående">
+					description = <"Stående ved tidspunktet for målingen.">
+				>
+				["at0064"] = <
+					text = <"Sittende">
+					description = <"Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.">
+				>
+				["at0065"] = <
+					text = <"Tilbakelent">
+					description = <"Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.">
+				>
+				["at0066"] = <
+					text = <"Liggende">
+					description = <"Liggende flatt ved tidspunkt for målingen.">
 				>
 			>
 		>
