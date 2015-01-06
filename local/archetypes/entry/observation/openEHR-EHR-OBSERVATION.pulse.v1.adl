@@ -112,7 +112,9 @@ Målinger som makspuls over et tidsintervall kan registreres ved å bruke en int
 
 I praksis brukes begrepene hjertefrekvens og pulsfrekvens mye om hverandre. Denne arketypen tillater uspesifikke registreringer når målestedet ikke er oppgitt, for å best mulig kunne tilpasses klinikernes preferanser.
 
-I noen situasjoner er det imidlertid viktig å skille mellom en pulsfrekvens målt ved en perifer arterie som f.eks. arteria radialis, og den sentralt målte hjertefrekvensen. Denne arketypen tillater svært spesifikke data, inkludert en strukturert differensiering mellom sentral hjertefrekvens og perifer pulsfrekvens.">
+I noen situasjoner er det imidlertid viktig å skille mellom en pulsfrekvens målt ved en perifer arterie som f.eks. arteria radialis, og den sentralt målte hjertefrekvensen. Denne arketypen tillater svært spesifikke data, inkludert en strukturert differensiering mellom sentral hjertefrekvens og perifer pulsfrekvens.
+
+Ved å bruke to separate instanser kan arketypen benyttes til å registrere målingene av hjertefrekvens og pulsfrekvens som ligger til grunn for en registrering av pulsdefisitt. Selve registreringen av pulsdefisitt gjøres imidlertid i en egen OBSERVATION-arketype.">
 			keywords = <"frekvens", "rytme", "slag", "puls", "hjerte", "pulsslag", "hjerteslag", "hjertefrekvens">
 			misuse = <"Brukes ikke til å registrere R-R-frekvens i sammenheng med en EKG-rapport, til dette brukes \"OBSERVATION.ecg\"-arketypen.
 
@@ -127,13 +129,13 @@ Hjertefrekvens som et mål for behandling registreres i egne EVALUATION-arketype
 		>
 	>
 	lifecycle_state = <"CommitteeDraft">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sandra Bertram, Ascribe, Australia", "Pål Brekke, OUS Rikshospitalet, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, NEHTA, Australia", "Angela de Zwart, Orion Health, New Zealand", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Christian Ghan, The Chris O'Brien Lifehouse at RPA, Australia", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Oliver Hosking, Remote Health NT, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Athanasios Kleontas, Ergobyte Informatics, Greece", "Shinji Kobayashi, Ehime University, Japan", "Robert Legan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Monica Merchat, Hospital Cardiac Electrophysiology, MS Health Informatics Student, former ICU nurse, former Anesthesia Technician, United States", "Arturo Romero, SESCAM, Spain", "Thomas Schopf, University Hospital of North-Norway, Norway", "Fabian Schwarz, NT Health, Australia", "Gary Sinclair, NT DoH, Australia", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Magnus Alvestad, Helse Bergen HF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sandra Bertram, Ascribe, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Pål Brekke, OUS Rikshospitalet, Norway", "Einar Bugge, UNN HF, Fag- og forskningssenteret, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Angela de Zwart, Orion Health, New Zealand", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Christian Ghan, The Chris O'Brien Lifehouse at RPA, Australia", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Erling Are Hole, Helse Bergen, Norway", "Oliver Hosking, Remote Health NT, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Athanasios Kleontas, Ergobyte Informatics, Greece", "Shinji Kobayashi, Ehime University, Japan", "Robert Legan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Monica Merchat, Hospital Cardiac Electrophysiology, MS Health Informatics Student, former ICU nurse, former Anesthesia Technician, United States", "Arturo Romero, SESCAM, Spain", "Thomas Schopf, University Hospital of North-Norway, Norway", "Fabian Schwarz, NT Health, Australia", "Gary Sinclair, NT DoH, Australia", "Thor-Einar Stemland, Helse Bergen, FOU Seksjon for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["references"] = <"Direct communication with clinicians.
 
 Pulse (renamed from Heart Rate), draft archetype, openEHR Clinical Knowledge Manager [Internet]. London: openEHR Foundation. Authored: 26 Mar 2006. Major update: 20 Feb 2013. Available at: http://www.openehr.org/knowledge/OKM.html#showarchetype_1013.1.170_5 (accessed 20 Feb 2013).">
-		["MD5-CAM-1.0.1"] = <"E38804D54962D12E0561A3BDCFD1907E">
+		["MD5-CAM-1.0.1"] = <"997C0F536396BB042ABE9B798E9CA800">
 	>
 
 definition
@@ -287,14 +289,15 @@ definition
 									[local::
 									at1048, 	-- Brachialisarterien, venstre
 									at1049, 	-- Brachialisarterien, høyre
-									at1041, 	-- Carotidarterien, venstre
-									at1042, 	-- Carotidarterien, høyre
+									at1041, 	-- Carotisarterien, venstre
+									at1042, 	-- Carotisarterien, høyre
 									at1043, 	-- Femoralisarterien, venstre
 									at1044, 	-- Femoralisarterien, høyre
 									at1047, 	-- Finger
 									at1040, 	-- Hjertet
 									at1038, 	-- Radialisarterien, venstre
 									at1039, 	-- Radialisarterien, høyre
+									at1054, 	-- Tå
 									at1051]	-- Øreflipp
 								}
 							}
@@ -517,209 +520,217 @@ Automatisk, invasivt(en)">
 					text = <"*Uregelmessig uregelmessig(en)">
 					description = <"*Rytmen er uregelmessig på en uregelmessig måte.(en)">
 				>
+				["at1054"] = <
+					text = <"*Tå(en)">
+					description = <"**(en)">
+				>
 			>
 		>
-		["nb"] = <
+		["ru"] = <
 			items = <
 				["at0000"] = <
-					text = <"Puls/Hjertefrekvens">
-					description = <"Måling av puls/hjertefrekvens, eller eksplisitt puls eller hjertefrekvens, og beskrivelse av tilhørende egenskaper.">
+					text = <"*Pulse(en)">
+					description = <"*Measurement of the pulse rate, or heart rate, and description of associated characteristics.(en)">
 				>
 				["at0001"] = <
-					text = <"structure">
-					description = <"@ internal @">
+					text = <"Дерево">
+					description = <"@ внутреннийl @">
 				>
 				["at0002"] = <
-					text = <"history">
-					description = <"@ internal @">
+					text = <"История">
+					description = <"@ внутреннийl @">
 				>
 				["at0003"] = <
-					text = <"Uspesifisert hendelse">
-					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
+					text = <"*Any event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0004"] = <
-					text = <"Frekvens">
-					description = <"Puls- eller hjertefrekvens, målt i støt/slag per minutt.">
-					comment = <"Det er spesifisert begrensninger i navn for å gjøre det lettere å eksplisitt merke dette elementet som Pulsfrekvens eller Hjertefrekvens ved behov.">
+					text = <"*Rate(en)">
+					description = <"*The rate, measured in beats per minute.(en)">
+					comment = <"*Run-time name constraints have been specified, in order to simplify the renaming of this data element to Pulse Rate or Heart Rate, as required.(en)">
 				>
 				["at0005"] = <
-					text = <"Rytme">
-					description = <"Observert regularitet av puls- eller hjerteslag.">
+					text = <"*Rhythm(en)">
+					description = <"*The observed regularity of the pulse or heart beat.(en)">
 				>
 				["at0006"] = <
-					text = <"Regelmessig">
-					description = <"Rytmen er regelmessig.">
+					text = <"*Regular(en)">
+					description = <"*The rhythm is regular.(en)">
 				>
 				["at0010"] = <
-					text = <"List">
-					description = <"@ internal @">
+					text = <"Дерево">
+					description = <"@ внутреннийl @">
 				>
 				["at0012"] = <
-					text = <"List">
-					description = <"@ internal @">
+					text = <"Дерево">
+					description = <"@ внутреннийl @">
 				>
 				["at0013"] = <
-					text = <"Stilling">
-					description = <"Individets stilling ved tidspunktet for målingen.">
+					text = <"*Position(en)">
+					description = <"*The body position of the subject during the observation.(en)">
 				>
 				["at1000"] = <
-					text = <"Liggende">
-					description = <"Liggende flatt ved tidspunkt for målingen.">
+					text = <"*Lying(en)">
+					description = <"*The subject was lying flat.(en)">
 				>
 				["at1001"] = <
-					text = <"Sittende">
-					description = <"Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.">
+					text = <"*Sitting(en)">
+					description = <"*The subject was sitting (for example on bed or chair).(en)">
 				>
 				["at1002"] = <
-					text = <"Tilbakelent">
-					description = <"Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.">
+					text = <"*Reclining(en)">
+					description = <"*The subject was reclining.(en)">
 				>
 				["at1003"] = <
-					text = <"Stående">
-					description = <"Stående ved tidspunktet for målingen.">
+					text = <"*Standing(en)">
+					description = <"*The subject was standing.(en)">
 				>
 				["at1005"] = <
-					text = <"Tilstedeværelse">
-					description = <"Tilstedeværelse av puls eller hjerteslag.">
-					comment = <"Det er spesifisert begrensninger i navn for å gjøre det lettere å eksplisitt merke dette elementet som tilstedeværelse av Puls eller Hjertefrekvens ved behov.">
+					text = <"*Presence(en)">
+					description = <"*Identification of a pulse or heart beat.(en)">
+					comment = <"*It can be implied that the pulse is present if Rate >0 beats/min.(en)">
 				>
 				["at1013"] = <
-					text = <"Måleapparat">
-					description = <"Detaljer om måleapparatet brukt for å observere pulsen eller hjerteslagene.">
+					text = <"*Device(en)">
+					description = <"*Details about the device used to observe the pulse or heart beat.(en)">
 				>
 				["at1017"] = <
-					text = <"Fysisk anstrengelse">
-					description = <"Detaljer om fysisk aktivitet på tidspunkt for målingen.">
+					text = <"*Exertion(en)">
+					description = <"*Details about physical exertion being undertaken during the examination.(en)">
 				>
 				["at1018"] = <
-					text = <"Konfunderende faktorer">
-					description = <"Tekstlig beskrivelse av eventuelle andre faktorer som kan påvirke tolkningen av funnene.">
-					comment = <"Eksempel: pacemaker, nervøsitet, smerte, feber, etc.">
+					text = <"*Confounding Factors(en)">
+					description = <"*Narrative description about any incidental factors that may be affect interpretation of the physical findings.(en)">
+					comment = <"*For example, presence of a pacemaker, level of anxiety; pain or fever etc.(en)">
 				>
 				["at1019"] = <
-					text = <"Målemetode">
-					description = <"Metode brukt for å observere pulsen eller hjerteslagene.">
-					comment = <"For eksempel palpasjon, auskultasjon eller elektronisk monitorering.">
+					text = <"*Method(en)">
+					description = <"*Method used to the pulse observe the pulse or heart beat.(en)">
+					comment = <"*For example, auscultation or electronic monitoring. (en)">
 				>
 				["at1022"] = <
-					text = <"Klinisk beskrivelse">
-					description = <"Tekstlig beskrivelse av funnene.">
+					text = <"*Clinical Description(en)">
+					description = <"*Narrative description about the findings.(en)">
 				>
 				["at1023"] = <
-					text = <"Klinisk tolkning">
-					description = <"Kort beskrivelse av den kliniske betydningen av funnene.">
-					comment = <"Koding med en terminologi er en fordel, hvis mulig. Eksempel: Bradykardi, ekstrasystoler, sinusrytme. Flere svar skal kunne registreres.">
+					text = <"*Clinical Interpretation(en)">
+					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the pulse or heart beat findings.(en)">
+					comment = <"*Coding with a terminology is preferred, where possible. For example: Bradycardia, Extrasystoles or Sinus rhythm. Multiple statements are allowed. (en)">
 				>
 				["at1024"] = <
-					text = <"Tilstede">
-					description = <"Puls eller hjerteslag finnes.">
+					text = <"*Present(en)">
+					description = <"*A pulse or heart beat can be detected.(en)">
 				>
 				["at1025"] = <
-					text = <"Fraværende">
-					description = <"Puls eller hjerteslag kan ikke finnes.">
+					text = <"*Absent(en)">
+					description = <"*A pulse or heart beat cannot be detected.(en)">
 				>
 				["at1026"] = <
-					text = <"Pulsfrekvens">
-					description = <"Pulsfrekvensen, målt i slag per minutt.">
+					text = <"*Pulse Rate(en)">
+					description = <"*The pulse rate, measured in beats per minute.(en)">
 				>
 				["at1027"] = <
-					text = <"Hjertefrekvens">
-					description = <"Hjertefrekvensen, målt i slag per minutt.">
+					text = <"*Heart Rate(en)">
+					description = <"*The heart rate, measured in beats per minute.(en)">
 				>
 				["at1028"] = <
-					text = <"Uregelmessig">
-					description = <"Rytmen er uregelmessig.">
+					text = <"*Irregular(en)">
+					description = <"*The rhythm is irregular.(en)">
 				>
 				["at1030"] = <
-					text = <"Karakter">
-					description = <"Tekstlig beskrivelse av pulsens eller hjerteslagenes karakter.">
-					comment = <"Koding med en terminologi er en fordel der det er mulig. Flere svar skal kunne registreres.">
+					text = <"*Character(en)">
+					description = <"*Narrative description of the character of the pulse or heart beat.(en)">
+					comment = <"*Coding with a terminology is desired, where possible. For example: full, thready, bounding, slow rising, or collapsing. Multiple terms may be recorded.(en)">
 				>
 				["at1032"] = <
-					text = <"Palpasjon">
-					description = <"Funnene observeres ved at observatøren fysisk kjenner på pulsen eller hjerteslagene til observanden.">
+					text = <"*Palpation(en)">
+					description = <"*The findings are observed by physical touch of the observer on the subject.(en)">
 				>
 				["at1033"] = <
-					text = <"Auskultasjon">
-					description = <"Funnene er observert ved hjelp av et hjelpemiddel som f.eks. et stetoskop.">
+					text = <"*Auscultation(en)">
+					description = <"*The findings are observed with the assistance of a device, such as a stethoscope.(en)">
 				>
 				["at1034"] = <
-					text = <"Automatisk, non-invasivt">
-					description = <"Funnene er observert non-invasivt ved hjelp av en maskin, som f.eks. et pulsoksimeter eller et skop.">
+					text = <"*Device(en)">
+					description = <"*The pulse findings are observed using a device, such as a pulse oximeter or cardiac monitor.(en)">
 				>
 				["at1036"] = <
-					text = <"Maksimum">
-					description = <"Maksimumsfrekvens observert i løpet av et intervall med anstrengelse.">
+					text = <"*Maximum(en)">
+					description = <"*Maximum rate of the pulse or heart beat observed during a period of exertion.(en)">
 				>
 				["at1037"] = <
-					text = <"Målested">
-					description = <"Anatomisk sted hvor pulsen eller hjerteslagene ble observert.">
+					text = <"*Findings Location(en)">
+					description = <"*Body site where the pulse or heart beat findings were observed.(en)">
 				>
 				["at1038"] = <
-					text = <"Radialisarterien, venstre">
-					description = <"Den venstre radialisarterien.">
+					text = <"*Radial Artery - Left(en)">
+					description = <"*The left radial artery.(en)">
 				>
 				["at1039"] = <
-					text = <"Radialisarterien, høyre">
-					description = <"Den høyre radialisarterien.">
+					text = <"*Radial Artery - Right(en)">
+					description = <"*The right radial artery.(en)">
 				>
 				["at1040"] = <
-					text = <"Hjertet">
-					description = <"Hjerteregionen.">
+					text = <"*Heart(en)">
+					description = <"*The region of the heart.(en)">
 				>
 				["at1041"] = <
-					text = <"Carotidarterien, venstre">
-					description = <"Den venstre carotidarterien.">
+					text = <"*Carotid Artery - Left(en)">
+					description = <"*The left carotid artery.(en)">
 				>
 				["at1042"] = <
-					text = <"Carotidarterien, høyre">
-					description = <"Den høyre carotidarterien.">
+					text = <"*Carotid Artery - Right(en)">
+					description = <"*The right carotid artery.(en)">
 				>
 				["at1043"] = <
-					text = <"Femoralisarterien, venstre">
-					description = <"Den venstre femoralisarterien.">
+					text = <"*Femoral Artery - Left(en)">
+					description = <"*The left femoral artery.(en)">
 				>
 				["at1044"] = <
-					text = <"Femoralisarterien, høyre">
-					description = <"Den høyre femoralisarterien.">
+					text = <"*Femoral Artery - Right(en)">
+					description = <"*The right femoral artery.(en)">
 				>
 				["at1045"] = <
-					text = <"Puls">
-					description = <"Tilstedeværelse av puls.">
+					text = <"*Pulse Present(en)">
+					description = <"*Identification of a pulse.(en)">
 				>
 				["at1046"] = <
-					text = <"Hjerteslag">
-					description = <"Tilstedeværelse av hjerteslag.">
+					text = <"*Heart Beat Present(en)">
+					description = <"*Identification of a heart beat.(en)">
 				>
 				["at1047"] = <
-					text = <"Finger">
-					description = <"En uspesifisert finger.">
+					text = <"*Finger(en)">
+					description = <"*An unspecified finger.(en)">
 				>
 				["at1048"] = <
-					text = <"Brachialisarterien, venstre">
-					description = <"Den venstre brachialisarterien.">
+					text = <"*Brachial Artery - Left(en)">
+					description = <"*The left brachial artery.(en)">
 				>
 				["at1049"] = <
-					text = <"Brachialisarterien, høyre">
-					description = <"Den høyre brachialisarterien.">
+					text = <"*Brachial Artery - Right(en)">
+					description = <"*The right brachial artery.(en)">
 				>
 				["at1050"] = <
-					text = <"
-Automatisk, invasivt">
-					description = <"Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-">
+					text = <"*
+Automatisk, invasivt(en)">
+					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
+(en)">
 				>
 				["at1051"] = <
-					text = <"Øreflipp">
-					description = <"Øreflippen.">
+					text = <"*Øreflipp(en)">
+					description = <"*Øreflippen.(en)">
 				>
 				["at1052"] = <
-					text = <"Regelmessig uregelmessig">
-					description = <"Rytmen er uregelmessig på en regelmessig måte.">
+					text = <"*Regelmessig uregelmessig(en)">
+					description = <"**(en)">
 				>
 				["at1053"] = <
-					text = <"Uregelmessig uregelmessig">
-					description = <"Rytmen er uregelmessig på en uregelmessig måte.">
+					text = <"*Uregelmessig uregelmessig(en)">
+					description = <"*Rytmen er uregelmessig på en uregelmessig måte.(en)">
+				>
+				["at1054"] = <
+					text = <"*Tå(en)">
+					description = <"**(en)">
 				>
 			>
 		>
@@ -925,6 +936,10 @@ Automatisk, invasivt(en)">
 					text = <"*Uregelmessig uregelmessig(en)">
 					description = <"*Rytmen er uregelmessig på en uregelmessig måte.(en)">
 				>
+				["at1054"] = <
+					text = <"*Tå(en)">
+					description = <"**(en)">
+				>
 			>
 		>
 		["de"] = <
@@ -1129,209 +1144,217 @@ Automatisk, invasivt(en)">
 					text = <"*Uregelmessig uregelmessig(en)">
 					description = <"*Rytmen er uregelmessig på en uregelmessig måte.(en)">
 				>
-			>
-		>
-		["ru"] = <
-			items = <
-				["at0000"] = <
-					text = <"*Pulse(en)">
-					description = <"*Measurement of the pulse rate, or heart rate, and description of associated characteristics.(en)">
-				>
-				["at0001"] = <
-					text = <"Дерево">
-					description = <"@ внутреннийl @">
-				>
-				["at0002"] = <
-					text = <"История">
-					description = <"@ внутреннийl @">
-				>
-				["at0003"] = <
-					text = <"*Any event(en)">
-					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
-				>
-				["at0004"] = <
-					text = <"*Rate(en)">
-					description = <"*The rate, measured in beats per minute.(en)">
-					comment = <"*Run-time name constraints have been specified, in order to simplify the renaming of this data element to Pulse Rate or Heart Rate, as required.(en)">
-				>
-				["at0005"] = <
-					text = <"*Rhythm(en)">
-					description = <"*The observed regularity of the pulse or heart beat.(en)">
-				>
-				["at0006"] = <
-					text = <"*Regular(en)">
-					description = <"*The rhythm is regular.(en)">
-				>
-				["at0010"] = <
-					text = <"Дерево">
-					description = <"@ внутреннийl @">
-				>
-				["at0012"] = <
-					text = <"Дерево">
-					description = <"@ внутреннийl @">
-				>
-				["at0013"] = <
-					text = <"*Position(en)">
-					description = <"*The body position of the subject during the observation.(en)">
-				>
-				["at1000"] = <
-					text = <"*Lying(en)">
-					description = <"*The subject was lying flat.(en)">
-				>
-				["at1001"] = <
-					text = <"*Sitting(en)">
-					description = <"*The subject was sitting (for example on bed or chair).(en)">
-				>
-				["at1002"] = <
-					text = <"*Reclining(en)">
-					description = <"*The subject was reclining.(en)">
-				>
-				["at1003"] = <
-					text = <"*Standing(en)">
-					description = <"*The subject was standing.(en)">
-				>
-				["at1005"] = <
-					text = <"*Presence(en)">
-					description = <"*Identification of a pulse or heart beat.(en)">
-					comment = <"*It can be implied that the pulse is present if Rate >0 beats/min.(en)">
-				>
-				["at1013"] = <
-					text = <"*Device(en)">
-					description = <"*Details about the device used to observe the pulse or heart beat.(en)">
-				>
-				["at1017"] = <
-					text = <"*Exertion(en)">
-					description = <"*Details about physical exertion being undertaken during the examination.(en)">
-				>
-				["at1018"] = <
-					text = <"*Confounding Factors(en)">
-					description = <"*Narrative description about any incidental factors that may be affect interpretation of the physical findings.(en)">
-					comment = <"*For example, presence of a pacemaker, level of anxiety; pain or fever etc.(en)">
-				>
-				["at1019"] = <
-					text = <"*Method(en)">
-					description = <"*Method used to the pulse observe the pulse or heart beat.(en)">
-					comment = <"*For example, auscultation or electronic monitoring. (en)">
-				>
-				["at1022"] = <
-					text = <"*Clinical Description(en)">
-					description = <"*Narrative description about the findings.(en)">
-				>
-				["at1023"] = <
-					text = <"*Clinical Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the pulse or heart beat findings.(en)">
-					comment = <"*Coding with a terminology is preferred, where possible. For example: Bradycardia, Extrasystoles or Sinus rhythm. Multiple statements are allowed. (en)">
-				>
-				["at1024"] = <
-					text = <"*Present(en)">
-					description = <"*A pulse or heart beat can be detected.(en)">
-				>
-				["at1025"] = <
-					text = <"*Absent(en)">
-					description = <"*A pulse or heart beat cannot be detected.(en)">
-				>
-				["at1026"] = <
-					text = <"*Pulse Rate(en)">
-					description = <"*The pulse rate, measured in beats per minute.(en)">
-				>
-				["at1027"] = <
-					text = <"*Heart Rate(en)">
-					description = <"*The heart rate, measured in beats per minute.(en)">
-				>
-				["at1028"] = <
-					text = <"*Irregular(en)">
-					description = <"*The rhythm is irregular.(en)">
-				>
-				["at1030"] = <
-					text = <"*Character(en)">
-					description = <"*Narrative description of the character of the pulse or heart beat.(en)">
-					comment = <"*Coding with a terminology is desired, where possible. For example: full, thready, bounding, slow rising, or collapsing. Multiple terms may be recorded.(en)">
-				>
-				["at1032"] = <
-					text = <"*Palpation(en)">
-					description = <"*The findings are observed by physical touch of the observer on the subject.(en)">
-				>
-				["at1033"] = <
-					text = <"*Auscultation(en)">
-					description = <"*The findings are observed with the assistance of a device, such as a stethoscope.(en)">
-				>
-				["at1034"] = <
-					text = <"*Device(en)">
-					description = <"*The pulse findings are observed using a device, such as a pulse oximeter or cardiac monitor.(en)">
-				>
-				["at1036"] = <
-					text = <"*Maximum(en)">
-					description = <"*Maximum rate of the pulse or heart beat observed during a period of exertion.(en)">
-				>
-				["at1037"] = <
-					text = <"*Findings Location(en)">
-					description = <"*Body site where the pulse or heart beat findings were observed.(en)">
-				>
-				["at1038"] = <
-					text = <"*Radial Artery - Left(en)">
-					description = <"*The left radial artery.(en)">
-				>
-				["at1039"] = <
-					text = <"*Radial Artery - Right(en)">
-					description = <"*The right radial artery.(en)">
-				>
-				["at1040"] = <
-					text = <"*Heart(en)">
-					description = <"*The region of the heart.(en)">
-				>
-				["at1041"] = <
-					text = <"*Carotid Artery - Left(en)">
-					description = <"*The left carotid artery.(en)">
-				>
-				["at1042"] = <
-					text = <"*Carotid Artery - Right(en)">
-					description = <"*The right carotid artery.(en)">
-				>
-				["at1043"] = <
-					text = <"*Femoral Artery - Left(en)">
-					description = <"*The left femoral artery.(en)">
-				>
-				["at1044"] = <
-					text = <"*Femoral Artery - Right(en)">
-					description = <"*The right femoral artery.(en)">
-				>
-				["at1045"] = <
-					text = <"*Pulse Present(en)">
-					description = <"*Identification of a pulse.(en)">
-				>
-				["at1046"] = <
-					text = <"*Heart Beat Present(en)">
-					description = <"*Identification of a heart beat.(en)">
-				>
-				["at1047"] = <
-					text = <"*Finger(en)">
-					description = <"*An unspecified finger.(en)">
-				>
-				["at1048"] = <
-					text = <"*Brachial Artery - Left(en)">
-					description = <"*The left brachial artery.(en)">
-				>
-				["at1049"] = <
-					text = <"*Brachial Artery - Right(en)">
-					description = <"*The right brachial artery.(en)">
-				>
-				["at1050"] = <
-					text = <"*
-Automatisk, invasivt(en)">
-					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-(en)">
-				>
-				["at1051"] = <
-					text = <"*Øreflipp(en)">
-					description = <"*Øreflippen.(en)">
-				>
-				["at1052"] = <
-					text = <"*Regelmessig uregelmessig(en)">
+				["at1054"] = <
+					text = <"*Tå(en)">
 					description = <"**(en)">
 				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Puls/Hjertefrekvens">
+					description = <"Måling av puls/hjertefrekvens, eller eksplisitt puls eller hjertefrekvens, og beskrivelse av tilhørende egenskaper.">
+				>
+				["at0001"] = <
+					text = <"structure">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"history">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
+				>
+				["at0004"] = <
+					text = <"Frekvens">
+					description = <"Puls- eller hjertefrekvens, målt i støt/slag per minutt.">
+					comment = <"Det er spesifisert begrensninger i navn for å gjøre det lettere å eksplisitt merke dette elementet som Pulsfrekvens eller Hjertefrekvens ved behov.">
+				>
+				["at0005"] = <
+					text = <"Rytme">
+					description = <"Observert regularitet av puls- eller hjerteslag.">
+				>
+				["at0006"] = <
+					text = <"Regelmessig">
+					description = <"Rytmen er regelmessig.">
+				>
+				["at0010"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0013"] = <
+					text = <"Stilling">
+					description = <"Individets stilling ved tidspunktet for målingen.">
+				>
+				["at1000"] = <
+					text = <"Liggende">
+					description = <"Liggende flatt ved tidspunkt for målingen.">
+				>
+				["at1001"] = <
+					text = <"Sittende">
+					description = <"Sittende (for eksempel på en stol eller på en seng med føttene på gulvet) ved tidspunktet for målingen.">
+				>
+				["at1002"] = <
+					text = <"Tilbakelent">
+					description = <"Sittende tilbakelent ca 45º og med beina hevet til samme høyde som hoften ved tidspunkt for målingen.">
+				>
+				["at1003"] = <
+					text = <"Stående">
+					description = <"Stående ved tidspunktet for målingen.">
+				>
+				["at1005"] = <
+					text = <"Tilstedeværelse">
+					description = <"Tilstedeværelse av puls eller hjerteslag.">
+					comment = <"Det er spesifisert begrensninger i navn for å gjøre det lettere å eksplisitt merke dette elementet som tilstedeværelse av Puls eller Hjertefrekvens ved behov.">
+				>
+				["at1013"] = <
+					text = <"Måleapparat">
+					description = <"Detaljer om måleapparatet brukt for å observere pulsen eller hjerteslagene.">
+				>
+				["at1017"] = <
+					text = <"Fysisk anstrengelse">
+					description = <"Detaljer om fysisk aktivitet på tidspunkt for målingen.">
+				>
+				["at1018"] = <
+					text = <"Konfunderende faktorer">
+					description = <"Tekstlig beskrivelse av eventuelle andre faktorer som kan påvirke tolkningen av funnene.">
+					comment = <"Eksempel: pacemaker, nervøsitet, smerte, feber, etc.">
+				>
+				["at1019"] = <
+					text = <"Målemetode">
+					description = <"Metode brukt for å observere pulsen eller hjerteslagene.">
+					comment = <"For eksempel palpasjon, auskultasjon eller elektronisk monitorering.">
+				>
+				["at1022"] = <
+					text = <"Klinisk beskrivelse">
+					description = <"Tekstlig beskrivelse av funnene.">
+				>
+				["at1023"] = <
+					text = <"Klinisk tolkning">
+					description = <"Kort beskrivelse av den kliniske betydningen av funnene.">
+					comment = <"Koding med en terminologi er en fordel, hvis mulig. Eksempel: Bradykardi, ekstrasystoler, sinusrytme. Flere svar skal kunne registreres.">
+				>
+				["at1024"] = <
+					text = <"Tilstede">
+					description = <"Puls eller hjerteslag finnes.">
+				>
+				["at1025"] = <
+					text = <"Fraværende">
+					description = <"Puls eller hjerteslag kan ikke finnes.">
+				>
+				["at1026"] = <
+					text = <"Pulsfrekvens">
+					description = <"Pulsfrekvensen, målt i slag per minutt.">
+				>
+				["at1027"] = <
+					text = <"Hjertefrekvens">
+					description = <"Hjertefrekvensen, målt i slag per minutt.">
+				>
+				["at1028"] = <
+					text = <"Uregelmessig">
+					description = <"Rytmen er uregelmessig.">
+				>
+				["at1030"] = <
+					text = <"Karakter">
+					description = <"Tekstlig beskrivelse av pulsens eller hjerteslagenes karakter.">
+					comment = <"Koding med en terminologi er en fordel der det er mulig. Flere svar skal kunne registreres. Eksempler: Tydelig, svak, overfladisk.">
+				>
+				["at1032"] = <
+					text = <"Palpasjon">
+					description = <"Funnene observeres ved at observatøren med fingertuppene kjenner på pulsen eller hjerteslagene til pasienten.">
+				>
+				["at1033"] = <
+					text = <"Auskultasjon">
+					description = <"Funnene er observert ved hjelp av et hjelpemiddel som f.eks. et stetoskop.">
+				>
+				["at1034"] = <
+					text = <"Automatisk, non-invasivt">
+					description = <"Funnene er observert non-invasivt ved hjelp av en maskin, som f.eks. et pulsoksimeter eller et skop.">
+				>
+				["at1036"] = <
+					text = <"Maksimum">
+					description = <"Maksimumsfrekvens observert i løpet av et intervall med anstrengelse.">
+				>
+				["at1037"] = <
+					text = <"Målested">
+					description = <"Anatomisk sted hvor pulsen eller hjerteslagene ble observert.">
+				>
+				["at1038"] = <
+					text = <"Radialisarterien, venstre">
+					description = <"Den venstre radialisarterien.">
+				>
+				["at1039"] = <
+					text = <"Radialisarterien, høyre">
+					description = <"Den høyre radialisarterien.">
+				>
+				["at1040"] = <
+					text = <"Hjertet">
+					description = <"Hjerteregionen.">
+				>
+				["at1041"] = <
+					text = <"Carotisarterien, venstre">
+					description = <"Den venstre carotidarterien.">
+				>
+				["at1042"] = <
+					text = <"Carotisarterien, høyre">
+					description = <"Den høyre carotidarterien.">
+				>
+				["at1043"] = <
+					text = <"Femoralisarterien, venstre">
+					description = <"Den venstre femoralisarterien.">
+				>
+				["at1044"] = <
+					text = <"Femoralisarterien, høyre">
+					description = <"Den høyre femoralisarterien.">
+				>
+				["at1045"] = <
+					text = <"Puls">
+					description = <"Tilstedeværelse av puls.">
+				>
+				["at1046"] = <
+					text = <"Hjerteslag">
+					description = <"Tilstedeværelse av hjerteslag.">
+				>
+				["at1047"] = <
+					text = <"Finger">
+					description = <"En uspesifisert finger.">
+				>
+				["at1048"] = <
+					text = <"Brachialisarterien, venstre">
+					description = <"Den venstre brachialisarterien.">
+				>
+				["at1049"] = <
+					text = <"Brachialisarterien, høyre">
+					description = <"Den høyre brachialisarterien.">
+				>
+				["at1050"] = <
+					text = <"
+Automatisk, invasivt">
+					description = <"Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et skop.
+">
+				>
+				["at1051"] = <
+					text = <"Øreflipp">
+					description = <"Øreflippen.">
+				>
+				["at1052"] = <
+					text = <"Regelmessig uregelmessig">
+					description = <"Rytmen er uregelmessig på en regelmessig måte.">
+				>
 				["at1053"] = <
-					text = <"*Uregelmessig uregelmessig(en)">
-					description = <"*Rytmen er uregelmessig på en uregelmessig måte.(en)">
+					text = <"Uregelmessig uregelmessig">
+					description = <"Rytmen er uregelmessig på en uregelmessig måte.">
+				>
+				["at1054"] = <
+					text = <"Tå">
+					description = <"En uspesifisert tå.">
 				>
 			>
 		>
