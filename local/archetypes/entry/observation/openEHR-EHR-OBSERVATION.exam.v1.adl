@@ -13,6 +13,20 @@ language
 				["organisation"] = <"Slovenia">
 			>
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital bergen, Norway">
+			>
+			accreditation = <"MD, DEAA, MBA, specialist in tropical medicine">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -20,12 +34,6 @@ language
 				["organisation"] = <"VinculoMedico">
 			>
 			accreditation = <"Medical Doctor">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
-			>
 		>
 	>
 description
@@ -86,12 +94,29 @@ Utilizar como un arquetipo contenedor - para proveer un arquetipo ENTRY consulta
 No debe ser utilizado para registrar observaciones clinicas autonomas - utilizar arquetipos especificos OBSERVATION. Por ejemplo OBSERVATION.presion_arterial, OBSERVATION.peso_corporal, u OBSERVATION.altura. ">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av detaljer om fysiske funn ved en klinisk undersøking.">
+			use = <"Anvendes for registrering av detaljer om fysiske funn ved klinisk undersøking. Dette kan inkludere en narrative beskrivelse av funn, et rammeverk for innsetning av detaljer knyttet til CLUSTER examination arketyper og kliniske fortolkninger.
+
+Eksempler på detaljer i CLUSTER arketyper inkluderer de som beskriver inspeksjon, palpasjon, auskultasjon perkusjon og bevegelser i kropps systemer eller anatomiske strukturer, som CLUSTER.exam_pupils.
+
+Narrative beskrivelser av kliniske funn fra eksisterende kliniske systemer kan fanges opp ved at anvende \"Description\" data elementet.
+
+Klinikere ønsker kanskje at registrere en sammenfattende frase som \"kronisk otitis media\" som en fortolkning av en klinisk undersøking. I sammenhengen \"klinisk undersøking\" arketyper bør dette kun forstås som \"fysiske tegn som er forenlige med kronisk otitis media\". Hvor den sammenfattende frase kan synes at representere en diagnose, krever sikker og konsistent spørring, en diagnose som er registeret i EVALUATION.problem_diagnosis arketypen, selv om frasen er identisk. 
+">
+			keywords = <"Klinisk undersøking", "fysisk undersøking", "undersøking", "funn", "Klinisk">
+			misuse = <"Skal ikke anvendes til observasjon i anamnese opptak - bruk spesifikk OBSERVATION og CLUSTER arketyper. For eksempel OBSERVATION.story and Cluster.symptom.
+
+Skal ikke anvendes til registrering av enkelt observasjoner - bruk spesifikk OBSERVATION arketyper. For eksempel OBSERVATION.body_weight eller OBSERVATION.height.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"Published">
 	other_contributors = <"Sheryl Alexander, NT Department of Health, Australia", "Tomas Alme, DIPS, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Rita Apelt, Department of Health,NT, Australia", "Silje Bakke, Bergen Hospital Trust, Norway", "Margaret Campbell, Queensland Health, Australia", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, NeHTA, Australia", "Margaret Cotter, AMSANT, Australia", "Michelle Dowden, Miwatj Health Ngalkanbuy Health, Australia", "Samo Drnovsek, Marand ltd, Slovenia", "Tim Garden, NTG Department of Health, Australia", "Tanya Gardner, CAAC, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Lars Karlsen, DIPS ASA, Norway", "Russell Leftwich, Russell B Leftwich MD, United States", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Jeremy Oats, NT Health, Australia", "Steven Schatz, Department of Health (Northern Territory), Australia", "Anoop Shah, University College London, United Kingdom", "Cherie Whitbread, Royal Darwin Hospital, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)", "Lin Zhang, BIPH, China">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"E8372E063DB2FEE71319376B0B8C4400">
+		["MD5-CAM-1.0.1"] = <"816A2819D31E8426FEE493075C3263E5">
 	>
 
 definition
@@ -394,6 +419,66 @@ ontology
 				["at0012"] = <
 					text = <"*Cluster(en)">
 					description = <"**(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Funn ved klinisk undersøking">
+					description = <"Funn ved den kliniske undersøkingen.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Enhver hendelse">
+					description = <"Standard innstilling, et uspesifisert tidspunkt eller intervall som kan eksplisitt defineres i en mal eller i et tidsforløp.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Beskrivelse">
+					description = <"En narrative beskrivelse av de overordnede observerte funn ved en klinisk undersøking av en pasient.">
+					comment = <"Kan anvendes til at registrere en narrative sammenfatning av en komplett klinisk undersøking eller nøkkel funn ved den kliniske undersøking, som vil blive understøttet av strukturerte data. Detaljer om spesifikt strukturerte funn kan bli inkludert ved at bruke CLUSTER arketyper i \"Examination Detail\" SLOT. Dette data element kan brukes for at fange opp data fra foreldede systemer der ikke har et strukturert format.">
+				>
+				["at0005"] = <
+					text = <"Undersøkings detaljer">
+					description = <"Strukturerte detaljer fra den kliniske undersøkingen.">
+					comment = <"Detaljerte kliniske funn vil bli registrerte som CLUSTER arketyper som kan sammenføyes innen denne SLOT for at vise den oppdelte måte der brukes i den kliniske undersøking og tillater variasjoner i klinikerens behov for dokumentasjon av de kliniske funn. For eksempel: CLUSTER.palpation_of_uterus, CLUSTER.palpation_of Cervix, CLUSTER.palpation_of_fetus, kan sammenføyes i denne SLOT eller innen hinannen for at leve opp til spesifikke krav for en kliniker som arbeider inne obstetrikken - innhold, prioriteter og detaljer nivå vil varierer avhengig av den kliniske kontekst, profesjonelle bakgrunn og spesialitet.">
+				>
+				["at0006"] = <
+					text = <"Fortolkning">
+					description = <"Enkelt ord, setning, frase eller kort beskrivelse som representerer den kliniske betydning og viktigheten av funnene ved den kliniske undersøking.">
+					comment = <"Koding med terminologi foretrekkes når mulig. For eksempel \"normal undersøking\" eller \"tympanisk membran perforasjon\".">
+				>
+				["at0007"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Motstridende faktorer">
+					description = <"Beskrivelse av eventuelle tilfeldige faktorer som ble påvist ved den kliniske undersøkelse.">
+				>
+				["at0009"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Apparatur detaljer">
+					description = <"Detaljer om et hvert apparatur som ble anvendt ved den kliniske undersøkingen.">
+				>
+				["at0011"] = <
+					text = <"Kommentarer">
+					description = <"ytterligere narrativ beskrivelse om de overordnede fysiske funn som ikke fanges opp i andre felter.">
+				>
+				["at0012"] = <
+					text = <"Ytterligere">
+					description = <"Ytterligere informasjon er nødvendig for å fange opp lokal innhold eller for å tilpasse med andre referanse modeller / formalismer.">
+					comment = <"f.eks Lokale informasjonskrav eller ekstra metadata for å tilpasse med FHIR eller CIMI ekvivalenter. (kommentarer FHIR og CIMI er andre EHR systemer).">
 				>
 			>
 		>
