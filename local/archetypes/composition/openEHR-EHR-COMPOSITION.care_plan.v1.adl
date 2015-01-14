@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Care Plan
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital, Bergen Norway">
+			>
+			accreditation = <"MD, DEAA, MBA, spec in tropical med.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Sistine Barretto-Daniels">
@@ -27,12 +37,27 @@ This archetype may contain combinations of planned activities, activies that are
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å gi en ramme for å understøtte registrering av alle aspekter av en pleieplan.
+
+Dette inkluderer:
+ - INSTRUCTION for pleieplan (som en samling av en eller flere aktiviteter) og den tilsvarende ACTION som registrer statusen til pleieplanen som helhet.
+ - INSTRUCTION for hver foreslåtte aktivitet og
+ - den tilsvarende ACTION for den aktivitet som tillater registrering av status for hver INSTRUCTION.">
+			use = <"Brukes for å gi et rammeverk til støtte for registrering av alle aspekter av en pleieplan som skal gjennomføres over en periode.
+
+Denne arketypen kan inneholde kombinasjoner av planlagte aktiviteter, aktiviteter som er i gang eller er utført, mål / formål, målresultater og anbefalinger.">
+			keywords = <"pleieplan", "plan", "pleieplan administrasjon", "administrasjonsplan", "mål", "formål", "måleresultater">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"CommitteeDraft">
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"22EC385EB1E41B1B3B68F29276ECE8D3">
+		["MD5-CAM-1.0.1"] = <"95985D81642D62B62519ED86E3BE8FA4">
 	>
 
 definition
@@ -94,6 +119,34 @@ ontology
 				["at0017"] = <
 					text = <"Goals">
 					description = <"SLOT to contain all of the EVALUATION archetypes required to record the goals for the Care Plan.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pleieplan">
+					description = <"En ramme for registrering av alle aspekter av en pleieplan.">
+				>
+				["at0001"] = <
+					text = <"Foreslåtte aktiviteter">
+					description = <"SLOT til alle INSTRUCTIONs arketypene som kreves for at gjennomføre hver enkelt foreslåtte aktivitet innen pleieplanen.">
+				>
+				["at0004"] = <
+					text = <"Aktiviteter">
+					description = <"SLOT til alle ACTIONs arketypene som kreves for at registrere status innen hver aktivitet INSTRUCTION innen pleiepalnen.">
+				>
+				["at0014"] = <
+					text = <"Pleieplan">
+					description = <"SLOT for at fange opp INSTRUCTION og ACTION for den helhetlige pleieplanen.">
+				>
+				["at0016"] = <
+					text = <"Annen">
+					description = <"SLOT til andre og uspesifiserte arketyper der kan bli behov for i en spesifikk klinisk senario.">
+				>
+				["at0017"] = <
+					text = <"Mål">
+					description = <"SLOT til alle EVALUATION arketypene som kreves for at registrere målene i pleieplanen.">
 				>
 			>
 		>
