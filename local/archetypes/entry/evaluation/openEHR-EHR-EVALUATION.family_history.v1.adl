@@ -41,7 +41,7 @@ Not to be used to record information about the risk of developing a condition du
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For registrering av informasjon om helseproblemer eller diagnoser (som definert i arketypen problem/diagnose) som har blitt funnet hos genetiske slektninger.">
+			purpose = <"For registrering av informasjon om helseproblemer eller diagnoser (som definert i arketypen problem/diagnose) som er blitt funnet hos biologiske slektninger.">
 			use = <"Brukes for å registrere et sammendrag av informasjon om helseproblemer eller diagnoser hos biologiske slektninger. Informasjonen kan brukes som grunnlag for å vurdere individets risiko for en arvelig sykdom eller for å initiere forebyggende helsearbeid.
 
 
@@ -50,13 +50,13 @@ Ytterligere detaljer om den biologiske slektningens spesifikke helseproblem elle
 
 
 
-Bruk arketypen som utgangspunkt for stamtavle over familiens helseproblemer/diagnoser.
+Bruk arketypen som utgangspunkt for slektstavle over familiens helseproblemer/diagnoser.
 
 
 
-Det kan være nødvendig å identifisere hver biologiske slektning spesifikt og ikke ved slektsforholdet til pasienten. Det finnes for eksempel bare èn mormor men det er mulig at det finnes flere kvinnelige søskenbarn. Spesifikk identifikasjon av hver biologisk slektning sikrer en eksakt slektregistrering og gir mulighet for at flere problemer/ diagnoser kan tilføyes. Dessuten kan pasientjournalen til hver identifisert slektning oppdateres. Om journalopplysninger er hemmelige og ikke skal deles kan registrering av slektens navn bidra i spesifisering. Om journalen er åpen er det hensiktsmessig å registrere slektning ved hjelp av en unik merkelapp eller alias.">
-			keywords = <"familie", "familiehistorie", "historie", "helse", "tilstand", "problem", "diagnose", "genetisk", "arvelig", "stamtavle", "slektstre">
-			misuse = <"Skal ikke brukes til å registrere helsemessige eller sosiale forhold, som innebærer en risiko for individet, men som ikke er som ikke er arvelig eller genetisk betinget, for eksempel foreldres tobakksbruk. Dette registreres i andre arketyper.
+Det kan være nødvendig å identifisere hver biologiske slektning spesifikt og ikke ved slektsforholdet til pasienten. Det finnes for eksempel bare èn mormor men det er mulig at det finnes flere kvinnelige søskenbarn. Spesifikk identifikasjon av hver biologisk slektning sikrer en eksakt slektsregistrering og gir mulighet for at flere problemer/ diagnoser kan tilføyes. Dessuten kan pasientjournalen til hver identifisert slektning oppdateres. Om journalopplysninger er hemmelige og ikke skal deles kan registrering av slektens navn bidra i spesifisering. Om journalen er åpen er det hensiktsmessig å registrere slektning ved hjelp av en unik merkelapp eller alias.">
+			keywords = <"familie", "familiehistorie", "historie", "helse", "tilstand", "problem", "diagnose", "genetisk", "arvelig", "stamtavle", "slektstre", "familieanamnese", "slektstavle">
+			misuse = <"Skal ikke brukes til å registrere helsemessige eller sosiale faktorer som kan medføre en risiko for individet, men som ikke er arvelig eller genetisk betinget, for eksempel foreldres tobakksbruk. Dette registreres i andre arketyper.
 
 
 
@@ -68,7 +68,7 @@ Skal ikke brukes til å registrere risiko for for å utvikle en tilstand på gru
 	other_contributors = <"Rita Apelt, Department of Health,NT, Australia", "John Bennett, NEHTA, Australia", "Stephen Chu, NEHTA, Australia", "David Evans, Queensland Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Andrew Goodchild, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Mary Kelaher, NEHTA, Australia", "Robert L'egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jeremy Oats, NT Health, Australia", "Lynne Parsons, Primary and Community Health Services, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "John Taylor, NEHTA, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Donna Truran, ACCTI-UoW, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
 	other_details = <
 		["references"] = <"HL7 Version 3 Standard: Clinical Genomics; Pedigree, Release 1. ANSI/HL7 V3 CGPED, R1-2007. Published 2007 May 07.">
-		["MD5-CAM-1.0.1"] = <"6C2DA5896E60BC7EEEB9CD51ADAEC89F">
+		["MD5-CAM-1.0.1"] = <"F6694375D893C490A9ABBAC5960F9F3E">
 	>
 
 definition
@@ -270,7 +270,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Familieanamnese">
-					description = <"Sammenfattet informasjon av problemene og/eller diagnosene hos biologiske slektninger.">
+					description = <"Sammenfattet informasjon om problemene og/eller diagnosene hos biologiske slektninger.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -278,7 +278,7 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Sammenfatning">
-					description = <"Beskrivelse av av problemene, diagnosene og genetiske markørene funnet hos biologiske slektninger. Dette feltet kan brukes for å nedtegne ustrukturert informasjon om familiehistorien, som finnes i journalen.">
+					description = <"Beskrivelse av problemer, diagnoser og genetiske markører funnet hos biologiske slektninger. Dette feltet kan brukes for å nedtegne ustrukturert informasjon om familieanamnesen, som finnes i journalen.">
 				>
 				["at0003"] = <
 					text = <"Biologisk slektning">
@@ -287,12 +287,12 @@ ontology
 				["at0004"] = <
 					text = <"Navn">
 					description = <"Navn på den biologiske slektningen.">
-					comment = <"Grunnet taushetsplikt kan det være upassende å registrere eller dele dette i journalen. I slike tilfeller kan med fordel et alias benyttes.">
+					comment = <"Grunnet juridiske forhold kan registrering av 'Navn' være uhensiktsmessig. Da kan 'Alias' med fordel benyttes.">
 				>
 				["at0005"] = <
 					text = <"Fødselsdato">
 					description = <"Fødselsdatoen til den biologiske slektningen.">
-					comment = <"Deler av en dato kan være nyttige for å beregne alderen. For eksempel den nåværende alderen til en slektning i et slektstre.">
+					comment = <"Om ikke den fullstendige datoen, så vil i alle fall opplysning om fødselsåret være nyttig for å beregne alder, f.eks. den aktuelle alder til en slektning i slektstavlen.">
 				>
 				["at0008"] = <
 					text = <"Anamnese">
@@ -305,11 +305,11 @@ ontology
 				>
 				["at0010"] = <
 					text = <"Debutalder">
-					description = <"Anslått eller eksakt alder for den genetiske slektningen ved diagnostisering av problemet eller diagnosen.">
+					description = <"Den biologiske slektningens anslåtte eller eksakte alder da problemet/diagnosen ble erkjent/funnet.">
 				>
 				["at0011"] = <
 					text = <"Alder ved død">
-					description = <"Alder til den biologiske slektningen ved død.">
+					description = <"Den biologiske slektningens alder ved død.">
 				>
 				["at0012"] = <
 					text = <"Klinisk beskrivelse">
@@ -317,17 +317,17 @@ ontology
 				>
 				["at0014"] = <
 					text = <"Dødsårsak">
-					description = <"Sann om problemet eller diagnosen var en umiddelbar eller tilgrunnliggende årsak til dødsfallet til den genetiske slektningen.">
+					description = <"Sann om problemet eller diagnosen var en umiddelbar eller tilgrunnliggende årsak til dødsfallet til den biologiske slektningen.">
 				>
 				["at0016"] = <
 					text = <"Slektskap">
 					description = <"Slektskapet mellom den biologiske slektningen og individet.">
-					comment = <"Om mulig skal relasjonen kodes et kodeverk. Dette gjelder også spesifisering av om relasjonen er knyttet til mor eller fars side av slekten.">
+					comment = <"Dersom mulig, er koding av slektsskapet i et kodeverk/terminologi å foretrekke, også spesifisering av om slektsskapet er knyttet til mors eller fars slekt">
 				>
 				["at0020"] = <
 					text = <"Alias">
-					description = <"Et alias eller en anonymisert identifikator for å kunne identifisere en biologisk slektning uten å registrere vedkommendes navn.">
-					comment = <"For å kunne skille mellom biologiske slektninger med samme slektsrelasjon. For eksempel kan et alias skille ut en søster blant tre søstre ved å benytte \"eldste søster\" eller søster nr. 1.">
+					description = <"Et alias (merkelapp) for entydig å identifisere en biologisk slektning, uten å bruke slektningens navn">
+					comment = <"For å kunne skille mellom biologiske slektninger med samme slektskap. For eksempel kan et alias skille ut en søster blant tre søstre ved å benytte \"eldste søster\" eller søster nr. 1.">
 				>
 				["at0022"] = <
 					text = <"Beskrivelse av markørene">
