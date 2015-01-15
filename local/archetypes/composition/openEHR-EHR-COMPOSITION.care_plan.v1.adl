@@ -39,16 +39,19 @@ This archetype may contain combinations of planned activities, activies that are
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Å gi en ramme for å understøtte registrering av alle aspekter av en pleieplan.
+			purpose = <"Å danne (eller å gi) et rammeverk som understøtter registrering av samtlige aspekter av en pleieplan.
 
 Dette inkluderer:
- - INSTRUCTION for pleieplan (som en samling av en eller flere aktiviteter) og den tilsvarende ACTION som registrer statusen til pleieplanen som helhet.
- - INSTRUCTION for hver foreslåtte aktivitet og
- - den tilsvarende ACTION for den aktivitet som tillater registrering av status for hver INSTRUCTION.">
+ - INSTRUCTION for pleieplanen (en samling av en eller flere aktiviteter) og tilsvarende ACTION som registrerer statusen til pleieplanen som helhet.
+ - INSTRUCTION for hver foreslått aktivitet og
+ - tilsvarende ACTION for aktiviteten som registrerer statusen til tilhørende INSTRUCTION
+">
 			use = <"Brukes for å gi et rammeverk til støtte for registrering av alle aspekter av en pleieplan som skal gjennomføres over en periode.
 
+
+
 Denne arketypen kan inneholde kombinasjoner av planlagte aktiviteter, aktiviteter som er i gang eller er utført, mål / formål, målresultater og anbefalinger.">
-			keywords = <"pleieplan", "plan", "pleieplan administrasjon", "administrasjonsplan", "mål", "formål", "måleresultater">
+			keywords = <"pleieplan", "plan", "pleieplan administrasjon", "administrasjonsplan", "mål", "formål", "måleresultater", "behandlingsplan", "pasientforløp", "omsorgsplan">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -57,7 +60,7 @@ Denne arketypen kan inneholde kombinasjoner av planlagte aktiviteter, aktivitete
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"95985D81642D62B62519ED86E3BE8FA4">
+		["MD5-CAM-1.0.1"] = <"710612AD64575B457B6AB2B6D931576A">
 	>
 
 definition
@@ -126,27 +129,27 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Pleieplan">
-					description = <"En ramme for registrering av alle aspekter av en pleieplan.">
+					description = <"Et rammeverk for registrering av alle aspekter av en pleieplan.">
 				>
 				["at0001"] = <
 					text = <"Foreslåtte aktiviteter">
-					description = <"SLOT til alle INSTRUCTIONs arketypene som kreves for at gjennomføre hver enkelt foreslåtte aktivitet innen pleieplanen.">
+					description = <"SLOT til alle INSTRUCTION arketypene som kreves for å gjennomføre hver av pleieplanens foreslåtte aktiviteter.">
 				>
 				["at0004"] = <
 					text = <"Aktiviteter">
-					description = <"SLOT til alle ACTIONs arketypene som kreves for at registrere status innen hver aktivitet INSTRUCTION innen pleiepalnen.">
+					description = <"SLOT til alle ACTION arketypene som kreves for å registrere status for hver INSTRUCTION knyttet til hver enkel aktivitet i pleieplanen.">
 				>
 				["at0014"] = <
 					text = <"Pleieplan">
-					description = <"SLOT for at fange opp INSTRUCTION og ACTION for den helhetlige pleieplanen.">
+					description = <"SLOT for å registrere INSTRUCTION og ACTION for hele pleieplanen.">
 				>
 				["at0016"] = <
 					text = <"Annen">
-					description = <"SLOT til andre og uspesifiserte arketyper der kan bli behov for i en spesifikk klinisk senario.">
+					description = <"SLOT til andre valgfrie og uspesifiserte arketyper som kan være nødvendige i en gitt klinisk scenario.">
 				>
 				["at0017"] = <
 					text = <"Mål">
-					description = <"SLOT til alle EVALUATION arketypene som kreves for at registrere målene i pleieplanen.">
+					description = <"SLOT til alle EVALUATION arketypene som kreves for å registrere pleieplanens mål (en eller flere).">
 				>
 			>
 		>
