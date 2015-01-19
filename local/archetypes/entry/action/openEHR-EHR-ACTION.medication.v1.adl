@@ -14,6 +14,14 @@ language
 				["email"] = <"biljana.princic@marand.si">
 			>
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Huakeland University Hospital, Bergen, Norway">
+			>
+			accreditation = <"MD,DEAA, MBA. spec in tropical med.">
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -103,13 +111,25 @@ There is a date and time at which this ACTION took place (as there is for all AC
 			misuse = <"*Do not use when recording an instruction or order (use INSTRUCTION.medication).(en)">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av aktiviteter i forbindelse med medisinering, vaksinasjon eller andre terapeutiske tiltak, med lenke til en INSTRUCTION-arketype dersom hensiktsmessig.">
+			use = <"For registrering av planlegging, utstedelse av resept, utdeling, administrering, seponering, utsettelse og ferdigstilling av medisineringen, vaksinasjon eller terapeutisk forbruksmateriell. Dette vil vanligvis være i forbindelse med en legemiddelordinasjon, men kan eventuelt gis umiddelbart uten ordinasjon, hvilket krever en registrering av administrasjonen alene ( f.eks. i en akutt situasjon.)
+
+En slik registrering kan gjøres som en indikasjon på administrering av en dose, utdeling av en viss mengde eller som dokumentasjon av seponering. Status til INSTRUCTION-arketypen endres av ACTION-arketypen som indikert i Pathway-definisjonen.
+
+Arketypen inneholder dato og tidspunkt for handlingen (som i alle ACTION arketyper) og bruken av denne arketypen indikerer at en handling faktisk har funnet sted.">
+			keywords = <"medisinering", "foreskrivning", "administrering", "seponering", "terapeutisk forbruksmateriell", "forsyning", "medisin", "medikament", "legemiddel">
+			misuse = <"Brukes ikke ved registrering av en instruksjon eller en ordinasjon (bruk INSTRUCTION.medication).">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Stephen Chu, NEHTA, Australia (Editor)", "Samo Drnovšek, Marand, Slovenia (Editor)", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Robert L'egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, UK", "Jude Michel, Queensland Health, Australia", "Chris Mitchell, RACGP, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia (Editor)", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
 	other_details = <
 		["references"] = <"Based on NEHTA Medication action archetype http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.876_6
 NEHTA Therapeutic Good Use Datagroup http://nehta.gov.au/data-group-library/data-specifications/dgl-therapeutic-good-action">
-		["MD5-CAM-1.0.1"] = <"5785AFB10AEB74CC6D672E75B88908D3">
+		["MD5-CAM-1.0.1"] = <"6246C03D9968DCA74485ED10CE0AB867">
 	>
 
 definition
@@ -1310,6 +1330,170 @@ ontology
 				>
 			>
 		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Legemiddelhandling">
+					description = <"Detaljer om bruk, administrasjon, utdeling eller andre tiltak i forbindelse med legemiddel, vaksine eller annet terapeutisk forbruksmateriell ordinert av en kliniker.">
+				>
+				["at0001"] = <
+					text = <"Medisinering planlagt">
+					description = <"Medisinering er planlagt, men ikke utført.">
+				>
+				["at0002"] = <
+					text = <"Resept er utstedt for legemiddelet">
+					description = <"INSTRUCTION-arketypen har utstedt en resept på legemiddelet.">
+				>
+				["at0003"] = <
+					text = <"Medisinen er utdelt">
+					description = <"Medisinen har blitt utdelt.">
+				>
+				["at0004"] = <
+					text = <"Medisineringen er startet">
+					description = <"Legemiddelet er inntatt for første gang av pasienten.">
+				>
+				["at0005"] = <
+					text = <"Gjennomgang av medisineringen">
+					description = <"Medisineringen er gjennomgått.">
+				>
+				["at0006"] = <
+					text = <"Administrasjon">
+					description = <"En enkeltdose er administrert.">
+				>
+				["at0007"] = <
+					text = <"Fullført medisinering">
+					description = <"Medisineringen er blitt fullført som ordinert.">
+				>
+				["at0008"] = <
+					text = <"Forsinket legemiddelforsyning">
+					description = <"Medisinen er ikke utdelt da den ikke er tilgjengelig ennå.">
+				>
+				["at0009"] = <
+					text = <"Utsatt medisinering">
+					description = <"Medisineringen er blitt utsatt.">
+				>
+				["at0010"] = <
+					text = <"Resepten er blitt fornyet">
+					description = <"Resepten er blitt fornyet iht. eksisterende instruksjon.">
+				>
+				["at0011"] = <
+					text = <"Fornying av resept utsatt">
+					description = <"Fornying av denne resepten kan ikke gjennomføres uten særlige tiltak.">
+				>
+				["at0012"] = <
+					text = <"Planlagt medisinering avbrutt">
+					description = <"Den planlagte medisineringen er avbrutt før administrasjon er startet.">
+				>
+				["at0013"] = <
+					text = <"Planlagt medisinering utsatt">
+					description = <"Planlagt medisinering er utsatt.">
+				>
+				["at0014"] = <
+					text = <"Resept trukket tilbake">
+					description = <"Resepten er trukket tilbake, men administrering eller utdeling kan ha skjedd.">
+				>
+				["at0015"] = <
+					text = <"Medisinering seponert">
+					description = <"Administeringen av dette medikament er seponert før forventet avslutning.">
+				>
+				["at0016"] = <
+					text = <"Oppstartsdato/ tid for medisinering satt">
+					description = <"Tidspunkt for oppstart av medisineringen er fastlagt.">
+				>
+				["at0017"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0018"] = <
+					text = <"Medisinering holdt tilbake">
+					description = <"Medisinen er blitt holdt tilbake og ikke administert.">
+				>
+				["at0019"] = <
+					text = <"Medisineringen nektet">
+					description = <"Pasienten nekter å ta legemiddelet.">
+				>
+				["at0020"] = <
+					text = <"Legemiddel">
+					description = <"Legemiddelet, vaksinen eller det terapeutiske forbruksmaterialet som er fokus for ordinasjonen. Dette elementet vil normalt bli kodet med en legemiddelterminologi, men fritekst kan kreves i særlige situasjoner.">
+				>
+				["at0021"] = <
+					text = <"Årsak">
+					description = <"Årsaken(e) til den spesifikke handlingen. NB; Dette er ikke indikasjonen for medisinering, men årsak til endringer eller seponering av medisineringen.">
+				>
+				["at0022"] = <
+					text = <"Kvantitet">
+					description = <"Mengde av legemiddel, vaksine eller annet terapeutisk forbruksmateriell.">
+				>
+				["at0023"] = <
+					text = <"Ingredienser og form">
+					description = <"Detaljert informasjon om ingredienser inkludert form og styrke.">
+				>
+				["at0024"] = <
+					text = <"Kommentarer">
+					description = <"Kommentar til handlingen.">
+				>
+				["at0025"] = <
+					text = <"Sekvensnummer">
+					description = <"Sekvensnummer som er spesifikt til denne handlingen.">
+				>
+				["at0026"] = <
+					text = <"Batch ID">
+					description = <"Tildelt av produsenten for å identifisere produksjonsbatch av produktet.">
+				>
+				["at0027"] = <
+					text = <"Administrasjon">
+					description = <"Detaljer om administreringen av legemiddel, vaksinasjon eller annet terapeutisk forbruksmateriell.">
+				>
+				["at0030"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0031"] = <
+					text = <"Utdelt til">
+					description = <"Navnet til personen som henter medisinen, om dette ikke er pasienten selv.">
+				>
+				["at0032"] = <
+					text = <"Gjenværende utleveringer">
+					description = <"Antall ganger legemiddelet, vaksinen eller det terapeutiske forbruksmateriellet kan utleveres uten fornying av resept eller ordinasjon. Merk: Dette er informasjon som kreves av pasienten og resept utsteder.">
+				>
+				["at0033"] = <
+					text = <"Instruksjoner">
+					description = <"Instruksjoner gitt til en pasient eller helsearbeider ved oppstart.">
+				>
+				["at0035"] = <
+					text = <"Legemiddelmiddel i retur">
+					description = <"Det utdelte legemiddel returneres ubrukt.">
+				>
+				["at0036"] = <
+					text = <"Generisk bytte">
+					description = <"En variant av samme legemiddel , vaksine eller terapeutisk forbruksmateriell fra annen produsent erstatter det ordinerte.">
+				>
+				["at0037"] = <
+					text = <"Antall utleveringer">
+					description = <"Antall ganger denne resepten har blitt utlevert. Summen av antallet minus en og de gjenværende reiteringer gir antall reiteringer på den opprinnelige ordinasjonen.">
+				>
+				["at0038"] = <
+					text = <"Refusjon">
+					description = <"Refusjonskategori eller tilskudd som ønskes for medisinen.">
+				>
+				["at0039"] = <
+					text = <"Endring av dose eller administrasjonstidspunkt">
+					description = <"En ny ordinasjon med endret dose eller administrasjonstidspunkt erstatter denne.">
+				>
+				["at0040"] = <
+					text = <"Utløpsdato">
+					description = <"Utløpsdato som spesifisert av produsenten.">
+				>
+				["at0041"] = <
+					text = <"Medisineringen er blitt endret">
+					description = <"Ordinasjonen er blitt endret på en måte som ikke krever ny instruksjon/ordinasjon, iht. lokale kliniske retningslinjer.">
+				>
+				["at0042"] = <
+					text = <"Medisinering anbefalt">
+					description = <"Medisinering har blitt anbefalt, normalt fra en kliniker til en annen, der den siste har ansvar for å ordinere/godkjenne legemiddelet.">
+				>
+			>
+		>
 	>
 	constraint_definitions = <
 		["en"] = <
@@ -1349,6 +1533,14 @@ ontology
 				["ac0001"] = <
 					text = <"*Medication name(en)">
 					description = <"*Any valid term for a medicine or other therapeutic agent.(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Legemiddelnavn">
+					description = <"En hvilket som helst term eller navn for medisinen eller terapeutisk stoff.">
 				>
 			>
 		>
