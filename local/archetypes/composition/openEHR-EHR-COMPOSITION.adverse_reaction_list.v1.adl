@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Adverse Reaction List
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital Bergen Norway">
+			>
+			accreditation = <"MD, DEAA, MBA, spec i tropical medicine,">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -30,12 +40,29 @@ In order for this list to be accurate and safe to use as the basis for decision 
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en persistent og oppdaterbar liste over alle kjente uønskede reaksjoner som oppleves av individet, eller utsagn om utelukkelse av eller fravær av informasjon om bivirkninger, som kan påvirke klinisk beslutningstaking og utøvelsen av helsehjelp.">
+			use = <"For å registrere en persistent og oppdaterbar liste over alle kjente uønskede reaksjoner (inkludert allergier, hypersensitiviteter, bivirkninger eller intoleranse) som det oppleves av individet, eller utsagn om utelukkelse av eller fravær av informasjon om bivirkninger, som kan påvirke klinisk beslutningstaking og utøvelsen av helsehjelp.
+
+Denne listen kan brukes som kilde til oppdatert informasjon om uønskede reaksjoner for utveksling eller som grunnlag for beslutningsstøtte. 
+
+Denne listen kan bestå av tre typer arketypen:
+ - Utsagn om faktiske uønskede reaksjoner registreres ved hjelp av EVALUATION.adverse_reaction arketypen; eller
+ - Et utsagn om utelukkelse av uønskede reaksjoner, kan registreres ved hjelp av den spesifikke EVALUATION.exclusion-adverse_reaction arketypen - for eksempel: \"Ingen kjente uønskede reaksjoner\"; eller
+ - Et utsagn om at ingen informasjon er tilgjengelig - verken om en faktisk uønsket reaksjon eller en utelukkelse av en uønsket reaksjon - kan registreres med EVALUATION.absence arketypen. 
+
+For at denne listen skal være nøyaktig og trygg å bruke som grunnlag for beslutningsstøtte og for utveksling, bør denne listen ideelt sett godkjennes av en ansvarlig kliniker, snarere enn forvaltes automatisk av kliniske system gjennom beslutningsstøttesystemer eller ekspertsystemer alene .">
+			keywords = <"reaksjon", "uhensiktsmessig", "uønsket", "allergi", "intoleranse", "effekt", "virkning", "hypersensitivitet", "liste", "bivirkning">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"CommitteeDraft">
 	other_contributors = <"Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Sam Heard, Ocean Informatics, Australia", "Sistine Barretto-Daniels, Ocean Informatics, Australia">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"7C6282FE2D669F7DF0CC7CA4958E4A57">
+		["MD5-CAM-1.0.1"] = <"4E2B462C9A0B6302A5ECE2AB3A129530">
 	>
 
 definition
@@ -82,6 +109,27 @@ ontology
 				["at0004"] = <
 					text = <"Absent Information">
 					description = <"Positive statement that no information is available about adverse reactions.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Liste over uønskede reaksjoner">
+					description = <"En persistent og oppdaterbar liste over uønskede reaksjoner oppleved av individet og som kan ha betydning for klinisk beslutningsstøtte og utøvelsen av helsehjelp.">
+				>
+				["at0002"] = <
+					text = <"Uønskede reaksjoner">
+					description = <"Detaljer om kjente uønskede reaksjoner.">
+				>
+				["at0003"] = <
+					text = <"Utelukkelsesutsagn">
+					description = <"Et utsagn utelukkelse av uønskede reaksjoner.">
+					comment = <"For eksempel: \"Ingen kjente reaksjoner\".">
+				>
+				["at0004"] = <
+					text = <"Ingen informasjon">
+					description = <"Utsagn om at ingen informasjon er tilgjengelig om uønskede reaksjoner.">
 				>
 			>
 		>
