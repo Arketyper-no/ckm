@@ -32,10 +32,11 @@ description
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Brukes til å registrere en pasients responsivitet, som en indikasjon for deres bevissthetsnivå.">
-			use = <"Brukes som en del av kartlegging av en pasients responsivitet, som en indikasjon for bevissthetsnivået deres.">
-			keywords = <"AVPU", "alert", "voice", "pain", "unresponsive", "våken", "tale", "smerte", "bevisstløs">
-			misuse = <"">
+			purpose = <"Brukes for å vurdere et individs bevissthetsnivå.">
+			use = <"For raskt og enkel vurdering av et individs bevissthetsnivå, særlig egnet til vurdering i akutte situasjoner.">
+			keywords = <"AVPU", "alert", "voice", "pain", "unresponsive", "våken", "tale", "smerte", "bevisstløs", "stemme", "bevissthet", "verbal", "verbalrespons", "semikomatøs", "bevisst", "bevissthetsnivå">
+			misuse = <"AVPU-skalaen er ikke egnet til nevrologisk pasientobservasjon over tid, da brukes Glasgow Coma Scale.
+">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -43,10 +44,8 @@ description
 	other_contributors = <>
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["references"] = <"AVPU, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 07 Feb 2013. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1173_1 (accessed 2 June 2013).
-Kelly, CA; Upex A; Bateman DN. (February 2005). \"Comparison of consciousness level assessment in the poisoned patient using the alert/verbal/painful/unresponsive scale and the Glasgow Coma Scale\". Annals of Emergency Medicine 45 (2).
-http://en.wikipedia.org/wiki/AVPU">
-		["MD5-CAM-1.0.1"] = <"E7999948B802BBF5B69577FE5183FB0E">
+		["references"] = <"Kelly, CA; Upex A; Bateman DN. (February 2005). \"Comparison of consciousness level assessment in the poisoned patient using the alert/verbal/painful/unresponsive scale and the Glasgow Coma Scale\". Annals of Emergency Medicine 45 (2).">
+		["MD5-CAM-1.0.1"] = <"C5C6C411DEE99653C8386CCC1DB472CB">
 	>
 
 definition
@@ -54,19 +53,19 @@ definition
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Uspesifikk hendelse.
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- AVPU Observation
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- AVPU-observasjon
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0005, 	-- Alert
-													at0006, 	-- Voice
-													at0007, 	-- Pain
-													at0008]	-- Unresponsive
+													at0005, 	-- Våken
+													at0006, 	-- Tiltale
+													at0007, 	-- Smerte
+													at0008]	-- Bevisstløs
 												}
 											}
 										}
@@ -78,8 +77,18 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0009] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Smertestimuli
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
 	}
-
 
 
 ontology
@@ -122,13 +131,21 @@ ontology
 					text = <"Unresponsive">
 					description = <"The patient does not respond in any way to voice or pain stimuli.">
 				>
+				["at0009"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0010"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
 					text = <"AVPU">
-					description = <"Enkel skala som brukes som en del av en vurdering for å måle og registrere en pasients responsivitet, som en indikasjon på bevissthetsnivå. AVPU er en forkortelse for engelsk \"Alert\", \"Voice\", \"Pain\" og \"Unresponsive\", på norsk \"Våken\", \"Stemme\", \"Smerte\" og \"Bevisstløs\".">
+					description = <"En enkel skala for å vurdere et individs bevissthetsnivå. AVPU er en forkortelse for engelsk \"Alert\", \"Voice\", \"Pain\" og \"Unresponsive\", på norsk \"Våken\", \"Tiltale\", \"Smerte\" og \"Reagerer ikke\".">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -144,23 +161,32 @@ ontology
 				>
 				["at0004"] = <
 					text = <"AVPU-observasjon">
-					description = <"Observasjonen av pasientens responsivitet.">
+					description = <"Observasjonen av individets bevissthetsnivå.">
 				>
 				["at0005"] = <
 					text = <"Våken">
-					description = <"Pasienten er fullstendig våken.">
+					description = <"Øynene åpnes spontant, orientert tale, adlyder kommandoer (A).">
 				>
 				["at0006"] = <
-					text = <"Stemme">
-					description = <"Pasienten gir en hvilken som helst respons på verbal tiltale.">
+					text = <"Tiltale">
+					description = <"Hvilken som helst verbal, motorisk eller øye-respons på verbal tiltale (rop høyt eller rist forsiktig) (V).">
 				>
 				["at0007"] = <
 					text = <"Smerte">
-					description = <"Pasienten gir en hvilken som helst respons til smertestimuli, men ikke på verbal tiltale.">
+					description = <"En hvilken som helst verbal, motorisk eller øye-respons på smertestimuli (eksempelvis press på neglerot), men ikke på verbal tiltale (P).">
 				>
 				["at0008"] = <
 					text = <"Bevisstløs">
-					description = <"Pasienten responderer ikke i det hele tatt til stemme- eller smertestimuli.">
+					description = <"Ingen respons på tale- eller smertestimuli (U).">
+				>
+				["at0009"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Smertestimuli">
+					description = <"Beskrivelse av type smertestimuli. Bør kodes ved hjelp av kodeverk eller terminologi.">
+					comment = <"Eksempler: Trykk på neglerot og press mot sternum.">
 				>
 			>
 		>
