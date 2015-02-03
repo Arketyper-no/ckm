@@ -24,13 +24,11 @@ language
 			>
 			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
 			author = <
-				["name"] = <"Domingo Liotta">
-				["organisation"] = <"University of Morón">
+				["name"] = <"Mona Saleh">
 			>
-			accreditation = <"University of Morón">
 		>
 		["fa"] = <
 			language = <[ISO_639-1::fa]>
@@ -39,11 +37,13 @@ language
 				["organisation"] = <"Ocean Informatics">
 			>
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
 			author = <
-				["name"] = <"Mona Saleh">
+				["name"] = <"Domingo Liotta">
+				["organisation"] = <"University of Morón">
 			>
+			accreditation = <"University of Morón">
 		>
 		["ru"] = <
 			language = <[ISO_639-1::ru]>
@@ -104,7 +104,7 @@ description
 			language = <[ISO_639-1::nb]>
 			purpose = <"Brukes til å registrere et individs målte kroppstemperatur, som uttrykk for kjernetemperaturen.">
 			use = <"Brukes til å dokumentere et individs kjernetemperatur. Det kan legges til CLUSTERE for å tilføre tillegsinformasjon, inkludert miljømessige forhold (eksponering), detaljer om menstruasjonssyklus og informasjon om fysisk anstrengelse, der hvor dette er relevant. NB: Målemetode og -sted vil ofte måtte vises til sluttbruker for at de dokumenterte temperaturverdiene skal kunne tolkes korrekt.">
-			keywords = <"temperatur", "kropp", "kjerne", "feber", "hypotermi", "hypertermi", "temperaturmåling", "overoppheting", "nedkjøling", "solstikk">
+			keywords = <"temperatur", "kropp", "kjerne", "feber", "hypotermi", "hypertermi", "temperaturmåling", "overoppheting", "nedkjøling", "heteslag">
 			misuse = <"Arketypen skal ikke brukes til å registrere andre objekters eller en isolert kroppsdels temperatur.">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -187,9 +187,9 @@ Este arquetipo no debe usarse para registrar la temperatura de una parte del cue
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Knut Bernstein", "Shahla Foozonkhah", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Omer Hotomaroglu", "Sundaresan Jaganathan", "Heather Leslie", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Thomas Schopf, University Hospital of North-Norway, Norway", "Line Sæle, Helse Vest IKT, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Knut Bernstein", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Shahla Foozonkhah", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Omer Hotomaroglu", "Sundaresan Jaganathan", "Heather Leslie", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Mette Monsen, Helse Bergen HF, Norway", "Hugo Nilssen, UNN HF K3K/Tromsø, Norway", "Thomas Schopf, University Hospital of North-Norway, Norway", "Ingrid Smith, Helse Bergen, Norway", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Line Sæle, Helse Vest IKT, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Jan Inge Sørheim, Helse Bergen, Haukeland uniersitetssjukehus, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"30ECA44919E628893B7173AA04E5FE2D">
+		["MD5-CAM-1.0.1"] = <"862C2D8B263B44FB82D8D47ABCB8720E">
 	>
 
 definition
@@ -213,7 +213,7 @@ definition
 												list = <
 													["1"] = <
 														units = <"Cel">
-														magnitude = <|>=0.0|>
+														magnitude = <|0.0..<100.0|>
 													>
 												>
 											>
@@ -271,10 +271,11 @@ definition
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0022, 	-- Munn
-									at0023, 	-- Øre
-									at0024, 	-- Armhule
 									at0025, 	-- Endetarm
+									at0024, 	-- Armhule
+									at0023, 	-- Øre
+									at0061, 	-- Panne
+									at0022, 	-- Munn
 									at0026, 	-- Nesesvelg
 									at0027, 	-- Urinblære
 									at0028, 	-- Intravaskulært
@@ -282,8 +283,7 @@ definition
 									at0051, 	-- Skjede
 									at0054, 	-- Spiserør
 									at0055, 	-- Lyske
-									at0060, 	-- Tinning
-									at0061]	-- Panne
+									at0060]	-- Tinning
 								}
 							}
 						}
