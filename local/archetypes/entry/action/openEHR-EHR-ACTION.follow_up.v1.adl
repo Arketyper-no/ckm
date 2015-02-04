@@ -6,12 +6,6 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
-			>
-		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -19,6 +13,12 @@ language
 				["organisation"] = <"Particular">
 			>
 			accreditation = <"Medical doctor, Internal Medicine specialist, Programmer Analist, Master in Data Mining">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
 		>
 	>
 description
@@ -52,9 +52,9 @@ description
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"0B865193F1E6B2BD5FE6E91EC9380C2A">
+		["MD5-CAM-1.0.1"] = <"07DBFCB0565CA5B085F04EA5C412CCB0">
 	>
 
 definition
@@ -218,11 +218,13 @@ definition
 			}
 		}
 		description matches {
-			allow_archetype ITEM_TREE matches {
-				include
-					archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.follow_up\.v1/}
-				exclude
-					archetype_id/value matches {/.*/}
+			ITEM_TREE[at0014] matches {	-- Tree
+				items cardinality matches {1; unordered} matches {
+					allow_archetype CLUSTER occurrences matches {0..*} matches {
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.follow_up(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
 			}
 		}
 	}
@@ -288,6 +290,10 @@ ontology
 					text = <"تمت إعادة تحديد الموعد">
 					description = <"تمت إعادة تحديد الموعد خلال متابعة نشطة">
 				>
+				["at0014"] = <
+					text = <"*Single(en)">
+					description = <"*@ internal @(en)">
+				>
 			>
 		>
 		["en"] = <
@@ -348,6 +354,10 @@ ontology
 					text = <"Rescheduled">
 					description = <"An appointment has been resceduled during active follow up.">
 				>
+				["at0014"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
 			>
 		>
 		["es-ar"] = <
@@ -407,6 +417,10 @@ ontology
 				["at0013"] = <
 					text = <"Reprogramado">
 					description = <"Un turno ha sido reprogramado durante un seguimiento clínico activo">
+				>
+				["at0014"] = <
+					text = <"*Single(en)">
+					description = <"*@ internal @(en)">
 				>
 			>
 		>
