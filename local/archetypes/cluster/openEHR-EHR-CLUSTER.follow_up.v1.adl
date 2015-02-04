@@ -1,0 +1,159 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.follow_up.v1
+
+concept
+	[at0000]	-- Oppfølging
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2012-09-18">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Record details about a follow up, to assist in handling (future) actions and instructions">
+			use = <"Use for handling information about (future) follow up for a patient.">
+			misuse = <"All other uses.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å lagre detaljer om  en  oppfølging">
+			use = <"For å lagre detaljer om  en  oppfølging">
+			keywords = <"Oppfølging", ...>
+			misuse = <"All annen bruk">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Jon Tysdahl, Fürst, Norway", ...>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"A97315C2963BCC0183A87A8FE372774C">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Follow up
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Service
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Appointment date and time
+				value matches {
+					DV_DATE_TIME matches {
+						value matches {yyyy-mm-ddTHH:MM:SS}
+					}
+				}
+			}
+			CLUSTER[at0004] occurrences matches {0..1} matches {	-- Due by information
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Due date
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Due within time interval
+						value matches {
+							DV_INTERVAL<DV_DATE> matches {
+								upper matches {
+									DV_DATE_TIME matches {*}
+								}
+								lower matches {
+									DV_DATE matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Follow up">
+					description = <"Information about follow up">
+				>
+				["at0001"] = <
+					text = <"Service">
+					description = <"The name of the service to be performed as follow up.">
+				>
+				["at0002"] = <
+					text = <"Description">
+					description = <"Description of the details of the service">
+				>
+				["at0003"] = <
+					text = <"Appointment date and time">
+					description = <"The current active appointment date and time, if existing">
+				>
+				["at0004"] = <
+					text = <"Due by information">
+					description = <"Information about due date">
+					comment = <"Information about due date for the service">
+				>
+				["at0005"] = <
+					text = <"Due date">
+					description = <"Date due by">
+				>
+				["at0009"] = <
+					text = <"Due within time interval">
+					description = <"Due within a time interval, from date to date">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Oppfølging">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tjeneste">
+					description = <"Navnet på den tjenesten som oppfølgingen omfatter">
+				>
+				["at0002"] = <
+					text = <"Beskrivelse">
+					description = <"Beskrivelse av aktuell tjeneste">
+				>
+				["at0003"] = <
+					text = <"Avtalt tid for oppfølging">
+					description = <"Timeavtale for oppfølgingen, hvis slik avtale er gjort">
+				>
+				["at0004"] = <
+					text = <"Forfallsfrist">
+					description = <"Informasjon om når oppfølgingen skal gjøres innen, også kalt forfall">
+					comment = <"Information about due date for the service">
+				>
+				["at0005"] = <
+					text = <"Forfallsdato">
+					description = <"Eksakt forfallsdato for oppfølgingen, dvs. den skal gjøres før denne dato">
+				>
+				["at0009"] = <
+					text = <"Forfallsperiode">
+					description = <"Oppfølgingen skal skje innenfor angitt tidsperiode">
+				>
+			>
+		>
+	>
