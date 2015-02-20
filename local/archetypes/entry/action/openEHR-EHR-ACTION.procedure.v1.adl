@@ -6,6 +6,13 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"Uroš Rajkovič, Biljana Prinčič">
+				["organisation"] = <"Slovenia">
+			>
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
@@ -53,6 +60,14 @@ Informações sobre atividades relacionadas ao procedimento, como a anestesia ou
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Za beleženje podrobnosti o izvedeni aktivnosti">
+			use = <"Za beleženje podrobnosto o izvedeni aktivnosti, ki zadeva posameznega pacienta/subjekt">
+			keywords = <"aktivnosti", "postopek">
+			misuse = <"Podrobnosti o aktivnostih povezani z opisano kativnostjo, kot npr. dajanje zdravil, se zabeleži v arhetipih tipa ACTION">
+			copyright = <"© Nasjonal IKT HF">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details about a procedure that has been performed.">
@@ -84,9 +99,7 @@ Information about activities related to the procedure, such as anaesthesia or ad
 			purpose = <"For registrering av detaljer om den utførte prosedyren.">
 			use = <"Brukes til å registrere detaljert informasjon om prosedyren som er blitt utført på et individ. 
 
-Informasjon om aktiviteter knyttet til prosedyren, for eksempel anestesi eller administrasjon av medisiner, bør registreres i egne ACTION-arketyper.
-
-">
+Informasjon om aktiviteter knyttet til prosedyren, for eksempel anestesi eller administrasjon av medisiner, bør registreres i egne ACTION-arketyper.">
 			keywords = <"prosedyre", ...>
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
@@ -95,13 +108,13 @@ Informasjon om aktiviteter knyttet til prosedyren, for eksempel anestesi eller a
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"0913E8D36F649FF978272173072A9B34">
+		["MD5-CAM-1.0.1"] = <"857D701E5D734A16EF9918804180130B">
 	>
 
 definition
-	ACTION[at0000] matches {	-- Prosedyre
+	ACTION[at0000] matches {	-- Procedure undertaken
 		ism_transition matches {
-			ISM_TRANSITION[at0034] matches {	-- Rekvisisjon påbegynt
+			ISM_TRANSITION[at0034] matches {	-- Request initiated
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::524]}
@@ -109,11 +122,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0034]}		-- Rekvisisjon påbegynt
+						defining_code matches {[local::at0034]}		-- Request initiated
 					}
 				}
 			}
-			ISM_TRANSITION[at0035] matches {	-- Rekvisisjon sendt
+			ISM_TRANSITION[at0035] matches {	-- Request sent
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::524]}
@@ -121,11 +134,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0035]}		-- Rekvisisjon sendt
+						defining_code matches {[local::at0035]}		-- Request sent
 					}
 				}
 			}
-			ISM_TRANSITION[at0038] matches {	-- Rekvisisjon utsatt
+			ISM_TRANSITION[at0038] matches {	-- Request postponed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::527]}
@@ -133,11 +146,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0038]}		-- Rekvisisjon utsatt
+						defining_code matches {[local::at0038]}		-- Request postponed
 					}
 				}
 			}
-			ISM_TRANSITION[at0039] matches {	-- Rekvisisjon kansellert
+			ISM_TRANSITION[at0039] matches {	-- Request cancelled
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::528]}
@@ -145,11 +158,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0039]}		-- Rekvisisjon kansellert
+						defining_code matches {[local::at0039]}		-- Request cancelled
 					}
 				}
 			}
-			ISM_TRANSITION[at0036] matches {	-- Prosedyren er planlagt
+			ISM_TRANSITION[at0036] matches {	-- Procedure scheduled
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::529]}
@@ -157,11 +170,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0036]}		-- Prosedyren er planlagt
+						defining_code matches {[local::at0036]}		-- Procedure scheduled
 					}
 				}
 			}
-			ISM_TRANSITION[at0047] matches {	-- Pågår
+			ISM_TRANSITION[at0047] matches {	-- In progress
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -169,11 +182,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0047]}		-- Pågår
+						defining_code matches {[local::at0047]}		-- In progress
 					}
 				}
 			}
-			ISM_TRANSITION[at0040] matches {	-- Prosedyre suspendert
+			ISM_TRANSITION[at0040] matches {	-- Procedure suspended
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::530]}
@@ -181,11 +194,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0040]}		-- Prosedyre suspendert
+						defining_code matches {[local::at0040]}		-- Procedure suspended
 					}
 				}
 			}
-			ISM_TRANSITION[at0041] matches {	-- Prosedyren avbrutt
+			ISM_TRANSITION[at0041] matches {	-- Procedure aborted
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::531]}
@@ -193,11 +206,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0041]}		-- Prosedyren avbrutt
+						defining_code matches {[local::at0041]}		-- Procedure aborted
 					}
 				}
 			}
-			ISM_TRANSITION[at0043] matches {	-- Fullført
+			ISM_TRANSITION[at0043] matches {	-- Completed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -205,11 +218,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0043]}		-- Fullført
+						defining_code matches {[local::at0043]}		-- Completed
 					}
 				}
 			}
-			ISM_TRANSITION[at0044] matches {	-- Rapport skrevet
+			ISM_TRANSITION[at0044] matches {	-- Report authored
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -217,11 +230,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0044]}		-- Rapport skrevet
+						defining_code matches {[local::at0044]}		-- Report authored
 					}
 				}
 			}
-			ISM_TRANSITION[at0045] matches {	-- Rapporten godkjent
+			ISM_TRANSITION[at0045] matches {	-- Report attested
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -229,11 +242,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0045]}		-- Rapporten godkjent
+						defining_code matches {[local::at0045]}		-- Report attested
 					}
 				}
 			}
-			ISM_TRANSITION[at0046] matches {	-- Rapporten sendt
+			ISM_TRANSITION[at0046] matches {	-- Report sent
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -241,7 +254,7 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0046]}		-- Rapporten sendt
+						defining_code matches {[local::at0046]}		-- Report sent
 					}
 				}
 			}
@@ -249,59 +262,59 @@ definition
 		description matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0002] matches {	-- Prosedyre
+					ELEMENT[at0002] matches {	-- Procedure
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0014] occurrences matches {0..*} matches {	-- Indikasjonen for prosedyren
+					ELEMENT[at0014] occurrences matches {0..*} matches {	-- Reason/s for procedure
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0051] occurrences matches {0..*} matches {	-- Metode/teknikk
+					ELEMENT[at0051] occurrences matches {0..*} matches {	-- Method/Technique
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0049] occurrences matches {0..1} matches {	-- Beskrivelse
+					ELEMENT[at0049] occurrences matches {0..1} matches {	-- Description
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0003] occurrences matches {0..1} matches {	-- Prosedyredetaljer
+					allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- Procedure Details
 						include
 							archetype_id/value matches {/.*/}
 					}
-					allow_archetype CLUSTER[at0050] occurrences matches {0..1} matches {	-- Detaljer for anatomisk område
+					allow_archetype CLUSTER[at0050] occurrences matches {0..1} matches {	-- Anatomical site details
 						include
 							archetype_id/value matches {/.*/}
 					}
-					CLUSTER[at0030] occurrences matches {0..1} matches {	-- Ytterligere aktiviteter
+					CLUSTER[at0030] occurrences matches {0..1} matches {	-- Additional tasks
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0052] occurrences matches {0..1} matches {	-- Aktivitet
+							ELEMENT[at0052] occurrences matches {0..1} matches {	-- Task
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0031] occurrences matches {0..*} matches {	-- Aktivitetsbeskrivelse
+							ELEMENT[at0031] occurrences matches {0..*} matches {	-- Task description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0032] occurrences matches {0..*} matches {	-- Registrering av ekstra aktiviteten
+							ELEMENT[at0032] occurrences matches {0..*} matches {	-- Record of additional task
 								value matches {
 									DV_EHR_URI matches {*}
 								}
 							}
 						}
 					}
-					ELEMENT[at0048] occurrences matches {0..1} matches {	-- Resultat
+					ELEMENT[at0048] occurrences matches {0..1} matches {	-- Outcome
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Prosedyre mislyktes
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Procedure unsuccessful
 						value matches {
 							DV_BOOLEAN matches {
 								value matches {True}
@@ -309,24 +322,24 @@ definition
 						}
 					}
 					ELEMENT[at0018] occurrences matches {0..1} matches {*}
-					ELEMENT[at0015] occurrences matches {0..*} matches {	-- Uventet hendelse
+					ELEMENT[at0015] occurrences matches {0..*} matches {	-- Unplanned event
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0006] occurrences matches {0..*} matches {	-- Komplikasjon
+					ELEMENT[at0006] occurrences matches {0..*} matches {	-- Complication
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Akutt
+					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Emergency?
 						value matches {
 							DV_BOOLEAN matches {
 								value matches {True, False}
 							}
 						}
 					}
-					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Kommentarer
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Comments
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -344,21 +357,21 @@ definition
 		protocol matches {
 			ITEM_TREE[at0053] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0054] occurrences matches {0..1} matches {	-- Rekvirent identifikator
+					ELEMENT[at0054] occurrences matches {0..1} matches {	-- Requestor order identifier
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0055] occurrences matches {0..1} matches {	-- Rekvirent
+					allow_archetype CLUSTER[at0055] occurrences matches {0..1} matches {	-- Requestor
 						include
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0056] occurrences matches {0..1} matches {	-- Mottaker identifikator
+					ELEMENT[at0056] occurrences matches {0..1} matches {	-- Receiver order identifier
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0057] occurrences matches {0..1} matches {	-- Rekvisisjonsmottaker
+					allow_archetype CLUSTER[at0057] occurrences matches {0..1} matches {	-- Receiver
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -522,6 +535,158 @@ ontology
 				>
 			>
 		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Izvedena klinična aktivnost">
+					description = <"Izvedena klinična aktivnost">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Aktivnost">
+					description = <"Ime, naziv postopka, aktivnosti">
+				>
+				["at0003"] = <
+					text = <"Podrobnosti">
+					description = <"Podroben opis izvedene aktivnosti, npr. priprave, uporabljena metoda, oprema in naprave">
+				>
+				["at0004"] = <
+					text = <"Neopravljeno">
+					description = <"TRUE (resnično) pomeni, da aktivnost ni bila opravljena s kliničnega vidika">
+				>
+				["at0005"] = <
+					text = <"Opombe">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Zapleti">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Multimedija">
+					description = <"Multimedijske predstavitve, npr. slika">
+				>
+				["at0014"] = <
+					text = <"Razlog">
+					description = <"Razlogi za izvedbo aktivnosti">
+				>
+				["at0015"] = <
+					text = <"Nenačrtovan dogodek">
+					description = <"Nenačrtovan dogodek, npr. neželen dogodek, ki vpliva na aktivnost">
+				>
+				["at0018"] = <
+					text = <"Neuspešni poskusi">
+					description = <"Število neuspešnih poskusov izvedbe">
+				>
+				["at0030"] = <
+					text = <"Dodatne naloge">
+					description = <"Podatki o nenačrtovanih aktivnostih, katere je bilo potrebno izvesti med aktivnostjo. Ta arhetip zajema naziv in opis naloge, drugi podatki o nalogi pa naj se zapišejo v povezanih (link) arhetipih tipa INSTRUCTION ali ACTION">
+				>
+				["at0031"] = <
+					text = <"Opis naloge">
+					description = <"Opis dodatnih nalog med izvajanjem aktivnosti">
+				>
+				["at0032"] = <
+					text = <"Zapis dodanih nalog">
+					description = <"Povazava na zapis o dodatni nalogi">
+				>
+				["at0034"] = <
+					text = <"Zahteva, sprožena">
+					description = <"Initiated - začeta">
+				>
+				["at0035"] = <
+					text = <"Zahteva, poslana">
+					description = <"Sent - poslana v task sezname izvajalcev">
+				>
+				["at0036"] = <
+					text = <"Aktivnost, načrtovana">
+					description = <"Scheduled - načrtovana v urniku">
+				>
+				["at0038"] = <
+					text = <"Zahteva, preložena">
+					description = <"Postoponed - preložena na kasnejši čas">
+				>
+				["at0039"] = <
+					text = <"Zahteva, preklicana">
+					description = <"Cancelled - preklicana zahteva">
+				>
+				["at0040"] = <
+					text = <"Zahteva, na čakanju">
+					description = <"Suspend - zahteva trenutno miruje, lahko jo nadaljujemo v prihodnosti">
+				>
+				["at0041"] = <
+					text = <"Zahteva, takojšnja zaustavitev">
+					description = <"Aborted - nepreklicno ustavljena zahteva">
+				>
+				["at0043"] = <
+					text = <"Zahteva, izvedena">
+					description = <"Completed">
+				>
+				["at0044"] = <
+					text = <"Poročilo pripravljeno">
+					description = <"Written - kreirano">
+				>
+				["at0045"] = <
+					text = <"Poročilo potrjeno">
+					description = <"Attested - primerno za distribucijo">
+				>
+				["at0046"] = <
+					text = <"Poročilo poslano">
+					description = <"Sent - distribuirano prejemnikom">
+				>
+				["at0047"] = <
+					text = <"Se izvaja">
+					description = <"Aktinost je v teku">
+				>
+				["at0048"] = <
+					text = <"Rezultat">
+					description = <"Rezultat, sprotno vrednotenje izvedene aktivnosti">
+				>
+				["at0049"] = <
+					text = <"Opis">
+					description = <"Narrative description about the procedure carried out.">
+				>
+				["at0050"] = <
+					text = <"Anatomska lokacija">
+					description = <"Podrobnosti o anatomski lokaciji, vezani na aktivnost">
+				>
+				["at0051"] = <
+					text = <"Metoda, tehnika">
+					description = <"ID uporabljene metode oz. tehnike">
+				>
+				["at0052"] = <
+					text = <"Naloga">
+					description = <"Naziv dodatne naloge, ki se je izvedla med aktivnostjo">
+				>
+				["at0053"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0054"] = <
+					text = <"ID naročila - naročnik">
+					description = <"Interni ID naročila, kot ga določi naročnik, npr. številka napotnice">
+				>
+				["at0055"] = <
+					text = <"Naročnik">
+					description = <"Kdo je naročil aktivnost, posameznik ali organizacija">
+				>
+				["at0056"] = <
+					text = <"ID naročila - prejemnik">
+					description = <"Interni ID naročila, kot ga določi prejemnik, npr. zap.št.pošte">
+				>
+				["at0057"] = <
+					text = <"Prejemnik">
+					description = <"Prejemnik naročila za izvedbo aktivnosti">
+				>
+				["at0058"] = <
+					text = <"*Emergency?(en)">
+					description = <"*Was this procedure performed as an emergency? True if Yes.(en)">
+				>
+			>
+		>
 		["en"] = <
 			items = <
 				["at0000"] = <
@@ -671,158 +836,6 @@ ontology
 				["at0058"] = <
 					text = <"Emergency?">
 					description = <"Was this procedure performed as an emergency? True if Yes.">
-				>
-			>
-		>
-		["nb"] = <
-			items = <
-				["at0000"] = <
-					text = <"Prosedyre">
-					description = <"En klinisk aktivitet some er utført for terapeutiske eller diagnostiske formål.">
-				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Prosedyre">
-					description = <"Navnet på prosedyren.">
-				>
-				["at0003"] = <
-					text = <"Prosedyredetaljer">
-					description = <"Detaljert, strukturert beskrivelse av den utførte prosedyre, inklusiv forberedelse og detaljer om anvendte metode(r) og utstyr/apparater.">
-				>
-				["at0004"] = <
-					text = <"Prosedyre mislyktes">
-					description = <"Var prosedyren til slutt mislykket? Verdien skal være \"sann\" hvis mislykket.">
-				>
-				["at0005"] = <
-					text = <"Kommentarer">
-					description = <"Kommentarer til prosedyren.">
-				>
-				["at0006"] = <
-					text = <"Komplikasjon">
-					description = <"Detaljer om en hvilken som helst komplikasjon på grunn av prosedyren.">
-				>
-				["at0013"] = <
-					text = <"Multimedia">
-					description = <"Multimediavisning av prosedyren inklusive bilder.">
-				>
-				["at0014"] = <
-					text = <"Indikasjonen for prosedyren">
-					description = <"Indikasjon for prosedyren.">
-				>
-				["at0015"] = <
-					text = <"Uventet hendelse">
-					description = <"En uforutsett hendelse før eller knyttet til prosedyren som kunne påvirke gjennomføringen, f.eks pasienten selv fjernet kanylen.">
-				>
-				["at0018"] = <
-					text = <"Mislykkede forsøk">
-					description = <"Antallet mislykkede forsøk på å utføre prosedyren.">
-				>
-				["at0030"] = <
-					text = <"Ytterligere aktiviteter">
-					description = <"Registrere informasjon om ikke-planlagte eller uventede aktiviteter som måtte gjøres i forbindelse med prosedyren. Registrer navnet på aktiviteten og en beskrivelse innen denne arketypen. Detaljene om aktiviteten bør registreres i spesifikke knyttet INSTRUCTION- eller ACTION-arketyper.">
-				>
-				["at0031"] = <
-					text = <"Aktivitetsbeskrivelse">
-					description = <"Beskrivelse av den ekstra aktiviteten som er utført under prosedyren.">
-				>
-				["at0032"] = <
-					text = <"Registrering av ekstra aktiviteten">
-					description = <"Lenke til den detaljerte dokumentasjon for den ekstra aktivitet.">
-				>
-				["at0034"] = <
-					text = <"Rekvisisjon påbegynt">
-					description = <"Rekvisisjon av prosedyren er igangsatt.">
-				>
-				["at0035"] = <
-					text = <"Rekvisisjon sendt">
-					description = <"Rekvisisjon av prosedyre er sendt.">
-				>
-				["at0036"] = <
-					text = <"Prosedyren er planlagt">
-					description = <"Prosedyren er planlagt.">
-				>
-				["at0038"] = <
-					text = <"Rekvisisjon utsatt">
-					description = <"Rekvisisjon av prosedyre er utsatt.">
-				>
-				["at0039"] = <
-					text = <"Rekvisisjon kansellert">
-					description = <"Rekvisisjon av prosedyre er kansellert.">
-				>
-				["at0040"] = <
-					text = <"Prosedyre suspendert">
-					description = <"Prosedyren er blitt suspendert.">
-				>
-				["at0041"] = <
-					text = <"Prosedyren avbrutt">
-					description = <"Prosedyren er blitt avbrutt.">
-				>
-				["at0043"] = <
-					text = <"Fullført">
-					description = <"Prosedyren er blitt fullført.">
-				>
-				["at0044"] = <
-					text = <"Rapport skrevet">
-					description = <"Prosedyrerapporten er skrevet.">
-				>
-				["at0045"] = <
-					text = <"Rapporten godkjent">
-					description = <"Prosedyrerapporten er godkjent.">
-				>
-				["at0046"] = <
-					text = <"Rapporten sendt">
-					description = <"Prosedyrerapporten er sendt.">
-				>
-				["at0047"] = <
-					text = <"Pågår">
-					description = <"Prosedyren pågår.">
-				>
-				["at0048"] = <
-					text = <"Resultat">
-					description = <"Resultatet av den utførte prosedyren.">
-				>
-				["at0049"] = <
-					text = <"Beskrivelse">
-					description = <"Tekstlig beskrivelse av den utførte prosedyren.">
-				>
-				["at0050"] = <
-					text = <"Detaljer for anatomisk område">
-					description = <"Detaljer om det anatomiske område for prosedyren.">
-				>
-				["at0051"] = <
-					text = <"Metode/teknikk">
-					description = <"Identifikasjon av spesifikk metode eller teknikk for prosedyren.">
-				>
-				["at0052"] = <
-					text = <"Aktivitet">
-					description = <"Navn på ytterligere aktiviter som er utført under prosedyren.">
-				>
-				["at0053"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0054"] = <
-					text = <"Rekvirent identifikator">
-					description = <"Den lokale ID som tildeles rekvisisjonen av den som rekvirerer prosedyren (Den ID som den bestillende avdeling eller klinikk tildeler en rekvisisjon).">
-				>
-				["at0055"] = <
-					text = <"Rekvirent">
-					description = <"Detaljer om den helsearbeider, klinikk eller organisasjon som har rekvirert prosedyren.">
-				>
-				["at0056"] = <
-					text = <"Mottaker identifikator">
-					description = <"Den ID som er tildelt rekvisisjonen av den som mottar (og som skal utføre) den rekvirerte prosedyre (Mottakerens ID til en prosedyre).">
-				>
-				["at0057"] = <
-					text = <"Rekvisisjonsmottaker">
-					description = <"Detaljer om den helseinstitusjon/person som mottar rekvisisjonen for en prosedyre.">
-				>
-				["at0058"] = <
-					text = <"Akutt">
-					description = <"Var denne prosedyre utført akutt? Verdien skal være \"sann\" hvis ja.">
 				>
 			>
 		>
@@ -998,7 +1011,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Неудачная процедура">
-					description = <"Ответ \\\"да\\\" если процедура неудачн">
+					description = <"Ответ \"да\" если процедура неудачн">
 				>
 				["at0005"] = <
 					text = <"Комментарии">
@@ -1118,7 +1131,7 @@ ontology
 				>
 				["at0056"] = <
 					text = <"идентификатор получателя заказа">
-					description = <"Идентификатор, присвоенный заказу орагнизацией, получившей заявку. Также называется \\\"Идентифакатор полученного заказа\\">
+					description = <"Идентификатор, присвоенный заказу орагнизацией, получившей заявку. Также называется \"Идентифакатор полученного заказа\". ">
 				>
 				["at0057"] = <
 					text = <"Исполнитель">
@@ -1127,6 +1140,158 @@ ontology
 				["at0058"] = <
 					text = <"Неотложность">
 					description = <"Была ли процедура выполнена по неотложным показаниям? Да, если это так">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prosedyre">
+					description = <"En klinisk aktivitet som er utført for terapeutiske eller diagnostiske formål.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Prosedyre">
+					description = <"Navnet på prosedyren.">
+				>
+				["at0003"] = <
+					text = <"Prosedyredetaljer">
+					description = <"Detaljert, strukturert beskrivelse av den utførte prosedyren, inklusiv forberedelse og detaljer om anvendte metode(r) og utstyr/apparater som er benyttet.">
+				>
+				["at0004"] = <
+					text = <"Prosedyre mislyktes">
+					description = <"Var prosedyren til slutt mislykket? Verdien skal være \"sann\" hvis mislykket.">
+				>
+				["at0005"] = <
+					text = <"Kommentarer">
+					description = <"Kommentarer til prosedyren.">
+				>
+				["at0006"] = <
+					text = <"Komplikasjon">
+					description = <"Detaljer om en hvilken som helst komplikasjon på grunn av prosedyren.">
+				>
+				["at0013"] = <
+					text = <"Multimedia">
+					description = <"Multimediavisning av prosedyren inklusiv bilder.">
+				>
+				["at0014"] = <
+					text = <"Indikasjon(ene) for prosedyren">
+					description = <"Årsak eller indikasjon for prosedyren.">
+				>
+				["at0015"] = <
+					text = <"Uventet hendelse">
+					description = <"En uforutsett hendelse før eller knyttet til prosedyren som kan påvirke gjennomføringen, f.eks at pasienten selv fjernet kanylen.">
+				>
+				["at0018"] = <
+					text = <"Mislykkede forsøk">
+					description = <"Antallet mislykkede forsøk på å utføre prosedyren.">
+				>
+				["at0030"] = <
+					text = <"Tilleggsoppgaver">
+					description = <"Registrere informasjon om ikke-planlagte eller uventede oppgaver som måtte gjøres i forbindelse med prosedyren. Registrer navnet på oppgaven og en beskrivelse innen denne arketypen. Detaljene om oppgavene bør registreres i spesifikke tilknyttede INSTRUCTION- eller ACTION-arketyper.">
+				>
+				["at0031"] = <
+					text = <"Oppgavebeskrivelse">
+					description = <"Beskrivelse av tilleggsoppgavene som er utført under prosedyren.">
+				>
+				["at0032"] = <
+					text = <"Registrering av tilleggsoppgavene">
+					description = <"Lenke til detaljert dokumentasjon av tilleggsoppgavene.">
+				>
+				["at0034"] = <
+					text = <"Rekvisisjon initiert">
+					description = <"Rekvisisjon for prosedyren er initiert.">
+				>
+				["at0035"] = <
+					text = <"Rekvisisjon sendt">
+					description = <"Rekvisisjon for prosedyre er sendt.">
+				>
+				["at0036"] = <
+					text = <"Prosedyre planlagt">
+					description = <"Prosedyren er planlagt.">
+				>
+				["at0038"] = <
+					text = <"Rekvisisjon utsatt">
+					description = <"Rekvisisjon for prosedyren er utsatt.">
+				>
+				["at0039"] = <
+					text = <"Rekvisisjon kansellert">
+					description = <"Rekvisisjon av prosedyre er kansellert.">
+				>
+				["at0040"] = <
+					text = <"Prosedyre suspendert">
+					description = <"Prosedyren er blitt suspendert.">
+				>
+				["at0041"] = <
+					text = <"Prosedyren avbrutt">
+					description = <"Prosedyren har blitt avbrutt.">
+				>
+				["at0043"] = <
+					text = <"Fullført">
+					description = <"Prosedyren er fullført.">
+				>
+				["at0044"] = <
+					text = <"Rapport skrevet">
+					description = <"Prosedyrerapporten er skrevet.">
+				>
+				["at0045"] = <
+					text = <"Rapporten godkjent">
+					description = <"Prosedyrerapporten er godkjent.">
+				>
+				["at0046"] = <
+					text = <"Rapport sendt">
+					description = <"Prosedyrerapporten har blitt sendt.">
+				>
+				["at0047"] = <
+					text = <"Pågår">
+					description = <"Prosedyren pågår.">
+				>
+				["at0048"] = <
+					text = <"Resultat">
+					description = <"Resultatet av den utførte prosedyren.">
+				>
+				["at0049"] = <
+					text = <"Beskrivelse">
+					description = <"Tekstlig beskrivelse av den utførte prosedyren.">
+				>
+				["at0050"] = <
+					text = <"Detaljer for anatomisk område">
+					description = <"Detaljer om det anatomiske område for prosedyren.">
+				>
+				["at0051"] = <
+					text = <"Metode/teknikk">
+					description = <"Identifikasjon av spesifikk metode eller teknikk for prosedyren.">
+				>
+				["at0052"] = <
+					text = <"Oppgaver">
+					description = <"Navn på tilleggsopppgaver som er utført under prosedyren.">
+				>
+				["at0053"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0054"] = <
+					text = <"Rekvirent identifikator">
+					description = <"Den lokale ID som tildeles rekvisisjonen av den som rekvirerer prosedyren (ID som den bestillende avdeling eller klinikk tildeler en rekvisisjon).">
+				>
+				["at0055"] = <
+					text = <"Rekvirent">
+					description = <"Detaljer om helsepersonell, klinikk eller organisasjon som har rekvirert prosedyren.">
+				>
+				["at0056"] = <
+					text = <"Mottaker identifikator">
+					description = <"Den ID som er tildelt rekvisisjonen av den som mottar (og som skal utføre) den rekvirerte prosedyre (Mottakerens ID til en prosedyre).">
+				>
+				["at0057"] = <
+					text = <"Rekvisisjonsmottaker">
+					description = <"Detaljer om den helseinstitusjon/person som mottar rekvisisjonen for en prosedyre.">
+				>
+				["at0058"] = <
+					text = <"Akutt?">
+					description = <"Var denne prosedyre utført akutt? Verdien skal være \"True\" hvis ja.">
 				>
 			>
 		>
