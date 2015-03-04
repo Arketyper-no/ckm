@@ -5,6 +5,17 @@ concept
 	[at0000]	-- Exclusion Statement
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital Bergen Norway">
+				["email"] = <"lbla@helse-bergen.no">
+			>
+			accreditation = <"MD DEAA, MBA spec in anesthesia and intensive care, spec in tropical med.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -25,14 +36,26 @@ Exclusion statements can only be considered to be current and accurate at the ti
 			misuse = <"Not to be used to record the exclusion or absence of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of this archetype for this purpose.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For eksplisitt registrering av fravær eller eksklusjon av kliniske funn eller vurderinger innen journalen på et bestemt tidspunkt.">
+			use = <"Brukes til eksplisitt registrering av fravær eller eksklusjon av kliniske funn eller evalueringer innen journalen på et bestemt tidspunkt. Denne arketypen har blitt designet spesielt for å unngå behovet for å bruke flagg eller terminologi for å uttrykke negasjon om de enkelte elementene i journalen.
+
+Denne arketypen er bevisst holdt enkel og åpen for å fange opp utsagn om fraværende eller ekskluderte konsepter i journalen. Spesialiseringer av denne arketypen vil fange opp spesifikk og mer detaljert informasjon om vanlige eksklusjoner, for eksempel problemer eller diagnoser.
+
+Eksklusjonsutsagn kan bare anses å være oppdaterte og nøyaktige på registreringstidspunktet.">
+			keywords = <"eksklusjon", "fravær">
+			misuse = <"Brukes ikke for registrering av eksklusjon eller fravær av uønskede reaksjoner, legemidler, prosedyrer, problemer, familieanamnese eller diagnoser. Til dette brukes spesialiseringer av denne arketypen.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Stephen Chu, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Stephen Royce, NEHTA, Australia">
+	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Stephen Chu, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Stephen Royce, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["references"] = <"Exclusion Statement, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 02 Mar 2010. Available at: 
 http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1301_2 (accessed 3 Sept 2013)">
-		["MD5-CAM-1.0.1"] = <"8E2040F19D49D3C6E050BA080C7CC766">
+		["MD5-CAM-1.0.1"] = <"511CB6C8F79AF8FCF68EFCE75BDE319C">
 	>
 
 definition
@@ -105,6 +128,39 @@ ontology
 				["at0007"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the Exclusion not captured in other fields.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Eksklusjonsutsagn">
+					description = <"Generelt eksplisitt utsagn som må registreres som klinisk ekskludert i journalen på et bestemt tidspunkt.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Eksklusjonsutsagn">
+					description = <"Utsagn om eksklusjon i journalen.">
+					comment = <"Brukes til å fange opp all informasjon som er nødvendig for eksplisitt registrering av eksklusjon i journalen. Uttalelsen støtter registrering av mer omfattende uttalelser eller uttalelser om et bestemt objekt. Se spesialiseringer for legemidler, uønskede reaksjoner, problemer/diagnoser og prosedyrer for eksplisitt modellerte eksempler.">
+				>
+				["at0003"] = <
+					text = <"Spesifikt objekt">
+					description = <"Identifikasjon av det spesifikke objektet som eksklusjonsutsagnet omhandler.">
+				>
+				["at0004"] = <
+					text = <"Dato for siste oppdatering">
+					description = <"Dato for når eksklusjonen sist ble klinisk satt, styrket eller bekreftet.">
+				>
+				["at0006"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar om eksklusjonen som ikke fanges opp i andre felter.">
 				>
 			>
 		>
