@@ -20,103 +20,128 @@ description
 		["name"] = <"Dr Ian McNicoll">
 		["organisation"] = <"Ocean Informatics, United Kingdom">
 		["email"] = <"ian.mcnicoll@oceaninformatics.com">
-		["date"] = <"08/12/2009">
+		["date"] = <"2009-12-08">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"Generic pattern for a request for any or all healthcare services. Commonly used requests may be specialised and based on this archetype.">
-			use = <"Use to record a request for any or all healthcare services.">
+			purpose = <"Generic pattern for a request for any or all healthcare services.">
+			use = <"Use to record a request for any or all healthcare services. Commonly used requests may be specialised and based on this archetype.">
 			keywords = <"request", "refer", "order", "service", "provide">
-			misuse = <"">
+			misuse = <"Not to be used for requests for which an explicit specialisation exists - for example:
+- Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
+- Imaging examination request - use the INSTRUCTION.request-imaging_exam archetype;
+- Procedure request - use the INSTRUCTION.request-procedure archetype; and 
+- Referral request - use the INSTRUCTION.request-referral archetype.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Generisk mønster for rekvisisjon av en hvilken som helst helsetjeneste. Spesifikke rekvisisjonstyper i vanlig bruk spesialiseres basert på denne arketypen.">
-			use = <"Brukes for å registrere en generell rekvisisjon av helsetjenester.">
-			keywords = <"rekvisisjon", "henvise", "bestilling", "foreskriving", "tjeneste", "tjenesteyter">
-			misuse = <"">
+			purpose = <"Generisk mønster for rekvirering av en hvilken som helst helsetjeneste.">
+			use = <"Brukes for å registrere en generell rekvirering/bestilling av helsetjenester. Det lages spesialiserte arketyper for vanlige rekvirerbare tjenester basert på denne arketypen, f.eks. laboratorierekvisisjon eller henvisning.">
+			keywords = <"rekvisisjon", "henvise", "bestilling", "foreskriving", "tjeneste", "tjenesteyter", "rekvirere", "henvisning", "bestille", "anmodning", "forespørre", "forespørsel", "anmode", "tilsyn">
+			misuse = <"Skal ikke brukes for rekvisisjoner der det eksisterer eksplisitte spesialiseringer, f.eks:
+
+
+
+- Laboratorierekvisisjon - bruk arketypen INSTRUCTION.request-laboratory_test
+
+
+
+- Rekvisisjon av billeddiagnostikk - bruk arketypen INSTRUCTION.request-imaging_exam
+
+
+
+- Prosedyrerekvisisjon - bruk arketypen INSTRUCTION.request-procedure
+
+
+
+- Henvisning - bruk arketypen INSTRUCTION.request-referral">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"CommitteeDraft">
-	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"A7FD69D2DC33C4C2FC0AB6F1CF5F15E5">
+		["MD5-CAM-1.0.1"] = <"33257823827729221D1173B7B0E5D226">
 	>
 
 definition
-	INSTRUCTION[at0000] matches {	-- Healthcare service request
+	INSTRUCTION[at0000] matches {	-- Helsetjenesterekvirering
 		activities cardinality matches {0..*; unordered} matches {
-			ACTIVITY[at0001] occurrences matches {1..*} matches {	-- Request
+			ACTIVITY[at0001] occurrences matches {1..*} matches {	-- Rekvirering
 				description matches {
 					ITEM_TREE[at0009] matches {	-- Tree
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0121] matches {	-- Service requested
+							ELEMENT[at0121] matches {	-- Tjenestenavn
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0135] occurrences matches {0..1} matches {	-- Description of service
+							ELEMENT[at0135] occurrences matches {0..1} matches {	-- Beskrivelse
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {	-- Specific details
+							allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {	-- Spesifikke detaljer
 								include
 									archetype_id/value matches {/.*/}
 							}
-							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Reason for request
+							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Rekvisisjonsårsak
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0064] occurrences matches {0..1} matches {	-- Reason description
+							ELEMENT[at0064] occurrences matches {0..1} matches {	-- Årsaksbeskrivelse
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0065] occurrences matches {0..1} matches {	-- Intent
+							ELEMENT[at0065] occurrences matches {0..1} matches {	-- Hensikt
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0068] occurrences matches {0..1} matches {	-- Urgency
+							ELEMENT[at0068] occurrences matches {0..1} matches {	-- Hastegrad
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0136, 	-- Emergency
-											at0137, 	-- Urgent
-											at0138]	-- Routine
+											at0136, 	-- Akutt
+											at0137, 	-- Haster
+											at0138]	-- Rutine
 										}
 									}
 								}
 							}
-							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Date &/or time service required
+							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Dato/tid for rekvirert tjeneste
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0144] occurrences matches {0..1} matches {	-- Latest date service required
+							ELEMENT[at0144] occurrences matches {0..1} matches {	-- Seneste dato for rekvirert tjeneste
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0076] occurrences matches {0..1} matches {	-- Supplementary information to follow
+							ELEMENT[at0145] occurrences matches {0..1} matches {	-- Tidligste dato for rekvirert tjeneste
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0076] occurrences matches {0..1} matches {	-- Supplerende informasjon følger
 								value matches {
 									DV_BOOLEAN matches {
 										value matches {True}
 									}
 								}
 							}
-							ELEMENT[at0078] occurrences matches {0..1} matches {	-- Supplementary information expected
+							ELEMENT[at0078] occurrences matches {0..1} matches {	-- Supplerende informasjon forventes
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	-- Patient requirements
+							allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	-- Pasientens behov
 								include
 									archetype_id/value matches {/.*/}
 							}
@@ -128,34 +153,34 @@ definition
 		protocol matches {
 			ITEM_TREE[at0008] matches {	-- Tree
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Requestor Identifier
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Rekvisisjonsidentifikator
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0141] occurrences matches {0..*} matches {	-- Requestor
+					allow_archetype CLUSTER[at0141] occurrences matches {0..*} matches {	-- Rekvirent
 						include
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Receiver identifier
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Mottakers rekvisisjonsidentifikator
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0142] occurrences matches {0..*} matches {	-- Receiver
+					allow_archetype CLUSTER[at0142] occurrences matches {0..*} matches {	-- Mottaker
 						include
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0127] occurrences matches {0..1} matches {	-- Request status
+					ELEMENT[at0127] occurrences matches {0..1} matches {	-- Rekvisisjonsstatus
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	-- Distribution list for response
+					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	-- Distribusjonsliste for svar
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution\.v1/}
 					}
-					allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {	-- Localisation
+					allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -165,14 +190,14 @@ definition
 	}
 
 
-
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"Healthcare service request">
-					description = <"Request for a range of different healthcare services, for example, a referral, lab request, equipment request.">
+					description = <"Request for a healthcare service to be supplied by another healthcare provider or support agency.">
+					comment = <"For example: a referral, lab request, equipment request.">
 				>
 				["at0001"] = <
 					text = <"Request">
@@ -197,10 +222,12 @@ ontology
 				["at0040"] = <
 					text = <"Date &/or time service required">
 					description = <"The date and time that the service should be performed or completed.">
+					comment = <"In practice, clinicians will often think in terms of ordering services in inexact terms, for example: review in 3 months, 6 months or 12 months. As clinical systems need more exact parameters to operate on, this '3 month' will be converted to an exact date 3 months from the date of recording and stored using this data element.">
 				>
 				["at0062"] = <
 					text = <"Reason for request">
-					description = <"A short description of the reason for the request.  This is often coded with an external terminology.">
+					description = <"A short description of the reason for the request.">
+					comment = <"Coding of the 'Reason for request' with a coding system is desirable, if available.">
 				>
 				["at0064"] = <
 					text = <"Reason description">
@@ -208,7 +235,8 @@ ontology
 				>
 				["at0065"] = <
 					text = <"Intent">
-					description = <"Stated intent of the request by the referrer.">
+					description = <"The requestor's intention as to what they wish to achieve by the request.">
+					comment = <"For example a referral with the intent of having specialist care take over the care of the patient, or advice on how to proceed with an investigation or treatment.">
 				>
 				["at0068"] = <
 					text = <"Urgency">
@@ -223,16 +251,18 @@ ontology
 					description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
 				>
 				["at0112"] = <
-					text = <"Localisation">
-					description = <"Local detailed information such as billing requirements.">
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 				["at0116"] = <
 					text = <"Patient requirements">
 					description = <"Language, transport or other personal requirements to support the patient's attendance or participation in provision of the service.">
 				>
 				["at0121"] = <
-					text = <"Service requested">
-					description = <"Identification of the service requested. This is often coded with an external terminology.">
+					text = <"Service name">
+					description = <"Identification of the service requested, by name.">
+					comment = <"Coding of the 'Service name' with a coding system is desirable, if available.">
 				>
 				["at0127"] = <
 					text = <"Request status">
@@ -245,11 +275,12 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0132"] = <
 					text = <"Specific details">
-					description = <"Structured detail defining the service requested eg CLUSTER archetype specifying the specific catheter that is to be inserted.">
+					description = <"Structured detail defining the service requested.">
+					comment = <"Example: CLUSTER archetype specifying the specific catheter that is to be inserted.">
 				>
 				["at0135"] = <
-					text = <"Description of service">
-					description = <"A detailed narrative description of the service requested.">
+					text = <"Description">
+					description = <"Narrative description of the service requested.">
 				>
 				["at0136"] = <
 					text = <"Emergency">
@@ -274,17 +305,28 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0144"] = <
 					text = <"Latest date service required">
 					description = <"The latest date that is acceptable for the service to be completed.">
+					comment = <"For example: a service may be required to be completed before another event, such as scheduled surgery.">
+				>
+				["at0145"] = <
+					text = <"Earliest date service required">
+					description = <"The earliest date that is acceptable for the service to be started.">
+					comment = <"Somtimes a certain amount of time must pass before a service can be performed, for example some gastroscopies can only be performed once the patient has stopped taking certain medications for a set amount of time.">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Helsetjenesterekvisisjon">
-					description = <"En generell rekvisisjon for en rekke forskjellige helsetjenester. For eksempel henvisning, laboratorieundersøkelser, utstyrsrekvisisjon.">
+					text = <"Helsetjenesterekvirering">
+					description = <"Forespørsel om utførelse av en helsetjeneste, til annet helsepersonell eller andre organisasjoner.">
+					comment = <"For eksempel: henvisning, laboratorieundersøkelser, utstyrsrekvisisjon, tilsynsforespørsel
+
+
+
+">
 				>
 				["at0001"] = <
-					text = <"Rekvisisjon">
+					text = <"Rekvirering">
 					description = <"Aktuell aktivitet.">
 				>
 				["at0008"] = <
@@ -297,31 +339,34 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0010"] = <
 					text = <"Rekvisisjonsidentifikator">
-					description = <"Den lokale IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som rekvirerer prosedyren.">
+					description = <"Rekvisisjonens identifikator, tilordnet av den som rekvirererer tjenesten. Det kan være helsepersonell, organisasjon eller applikasjonen.">
 				>
 				["at0011"] = <
 					text = <"Mottakers rekvisisjonsidentifikator">
-					description = <"IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som mottar rekvisisjonen.">
+					description = <"Rekvisisjonens identifikator, tilordnet av den som mottar rekvisisjonen. Mottaker kan være helsepersonell, organisasjon eller applikasjonen.">
 				>
 				["at0040"] = <
-					text = <"Dato /tid for den rekvirerte tjesten">
-					description = <"Dato og tidspunkt for når tjenesten bør være utført eller avsluttet.">
+					text = <"Dato/tid for rekvirert tjeneste">
+					description = <"Dato/tid for når tjenesten bør være utført eller avsluttet.">
+					comment = <"I praksis vil klinikere ofte rekvirere tjenester med ikke-eksakte tidsangivelser, f.eks. kontroll om 3 måneder, 6 måneder eller 12 måneder. Kliniske systemer krever mer eksakte parametre å jobbe med, og \"3 mnd\" vil konverteres til en eksakt dato 3 måneder fra registreringsdatoen, og lagres i dette dataelementet.">
 				>
 				["at0062"] = <
-					text = <"Årsak for rekvisisjonen">
-					description = <"En kort beskrivelse av årsaken til rekvisisjonen. Dette kodes ofte ved hjelp av en ekstern terminologi.">
+					text = <"Rekvireringsårsak">
+					description = <"En kort beskrivelse av årsaken eller indikasjon for rekvireringen.">
+					comment = <"Koding av rekvireringsårsaken med et kodeverk er ønskelig, dersom tilgjengelig.">
 				>
 				["at0064"] = <
 					text = <"Årsaksbeskrivelse">
-					description = <"En narrativ beskrivelse som forklarer årsaken til rekvisisjonen.">
+					description = <"En narrativ beskrivelse som forklarer årsaken til rekvireringen.">
 				>
 				["at0065"] = <
 					text = <"Hensikt">
-					description = <"Rekvirentens beskrivelse av hensikten for rekvisisjonen.">
+					description = <"Rekvirentens hensikt med tanke på hva de ønsker å oppnå ved rekvireringen.">
+					comment = <"For eksempel en henvisning med den hensikt at spesialisthelsetjenesten skal ta over omsorgen for pasienten, eller for å få råd om hvordan fortsette med utredning eller behandling.">
 				>
 				["at0068"] = <
 					text = <"Hastegrad">
-					description = <"Rekvisisjonens hastegrad.">
+					description = <"Rekvireringens hastegrad.">
 				>
 				["at0076"] = <
 					text = <"Supplerende informasjon følger">
@@ -332,16 +377,18 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"Detaljer om hva slags supplerende informasjon som ettersendes, for eksempel navnet på laboratorieundersøkelse.">
 				>
 				["at0112"] = <
-					text = <"Lokalisering">
-					description = <"Lokal detaljert informasjon, for eksempel faktureringsinformasjon.">
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som er nødvendig for å registrere lokalt innhold/kontekst, eller for å sammenstille med andre referansemodeller/formalismer.">
+					comment = <"F.eks lokale informasjonskrav eller ekstra metadata for å tilpasse med FHIR eller CIMI ekvivalenter.">
 				>
 				["at0116"] = <
 					text = <"Pasientens behov">
 					description = <"Språk, transport eller andre personlige behov som er nødvendige for å sikre pasientens oppmøte eller deltakelse i utførelsen av den rekvirerte tjeneste.">
 				>
 				["at0121"] = <
-					text = <"Rekvirert tjeneste">
-					description = <"Identifikasjon av den rekvirerte tjenesten. Dette kodes ofte ved hjelp av en ekstern terminologi.">
+					text = <"Tjenestenavn">
+					description = <"Navn på forespurt tjeneste.">
+					comment = <"Koding av tjenestenavnet med et kodeverk er ønskelig, dersom tilgjengelig.">
 				>
 				["at0127"] = <
 					text = <"Rekvisisjonsstatus">
@@ -353,11 +400,12 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0132"] = <
 					text = <"Spesifikke detaljer">
-					description = <"Strukturerte detaljer som definerer den rekvirerte tjenesten, for eksempel CLUSTER.device-arketypen som spesifiserer det spesifikke kateter som skal legges inn.">
+					description = <"Strukturerte detaljer om den rekvirerte tjenesten.">
+					comment = <"Eksempel: En CLUSTER-arketype som spesifiserer det spesifikke kateteret som skal legges inn.">
 				>
 				["at0135"] = <
-					text = <"Beskrivelse av tjeneste">
-					description = <"En detaljert narrativ beskrivelse av den rekvirerte tjenesten.">
+					text = <"Beskrivelse">
+					description = <"Narrativ beskrivelse av tjenesten som er rekvirert.">
 				>
 				["at0136"] = <
 					text = <"Akutt">
@@ -380,8 +428,14 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"Detaljer om helsepersonellet eller organisasjonen som mottar prosedyrerekvisisjonen.">
 				>
 				["at0144"] = <
-					text = <"Seneste dato for rekvirerte tjenesten">
+					text = <"Seneste dato for rekvirert tjeneste">
 					description = <"Seneste akseptable dato for å fullføre tjenesten.">
+					comment = <"Eksempel: I noen tilfeller må en tjeneste være utført før en annen hendelse, f.eks. planlagt kirurgi.">
+				>
+				["at0145"] = <
+					text = <"Tidligste dato for rekvirert tjeneste">
+					description = <"Tidligste akseptable dato for å påbegynne tjenesten.">
+					comment = <"I noen tilfeller må en viss tid løpe før en tjeneste kan utføres, f.eks. ved noen gastroskopier er en avhengig av at pasienten har seponert legemidler i en periode før prosedyren.">
 				>
 			>
 		>
