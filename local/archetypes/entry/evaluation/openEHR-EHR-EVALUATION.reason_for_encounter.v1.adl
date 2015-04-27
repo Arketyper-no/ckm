@@ -79,27 +79,28 @@ Não deve ser utilizado para registrar os detalhes específicos de diagnóstico 
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere årsaken til enhver kontakt mellom helsepersonell og pasient.">
-			use = <"For å registrere årsaken til enhver kontakt mellom helsepersonell og pasient.
+			purpose = <"For å registrere årsaken til kontakt mellom helsepersonell og individet.">
+			use = <"For å registrere årsaken til kontakt mellom helsepersonell og individ.
 
 Kontaktårsak er et vanlig uttrykk som brukes i klinisk medisin, begrepet brukes oftest på to måter - en som refererer til en administrativ kategori for levering av helsetjenester og en som gjenspeiler det kliniske behovet for å søke helsetjenester. 
 
 Arketypen inneholder to dataelementer:
-- \"Kontaktårsak\" brukes for å dokumentere den administrative delen av helsehjelpen som oppsøkes eller behøves, for eksempel konsultasjonstype, øyeblikkelig hjelp, preoperativ vurdering, svangerskapskontroll eller elektiv innleggelse. Dataelementet reflekterer en administrativ kategorisering av helsehjelpen. Valg av ordet kontaktårsak viser at det er en økt trend mot alternative måter for utføring av helsetjenester som ikke må ende opp med ansikt til ansikt kontakt mellom helsepersonell og pasient i konsultasjonsrommet.
--\"Klinisk problemstilling\" brukes for å dokumentere kliniske årsaker for kontakten. Formålet er å registrere pasientens oppfatning av problemer og symptomer som har vært utløsende faktor for at en søker hjelp fra helsevesenet, for eksempel ønske om å slutte å røyke, stress, kortpusthet eller magesmerter. Sykdomstegn som \"nedsatt bevissthet\" kan også registreres her, for eksempel når prehospitalt personell møter en bevisstløs pasient.
+- \"Administrativ kontaktårsak\" brukes for å dokumentere den administrative delen av helsehjelpen som oppsøkes eller behøves, for eksempel konsultasjonstype, øyeblikkelig hjelp, preoperativ vurdering, svangerskapskontroll eller elektiv innleggelse. Dataelementet reflekterer en administrativ kategorisering av helsehjelpen. Valg av ordet kontaktårsak viser at det er en økt trend mot alternative måter for utføring av helsetjenester som ikke må ende opp med ansikt til ansikt kontakt mellom helsepersonell og pasient i konsultasjonsrommet.
 
-Et annet vanlig brukt begrep er \"Hovedproblemstilling\". Dette er i praksis en form for klinisk problemstilling, som ikke per nå er modellert eksplisitt. Siden Klinisk problemstilling har ubegrenset antall forekomster, kan en registrere flere kliniske problemstillinger. Det ønskes tilbakemelding på om dette må modelleres eksplisitt.">
-			keywords = <"kontaktårsak", "årsak", "besøk", "årsak for besøk", "problemstilling", "konsultasjonsårsak", "innleggelsesårsak">
+-\"Klinisk kontaktårsak\" brukes for å dokumentere kliniske årsaker for kontakten. Formålet er å registrere individets oppfatning av problemer og symptomer som har vært utløsende faktor for at en søker hjelp fra helsevesenet, for eksempel ønske om å slutte å røyke, stress, kortpusthet eller magesmerter. Sykdomstegn som \"nedsatt bevissthet\" kan også registreres her, for eksempel når prehospitalt personell møter en bevisstløs person.
+
+Et annet vanlig brukt begrep er \"Hovedproblemstilling\". Dette er i praksis en form for klinisk problemstilling, som ikke per nå er modellert eksplisitt. Siden Klinisk kontaktårsak har ubegrenset antall forekomster, kan en registrere flere kliniske kontaktårsaker.">
+			keywords = <"kontaktårsak", "årsak", "besøk", "årsak for besøk", "problemstilling", "konsultasjonsårsak", "innleggelsesårsak", "henvisningsgrunn", "henvisningsårsak", "henvendelse">
 			misuse = <"Skal ikke benyttes for å registrere spesifikke detaljer om pasientens sykehistorie eller forløp av symptomer. Bruk OBSERVATION.story å registrere den fritekstlige delen og de relaterte nøstede CLUSTER-arketypene for strukturert innhold f.eks CLUSTER.symptom, CLUSTER.event og CLUSTER.issue. 
 Skal ikke benyttes for å registrere bestemte detaljer om diagnoser som kan være nødvendig i tillegg til \"Kontaktårsak\" f.eks innleggelse eller preoperativ diagnose som en del av en innleggelse i sykehus for utførelse av en prosedyre. Bruk EVALUATION.problem_diagnosis (og beslektede spesialiseringer) for dette formålet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sergio Carmona, Chile", "Beatriz de Faria Leão, Brazil", "Sebastian Garde, Ocean Informatics, Germany", "Omer Hotomaroglu, Turkey", "Sundaresan Jagannathan, Scottish NHS, United Kingdom", "Ian McNicoll, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor, Translation Editor)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sergio Carmona, Chile", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Beatriz de Faria Leão, Brazil", "Rose Mari Eikås, Helse Bergen, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Anne Gunn Haugland, Helse Bergen HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Omer Hotomaroglu, Turkey", "Sundaresan Jagannathan, Scottish NHS, United Kingdom", "Lars Morgan Karlsen, DIPS ASA, Norway", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll, Ocean Informatics, Australia", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor, Translation Editor)">
 	other_details = <
 		["references"] = <"openEHR Foundation. openEHR wiki: Reason for Encountrer or Chief Complaint [Internet]. 2008 Feb 13 [cited June 17 2012];  Available at http://www.openehr.org/wiki/display/healthmod/Reason+for+encounter+or+Chief+complaint.">
-		["MD5-CAM-1.0.1"] = <"485B233633A72B6D66018B8691E4DB81">
+		["MD5-CAM-1.0.1"] = <"BF38658110C32E34395FFAF92C0F831E">
 	>
 
 definition
@@ -178,21 +179,21 @@ Coding of the Reason for Contact with a terminology is desirable, where possible
 			items = <
 				["at0000"] = <
 					text = <"Kontaktårsak">
-					description = <"For å registrere administrative og/eller kliniske årsaker til initiering av kontakt med helsevesenet.">
+					description = <"For å registrere administrative og/eller kliniske årsaker til kontakt med helsevesenet.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Kontaktårsak">
-					description = <"Identifikasjon av den administrative årsaken at pasienten oppsøker helsetjenester.">
+					text = <"Administrativ kontaktårsak">
+					description = <"Den administrative årsaken til at individet oppsøker helsetjenester.">
 					comment = <"Eksempler: klinisk konsultasjon, øyeblikkelig hjelp-konsultasjon, helsesjekk før ansettelse, svangerskapskontroll, gynekologisk undersøkelse, preoperativ undersøkelse, eller årlig medisinsk kontroll.
 Koding av \"kontaktårsak\" med en terminologi foretrekkes når mulig.">
 				>
 				["at0004"] = <
-					text = <"Klinisk problemstilling">
-					description = <"Identifikasjon av klinisk årsak for at pasienten oppsøker helsevesenet.">
+					text = <"Klinisk kontaktårsak">
+					description = <"Den kliniske årsaken til at individet oppsøker helsevesenet.">
 					comment = <"Kliniske årsaker kan omfatte helseproblemer, symptomer, eller fysiske sykdomstegn. Eksempler: Helseproblemer - ønske om å slutte å røyke eller å gå ned i vekt, symptomer - magesmerter eller kortpusthet, fysiske sykdomstegn - endret bevissthetsnivå.
 Koding av \"Klinisk problemstilling\" med en terminologi foretrekkes når mulig.">
 				>
