@@ -26,7 +26,7 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"Generic pattern for a request for any or all healthcare services.">
-			use = <"Use to record a request for any or all healthcare services. Commonly used requests may be specialised and based on this archetype.">
+			use = <"Use to record a request for any or all healthcare services. Commonly used requests may be specialised and based on this archetype, for example lab requests or referrals.">
 			keywords = <"request", "refer", "order", "service", "provide">
 			misuse = <"Not to be used for requests for which an explicit specialisation exists - for example:
 - Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
@@ -51,7 +51,7 @@ description
 	lifecycle_state = <"CommitteeDraft">
 	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"8700DE7C4C54ED98DA9D0DD187ED527F">
+		["MD5-CAM-1.0.1"] = <"8B89F509DBB67F691E9C302F8D587E31">
 	>
 
 definition
@@ -183,11 +183,11 @@ ontology
 				["at0000"] = <
 					text = <"Healthcare service request">
 					description = <"Request for a healthcare service to be supplied by another healthcare provider or support agency.">
-					comment = <"For example: a referral, lab request, equipment request.">
+					comment = <"For example equipment request.">
 				>
 				["at0001"] = <
 					text = <"Request">
-					description = <"Current Activity.">
+					description = <"Description of the requested service.">
 				>
 				["at0008"] = <
 					text = <"Tree">
@@ -206,7 +206,7 @@ ontology
 					description = <"The ID assigned to the order by the healthcare provider or organisation receiving the request for service. This is also referred to as Filler Order Identifier.">
 				>
 				["at0040"] = <
-					text = <"Date &/or time service required">
+					text = <"Date &/or time for completed service">
 					description = <"The date and time that the service should be performed or completed.">
 					comment = <"In practice, clinicians will often think in terms of ordering services in inexact terms, for example: review in 3 months, 6 months or 12 months. As clinical systems need more exact parameters to operate on, this '3 month' will be converted to an exact date 3 months from the date of recording and stored using this data element.">
 				>
@@ -233,7 +233,7 @@ ontology
 					description = <"True indicates that additional information has been identified and will be forwarded when available eg incomplete pathology test results.">
 				>
 				["at0078"] = <
-					text = <"Supplementary information expected">
+					text = <"Details of expected supplementary information">
 					description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
 				>
 				["at0112"] = <
@@ -287,8 +287,8 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					comment = <"Somtimes a certain amount of time must pass before a service can be performed, for example some gastroscopies can only be performed once the patient has stopped taking certain medications for a set amount of time.">
 				>
 				["at0146"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
+					text = <"Date &/or time for started service">
+					description = <"The date and time that the service should be started.">
 				>
 			>
 		>
