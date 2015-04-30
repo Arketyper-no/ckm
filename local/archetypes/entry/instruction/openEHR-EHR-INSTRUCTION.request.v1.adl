@@ -39,7 +39,7 @@ description
 			language = <[ISO_639-1::nb]>
 			purpose = <"Generisk mønster for rekvirering av en hvilken som helst helsetjeneste.">
 			use = <"Brukes for å registrere en generell rekvirering/bestilling av helsetjenester. Det lages spesialiserte arketyper for vanlige rekvirerbare tjenester basert på denne arketypen, f.eks. laboratorierekvisisjon eller henvisning.">
-			keywords = <"rekvisisjon", "henvise", "bestilling", "foreskriving", "tjeneste", "tjenesteyter", "rekvirere", "henvisning", "bestille", "anmodning", "forespørre", "forespørsel", "anmode", "tilsyn">
+			keywords = <"rekvisisjon", "bestilling", "foreskriving", "tjeneste", "tjenesteyter", "rekvirere", "bestille", "anmodning", "forespørre", "forespørsel", "anmode", "tilsyn">
 			misuse = <"Skal ikke brukes for rekvisisjoner der det eksisterer eksplisitte spesialiseringer, f.eks:
 - Laboratorierekvisisjon - bruk arketypen INSTRUCTION.request-laboratory_test
 - Rekvisisjon av billeddiagnostikk - bruk arketypen INSTRUCTION.request-imaging_exam
@@ -49,9 +49,9 @@ description
 		>
 	>
 	lifecycle_state = <"CommitteeDraft">
-	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E46E1D8C979CB408A4DEAE0D65F2BE2B">
+		["MD5-CAM-1.0.1"] = <"8700DE7C4C54ED98DA9D0DD187ED527F">
 	>
 
 definition
@@ -75,7 +75,7 @@ definition
 								include
 									archetype_id/value matches {/.*/}
 							}
-							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Rekvisisjonsårsak
+							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Rekvireringsårsak
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -92,17 +92,15 @@ definition
 							}
 							ELEMENT[at0068] occurrences matches {0..1} matches {	-- Hastegrad
 								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0136, 	-- Akutt
-											at0137, 	-- Haster
-											at0138]	-- Rutine
-										}
-									}
+									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Dato/tid for rekvirert tjeneste
+							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Dato/tid for fullført tjeneste
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0146] occurrences matches {0..1} matches {	-- Dato/tid for påbegynt tjeneste
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
@@ -124,7 +122,7 @@ definition
 									}
 								}
 							}
-							ELEMENT[at0078] occurrences matches {0..1} matches {	-- Supplerende informasjon forventes
+							ELEMENT[at0078] occurrences matches {0..1} matches {	-- Detaljer om følgende supplerende informasjon
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -164,7 +162,7 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	-- Distribusjonsliste for svar
+					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	-- Svarmottakere
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution\.v1/}
 					}
@@ -270,18 +268,6 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					text = <"Description">
 					description = <"Narrative description of the service requested.">
 				>
-				["at0136"] = <
-					text = <"Emergency">
-					description = <"The request is an emergency.">
-				>
-				["at0137"] = <
-					text = <"Urgent">
-					description = <"The request is urgent.">
-				>
-				["at0138"] = <
-					text = <"Routine">
-					description = <"The request is routine.">
-				>
 				["at0141"] = <
 					text = <"Requestor">
 					description = <"Details about the healthcare provider or organisation requesting the service.">
@@ -300,6 +286,10 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"The earliest date that is acceptable for the service to be started.">
 					comment = <"Somtimes a certain amount of time must pass before a service can be performed, for example some gastroscopies can only be performed once the patient has stopped taking certain medications for a set amount of time.">
 				>
+				["at0146"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
 			>
 		>
 		["nb"] = <
@@ -307,7 +297,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0000"] = <
 					text = <"Helsetjenesterekvirering">
 					description = <"Forespørsel om utførelse av en helsetjeneste, til annet helsepersonell eller andre organisasjoner.">
-					comment = <"For eksempel: henvisning, laboratorieundersøkelser, utstyrsrekvisisjon, tilsynsforespørsel
+					comment = <"For eksempel: utstyrsrekvisisjon, tilsynsforespørsel
 
 
 
@@ -319,7 +309,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0001"] = <
 					text = <"Rekvirering">
-					description = <"Aktuell aktivitet.">
+					description = <"Beskrivelse av tjenesten det rekvireres til.">
 				>
 				["at0008"] = <
 					text = <"Tree">
@@ -338,7 +328,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"Rekvisisjonens identifikator, tilordnet av den som mottar rekvisisjonen. Mottaker kan være helsepersonell, organisasjon eller applikasjonen.">
 				>
 				["at0040"] = <
-					text = <"Dato/tid for rekvirert tjeneste">
+					text = <"Dato/tid for fullført tjeneste">
 					description = <"Dato/tid for når tjenesten bør være utført eller avsluttet.">
 					comment = <"I praksis vil klinikere ofte rekvirere tjenester med ikke-eksakte tidsangivelser, f.eks. kontroll om 3 måneder, 6 måneder eller 12 måneder. Kliniske systemer krever mer eksakte parametre å jobbe med, og \"3 mnd\" vil konverteres til en eksakt dato 3 måneder fra registreringsdatoen, og lagres i dette dataelementet.">
 				>
@@ -365,7 +355,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"Verdien \"Sann\" indikerer at supplerende informasjon er blitt identifisert og vil bli ettersendt når den er tilgjengelig, for eksempel ufullstendige laboratoriesvar.">
 				>
 				["at0078"] = <
-					text = <"Supplerende informasjon forventes">
+					text = <"Detaljer om følgende supplerende informasjon">
 					description = <"Detaljer om hva slags supplerende informasjon som ettersendes, for eksempel navnet på laboratorieundersøkelse.">
 				>
 				["at0112"] = <
@@ -387,7 +377,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					description = <"Status for rekvisisjonen oppgitt av rekvirenten. Status brukes for å vise om dette er den primære rekvisisjonen, en endring eller supplerende informasjon.">
 				>
 				["at0128"] = <
-					text = <"Distribusjonsliste for svar">
+					text = <"Svarmottakere">
 					description = <"En liste over personer eller organisasjoner som bør motta svar på rekvisisjonen.">
 				>
 				["at0132"] = <
@@ -397,19 +387,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0135"] = <
 					text = <"Beskrivelse">
-					description = <"Narrativ beskrivelse av tjenesten som er rekvirert.">
-				>
-				["at0136"] = <
-					text = <"Akutt">
-					description = <"Rekvisisjonen er akutt.">
-				>
-				["at0137"] = <
-					text = <"Haster">
-					description = <"Rekvisisjonen haster.">
-				>
-				["at0138"] = <
-					text = <"Rutine">
-					description = <"Rekvisisjonen er rutine.">
+					description = <"Fritekstlig beskrivelse av tjenesten som er rekvirert.">
 				>
 				["at0141"] = <
 					text = <"Rekvirent">
@@ -428,6 +406,11 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					text = <"Tidligste dato for rekvirert tjeneste">
 					description = <"Tidligste akseptable dato for å påbegynne tjenesten.">
 					comment = <"I noen tilfeller må en viss tid løpe før en tjeneste kan utføres, f.eks. ved noen gastroskopier er en avhengig av at pasienten har seponert legemidler i en periode før prosedyren.">
+				>
+				["at0146"] = <
+					text = <"Dato/tid for påbegynt tjeneste">
+					description = <"Dato/tid for når tjenesten bør være påbegynt.">
+					comment = <"I praksis vil klinikere ofte rekvirere tjenester med ikke-eksakte tidsangivelser, f.eks. kontroll om 3 måneder, 6 måneder eller 12 måneder. Kliniske systemer krever mer eksakte parametre å jobbe med, og \"3 mnd\" vil konverteres til en eksakt dato 3 måneder fra registreringsdatoen, og lagres i dette dataelementet.">
 				>
 			>
 		>
