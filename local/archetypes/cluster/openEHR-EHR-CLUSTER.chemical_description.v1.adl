@@ -25,85 +25,60 @@ description
 	lifecycle_state = <"CommitteeDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E38CAC9EB3FB1DB84AB2453DB34ACD50">
+		["MD5-CAM-1.0.1"] = <"55A664C490A32F3BA3D9BFD60A4CB2D9">
 	>
 
 definition
 	CLUSTER[at0000] matches {	-- Chemical description of medication
 		items cardinality matches {1..*; unordered} matches {
-			CLUSTER[at0001] occurrences matches {0..1} matches {	-- Active ingredient
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0002] matches {	-- Name
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {[ac0001]}		-- Substance
-							}
-						}
-					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Compound
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Strength
-						value matches {
-							C_DV_QUANTITY <
-							>
-						}
-					}
-					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Role
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0006, 	-- Therapeutic
-									at0007, 	-- Toxic
-									at0008, 	-- Adjuvant
-									at0009]	-- Other
-								}
-							}
-						}
-					}
-				}
-			}
 			ELEMENT[at0010] occurrences matches {0..1} matches {	-- Form
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			CLUSTER[at0011] occurrences matches {0..*} matches {	-- Inactive ingredient
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0012] matches {	-- Name
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {[ac0002]}		-- Substance
-							}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Role
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0006, 	-- Therapeutic
+							at0035, 	-- Electrolyte
+							at0007, 	-- Toxic
+							at0008, 	-- Adjuvant
+							at0017, 	-- Dilutant
+							at0018, 	-- Propellent
+							at0019, 	-- Preservative
+							at0020, 	-- Colouring
+							at0009]	-- Other
 						}
 					}
-					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Compound
+				}
+			}
+			allow_archetype CLUSTER[at0030] matches {	-- Strength
+				include
+					archetype_id/value matches {/.*/}
+			}
+			CLUSTER[at0001] occurrences matches {0..*} matches {	-- Ingredient
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] matches {	-- Name
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Strength
+					use_node ELEMENT occurrences matches {0..1} /items[at0010]	-- /items[Form]
+					use_node ELEMENT occurrences matches {0..1} /items[at0005]	-- /items[Role]
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Compound
 						value matches {
-							C_DV_QUANTITY <
-							>
+							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0015] occurrences matches {0..*} matches {	-- Role
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0016, 	-- Additive
-									at0017, 	-- Dilutant
-									at0018, 	-- Propellent
-									at0019, 	-- Preservative
-									at0020]	-- Colouring
-								}
-							}
-						}
+					allow_archetype CLUSTER[at0033] occurrences matches {0..1} matches {	-- Strength
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype CLUSTER[at0024] occurrences matches {0..1} matches {	-- Quantity
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -120,8 +95,8 @@ ontology
 					description = <"The actual ingredients with strength and overall form of a chemical or medication.">
 				>
 				["at0001"] = <
-					text = <"Active ingredient">
-					description = <"Information about an ingredient that is active.">
+					text = <"Ingredient">
+					description = <"Detailed Information about an individual ingredient.">
 				>
 				["at0002"] = <
 					text = <"Name">
@@ -131,13 +106,9 @@ ontology
 					text = <"Compound">
 					description = <"The detailed chemical name of the compound that is an active ingredient.">
 				>
-				["at0004"] = <
-					text = <"Strength">
-					description = <"The amount or concentration of this ingredient.">
-				>
 				["at0005"] = <
 					text = <"Role">
-					description = <"The role of the ingredient. If not stated it will be assumed to be therapeutic.">
+					description = <"The role of the agent. If not stated it will be assumed to be therapeutic.">
 				>
 				["at0006"] = <
 					text = <"Therapeutic">
@@ -159,30 +130,6 @@ ontology
 					text = <"Form">
 					description = <"The formulation or presentation of the overall substance.">
 				>
-				["at0011"] = <
-					text = <"Inactive ingredient">
-					description = <"Ingredients in the substance that are not active.">
-				>
-				["at0012"] = <
-					text = <"Name">
-					description = <"The name of the inactive substance.">
-				>
-				["at0013"] = <
-					text = <"Compound">
-					description = <"The detailed chemical name of the compound which is an inactive ingredient.">
-				>
-				["at0014"] = <
-					text = <"Strength">
-					description = <"The amount or concentration of this ingredient.">
-				>
-				["at0015"] = <
-					text = <"Role">
-					description = <"The role of the ingredient.">
-				>
-				["at0016"] = <
-					text = <"Additive">
-					description = <"Inert additive.">
-				>
 				["at0017"] = <
 					text = <"Dilutant">
 					description = <"Inert dilutant.">
@@ -199,19 +146,97 @@ ontology
 					text = <"Colouring">
 					description = <"The ingredient is used to colour the substance.">
 				>
+				["at0024"] = <
+					text = <"Quantity">
+					description = <"The quantity of an ingredient.">
+				>
+				["at0030"] = <
+					text = <"Strength">
+					description = <"The strength of a dose">
+				>
+				["at0033"] = <
+					text = <"Strength">
+					description = <"The strength of an individual ingredient">
+				>
+				["at0035"] = <
+					text = <"Electrolyte">
+					description = <"This ingredient is an electrolyte.">
+				>
 			>
 		>
-	>
-	constraint_definitions = <
-		["en"] = <
+		["sl"] = <
 			items = <
-				["ac0001"] = <
-					text = <"Substance">
-					description = <"The name of the chemical substance which is an active ingredient.">
+				["at0000"] = <
+					text = <"*Chemical description of medication(en)">
+					description = <"*The actual ingredients with strength and overall form of a chemical or medication.(en)">
 				>
-				["ac0002"] = <
-					text = <"Substance">
-					description = <"The name of the chemical substance which is an active ingredient.">
+				["at0001"] = <
+					text = <"*Ingredient(en)">
+					description = <"*Detailed Information about an individual ingredient.(en)">
+				>
+				["at0002"] = <
+					text = <"*Name(en)">
+					description = <"*The name of the chemical or medication.(en)">
+				>
+				["at0003"] = <
+					text = <"*Compound(en)">
+					description = <"*The detailed chemical name of the compound that is an active ingredient.(en)">
+				>
+				["at0005"] = <
+					text = <"*Role(en)">
+					description = <"*The role of the agent. If not stated it will be assumed to be therapeutic.(en)">
+				>
+				["at0006"] = <
+					text = <"*Therapeutic(en)">
+					description = <"*The chemical has a known and desired effect which is positive.(en)">
+				>
+				["at0007"] = <
+					text = <"*Toxic(en)">
+					description = <"*This chemical is toxic and has no therapeutic effect.(en)">
+				>
+				["at0008"] = <
+					text = <"*Adjuvant(en)">
+					description = <"*The chemical is active but aids the therapeutic effect of another ingredient.(en)">
+				>
+				["at0009"] = <
+					text = <"*Other(en)">
+					description = <"*The chemical has another active role.(en)">
+				>
+				["at0010"] = <
+					text = <"*Form(en)">
+					description = <"*The formulation or presentation of the overall substance.(en)">
+				>
+				["at0017"] = <
+					text = <"*Dilutant(en)">
+					description = <"*Inert dilutant.(en)">
+				>
+				["at0018"] = <
+					text = <"*Propellent(en)">
+					description = <"*Inert propellent.(en)">
+				>
+				["at0019"] = <
+					text = <"*Preservative(en)">
+					description = <"*The ingredient is present to prolong the life of the substance.(en)">
+				>
+				["at0020"] = <
+					text = <"*Colouring(en)">
+					description = <"*The ingredient is used to colour the substance.(en)">
+				>
+				["at0024"] = <
+					text = <"*Quantity(en)">
+					description = <"*The quantity of an ingredient.(en)">
+				>
+				["at0030"] = <
+					text = <"*Strength(en)">
+					description = <"*The strength of a dose(en)">
+				>
+				["at0033"] = <
+					text = <"*Strength(en)">
+					description = <"*The strength of an individual ingredient(en)">
+				>
+				["at0035"] = <
+					text = <"*Electrolyte(en)">
+					description = <"*This ingredient is an electrolyte.(en)">
 				>
 			>
 		>
