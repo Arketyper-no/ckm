@@ -18,16 +18,16 @@ language
 description
 	original_author = <
 		["name"] = <"Sam Heard">
-		["organisation"] = <"openEHR Foundation">
+		["organisation"] = <"NEHTA">
 		["email"] = <"sam.heard@oceaninformatics.com">
-		["date"] = <"2013-05-16">
+		["date"] = <"10/11/2010">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To describe how a medication should be administered or was actually administered.">
 			use = <"To be used in INSTRUCTION.medication and ACTION.medication to describe the administration.">
-			keywords = <"medication administration", "injection", "infusion">
+			keywords = <"medication administration", "injection">
 			misuse = <"Not to be used for administration of anything other than medication.">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -40,23 +40,35 @@ description
 		>
 	>
 	lifecycle_state = <"CommitteeDraft">
-	other_contributors = <"Ian McNicoll, Ocean Informatics, UK", ...>
+	other_contributors = <>
 	other_details = <
-		["references"] = <"Medication administration, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. : NEHTA. Authored: 10 Nov 2010. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.874_1 (accessed 15 May 2013).">
-		["MD5-CAM-1.0.1"] = <"6BA029E6118C5E5418053BE84D85C377">
+		["MD5-CAM-1.0.1"] = <"26998F8362E0AA57A9FCAE456E20F812">
 	>
 
 definition
 	CLUSTER[at0000] matches {	-- Medication administration
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Route
+			ELEMENT[at0001] occurrences matches {0..*} matches {	-- Route
 				value matches {
-					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {[ac0001]}		-- RouteOfAdministration
+					}
 				}
 			}
 			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Site
 				value matches {
-					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0006, 	-- Left upper arm
+							at0007, 	-- Right upper arm
+							at0008, 	-- Thigh left leg
+							at0009, 	-- Thigh right leg
+							at0010, 	-- Mouth
+							at0011, 	-- Gluteus left
+							at0012]	-- Gluteus right
+						}
+					}
 				}
 			}
 			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Delivery method
@@ -67,7 +79,7 @@ definition
 			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Dose duration
 				value matches {
 					DV_DURATION matches {
-						value matches {|>=P0Y|}
+						value matches {|>=PT0S|}
 					}
 				}
 			}
@@ -77,7 +89,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
@@ -106,7 +117,35 @@ ontology
 				>
 				["at0005"] = <
 					text = <"Infusion details">
-					description = <"Details of administration via infusion.">
+					description = <"Details of administration via infusion">
+				>
+				["at0006"] = <
+					text = <"Left upper arm">
+					description = <"Left upper arm">
+				>
+				["at0007"] = <
+					text = <"Right upper arm">
+					description = <"Right upper arm">
+				>
+				["at0008"] = <
+					text = <"Thigh left leg">
+					description = <"Thigh left leg">
+				>
+				["at0009"] = <
+					text = <"Thigh right leg">
+					description = <"Thigh right leg">
+				>
+				["at0010"] = <
+					text = <"Mouth">
+					description = <"Mouth">
+				>
+				["at0011"] = <
+					text = <"Gluteus left">
+					description = <"Gluteus left">
+				>
+				["at0012"] = <
+					text = <"Gluteus right">
+					description = <"Gluteus right">
 				>
 			>
 		>
@@ -135,6 +174,52 @@ ontology
 				["at0005"] = <
 					text = <"Podatki o infuziji">
 					description = <"Podatki o infuziji">
+				>
+				["at0006"] = <
+					text = <"Nadlaket leva roka">
+					description = <"Nadlaket leva roka">
+				>
+				["at0007"] = <
+					text = <"Nadlaket desna roka">
+					description = <"Nadlaket desna roka">
+				>
+				["at0008"] = <
+					text = <"Stegno leva noga">
+					description = <"Stegno leva noga">
+				>
+				["at0009"] = <
+					text = <"Stegno desna noga">
+					description = <"Stegno desna noga">
+				>
+				["at0010"] = <
+					text = <"Usta">
+					description = <"Usta">
+				>
+				["at0011"] = <
+					text = <"Zadnjična mišica levo">
+					description = <"Zadnjična mišica levo">
+				>
+				["at0012"] = <
+					text = <"Zadnjična mišica desno">
+					description = <"Zadnjična mišica desno">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["en"] = <
+			items = <
+				["ac0001"] = <
+					text = <"RouteOfAdministration">
+					description = <"A list of all possible routes of administration of medication.">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["ac0001"] = <
+					text = <"*RouteOfAdministration(en)">
+					description = <"*A list of all possible routes of administration of medication.(en)">
 				>
 			>
 		>
