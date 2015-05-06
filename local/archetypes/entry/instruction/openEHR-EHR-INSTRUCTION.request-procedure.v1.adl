@@ -16,6 +16,12 @@ language
 			>
 			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -23,12 +29,6 @@ language
 				["organisation"] = <"Hospital Universitario Austral, Buenos Aires, Argentina">
 			>
 			accreditation = <"MD">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
-			>
 		>
 	>
 description
@@ -75,9 +75,9 @@ description
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Heather Leslie, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)", "Anca Heyd, DIPS ASA">
+	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Anca Heyd, DIPS ASA", "Heather Leslie, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"11DCFF2CD9D4EA8B20CA296B583716CF">
+		["MD5-CAM-1.0.1"] = <"FF6078F53EEED8A8BD0A223ADE37B3D1">
 	>
 
 definition
@@ -129,14 +129,7 @@ definition
 							}
 							ELEMENT[at0068] occurrences matches {0..1} matches {	-- Urgency
 								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0136, 	-- Emergency
-											at0137, 	-- Urgent
-											at0138]	-- Routine
-										}
-									}
+									DV_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0.147] occurrences matches {0..1} matches {	-- Procedure to be performed within
@@ -218,6 +211,7 @@ definition
 			}
 		}
 	}
+
 
 
 ontology
@@ -325,18 +319,6 @@ ontology
 				["at0135"] = <
 					text = <"وصف الإجراء الطبي">
 					description = <"وصف برواية مفصلة عن الخدمة التي تم طلبها.">
-				>
-				["at0136"] = <
-					text = <"طارئة">
-					description = <"هذا الطلب هو حالة طارئة">
-				>
-				["at0137"] = <
-					text = <"مُلِحّ">
-					description = <"هذا الطلب مُلِحّ">
-				>
-				["at0138"] = <
-					text = <"روتيني">
-					description = <"هذا الطلب روتيني">
 				>
 				["at0141"] = <
 					text = <"الطالب">
@@ -455,18 +437,6 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					text = <"Description of Procedure">
 					description = <"A detailed narrative description of the service requested.">
 				>
-				["at0136"] = <
-					text = <"Emergency">
-					description = <"The request is an emergency">
-				>
-				["at0137"] = <
-					text = <"Urgent">
-					description = <"The request is urgent.">
-				>
-				["at0138"] = <
-					text = <"Routine">
-					description = <"The request is routine.">
-				>
 				["at0141"] = <
 					text = <"Requestor ">
 					description = <"Details about the healthcare provider or organisation requesting the service.">
@@ -584,18 +554,6 @@ Status anvendes til å vise om det er den opprinnelige rekvisisjonen eller en op
 					text = <"Beskrivelse av prosedyre">
 					description = <"Detaljert narrativ beskrivelse av den ønskede prosedyren.">
 				>
-				["at0136"] = <
-					text = <"Akutt (ØH)">
-					description = <"Prosedyren er øyeblikkelig hjelp.">
-				>
-				["at0137"] = <
-					text = <"Haster">
-					description = <"Rekvisisjonen haster.">
-				>
-				["at0138"] = <
-					text = <"Rutine">
-					description = <"Rekvisisjonen er rutine.">
-				>
 				["at0141"] = <
 					text = <"Rekvirent">
 					description = <"Detaljer om den helsetjeneste eller organisasjon som rekvirerer servicen.">
@@ -712,18 +670,6 @@ El \"estado\" se utiliza para denotar si se trata de un solicitud inicial, a una
 				["at0135"] = <
 					text = <"Descripción del procedimiento">
 					description = <"Descripción narrativa del servicio solicitado.">
-				>
-				["at0136"] = <
-					text = <"Emergencia">
-					description = <"La solicitud es de emergencia.">
-				>
-				["at0137"] = <
-					text = <"Urgente">
-					description = <"La solicitud es urgente.">
-				>
-				["at0138"] = <
-					text = <"Rutina">
-					description = <"La solicitud es de rutina.">
 				>
 				["at0141"] = <
 					text = <"Solicitante">
