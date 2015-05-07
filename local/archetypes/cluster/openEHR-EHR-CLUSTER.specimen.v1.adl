@@ -38,23 +38,17 @@ It will finally be used within a laboratory result archetype to describe the spe
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere detaljer om en laboratorieprøve. Vil ofte bli benyttet i ulike sammenhenger, f.eks innenfor en INSTRUCTION-arketype for å beskrive den prøven som skal tas, eller beskrive prøven som følger en laboratorierekvisisjon. Den kan brukes i en ACTION-arketype f.eks som beskriver at prøven er tatt som en del av en kirurgisk prosedyre. 
 
-
-
-Til slutt brukes den innen en laboratorieresultat-arketype for å beskrive prøven som blir rapportert.
-
-
-
-">
-			use = <"Normalt brukt innen OBSERVATION.Laboratory og andre laboratorierelaterte INSTRUCTION- og ACTION-arketyper.">
+Til slutt brukes den innen en laboratorieresultat-arketype for å beskrive prøven som blir rapportert.">
+			use = <"Normalt brukt innen OBSERVATION.Laboratory og andre laboratorierelaterte INSTRUCTION- og ACTION-arketyper. Ved prøver som har flere glass/konteinere skal hver konteiner representeres ved en egen instans av denne arketypen.">
 			keywords = <"prøve", "vevsprøve", "laboratorie", "samling", "sample", "blodprøve">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Sam Heard Ocean Informatics", "Heather Leslie Ocean Informatics", "Koray Atalag University of Auckland">
+	other_contributors = <"Koray Atalag University of Auckland", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Sam Heard Ocean Informatics", "Heather Leslie Ocean Informatics", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"61426327CAF49DFD62017C694DD849C7">
+		["MD5-CAM-1.0.1"] = <"9A3026D9067A061332A86D2D027D1FB4">
 	>
 
 definition
@@ -85,7 +79,7 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0075] occurrences matches {0..1} matches {	-- Biopsisylinder lengde
+					ELEMENT[at0075] occurrences matches {0..*} matches {	-- Biopsisylinder lengde
 						value matches {
 							C_DV_QUANTITY <
 								property = <[openehr::122]>
@@ -623,7 +617,7 @@ Kan også brukes til å dokumentere kjente avvik fra prosedyren for prøvetaking
 				>
 				["at0075"] = <
 					text = <"Biopsisylinder lengde">
-					description = <"Sammensatt lengde av alle vevssylindre fått ved biopsien.">
+					description = <"Lengde av hver vevssylinder mottatt ved biopsien.">
 				>
 				["at0076"] = <
 					text = <"Antal vevssylindre">
