@@ -6,248 +6,198 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
 			author = <
-				["name"] = <"Sabine Leh / Lars Bitsch-Larsen">
-				["organisation"] = <"Haukeland University Hospital, Bergen, Norway">
-				["email"] = <"sleh@helse-bergen.no / lbla@helse-bergen.no">
+				["name"] = <"Mona Saleh">
 			>
-			accreditation = <"MD, PhD, specialist in pathology / MD, DEAA, specialist in anesthesia and intensive care, specialist in tropical medicine.">
 		>
 	>
 description
 	original_author = <
 		["name"] = <"Dr Ian McNicoll">
-		["organisation"] = <"openEHR Archetype Editorial Group / Ocean Informatics">
+		["organisation"] = <"freshEHR Clinical Informatics">
 		["email"] = <"ian.mcnicoll@oceaninformatics.com">
-		["date"] = <"27/01/2009">
+		["date"] = <"2009-01-27">
 	>
 	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول عينة بالمعمل. 
+يستخدم غالبا في سياقات مختلفة, مثلا: في داخل نموذج (تعليمات) ليصف العينة التي ينبغي أخذها, أو يصف العينة المرافقة لطلب معملي. 
+و قد يحدث ذلك في داخل نموذج (فعل), مثال: وصف العينات التي تم أخذها كجزء من إجراء طبي جراحي. 
+و سيستخدم أخيرا في داخل نموذج نتيجة اختبار المعمل ليصف العينة التي يتم تقديم عينة حولها.">
+			use = <"يستخدم عادةً في داخل نموذج (ملاحظة. معمل) و النماذج الأخرى تعليمات و فعل المتعلقة بالمعمل.">
+			keywords = <"النموذج/العينة", "المعمل/المختبر", "العينة", "التجميع">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details of a laboratory specimen. Will often be used in different contexts e.g within an Instruction archetype to describe the specimen that has to be taken, or describing the specimen which accompanies the laboratory request. It may occur within an Action archetype e.g. describing specimens taken as part of a surgical procedure.
 
-It will finally be used within a laboratory result archetype to describe the specimen being reported. ">
-			use = <"Generally used within OBSERVATION. Laboratory and other laboratory related Instruction and Action archetypes">
+It will finally be used within a laboratory result archetype to describe the specimen being reported.">
+			use = <"Generally used within OBSERVATION. laboratory_test.v1 and other laboratory related Instruction and Action archetypes.">
 			keywords = <"specimen", "laboratory", "sample", "collection">
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere detaljer om en laboratorieprøve. Vil ofte bli benyttet i ulike sammenhenger, f.eks innenfor en INSTRUCTION-arketype for å beskrive den prøven som skal tas, eller beskrive prøven som følger en laboratorierekvisisjon. Den kan brukes i en ACTION-arketype f.eks som beskriver at prøven er tatt som en del av en kirurgisk prosedyre. 
-
-Til slutt brukes den innen en laboratorieresultat-arketype for å beskrive prøven som blir rapportert.">
-			use = <"Normalt brukt innen OBSERVATION.Laboratory og andre laboratorierelaterte INSTRUCTION- og ACTION-arketyper. Ved prøver som har flere glass/konteinere skal hver konteiner representeres ved en egen instans av denne arketypen.">
-			keywords = <"prøve", "vevsprøve", "laboratorie", "samling", "sample", "blodprøve">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Koray Atalag University of Auckland", "Silje Bakke, Helse Bergen HF, Norway (Editor)", "Sam Heard Ocean Informatics", "Heather Leslie Ocean Informatics", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Koray Atalag University of Auckland", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sam Heard Ocean Informatics", "Heather Leslie Ocean Informatics", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"9A3026D9067A061332A86D2D027D1FB4">
+		["references"] = <"Hl7 FHIR Specimen resource: HL7 FHIR; Available from http://www.hl7.org/implement/standards/fhir/specimen.html
+
+Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory">
+		["MD5-CAM-1.0.1"] = <"B899021A43BE946CA719B61958E9EEC6">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Prøve
+	CLUSTER[at0000] matches {	-- Specimen
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0029] occurrences matches {0..1} matches {	-- Prøvetype
+			ELEMENT[at0029] occurrences matches {0..1} matches {	-- Specimen type
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Prøvetakingsprosedyre
+			ELEMENT[at0015] occurrences matches {0..1} matches {	-- Datetime collected
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..*} matches {	-- Sampling conditions
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Sted
+			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Source site
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {	-- Fysiske egenskaper
+			allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {	-- Physical properties
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.physical_properties(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			CLUSTER[at0073] occurrences matches {0..1} matches {	-- Nålebiopsi egenskaper
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Collection method
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0079] occurrences matches {0..1} matches {	-- Collection method description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0083] occurrences matches {0..*} matches {	-- Additional collection details
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Potential risk
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0067] occurrences matches {0..1} matches {	-- Collection setting
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0070] occurrences matches {0..1} matches {	-- Specimen collector identifier
+				value matches {
+					DV_IDENTIFIER matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0071] occurrences matches {0..*} matches {	-- Specimen collector details
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0080] occurrences matches {0..1} matches {	-- Number of containers
+				value matches {
+					DV_COUNT matches {
+						magnitude matches {|>=0|}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0085] occurrences matches {0..*} matches {	-- Container details
+				include
+					archetype_id/value matches {/.*/}
+			}
+			CLUSTER[at0039] occurrences matches {0..1} matches {	-- Specimen quality
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0074] occurrences matches {0..1} matches {	-- Diameter biopsinål
+					ELEMENT[at0042] occurrences matches {0..*} matches {	-- Specimen received issues
 						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0052, 	-- Haemolysed
+									at0053, 	-- Lipaemic
+									at0054, 	-- Incorrect transport medium
+									at0055]	-- Insufficient sample
+								}
+							}
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0075] occurrences matches {0..*} matches {	-- Biopsisylinder lengde
+					ELEMENT[at0044] occurrences matches {0..*} matches {	-- Laboratory handling issues
 						value matches {
-							C_DV_QUANTITY <
-								property = <[openehr::122]>
-								list = <
-									["1"] = <
-										units = <"mm">
-										magnitude = <|>=0.0|>
-									>
-								>
-							>
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0056, 	-- Handling error
+									at0057, 	-- Age
+									at0058, 	-- Laboratory accident
+									at0059]	-- Technical failure
+								}
+							}
+							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0076] occurrences matches {0..1} matches {	-- Antal vevssylindre
+					ELEMENT[at0041] occurrences matches {0..1} matches {	-- Adequacy for testing
 						value matches {
-							DV_COUNT matches {
-								magnitude matches {|>=0|}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0062, 	-- Satisfactory
+									at0063, 	-- Unsatisfactory - processed
+									at0064]	-- Unsatisfactory - not processed
+								}
 							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0045] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 				}
 			}
-			CLUSTER[at0050] occurrences matches {0..1} matches {	-- Prøvetaking og håndtering
+			CLUSTER[at0046] occurrences matches {0..1} matches {	-- Processing
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Mulig risiko/biologisk risiko
+					ELEMENT[at0034] occurrences matches {0..1} matches {	-- Datetime received
 						value matches {
-							DV_TEXT matches {*}
+							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Forutsetninger for prøvetaking
+					ELEMENT[at0001] occurrences matches {0..1} matches {	-- Laboratory specimen identifier
 						value matches {
-							DV_TEXT matches {*}
+							DV_IDENTIFIER matches {*}
 						}
 					}
-					ELEMENT[at0080] occurrences matches {0..1} matches {	-- Antall beholdere
-						value matches {
-							DV_COUNT matches {
-								magnitude matches {|>=0|}
-							}
-						}
-					}
-					ELEMENT[at0079] occurrences matches {0..1} matches {	-- Prøvetakingsmetode detaljer
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Transportmedium
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0068] occurrences matches {0..*} matches {	-- Ytterliggere prøvebehandling
+					allow_archetype CLUSTER[at0068] occurrences matches {0..*} matches {	-- Processing details
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen_preparation(-[a-zA-Z0-9_]+)*\.v1/}
 						exclude
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0078] occurrences matches {0..1} matches {	-- Testmetode
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0077] occurrences matches {0..*} matches {	-- Prøvetakingsutstyr
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
-						exclude
-							archetype_id/value matches {/.*/}
-					}
 				}
 			}
-			CLUSTER[at0046] occurrences matches {0..1} matches {	-- Håndtering og prosessering
+			CLUSTER[at0081] occurrences matches {0..*} matches {	-- Related specimen
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Dato og klokkeslett for prøvetakingen
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Parent specimen identifier
 						value matches {
-							DV_DATE_TIME matches {*}
+							DV_IDENTIFIER matches {*}
 						}
-					}
-					ELEMENT[at0067] occurrences matches {0..1} matches {	-- Prøvetakingssituasjon
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0034] occurrences matches {0..1} matches {	-- Dato og klokkeslett for prøvemottak
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0035] occurrences matches {0..1} matches {	-- Dato og klokkeslett for avsluttet prosessering
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-				}
-			}
-			CLUSTER[at0039] occurrences matches {0..1} matches {	-- Prøvekvalitet
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0042] occurrences matches {0..*} matches {	-- Problem ved prøvemottak
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0052, 	-- Hemolysert
-									at0053, 	-- Lipemisk
-									at0054, 	-- Feil transportmedium
-									at0055]	-- Utilstrekkelig prøve
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0044] occurrences matches {0..*} matches {	-- Problem ved håndtering på laboratoriet
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0056, 	-- Feilhåndtering
-									at0057, 	-- Alder
-									at0058, 	-- Uhell ved laboratoriet
-									at0059]	-- Teknisk feil
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0041] occurrences matches {0..1} matches {	-- Tilstrekkelighet for testen
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0062, 	-- Tilfredsstillende
-									at0063, 	-- Ikke tilfredsstillende - prosessert
-									at0064]	-- Ikke tilfredsstillende - ikke prosessert
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0045] occurrences matches {0..1} matches {	-- Kommentar
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-				}
-			}
-			CLUSTER[at0002] occurrences matches {0..1} matches {	-- Identifikatorer
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0001] occurrences matches {0..1} matches {	-- Prøvenummer
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Prøvenummer overordnet prøve
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0072] occurrences matches {0..1} matches {	-- Identifikator for prøvebeholderen
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0070] occurrences matches {0..1} matches {	-- Identifikator for prøvetakeren
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0071] occurrences matches {0..*} matches {	-- Prøvetakerdetaljer
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -257,6 +207,177 @@ definition
 
 ontology
 	term_definitions = <
+		["ar-sy"] = <
+			items = <
+				["at0000"] = <
+					text = <"العينة">
+					description = <"لتسجيل تفاصيل عينة المعمل">
+				>
+				["at0001"] = <
+					text = <"*Laboratory Specimen Identifier(en)">
+					description = <"*Unique identifier of the specimen, normally assigned by the laboratory.(en)">
+					comment = <"*Sometimes called the Accession Identifier.(en)">
+					fhir_mapping = <"*Specimen.accessionIdentifier(en)">
+				>
+				["at0003"] = <
+					text = <"*Parent Specimen Identifier(en)">
+					description = <"*Unique identifier of the parent specimen, where the specimen is split into sub-samples.(en)">
+				>
+				["at0005"] = <
+					text = <"*Potential Risk(en)">
+					description = <"*Any risk or biohazard associated with  collecting or handling the specimen.(en)">
+				>
+				["at0007"] = <
+					text = <"*Collection Method(en)">
+					description = <"*The method of collection to be used eg Venepuncture, biopsy, resection.(en)">
+					fhir_mapping = <"*Specimen.collection.method(en)">
+				>
+				["at0008"] = <
+					text = <"*Sampling Conditions(en)">
+					description = <"*Any conditions to be met before the sample should be taken.(en)">
+					comment = <"* e.g. fasting, 'full bladder', 'sterile field' or any special instructions on the handling or immediate processing of the sample e.g. centrifuge on receipt. 
+
+Can also be used to document any known deviations from collection or handling instructions e.g patient was not fasted.(en)">
+				>
+				["at0013"] = <
+					text = <"*Source Site(en)">
+					description = <"*The anatomical site(s) from where the specimen was taken.(en)">
+					fhir_mapping = <"*Specimen.collection.sourceSite(en)">
+				>
+				["at0015"] = <
+					text = <"*Datetime Collected(en)">
+					description = <"*The date and time that collection has been ordered to take place or has taken place.(en)">
+				>
+				["at0027"] = <
+					text = <"*Physical Properties(en)">
+					description = <"*Dimensions / weight / quantity of sample. Set as unbounded to allow variations e.g Weight of prostatic gland with and without seminal vesicles.(en)">
+					fhir_mappings = <"*Specimen.collection.quantity(en)">
+				>
+				["at0029"] = <
+					text = <"*Specimen Type(en)">
+					description = <"*The type of specimen to be collected e.g venous blood, prostatic biopsy.(en)">
+					fhir_mapping = <"*Specimen.type(en)">
+				>
+				["at0034"] = <
+					text = <"*Datetime Received(en)">
+					description = <"*The date and time that the sample was received at the laboratory.(en)">
+					fhir_mapping = <"*Specimen.receivedTime(en)">
+				>
+				["at0039"] = <
+					text = <"جودة العينة">
+					description = <"المشكلات المتعلقة بالعينة التي تم استقبالها/استلامها">
+				>
+				["at0041"] = <
+					text = <"المناسبة لإتمام التحليل">
+					description = <"هل العينة مناسبة لإجراء الاختبار">
+				>
+				["at0042"] = <
+					text = <"القضايا المتعلقة بالعينة التي تم استقبالها/استلامها">
+					description = <"قضية مخصوصة متعلقة بالعينة التي تم استقبالها/استلامها.">
+				>
+				["at0044"] = <
+					text = <"قضايا متعلقة بالمعاملة في المعمل/المختبر">
+					description = <"قضية تثار عند معاملة أو معالجة العينة في داخل المعمل/المختبر">
+				>
+				["at0045"] = <
+					text = <"تعليق">
+					description = <"تعليق نصي إضافي حول جودة العينة التي تم استقبالها/استلامها">
+				>
+				["at0046"] = <
+					text = <"*Processing(en)">
+					description = <"*Workflow of specimen processing/handling.(en)">
+				>
+				["at0052"] = <
+					text = <"تم حل الدم">
+					description = <"تم حل الدم في العينة">
+				>
+				["at0053"] = <
+					text = <"العينة بها فرط شحيمات">
+					description = <"العينة بها فرط شحيمات">
+				>
+				["at0054"] = <
+					text = <"وسط نقل غير صحيح">
+					description = <"تم استخدام مادة حافظة غير صحيحة عند نقل العينة">
+				>
+				["at0055"] = <
+					text = <"عينة غير كافية">
+					description = <"تم إعطاء عينة غير كافية لإتمام القياس">
+				>
+				["at0056"] = <
+					text = <"خطأ في المعاملة">
+					description = <"تمت إثارة خطأ عند معاملة العينة">
+				>
+				["at0057"] = <
+					text = <"العمر">
+					description = <"العينة قديمة جدا مما يمنع التحليل الدقيق">
+				>
+				["at0058"] = <
+					text = <"حادث معملي/مختبري">
+					description = <"حصل حادث للعينة في المعمل/المختبر">
+				>
+				["at0059"] = <
+					text = <"إخفاق تقني">
+					description = <"لم يُتمكن من تحليل العينة لأسباب تقنية">
+				>
+				["at0062"] = <
+					text = <"مُرضِية">
+					description = <"العينة بجودة كافية بما يسمح للحصول على تقرير للاختبار">
+				>
+				["at0063"] = <
+					text = <"غير مُرضية - تمت معالجتها">
+					description = <"العينة غير مُرضية و لكن تمت معالجتها">
+				>
+				["at0064"] = <
+					text = <"غير مُرضية - لم تتم معالجتها">
+					description = <"العينة غير مُرضية و لم تتم معالجتها">
+				>
+				["at0067"] = <
+					text = <"*Collection Setting(en)">
+					description = <"*Identification of the setting at which the specimen was collected 
+from a subject of care. The specimen is often collected by a 
+healthcare provider, but may be collected directly by the patient or carer at home.(en)">
+					comment = <"*This specifies the specimen collection location within the healthcare
+environment. It enables the laboratory to ask questions about the
+collection of the specimen, if required. The specimen collection
+setting may provide additional information relevant to the analysis 
+of the result.(en)">
+				>
+				["at0068"] = <
+					text = <"*Additional Preparation(en)">
+					description = <"*The specimen preparation cluster allows detailed recording of a particular preparation step e.g staining or fixation.(en)">
+				>
+				["at0070"] = <
+					text = <"*Specimen Collector Identifier(en)">
+					description = <"*Identifier of the person or agency responsible for collecting the specimen.(en)">
+					fhir_mapping = <"*Specimen.collection.collector(en)">
+				>
+				["at0071"] = <
+					text = <"*Specimen Collector Details(en)">
+					description = <"*The person or organisation responsible for collecting the specimen.(en)">
+					fhir_mapping = <"*Specimen.collection.collector(en)">
+				>
+				["at0079"] = <
+					text = <"*Collection Method Description(en)">
+					description = <"*Additional detailed description of method of sample collection.(en)">
+				>
+				["at0080"] = <
+					text = <"*Number of Containers(en)">
+					description = <"*The total number of containers holding this specimen.(en)">
+				>
+				["at0081"] = <
+					text = <"*Related Specimen(en)">
+					description = <"*Details of a related specimen.(en)">
+				>
+				["at0083"] = <
+					text = <"*Additional Collection Details(en)">
+					description = <"*Addtional details related to specific collection methods e.g. needle biopsy.(en)">
+				>
+				["at0085"] = <
+					text = <"*Container Details(en)">
+					description = <"*Details of container(s) used.(en)">
+				>
+			>
+		>
 		["en"] = <
 			items = <
 				["at0000"] = <
@@ -264,62 +385,58 @@ ontology
 					description = <"To record details of a laboratory specimen.">
 				>
 				["at0001"] = <
-					text = <"Specimen identifier">
+					text = <"Laboratory specimen identifier">
 					description = <"Unique identifier of the specimen, normally assigned by the laboratory.">
-				>
-				["at0002"] = <
-					text = <"Identifiers">
-					description = <"Sample identifications.">
+					comment = <"Sometimes called the Accession Identifier.">
+					fhir_mapping = <"Specimen.accessionIdentifier">
 				>
 				["at0003"] = <
 					text = <"Parent specimen identifier">
 					description = <"Unique identifier of the parent specimen, where the specimen is split into sub-samples.">
 				>
 				["at0005"] = <
-					text = <"Potential risk / biohazard">
-					description = <"Any risk or biohazard associated with  collecting or handling the specimen.">
+					text = <"Potential risk">
+					description = <"Any risk or biohazard associated with collecting or handling the specimen.">
 				>
 				["at0007"] = <
-					text = <"Collection procedure">
-					description = <"The method of collection to be used eg Venepuncture, biopsy. resection.">
+					text = <"Collection method">
+					description = <"The method of collection to be used eg Venepuncture, biopsy, resection.">
+					fhir_mapping = <"Specimen.collection.method">
 				>
 				["at0008"] = <
-					text = <"Sampling preconditions">
-					description = <"Any conditions to be met before the sample should be taken e.g. fasting, 'full bladder', 'sterile field' or any special instructions on the handling or immediate processing of the sample e.g. centrifuge on receipt. 
+					text = <"Sampling conditions">
+					description = <"Any conditions to be met before the sample should be taken.">
+					comment = <" e.g. fasting, 'full bladder', 'sterile field' or any special instructions on the handling or immediate processing of the sample e.g. centrifuge on receipt. 
 
 Can also be used to document any known deviations from collection or handling instructions e.g patient was not fasted.">
 				>
 				["at0013"] = <
-					text = <"Site ">
+					text = <"Source site">
 					description = <"The anatomical site(s) from where the specimen was taken.">
+					fhir_mapping = <"Specimen.collection.sourceSite">
 				>
 				["at0015"] = <
-					text = <"Date and time of collection">
+					text = <"Datetime collected">
 					description = <"The date and time that collection has been ordered to take place or has taken place.">
 				>
-				["at0025"] = <
-					text = <"Transport medium">
-					description = <"Any special preservative or transport medium requirements">
-				>
 				["at0027"] = <
-					text = <"Physical details ">
-					description = <"Dimensions / weight of sample. Set as unbounded to allow variations e.g Weight of prostatic gland with and without seminal vesicles ">
+					text = <"Physical properties">
+					description = <"Dimensions / weight / quantity of sample. Set as unbounded to allow variations e.g Weight of prostatic gland with and without seminal vesicles.">
+					fhir_mappings = <"Specimen.collection.quantity">
 				>
 				["at0029"] = <
-					text = <"Specimen tissue type">
-					description = <"The type of specimen to be collected e.g venous blood, prostatic biopsy. ">
+					text = <"Specimen type">
+					description = <"The type of specimen to be collected e.g venous blood, prostatic biopsy.">
+					fhir_mapping = <"Specimen.type">
 				>
 				["at0034"] = <
-					text = <"Date and time of receipt">
+					text = <"Datetime received">
 					description = <"The date and time that the sample was received at the laboratory.">
-				>
-				["at0035"] = <
-					text = <"Date and time processed">
-					description = <"The date and time that the specimen was processed by the laboratory.">
+					fhir_mapping = <"Specimen.receivedTime">
 				>
 				["at0039"] = <
 					text = <"Specimen quality">
-					description = <"Problems with the received specimen. ">
+					description = <"Problems with the received specimen.">
 				>
 				["at0041"] = <
 					text = <"Adequacy for testing">
@@ -338,12 +455,8 @@ Can also be used to document any known deviations from collection or handling in
 					description = <"An additional text comment on the quality of the received specimen.">
 				>
 				["at0046"] = <
-					text = <"Handling and processing">
+					text = <"Processing">
 					description = <"Workflow of specimen processing/handling.">
-				>
-				["at0050"] = <
-					text = <"Collection and handling">
-					description = <"Collection and handling requirements.">
 				>
 				["at0052"] = <
 					text = <"Haemolysed">
@@ -397,247 +510,42 @@ healthcare provider, but may be collected directly by the patient or carer at ho
 					comment = <"This specifies the specimen collection location within the healthcare
 environment. It enables the laboratory to ask questions about the
 collection of the specimen, if required. The specimen collection
-setting may provide additional information relevant to the analysis
-of the result data.">
+setting may provide additional information relevant to the analysis 
+of the result.">
 				>
 				["at0068"] = <
-					text = <"Additional preparation   ">
+					text = <"Processing details">
 					description = <"The specimen preparation cluster allows detailed recording of a particular preparation step e.g staining or fixation.">
 				>
 				["at0070"] = <
 					text = <"Specimen collector identifier">
 					description = <"Identifier of the person or agency responsible for collecting the specimen.">
+					fhir_mapping = <"Specimen.collection.collector">
 				>
 				["at0071"] = <
 					text = <"Specimen collector details">
 					description = <"The person or organisation responsible for collecting the specimen.">
-				>
-				["at0072"] = <
-					text = <"Container identifier">
-					description = <"Unique identifier given to the container in which the specimen is transported or processed.">
-				>
-				["at0073"] = <
-					text = <"Needle biopsy core details">
-					description = <"Details of the needle used to take a needle biopsy.">
-				>
-				["at0074"] = <
-					text = <"Biopsy core needle gauge">
-					description = <"The diameter of the core obtained via needle biopsy expressed using the needle gauge used to take the specimen.">
-				>
-				["at0075"] = <
-					text = <"Maximum biopsy core length">
-					description = <"The length of the core obtained by needle biopsy.">
-				>
-				["at0076"] = <
-					text = <"Number of cores received">
-					description = <"The number of needle biopsy cores received.">
-				>
-				["at0077"] = <
-					text = <"Device">
-					description = <"Details of the device used to perform the test.">
-				>
-				["at0078"] = <
-					text = <"Testing method">
-					description = <"The test method used to arrive at  result. This may be recorded or reported at whole test level or for an individual result.">
+					fhir_mapping = <"Specimen.collection.collector">
 				>
 				["at0079"] = <
-					text = <"Collection procedure details">
+					text = <"Collection method description">
 					description = <"Additional detailed description of method of sample collection.">
 				>
 				["at0080"] = <
 					text = <"Number of containers">
 					description = <"The total number of containers holding this specimen.">
 				>
-			>
-		>
-		["nb"] = <
-			items = <
-				["at0000"] = <
-					text = <"Prøve">
-					description = <"For registrering av detaljer om en laboratorieprøve, det være seg blod og væsker, mikrobiologi eller celle/vevsprøver i patologien.">
+				["at0081"] = <
+					text = <"Related specimen">
+					description = <"Details of a related specimen.">
 				>
-				["at0001"] = <
-					text = <"Prøvenummer">
-					description = <"Unikt prøvenummer som vanligvis tildeles av laboratoriet.">
+				["at0083"] = <
+					text = <"Additional collection details">
+					description = <"Addtional details related to specific collection methods e.g. needle biopsy.">
 				>
-				["at0002"] = <
-					text = <"Identifikatorer">
-					description = <"Prøveidentifikatorer.">
-				>
-				["at0003"] = <
-					text = <"Prøvenummer overordnet prøve">
-					description = <"Unikt prøvenummer fra overordnet prøve, hvis en prøve er delt opp i flere prøver.">
-				>
-				["at0005"] = <
-					text = <"Mulig risiko/biologisk risiko">
-					description = <"Risiko, også biologisk risiko, forbundet med innsamling og håndtering av prøven.">
-				>
-				["at0007"] = <
-					text = <"Prøvetakingsprosedyre">
-					description = <"Metode brukt ved prøvetaking, for eksempel venepunksjon, biopsi, reseksjon.">
-				>
-				["at0008"] = <
-					text = <"Forutsetninger for prøvetaking">
-					description = <"Vilkår som må oppfylles før prøven tas, for eksempel fastende, full urinblære, sterilt felt, eller instruksjoner for håndtering eller prosessering av prøven, for eksempel sentrifuger ved mottak. 
-
-
-
-Kan også brukes til å dokumentere kjente avvik fra prosedyren for prøvetaking eller prøvehåndtering, for eksempel pasienten var ikke fastende.">
-				>
-				["at0013"] = <
-					text = <"Sted">
-					description = <"Anatomisk sted der prøven ble tatt fra.">
-				>
-				["at0015"] = <
-					text = <"Dato og klokkeslett for prøvetakingen">
-					description = <"Dato og klokkeslett der prøvetakingen har blitt ordinert til å finne sted eller har funnet sted.">
-				>
-				["at0025"] = <
-					text = <"Transportmedium">
-					description = <"Krav til et bestemt fikseringsmiddel eller annet transportmedium.">
-				>
-				["at0027"] = <
-					text = <"Fysiske egenskaper">
-					description = <"Prøvens dimensjoner/vekt. Ingen begrensninger for å tillate for eksempel prostatavekt med og uten sædblære.">
-				>
-				["at0029"] = <
-					text = <"Prøvetype">
-					description = <"Type prøve, for eksempel venøst blod eller prostatabiopsi.">
-				>
-				["at0034"] = <
-					text = <"Dato og klokkeslett for prøvemottak">
-					description = <"Dato og klokkeslett da prøven ble mottatt på laboratoriet.">
-				>
-				["at0035"] = <
-					text = <"Dato og klokkeslett for avsluttet prosessering">
-					description = <"Dato og klokkeslett da prøven var prosessert av laboratoriet.">
-				>
-				["at0039"] = <
-					text = <"Prøvekvalitet">
-					description = <"Problemer med den mottatte prøven.">
-				>
-				["at0041"] = <
-					text = <"Tilstrekkelighet for testen">
-					description = <"Er prøven tilstrekkelig for testen?">
-				>
-				["at0042"] = <
-					text = <"Problem ved prøvemottak">
-					description = <"Spesifikt problem tilknyttet prøvemottak.">
-				>
-				["at0044"] = <
-					text = <"Problem ved håndtering på laboratoriet">
-					description = <"Et problem som har oppstått ved håndtering eller prosessering av prøven i laboratoriet.">
-				>
-				["at0045"] = <
-					text = <"Kommentar">
-					description = <"En ytterligere kommentar om kvaliteten av den mottatte prøven.">
-				>
-				["at0046"] = <
-					text = <"Håndtering og prosessering">
-					description = <"Arbeidsflyt for prøvehåndtering/prosessering.">
-				>
-				["at0050"] = <
-					text = <"Prøvetaking og håndtering">
-					description = <"Krav til prøvetaking og prøvehåndtering.">
-				>
-				["at0052"] = <
-					text = <"Hemolysert">
-					description = <"Prøven var hemolysert.">
-				>
-				["at0053"] = <
-					text = <"Lipemisk">
-					description = <"Prøven var lipemisk.">
-				>
-				["at0054"] = <
-					text = <"Feil transportmedium">
-					description = <"Et feil fikseringsmiddel ble brukt for prøvetransport.">
-				>
-				["at0055"] = <
-					text = <"Utilstrekkelig prøve">
-					description = <"En utilstrekkelig prøve ble sendt inn for analyse.">
-				>
-				["at0056"] = <
-					text = <"Feilhåndtering">
-					description = <"En feil oppsto ved håndtering av prøven.">
-				>
-				["at0057"] = <
-					text = <"Alder">
-					description = <"Prøven var for gammel for en korrekt analyse.">
-				>
-				["at0058"] = <
-					text = <"Uhell ved laboratoriet">
-					description = <"Et uhell oppsto ved prøvehåndtering på laboratoriet.">
-				>
-				["at0059"] = <
-					text = <"Teknisk feil">
-					description = <"Av tekniske grunner var det ikke mulig å analysere prøven.">
-				>
-				["at0062"] = <
-					text = <"Tilfredsstillende">
-					description = <"Prøvens kvalitet er tilstrekkelig og tillater et prøvesvar.">
-				>
-				["at0063"] = <
-					text = <"Ikke tilfredsstillende - prosessert">
-					description = <"Prøvens kvalitet er ikke tilfredsstillende, men prøven er blitt prosessert.">
-				>
-				["at0064"] = <
-					text = <"Ikke tilfredsstillende - ikke prosessert">
-					description = <"Prøvens kvalitet er ikke tilfredsstillende og prøven er ikke blitt prosessert.">
-				>
-				["at0067"] = <
-					text = <"Prøvetakingssituasjon">
-					description = <"Beskrivelse av prøvetakingssituasjonen. Prøven tas ofte av helsepersonell, men kan også tas av selve pasienten eller en pleier hjemme.">
-					comment = <"Dette beskriver stedet for prøvetaking innenfor helsevesenet. Personalet vet et laboratorium settes i stand til å stille spørsmål om prøvetakingen om nødvendig. Det kan gis ytterliggere informasjon om prøvetakingssituasjonen, som kan være relevant for analysen og vurderingen av resultatet.
-
-">
-				>
-				["at0068"] = <
-					text = <"Ytterliggere prøvebehandling">
-					description = <"CLUSTER prøvebehandling tillater detaljert registrering av et bestemt prøvebehandlingstrinn f.eks farging eller fiksering.">
-				>
-				["at0070"] = <
-					text = <"Identifikator for prøvetakeren">
-					description = <"Identifikator for personen eller institusjonen som har ansvar for prøvetaking.">
-				>
-				["at0071"] = <
-					text = <"Prøvetakerdetaljer">
-					description = <"Person eller institusjon som er ansvarlig for prøvetakingen.">
-				>
-				["at0072"] = <
-					text = <"Identifikator for prøvebeholderen">
-					description = <"Unik identifikator for beholderen som brukes til å transportere eller prosessere en prøve.">
-				>
-				["at0073"] = <
-					text = <"Nålebiopsi egenskaper">
-					description = <"Detaljer om nålen brukt til nålebiopsi.">
-				>
-				["at0074"] = <
-					text = <"Diameter biopsinål">
-					description = <"Diameteren av vevssylinderen tatt ut ved nålebiopsi. Diameteren angis som diameter av biopsinålen i gauge.">
-				>
-				["at0075"] = <
-					text = <"Biopsisylinder lengde">
-					description = <"Lengde av hver vevssylinder mottatt ved biopsien.">
-				>
-				["at0076"] = <
-					text = <"Antal vevssylindre">
-					description = <"Antallet av vevssylindre fått ved biopsien.">
-				>
-				["at0077"] = <
-					text = <"Prøvetakingsutstyr">
-					description = <"Detaljer om prøvetakingsutstyr.">
-				>
-				["at0078"] = <
-					text = <"Testmetode">
-					description = <"Testmetoden som anvendes for å komme frem til et resultat. Testmetoden kan registreres eller rapporteres for hele testen eller for et enkelt resultat.">
-				>
-				["at0079"] = <
-					text = <"Prøvetakingsmetode detaljer">
-					description = <"Supplerende detaljert beskrivelse av metoden for prøvetaking.">
-				>
-				["at0080"] = <
-					text = <"Antall beholdere">
-					description = <"Antall beholdere som kommer med en prøve.">
+				["at0085"] = <
+					text = <"Container details">
+					description = <"Details of container(s) used.">
 				>
 			>
 		>
