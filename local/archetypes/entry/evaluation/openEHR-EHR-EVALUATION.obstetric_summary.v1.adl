@@ -23,18 +23,17 @@ Use this summary as the basis of statutory reporting regarding births.
 Use to record the TPAL overview of an obstetric history, if required - the numbers of Term Births (T), Preterm Births (P), Abortions (A) and Living Children (L). Some variations add Gravidity (G) and number of Multiple Births (M).
 
 Some data may be calculated or derived from individual pregnancy records if these are available.">
-			keywords = <"obstetric", "pregnancy", "parity", "gravida", "para", "terminations", "miscarriages", "abortions", "spontaneous", "live", "births", "stillbirths", "caesarean", "ectopic", "neonatal", "death", "tubal", "living", "multiple">
-			misuse = <"Not for recording summary information about a single pregnancy - use EVALUATION. pregnancy_summary for this purpose.
+			keywords = <"obstetric", "pregnancy", "parity", "gravida", "para", "terminations", "miscarriages", "abortions", "spontaneous", "live", "births", "stillbirths", "caesarean", "ectopic", "neonatal", "tubal", "living", "multiple", "neonatal death">
+			misuse = <"Not for recording summary information about a specific pregnancy - use EVALUATION. pregnancy_summary for this purpose.
 
 Not for recording detailed information about each of the individual pregnancies, miscarriages, terminations, or deliveries. This information will be recorded using other specific archetypes as event-based data.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Sheryl Alexander, NT Department of Health, Australia", "Margaret Cotter, AMSANT, Australia", "Michelle Dowden, Miwatj Health Ngalkanbuy Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Michelle Kealy, Australia", "Bernadette Lack, Deptartment of Health, NT, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeremy Oats, NT Health, Australia", "Gary Sinclair, NT DoH, Australia", "Cherie Whitbread, Royal Darwin Hospital, Australia", "Jo Wright, NT Dept of Health, Australia">
+	other_contributors = <"Sheryl Alexander, NT Department of Health, Australia", "Rita Apelt, Department of Health,NT, Australia", "Stephen Chu, NEHTA, Australia", "Margaret Cotter, AMSANT, Australia", "Michelle Dowden, Miwatj Health Ngalkanbuy Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Tanya Gardner, CAAC, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Oliver Hosking, Remote Health NT, Australia", "Michelle Kealy, Australia", "Bernadette Lack, Department of Health, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Chunlan Ma, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeremy Oats, NT Health, Australia", "Steven Schatz, Department of Health (Northern Territory), Australia", "Rosalie Schultz, Anyinginyi Health Aboriginal Corporation, Australia", "Gary Sinclair, NT DoH, Australia", "Cherie Whitbread, Royal Darwin Hospital, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
 	other_details = <
-		["references"] = <"NEHTA Clinical Knowledge Manager [Internet]. Australia: National eHealth Transition Authority. [Draft EVALUATION archetype] Obstetric Summary; [authored 2011 Feb 24, cited 2011 Aug 17]. Available from http://dcm.nehta.org.au/ckm/OKM.html#showArchetype_1013.1.971_4.">
-		["MD5-CAM-1.0.1"] = <"FF7DCD652C6FF29279A87DCDABEB391D">
+		["MD5-CAM-1.0.1"] = <"5861E68BB323792892A45055A9EC5EDC">
 	>
 
 definition
@@ -42,38 +41,36 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Ever Pregnant?
-						value matches {
-							DV_BOOLEAN matches {
-								value matches {True}
-							}
-						}
-					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Gravidity (G)
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Pregnancies
 						value matches {
 							DV_COUNT matches {
 								magnitude matches {|0..<100|}
 							}
 						}
 					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Parity
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Births
 						value matches {
 							DV_COUNT matches {
 								magnitude matches {|>=0|}
 							}
 						}
 					}
-					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Term Births (T)
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Term Births
 						value matches {
 							DV_COUNT matches {*}
 						}
 					}
-					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Preterm Births (P)
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Preterm Births
 						value matches {
 							DV_COUNT matches {*}
 						}
 					}
-					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Abortions (A)
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Multiple Births
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Abortions
 						value matches {
 							DV_COUNT matches {*}
 						}
@@ -97,18 +94,6 @@ definition
 							DV_COUNT matches {*}
 						}
 					}
-					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Stillbirths
-						value matches {
-							DV_COUNT matches {*}
-						}
-					}
-					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Live Births
-						value matches {
-							DV_COUNT matches {
-								magnitude matches {|>=0|}
-							}
-						}
-					}
 					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Caesarean Sections
 						value matches {
 							DV_COUNT matches {
@@ -116,16 +101,33 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Multiple Births (M)
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Stillborn
 						value matches {
 							DV_COUNT matches {*}
 						}
 					}
-					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Living Children (L)
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Liveborn
 						value matches {
 							DV_COUNT matches {
 								magnitude matches {|>=0|}
 							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Living Children
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Adopted Children
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Clinical Description
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 				}
@@ -163,30 +165,32 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Gravidity (G)">
-					description = <"Number of times a woman has been pregnant, including the current pregnancy, if appropriate.">
+					text = <"Pregnancies">
+					description = <"Number of times a woman has been pregnant, including a current pregnancy. May also be referred to as Gravidity.">
+					comment = <"Using the GTPALM approach, this data element corresponds to Gravidity - 'G'.">
 				>
 				["at0003"] = <
-					text = <"Parity">
-					description = <"Number of times a woman has given birth after 20 weeks and 0 days gestation.">
-					comment = <"Late terminations of pregnancy (after 20 weeks of gestation) are not included. When both 'Term Births (T)' and 'Preterm Births (P)' are recorded, this number should be equal to their sum. Note: Parity is not regarded as the same as the number of infants born - for example, twins would be recorded as one birth event.">
+					text = <"Births">
+					description = <"Number of times a woman has given birth after 20 weeks gestation, to one or more babies. May also be referred to as Parity.">
+					comment = <"Late terminations of pregnancy (after 20 weeks of gestation) are not included. When both 'Term Births (T)' and 'Preterm Births (P)' are recorded, 'Parity' should be equal to their sum. Note: Parity is not  the equivalent to the number of infants born - for example, birth of twins would be recorded in this data point as one birth event.">
 				>
 				["at0004"] = <
 					text = <"Miscarriages">
-					description = <"Number of times a woman has had a miscarriage at less than 20 weeks of gestation.">
+					description = <"Number of times a woman has had a spontaneous miscarriage at less than 20 weeks of gestation.">
 					comment = <"Including missed abortions.">
 				>
 				["at0005"] = <
 					text = <"Terminations">
-					description = <"Number of times a woman has had a pregnancy terminated, regardless of gestation.">
+					description = <"Number of times a woman has had an induced pregnancy termination, regardless of gestation.">
 				>
 				["at0006"] = <
-					text = <"Live Births">
-					description = <"Number of babies born alive.">
+					text = <"Liveborn">
+					description = <"Number of liveborn babies from all birth events.">
 				>
 				["at0007"] = <
-					text = <"Living Children (L)">
-					description = <"Number of children who remain alive.">
+					text = <"Living Children">
+					description = <"Number of children who remain alive at the time of data recording.">
+					comment = <"Using the GTPALM approach, this data element corresponds to Living Children - 'L'.">
 				>
 				["at0008"] = <
 					text = <"Tree">
@@ -205,36 +209,43 @@ ontology
 					description = <"Number of ectopic pregnancies.">
 				>
 				["at0012"] = <
-					text = <"Stillbirths">
-					description = <"Number of stillbirths.">
-					comment = <"Note: Stillbirth definition may be optionally captured in specific data element in Protocol.">
+					text = <"Stillborn">
+					description = <"Number of stillborn babies from all birth events.">
+					comment = <"Note: The definition of Stillbirth may be optionally captured in specific data element in Protocol.">
 				>
 				["at0013"] = <
 					text = <"Stillbirth Definition">
 					description = <"Definition of stillbirth.">
 					comment = <"Maybe useful to record when comparing data from different regions as, as definitions of stillbirth may vary. For example, in Australia a stillborn baby will have a gestation greater than 20 weeks or, if gestation is unknown, weigh more than 400 grams.">
 				>
-				["at0014"] = <
-					text = <"Ever Pregnant?">
-					description = <"Has the woman ever been pregnant?">
-					comment = <"Record as TRUE if a woman has ever been pregnant. Only useful to record if there is no other detailed data about pregnancies available, or where it may be used to support further knowledge-based activities such as clinical decision support.">
-				>
 				["at0015"] = <
-					text = <"Term Births (T)">
-					description = <"Number of infants born on or after 37 weeks of gestation.">
+					text = <"Term Births">
+					description = <"Number of birth events in which the babies are born on or after 37 weeks of gestation.">
+					comment = <"Using the GTPALM approach, this data element corresponds to Term Births - 'T'.">
 				>
 				["at0016"] = <
-					text = <"Preterm Births (P)">
-					description = <"Number of infants born at less than 37 weeks of gestation.">
+					text = <"Preterm Births">
+					description = <"Number of birth events in which the babies are born at less than 37 weeks of gestation.">
+					comment = <"Using the GTPALM approach, this data element corresponds to Preterm Births - 'P'.">
 				>
 				["at0017"] = <
-					text = <"Abortions (A)">
-					description = <"Number of non-viable pregnancies from all causes and at any gestation, including miscarriages, induced terminations and ectopic pregnancies.">
-					comment = <"When all of 'Miscarriages', 'Terminations' and 'Ectopic Pregnancies' are recorded, this number should be equal to their sum.">
+					text = <"Abortions">
+					description = <"Number of non-viable pregnancies from all causes and at any gestation, including spontaneous miscarriages, induced terminations and ectopic pregnancies.">
+					comment = <"When all of 'Miscarriages', 'Terminations' and 'Ectopic Pregnancies' are recorded, this number should be equal to their sum. Using the GTPALM approach, this data element corresponds to Abortions - 'A'.">
 				>
 				["at0018"] = <
-					text = <"Multiple Births (M)">
-					description = <"Number of birth events in which more than one fetus has been born.">
+					text = <"Multiple Births">
+					description = <"Number of birth events in which more than one baby has been born.">
+					comment = <"Using the GTPALM approach, this data element corresponds to Multiple Births - 'M'.">
+				>
+				["at0019"] = <
+					text = <"Clinical Description">
+					description = <"Narrative description about the obstetric history, including significant aspects that might be useful for sharing or for triggering further investigation.">
+					comment = <"For example, complications, delivery interventions, IVF treatment etc.">
+				>
+				["at0020"] = <
+					text = <"Adopted Children">
+					description = <"Number of children who have been adopted.">
 				>
 			>
 		>
