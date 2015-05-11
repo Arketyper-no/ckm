@@ -49,9 +49,9 @@ description
 		>
 	>
 	lifecycle_state = <"CommitteeDraft">
-	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"8B89F509DBB67F691E9C302F8D587E31">
+		["MD5-CAM-1.0.1"] = <"3EACB4F003C6D07CC3796EAC03F36A63">
 	>
 
 definition
@@ -92,6 +92,14 @@ definition
 							}
 							ELEMENT[at0068] occurrences matches {0..1} matches {	-- Hastegrad
 								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0136, 	-- Akutt
+											at0137, 	-- Haster
+											at0138]	-- Rutine
+										}
+									}
 									DV_TEXT matches {*}
 								}
 							}
@@ -268,6 +276,18 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					text = <"Description">
 					description = <"Narrative description of the service requested.">
 				>
+				["at0136"] = <
+					text = <"Emergency">
+					description = <"The request is an emergency.">
+				>
+				["at0137"] = <
+					text = <"Urgent">
+					description = <"The request is urgent.">
+				>
+				["at0138"] = <
+					text = <"Routine">
+					description = <"The request is routine.">
+				>
 				["at0141"] = <
 					text = <"Requestor">
 					description = <"Details about the healthcare provider or organisation requesting the service.">
@@ -297,15 +317,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0000"] = <
 					text = <"Helsetjenesterekvirering">
 					description = <"Forespørsel om utførelse av en helsetjeneste, til annet helsepersonell eller andre organisasjoner.">
-					comment = <"For eksempel: utstyrsrekvisisjon, tilsynsforespørsel
-
-
-
-
-
-
-
-">
+					comment = <"For eksempel en forespørsel om postoperative observasjoner, eller en forespørsel om hjemmetjenester etter utskriving.">
 				>
 				["at0001"] = <
 					text = <"Rekvirering">
@@ -339,16 +351,16 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0064"] = <
 					text = <"Årsaksbeskrivelse">
-					description = <"En narrativ beskrivelse som forklarer årsaken til rekvireringen.">
+					description = <"En fritekstlig beskrivelse som forklarer årsaken til rekvireringen.">
 				>
 				["at0065"] = <
 					text = <"Hensikt">
-					description = <"Rekvirentens hensikt med tanke på hva de ønsker å oppnå ved rekvireringen.">
+					description = <"Rekvirentens hensikt, det vil si hva de ønsker å oppnå ved rekvireringen.">
 					comment = <"For eksempel en henvisning med den hensikt at spesialisthelsetjenesten skal ta over omsorgen for pasienten, eller for å få råd om hvordan fortsette med utredning eller behandling.">
 				>
 				["at0068"] = <
 					text = <"Hastegrad">
-					description = <"Rekvireringens hastegrad.">
+					description = <"Rekvirentens hastegrad.">
 				>
 				["at0076"] = <
 					text = <"Supplerende informasjon følger">
@@ -388,6 +400,18 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0135"] = <
 					text = <"Beskrivelse">
 					description = <"Fritekstlig beskrivelse av tjenesten som er rekvirert.">
+				>
+				["at0136"] = <
+					text = <"Akutt">
+					description = <"Rekvisisjonen er akutt.">
+				>
+				["at0137"] = <
+					text = <"Haster">
+					description = <"Rekvisisjonen haster.">
+				>
+				["at0138"] = <
+					text = <"Rutine">
+					description = <"Rekvisisjonen er rutine.">
 				>
 				["at0141"] = <
 					text = <"Rekvirent">
