@@ -14,6 +14,13 @@ language
 				["email"] = <"biljana.princic@marand.si">
 			>
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Silje Ljosland Bakke">
+				["organisation"] = <"Helse Bergen HF">
+			>
+		>
 	>
 description
 	original_author = <
@@ -41,6 +48,14 @@ description
 			misuse = <"It should not be assumed that these qualifiers are safely interoperable unless further definition and alignment is agreed between all sharing parties. A problem which has been defined as 'Inactive' during a hospital admission cannot be assumed to be regarded as 'Inactive' in a primary care setting , where a much longer term perspective is being taken. Similarly terms such as Initial, Interim and Final, whilst helpful to the human observer are unlikely to be precisely enough defined to be safely computable e.g. for decision support. ">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes til å registrere diverse status- og kontekstrelaterte kvalifikatorer. Mens disse normalt brukes innenfor applikasjoner og i kliniske meldinger, er de samtidig i stor grad kontekstavhengige eller har varierende definisjoner og praktisk bruk.">
+			use = <"Brukes til å kvalifisere innholdet i en EVALUATION.problem_diagnosis-arketype ved å legge til kontekstuell- og statusinformasjon. Kvalifikatorene bør brukes med omhu siden de i praksis brukes på mange forskjellige måter, og interoperabilitet kan ikke garanteres med mindre bruken er klart definert innenfor delingsfellesskapet.">
+			keywords = <"problem", "aktivt", "inaktivt", "status", "episode">
+			misuse = <"Det bør ikke antas at disse kvalifikatorene er interoperable med mindre alle samhandlingspartnere er enige om nærmere definisjoner. Et problem som kan defineres som \"Inaktivt\" under en sykehusinnleggelse kan ikke antas å være \"Inaktivt\" i primærhelsetjenesten, der man tar et mye lenger tidsperspektiv. På samme måte er termer som begreper som \"Innledende\", \"Midlertidig\" og \"Endelig\" hjelpsomme for et menneske, men med stor sannsynlighet ikke presist nok definert til å trygt kunne brukes f.eks. til beslutningsstøtte.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sam Heard, Ocean Informatics, Australia", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
@@ -50,7 +65,7 @@ description
 		["build_uid"] = <"f15788a6-c5d0-41c3-a885-19dc84181acd">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"7F74896C672B2F04D7209789FCE63198">
+		["MD5-CAM-1.0.1"] = <"002FAE35826A292C3C1159A0167DF2BF">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -501,6 +516,170 @@ ontology
 				["at0069"] = <
 					text = <"*Primary procedure(en)">
 					description = <"*The main procedure performed during the relevant episode of care.(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Problemstatus">
+					description = <"Ytterligere status og kontekstuelle kvalifikatorer relatert til et problem eller en diagnose.">
+				>
+				["at0001"] = <
+					text = <"Episodisitet">
+					description = <"Episodisitet brukes innenfor primærhelsetjenesten for å skille mellom pågående og nye episoder av et problem eller diagnose, primært for folkehelse- eller kvalitetsvurderingsformål.">
+				>
+				["at0003"] = <
+					text = <"Aktivitetsstatus">
+					description = <"Graden av hvorvidt problemet er aktivt og relevant innen den aktuelle kliniske sammenhengen.">
+				>
+				["at0004"] = <
+					text = <"Utvikling">
+					description = <"Registrerer tidsmessig/evidensmessig utvikling mot identifisering av problemet eller diagnosen, med tanke på at en presis identifisering kan måtte utvikles over tid eller hvert som mer evidens framkommer.">
+				>
+				["at0006"] = <
+					text = <"Prioritet">
+					description = <"En numerisk eller tekstlig representasjon av problemets prioritet, relativt til andre problemer i en liste. Dette kan brukes til å sortere elementer i henhold til en oppfatning av klinisk prioritet eller til å filtrere problemer man regner for å være av større eller mindre signifikans.">
+				>
+				["at0007"] = <
+					text = <"Sammenfatning">
+					description = <"Et flagg eller tekst/kodet tekst-element for registrering av hvorvidt dette problemet/diagnosen bør vises i en pasientsammenfatning.">
+				>
+				["at0016"] = <
+					text = <"Første vurdering">
+					description = <"Diagnosen er satt på begynnelsen av den diagnostiske prosessen, med begrenset tilgjengelig evidens.">
+				>
+				["at0017"] = <
+					text = <"Midlertidig vurdering">
+					description = <"Problemet eller diagnosen er identifisert med noe sikkerhet, men videre evidens må tas hensyn til.">
+				>
+				["at0018"] = <
+					text = <"Endelig vurdering">
+					description = <"Problemet eller diagnosen er satt på slutten av den diagnostiske prosessen, og tar inn over seg all tilgjengelig evidens. Det er ikke forventet endringer.">
+				>
+				["at0024"] = <
+					text = <"Innvirkning">
+					description = <"Beskrivelse av innvirkningen problemet eller diagnosen i helhet har på pasienten. I motsetning til \"Alvorlighetsgrad\" kan dette brukes til å sammenligne den kliniske innvirkningen av forskjellige problemer.">
+				>
+				["at0026"] = <
+					text = <"Aktivt">
+					description = <"Problemet eller diagnosen er aktivt og klinisk relevant.">
+				>
+				["at0027"] = <
+					text = <"Inaktivt">
+					description = <"Problemet eller diagnosen er ikke fullstendig løst, men er inaktivt eller mindre relevant for den aktuelle kliniske sammenhengen.">
+				>
+				["at0028"] = <
+					text = <"Fullstendig bedret">
+					description = <"Problemet eller diagnosen er fullstendig bedret, og derfor ikke relevant for den aktuelle kliniske sammenhengen.">
+				>
+				["at0033"] = <
+					text = <"Første noensinne">
+					description = <"Den første forekomsten av dette problemet eller diagnosen.">
+				>
+				["at0034"] = <
+					text = <"Ny">
+					description = <"En ny forekomst av et eksisterende problem eller diagnose.">
+				>
+				["at0035"] = <
+					text = <"Pågående">
+					description = <"Del av en pågående forekomst av et eksisterende problem eller diagnose.">
+				>
+				["at0036"] = <
+					text = <"Ingen">
+					description = <"Problemet har ikke hatt noen innvirkning på individet.">
+				>
+				["at0037"] = <
+					text = <"Ubetydelig">
+					description = <"Problemet har hatt veldig liten samlet innvirkning på individets liv eller helse.">
+				>
+				["at0038"] = <
+					text = <"Betydelig">
+					description = <"Problemet har hatt betydelig samlet innvirkning på individets liv eller helse.">
+				>
+				["at0039"] = <
+					text = <"Livstruende">
+					description = <"Problemet har truet individets liv.">
+				>
+				["at0043"] = <
+					text = <"Statuskommentar">
+					description = <"En fritekstlig kommentar til den aktive statusen, f.eks. en beskrivelse av omstendighetene eller evidensen for at et problem er løst.">
+				>
+				["at0044"] = <
+					text = <"Fatalt">
+					description = <"Problemet var fatalt for individet.">
+				>
+				["at0051"] = <
+					text = <"Kategori">
+					description = <"Kategorier av problemer/diagnoser/forhold.">
+				>
+				["at0052"] = <
+					text = <"Tilstand">
+					description = <"Forholdet er en tilstand.">
+				>
+				["at0053"] = <
+					text = <"Symptom">
+					description = <"Forholdet er et symptom.">
+				>
+				["at0054"] = <
+					text = <"Funn">
+					description = <"Forholdet er et klinisk funn.">
+				>
+				["at0055"] = <
+					text = <"Plage">
+					description = <"Forholdet er en plage.">
+				>
+				["at0056"] = <
+					text = <"Funksjonell begrensning.">
+					description = <"Forholdet er en funksjonell begrensning.">
+				>
+				["at0057"] = <
+					text = <"Problem">
+					description = <"Forholdet forårsaker et problem.">
+				>
+				["at0058"] = <
+					text = <"Diagnose">
+					description = <"Forholdet er regnet som en helsefaglig diagnose.">
+				>
+				["at0059"] = <
+					text = <"Under remisjon">
+					description = <"Problemet eller forholdet er gjentakende av natur, men er for tiden sovende.">
+				>
+				["at0060"] = <
+					text = <"Tidsmessig sammenheng">
+					description = <"Indikator for tidsmessig sammenheng, tilplasset SNOMED CT.">
+				>
+				["at0061"] = <
+					text = <"Fortid">
+					description = <"Et forhold som forekom i fortid.">
+				>
+				["at0062"] = <
+					text = <"Nåværende">
+					description = <"Et forhold som forekommer i nåtiden.">
+				>
+				["at0063"] = <
+					text = <"Status for episodisk helsehjelp">
+					description = <"I sammenhenger for episodisk helsehjelp (som regel spesialisthelsetjenester) er det vanlig å kategorisere/organisere problemer i henhold til deres forhold til hovedproblemet eller hoveddiagnosen for den aktuelle episoden. Disse kategoriene kan også brukes for klinisk koding, rapportering og fakturering.">
+				>
+				["at0064"] = <
+					text = <"Hoveddiagnose">
+					description = <"Hovedtilstanden som behandles eller undersøkes under den aktuelle episoden.">
+				>
+				["at0066"] = <
+					text = <"Komorbiditet">
+					description = <"En komorbiditet er en tilstand som er tilstede ved episodens start, og som krever behandling, diagnostikk eller økt klinisk monitorering.">
+				>
+				["at0067"] = <
+					text = <"Komplikasjon">
+					description = <"En komplikasjon er en tilstand som ikke er tilstede ved episodens start men som oppstår i løpet av episoden, eller er et resultat av en prosedyre eller behandling under den aktuelle episoden.">
+				>
+				["at0068"] = <
+					text = <"Annet nåværende problem">
+					description = <"Et hvilket som helst annet problem eller forhold regnet som signifikant for pasientens helse, og som ikke faller innunder en av de andre kategoriene.">
+				>
+				["at0069"] = <
+					text = <"Hovedprosedyre">
+					description = <"Hovedprosedyren som gjennomføres under den aktuelle episoden.">
 				>
 			>
 		>
