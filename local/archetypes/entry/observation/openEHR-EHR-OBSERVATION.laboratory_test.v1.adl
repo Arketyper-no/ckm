@@ -66,14 +66,14 @@ This archetype has been designed to support clinical pathology and may not be ap
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å regsitrere funn og tolkning av laboratorieanalyser utført på vev og kroppsvæsker. Dette er typisk utført i et laboratorie, men kan også være gjort i andre miljøer, som for eksempel ved pasientnære analyser.">
-			use = <"Brukes for å lagre ethvert resultat av en laboratorieanalyse, inkludert resultatet av en analyse utført på prøvemateriale som er tatt som del av en prosedyre eller operasjon.
+			purpose = <"For å registrere funn og tolkning av laboratorieanalyser utført på vev og kroppsvæsker. Dette er typisk utført i et laboratorie, men kan også være gjort i andre miljøer, som for eksempel ved pasientnære analyser.">
+			use = <"Brukes for å lagre ethvert svar fra en laboratorieanalyse, inkludert svaret fra en analyse utført på prøvemateriale som er tatt som del av en prosedyre eller operasjon.
 
 Multianalysepakker kan bli representert ved å bruke templater eller spesialiserte arketyper.
  
-Mer komplekse analyser, som histopatologi eller mikrobiologi bør, når det kreves vedlegg, bli representert ved å bruke spesialiserte arketyper.
+Mer komplekse analyser som histopatologi eller mikrobiologi bør, når det kreves mer strukturert innhold, bli representert ved å bruke spesialiserte arketyper.
 
-Laboratorieanalyserapport har i høy grad samsvar med HL7 FHIR Diagnostic Report resource.
+Laboratoriesvar-arketypen har i høy grad samsvar med HL7 FHIR-ressursen \"Diagnostic Report\".
 
 Blir normalt rapportert tilbake til rekvirerende kliniker som del av en overordnet COMPOSITION-basert rapport.">
 			keywords = <"lab", "patologi", "biokjemi", "hematologi", "mikrobiologi", "immunologi", "laboratorie", "anatomisk", "kjemisk", "klinisk", "immunopatologi", "cytologi", "histopatologi", "prøve", "biopsi", "preparat", "rettsmedisinsk", "genetisk">
@@ -527,8 +527,8 @@ ontology
 					description = <"The diagnostic service that performs the examination.">
 					comment = <"For example, biochemistry, haematology. This helps clinicians filter for broad categories of results accoridng to local laboratory arrangements. Coding with a terminology is desirable, where possible.
 ">
-					fhir_mapping = <"DiagnosticReport.serviceCategory">
 					fhir_valueset = <"diagnostic-service-sections">
+					fhir_mapping = <"DiagnosticReport.serviceCategory">
 				>
 				["at0090"] = <
 					text = <"Requester">
