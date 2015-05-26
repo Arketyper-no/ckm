@@ -1,0 +1,65 @@
+﻿archetype (adl_version=1.4; uid=4e6f367c-7c29-435c-b4dc-a811b715fbf9)
+	openEHR-EHR-SECTION.referral_details.v0
+
+concept
+	[at0000]	-- Referral Details
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"07/03/2010">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To demonstrate a design pattern for representation of an Referral Request.">
+			use = <"Use within a COMPOSITION related to referral, such as COMPOSITION.referral.
+Supporting summary information can be added to the COMPOSITION slots - for example, SECTION.adverse_list, SECTION.problem_list, SECTION.medication_order_list.">
+			keywords = <"referral", "request">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Heath Frankel, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics, United Kingdom">
+	other_details = <
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["references"] = <"">
+		["build_uid"] = <"ae5d78f4-ad3d-4f0c-8428-f9150addd1b1">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"16E0609D92AB4039F5AC4A91C6EC50B0">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Referral Details
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype INSTRUCTION[at0001] occurrences matches {0..1} matches {	-- Referral Request
+				include
+					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Referral Details">
+					description = <"To demonstrate a design pattern for representation Referral details within a Referral composition.">
+				>
+				["at0001"] = <
+					text = <"Referral Request">
+					description = <"Slot constrained to specifically include archetypes representing referral requests.">
+				>
+			>
+		>
+	>
