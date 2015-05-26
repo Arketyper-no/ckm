@@ -1,4 +1,4 @@
-﻿archetype (adl_version=1.4)
+﻿archetype (adl_version=1.4; uid=2fe9e9f8-adfd-4406-878a-82b38ef498a9)
 	openEHR-EHR-CLUSTER.anatomical_location.v1
 
 concept
@@ -17,7 +17,6 @@ language
 			author = <
 				["name"] = <"Lars Bitsch-Larsen">
 				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
-				["email"] = <"lbla@helse-bergen.no">
 			>
 			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
@@ -52,65 +51,60 @@ description
 			misuse = <"*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)">
 			copyright = <"© Nasjonal IKT HF">
 		>
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"To record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.">
-			use = <"Use to record structured and consistent details about a single identified physical site on, or within, the human body. As a fundamental part of clinical practice, humans can describe anatomical locations in a myriad of complex and variable ways.
-
-In practice, some archetypes carry a single data element for carrying a simple description of body site - for example, OBSERVATION.blood_pressure and CLUSTER.symptom when describing ear pain. In this situation, where the value set is predictable and simple to define, this single data element is a very accurate and pragmatic way to record the site in the body and to query at a later date. However in the situation where the anatomical location is not well defined or needs to be determined at run-time, it may be more flexible to use this structured archetype. For example, in the situation where any symptom can be recorded without any predefined scope of the type of symptom, then allowing the use of this archetype to specifically define an anatomical location in the body may be useful. In this case the CLUSTER.symptom archetype also carries a SLOT for 'Structured anatomical location' which can include this archetype to support maximal flexibility in recording anatomical location data.
-
-This archetype is specifically designed to be used within the context of any appropriate ENTRY or CLUSTER archetypes which supply the context of the anatomical location. 
-
-'Body site name' is the only mandated data point and should be used as the primary data point to record an anatomical location. 
-
-In addition, the 'Body structure' data element permits recording of a less precise context for the identified body site, for example, a limb or a digit. This can be useful to allow clinicians to describe the presence of gout to be located in the 'distal interphalangeal joint' of the 'great toe'. 
-
-Similarly, the data elements 'Laterality', 'Aspect', 'Region', 'Anatomical line' and 'Description' allow for more precise detail to be recorded about the body site. For example, the apex beat oif the heart is typically found at the fifth left intercostal space in the mid-clavicular line, tenderness at McBurney's point on the abdominal wall or a laceration on the palmar aspect of the proximal right thumb.
-
-The archetype contains an 'Alternative structure' SLOT which allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.relative_location or CLUSTER.precise_location, should this be required. In the situation where this archetype can only be used to name a large and/or non-specific body part, the additional use of the CLUSTER.relative_location archetype will support recording of a more precise location - for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below R costal margin on the chest wall in the mid-clavicular line.
-
-A combination of the data elements in this archetype can be used to individually record each component of a postcoordinated terminology expression that represents the anatomical site.
-
-If this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in-utero, then the anatomical location will be identifying a body site on or within the fetus.">
-			keywords = <"location", "site", "anatomical", "anatomic region", "topographic anatomy", "macroscopic", "anatomic", "anatomy">
-			misuse = <"Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.
-
-Not to be used to record details about an anatomical location or body site that requires any form of magnification for identification.">
-			copyright = <"© Nasjonal IKT HF">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For registering av strukturerte detaljer om én enkelt makroskopisk fysisk lokalisering på eller i menneskekroppen.">
-			use = <"Brukes for å dokumentere strukturerte og ensartede detaljer om et enkelt identifisert fysisk sted på eller i menneskekroppen. Som en grunnleggende del av klinisk praksis kan anatomiske lokalisasjoner beskrives på et utall komplekse og variable måter.
-
-Noen arketyper inneholder et enkelt dataelement for enkel beskrivelse av en kroppslig lokalisering - for eksempel OBSERVATION.blood_pressure, og CLUSTER.symptom når man beskriver øresmerter. I denne situasjonen, hvor verdisettet er forutsigbart og enkelt å definere, er dette enkle dataelementet en meget nøyaktig og praktisk måte for å registrere et anatomisk sted på eller i kroppen og søke på det på et senere tidspunkt. Når den anatomiske lokaliseringen derimot ikke er veldefinert eller må defineres fortløpende, kan det være mer fleksibelt å bruke denne strukturerte arketypen. For eksempel i en situasjon hvor et hvilket som helst symptom kan bli registrert uten noen forkunnskaper om hvilke typer symptomer det kan være, så vil muligheten for at bruke denne arketypen være nyttig. I dette tilfellet har CLUSTER.symptom-arketypen et SLOT for \"Strukturert anatomisk lokalisering\" som kan inneholde denne arketypen for å støtte maksimal fleksibilitet i registrering av data om den anatomiske lokaliseringen.
+			use = <"Brukes for å dokumentere strukturerte og ensartede detaljer om et enkelt identifisert fysisk sted på eller i menneskekroppen.
 
 Denne arketypen er spesifikt designet for bruk i ENTRY og CLUSTER-arketyper som gir konteksten for den anatomiske lokaliseringen.
 
-\"Navn på kroppssted\" er det eneste obligatoriske dataelementet og bør brukes som det primære dataelementet for registrering av en anatomisk lokalisering.
+Som en grunnleggende del av klinisk praksis kan klinikere beskrive anatomiske lokaliseringer på et utall forskjellige måter. Noen arketyper inneholder et enkelt dataelement for enkel beskrivelse av en kroppslig lokalisering - for eksempel OBSERVATION.blood_pressure, og CLUSTER.symptom når man beskriver øresmerter. I denne situasjonen, hvor verdisettet er forutsigbart og enkelt å definere, er dette enkle dataelementet en meget nøyaktig og praktisk måte for å registrere et anatomisk sted på eller i kroppen og søke på det på et senere tidspunkt. Når den anatomiske lokaliseringen derimot ikke er veldefinert eller må defineres fortløpende, kan det være mer fleksibelt å bruke denne strukturerte arketypen. For eksempel i en situasjon hvor et hvilket som helst symptom kan bli registrert uten noen forkunnskaper om hvilke typer symptomer det kan være, så vil muligheten for å bruke denne arketypen være nyttig. I dette tilfellet har CLUSTER.symptom-arketypen et SLOT for \"Strukturert anatomisk lokalisering\" som kan inneholde denne arketypen for å støtte maksimal fleksibilitet i registrering av data om den anatomiske lokaliseringen.
 
-\"Kroppsstruktur\" tillater i tillegg registrering av mindre nøyaktige beskrivelser av identifiserte kroppslige lokaliseringer, for eksempel et lem eller en finger. Dette kan være nyttig for klinikere som skal beskrive urinsyregikt som er lokalisert til \"interfalangealt ledd\" av storetåen.
+Arketypen støtter registrering av komplekse strukturerte anatomiske steder. For eksempel finnes hjertespisstøt typisk i femte venstre intercostalrom i midtclaviculære linjen, ømhet ved McBurney's punkt på abdomen eller laserasjon på den palmare siden av den proksimale høyre tommelen.
 
-Tilsvarende gjelder for dataelementer som \"Lateralitet\", \"Aspekt\", \"Region\", \"Anatomisk linje\" og \"Beskrivelse\" som tillater en mer presis registrering av det aktuelle kroppssted. For eksempel finnes hjertespisstøt typisk i femte venstre intercostalrom i midtclaviculære linjen, ømhet ved McBurney's punkt på abdomen eller laserasjon på den palmare siden av den proksimale høyre tommelen.
+En kombinasjon av dataelementer i denne arketypen kan brukes for individuell registrering av hver komponent av et postkoordinert terminologiuttrykk for anatomisk sted.
 
-Arketypen inneholder et \"Alternativ struktur\" SLOT som tillater inklusjon av ytterligere arketyper som gir en alternativ struktur for beskrivelse av det samme kroppssted, som CLUSTER.relative_location eller CLUSTER.precise_location om dette er nødvendig. I den situasjonen hvor denne arketypen bare brukes til å navngi en større og/eller ikke-spesifikk kroppsdel, kan ytterligere bruk av CLUSTER.relavtive_location-arketypen understøtte registrering av en mer preses lokasjon - for eksempel 2 cm anteriort for venstre arms cubitalfossa eller 4 cm under høyre costa margin på brystveggen i midtclaviculærlinjen.
+Arketypen inneholder et \"Alternativ struktur\" SLOT som tillater inklusjon av ytterligere arketyper som gir en alternativ struktur for beskrivelse av det samme kroppssted, som CLUSTER.anatomical_location_relative eller CLUSTER.anatomical_location_clock om dette er nødvendig. I en situasjon hvor denne arketypen bare brukes til å navngi en større og/eller ikke-spesifikk kroppsdel, kan ytterligere bruk av CLUSTER.anatomical_location_relative-arketypen understøtte registrering av en mer preses lokasjon - for eksempel 2 cm anteriort for venstre arms cubitalfossa eller 4 cm under høyre costamargin på brystveggen i midtclaviculærlinjen.
 
-En kombinasjon av dataelementer i denne arketypen kan brukes for individuell registrering av hver komponent av et postkoordinert terminologiuttrykk for anatomisk lokasjon.
-
-Hvis denne arketypen brukes i andre arketyper hvor pasienten/klienten ikke er den som dokumentasjonen omhandler for eksempel foetus-in-utero, så vil den anatomiske lokaliseringen bli identifisert som en lokalisering på eller i kroppen til det ufødte barnet.">
+Hvis denne arketypen brukes i andre arketyper hvor pasienten/klienten ikke er den som dokumentasjonen omhandler, for eksempel foetus-in-utero, så vil den anatomiske lokaliseringen bli identifisert som en lokalisering på eller i kroppen til fosteret.">
 			keywords = <"sted", "lokalisering", "lokalisasjon", "anatomisk", "kroppssted", "anatomisk region", "topografisk anatomi", "makroskopisk", "anatomi", "kroppsdel", "dermatom", "legemsdel">
-			misuse = <"Brukes ikke for spesifisering av unilateral/bilateral forekomst av et anatomisk kjennetegn. 
+			misuse = <"Brukes ikke for spesifisering av unilateral/bilateral forekomst av et anatomisk kjennetegn.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To identify and record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.">
+			use = <"Use to record structured and consistent details about a single identified physical site on, or within, the human body. 
 
-Brukers ikke for å registrere detaljer om en anatomisk lokalisering eller kroppssted som krever en eller annen form for forstørrelse for identifisering.">
+This archetype is specifically designed to be used within the context of any appropriate ENTRY or CLUSTER archetypes which supply the context of the anatomical location. 
+
+As a fundamental part of clinical practice, clinicians can describe anatomical locations in a myriad of complex and variable ways. In practice, some archetypes carry a single data element for carrying a simple description of body site - for example, OBSERVATION.blood_pressure and CLUSTER.symptom when describing ear pain. In this situation, where the value set is predictable and simple to define, this single data element is a very accurate and pragmatic way to record the site in the body and to query at a later date. However in the situation where the anatomical location is not well defined or needs to be determined at run-time, it may be more flexible to use this structured archetype. For example, in the situation where any symptom can be recorded without any predefined scope of the type of symptom, then allowing the use of this archetype to specifically define an anatomical location in the body may be useful. In this case the CLUSTER.symptom archetype also carries a SLOT for 'Detailed anatomical location' which can include this archetype to support maximal flexibility in recording anatomical location data.
+
+This archetype supports recording complex structured anatomical sites. For example, the apex beat of the heart is typically found at the fifth left intercostal space in the mid-clavicular line, tenderness at McBurney's point on the abdominal wall or a laceration on the palmar aspect of the proximal right thumb.
+
+A combination of the data elements in this archetype can be used to individually record each component of a postcoordinated terminology expression that represents the anatomical site.
+
+The 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In the situation where this archetype can only be used to name a large and/or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location - for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below R costal margin on the chest wall in the mid-clavicular line.
+
+If this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in-utero, then the anatomical location will be identifying a body site on or within the fetus.">
+			keywords = <"location", "site", "anatomical", "anatomic region", "topographic anatomy", "macroscopic", "anatomic", "anatomy">
+			misuse = <"Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"AuthorDraft">
-	other_contributors = <"Tomas Alme, DIPS, Norway", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, NTNU, Norway", "Dunmail Hodkinson, Black Pear Software Ltd, UK", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Vesna Levasic, Orthopaedic Hospital Valdoltra, Slovenia", "Hallvard Lærum, Oslo University Hospital, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Dmitri Wall, Irish Skin Foundation, Ireland">
+	lifecycle_state = <"published">
+	other_contributors = <"Tomas Alme, DIPS, Norway", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, NTNU, Norway", "Dunmail Hodkinson, Black Pear Software Ltd, UK", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Vesna Levasic, Orthopaedic Hospital Valdoltra, Slovenia", "Hallvard Lærum, Oslo University Hospital, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Dmitri Wall, Irish Skin Foundation, Ireland">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["revision"] = <"1.0.1">
 		["references"] = <"Anatomy Mapper website [Internet]. Matt Molenda, [cited 2015 Apr 27]. Available from: http://www.anatomymapper.com/.">
-		["MD5-CAM-1.0.1"] = <"176202A3CD33FC90F05C6543D2C0EAFF">
+		["build_uid"] = <"8703b7fa-f3cb-4c17-aaee-8d2bdd13ce31">
+		["original_publisher"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"01997B0D3ED0F7F9CD3B1BA3310D2EC0">
+		["custodian_namespace"] = <"org.openehr">
+		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
@@ -121,7 +115,7 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0066] occurrences matches {0..1} matches {	-- Body structure
+			ELEMENT[at0065] occurrences matches {0..1} matches {	-- Specific site
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -152,14 +146,11 @@ definition
 							at0074, 	-- Distal
 							at0075, 	-- Palmar
 							at0076, 	-- Plantar
-							at0077]	-- Mid
+							at0077, 	-- Mid
+							at0078, 	-- Oral
+							at0079]	-- Anal
 						}
 					}
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0065] occurrences matches {0..1} matches {	-- Region
-				value matches {
 					DV_TEXT matches {*}
 				}
 			}
@@ -187,7 +178,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Alternative structure
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.precise_location(-[a-zA-Z0-9_]+)*\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_clock(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			allow_archetype CLUSTER[at0054] occurrences matches {0..*} matches {	-- Multimedia representation
 				include
@@ -210,12 +201,12 @@ ontology
 				["at0001"] = <
 					text = <"*Body site name(en)">
 					description = <"*Identification of a single physical site either on, or within, the human body.(en)">
-					comment = <"*This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. (en)">
+					comment = <"*This data element is the only mandated data point in this archetype and should be used as the primary data point to record an anatomical location with a commonly used name. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. Use the other data elements for laterality, aspect, region and anatomical line to provide more detail. This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. (en)">
 				>
 				["at0002"] = <
 					text = <"*Laterality(en)">
-					description = <"*The side of the identified body site.(en)">
-					comment = <"*If the identified body site has no laterality, this data element should not have a value selected. 
+					description = <"*The side of the body on which the identified  body site is located.(en)">
+					comment = <"*If the identified body site has no laterality, this data element should not have a value. 
 If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.(en)">
 				>
 				["at0003"] = <
@@ -242,8 +233,8 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0055"] = <
 					text = <"*Anatomical Line(en)">
-					description = <"*Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.(en)">
-					comment = <"*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.(en)">
+					description = <"*Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body.(en)">
+					comment = <"*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line. If the 'Body site name' data element uses pre-coordinated terms that include anatomical line, then this data element is redundant.(en)">
 				>
 				["at0056"] = <
 					text = <"*Midaxillary line(en)">
@@ -275,18 +266,13 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0064"] = <
 					text = <"*Aspect(en)">
-					description = <"*Qualifying detail about the more specific aspect of the identified body site.(en)">
-					comment = <"*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.(en)">
+					description = <"*Qualifying detail about the specific aspect of the identified body site.(en)">
+					comment = <"*Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant.(en)">
 				>
 				["at0065"] = <
-					text = <"*Region(en)">
-					description = <"*Detail about the more specific region or point on, or within, the identified body site.(en)">
-					comment = <"*For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.(en)">
-				>
-				["at0066"] = <
-					text = <"*Body structure(en)">
-					description = <"*Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.(en)">
-					comment = <"*Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.(en)">
+					text = <"*Specific site(en)">
+					description = <"*Additional detail using a specific region or a point on, or within, the identified body site.(en)">
+					comment = <"*Use to increase precision of identification of the body site, if required. For example, the upper right quadrant or McBurney's point on the abdominal wall or interphalangeal joint of the great toe. If the 'Body site name' data element uses pre-coordinated terms that include the specific site, then this data element is redundant.(en)">
 				>
 				["at0067"] = <
 					text = <"*Medial(en)">
@@ -306,7 +292,7 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0071"] = <
 					text = <"*Anterior(en)">
-					description = <"*Towrds the front, or ventral surface, of  the body site.(en)">
+					description = <"*Towards the front, or ventral surface, of  the body site.(en)">
 				>
 				["at0072"] = <
 					text = <"*Posterior(en)">
@@ -331,6 +317,14 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				["at0077"] = <
 					text = <"*Mid(en)">
 					description = <"*In the middle of the body site.(en)">
+				>
+				["at0078"] = <
+					text = <"*Oral(en)">
+					description = <"*Towards the mouth. Usually used to describe locations within the digestive system.(en)">
+				>
+				["at0079"] = <
+					text = <"*Anal(en)">
+					description = <"*Towards the anus. Usually used to describe locations within the digestive system.(en)">
 				>
 			>
 		>
@@ -343,12 +337,12 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				["at0001"] = <
 					text = <"*Body site name(en)">
 					description = <"*Identification of a single physical site either on, or within, the human body.(en)">
-					comment = <"*This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. (en)">
+					comment = <"*This data element is the only mandated data point in this archetype and should be used as the primary data point to record an anatomical location with a commonly used name. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. Use the other data elements for laterality, aspect, region and anatomical line to provide more detail. This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. (en)">
 				>
 				["at0002"] = <
 					text = <"*Laterality(en)">
-					description = <"*The side of the identified body site.(en)">
-					comment = <"*If the identified body site has no laterality, this data element should not have a value selected. 
+					description = <"*The side of the body on which the identified  body site is located.(en)">
+					comment = <"*If the identified body site has no laterality, this data element should not have a value. 
 If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.(en)">
 				>
 				["at0003"] = <
@@ -375,8 +369,8 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0055"] = <
 					text = <"*Anatomical Line(en)">
-					description = <"*Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.(en)">
-					comment = <"*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.(en)">
+					description = <"*Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body.(en)">
+					comment = <"*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line. If the 'Body site name' data element uses pre-coordinated terms that include anatomical line, then this data element is redundant.(en)">
 				>
 				["at0056"] = <
 					text = <"*Midaxillary line(en)">
@@ -408,18 +402,13 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0064"] = <
 					text = <"*Aspect(en)">
-					description = <"*Qualifying detail about the more specific aspect of the identified body site.(en)">
-					comment = <"*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.(en)">
+					description = <"*Qualifying detail about the specific aspect of the identified body site.(en)">
+					comment = <"*Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant.(en)">
 				>
 				["at0065"] = <
-					text = <"*Region(en)">
-					description = <"*Detail about the more specific region or point on, or within, the identified body site.(en)">
-					comment = <"*For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.(en)">
-				>
-				["at0066"] = <
-					text = <"*Body structure(en)">
-					description = <"*Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.(en)">
-					comment = <"*Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.(en)">
+					text = <"*Specific site(en)">
+					description = <"*Additional detail using a specific region or a point on, or within, the identified body site.(en)">
+					comment = <"*Use to increase precision of identification of the body site, if required. For example, the upper right quadrant or McBurney's point on the abdominal wall or interphalangeal joint of the great toe. If the 'Body site name' data element uses pre-coordinated terms that include the specific site, then this data element is redundant.(en)">
 				>
 				["at0067"] = <
 					text = <"*Medial(en)">
@@ -439,7 +428,7 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0071"] = <
 					text = <"*Anterior(en)">
-					description = <"*Towrds the front, or ventral surface, of  the body site.(en)">
+					description = <"*Towards the front, or ventral surface, of  the body site.(en)">
 				>
 				["at0072"] = <
 					text = <"*Posterior(en)">
@@ -465,6 +454,14 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"*Mid(en)">
 					description = <"*In the middle of the body site.(en)">
 				>
+				["at0078"] = <
+					text = <"*Oral(en)">
+					description = <"*Towards the mouth. Usually used to describe locations within the digestive system.(en)">
+				>
+				["at0079"] = <
+					text = <"*Anal(en)">
+					description = <"*Towards the anus. Usually used to describe locations within the digestive system.(en)">
+				>
 			>
 		>
 		["en"] = <
@@ -476,12 +473,12 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				["at0001"] = <
 					text = <"Body site name">
 					description = <"Identification of a single physical site either on, or within, the human body.">
-					comment = <"This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. ">
+					comment = <"This data element is the only mandated data point in this archetype and should be used as the primary data point to record an anatomical location with a commonly used name. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. Use the other data elements for laterality, aspect, region and anatomical line to provide more detail. This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. ">
 				>
 				["at0002"] = <
 					text = <"Laterality">
-					description = <"The side of the identified body site.">
-					comment = <"If the identified body site has no laterality, this data element should not have a value selected. 
+					description = <"The side of the body on which the identified  body site is located.">
+					comment = <"If the identified body site has no laterality, this data element should not have a value. 
 If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.">
 				>
 				["at0003"] = <
@@ -508,8 +505,8 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0055"] = <
 					text = <"Anatomical Line">
-					description = <"Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.">
-					comment = <"Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.">
+					description = <"Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body.">
+					comment = <"Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line. If the 'Body site name' data element uses pre-coordinated terms that include anatomical line, then this data element is redundant.">
 				>
 				["at0056"] = <
 					text = <"Midaxillary line">
@@ -541,18 +538,13 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0064"] = <
 					text = <"Aspect">
-					description = <"Qualifying detail about the more specific aspect of the identified body site.">
-					comment = <"Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.">
+					description = <"Qualifying detail about the specific aspect of the identified body site.">
+					comment = <"Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant.">
 				>
 				["at0065"] = <
-					text = <"Region">
-					description = <"Detail about the more specific region or point on, or within, the identified body site.">
-					comment = <"For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.">
-				>
-				["at0066"] = <
-					text = <"Body structure">
-					description = <"Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.">
-					comment = <"Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.">
+					text = <"Specific site">
+					description = <"Additional detail using a specific region or a point on, or within, the identified body site.">
+					comment = <"Use to increase precision of identification of the body site, if required. For example, the upper right quadrant or McBurney's point on the abdominal wall or interphalangeal joint of the great toe. If the 'Body site name' data element uses pre-coordinated terms that include the specific site, then this data element is redundant.">
 				>
 				["at0067"] = <
 					text = <"Medial">
@@ -572,7 +564,7 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0071"] = <
 					text = <"Anterior">
-					description = <"Towrds the front, or ventral surface, of  the body site.">
+					description = <"Towards the front, or ventral surface, of  the body site.">
 				>
 				["at0072"] = <
 					text = <"Posterior">
@@ -598,6 +590,14 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"Mid">
 					description = <"In the middle of the body site.">
 				>
+				["at0078"] = <
+					text = <"Oral">
+					description = <"Towards the mouth. Usually used to describe locations within the digestive system.">
+				>
+				["at0079"] = <
+					text = <"Anal">
+					description = <"Towards the anus. Usually used to describe locations within the digestive system.">
+				>
 			>
 		>
 		["nb"] = <
@@ -609,16 +609,12 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				["at0001"] = <
 					text = <"Navn på kroppssted">
 					description = <"Identifikasjon av et enkelt fysisk sted enten på eller i menneskekroppen.">
-					comment = <"Dette data elementet bør kodes med en terminologi som kan assistere beslutnings støtte, når mulig - en passende terminologi for bruk her kunne omfatte individuelle konsepter eller lister av prekoordinerte termer.
-
-Fritekst bør kun brukes hvis det ikke finnes en passende terminologi. Det anbefales på det sterkeste at \"Navn på kroppssted\" registreres så spesifikt som anatomisk mulig. For eksempel registrer \"øvre øyelokk\" snarere enn \"øyelokk\" med \"øvre\" som kvalifikator. Femte ribbein snarere enn ribbein med etterfølgende kvalifikator.">
+					comment = <"Dette dataelementet er det eneste obligatoriske dataelementet i arketypen og bør brukes som det primære dataelementet for registrering av en anatomisk lokalisering. Det er sterkt anbefalt at \"Navn på kroppssted\" registreres så anatomisk spesifikt som mulig. For eksempel; registrer \"øvre øyelokk\" heller enn \"øyelokk\" med \"øvre\" som kvalifikator; \"femte ribben\" heller enn \"ribben\" med en numerisk kvalifikator. Bruk de andre dataelementene for lateralitet, aspekt, region og anatomisk linje for å gi mer detaljer. Dette dataelementet bør kodes med en terminologi som kan assistere beslutningsstøtte når mulig - en passende terminologi for bruk her kunne omfatte individuelle konsepter eller lister av prekoordinerte termer. Fritekst bør kun brukes hvis det ikke finnes en passende terminologi.">
 				>
 				["at0002"] = <
 					text = <"Lateralitet">
 					description = <"Den identifiserte kroppssiden.">
-					comment = <"Hvis den identifiserte kroppssiden ikke har noen lateralitet, bør dette datalementet stå tomt.
-
-Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inkluderer lateralitet, er dette data element overflødig.">
+					comment = <"Hvis den identifiserte kroppssiden ikke har noen lateralitet, bør dette datalementet stå tomt. Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inkluderer lateralitet, er dette dataelementet overflødig.">
 				>
 				["at0003"] = <
 					text = <"Venstre">
@@ -645,7 +641,7 @@ Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inklu
 				["at0055"] = <
 					text = <"Anatomisk linje">
 					description = <"Detaljer om det anatomiske stedet beskrevet med teoretiske linjer tegnet gjennom anatomiske strukturer til bruk som et konsistent referansepunkt.">
-					comment = <"Vanlige anatomiske linjer er inkludert som verdisett som kan utvides over tid, i tillegg gis mulighet for å bruke fritekst. Ytterligere bruk av dette dataelementet tillater registrering av typiske steder for hjertetspisstøt ved 5. intercostalrom på venstre side i midtclaviculærlinjen.">
+					comment = <"Vanlige anatomiske linjer er inkludert som verdisett som kan utvides over tid, i tillegg gis mulighet for å bruke fritekst. Ytterligere bruk av dette dataelementet tillater registrering av typiske steder for hjertetspisstøt ved 5. intercostalrom på venstre side i midtclaviculærlinjen. Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inkluderer lateralitet, er dette dataelementet overflødig.">
 				>
 				["at0056"] = <
 					text = <"Midtaksillærlinjen">
@@ -678,17 +674,12 @@ Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inklu
 				["at0064"] = <
 					text = <"Aspekt">
 					description = <"Spesifiserende detaljer om mer spesifikke aspekter ved det aktuelle kroppsstedet.">
-					comment = <"Vanlige aspekter er blitt inkludert som et verdisett som kan utvides over tid, i tillegg til mulighet for å bruke fritekst. Elementet har som antagelse at kroppen blir beskrevet i den anatomiske posisjon. F.eks. proksimal uretra, plantare aspekt av venstre tommel. Flere aspekter kan også beskrives om det er nødvendig, f.eks. venstre anteriore laterale (anterolaterale) brystvegg.">
+					comment = <"Brukes til å øke presisjonen ved spesifisering av kroppsstedet, ved behov. Vanlige aspekter er blitt inkludert som et verdisett som kan utvides over tid, i tillegg til mulighet for å bruke fritekst. Elementet har som antagelse at kroppen blir beskrevet i den anatomiske posisjon. F.eks. proksimal uretra, plantart aspekt av venstre tommel. Flere aspekter kan også beskrives om det er nødvendig ved å åpne for opptil 2 forekomster. F.eks. venstre anterior/laterale (anteriolaterale) brystvegg. Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inkluderer lateralitet, er dette dataelementet overflødig.">
 				>
 				["at0065"] = <
-					text = <"Region">
-					description = <"Detaljer om en mer spesifikk region eller punkt på eller i et identifisert kroppssted.">
-					comment = <"For eksemple øvre høyre kvadrant i abdomen, lumbarregionen i korsryggen, MacBurneys punkt, anticubital fossa eller nasolabial fold.">
-				>
-				["at0066"] = <
-					text = <"Kroppsstruktur">
-					description = <"Ytterligere identifikasjon av en større eller eller mindre presis anatomiske struktur, som det identifiserte kroppssted er en del av.">
-					comment = <"Bruk dette data element når \"Navn på kroppssted\" krever ytterligere anatomisk kontekst, for eksempel hvis kroppssted registreres som \"interfalangealt ledd\", dette data element tillater spesifikasjon av \"storetåen\".">
+					text = <"Spesifikt sted">
+					description = <"Ytterligere detaljer gitt ved hjelp av en spesifikk region eller et punkt på eller i det spesifiserte kroppsstedet.">
+					comment = <"Brukes til å øke presisjonen ved spesifisering av kroppsstedet, dersom påkrevd. For eksempel den øvre høyre kvadranten eller McBurneys punkt på bukveggen, eller interfalangealleddet på stortåen. Dersom dataelementet \"Navn på kroppssted\" er registrert ved hjelp av prekoordinerte termer som omfatter det spesifikke stedet er dette dataelementet overflødig.">
 				>
 				["at0067"] = <
 					text = <"Medialt">
@@ -731,8 +722,16 @@ Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inklu
 					description = <"Mot fotsålen.">
 				>
 				["at0077"] = <
-					text = <"Midten">
+					text = <"Midt">
 					description = <"I midten av kroppsstedet.">
+				>
+				["at0078"] = <
+					text = <"Oralt">
+					description = <"Mot munnen. Brukes som regel til å beskrive lokaliseringer i fordøyelsessystemet.">
+				>
+				["at0079"] = <
+					text = <"Analt">
+					description = <"Mot anus. Brukes som regel til å beskrive lokaliseringer i fordøyelsessystemet.">
 				>
 			>
 		>
