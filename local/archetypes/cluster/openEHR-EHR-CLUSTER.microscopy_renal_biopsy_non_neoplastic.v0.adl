@@ -1,0 +1,819 @@
+﻿archetype (adl_version=1.4; uid=324df9ac-fdc6-4e36-ae8f-b78755354d87)
+	openEHR-EHR-CLUSTER.microscopy_renal_biopsy_non_neoplastic.v0
+
+concept
+	[at0000]	-- Microscopy renal biopsy non neoplastic
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Sabine Leh">
+		["organisation"] = <"Haukeland University Hospital">
+		["email"] = <"sabine.leh@helse-bergen.no">
+		["date"] = <"2014-06-08">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"To record detailed findings about a non-neoplastic renal biopsy">
+			use = <"To record detailed findings about microscopic examination of tissue related to glomerular, tubulointerstitial and vascular renal diseases. Use as a component archetype in the context of a suite of archetypes that make up a histopathology report i.e. OBSERVATION.lab_test.histopathology">
+			keywords = <"histopathology", "pathology", "renal", "laboratory">
+			misuse = <"Not designed to be used within any other archetype other than OBSERVATION.lab_test.histopathology.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Sabine Leh, Haukeland University Hospital, sabine.leh@helse-bergen.no">
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["references"] = <"Chang A, Gibson IW, Cohen AH, Weening JW, Jennette JC, and Fogo AB (2012). A position paper on standardizing the nonneoplastic kidney biopsy report. Hum Pathol 43:1192-1196.
+Farris AB, Adams CD, Brousaides N, Della Pelle PA, Collins AB, Moradi E, Smith RN, Grimm PC, and Colvin RB (2011). Morphometric and visual evaluation of fibrosis in renal biopsies. J Am Soc Nephrol 22:176-186.
+Berden AE, Ferrario F, Hagen EC, Jayne DR, Jennette JC, Joh K, Neumann I, Noel LH, Pusey CD, Waldherr R, Bruijn JA, and Bajema IM (2010). Histopathologic classification of ANCA-associated glomerulonephritis. J Am Soc Nephrol 21:1628-1636.">
+		["build_uid"] = <"1a5d2ca3-f4c8-4580-b298-e412a32f773f">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"653E4A119CE0074664B3934C33B1BED5">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Microscopy renal biopsy non neoplastic
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..1} matches {	-- Renal biopsy overall description
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Cortex
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004, 	-- present
+									at0005, 	-- absent
+									at0006]	-- indeterminate
+								}
+							}
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
+							>
+							DV_PROPORTION matches {
+								is_integral matches {True}
+								type matches {2}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Medulla
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008, 	-- present
+									at0009, 	-- absent
+									at0010]	-- indeterminate
+								}
+							}
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
+							>
+							DV_PROPORTION matches {
+								is_integral matches {True}
+								type matches {2}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Renale capsule
+						name matches {
+							DV_TEXT matches {*}
+						}
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Other tissue elements
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013, 	-- sceletal muscle and/or fat tissue and/or connective tissue
+									at0014]	-- renal pelvis mucosa
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0015] occurrences matches {0..1} matches {	-- Glomeruli
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Glomeruli
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Scorable glomeruli
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Glomeruli solely with necrosis
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Glomeruli with crescents
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Glomeruli with ischemic changes
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Glomeruli with segmental sclerosis
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- Glomeruli with global sclerosis
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {	-- Normal glomeruli
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Glomerular size
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"µm">
+									>
+								>
+							>
+						}
+					}
+					allow_archetype CLUSTER[at0028] occurrences matches {0..*} matches {	-- Details of specific  glomerular changes
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Description of glomeruli
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0029] occurrences matches {0..1} matches {	-- Tubules
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0083] occurrences matches {0..1} matches {	-- Tubular epithelium
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0086] occurrences matches {0..1} matches {	-- Hyaline droplet change
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0084] occurrences matches {0..1} matches {	-- Vacuolization
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {[local::at0085]}		-- absent
+									}
+								}
+							}
+							ELEMENT[at0087] occurrences matches {0..1} matches {	-- Giant mitochondria
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					ELEMENT[at0080] occurrences matches {0..*} matches {	-- Casts in tubules
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0032, 	-- Tamm Horsfall protein
+									at0033, 	-- Hyaline casts
+									at0034, 	-- Granular casts
+									at0035, 	-- Detached cells
+									at0036, 	-- Red blood cells
+									at0037, 	-- Granulocytes
+									at0081, 	-- Mixed casts
+									at0082, 	-- Pigmented casts
+									at0031, 	-- Myeloma casts
+									at0038]	-- Crystals
+								}
+							}
+						}
+					}
+					CLUSTER[at0030] occurrences matches {0..1} matches {	-- Tubular casts
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0032] occurrences matches {0..1} matches {	-- Tamm Horsfall protein
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {	-- Hyaline casts
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0034] occurrences matches {0..1} matches {	-- Granular casts
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {	-- Detached cells
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0036] occurrences matches {0..1} matches {	-- Red blood cells
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0037] occurrences matches {0..1} matches {	-- Granulocytes
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0081] occurrences matches {0..1} matches {	-- Mixed casts
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0082] occurrences matches {0..1} matches {	-- Pigmented casts
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {	-- Myeloma casts
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0038] occurrences matches {0..1} matches {	-- Crystals
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0041] occurrences matches {0..1} matches {	-- Tubular atrophy
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0042] occurrences matches {0..1} matches {	-- Tubular atrophy semiquantitative
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0043, 	-- absent
+											at0044, 	-- slight
+											at0045, 	-- moderate
+											at0046, 	-- severe
+											at0047]	-- indeterminate
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0048] occurrences matches {0..1} matches {	-- Tubules description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0049] occurrences matches {0..1} matches {	-- Interstitium
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0050] occurrences matches {0..1} matches {	-- Quantification of interstitial fibrosis
+						items cardinality matches {1..*; unordered} matches {
+							allow_archetype CLUSTER[at0051] occurrences matches {0..*} matches {	-- Image analysis details
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {	-- Technique
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0053, 	-- Sirius red unpolarized
+											at0054, 	-- Sirius red polarized
+											at0055]	-- Collagen III immunohistochemistry
+										}
+									}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0056] occurrences matches {0..1} matches {	-- Percentage interstitial fibrosis
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::507]>
+										list = <
+											["1"] = <
+												units = <"%">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0079] occurrences matches {0..1} matches {	-- Multimedia representation of image analysis
+								value matches {
+									DV_MULTIMEDIA matches {
+										media_type matches {[openEHR::]}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0057] occurrences matches {0..1} matches {	-- Cortical area with fibrosis estimated
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"%">
+										magnitude = <|<=0.0|>
+										precision = <|0|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Fibrous tissue estimated
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"%">
+										precision = <|0|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0059] occurrences matches {0..1} matches {	-- Interstitium description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0060] occurrences matches {0..1} matches {	-- Vasculature
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0061] occurrences matches {0..1} matches {	-- Number of arteries
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0062] occurrences matches {0..1} matches {	-- Arteriosclerosis
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0063, 	-- not present/minimal
+									at0064, 	-- mild
+									at0065, 	-- moderate
+									at0066]	-- severe
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0067] occurrences matches {0..1} matches {	-- Arteriolosclerosis
+						value matches {
+							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0068, 	-- absent
+									at0069, 	-- present - nodular
+									at0070]	-- present - circumferential
+								}
+							}
+						}
+					}
+					ELEMENT[at0071] occurrences matches {0..1} matches {	-- Vasculature description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0072] occurrences matches {0..1} matches {	-- Amyloid
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0076] occurrences matches {0..*} matches {	-- Details of amyloid deposition 
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0073] occurrences matches {0..1} matches {	-- Amyloid deposition
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0074, 	-- absent
+									at0075]	-- present
+								}
+							}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0077] occurrences matches {0..*} matches {	-- Specific clinical situations
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0078] occurrences matches {0..1} matches {	-- Multimedia representation
+				value matches {
+					DV_MULTIMEDIA matches {
+						media_type matches {[openEHR::]}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Microscopy renal biopsy non neoplastic">
+					description = <"Microscopic findings related to a non-neoplastic renal biopsy">
+				>
+				["at0001"] = <
+					text = <"Renal biopsy overall description">
+					description = <"*Describes tissue types  in the renal biopsy specimen">
+				>
+				["at0003"] = <
+					text = <"Cortex">
+					description = <"*Cortical tissue present, alternatively core length with cortical tissue, alternatively proportion of cortical tissue in relation to the core with renal tissue">
+				>
+				["at0004"] = <
+					text = <"present">
+					description = <"cortical tissue present">
+				>
+				["at0005"] = <
+					text = <"absent">
+					description = <"cortical tissue absent">
+				>
+				["at0006"] = <
+					text = <"indeterminate">
+					description = <"Presence of cortical tissue has not been determined">
+				>
+				["at0007"] = <
+					text = <"Medulla">
+					description = <"*Medullary tissue present, alternatively core length with medullary tissue, alternatively proportion of medullary tissue in relation to the core with renal tissue">
+				>
+				["at0008"] = <
+					text = <"present">
+					description = <"medullary tissue present">
+				>
+				["at0009"] = <
+					text = <"absent">
+					description = <"medullary tissue absent">
+				>
+				["at0010"] = <
+					text = <"indeterminate">
+					description = <"Presence of medullary tissue has not been determined">
+				>
+				["at0011"] = <
+					text = <"Renale capsule">
+					description = <"*Renal capsule present or absent">
+				>
+				["at0012"] = <
+					text = <"Other tissue elements">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"sceletal muscle and/or fat tissue and/or connective tissue">
+					description = <"sceletal muscle and/or fat tissue and/or connective tissue present">
+				>
+				["at0014"] = <
+					text = <"renal pelvis mucosa">
+					description = <"renal pelvis mucosa present">
+				>
+				["at0015"] = <
+					text = <"Glomeruli">
+					description = <"*Description of glomerular changes">
+				>
+				["at0016"] = <
+					text = <"Glomeruli">
+					description = <"*The maximum number of glomeruli  irrespective of size present in one section; structures consisting of Bowman's capsule with empty Bowman's space are excluded.">
+				>
+				["at0017"] = <
+					text = <"Scorable glomeruli">
+					description = <"*The number of glomeruli judged as adequate for scoring by the reporting pathologist">
+				>
+				["at0019"] = <
+					text = <"Glomeruli solely with necrosis">
+					description = <"*The number of glomeruli showing fibrinoid necrosis without crescent formation.">
+				>
+				["at0020"] = <
+					text = <"Glomeruli with crescents">
+					description = <"*The number of glomeruli showing cellular or fibrocellular crescents.">
+				>
+				["at0021"] = <
+					text = <"Glomeruli with ischemic changes">
+					description = <"*The number of glomeruli showing some degree of tuft retraction, wrinkling of capillary walls and fibrosis of Bowman's capsule">
+				>
+				["at0022"] = <
+					text = <"Glomeruli with segmental sclerosis">
+					description = <"*The number of glomeruli showing obliteration of capillary lumen by extracellular matrix in less than 50% of the tuft area with or without adhesions to the Bowman capsule, hyaline lesions, foam cells.">
+				>
+				["at0023"] = <
+					text = <"Glomeruli with global sclerosis">
+					description = <"*The number of glomeruli showing scarring with obliteration of capillary lumen by extracellular matrix in the entire or nearly entire glomerular tuft ">
+				>
+				["at0024"] = <
+					text = <"Normal glomeruli">
+					description = <"*The number of glomeruli which appear normal without major changes.">
+				>
+				["at0025"] = <
+					text = <"Glomerular size">
+					description = <"*The size of the glomerulus measured as mean of maximal tuft diameter of all measurable glomeruli">
+				>
+				["at0026"] = <
+					text = <"Description of glomeruli">
+					description = <"*A description of glomerular findings, e.g. mesangial and endocapillary cellularity, capillary wall changes, podocytes, Bowman's space.
+For structured description of specific renal diseases use appropriate cluster (IgA nephropathy, lupus nephritis).">
+				>
+				["at0028"] = <
+					text = <"Details of specific  glomerular changes">
+					description = <"*Slot for detailed description of specific glomerular changes.
+Include:
+openEHR-EHR-CLUSTER.glomerulus_segmental_glomerulosclerosis_classification.v1">
+				>
+				["at0029"] = <
+					text = <"Tubules">
+					description = <"*Descritption of tubular changes">
+				>
+				["at0030"] = <
+					text = <"Tubular casts">
+					description = <"*structured report of kind of tubular casts present">
+				>
+				["at0031"] = <
+					text = <"Myeloma casts">
+					description = <"*Characteristic myeloma casts, often surrounded by reactive tubular epithelial cells or multinucleated cells, present in tubular lumen">
+				>
+				["at0032"] = <
+					text = <"Tamm Horsfall protein">
+					description = <"*Presence of intratubular Tamm Horsfall protein">
+				>
+				["at0033"] = <
+					text = <"Hyaline casts">
+					description = <"*Presence of hyalin casts in tubular lumen">
+				>
+				["at0034"] = <
+					text = <"Granular casts">
+					description = <"*Presence of granular casts in tubular lumen">
+				>
+				["at0035"] = <
+					text = <"Detached cells">
+					description = <"*Detached cells, commonly epithelial cells.  present in the tubular lumen">
+				>
+				["at0036"] = <
+					text = <"Red blood cells">
+					description = <"*Collections of red blood cells or red blood cell casts present in tubular lumen">
+				>
+				["at0037"] = <
+					text = <"Granulocytes">
+					description = <"*Presence of neutrophil granulocytes in tubular lumen">
+				>
+				["at0038"] = <
+					text = <"Crystals">
+					description = <"*Crystals present in tubular lumen">
+				>
+				["at0041"] = <
+					text = <"Tubular atrophy">
+					description = <"*Semiquantitative or quantitative assessment of tubular atrophy">
+				>
+				["at0042"] = <
+					text = <"Tubular atrophy semiquantitative">
+					description = <"*Semiquantitative visual assessment of tubular atrophy">
+				>
+				["at0043"] = <
+					text = <"absent">
+					description = <"Tubular atrophy is not present or minimal (few transsections)">
+				>
+				["at0044"] = <
+					text = <"slight">
+					description = <"Tubular atrophy in up to 25 % of the area of cortical tubules">
+				>
+				["at0045"] = <
+					text = <"moderate">
+					description = <"Tubular atrophy involving 25 - 50% of the area of cortical tubules">
+				>
+				["at0046"] = <
+					text = <"severe">
+					description = <"Tubular atrophy present in more than 50% of the area of cortical tubules">
+				>
+				["at0047"] = <
+					text = <"indeterminate">
+					description = <"It is not possible to estimate tubular atrophy adequately">
+				>
+				["at0048"] = <
+					text = <"Tubules description">
+					description = <"*Desription of tubular changes, e.g. hyalin droplet change, acute epithelial damage, cytoplasmic vacuolation, sloughing of cells, loss of brush border.">
+				>
+				["at0049"] = <
+					text = <"Interstitium">
+					description = <"*Interstitial changes, especially semiquantitative or quantitative assessment of interstitial fibrosis">
+				>
+				["at0050"] = <
+					text = <"Quantification of interstitial fibrosis">
+					description = <"*Quantification of interstitial fibrosis by image analysis methods">
+				>
+				["at0051"] = <
+					text = <"Image analysis details">
+					description = <"*To record details of the image analysis, e.g. software, algorithm.">
+				>
+				["at0052"] = <
+					text = <"Technique">
+					description = <"*Technique used to quantify fibrosis">
+				>
+				["at0053"] = <
+					text = <"Sirius red unpolarized">
+					description = <"Sirius red stain unpolarized used for fibrosis quantification by image analysis">
+				>
+				["at0054"] = <
+					text = <"Sirius red polarized">
+					description = <"Sirius red stain polarized used for fibrosis quantification by image analysis">
+				>
+				["at0055"] = <
+					text = <"Collagen III immunohistochemistry">
+					description = <"Collagen III immunohistochemical stain used for fibrosis quantification by image analysis">
+				>
+				["at0056"] = <
+					text = <"Percentage interstitial fibrosis">
+					description = <"*Percentage of the renal cortical tissue involved by fibrosis">
+				>
+				["at0057"] = <
+					text = <"Cortical area with fibrosis estimated">
+					description = <"*Visual quantification of interstitial fibrosis; The fibrosis percentage is the percentage of abnormal cortical  tissue with fibrosis">
+				>
+				["at0058"] = <
+					text = <"Fibrous tissue estimated">
+					description = <"*Visual quantification of interstitial fibrosis; The fibrosis percentage is the percentage of all cortical  tissue (excluding tubules and glomeruli) occupied by fibrous tissue.">
+				>
+				["at0059"] = <
+					text = <"Interstitium description">
+					description = <"*Description of interstitial changes, e.g. edema, inflammatory cells, deposits.">
+				>
+				["at0060"] = <
+					text = <"Vasculature">
+					description = <"*Changes affecting arteries, arterioles, venes and peritubular capillaries">
+				>
+				["at0061"] = <
+					text = <"Number of arteries">
+					description = <"*Number of arteries in a renal biopsy">
+				>
+				["at0062"] = <
+					text = <"Arteriosclerosis">
+					description = <"*in the most affected vessel or overall severity?">
+				>
+				["at0063"] = <
+					text = <"not present/minimal">
+					description = <"There is no intimal sclerosis or intimal sclerosis is minimal">
+				>
+				["at0064"] = <
+					text = <"mild">
+					description = <"There is < 25% lumen narrowing by intimal sclerosis">
+				>
+				["at0065"] = <
+					text = <"moderate">
+					description = <"There is 25% - 50% lumen narrowing by intimal sclerosis">
+				>
+				["at0066"] = <
+					text = <"severe">
+					description = <"There is > 50% lumen narrowing by intimal sclerosis">
+				>
+				["at0067"] = <
+					text = <"Arteriolosclerosis">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"absent">
+					description = <"Arteriolosclerosis not present">
+				>
+				["at0069"] = <
+					text = <"present - nodular">
+					description = <"Nodular arteriolosclerosis is present">
+				>
+				["at0070"] = <
+					text = <"present - circumferential">
+					description = <"Circumferential arteriolosclerosis is present">
+				>
+				["at0071"] = <
+					text = <"Vasculature description">
+					description = <"*Description of vascular changes, e.g. vasculitis, venulitis. For description of severity of arteriosclerosis and arteriolosclerosis use coded text.">
+				>
+				["at0072"] = <
+					text = <"Amyloid">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Amyloid deposition">
+					description = <"*A statement that amyloid deposition is absent or present">
+				>
+				["at0074"] = <
+					text = <"absent">
+					description = <"Amyloid deposition is not seen">
+				>
+				["at0075"] = <
+					text = <"present">
+					description = <"Amyloid deposition is seen">
+				>
+				["at0076"] = <
+					text = <"Details of amyloid deposition ">
+					description = <"*Slot for detailed description of specific glomerular changes.
+Include:
+openEHR-EHR-CLUSTER.amyloid_deposition.v1">
+				>
+				["at0077"] = <
+					text = <"Specific clinical situations">
+					description = <"*Detailed structured description for specific clinical situations, e.g. biopsy of renal transplant, lupus nephritis, IgA nephropathy">
+				>
+				["at0078"] = <
+					text = <"Multimedia representation">
+					description = <"*Images from lesions could be attached here">
+				>
+				["at0079"] = <
+					text = <"Multimedia representation of image analysis">
+					description = <"*Images, graphs and tables from automatic image analysis of  interstitial fibrosis">
+				>
+				["at0080"] = <
+					text = <"Casts in tubules">
+					description = <"*Choose the type of casts present in tubuli. Multiple choices possible.">
+				>
+				["at0081"] = <
+					text = <"Mixed casts">
+					description = <"*casts consisting of more than one component">
+				>
+				["at0082"] = <
+					text = <"Pigmented casts">
+					description = <"*Discolorated casts e.g. due to hemoglobin, myoglobin, drug pigments, bilirubin, melanin.">
+				>
+				["at0083"] = <
+					text = <"Tubular epithelium">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Vacuolization">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"absent">
+					description = <"there is no vacuolization of the tubular epithelium">
+				>
+				["at0086"] = <
+					text = <"Hyaline droplet change">
+					description = <"*PAs positive absorption droplets in the epithelium of proximal tubules, usually indicating glomerular proteinuria.">
+				>
+				["at0087"] = <
+					text = <"Giant mitochondria">
+					description = <"*">
+				>
+			>
+		>
+	>
