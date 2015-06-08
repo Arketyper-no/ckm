@@ -1,10 +1,18 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-CLUSTER.asa_status.v1
+﻿archetype (adl_version=1.4; uid=871d2142-4e49-4316-ad2e-70d10337e624)
+	openEHR-EHR-CLUSTER.asa_status.v0
 
 concept
 	[at0000]	-- ASA Physical Status Classification
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen, Helse Vest; Einar Fosse, Helse Nord">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -23,14 +31,31 @@ This archetype has been designed to be used within a variety of ENTRY archetypes
 			misuse = <"Not intended for use as a measure to predict operative risk.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av graden av sykelighet eller fysisk status før valg av anestesi eller oppstart av operasjon.">
+			use = <"Brukes for journaldokumentasjon, for kommunikasjon mellom kolleger og for å skape en enhetlig system for statistisk analyse.
+
+Denne arketypen er blitt designet for å brukes innen forskjellige ENTRY-arketyper f.eks. EVALUATION for preoperativ anestesivurdering eller vurdering for infeksjonskontroll.">
+			keywords = <"ASA", "preoperativ", "kirurgi">
+			misuse = <"Brukes ikke som mål for å forutsi operasjonsrisiko.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
 		["references"] = <"American Society for Anesthesiologists: http://www.asahq.org/clinical/physicalstatus.htm
 Cleveland Clinic (provided examples of each state): http://my.clevelandclinic.org/services/Anesthesia/hic_ASA_Physical_Classification_System.aspx">
-		["MD5-CAM-1.0.1"] = <"76575A6A3B720EDD812A00380EC8810B">
+		["build_uid"] = <"3e6e6d3e-c086-41f5-a132-1b2bb5d3bab8">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"AB1DAE2C4AA7E944F49569E75E78C502">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -124,6 +149,71 @@ ontology
 				["at0014"] = <
 					text = <"Comment">
 					description = <"Narrative comment about the ASA patient status assessment.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"ASA-klassifisering">
+					description = <"Klassifikasjonssystem anvendt av American Society of Anesthesiologists for vurdering av den preoperative fysiske status.">
+				>
+				["at0001"] = <
+					text = <"ASA-status">
+					description = <"Vurdert preoperativ status til et individ.">
+				>
+				["at0003"] = <
+					text = <"1 - Normal frisk pasient">
+					description = <"Frisk pasient. Ingen organisk, fysiologisk, biokjemisk eller psykiatrisk forstyrrelse. Den aktuelle lidelsen er lokalisert og gir ikke generelle systemforstyrrelser. Mindre enn 5 sigaretters røyking per dag. Alder over 3 måneder og under 80 år.
+Eksempel: Frisk 50-åring, ikke-røyker, til åreknuteoperasjon.">
+				>
+				["at0004"] = <
+					text = <"2 - En pasient med mild systemisk sykdom">
+					description = <"Moderat organisk lidelse eller forstyrrelse som ikke forårsaker funksjonelle begrensninger, men som kan medføre spesielle forholdsregler eller anestesitekniske tiltak. Lidelsen(e) kan enten være forårsaket av den aktuelle sykdommen pasienten skal opereres for, eller av en annen patologisk prosess. Alder over 80 år og nyfødte under 3 måneder. Mer enn 5 sigaretters røyking per dag.
+Eksempler: Lett organisk hjertesykdom. Ukomplisert diabetes (type 1 og 2). Godartet, ukomplisert hypertensjon. Frisk 20-åring med kjeveleddsperre.">
+				>
+				["at0005"] = <
+					text = <"3 - En pasient med alvorlig systemisk sykdom">
+					description = <"Alvorlig organisk sykdom eller forstyrrelse som gir definerte funksjonelle begrensninger.
+Eksempler: Diabetes med organkomplikasjoner. Invalidiserende hjertesykdom. Moderat til alvorlig lungesykdom. Angina pectoris. Gjennomgått hjerteinfarkt (mer enn 6 måneder siden).">
+				>
+				["at0006"] = <
+					text = <"4 - En pasient med livstruende systemisk sykdom">
+					description = <"Livstruende organisk sykdom som ikke behøver å være relatert til den aktuelle kirurgiske lidelsen eller som ikke alltid bedres ved det kirurgiske inngrepet.
+Eksempler: Malign hypertensjon. Nylig gjennomgått hjerteinfarkt (mindre enn 6 måneder siden). Sterkt framskreden lever-, nyre-, lunge- eller endokrin dysfunksjon. Manifest hjertesvikt. Ustabil angina pectoris. Subaraknoidalblødning, pasienten våken eller somnolent.">
+				>
+				["at0007"] = <
+					text = <"5 - En moribund pasient som ikke forventes å overleve uten operasjon">
+					description = <"Moribund pasient som ikke forventes å overleve 24 timer, med eller uten kirurgi.
+Eksempler: Pasient i sjokk med aortaaneurisme. Dypt komatøs pasient med intrakraniell blødning.">
+				>
+				["at0008"] = <
+					text = <"6 - Erklært hjernedød. Organdonor for transplantasjon.">
+					description = <"Erklært hjernedød. Organdonor for transplantasjon.">
+				>
+				["at0009"] = <
+					text = <"1E Normal frisk pasient (Akutt)">
+					description = <"ASA status 1 i en akuttsituasjon.">
+				>
+				["at0010"] = <
+					text = <"2E - En pasient med mild systemisk sykdom (Akutt)">
+					description = <"ASA status 2 i en akuttsituasjon.">
+				>
+				["at0011"] = <
+					text = <"3E- En pasient med alvorlig systemisk sykdom (Akutt)">
+					description = <"ASA status 3 i en akuttsituasjon.">
+				>
+				["at0012"] = <
+					text = <"4E- En pasient med alvorlig systemisk sykdom der er i konstant livsfare (Akutt)">
+					description = <"ASA status 4 i en akuttsituasjon">
+				>
+				["at0013"] = <
+					text = <"5E - En moribund pasient som ikke forventes å overleve operasjonen (Akutt)">
+					description = <"ASA status 5 i en akuttsituasjon">
+				>
+				["at0014"] = <
+					text = <"Kommentar">
+					description = <"Fritekstlig kommentar om vurderingen av individets ASA-status.">
 				>
 			>
 		>
