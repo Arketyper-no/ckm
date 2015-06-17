@@ -6,11 +6,11 @@ concept
 language
 	original_language = <[ISO_639-1::nb]>
 	translations = <
-		["en-gb"] = <
-			language = <[ISO_639-1::en-gb]>
+		["en"] = <
+			language = <[ISO_639-1::en]>
 			author = <
 				["name"] = <"Micaela Thierley">
-				["organisation"] = <"Helse Bergen Norway">
+				["organisation"] = <"Helse Bergen, Norway">
 				["email"] = <"micaela.thierley@helse-bergen.no">
 			>
 		>
@@ -23,15 +23,18 @@ description
 		["date"] = <"2014-07-04">
 	>
 	details = <
-		["en-gb"] = <
-			language = <[ISO_639-1::en-gb]>
-			purpose = <"Tool to screen for patients in risk for falling.
-It includes elements from \"Barthel test\" wich is representet in its own archetype.
-The total score can either be entered manually (ie calculated and directly entered by the clinician), or automatically (ie calculation and entry is done automatically by a software application, based on the soring regristered in the tool.">
-			use = <"For risk of fall screening in adult patiens in healthcare institustions.
-The ‘Combined Transfer and Mobility Score’ data element is the result of adding the scores for the ‘Transfer’ data element and the ‘Mobility’ data element from the Barthel Index archetype.">
-			keywords = <"risk, fall, balance,", ...>
-			misuse = <"Not to be used without Barthel archetype.">
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For screening for falls risk in patients over 65 years of age, and other adults with neurological or cognitive conditions or significant visual impairment.
+
+Includes elements from \"Barthel ADL Index\"; \"Transfer\" and \"Mobility\", which are represented in a separate archetype.
+
+The total score can either be entered manually (ie calculated and directly entered by the clinician), or automatically (ie calculation and entry is done automatically by a software application, based on the recorded scores).">
+			use = <"Risk assessment of all patients over the age of 65 and other adults with neurological or cognitive conditions or significant visual impairment, within 24h of being admitted to a healtchare institution.
+
+The 'Combined Transfer and Mobility Score' data element is the result of adding the scores for the 'Transfer' data element and the 'Mobility' data element from the Barthel Index archetype.">
+			keywords = <"risk", "fall", "balance">
+			misuse = <"Not to be used without simultaneous use of the Barthel archetype.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
@@ -52,16 +55,12 @@ Poengene fra forflytning og rørlighet /gangfunksjon er et resultat fra feltene 
 	other_contributors = <"Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Micaela Thierley, Helse Bergen, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Micaela Thierley, Helse Bergen, micaela.thierley@helse-bergen.no">
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Oliver D, Britton M, Seed P,  Martin FC , Hopper A H. Development and evaluation of evidence based risk assessment tool (STRATIFY) to predict which elderly inpatients will fall: case-control and cohort studies. BMJ 1997;315:1049
-">
-		["build_uid"] = <"6097a502-0e59-4dfd-9c03-6f027111b086">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"7A64ADAEFED51040E074BC64F5D90713">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["custodian_organisation"] = <"Nasjonal IKT">
+
+Sekretariatet for nasjonalt pasientsikkerhetsprogram, Helsedirektoratet. Forebygging av fall i helseinstitusjoner [Internett]; [sitert 17.06.2015]. Tilgjengelig fra: http://www.pasientsikkerhetsprogrammet.no/no/I+trygge+hender/Innsatsomr%C3%A5der/Forebygging+av+fall+i+helseinstitusjoner.453.cms">
+		["build_uid"] = <"4c20fdd2-299a-46e4-aadf-26afd5ab1015">
+		["MD5-CAM-1.0.1"] = <"E50A149795DEF62E4FD57BE9E5E01378">
 	>
 
 definition
@@ -120,59 +119,58 @@ definition
 	}
 
 
+
 ontology
 	term_definitions = <
-		["en-gb"] = <
+		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"*STRATIFY: Vurderingsverktøy for fallrisiko hos eldre(nb)">
-					description = <"*Registrering av pasientens fallrisiko. Denne versjonen er oversatt og modifisert av det nasjonale pasientsikkerhetsprogrammet.(nb)">
+					text = <"STRATIFY: Falls risk assessment tool">
+					description = <"Recording of the patient's falls risk. This version of the score is based on a modified Norwegian translation, which has been deployed by the The Norwegian Patient Safety Programme.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*Uspesifisert hendelse(nb)">
-					description = <"*Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.(nb)">
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"*Har pasienten hatt noen fall i de siste 3 månedene?(nb)">
-					description = <"*Fall de siste tre måneder.(nb)">
-					comment = <"*score  0 for Nei,  
-score 1 Ja(nb)">
+					text = <"Has the patient fallen during the last 3 months?">
+					description = <"Falls during the last three months.">
+					comment = <"Score 0 for false/no
+Score 1 for true/yes.">
 				>
 				["at0005"] = <
-					text = <"*Er pasienten urolig?(nb)">
-					description = <"*Urolig adferd hos pasienten.(nb)">
-					comment = <"*score  0 for Nei,  
-score 1 Ja(nb)">
+					text = <"Is the patient agitated?">
+					description = <"Agitated, desoriented or confused behaviour.">
+					comment = <"Score 0 for false/no
+Score 1 for true/yes.">
 				>
 				["at0006"] = <
-					text = <"*Er pasienten synsskadet/synshemmet i et slikt omfang at hverdagslig funksjoner er påvirket?(nb)">
-					description = <"*Problemer med synet.(nb)">
-					comment = <"*score  0 for Nei,  
-score 1 Ja(nb)">
+					text = <"Is the patient visually impaired to the extent that everyday function is affected?">
+					description = <"Visual problems.">
+					comment = <"Score 0 for no
+Score 1 for yes.">
 				>
 				["at0007"] = <
-					text = <"*Oppfatter du at pasienten har spesielt behov av å besøke toalett ofte?(nb)">
-					description = <"*Hyppige toalettbesøk.(nb)">
-					comment = <"*score  0 for Nei,  
-score 1 Ja(nb)">
+					text = <"Do you think the patient is in need of especially frequent toileting?">
+					description = <"Frequent visits to the toilet.">
+					comment = <"Score 0 for no
+Score 1 for yes.">
 				>
 				["at0009"] = <
-					text = <"*Poeng totalt(nb)">
-					description = <"*Summ av poeng fra punkt 1 til 5 0= lav risko; 1= moderat risko; over 2= høy risko.(nb)">
+					text = <"Total score">
+					description = <"Sum of the scores from all the elements. 0 = low risk; 1 = moderate risk; 2+ = high risk.">
 				>
 				["at0010"] = <
-					text = <"*Kombinert poeng fra forflytning og rørlighet/gangfunskjon 3 eller 4?(nb)">
-					description = <"*Poengene kommer fra registeringer gjort i Barthel ADL indeks fra punktene \"mobililtet\" og \"forflytning\".(nb)">
-					comment = <"*score  0 for Nei,  
-score 1 Ja(nb)">
+					text = <"Combined \"Transfer\" and \"Mobility\" Scores from Barthel ADL Index">
+					description = <"The points come from recordings made using the Barthel ADL Index archetype, from the elements \"Mobility\" and \"Transfer.">
 				>
 				["at0011"] = <
 					text = <"No">
@@ -207,12 +205,12 @@ score 1 Ja(nb)">
 					description = <"Present.">
 				>
 				["at0020"] = <
-					text = <"No">
-					description = <"Absent.">
+					text = <"0-2 points or 5-6 points">
+					description = <"0 points.">
 				>
 				["at0021"] = <
-					text = <"Yes">
-					description = <"Present">
+					text = <"3-4 points">
+					description = <"1 point.">
 				>
 			>
 		>
@@ -237,36 +235,34 @@ score 1 Ja(nb)">
 				["at0004"] = <
 					text = <"Har pasienten hatt noen fall i de siste 3 månedene?">
 					description = <"Fall de siste tre måneder.">
-					comment = <"score  0 for Usann/ Nei,  
+					comment = <"score 0 for Usann/ Nei, 
 score 1 for Sann/ Ja.">
 				>
 				["at0005"] = <
 					text = <"Er pasienten urolig?">
 					description = <"Urolig, uklar, desorientert eller forvirret adferd.">
-					comment = <"score  0 for Usann/ Nei,  
+					comment = <"score 0 for Usann/ Nei, 
 score 1 for Sann/ Ja.">
 				>
 				["at0006"] = <
 					text = <"Er pasienten synsskadet/synshemmet i et slikt omfang at hverdagslige funksjoner er påvirket?">
 					description = <"Problemer med synet.">
-					comment = <"score  0 for Usann/ Nei,  
+					comment = <"score 0 for Usann/ Nei, 
 score 1 for Sann/ Ja.">
 				>
 				["at0007"] = <
 					text = <"Oppfatter du at pasienten har spesielt behov av å besøke toalett ofte?">
 					description = <"Hyppige toalettbesøk.">
-					comment = <"score  0 for Usann/ Nei,  
+					comment = <"score 0 for Usann/ Nei, 
 score 1 for Sann/ Ja.">
 				>
 				["at0009"] = <
 					text = <"Poeng totalt">
-					description = <"Sum av poeng fra variablene 1 til 5. 0= lav risko; 1= moderat risko; over 2= høy risko.">
+					description = <"Sum av poeng fra alle elementene. 0= lav risko; 1= moderat risko; over 2= høy risko.">
 				>
 				["at0010"] = <
 					text = <"Total sum av \"Mobililtet\" og \"Forflytning mellom seng og stol\" fra Barthel ADL-indeks">
 					description = <"Poengene kommer fra registeringer gjort i Barthel ADL indeks fra punktene \"Mobililtet\" og \"Forflytning mellom seng og stol\".">
-					comment = <"score  0 for Usann/ Nei,  
-score 1 for Sann/ Ja.">
 				>
 				["at0011"] = <
 					text = <"Nei">
@@ -302,11 +298,11 @@ score 1 for Sann/ Ja.">
 				>
 				["at0020"] = <
 					text = <"0-2 poeng eller 5-6 poeng">
-					description = <"0 poeng">
+					description = <"0 poeng.">
 				>
 				["at0021"] = <
 					text = <"3-4 poeng">
-					description = <"1 Poeng">
+					description = <"1 Poeng.">
 				>
 			>
 		>
