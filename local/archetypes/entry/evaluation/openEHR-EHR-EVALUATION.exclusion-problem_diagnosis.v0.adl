@@ -13,6 +13,7 @@ language
 			author = <
 				["name"] = <"Lars Bitsch-Larsen">
 				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
+				["email"] = <"hallar@ous-hf.no">
 			>
 			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
@@ -39,13 +40,13 @@ Exclusion statements can only be considered to be current and accurate at the ti
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For dokumentasjon av problemer eller diagnoser som er ekskluderte på et bestemt tidspunkt.">
+			purpose = <"Å dokumentere at bestemte problemer eller diagnoser er utelukket på et bestemt tidspunkt.">
 			use = <"Brukes til å registrere positiv uttalelse(r) om fravær eller utelukkelse av problemer eller diagnoser i pasientjournalen på et bestemt tidspunkt. For eksempel: å registrere at personen ikke har hatt vesentlige problemer eller diagnoser; eller at personen aldri er blitt diagnostisert med diabetes.
 
 Denne arketypen har blitt designet spesielt for å unngå behovet for å bruke flagg eller terminologi for å uttrykke negasjon om eventuelle problemer eller diagnoser i pasientjournalen. 
 
-Eksklusjonsuttalelser kan bare anses å være oppdatert og nøyaktig på registreringstidspunktet. For eksempel: å registrere utelukkelse av den tidligere diagnostisering av diabetes under en konsultasjon er bare aktuelt på det tidspunkt og er avleggs, dersom resultatene av en senere blodsukkermåling viser forhøyde verdier.">
-			keywords = <"eksklusjon", "problem", "diagnose">
+Eksklusjonsuttalelser kan bare anses å være oppdatert og nøyaktig på registreringstidspunktet. For eksempel: Om diabetes utelukkes under en konsultasjon, gjelder det bare på det tidspunktet. Om senere blodsukkermålinger viser forhøyde verdier, er eksklusjonen ikke lenger relevant.">
+			keywords = <"eksklusjon", "problem", "diagnose", "utelukke">
 			misuse = <"Skal ikke brukes til å registrere eksklusjonsuttalelser om uønskede reaksjoner, medisiner eller prosedyrer - bruk andre spesifikke spesialiseringer av EVALUATION.exclusion arketypen for dette formålet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -58,10 +59,10 @@ Eksklusjonsuttalelser kan bare anses å være oppdatert og nøyaktig på registr
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Exclusion of Problem/Diagnosis, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 02 Mar 2010. Available at: 
 http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1304_2(accessed 3 Sept 2013)">
-		["build_uid"] = <"b1fde15c-23ec-4d2c-bf4d-e196149d6ae5">
+		["build_uid"] = <"de130965-8432-4518-9fa7-e8eb39747a28">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"E57B3C6C7442E2F8673D3361EB285E6C">
+		["MD5-CAM-1.0.1"] = <"82B8CB60C5A75CE1746445E02E08E3AA">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -163,7 +164,7 @@ ontology
 				>
 				["at0000.1"] = <
 					text = <"Eksklusjon av problem/diagnose">
-					description = <"Et positivt utsagn om problemer eller diagnoser som klinisk ekskluderes på et bestemt tidspunkt.">
+					description = <"Et eller flere eksplisitte utsagn om problemer eller diagnoser som kan ekskluderes på et bestemt tidspunkt.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -175,8 +176,8 @@ ontology
 				>
 				["at0002.1"] = <
 					text = <"Eksklusjonsutsagn">
-					description = <"Et utsagn om eksklusjon av et kjent problem eller diagnose i pasientjournalen.">
-					comment = <"For eksempel: \"Ingen kjente signifikante problemer eller diagnoser\" eller \"Ingen evidens for \" eller \"Aldri blitt diagnostisert med\".... (diabetes)">
+					description = <"Et utsagn som ekskluderer et kjent problem eller diagnose fra listen over aktuelle problemer eller diagnoser i pasientjournalen.">
+					comment = <"For eksempel: \"Ingen tidligere sykdommer\" eller \"Ingen holdepunkter for (demens)\" eller \"Aldri tidligere blitt diagnostisert med (diabetes)\"">
 				>
 				["at0003"] = <
 					text = <"*Specific Object(en)">
@@ -184,11 +185,11 @@ ontology
 				>
 				["at0003.1"] = <
 					text = <"Problem/diagnose">
-					description = <"Identifikasjon av problem(er)/diagnose(r) som eksklusjonen vedrører.">
-					comment = <"Koding av problem eller diagnose med terminologi foretrekkes når mulig.">
+					description = <"Problemen(e)/diagnosen(e) som eksklusjonen vedrører.">
+					comment = <"Bruk problem eller diagnose fra kodeverk eller terminologi hvis mulig.">
 				>
 				["at0004"] = <
-					text = <"Dato for oppdatering">
+					text = <"Dato sist oppdatert">
 					description = <"Dato for siste gang eksklusjonen ble bekreftet eller vurdert.">
 				>
 				["at0006"] = <
@@ -197,7 +198,7 @@ ontology
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere narrativ tekst om eksklusjon som ikke fanges opp i andre felter.">
+					description = <"Ytterligere beskrivelser om eksklusjonen som ikke fanges opp i andre felter.">
 				>
 			>
 		>
@@ -215,7 +216,7 @@ ontology
 			items = <
 				["ac0.1"] = <
 					text = <"Problem eller diagnose">
-					description = <"Alle mulige problemer eller diagnoser.">
+					description = <"Alle aktuelle problemer eller diagnoser som ikke dekkes av eksklusjonen">
 				>
 			>
 		>
