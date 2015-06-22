@@ -51,26 +51,6 @@ description
 			misuse = <"*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)">
 			copyright = <"© Nasjonal IKT HF">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For registering av strukturerte detaljer om én enkelt makroskopisk fysisk lokalisering på eller i menneskekroppen.">
-			use = <"Brukes for å dokumentere strukturerte og ensartede detaljer om et enkelt identifisert fysisk sted på eller i menneskekroppen.
-
-Denne arketypen er spesifikt designet for bruk i ENTRY og CLUSTER-arketyper som gir konteksten for den anatomiske lokaliseringen.
-
-Som en grunnleggende del av klinisk praksis kan klinikere beskrive anatomiske lokaliseringer på et utall forskjellige måter. Noen arketyper inneholder et enkelt dataelement for enkel beskrivelse av en kroppslig lokalisering - for eksempel OBSERVATION.blood_pressure, og CLUSTER.symptom når man beskriver øresmerter. I denne situasjonen, hvor verdisettet er forutsigbart og enkelt å definere, er dette enkle dataelementet en meget nøyaktig og praktisk måte for å registrere et anatomisk sted på eller i kroppen og søke på det på et senere tidspunkt. Når den anatomiske lokaliseringen derimot ikke er veldefinert eller må defineres fortløpende, kan det være mer fleksibelt å bruke denne strukturerte arketypen. For eksempel i en situasjon hvor et hvilket som helst symptom kan bli registrert uten noen forkunnskaper om hvilke typer symptomer det kan være, så vil muligheten for å bruke denne arketypen være nyttig. I dette tilfellet har CLUSTER.symptom-arketypen et SLOT for \"Strukturert anatomisk lokalisering\" som kan inneholde denne arketypen for å støtte maksimal fleksibilitet i registrering av data om den anatomiske lokaliseringen.
-
-Arketypen støtter registrering av komplekse strukturerte anatomiske steder. For eksempel finnes hjertespisstøt typisk i femte venstre intercostalrom i midtclaviculære linjen, ømhet ved McBurney's punkt på abdomen eller laserasjon på den palmare siden av den proksimale høyre tommelen.
-
-En kombinasjon av dataelementer i denne arketypen kan brukes for individuell registrering av hver komponent av et postkoordinert terminologiuttrykk for anatomisk sted.
-
-Arketypen inneholder et \"Alternativ struktur\" SLOT som tillater inklusjon av ytterligere arketyper som gir en alternativ struktur for beskrivelse av det samme kroppssted, som CLUSTER.anatomical_location_relative eller CLUSTER.anatomical_location_clock om dette er nødvendig. I en situasjon hvor denne arketypen bare brukes til å navngi en større og/eller ikke-spesifikk kroppsdel, kan ytterligere bruk av CLUSTER.anatomical_location_relative-arketypen understøtte registrering av en mer preses lokasjon - for eksempel 2 cm anteriort for venstre arms cubitalfossa eller 4 cm under høyre costamargin på brystveggen i midtclaviculærlinjen.
-
-Hvis denne arketypen brukes i andre arketyper hvor pasienten/klienten ikke er den som dokumentasjonen omhandler, for eksempel foetus-in-utero, så vil den anatomiske lokaliseringen bli identifisert som en lokalisering på eller i kroppen til fosteret.">
-			keywords = <"sted", "lokalisering", "lokalisasjon", "anatomisk", "kroppssted", "anatomisk region", "topografisk anatomi", "makroskopisk", "anatomi", "kroppsdel", "dermatom", "legemsdel">
-			misuse = <"Brukes ikke for spesifisering av unilateral/bilateral forekomst av et anatomisk kjennetegn.">
-			copyright = <"© Nasjonal IKT HF">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To identify and record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.">
@@ -91,47 +71,62 @@ If this archetype is used within other archetypes where the specified subject of
 			misuse = <"Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registering av strukturerte detaljer om én enkelt makroskopisk fysisk lokalisering på eller i menneskekroppen.">
+			use = <"Brukes for å dokumentere strukturerte og ensartede detaljer om et enkelt identifisert fysisk sted på eller i menneskekroppen.
+
+Denne arketypen er spesifikt designet for bruk i ENTRY og CLUSTER-arketyper som gir konteksten for den anatomiske lokaliseringen.
+
+Som en grunnleggende del av klinisk praksis kan klinikere beskrive anatomiske lokaliseringer på et utall forskjellige måter. Noen arketyper inneholder et enkelt dataelement for enkel beskrivelse av en kroppslig lokalisering - for eksempel OBSERVATION.blood_pressure, og CLUSTER.symptom når man beskriver øresmerter. I denne situasjonen, hvor verdisettet er forutsigbart og enkelt å definere, er dette enkle dataelementet en meget nøyaktig og praktisk måte for å registrere et anatomisk sted på eller i kroppen og søke på det på et senere tidspunkt. Når den anatomiske lokaliseringen derimot ikke er veldefinert eller må defineres fortløpende, kan det være mer fleksibelt å bruke denne strukturerte arketypen. For eksempel i en situasjon hvor et hvilket som helst symptom kan bli registrert uten noen forkunnskaper om hvilke typer symptomer det kan være, så vil muligheten for å bruke denne arketypen være nyttig. I dette tilfellet har CLUSTER.symptom-arketypen et SLOT for \"Strukturert anatomisk lokalisering\" som kan inneholde denne arketypen for å støtte maksimal fleksibilitet i registrering av data om den anatomiske lokaliseringen.
+
+Arketypen støtter registrering av komplekse strukturerte anatomiske steder. For eksempel finnes hjertespisstøt typisk i femte venstre intercostalrom i midtclaviculære linjen, ømhet ved McBurney's punkt på abdomen eller laserasjon på den palmare siden av den proksimale høyre tommelen.
+
+En kombinasjon av dataelementer i denne arketypen kan brukes for individuell registrering av hver komponent av et postkoordinert terminologiuttrykk for anatomisk sted.
+
+Arketypen inneholder et \"Alternativ struktur\" SLOT som tillater inklusjon av ytterligere arketyper som gir en alternativ struktur for beskrivelse av det samme kroppssted, som CLUSTER.anatomical_location_relative eller CLUSTER.anatomical_location_clock om dette er nødvendig. I en situasjon hvor denne arketypen bare brukes til å navngi en større og/eller ikke-spesifikk kroppsdel, kan ytterligere bruk av CLUSTER.anatomical_location_relative-arketypen understøtte registrering av en mer presis lokasjon - for eksempel 2 cm anteriort for venstre arms cubitalfossa eller 4 cm under høyre costamargin på brystveggen i midtclaviculærlinjen.
+
+Hvis denne arketypen brukes i andre arketyper hvor pasienten/klienten ikke er den som dokumentasjonen omhandler, for eksempel foetus-in-utero, så vil den anatomiske lokaliseringen bli identifisert som en lokalisering på eller i kroppen til fosteret.">
+			keywords = <"sted", "lokalisering", "lokalisasjon", "anatomisk", "kroppssted", "anatomisk region", "topografisk anatomi", "makroskopisk", "anatomi", "kroppsdel", "dermatom", "legemsdel">
+			misuse = <"Brukes ikke for spesifisering av unilateral/bilateral forekomst av et anatomisk kjennetegn.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"published">
-	other_contributors = <"Tomas Alme, DIPS, Norway", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, NTNU, Norway", "Dunmail Hodkinson, Black Pear Software Ltd, UK", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Vesna Levasic, Orthopaedic Hospital Valdoltra, Slovenia", "Hallvard Lærum, Oslo University Hospital, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Dmitri Wall, Irish Skin Foundation, Ireland">
+	lifecycle_state = <"in_development">
+	other_contributors = <"Grethe Almenning, Bergen kommune, Norway", "Tomas Alme, DIPS, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Bente Gjelsvik, Helse Bergen, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, NTNU, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Dunmail Hodkinson, Black Pear Software Ltd, UK", "Erling Are Hole, Helse Bergen, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Vesna Levasic, Orthopaedic Hospital Valdoltra, Slovenia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Maria Beate Nupen, Oslo Universitetssykehus, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Jussara Rotzsch, UNB, Brazil", "Thomas Schopf, University Hospital of North-Norway, Norway", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Micaela Thierley, Helse Bergen, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Dmitri Wall, Irish Skin Foundation, Ireland">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["revision"] = <"1.0.1">
+		["revision"] = <"1.0.0-alpha">
 		["references"] = <"Anatomy Mapper website [Internet]. Matt Molenda, [cited 2015 Apr 27]. Available from: http://www.anatomymapper.com/.">
-		["build_uid"] = <"8703b7fa-f3cb-4c17-aaee-8d2bdd13ce31">
-		["original_publisher"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"01997B0D3ED0F7F9CD3B1BA3310D2EC0">
-		["custodian_namespace"] = <"org.openehr">
-		["custodian_organisation"] = <"openEHR Foundation">
+		["build_uid"] = <"0e6b1bcc-83b0-42f6-88df-bb9d768194a4">
+		["MD5-CAM-1.0.1"] = <"33356F0DCB42FC6801A9CBCB49BF1EAF">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Anatomical location
+	CLUSTER[at0000] matches {	-- Anatomisk lokalisering
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] matches {	-- Body site name
+			ELEMENT[at0001] matches {	-- Navn på kroppssted
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0065] occurrences matches {0..1} matches {	-- Specific site
+			ELEMENT[at0065] occurrences matches {0..1} matches {	-- Spesifikt sted
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Laterality
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Kroppsside
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0003, 	-- Left
-							at0004]	-- Right
+							at0003, 	-- Venstre
+							at0004]	-- Høyre
 						}
 					}
 				}
 			}
-			ELEMENT[at0064] occurrences matches {0..2} matches {	-- Aspect
+			ELEMENT[at0064] occurrences matches {0..2} matches {	-- Aspekt
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -142,10 +137,13 @@ definition
 							at0070, 	-- Inferior
 							at0071, 	-- Anterior
 							at0072, 	-- Posterior
-							at0073, 	-- Proximal
+							at0073, 	-- Proksimal
 							at0074, 	-- Distal
+							at0080, 	-- Dyp
+							at0081, 	-- Overfladisk
 							at0075, 	-- Palmar
 							at0076, 	-- Plantar
+							at0082, 	-- Dorsal
 							at0077, 	-- Mid
 							at0078, 	-- Oral
 							at0079]	-- Anal
@@ -154,39 +152,38 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0055] occurrences matches {0..1} matches {	-- Anatomical Line
+			ELEMENT[at0055] occurrences matches {0..1} matches {	-- Anatomisk linje
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0062, 	-- Midline
-							at0056, 	-- Midaxillary line
-							at0057, 	-- Anterior axillary line
-							at0058, 	-- Posterior axillary line
-							at0059, 	-- Mid-clavicular line
-							at0060, 	-- Mid-pupillary line
-							at0063]	-- Mid-scapular line
+							at0062, 	-- Midtlinjen
+							at0056, 	-- Midtaksillærlinjen
+							at0057, 	-- Fremre aksillærlinje
+							at0058, 	-- Bakre aksillærlinje
+							at0059, 	-- Midtclaviculærlinjen
+							at0060, 	-- Midtpupillinjen
+							at0063]	-- Midtskapulærlinjen
 						}
 					}
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Description
+			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Beskrivelse
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Alternative structure
+			allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Alternativ struktur
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_clock(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			allow_archetype CLUSTER[at0054] occurrences matches {0..*} matches {	-- Multimedia representation
+			allow_archetype CLUSTER[at0054] occurrences matches {0..*} matches {	-- Multimediarepresentasjon
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 		}
 	}
-
 
 
 ontology
@@ -326,6 +323,18 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"*Anal(en)">
 					description = <"*Towards the anus. Usually used to describe locations within the digestive system.(en)">
 				>
+				["at0080"] = <
+					text = <"*Deep(en)">
+					description = <"*Away from the surface of the body site.(en)">
+				>
+				["at0081"] = <
+					text = <"*Superficial(en)">
+					description = <"*Towards the surface of the body site.(en)">
+				>
+				["at0082"] = <
+					text = <"*Dorsal(en)">
+					description = <"*Towards the back of the hand or top of the foot. To be used as opposites of palmar or plantar, not as a synonym of posterior.(en)">
+				>
 			>
 		>
 		["sl"] = <
@@ -461,6 +470,18 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				["at0079"] = <
 					text = <"*Anal(en)">
 					description = <"*Towards the anus. Usually used to describe locations within the digestive system.(en)">
+				>
+				["at0080"] = <
+					text = <"*Deep(en)">
+					description = <"*Away from the surface of the body site.(en)">
+				>
+				["at0081"] = <
+					text = <"*Superficial(en)">
+					description = <"*Towards the surface of the body site.(en)">
+				>
+				["at0082"] = <
+					text = <"*Dorsal(en)">
+					description = <"*Towards the back of the hand or top of the foot. To be used as opposites of palmar or plantar, not as a synonym of posterior.(en)">
 				>
 			>
 		>
@@ -598,6 +619,18 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"Anal">
 					description = <"Towards the anus. Usually used to describe locations within the digestive system.">
 				>
+				["at0080"] = <
+					text = <"Deep">
+					description = <"Away from the surface of the body site.">
+				>
+				["at0081"] = <
+					text = <"Superficial">
+					description = <"Towards the surface of the body site.">
+				>
+				["at0082"] = <
+					text = <"Dorsal">
+					description = <"Towards the back of the hand or top of the foot. To be used as opposites of palmar or plantar, not as a synonym of posterior.">
+				>
 			>
 		>
 		["nb"] = <
@@ -612,7 +645,7 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					comment = <"Dette dataelementet er det eneste obligatoriske dataelementet i arketypen og bør brukes som det primære dataelementet for registrering av en anatomisk lokalisering. Det er sterkt anbefalt at \"Navn på kroppssted\" registreres så anatomisk spesifikt som mulig. For eksempel; registrer \"øvre øyelokk\" heller enn \"øyelokk\" med \"øvre\" som kvalifikator; \"femte ribben\" heller enn \"ribben\" med en numerisk kvalifikator. Bruk de andre dataelementene for lateralitet, aspekt, region og anatomisk linje for å gi mer detaljer. Dette dataelementet bør kodes med en terminologi som kan assistere beslutningsstøtte når mulig - en passende terminologi for bruk her kunne omfatte individuelle konsepter eller lister av prekoordinerte termer. Fritekst bør kun brukes hvis det ikke finnes en passende terminologi.">
 				>
 				["at0002"] = <
-					text = <"Lateralitet">
+					text = <"Kroppsside">
 					description = <"Den identifiserte kroppssiden.">
 					comment = <"Hvis den identifiserte kroppssiden ikke har noen lateralitet, bør dette datalementet stå tomt. Hvis dataelementet \"Navn på kroppsted\" bruker prekoordinerte termer som inkluderer lateralitet, er dette dataelementet overflødig.">
 				>
@@ -626,7 +659,7 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 				>
 				["at0023"] = <
 					text = <"Beskrivelse">
-					description = <"Fritekstbeskrivelse som kan brukes for å ytterligere raffinere og støtte \"Navn på kroppsted\".">
+					description = <"Fritekstbeskrivelse som kan brukes for å ytterligere presisere og støtte \"Navn på kroppsted\".">
 					comment = <"For eksempel: Tilgrensende til leppens overgang fra slimhinne til hud; en tatovering dekker nedre halvdel av dette området.">
 				>
 				["at0053"] = <
@@ -648,12 +681,12 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					description = <"Linje som løper vertikalt ned langs overflaten av kroppen gjennom apex i aksillen.">
 				>
 				["at0057"] = <
-					text = <"Anterioraksilærlinjen">
-					description = <"En linje som løper vertikalt ned langs kroppsoverflaten, og passerer gjennom anterior aksillær hudfold.">
+					text = <"Fremre aksillærlinje">
+					description = <"En linje som løper vertikalt ned langs kroppsoverflaten, og passerer gjennom fremre aksillære hudfold.">
 				>
 				["at0058"] = <
-					text = <"Posterioraksillærlinje">
-					description = <"En linje som løper vertikalt ned langs kroppsoverflaten og passerer gjennom posterior aksillær hudfold.">
+					text = <"Bakre aksillærlinje">
+					description = <"En linje som løper vertikalt ned langs kroppsoverflaten, og passerer gjennom bakre aksillære hudfold.">
 				>
 				["at0059"] = <
 					text = <"Midtclaviculærlinjen">
@@ -682,56 +715,68 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					comment = <"Brukes til å øke presisjonen ved spesifisering av kroppsstedet, dersom påkrevd. For eksempel den øvre høyre kvadranten eller McBurneys punkt på bukveggen, eller interfalangealleddet på stortåen. Dersom dataelementet \"Navn på kroppssted\" er registrert ved hjelp av prekoordinerte termer som omfatter det spesifikke stedet er dette dataelementet overflødig.">
 				>
 				["at0067"] = <
-					text = <"Medialt">
+					text = <"Medial">
 					description = <"Mot midtlinjen av kroppen.">
 				>
 				["at0068"] = <
-					text = <"Lateralt">
+					text = <"Lateral">
 					description = <"Mot utsiden eller kanten av kroppen.">
 				>
 				["at0069"] = <
-					text = <"Superiort">
-					description = <"Over kroppssted, ofte menes mot hodet.">
+					text = <"Superior">
+					description = <"Over kroppssted, ofte menes mot hodet. Synonymt med \"kranial\".">
 				>
 				["at0070"] = <
-					text = <"Inferiort">
-					description = <"Under kroppssted, ofte menes mot føttene.">
+					text = <"Inferior">
+					description = <"Under kroppssted, ofte menes mot føttene. Synonymt med \"kaudal\".">
 				>
 				["at0071"] = <
-					text = <"Anteriort">
-					description = <"Mot fronten eller ventrale overflate av kroppsstedet.">
+					text = <"Anterior">
+					description = <"Mot fronten eller ventrale overflaten av kroppsstedet.">
 				>
 				["at0072"] = <
-					text = <"Posteriort">
+					text = <"Posterior">
 					description = <"Mot bakside eller mot den dorsale overflaten av kroppsstedet.">
 				>
 				["at0073"] = <
-					text = <"Proksimalt">
+					text = <"Proksimal">
 					description = <"Mer sentralt eller tettere til festepunktet, beskriver vanligvis en del av et lem, finger eller vedheng.">
 				>
 				["at0074"] = <
-					text = <"Distalt">
+					text = <"Distal">
 					description = <"Mer perifert eller lengre vekke fra festepunktet, beskriver vanligvis av en del av et lem, finger eller vedheng.">
 				>
 				["at0075"] = <
-					text = <"Palmart">
+					text = <"Palmar">
 					description = <"Mot håndflaten.">
 				>
 				["at0076"] = <
-					text = <"Plantart">
+					text = <"Plantar">
 					description = <"Mot fotsålen.">
 				>
 				["at0077"] = <
-					text = <"Midt">
+					text = <"Mid">
 					description = <"I midten av kroppsstedet.">
 				>
 				["at0078"] = <
-					text = <"Oralt">
+					text = <"Oral">
 					description = <"Mot munnen. Brukes som regel til å beskrive lokaliseringer i fordøyelsessystemet.">
 				>
 				["at0079"] = <
-					text = <"Analt">
+					text = <"Anal">
 					description = <"Mot anus. Brukes som regel til å beskrive lokaliseringer i fordøyelsessystemet.">
+				>
+				["at0080"] = <
+					text = <"Dyp">
+					description = <"Bort fra overflaten av kroppsstedet.">
+				>
+				["at0081"] = <
+					text = <"Overfladisk">
+					description = <"Mot overflaten av kroppsstedet.">
+				>
+				["at0082"] = <
+					text = <"Dorsal">
+					description = <"Mot håndbaken eller toppen av foten. Brukes som motsetning til palmar og plantar, ikke som synonym for posterior.">
 				>
 			>
 		>
