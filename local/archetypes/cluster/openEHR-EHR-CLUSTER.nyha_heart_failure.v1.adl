@@ -5,6 +5,16 @@ concept
 	[at0000]	-- NYHA heart failure classification
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital Bergen.Norway">
+			>
+			accreditation = <"MD DEAA MBA, specialist in anesthesia and intensive care spec in tropical med.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Dr Ian McNicoll">
@@ -23,18 +33,25 @@ This archetype has been specifically designed to be used in the 'Specific detail
 			misuse = <"Should not be used to record a classification or assessment of symptoms outside the context of heart failure.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"En funksjonell klassifikasjon for registrering av symptomer relatert til hjertesvikt som definert av New York Heart Association.">
+			use = <"Brukes for å registrere en klassifikasjon av hjertesvikt relaterte symptomer som definert av New York Heart Association.">
+			keywords = <"hjertesvikt", "hjerte", "svikt", "pusteproblemer", "dysnpoe", "tretthet", "fatigue">
+			misuse = <"Brukes ikke for å registrere en klassifikasjon eller vurdering av symptomer som ikke omhandler hjertesvikt.">
+		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Kerrie Lee, Australia", ...>
+	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Nasjonal IKT redaktør)", "Kerrie Lee, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"ian McNicoll, freshEHR Informatics, UK, ian@freshehr.com">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"1.0.0-alpha">
 		["references"] = <"American Heart Association (1994) AHA medical/scientific statement: 1994 revisions to classification of functional capacity and objective assessment of patients with diseases of the heart. Circulation 90:644–645.">
-		["build_uid"] = <"f18831fa-1147-468d-b6ff-459c9dac6020">
+		["build_uid"] = <"dce97349-9056-45be-8975-76b290e408fa">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"9464B1EF3AB113EC562545959C30F626">
+		["MD5-CAM-1.0.1"] = <"40F40F59B03AAFF626C08DC167A7EF4A">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -83,6 +100,34 @@ ontology
 				["at0005"] = <
 					text = <"Class IV">
 					description = <"Unable to carry on any physical activity without discomfort. Symptoms at rest. If any physical activity is undertaken, discomfort is increased.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"NYHA - klassifikasjon">
+					description = <"En klassifikasjon av symptomer relatert til hjertesvikt som definert av New York Heart Association.">
+				>
+				["at0001"] = <
+					text = <"Klassifikasjon av hjertesvikt">
+					description = <"En funksjonell klassifikasjon av hjertesvikt basert på pasientens symptomer.">
+				>
+				["at0002"] = <
+					text = <"Klasse 1">
+					description = <"Ingen begrensninger i fysisk aktivitet. Normal fysisk aktivitet fører ikke til unormal tretthet, hjertebank, palpitasjoner eller dyspnoe.">
+				>
+				["at0003"] = <
+					text = <"Klasse 2">
+					description = <"Liten begrensning av fysisk aktivitet. Komfortabel ved hvile, men vanlige fysisk aktivitet fører til tretthet, hjertebank, eller dyspné.">
+				>
+				["at0004"] = <
+					text = <"Klasse 3">
+					description = <"Betydelige begrensninger i fysisk aktivitet. Komfortabel ved hvile, men aktivitet under normalen gir tretthet, palpitasjoner og hjertebank.">
+				>
+				["at0005"] = <
+					text = <"Klasse 4">
+					description = <"Kan ikke utføre noen fysisk aktivitet uten ubehag. Symptomer i hvile. Enhver form for fysisk aktivitet fører til ubehag.">
 				>
 			>
 		>
