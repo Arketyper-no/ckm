@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-EVALUATION.alert.v1
+﻿archetype (adl_version=1.4; uid=7d350c29-caa8-4931-a4dc-a8da88b2be67)
+	openEHR-EHR-EVALUATION.alert.v0
 
 concept
 	[at0000]	-- Alert
@@ -12,6 +12,15 @@ language
 				["name"] = <"Jasmin Buck, Sebastian Garde">
 				["organisation"] = <"University of Heidelberg, Central Queensland University">
 			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo universitetssykehus HF">
+				["email"] = <"varntzen@ous-hf.no">
+			>
+			accreditation = <"Virksomhetsarkitekt ved OUS, Off godkj sykepleier">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
@@ -54,11 +63,27 @@ It will usually be entered manually, but in some clinical systems it may be auto
 			misuse = <"Not to be used for recording notes (nota bene) or routine notifications, recalls or reminders.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en påstand om potensiell helsefare for helsetjenestemottaker, omsorgsperson eller helsearbeider/institusjon.">
+			use = <"Brukes for å registrere en hvilken som helst påstand om helsefare for helsetjenestemottaker, deres omsorgspersoner eller helsearbeidere/institusjoner, og som må markeres visuelt i en klinisk applikasjon eller for å trigge automatisert beslutningsstøtte.
+Data vil normalt bli lagt inn manuelt, men i noen kliniske systemer kan det bli lagt inn data automatisk, i henhold til programmerte regler og basert på eksiterende eller nye data som registreres annet sted i systemet.">
+			keywords = <"advarsel", "varsel", "risiko", "risk">
+			misuse = <"Skal ikke brukes for å registrere merknader, rutinemessige varsler eller påminnelser.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Gustavo Bacelar, Brazil", "Ian McNicoll, Ocean Informatics, UK", "Heather Leslie, Ocean Informatics, Australia">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"16F8B8C86E3FADF0BD2FACB6D2548F2F">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
+		["build_uid"] = <"c2d069a6-8251-4f99-b8ac-aa9ffcd29973">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"12004FE9B7FE8EFB63A2BD2E596EB265">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -275,6 +300,61 @@ ontology
 					text = <"Alert">
 					description = <"Identification of the alert.">
 					comment = <"For example, pacemaker, Methiciliin Resistant Staphylococcus Aureus(MRSA), or aggressive dog.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Advarsel">
+					description = <"En påstand om potensiell helsefare for helsetjenestemottaker, omsorgsperson eller helsearbeider/institusjon.">
+				>
+				["at0001"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Kategori">
+					description = <"Advarselens kategori.">
+					comment = <"Advarselens kategori bør om mulig kodes med en terminologi, der dette er mulig. For eksempel implantater, viktige organismer og sosiale omstendigheter.">
+				>
+				["at0003"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstlig beskrivelse av advarselen.">
+					comment = <"For eksempel: Implantert pacemaker på venstre side, påvist MRSA ved forrige sykehusinleggelse, eller en aggresiv hund hjemme som kan være til fare for hjemmesykepleier.">
+				>
+				["at0004"] = <
+					text = <"Startdato">
+					description = <"Dato og valgfritt tidspunkt for når advarselen ble aktiv.">
+				>
+				["at0009"] = <
+					text = <"Status">
+					description = <"Indikasjon om advarselen er vurdert til å være aktiv, inaktiv per nå, eller løst og sannsynligvis ikke ha betydning for denne pasienten igjen.">
+				>
+				["at0010"] = <
+					text = <"Gjennomgått dato">
+					description = <"Dato og valgfritt tidspunkt for når status for advarselen trenger gjennomgang.">
+				>
+				["at0011"] = <
+					text = <"Aktiv">
+					description = <"Advarselen er aktiv (gyldig).">
+				>
+				["at0012"] = <
+					text = <"Inaktiv">
+					description = <"Advarselen er ikke aktiv (ugyldig) per nå.">
+				>
+				["at0013"] = <
+					text = <"Løst">
+					description = <"Advarselen er trukket tilbake">
+				>
+				["at0014"] = <
+					text = <"Sluttdato">
+					description = <"Dato og valgfritt tidspunkt, om kjent, for når advarselen ble gjort inaktiv.">
+				>
+				["at0015"] = <
+					text = <"Advarsel">
+					description = <"Beskrivelse av advarsel.">
+					comment = <"Eksempel: Pacemaker, MRSA, eller en aggressiv hund i hagen.">
 				>
 			>
 		>
