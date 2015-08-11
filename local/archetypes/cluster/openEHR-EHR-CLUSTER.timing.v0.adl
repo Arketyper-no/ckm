@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-CLUSTER.timing.v1
+﻿archetype (adl_version=1.4; uid=497c7189-b15e-4654-a3b7-1e789e6604bf)
+	openEHR-EHR-CLUSTER.timing.v0
 
 concept
 	[at0000]	-- Timing
@@ -21,6 +21,13 @@ description
 		["date"] = <"12/11/2010">
 	>
 	details = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To provide structured information on timing that is suitable for computation and display for human interpretation.">
@@ -29,29 +36,29 @@ description
 			misuse = <"Not to be used for specific timing but for scheduling of tasks that need repeating.">
 			copyright = <"© Nasjonal IKT HF">
 		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"">
-			use = <"">
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
 	>
-	lifecycle_state = <"CommitteeDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Sharmila Biswas, Dr Sharmila Biswas, Australia", "Stephen Chu, NEHTA, Australia (Editor)", "David Evans, Queensland Health, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Richard Townley-O'Neill, NEHTA, Australia (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"DAC5C8B600F40192D61815E52FA94908">
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"1b573e13-d75d-4178-a2eb-f19654ac6cf4">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"EB2EFE1FE62807491E95EA42C7E9EB15">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Podrobn časovna opredelitev
+	CLUSTER[at0000] matches {	-- Timing
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Dnevni odmerek
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Daily count
 				value matches {
 					DV_COUNT matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Pogostost
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Frequency
 				value matches {
 					C_DV_QUANTITY <
 						property = <[openehr::382]>
@@ -93,65 +100,94 @@ definition
 					DV_DURATION matches {*}
 				}
 			}
-			CLUSTER[at0015] occurrences matches {0..1} matches {	-- Spremenljiva pogostost
+			CLUSTER[at0015] occurrences matches {0..1} matches {	-- Variable frequency
 				items cardinality matches {1..*; unordered} matches {
-					CLUSTER[at0016] occurrences matches {0..1} matches {	-- Višja
+					CLUSTER[at0016] occurrences matches {0..1} matches {	-- Upper
 						items cardinality matches {1..*; unordered} matches {
-							use_node ELEMENT occurrences matches {0..1} /items[at0003]	-- /items[Pogostost]
+							use_node ELEMENT occurrences matches {0..1} /items[at0003]	-- /items[Frequency]
 						}
 					}
-					CLUSTER[at0017] occurrences matches {0..1} matches {	-- Nižja
+					CLUSTER[at0017] occurrences matches {0..1} matches {	-- Lower
 						items cardinality matches {1..*; unordered} matches {
-							use_node ELEMENT occurrences matches {0..1} /items[at0003]	-- /items[Pogostost]
+							use_node ELEMENT occurrences matches {0..1} /items[at0003]	-- /items[Frequency]
 						}
 					}
 				}
 			}
-			CLUSTER[at0019] occurrences matches {0..1} matches {	-- Spremenljiv interval
+			CLUSTER[at0019] occurrences matches {0..1} matches {	-- Variable interval
 				items cardinality matches {1..*; unordered} matches {
-					CLUSTER[at0020] occurrences matches {0..1} matches {	-- Višji
+					CLUSTER[at0020] occurrences matches {0..1} matches {	-- Upper
 						items cardinality matches {1..*; unordered} matches {
 							use_node ELEMENT occurrences matches {0..1} /items[at0014]	-- /items[Interval]
 						}
 					}
-					CLUSTER[at0021] occurrences matches {0..1} matches {	-- Nižji
+					CLUSTER[at0021] occurrences matches {0..1} matches {	-- Lower
 						items cardinality matches {1..*; unordered} matches {
 							use_node ELEMENT occurrences matches {0..1} /items[at0014]	-- /items[Interval]
 						}
 					}
 				}
 			}
-			ELEMENT[at0004] occurrences matches {0..*} matches {	-- Čas
+			ELEMENT[at0004] occurrences matches {0..*} matches {	-- Time
 				value matches {
 					DV_TIME matches {*}
 				}
 			}
-			ELEMENT[at0006] occurrences matches {0..*} matches {	-- Dan v tednu
+			ELEMENT[at0026] occurrences matches {0..*} matches {	-- Named time event
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {	-- Day of week
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0007, 	-- Ponedeljek
-							at0008, 	-- Torek
-							at0009, 	-- Sreda
-							at0010, 	-- Četrtek
-							at0011, 	-- Petek
-							at0012, 	-- Sobota
-							at0013]	-- Nedelja
+							at0007, 	-- Monday
+							at0008, 	-- Tuesday
+							at0009, 	-- Wednesday
+							at0010, 	-- Thursday
+							at0011, 	-- Friday
+							at0012, 	-- Saturday
+							at0013]	-- Sunday
 						}
 					}
 				}
 			}
-			ELEMENT[at0005] occurrences matches {0..*} matches {	-- Dan v mesecu
+			ELEMENT[at0005] occurrences matches {0..*} matches {	-- Day of month
 				value matches {
 					DV_COUNT matches {
 						magnitude matches {|1..31|}
 					}
 				}
 			}
-			ELEMENT[at0018] occurrences matches {0..*} matches {	-- Datum
+			ELEMENT[at0018] occurrences matches {0..*} matches {	-- Date
 				value matches {
 					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Exact timing critical
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {	-- PRN - as required
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0025] occurrences matches {0..1} matches {	-- PRN trigger
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0022] occurrences matches {0..1} matches {	-- Timing description
+				value matches {
+					DV_TEXT matches {*}
 				}
 			}
 		}
@@ -246,6 +282,28 @@ ontology
 					text = <"Lower">
 					description = <"The lower value of the interval.">
 				>
+				["at0022"] = <
+					text = <"Timing description">
+					description = <"A narrative description of the timing.">
+				>
+				["at0023"] = <
+					text = <"Exact timing critical">
+					description = <"Is exact timing of the event critical to patient safety or wellbeing?">
+				>
+				["at0024"] = <
+					text = <"PRN - as required">
+					description = <"The event should only occur when the PRN trigger condition is met. ">
+				>
+				["at0025"] = <
+					text = <"PRN trigger">
+					description = <"The condition which triggers a PRN (as required) event.">
+					comment = <"e.g. as required for pain.">
+				>
+				["at0026"] = <
+					text = <"Named time event">
+					description = <"A specific,named time event. ">
+					comment = <"e.g. before each meal, at bedtime, in the morning.">
+				>
 			>
 		>
 		["sl"] = <
@@ -333,6 +391,28 @@ ontology
 				["at0021"] = <
 					text = <"Nižji">
 					description = <"*The lower value of the interval.(en)">
+				>
+				["at0022"] = <
+					text = <"*Timing description(en)">
+					description = <"*A narrative description of the timing.(en)">
+				>
+				["at0023"] = <
+					text = <"*Exact timing critical(en)">
+					description = <"*Is exact timing of the event critical to patient safety or wellbeing?(en)">
+				>
+				["at0024"] = <
+					text = <"*PRN - as required(en)">
+					description = <"*The event should only occur when the PRN trigger condition is met. (en)">
+				>
+				["at0025"] = <
+					text = <"*PRN trigger(en)">
+					description = <"*The condition which triggers a PRN (as required) event.(en)">
+					comment = <"*e.g. as required for pain.(en)">
+				>
+				["at0026"] = <
+					text = <"*Named time event(en)">
+					description = <"*A specific,named time event. (en)">
+					comment = <"*e.g. before each meal, at bedtime, in the morning.(en)">
 				>
 			>
 		>

@@ -1,0 +1,118 @@
+﻿archetype (adl_version=1.4; uid=23bc6730-d0fa-4af2-9639-2cb58005e262)
+	openEHR-EHR-INSTRUCTION.medication_order.v0
+
+concept
+	[at0000]	-- Medication order
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"aaf00f41-fda1-44fe-9e2b-e3708bddefc1">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"9B31DA513C02D0AE239734275D60562A">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Medication order
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Order
+				description matches {
+					ITEM_TREE[at0002] matches {	-- Tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- Medication item
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0005] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Medication item identifier
+						value matches {
+							DV_IDENTIFIER matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Dispensing validity period
+						value matches {
+							DV_INTERVAL<DV_DATE_TIME> matches {
+								upper matches {
+									DV_DATE_TIME matches {*}
+								}
+								lower matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication order">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Order">
+					description = <"Order.">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Medication item">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Medication item identifier">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Dispensing validity period">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Extension">
+					description = <"*">
+				>
+			>
+		>
+	>
