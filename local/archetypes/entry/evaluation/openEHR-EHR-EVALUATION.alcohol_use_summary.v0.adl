@@ -1,10 +1,21 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-EVALUATION.alcohol_use_summary.v1
+﻿archetype (adl_version=1.4; uid=443b1927-977f-4a0c-8792-a8189b2f9076)
+	openEHR-EHR-EVALUATION.alcohol_use_summary.v0
 
 concept
 	[at0000]	-- Alcohol Use Summary
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen; Hallvard Lærum">
+				["organisation"] = <"Haukeland University Hospital Bergen Norway">
+				["email"] = <"hallar@ous-hf.no">
+			>
+			accreditation = <"MD DEAA MBA spec i anesthesia and intensive care, spec i trop med.">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -25,16 +36,35 @@ Data that might be used to assess the risk of alcohol abuse or dependence will b
 Not to be used to record information about consumption of other substances other than alcohol.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes til å registrere et sammendrag av varig bruk av alkohol.">
+			use = <"Brukes til å registrere et sammendrag av innhentet informasjon om pasientens bruk av alkohol over tid. 
+
+Data som brukes til å vurdere risiko for alkoholmisbruk eller avhengighet blir registrert denne arketypen (sammendrag med varige data) og i OBSERVATION.alchohol_use-arketypen (Registrering av en eller flere observasjoner eller målinger).">
+			keywords = <"alkohol", "øl", "cider", "vin", "rusbrus", "hetvin", "brennevin", "sprit", "sterk sprit", "forbruk", "bruk", "status", "misbruk", "overstadig bruk", "alkoholmisbruk", "alkoholisme", "fyll", "rus">
+			misuse = <"Brukes ikke til å registrere enkeltepisoder eller perioder med bruk alkohol bruk, for eksempel faktisk daglig forbruk eller gjennomsnittlig bruk over en bestemt periode - da brukes OBSERVATION.alchohol_use-arketypen i stedet.
+
+Brukes ikke til å registrere bruk av andre rusmidler enn alkohol.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"CommitteeDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Rita Apelt, Department of Health,NT, Australia", "Stephen Chu, NEHTA, Australia", "Matthew Cordell, NEHTA, Australia", "David Evans, Queensland Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Andrew Goodchild, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway (Editor)", "Mary Kelaher, NEHTA, Australia", "Robert L'Egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jeremy Oats, NT Health, Australia", "Rosalie Schultz, Central Australia Remote Health, Australia", "John Taylor, NEHTA, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
 		["references"] = <"openEHR Clinical Knowledge Manager [Internet]. London: openEHR Foundation. [Draft EVALUATION archetype] Alcohol Use Summary; [authored 2009 Jun 21, cited 2011 Jul 15]. Available from: http://www.openehr.org/knowledge/OKM.html#showArchetype_1013.1.362_1.
 
 NEHTA Clinical Knowledge Manager [Internet]. : NEHTA. [Draft EVALUATION archetype] Alcohol Use Summary; [authored 2009 Jun 21, cited 2013 Nov 02].
 Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1028_3">
-		["MD5-CAM-1.0.1"] = <"B380D590E3A1AA1FFEDD68F7B061FAB4">
+		["build_uid"] = <"83fb5205-c14f-4f8d-a7fb-22e79eb2256e">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"A46DB9C5E494504AE163E1A5E42FDC30">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -155,7 +185,7 @@ definition
 								property = <[openehr::124]>
 								list = <
 									["1"] = <
-										units = <"gm">
+										units = <"g">
 										magnitude = <|>=0.0|>
 									>
 								>
@@ -166,6 +196,7 @@ definition
 			}
 		}
 	}
+
 
 
 
@@ -264,6 +295,101 @@ ontology
 				["at0033"] = <
 					text = <"Standard Drink Definition">
 					description = <"Amount of alcohol defining a standard drink or unit.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Alkohol bruk sammendrag">
+					description = <"Sammendrag eller varig informasjon om alkohol bruk eller forbruk.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Status">
+					description = <"Utsagn om individets samlede mønster om bruk av alkohol.">
+				>
+				["at0003"] = <
+					text = <"Drikker for nåværende">
+					description = <"Individet forbruker alkohol for nåværende.">
+				>
+				["at0004"] = <
+					text = <"Eks - dranker">
+					description = <"Individet er en tidligere forbruker av alkohol.">
+				>
+				["at0006"] = <
+					text = <"Har aldri drukket">
+					description = <"Individet har aldri drukket alkohol.">
+				>
+				["at0015"] = <
+					text = <"Dato for start">
+					description = <"Dato individet startet å bruke alkohol.">
+					comment = <"I de fleste situasjoner vil bare en omtrentlig dato bli registrert, for eksempel årstall eller år og måned for oppstart.">
+				>
+				["at0016"] = <
+					text = <"Dato for opphør">
+					description = <"Dato da individet stoppet alt forbruk av alkohol.">
+					comment = <"Kan være en omtrentlig dato, for eksempel bare et årstall.">
+				>
+				["at0019"] = <
+					text = <"Kommentar">
+					description = <"Andre opplysninger om bruk av alkohol som ikke er dekket i andre felter.">
+				>
+				["at0021"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0022"] = <
+					text = <"Dato for siste oppdatering">
+					description = <"Datoen denne oppsummeringen ble oppdatert sist.">
+				>
+				["at0023"] = <
+					text = <"Forsøk på å slutte">
+					description = <"Detaljer om forsøk på å slutte å drikke alkohol.">
+				>
+				["at0024"] = <
+					text = <"Typisk alkohol forbruk">
+					description = <"Antatt typisk alkohol forbruk, som antall standard drinker/enheter per dag - enten i runde tall, mengde, eller som terminologi normalt kodet. Standard definisjoner for enheter/drinker varierer betydelig.">
+					comment = <"Dette data element tillater registrering av en grov indikasjon av alkohol forbruk for eksempel 5-10 per dag. Tidsperioden er ikke spesifisert. Hvis nøyaktig forbruk på spesifikt tidspunkt eller gjennomsnitt/maksima over perioder ønskes, bruk OBSERVATION.alchohol_use arketypen.">
+				>
+				["at0025"] = <
+					text = <"Type">
+					description = <"Fritekst angivelse av type eller form for alkohol, for eksempel øl, vin, brennevin.">
+				>
+				["at0026"] = <
+					text = <"Episoder med høyt alkoholforbruk">
+					description = <"Forekomst av episoder hvor individet har et høyt forbruk av alkohol.">
+				>
+				["at0027"] = <
+					text = <"Forbruksmønster">
+					description = <"Det typiske mønsteret for individets forbruk av alkohol.">
+				>
+				["at0028"] = <
+					text = <"Ingen">
+					description = <"Individet har ikke episoder med høyt alkoholforbruk.">
+				>
+				["at0029"] = <
+					text = <"Mindre enn en gang i måneden">
+					description = <"Individet har mindre enn en episode med høyt alkoholforbruk i måneden.">
+				>
+				["at0030"] = <
+					text = <"Månedlig">
+					description = <"Individet har en episode med høyt alkoholforbruk i måneden.">
+				>
+				["at0031"] = <
+					text = <"Ukenlig">
+					description = <"Individet har en episode med høyt alkoholforbruk i uken.">
+				>
+				["at0032"] = <
+					text = <"Dalig">
+					description = <"Individet har høyt alkoholforbruk daglig eller nesten daglig.">
+				>
+				["at0033"] = <
+					text = <"Standard alkoholenhet">
+					description = <"Mengde alkohol som definerer en standard alkoholenhet.">
 				>
 			>
 		>
