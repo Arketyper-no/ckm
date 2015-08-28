@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-OBSERVATION.apgar.v1
+﻿archetype (adl_version=1.4; uid=66dc3057-6714-45fc-a7c0-765e472d9af2)
+	openEHR-EHR-OBSERVATION.apgar.v0
 
 concept
 	[at0000]	-- Apgar score
@@ -28,11 +28,13 @@ language
 				["name"] = <"Sergio Carmona">
 			>
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Mona Saleh">
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital Bergen Norway.">
 			>
+			accreditation = <"MD DEAA MBA, spec in anesthesia and intensive care, Spec in tropical med.">
 		>
 		["fa"] = <
 			language = <[ISO_639-1::fa]>
@@ -40,6 +42,12 @@ language
 				["name"] = <"Shahla Foozonkhah">
 				["organisation"] = <"Ocean Informatics">
 				["email"] = <"Shahla.foozonkhah@oceanInformatics.com">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
 			>
 		>
 		["ru"] = <
@@ -198,10 +206,26 @@ Se reconhece que uma ajuda mnemônica para aprender a interpretar o escore Apgar
 			misuse = <"不完整的评分加上5，得到总分。">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Registrer Apar scoren som en simpel repeterbare metode for å dokumentere tilstanden til det nyfødte barnet umiddelbart etter fødselen.
+Starttidspunktet tidspunktet for disse hendelsene er alltid fødselen.">
+			use = <"Tillater registrering av en vurdering av tilstanden til en nyfødt spesielt som 1, 2, 3, 5 og / eller 10 minutters hendelser etter fødselen, pluss ytterligere hendelser etter behov.
+Vanlig praksis er å dokumentere Apgar score på ett og fem minutter; ytterligere score kan registrerer der som det er klinisk indisert. Det er mulig å registrere Apgar score når som helst etter fødselen ved hjelp av denne arketypen. 
+Vanlig klinisk praksis er å registrere alle fem parametere pluss totalt, men denne arketypen tillater registrering av hver enkelt parameter for sig, hvis det er alt som er tilgjengelig for eksempel fra historiske data. 
+Hvis den totale skal beregnes, er det nødvendig for alle 5 ordensverdier registreres. Den totale er summen av de fem ordensverdier (min 0, max 10). 
+
+Den mnemotekniske lærings regel for APGAR er; for eksempel, på engelsk: A for Utseende (hudfarge) (appearence), P for Pulse (puls), G for Grimace (refleks irritabilitet), A for aktivitet (muskeltonus), og R for respirasjon. Ettersom dette ikke er universelt anvendelig for alle språk, er det foreslått at denne mnemonic kan brukes ved å endre navnet dataelementene innenfor maler hvis ønskelig for en spesielle klinisk scenario.">
+			keywords = <"nyfødt", "indeks", "score", "skore", "fødsel", "barn", "neonatal", "vurdering">
+			misuse = <"Delvis registrerte data og en addisjon for total verdi.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Paul Donaldson, Nursing Informatics Australia, Australia", "Sebastian Garde, Ocean Informatics, Germany (Editor)", "Anneke Goossen, Results 4 Care, Netherlands", "Anne Harbison, CPCER, Australia", "Sam Heard, Ocean Informatics, Australia", "Omer Hotomaroglu, Turkey", "Pieter Hummel, Medisch Centrum Alkmaar, Netherlands", "Andrew James, University of Toronto, Canada", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Apgar V.  A proposal of a New Method of Evaluation of the Newborn Infant. Curr Res Anesth Analg.  1953 Jul-Aug;32(4):260-7.
 
 Apgar V, Holaday DA, James LS, Weisbrod IM, and Berrien C.  Evaluation of the newborn infant; second report.  J Am Med Assoc.  1958 Dec 13;168(15):1985-8.
@@ -211,7 +235,12 @@ Apgar V.  The newborn (Apgar) scoring system.  Pediatr Clin North Am. 1966 Aug;1
 Whaley LF, Wong DL (1979).  Nursing Care of Infants and Children.  St. Louis, Toronto, London, The C.V. Mosby Company.
 
 http://en.wikipedia.org/wiki/Apgar_score">
-		["MD5-CAM-1.0.1"] = <"86AE58D13605B60B8C6784E34B379613">
+		["build_uid"] = <"74b2df58-18f2-4a23-9fdb-50df5dc1a49a">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"90C7808A01F8477938D8A5AA3C9F0F5F">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -1525,6 +1554,138 @@ ontology
 				["at0037"] = <
 					text = <"任何事件">
 					description = <"所需要的任何额外时候的Apgar评分。">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Apgar score">
+					description = <"En klinisk vurdering på vurdering av respirasjons anstrengelse, puls, refleks irritabilitet, muskel tonus og hud farge.">
+				>
+				["at0001"] = <
+					text = <"structure">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"history">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"1 Minutt">
+					description = <"Apgar score etter i minuttt.">
+				>
+				["at0005"] = <
+					text = <"Puls frekvens">
+					description = <"Registrering av den nyfødtes puls frekvens">
+				>
+				["at0006"] = <
+					text = <"Fraværende">
+					description = <"Ingen hjerte aktivitet ses, føles eller høres.">
+				>
+				["at0007"] = <
+					text = <"< 100 pulssalg per minutt">
+					description = <"Mindre enn 100 pulsslag per minutt.">
+				>
+				["at0008"] = <
+					text = <"> 100 pulsslag per minutt">
+					description = <"Puls frekvens mer enn eller lik 100 slag per minutt.">
+				>
+				["at0009"] = <
+					text = <"Respirasjons anstrengelse">
+					description = <"Observasjon av de nyfødtes pustebesvær.">
+				>
+				["at0010"] = <
+					text = <"Fraværende">
+					description = <"Ingen puste besvær.">
+				>
+				["at0011"] = <
+					text = <"Svak eller uregelmessig">
+					description = <"Noen anstrengelse for pusting og bryst bevegelse.">
+				>
+				["at0012"] = <
+					text = <"Normal">
+					description = <"Puster normalt eller griner.">
+				>
+				["at0013"] = <
+					text = <"Muskel tonus">
+					description = <"Observasjon av den nyfødtes muskeltonus.">
+				>
+				["at0014"] = <
+					text = <"Slap">
+					description = <"Ingen spontan bevegelse.">
+				>
+				["at0015"] = <
+					text = <"Redusert tonus">
+					description = <"Noen fleksjon i ekstremitetene.">
+				>
+				["at0016"] = <
+					text = <"Normal tonus">
+					description = <"Normal kraftige bevegelser.">
+				>
+				["at0017"] = <
+					text = <"Refleks irritabilitet">
+					description = <"Observasjon av den nyfødtes respons på en irritativ stimulasjon, f.eks. suging i orofaryngs og nares med myk kateter.">
+				>
+				["at0018"] = <
+					text = <"Ingen respons">
+					description = <"Ingen respons på irirtativ stimulasjon.">
+				>
+				["at0019"] = <
+					text = <"Redusert respons">
+					description = <"Grimasering eller svak grining når stimulert.">
+				>
+				["at0020"] = <
+					text = <"Normal respons">
+					description = <"Grimaserer, nyser, hoster eller avverge når stimulert.">
+				>
+				["at0021"] = <
+					text = <"Hud farge">
+					description = <"Observasjon av den nyfødtes hudfarge.">
+				>
+				["at0022"] = <
+					text = <"Helt blå">
+					description = <"Kropp og ekstremiteter er blå.">
+				>
+				["at0023"] = <
+					text = <"Kropp lyserød; ekstremiteter blå.">
+					description = <"Kroppen lyserød; ekstremiteter er blå.">
+				>
+				["at0024"] = <
+					text = <"Helt lyserød">
+					description = <"Kropp ig ekstremiteter er lyserøde; ingen cyanose.">
+				>
+				["at0025"] = <
+					text = <"Total">
+					description = <"Summen av de fem ordinale verdiene for hvert komponent.">
+				>
+				["at0026"] = <
+					text = <"2 minutter">
+					description = <"Apgar score etter 2 minutter etter fødselen.">
+				>
+				["at0027"] = <
+					text = <"3 Minutter">
+					description = <"Apgar score etter 3 minutter etter fødselen.">
+				>
+				["at0028"] = <
+					text = <"5 Minutter">
+					description = <"Apgar score etter 5 minutter etter fødselen.">
+				>
+				["at0029"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0030"] = <
+					text = <"Kommentarer til vurderingen">
+					description = <"Kommentarer om Apgar vurderingen">
+				>
+				["at0031"] = <
+					text = <"10 minutter">
+					description = <"Apgar score etter 10 minutter etter fødselen.">
+				>
+				["at0037"] = <
+					text = <"Enhver hendelse">
+					description = <"Apgar score etter et hvert tidspunkt etter fødselen etter behov.">
 				>
 			>
 		>
