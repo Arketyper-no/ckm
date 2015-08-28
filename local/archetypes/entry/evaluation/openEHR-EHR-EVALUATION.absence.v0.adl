@@ -1,10 +1,20 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-EVALUATION.absence.v1
+﻿archetype (adl_version=1.4; uid=b98c9883-1ba7-4c09-8b37-819fa7d2eeeb)
+	openEHR-EHR-EVALUATION.absence.v0
 
 concept
 	[at0000]	-- Absence of Information
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo universitetssykehus HF">
+				["email"] = <"varntzen@ous-hf.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -27,12 +37,33 @@ This archetype has been designed specifically to avoid the need to use of flags 
 			misuse = <"Not to be used to record the exclusion of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of the EVALUATION.exclusion archetype for this purpose.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere at det ikke er tilgjengelig informasjon på et gitt tidspunkt.">
+			use = <"Brukes for eksplisitt å registrere at informasjon ikke er tilgjengelig i en journal på et gitt tidspunkt, med andre ord at det ikke er tilgjengelig verken en bekreftet tilstedeværelse eller et bekreftet fravær av informasjon om et klinisk funn, en vurdering eller en forutgående aktivitet.
+
+Denne arketypen er laget for å brukes i SLOTS i vedvarende COMPOSITIONS, som Medikamentliste *, Problemliste * eller Cave/Allergi * (* = må endres når disse finnes oversatt og fått sitt endelige navn)
+
+Fravær av informasjon må oppfattes kun til å være gyldig på registreringstidspunktet.
+
+Denne arketypen er laget spesielt for å unngå å måtte bruke flagg for å uttrykke negasjonen av ethvert informasjonselement i en journal.">
+			keywords = <"fravær", "informasjon", "utilsiktet", "uheldig", "reaksjon", "cave", "allergi", "problem", "diagnose", "medikament", "prosedyre", "vaksinasjon">
+			misuse = <"Skal ikke brukes for å dokumentere fravær av Cave/Allergi, medikamenter som ikke brukes, problemer eller diagnoser som ikke er gyldige. Da skal man bruke spesialiseringer av arketypen EVALUATION.excusion.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"CommitteeDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"5E7736AF504436AC63CA11F0BC42CE91">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
+		["build_uid"] = <"3d352a7a-9e38-4acc-a9cb-9474d6368374">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"75730D4873C1650E5A8AFCA207D80916">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -86,6 +117,31 @@ ontology
 				["at0004"] = <
 					text = <"Date Verified">
 					description = <"The date at which the information was deemed to be absent.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fravær av informasjon">
+					description = <"Eksplisitt registrering av at informasjon ikke er tilgjengelig i journalen på et gitt tidspunkt">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Utsagn om fravær">
+					description = <"Eksplisitt utsagn/bekreftelse på at informasjon ikke er tilgjengelig eller mulig å oppdrive">
+					comment = <"For eksempel: \"Ikke tilgjengelig informasjon om Cave/Allergi\", \"Ikke tilgjengelig informasjon om problemer eller diagnoser\", \"Ikke tilgjengelig informasjon om tidligere gjennomførte prosedyrer\", eller \"Ikke tilgjengelig informasjon om medikamenter i bruk\".">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Dato bekreftet">
+					description = <"Datoen informasjonen ble ansett å være fraværende.">
 				>
 			>
 		>
