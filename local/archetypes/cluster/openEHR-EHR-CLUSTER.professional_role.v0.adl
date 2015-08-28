@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-CLUSTER.professional_role.v1
+﻿archetype (adl_version=1.4; uid=93f5ac96-9241-4056-a9d7-bd53859d03f7)
+	openEHR-EHR-CLUSTER.professional_role.v0
 
 concept
 	[at0000]	-- Professional role
@@ -13,6 +13,15 @@ language
 				["organisation"] = <"Helmholtz Zentrum München">
 				["email"] = <"demski@helmholtz-muenchen.de">
 			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Hallvard Lærum">
+				["organisation"] = <"NIKT Nasjonal Redaksjonsutvalg for Arketyper">
+				["hallar@ous-hf.no"] = <"hallar@ous-hf.no">
+			>
+			accreditation = <"Hallvard Lærum">
 		>
 	>
 description
@@ -39,12 +48,27 @@ description
 			misuse = <"Nicht zur Aufzeichnung einer rollenbasierten Zugangskontrolle (role-based access control) zu verwenden.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å registrere rollen til en person som yter helsehjelp">
+			use = <"Brukes til å registrere detaljer om rollen til en person som yter helsehjelp som en tjeneste.">
+			keywords = <"rolle", "behandler", "kliniker", "profesjon", "yrkesgruppe", "spesialist">
+			misuse = <"Brukes ikke til å registrere rollebasert tilgangskontroll">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"Initial">
+	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
 		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"A8AF528D77039F0C4469C04544D806CA">
+		["build_uid"] = <"deb00ed2-ec78-4a83-8bce-73b8622d8e34">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"58BCF2A2BC93CB9F61F681A9ABE837CC">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -95,6 +119,22 @@ ontology
 				["at0003"] = <
 					text = <"Strukturierte Rolle">
 					description = <"Rolle in vordefiniertem Format (zu Erweitern sobald RBACS Standards entwickelt sind).">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Profesjonsrolle">
+					description = <"Rollen til en person yter helsehjelp til et individ">
+				>
+				["at0001"] = <
+					text = <"Fritekst rolleangivelse">
+					description = <"Fritekst navn og beskrivelse av rollen">
+				>
+				["at0003"] = <
+					text = <"Strukturert rolleangivelse">
+					description = <"Rollen beskrevet på en strukturert form (skal utvides etter hvert som RBACS-standarder blir tilgjengelig)">
 				>
 			>
 		>
