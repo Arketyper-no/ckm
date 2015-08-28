@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-CLUSTER.medication_admin.v1
+﻿archetype (adl_version=1.4; uid=c6851ea7-6cd9-4eab-9ff0-95335dfaf466)
+	openEHR-EHR-CLUSTER.medication_admin.v0
 
 concept
 	[at0000]	-- Medication administration
@@ -13,6 +13,14 @@ language
 				["organisation"] = <"Marand, Ljubljana">
 				["email"] = <"biljana.princic@marand.si">
 			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo universitetssykehus HF, Norway">
+			>
+			accreditation = <"RN, Enterprise Architect TOGAF sertified">
 		>
 	>
 description
@@ -38,11 +46,26 @@ description
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å beskrive hvordan en foreskrevet medisin skal administreres, eller faktisk ble administrert.">
+			use = <"Skal brukes i INSTRUCTION.medication og ACTION.medication for å beskrive administrasjonen.">
+			keywords = <"administrasjon av medikament", "forordning", "injeksjon", "administrasjonsmåte">
+			misuse = <"Skal ikke benyttes for administrering av andre ting enn medikasjon.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
-	lifecycle_state = <"CommitteeDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"26998F8362E0AA57A9FCAE456E20F812">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"0.0.1-alpha">
+		["build_uid"] = <"85acf051-8100-4109-b31e-9cb50f3cc2fb">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"539E37E7B26B5FAC253A34D9458569C8">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -205,6 +228,62 @@ ontology
 				>
 			>
 		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Administrasjon av medikament.">
+					description = <"Informasjon om fremtidig eller faktisk administrasjon av medikament.">
+				>
+				["at0001"] = <
+					text = <"Administrasjonsvei">
+					description = <"Administrasjonsveien et medikament er administrert (for eksempel per os, sublingualt, intramuskulært, etc).">
+				>
+				["at0002"] = <
+					text = <"Lokalisering">
+					description = <"En beskrivelse av hvor medikamentet er satt/gitt.">
+				>
+				["at0003"] = <
+					text = <"Administrasjonsmåte">
+					description = <"Måten et medikament skal gis, hvis det er nødvendig å spesifisere det (for eksempel via forstøver eller inhalator).">
+				>
+				["at0004"] = <
+					text = <"Doseringsvarighet">
+					description = <"Varigheten et medikament skal gis over (for eksempel kan en intravenøs administrasjon måtte gis over et bestemt antall minutter eller timer).">
+				>
+				["at0005"] = <
+					text = <"Infusjonsdetaljer">
+					description = <"Detaljer knyttet til administrasjon som gjelder en infusjon.">
+				>
+				["at0006"] = <
+					text = <"Venstre overarm">
+					description = <"Venstre overarm">
+				>
+				["at0007"] = <
+					text = <"Høyre overarm">
+					description = <"Høyre overarm">
+				>
+				["at0008"] = <
+					text = <"Venstre lår">
+					description = <"Venstre lår">
+				>
+				["at0009"] = <
+					text = <"Høyre lår">
+					description = <"Høyre lår">
+				>
+				["at0010"] = <
+					text = <"Munn">
+					description = <"Munn">
+				>
+				["at0011"] = <
+					text = <"Venstre setemuskel">
+					description = <"Venstre setemuskel">
+				>
+				["at0012"] = <
+					text = <"Høyre setemuskel">
+					description = <"Høyre setemuskel">
+				>
+			>
+		>
 	>
 	constraint_definitions = <
 		["en"] = <
@@ -220,6 +299,14 @@ ontology
 				["ac0001"] = <
 					text = <"*RouteOfAdministration(en)">
 					description = <"*A list of all possible routes of administration of medication.(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Liste av administrasjonsveier">
+					description = <"En liste over alle mulige administrasjonsveier til medikasjon.">
 				>
 			>
 		>
