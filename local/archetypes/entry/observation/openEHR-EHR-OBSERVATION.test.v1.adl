@@ -18,12 +18,17 @@ description
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"published">
+	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
-		["revision"] = <"1.0.2">
-		["build_uid"] = <"cad3901a-b010-47b4-94dc-66419600b4ec">
-		["MD5-CAM-1.0.1"] = <"FFCB1A391A9692F0F4EC8750C98B8A7A">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["revision"] = <"1.0.3-alpha">
+		["build_uid"] = <"665341f3-9dd2-4e06-9e43-e93880f4ef15">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"FB95DC6CF1CFBD06E1F0A065C0A7CA7C">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -41,6 +46,11 @@ definition
 										}
 									}
 									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Nytt testfelt
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Enda et testfelt.
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -82,6 +92,10 @@ ontology
 				["at0005"] = <
 					text = <"Nytt testfelt">
 					description = <"Noe testgreier.">
+				>
+				["at0006"] = <
+					text = <"Enda et testfelt.">
+					description = <"*">
 				>
 			>
 		>
