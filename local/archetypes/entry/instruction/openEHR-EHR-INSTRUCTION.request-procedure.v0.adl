@@ -38,16 +38,31 @@ description
 			purpose = <"Brukes til å registrere enkle og generelle detaljer om rekvirering av en ønsket prosedyre.">
 			use = <"Brukes til å dele detaljer om en rekvisisjon eller en anmodning om utføring av en prosedyre. Denne arketypen har blitt utformet for å gi kjerneinformasjon som kreves for enkel rekvirering av de fleste prosedyrer. Hvis mer spesifikke detaljer er nødvendige kan disse legges til via CLUSTER-arketyper satt inn i SLOTet \"Spesifikke detaljer\".">
 			keywords = <"rekvisisjon", "bestilling", "foreskriving", "tjeneste", "tjenesteyter", "rekvirere", "bestille", "anmodning", "forespørre", "forespørsel", "anmode", "tilsyn">
-			misuse = <"">
+			misuse = <"Benyttes ikke som rekvisisjon av billeddiagnostikk - bruk arketypen INSTRUCTION.request-imaging_exam.
+
+Benyttes ikke som laboratorierekvisisjon - bruk arketypen INSTRUCTION.request-laboratory_test.
+
+Benyttes ikke til å registrere henvisninger eller tilsynsforespørsler  -bruk arketypen INSTRUCTION.request-referral.
+
+Benyttes ikke til å rekvirere pasientopplæring - bruk INSTRUCTION.request-health_education til dette formålet.
+
+Benyttes ikke til å rekvirere administrative aktiviteter - bruk spesifikke INSTRUCTION-arketyper til dette formålet.
+
+Benyttes ikke til å registrere detaljer om en utført prosedyre - bruk ACTION.procedure for dette formålet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Rose Mari Eikås, Helse Bergen, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Frode Gilberg, PRIDOK AS, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Gunn Elin Blakkisrud, DIPS ASA, Norway", "B Christensen, HUS, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Rose Mari Eikås, Helse Bergen, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Frode Gilberg, PRIDOK AS, Norway", "Bjørn Grøva, Helsedirektoratet, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Anne Gunn Haugland, Helse Bergen HF, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "Micaela Thierley, Helse Bergen, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Nils Widnes, Helse-Bergen, Norway">
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
-		["build_uid"] = <"3d67dedf-333c-461b-a086-68b4cb161dbe">
-		["MD5-CAM-1.0.1"] = <"0B4883E1E01DDE7BC66EBE1457628083">
+		["build_uid"] = <"94892ac7-1b0b-4d70-8e92-ada5a21532d3">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"3FB2465D0E03235F6F89B4044C2D69D2">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
@@ -104,22 +119,22 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0040.1] occurrences matches {0..1} matches {	-- Ønsket dato/tid for fullført prosedyre
-								value matches {
-									DV_DATE_TIME matches {*}
-								}
-							}
 							ELEMENT[at0146.1] occurrences matches {0..1} matches {	-- Ønsket dato/tid for start av prosedyre
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0144.1] occurrences matches {0..1} matches {	-- Tidligste dato/tid for påbegynt prosedyre
+							ELEMENT[at0145.1] occurrences matches {0..1} matches {	-- Tidligste dato/tid for start av prosedyre
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0145.1] occurrences matches {0..1} matches {	-- Tidligste dato for rekvirert prosedyre
+							ELEMENT[at0040.1] occurrences matches {0..1} matches {	-- Ønsket dato/tid for fullført prosedyre
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0144.1] occurrences matches {0..1} matches {	-- Seneste dato/tid for fullført prosedyre
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
@@ -360,6 +375,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0.2"] = <
 					text = <"Prosedyretype">
 					description = <"Beskrivelse av prosedyretypen.">
+					comment = <"For eksempel: Utredning, operasjon eller terapi.">
 				>
 				["at0000"] = <
 					text = <"Helsetjenesterekvirering">
@@ -368,7 +384,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0000.1"] = <
 					text = <"Prosedyrerekvirering">
-					description = <"Rekvirering av en prosedyre som ønskes utført.">
+					description = <"Rekvirering av en klinisk aktivitet som skal utføres i undersøkende, diagnostisk, kurativ, terapeutisk, evaluerende eller palliativ hensikt.">
 				>
 				["at0001"] = <
 					text = <"Rekvirering">
@@ -420,7 +436,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0065.1"] = <
 					text = <"Hensikt">
-					description = <"Rekvirentens hensikt, det vil si hva de ønsker å oppnå ved prosedyren.">
+					description = <"Rekvirentens begrunnelse, det vil si hva rekvirenten ønsker å oppnå ved prosedyren.">
 				>
 				["at0068"] = <
 					text = <"Hastegrad">
@@ -460,6 +476,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				["at0127.1"] = <
 					text = <"Rekvisisjonsstatus">
 					description = <"Status for rekvisisjonen oppgitt av rekvirenten. Status brukes for å vise om dette er den primære rekvisisjonen, en endring eller supplerende informasjon.">
+					comment = <"Koding av rekvisisjonsstatus med et kodeverk er ønskelig, dersom tilgjengelig.">
 				>
 				["at0128"] = <
 					text = <"Svarmottakere">
@@ -476,7 +493,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 				>
 				["at0135.1"] = <
 					text = <"Prosedyrebeskrivelse">
-					description = <"Fritekstlig beskrivelse av prosedyren som er rekvirert.">
+					description = <"Fritekst beskrivelse av prosedyren som er rekvirert.">
 				>
 				["at0136"] = <
 					text = <"Akutt">
@@ -514,7 +531,7 @@ Status is used to denote whether this is the initial request, or a follow-up req
 					comment = <"I noen tilfeller må en viss tid løpe før en tjeneste kan utføres, f.eks. ved noen gastroskopier er en avhengig av at pasienten har seponert legemidler i en periode før prosedyren.">
 				>
 				["at0145.1"] = <
-					text = <"Tidligste dato for påbegynt prosedyre">
+					text = <"Tidligste dato/tid for start av prosedyre">
 					description = <"Tidligste akseptable dato for å påbegynne prosedyren.">
 					comment = <"I noen tilfeller må en viss tid løpe før en prosedyre kan utføres, f.eks. ved noen gastroskopier er en avhengig av at pasienten har seponert legemidler i en periode før prosedyren.">
 				>
