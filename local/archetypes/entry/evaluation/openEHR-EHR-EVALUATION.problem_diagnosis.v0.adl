@@ -20,12 +20,6 @@ language
 				["organisation"] = <"Helse Bergen HF">
 			>
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
-			>
-		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -34,6 +28,12 @@ language
 				["email"] = <"Correo electrónico">
 			>
 			accreditation = <"Acreditación">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
 		>
 		["es"] = <
 			language = <[ISO_639-1::es]>
@@ -241,10 +241,10 @@ ISO/DIS 13940 Health informatics -- System of concepts to support continuity of 
 Common Terminology Criteria for Adverse Events (CTCAE)[Internet]. National Cancer Institute, USA. [cited: 2015-04-09]. Available from: http://evs.nci.nih.gov/ftp1/CTCAE/About.html
 
 Weed LL. Medical records that guide and teach. <http://www.ncbi.nlm.nih.gov/pubmed/5637758>  N Engl J Med. 1968 Mar 14;278(11):593-600. PubMed PMID: 5637758.">
-		["build_uid"] = <"bbf9fb96-9c15-4300-98c3-633abdddadd6">
+		["build_uid"] = <"c6889a0a-46d9-4c7c-9c3f-e4bd222c786e">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"C03687A43DF8C31FB7A11CEF457918ED">
+		["MD5-CAM-1.0.1"] = <"A1968EA7268E558492E3717C6DE2D35A">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -1051,7 +1051,7 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 			items = <
 				["at0000"] = <
 					text = <"Problem/diagnose">
-					description = <"Detaljer om én identifisert helsetilstand, skade, funksjonshemming eller andre forhold som påvirker et individs fysiske, mentale og/eller sosiale velvære.
+					description = <"Detaljer om én identifisert helsetilstand, skade, funksjonshemming eller annet forhold som påvirker et individs fysiske, mentale og/eller sosiale velvære.
 ">
 					comment = <"Det er i praksis ikke lett å oppnå et klart skille mellom et problem og en diagnose. I klinisk dokumentasjon med denne arketypen ses problem og diagnose som et kontinuum, med økende krav til detaljer og støttende evidens for å underbygge en diagnose.">
 				>
@@ -1066,7 +1066,7 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 				>
 				["at0003"] = <
 					text = <"Dato/tid for klinisk bekreftelse">
-					description = <"Antatt eller faktisk dato/tid da diagnosen eller problemet ble bekreftet av helsepersonell.">
+					description = <"Anslått eller faktisk dato/tid da diagnosen eller problemet ble bekreftet av helsepersonell.">
 					comment = <"Delvise datoer er tillatt. Dersom individet er under ett år gammel, må komplett dato eller som et minimum måned og år oppgis for å muliggjøre presise beregninger av alder, f.eks. ved bruk i beslutningsstøttesystemer. Data registrert eller importert som \"alder ved tidspunkt når diagnosen stilles\" bør konverteres til en dato ved hjelp av individets fødselsdato.">
 				>
 				["at0005"] = <
@@ -1081,7 +1081,7 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 				>
 				["at0012"] = <
 					text = <"Anatomisk lokalisering">
-					description = <"Registrering av et enkelt/usammensatt anatomisk sted der problemet eller diagnosen er lokalisert.">
+					description = <"Registrering av et enkelt og usammensatt anatomisk sted der problemet eller diagnosen er lokalisert.">
 					comment = <"Koding av navnet på den anatomiske lokaliseringen ved hjelp av en terminologi er foretrukket når dette er mulig. 
 Bruk dette dataelementet for å registrere prekoordinerte anatomiske lokaliseringer. Dersom behovene for å registrere anatomisk sted bestemmes i applikasjonen eller trenger større grad av kompleksitet som f.eks. relativ lokalisering, er det anbefalt å bruke CLUSTER.anatomical_location eller CLUSTER.relative_location innenfor SLOTet \"Strukturert anatomisk lokalisering\" i denne arketypen. Dette dataelementet kan ha ubegrenset antall forekomster, for å gjøre det mulig å registrere kliniske scenarier som f.eks. å beskrive et utslett som opptrer flere steder på kroppen, men der alle andre attributter er identiske. Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\" via prekoordinerte koder blir dette dataelementet overflødig.">
 				>
