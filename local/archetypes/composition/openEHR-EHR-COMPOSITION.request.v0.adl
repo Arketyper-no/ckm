@@ -2,7 +2,7 @@
 	openEHR-EHR-COMPOSITION.request.v0
 
 concept
-	[at0000]	-- Referral
+	[at0000]	-- Request for service
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -38,8 +38,8 @@ description
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To request advice, a service or transfer of care from a healthcare provider or organisation about the subject of care.">
-			use = <"Use as basis for a request for advice, a service or transfer of care from a healthcare provider or organisation about the subject of care. This document will typically include details about the scope and duration of validity of the request, as well as relevant clinical information about the subject. Referrals can vary from a simple request for a consultation, seeking recommendation about further action, requesting a specific procedure or diagnostic test, through to full handover of care and clinical responsibility to the receiving healthcare provider. The duration of the referral can also vary from a specified time period, through to an indefinite and ongoing referral.
+			purpose = <"To request advice, a specified service or transfer of care from a healthcare provider or organisation about the subject of care.">
+			use = <"Use as basis for a request for advice, a service or transfer of care from a healthcare provider or organisation about the subject of care. This document will typically include details about the scope and duration of validity of the request, as well as relevant clinical information about the subject. Requests can vary from a simple request for a consultation, seeking recommendation about further action, requesting a specific procedure or diagnostic test, through to full handover of care and clinical responsibility to the receiving healthcare provider.
 
 Use cases include, but are not limited to a request for:
 - a consultation, second opinion or management advice from a specialist;
@@ -50,8 +50,8 @@ Use cases include, but are not limited to a request for:
 - for a medication review by a pharmacist; and
 - for provision of physiotherapy or occupational therapy.
 
-Referrals may be targeted (identifying a specific healthcare provider or organisation to carry out the request) or untargeted (identifying only the type of care desired).">
-			keywords = <"referral", "request">
+Requests may be targeted (identifying a specific healthcare provider or organisation to carry out the request) or untargeted (identifying only the type of care desired).">
+			keywords = <"referral", "request", "service">
 			misuse = <"Not to be used to represent the document recorded as part of a single clinical encounter or visit. Use COMPOSITION.encounter for this purpose.
 
 Not to be used to provide a transfer of care summary to another organisation or provider - use COMPOSITION.transfer_summary for this purpose.">
@@ -60,7 +60,7 @@ Not to be used to provide a transfer of care summary to another organisation or 
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å spørre om råd, en helsetjeneste, eller ansvarsoverføring for en helsetjenestemottaker.">
-			use = <"Brukes som basis for å spørre om råd, en tjeneste eller ansvarsoverføring for en helsetjenestemottaker. Dokumentet vil vanligvis inneholde detaljer om omfang og varighet av forespørselen, sammen med relevant klinisk informasjon. Henvisninger kan være alt fra en enkel forespørsel om en konsultasjon, forespørsel om anbefalinger om videre behandling, forespørsel om en spesifikk prosedyre eller diagnostisk undersøkelse, til en fullstendig overføring av ansvar mellom helsetjenesteyter. Henvisningens varighet kan strekke seg fra en spesifikk tidsperiode, fram til en åpen og pågående henvisningsperiode.
+			use = <"Brukes som basis for å spørre om råd, en tjeneste eller ansvarsoverføring for en helsetjenestemottaker. Dokumentet vil vanligvis inneholde detaljer om omfang og varighet av forespørselen, sammen med relevant klinisk informasjon. Et forespørselsdokument kan være alt fra en enkel forespørsel om en konsultasjon, forespørsel om anbefalinger om videre behandling, forespørsel om en spesifikk prosedyre eller diagnostisk undersøkelse, til en fullstendig overføring av ansvar mellom helsetjenesteyter. 
 
 Bruksområder kan omfatte, men er ikke begrenset til:
 - en konsultasjon, second opinion eller forespørsel om råd fra en spesialist,
@@ -71,30 +71,30 @@ Bruksområder kan omfatte, men er ikke begrenset til:
 - for legemiddelgjennomgang med en farmasøyt,
 - for henvisning til fysio- eller ergoterapi.
 
-Henvisningen kan ha en spesifikk mottaker (spesifikk helsetjenesteyter eller organisasjon) eller en mer uspesifikk mottaker (ønsket tjenestetype).">
-			keywords = <"henvisning", "forespørsel", "tilsynsforespørsel">
+Forespørselsdokumentet kan ha en spesifikk mottaker (spesifikk helsetjenesteyter eller organisasjon) eller en mer uspesifikk mottaker (ønsket tjenestetype).">
+			keywords = <"forespørselsdokument", "forespørsel", "tilsynsforespørsel">
 			misuse = <"Brukes ikke for å representere en klinisk kontakt. Bruk COMPOSITION.encounter for dette formålet.
 
 Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjenesteytere. Bruk COMPOSITION.transfer_summary for dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjoern Arntzen, Oslo university hospital, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rose Mari Eikås, Helse Bergen, Norway", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Bjørn Grøva, Helsedirektoratet, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT, Norway", "Jussara Rotzsch, UNB, Brazil", "Line Sæle, Nasjonal IKT HF, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics<heather.leslie@oceaninformatics.com>">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"FHIR ReferralRequest resource: http://hl7-fhir.github.io/referralrequest.html">
-		["build_uid"] = <"3a0b1a94-19b8-4d97-9eef-07d307b09754">
+		["build_uid"] = <"fcfc5859-0030-4f09-a895-ed42c940882a">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"AE8DF38605A406D15B59FF7AE6AEEA0D">
+		["MD5-CAM-1.0.1"] = <"EAF1CBE5560C60F112726EE8F98873BB">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	COMPOSITION[at0000] matches {	-- Referral
+	COMPOSITION[at0000] matches {	-- Request for service
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {[openehr::433]}
@@ -105,16 +105,6 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {	-- Tree
 						items cardinality matches {3..*; unordered} matches {
-							ELEMENT[at0041] occurrences matches {0..1} matches {	-- Referral ID
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Status
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
 							allow_archetype CLUSTER[at0042] occurrences matches {0..*} matches {	-- Extension
 								include
 									archetype_id/value matches {/.*/}
@@ -133,20 +123,12 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Referral">
+					text = <"Request for service">
 					description = <"Document sent from one treating healthcare provider or organisation to another, for the purpose of requesting advice, a service or transfer of care.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
-				>
-				["at0040"] = <
-					text = <"Status">
-					description = <"The status of the entire referral as a whole.">
-				>
-				["at0041"] = <
-					text = <"Referral ID">
-					description = <"Identification information about the referral.">
 				>
 				["at0042"] = <
 					text = <"Extension">
@@ -158,20 +140,12 @@ ontology
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Referral(en)">
+					text = <"*Request for service(en)">
 					description = <"*Document sent from one treating healthcare provider or organisation to another, for the purpose of requesting advice, a service or transfer of care.(en)">
 				>
 				["at0001"] = <
 					text = <"*Tree(en)">
 					description = <"*@ internal @(en)">
-				>
-				["at0040"] = <
-					text = <"*Status(en)">
-					description = <"*The status of the entire referral as a whole.(en)">
-				>
-				["at0041"] = <
-					text = <"*Referral ID(en)">
-					description = <"*Identification information about the referral.(en)">
 				>
 				["at0042"] = <
 					text = <"*Extension(en)">
@@ -183,20 +157,12 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Henvisning">
+					text = <"Forespørselsdokument">
 					description = <"Dokument som sendes fra en behandlende helsetjenesteyter til en annen, med hensikt om å forespørre om råd, en tjeneste eller overføring av ansvar.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
-				>
-				["at0040"] = <
-					text = <"Henvisningsstatus">
-					description = <"Status for hele henvisningen.">
-				>
-				["at0041"] = <
-					text = <"HenvisningsID">
-					description = <"Identifiseringsinformasjon knyttet til henvisningen.">
 				>
 				["at0042"] = <
 					text = <"Tilleggsinformasjon">
