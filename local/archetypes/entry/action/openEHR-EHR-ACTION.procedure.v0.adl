@@ -133,7 +133,7 @@ Not to be used to record a whole operation or procedure report - use a template 
 			purpose = <"For å registrere informasjon om aktiviteter som må gjennomføres for å utføre en klinisk prosedyre, inkludert planlegging, fastsetting av tidspunkt, utførelse, utsettelse, kansellering, dokumentering og fullføring.">
 			use = <"Brukes til å registrere nødvendig informasjon om aktiviteter i gjennomføringen av en klinisk prosedyre. Dette inkluderer planlegging, fastsetting av tidspunkt, utførelse, utsettelse, avlysning, dokumentering og fullføring. Dette gjøres ved å registrere data knyttet til spesifikke aktiviteter som definert i arketypens prosesstrinn (Engelsk: \"Pathway careflow steps\").
 
-Arketypen dekker aktiviteter for en bredt spekter av kliniske prosedyrer utført i evaluerende, undersøkende, diagnostisk, kurativ, terapeutisk eller palliativ hensikt. Eksempler strekker seg fra relativt enkle aktiviteter som innlegging av et intravenøst kateter, til komplekse kirurgiske operasjoner.
+Arketypen dekker aktiviteter for et bredt spekter av kliniske prosedyrer utført i evaluerende, undersøkende, diagnostisk, kurativ, terapeutisk eller palliativ hensikt. Eksempler strekker seg fra relativt enkle aktiviteter som innlegging av et intravenøst kateter, til komplekse kirurgiske operasjoner.
 
 Strukturert og detaljert tilleggsinformasjon om prosedyren kan registreres ved bruk av spesifikke CLUSTER-arketyper satt inn i \"Prosedyredetaljer\"-SLOTet der dette kreves.
 
@@ -157,8 +157,8 @@ Registrering av informasjon i denne ACTION-arketypen indikerer at en eller annen
 - registrert at gastroskopiprosedyren er fullført, inkludert informasjon om prosedyredetaljene (\"Prosedyre avsluttet\").
 
 Legg merke til at det i openEHR referansemodellen er et attributt \"time\" som er tenkt brukt til å registrere dato og tid for når hvert enkelt prosesstrinn i ACTION-arketypen ble utført. Denne attributten skal brukes til å registre da prosedyren startet (ved prosesstrinnet \"Prosedyre iverksatt\"), eller tidspunktet da prosedyren ble avbrutt (ved prosesstrinnet \"Prosedyre avbrutt\").">
-			keywords = <"prosedyre", "intervensjon", "kirurgisk", "medisinsk", "klinisk", "terapeutisk", "diagnostisk", "behandling", "kur", "evaluering", "undersøkelse", "screening", "palliativ", "terapi">
-			misuse = <"Benyttes ikke til å registrere detaljer om anestesi - bruk en egen ACTION-arketype til dette formålet.
+			keywords = <"prosedyre", "intervensjon", "kirurgisk", "medisinsk", "klinisk", "terapeutisk", "diagnostisk", "behandling", "kur", "evaluering", "undersøkelse", "screening", "palliativ", "terapi", "prognostisk">
+			misuse = <"Benyttes ikke til å registrere detaljer om administrasjon av legemidler - bruk ACTION.medication til dette formålet.
 
 Benyttes ikke til å registrere detaljer om bildediagnostiske undersøkelser - bruk ACTION.imaging_exam til dette formålet.
 
@@ -181,10 +181,10 @@ Benyttes ikke for å registrere en hel operasjon eller prosedyrerapport - bruk e
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Procedure, Draft Archetype [Internet]. National eHealth Transition Authority, Australia, NEHTA Clinical Knowledge Manager [cited: 2015-03-21]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.936.">
-		["build_uid"] = <"e612fc33-9b73-4c54-b6c3-598a3741e0dd">
+		["build_uid"] = <"6dc775af-1340-4075-8ba4-8e21e0590ed5">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"F6234541146765A5C16167BC93463961">
+		["MD5-CAM-1.0.1"] = <"062AD5CC7D2B913762F3BE040ADE9C42">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -1180,7 +1180,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Prosedyre">
-					description = <"En klinisk aktivitet som er utført i masseundersøkende, undersøkende, diagnostisk, kurativ, terapeutisk, evaluerende eller palliativ hensikt.">
+					description = <"En klinisk aktivitet som er utført i undersøkende, diagnostisk, kurativ, terapeutisk, evaluerende, prognostisk eller palliativ hensikt.">
 				>
 				["at0001"] = <
 					text = <"Tree">
