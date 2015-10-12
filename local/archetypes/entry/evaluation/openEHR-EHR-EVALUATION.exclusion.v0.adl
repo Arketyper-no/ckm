@@ -29,13 +29,15 @@ description
 			purpose = <"To record a statement about clinical conditions, issues or concerns that are either not currently present, or have not been present in the past.">
 			use = <"Use to record a specific statement that clinical conditions, issues or concerns are not currently present, or have not been present in the past. 
 
-This archetype has been specifically designed to make a clear and unambiguous statement of exclusion of any clinical item from the health record. This approach is used in preference to relying on flags or terminology to express negation.
+This archetype has been specifically designed to make a clear and unambiguous statement of exclusion of a type of clinical item from the health record. This approach is used in preference to relying on flags or terminology to express negation.
 
 This archetype has been designed to be used in a variety of ways. The primary intent is to:
 - represent multiple 'Exclusion statements' in one archetype instance; and
 - link one 'Exclusion statement' with multiple 'Specific items', for example 'No past adverse reaction to' 'penicillin' and 'erythromicin'.
-There is also the possibility to use the archetype to use the archetype for the following purposes, although clear and safe clinical use cases have not yet been identified:
-- to link multiple 'Exclusion statements' with one 'Specific item'.
+
+There is also the possibility to use the archetype for the following purposes, although clear and safe clinical use cases have not yet been identified:
+- to link multiple 'Exclusion statements' with one 'Specific item'. 
+
 If the clinical requirement is to link multiple 'Exclusion statements' with multiple 'Specific items' then this should be represented using multiple instances of this archetype to ensure correct alignment of each 'Exclusion statement' with each 'Specific item'.
 
 Specialisations of this archetype have been developed to capture specific and more detailed information about common exclusions, such as problems or diagnoses. 
@@ -56,15 +58,16 @@ Not to be used to record the exclusion of any component of physical examination 
 			purpose = <"For å registrere utsagn om kliniske tilstander, forhold eller bekymringer som ikke er tilstede nå, eller ikke har vært tilstede tidligere.">
 			use = <"Brukes til å registrere et spesifikt utsagn om at kliniske tilstander, forhold eller bekymringer ikke er tilstede nå og/eller ikke har vært tilstede tidligere.
 
-Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om en hvilket som helst klinisk oppføring i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
+Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om en klinisk oppføring i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
 
 Arketypen er utviklet for å kunne brukes på en rekke ulike måter. Den primære hensikten er å:
 - Representere flere \"Eksklusjonsutsagn\" i en instans av arketypen.
 - Lenke et \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\", for eksempel \"Ingen tidligere uønsket reaksjon til\" \"penicillin\" og \"erytromycin\".
+
 Det er også mulig å bruke arketypen for følgende bruksområder, selv om gode og trygge kliniske bruksområder ikke er identifisert for dette:
 - Lenke flere \"Eksklusjonsutsagn\" med ett \"Spesifikt objekt\". Eksempel: \"Ingen familiær forekomst av\" og \"Aldri hatt\" som \"Eksklusjonsutsagn\", og \"diabetes\" som \"Spesifikt objekt\".
 
-Er det klinisk behovet for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hvert enkelt \"Spesifikt objekt\".
+Er det klinisk behov for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hvert enkelt \"Spesifikt objekt\".
 
 Spesialiseringer av denne arketypen vil fange opp spesifikk og mer detaljert informasjon om vanlige eksklusjoner, for eksempel problemer eller diagnoser.
 
@@ -81,16 +84,16 @@ Brukes ikke for å registrere en eksklusjon av en del av en fysisk undersøkelse
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Stephen Chu, NEHTA, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Stephen Royce, NEHTA, Australia", "Norwegian Review Summary, Nasjonal IKT, Norway", "Richard Townley-O'Neill, NEHTA, Australia">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Magnus Alsaker, Helsedirektoratet, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Luis Marco Ruiz, NST, Spain", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Norwegian Review Summary, Nasjonal IKT, Norway", "Jussara Rotzsch, UNB, Brazil", "Stephen Royce, NEHTA, Australia", "Line Sæle, Nasjonal IKT HF, Norway", "Richard Townley-O'Neill, NEHTA, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Exclusion Statement, Draft Archetype [Internet]. NEHTA, Australia, NEHTA Clinical Knowledge Manager [cited: 2015-09-16]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1301">
-		["build_uid"] = <"cf07cfa2-adc8-4426-94d3-458ff74a8500">
+		["build_uid"] = <"b5bd800f-e385-4da6-85c5-39ad6d34b844">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"61624CF19068729B256FE5EF2A5DDDFE">
+		["MD5-CAM-1.0.1"] = <"24FD017C23689357D10383FDB90229E3">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -157,7 +160,7 @@ ontology
 				["at0003"] = <
 					text = <"Specific item">
 					description = <"Identification of the specific clinical item to which the 'Exclusion statement' applies.">
-					comment = <"In this generic context of this parent archetype it is not easy to identify a commonly used example, however in context of the specialisations from this archetype, this data element would be used to enable exact statements that include: corticosteriods have never been used; there has never been an adverse reaction to penicillin; there is no family history of heart disease; or there is no past history of diabetes for the individual. In these examples, 'corticosteroids', 'penicillin', 'heart disease', 'diabetes' would be examples of the 'Specific item' and the rest of the example phrase would be carried in the 'Exclusion statement'. Other possible use cases might be: exclusion of pregnancy, never X-rayed, or received a blood transfusion.">
+					comment = <"In this generic context of this parent archetype it is not easy to identify a commonly used example, however in context of the specialisations from this archetype, this data element would be used to enable exact statements that include: corticosteriods have never been used; there has never been an adverse reaction to penicillin; there is no family history of heart disease; or there is no past history of diabetes for the individual. In these examples, 'corticosteroids', 'penicillin', 'heart disease', 'diabetes' would be examples of the 'Specific item' and the rest of the example phrase would be carried in the 'Exclusion statement'. Other possible use cases might be: exclusion of pregnancy, never X-rayed, or received a blood transfusion. Please note: if precoordinated phrases such as  'No known allergy to penicillin' is available, then this can be used as an alternative in the 'Exclusion statement' alone.">
 				>
 				["at0004"] = <
 					text = <"Last updated">
@@ -196,7 +199,8 @@ ontology
 				["at0003"] = <
 					text = <"Spesifikt objekt">
 					description = <"Identifikasjon av det spesifikke objektet \"Eksklusjonsutsagnet\" gjelder.">
-					comment = <"I en generisk kontekst er det ikke enkelt å identifisere et vanlig brukt eksempel, men om en ser på spesialiseringer av denne arketypen vil dette dataelementet brukes for å gi presise utsagn som: \"Kortikosteroider har aldri blitt brukt\", \"Det har aldri oppstått en allergisk reaksjon til penicillin\", \"Ingen familiær forekomst av hjertesykdom\", \"Aldri hatt diabetes\". Fra disse eksemplene vil \"kortikosteroider\", \"penicillin\", \"hjertesykdom\" og \"diabetes\" være eksempler på \"Spesifikt objekt\", og resten av setningene registreres i \"Eksklusjonsutsagn\". Andre mulige bruksområder kan være: \"Utelukkelse av graviditet\", \"Aldri tatt røntgen\" eller \"Aldri mottatt blodoverføring\".">
+					comment = <"I en generisk kontekst er det ikke enkelt å identifisere et vanlig brukt eksempel, men om en ser på spesialiseringer av denne arketypen vil dette dataelementet brukes for å gi presise utsagn som: \"Kortikosteroider har aldri blitt brukt\", \"Det har aldri oppstått en allergisk reaksjon til penicillin\", \"Ingen familiær forekomst av hjertesykdom\", \"Aldri hatt diabetes\". Fra disse eksemplene vil \"kortikosteroider\", \"penicillin\", \"hjertesykdom\" og \"diabetes\" være eksempler på \"Spesifikt objekt\", og resten av setningene registreres i \"Eksklusjonsutsagn\". Andre mulige bruksområder kan være: \"Utelukkelse av graviditet\", \"Aldri tatt røntgen\" eller \"Aldri mottatt blodoverføring\".
+Merk at om prekoordinerte fraser som: \"Ingen kjent pencillinallergi\" finnes kan dette brukes som et alternativ i datalemententet \"Eksklusjonsutsagn\".">
 				>
 				["at0004"] = <
 					text = <"Sist oppdatert">
