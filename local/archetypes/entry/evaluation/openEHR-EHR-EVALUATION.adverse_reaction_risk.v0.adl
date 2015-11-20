@@ -92,7 +92,7 @@ Not to be used for the explicit recording that no information was able to be obt
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere en klinisk vurdering av en tendens til overfølsomhetsreaksjoner ved fremtidig eksponering for den angitte substansen eller substansklassen.
 
-Der en tendens er identifisert brukes arketypen til å registrere informasjon eller evidens om en eller flere reaksjonshendelser, karakterisert ved en hvilken som helst skadelig eller uønsket fysiologisk respons unik for det enkelte individ, som utløses ved eksponering for den identifiserte substansen eller substansklassen.">
+Der en tendens er identifisert brukes arketypen til å registrere informasjon eller evidens om en eller flere reaksjonshendelser. Reaksjonen kan være en hvilken som helst uønsket fysiologisk respons som er unik for det enkelte individ, og utløses ved eksponering for den identifiserte substansen eller substansklassen.">
 			use = <"Arketypen gir ett enkelt sted i pasientjournalen for å dokumentere en rekke kliniske utsagn om overfølsomhetsreaksjoner:
 - for å registrere en klinisk vurdering av den enkeltes risiko for en potensiell fremtidig reaksjon ved re-eksponering 
 - for å registrere akkumulert informasjon om reaksjonen ved hver eksponering.
@@ -118,7 +118,7 @@ Denne arketypen er designet for å tillate registrering av informasjon om en bes
 
 Omfanget av denne arketypen er bevisst fokusert på å definere et pragmatisk datasett som brukes i de fleste kliniske systemer, eller vil være egnet for de fleste vanlige kliniske situasjoner, men den tillater utvidelse av modellen når ekstra detaljer er nødvendig, for eksempel ved SLOTene \"Reaksjonsdetaljer\", \"Eksponeringsdetaljer\", og \"Rapporteringsdetaljer\". Eksempler på kliniske situasjoner der utvidelse kan være nødvendig omfatter: en detaljert allergologisk/immunologisk vurdering, for rapportering til tilsynsorganer eller bruk i en klinisk studie. 
 
-Registrering av enhver risiko for overfølsomhetsreaksjon i journalsystemet innebærer klinisk vurdering om at der er en potensiell fare for personen dersom de eksponeres for den samme substansen/substansklassen i fremtiden, altså medfører dette en relativ kontraindikasjon. Standardverdien for \"Kritikalitet\" bør derfor være \"Lav\". Dersom legen mener at det ikke er trygt for individet å bevisst bli re-eksponert for substansen igjen, for eksempel etter en livstruende anafylaksi, bør verdien for \"Kritikalitet\" endres til \"Høy\". 
+Registrering av enhver risiko for overfølsomhetsreaksjon i journalsystemet innebærer klinisk vurdering om at der er en potensiell fare for personen dersom de eksponeres for den samme substansen/substansklassen i fremtiden, altså medfører dette en relativ kontraindikasjon. Standardverdien for \"Alvorlighetsgrad\" bør derfor være \"Lav\". Dersom legen mener at det ikke er trygt for individet å bevisst bli re-eksponert for substansen igjen, for eksempel etter en livstruende anafylaksi, bør verdien for \"Alvorlighetsgrad\" endres til \"Høy\". 
 
 En formell rapport om overfølsomhetsreaksjoner til tilsynsorganer er et dokument som skal inneholde et bredt spekter av informasjon i tillegg til de spesifikke detaljene om overfølsomhetsreaksjonen. Rapporten kan utnytte deler av denne arketypen, samt inkludere tilleggsdata i henhold til lovmessige krav.
 
@@ -127,21 +127,21 @@ En liste over overfølsomhetsreaksjoner er en oversikt over alle identifiserte t
 Verdifull førstenivåinformasjon som kan legges fram for klinikeren for vurdering av risikoen for fremtidige reaksjoner omfatter:
 - Utsagn om tidligere kliniske reaksjonsmanifestasjoner etter eksponering
 - Informasjonskilden
-- Dataelementet \"Kritikalitet\"
+- Dataelementet \"Alvorlighetsgrad\"
 
 Andrenivåinformasjon kan hentes frem fra hver eksponeringshendelse og lenker til ytterligere detaljert informasjon som anamnese, undersøkelse og diagnoser lagret andre steder i pasientjournalen, hvis det er tilgjengelig. 
 
 Lenker til andre deler av pasientjournalen hvor ytterligere informasjon kan befinne seg, som for eksempel konsulasjonsnotater, tillates av openEHR-referansemodellen men er ikke modellert eksplisitt i denne arketypen.
 
 Innholdet i denne arketypen er resultatet av et samarbeid mellom openEHR- og HL7 FHIR-samfunnene. FHIR-spesifikt innhold som var inkludert som en del av høringsprosessen har blitt fjernet fra denne openEHR-arketypen.">
-			keywords = <"reaksjon", "allergi", "allergisk", "uønsket", "hendelse", "virkning", "effekt", "sensitivitet", "følsomhet", "intoleranse", "hypersensitivtet", "bivirkning", "toksistitet", "legemiddel", "mat", "medisinering", "medisin", "substans", "immun", "non-immun", "kjemisk", "anafylakse", "allergen", "naturmedisin", "immunologisk", "ikke-immunologisk", "non-immunologisk", "risk", "risiko", "supplement", "kosttilskudd", "tilskudd">
+			keywords = <"reaksjon", "allergi", "allergisk", "uønsket", "hendelse", "virkning", "effekt", "følsomhet", "intoleranse", "hypersensitivtet", "bivirkning", "toksistitet", "legemiddel", "mat", "medisinering", "medisin", "substans", "immun", "non-immun", "kjemisk", "anafylakse", "allergen", "naturmedisin", "immunologisk", "ikke-immunologisk", "non-immunologisk", "risk", "risiko", "supplement", "kosttilskudd", "tilskudd", "anafylaksi", "anafylaktisk", "anafylaktoid", "naturmidler", "medikament", "ernæring", "stoff", "rusmiddel", "agens", "overfølsomhet", "atopi">
 			misuse = <"Brukes ikke til registrering av fysiologiske reaksjoner på fysiske fenomener, som for eksempel varme, kulde, sollys, vibrasjon, treningsaktivitet, smittestoffer eller forurensninger i mat. Til dette brukes en spesifikk arketype som EVALUATION.problem_diagnosis eller CLUSTER.symptom_sign.
 
 Brukes ikke til å registrere avvik, inkludert svikt i kliniske prosesser, intervensjoner eller produkter. For eksempel: Feil bruk eller feil gjort ved feilaktig administrering av en substans, feil dosering, feilmerking, skade forårsaket av en intervensjon eller prosedyre, overdose/forgiftning etc. Bruk en spesifikk arketype for dette formålet.
 
 Brukes ikke til å registerere en uønsket reaksjon hvor substansen er ukjent. Bruk arketypen EVALUATION.problem_diagnosis eller CLUSTER.symptom_sign for å registrere disse inntil substansen blir identifisert.
 
-Brukes ikke til å registrere reaksjoner på transfusjoner av blodprodukter. Bruk en spesifikk arketype for dette formålet.
+Brukes ikke til å registrere reaksjoner på transfusjoner av blodkomponenter. Bruk en spesifikk arketype for dette formålet.
 
 Brukes ikke som et substitutt for en rapport over uønskede reaksjoner. Se feltet \"Bruk\" for hvordan arketypen kan brukes som en komponent i en slik rapport.
 
@@ -193,10 +193,10 @@ Thien FC. Drug hypersensitivity. Med J Aust. 2006 Sep 18;185(6):333-8. Review. P
 - European Medicines Agency: http://www.ema.europa.eu/ema/
 
 - DIRECTIVE 2010/84/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL, of 15 December 2010, amending, as regards pharmacovigilance, Directive 2001/83/EC on the Community code relating to medicinal products for human use: http://ec.europa.eu/health/files/eudralex/vol-1/dir_2010_84/dir_2010_84_en.pdf">
-		["build_uid"] = <"8b1f0be1-dde2-46eb-acc3-f70c20a87f59">
+		["build_uid"] = <"f9d6f4a3-5928-47ca-8f31-f6ca38ddd8d6">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"444F0AB1FDB5FCC1F63DD29F028686E6">
+		["MD5-CAM-1.0.1"] = <"D7DA608A6184A3ADE0CB58DC56EBCE9C">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -730,7 +730,7 @@ However, 'Refuted' may be useful for reconciliation of the adverse reaction list
 			items = <
 				["at0000"] = <
 					text = <"Risiko for overfølsomhetsreaksjon">
-					description = <"Risiko for skadelig eller uønsket fysiologisk reaksjon som er unik for det aktuelle individet, assosiert med eksponering for en substans.">
+					description = <"Risiko for en skadelig eller uønsket fysiologisk reaksjon, unik for det aktuelle individet, forbundet med eksponering for en substans.">
 					comment = <"Substanser omfatter men er ikke begrenset til: terapeutiske substanser korrekt administrert ved en passende dose for individet, mat, materiale fra planter eller dyr, eller gift fra insektstikk.">
 				>
 				["at0001"] = <
@@ -844,7 +844,7 @@ Terminologier som anvendes kan omfatte f.eks. SNOMED-CT eller ICD10.">
 
 Immunologiske tester kan gi evidens for identifisering av mekanisme og årsakssubstans, men ingen tester er 100% sensitive eller spesifikke.
 
-Det er er kjent at de fleste klinikere ikke kan identifisere mekanismen for en gitt reaksjon. Dette dataelementet er likevel inkludert fordi det blir brukt i mange eldre systemer.
+Det er er erkjent at klinikere ofte ikke kan identifisere mekanismen for en gitt reaksjon. Dette dataelementet er likevel inkludert fordi det blir brukt i mange eldre systemer.
 
 ">
 				>
@@ -853,7 +853,7 @@ Det er er kjent at de fleste klinikere ikke kan identifisere mekanismen for en g
 					description = <"Immunmediert reaksjon, inklusive allergiske reaksjoner og hypersensitiviteter.">
 				>
 				["at0060"] = <
-					text = <"Non-immunmediert">
+					text = <"Ikke-immunmediert">
 					description = <"En non-immunmediert reaksjon, som kan inkludere pseudoallergiske reaksjoner, bivirkninger, intoleranser, legemiddeltoksisitet (f.eks gentamicin).">
 				>
 				["at0062"] = <
@@ -916,7 +916,7 @@ Likevel kan \"Avkreftet\" være nyttig for sammenstilling av ulike lister over o
 					description = <"Strukturerte detaljer om rapporter som er sendt til overordnede myndigheter.">
 				>
 				["at0101"] = <
-					text = <"Kritikalitet">
+					text = <"Alvorlighetsgrad">
 					description = <"En indikasjon på potensialet for kritisk organskade eller livstruende konsekvenser.">
 					comment = <"Dette kan ses på som en vurdering av et \"worst case scenario\".
 I de fleste kontekster vil \"Lav\" være en standardverdi.">
@@ -961,7 +961,7 @@ Når en tekstlig representasjon av datoen er påkrevd, f.eks. \"i barndommen\" e
 				>
 				["at0121"] = <
 					text = <"Mat">
-					description = <"Enhver substans som spises som næring for kroppen, som f.eks. peanøtter eller egg.">
+					description = <"Enhver substans som spises eller drikkes som næring for kroppen, som f.eks. peanøtter eller egg.">
 				>
 				["at0122"] = <
 					text = <"Legemiddel">
