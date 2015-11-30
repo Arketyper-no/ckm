@@ -72,10 +72,10 @@ Bruksområder kan omfatte, men er ikke begrenset til:
 - for henvisning til fysio- eller ergoterapi.
 
 Forespørselsdokumentet kan ha en spesifikk mottaker (spesifikk helsetjenesteyter eller organisasjon) eller en mer uspesifikk mottaker (ønsket tjenestetype).">
-			keywords = <"forespørselsdokument", "forespørsel", "tilsynsforespørsel">
-			misuse = <"Brukes ikke for å representere en klinisk kontakt. Bruk COMPOSITION.encounter for dette formålet.
+			keywords = <"forespørselsdokument", "forespørsel", "tilsynsforespørsel", "internhenvisning", "eksternhenvisning", "bestilling", "helsetjenester", "medisinske tjenester", "henvisning", "rekvisisjon", "forordning">
+			misuse = <"Brukes ikke for å registrere detaljer om en enkel interaksjon, kontakt eller omsorgshendelse mellom et individ og helsepersonell. Bruk arketypen Klinisk kontakt (COMPOSITION.encounter) for dette formålet
 
-Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjenesteytere. Bruk COMPOSITION.transfer_summary for dette formålet.">
+Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjenesteytere. Bruk Overføringsdokument (COMPOSITION.transfer_summary) for dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
@@ -85,10 +85,10 @@ Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjene
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"FHIR ReferralRequest resource: http://hl7-fhir.github.io/referralrequest.html">
-		["build_uid"] = <"fcfc5859-0030-4f09-a895-ed42c940882a">
+		["build_uid"] = <"19ad21d1-fa3c-45da-9029-5bb3714f8e22">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"EAF1CBE5560C60F112726EE8F98873BB">
+		["MD5-CAM-1.0.1"] = <"0AA5D3BA7FECDA10D362C6CAB9EAD21B">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -157,8 +157,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Forespørselsdokument">
-					description = <"Dokument som sendes fra en behandlende helsetjenesteyter til en annen, med hensikt om å forespørre om råd, en tjeneste eller overføring av ansvar.">
+					text = <"Tjenesteforespørsel">
+					description = <"Dokument som sendes fra en helsetjenesteyter til en annen, med hensikt om å forespørre om råd, en tjeneste eller overføring av ansvar.">
 				>
 				["at0001"] = <
 					text = <"Tree">
