@@ -96,14 +96,14 @@ El término “Sinopsis Clínica” puede referirse a veces a documentos complej
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For manuelt å sammenfatte og dokumentere en oppsummering i fritektst om en pasient, fra en helseyters perspektiv.">
-			use = <"Anvendes for å registrere en fritekst oppsummering av pasientens helse. Denne ustrukturerte oppsummeringen kan omfatte helserelaterte temaer; helsetjeneste som er ytt, klinisk vurdering, pasientens forståelse samt at den muliggjør kommunikasjon vedrørende mer subtile og subjektive aspekter rundt pasientens helseerfaringer. Vanligvis vil denne oppsummeringen bli brukt ved spesifikke hendelser, for eksempel ved en konsultasjon eller sykehusinnleggelse, men oppsummeringen kan også brukes til å sammenfatte pasientens egne erfaringer over flere tidsperioder. 
+			purpose = <"For å sammenfatte og dokumentere et fritekstsammendrag om en pasient fra helsepersonellets perspektiv.">
+			use = <"Anvendes for å registrere en fritekstoppsummering av pasientens helse. Denne ustrukturerte oppsummeringen kan omfatte identifiserte helseproblemer; helsetjenester som er ytt, klinisk fortolkning, pasientens forståelse samt at den muliggjør kommunikasjon vedrørende mer subtile og subjektive aspekter rundt pasientens helseerfaringer. Vanligvis vil denne oppsummeringen bli brukt ved spesifikke hendelser, for eksempel ved en konsultasjon eller sykehusinnleggelse, men oppsummeringen kan også brukes til å sammenfatte pasientens egne erfaringer over varierende tidsperioder. 
 
-I praksis er Klinisk Sammendrag en overordnet (meta) observasjon som vil fungere som et tillegg til eksisterende strukturerte journal. Dette for å kunne fange og dokumentere pasientenes subtile, subjektive og/eller forstått informasjon som ellers alene ikke vil bli tydeliggjort godt nok vha strukturerte data. Klinisk Sammendrag vil således bidra til å gi kontekst og balanse i den elektroniske pasientjournalen. For eksempel kan Klinisk Sammendrag gi en konkret oppsummering av pasientens sykehusinnleggelse som en del av en strukturert epikrise.">
-			keywords = <"sammendrag", "konklusjon", "disposisjon", "abstrakt", "vurdering", "beskrivelse", "epikrise", "kommentar", "notat">
-			misuse = <"Anvendes ikke for å registrere spesifikk strukturert helseinformasjon. For eksempel vil detaljer om problemer, diagnoser og prøveresultat registreres vha. arktyper som for eksempel EVALUATION.problem-diagnosis og laboratorie- eller radiologi svar. \"Klinisk Sammendrag\" kan, for helhetens skyld, inkludere og referere enkelte viktige numeriske resultat fra de strukturerte data. Likefullt er ikke \"Klinisk Sammendrag\" stedet som innehar originalen av disse svarene. 
+I praksis er Klinisk sammendrag en overordnet (meta) observasjon som vil fungere som et tillegg til eksisterende strukturert journal. Dette for å kunne fange og dokumentere pasientenes subtile, subjektive og/eller fortolkede informasjon som ellers alene ikke vil bli tydeliggjort godt nok ved hjelp av strukturerte data alene. Klinisk sammendrag vil således bidra til å gi kontekst og balanse i den elektroniske pasientjournalen. For eksempel kan Klinisk sammendrag gi en konkret oppsummering av pasientens sykehusinnleggelse som en del av en strukturert epikrise.">
+			keywords = <"sammendrag", "konklusjon", "disposisjon", "abstrakt", "vurdering", "beskrivelse", "epikrise", "notat">
+			misuse = <"Anvendes ikke for å registrere spesifikk strukturert helseinformasjon. For eksempel vil detaljer om problemer, diagnoser og prøveresultat registreres ved hjelp av arketyper som for eksempel EVALUATION.problem_diagnosis, og laboratorie- eller radiologi svar i passende OBSERVATION-arketyper. \"Klinisk sammendrag\" kan for helhetens skyld inkludere og referere enkelte viktige numeriske resultat fra de strukturerte data, men er ikke det primære stedet for registrering av dem.
 
-Begrepet \"Klinisk Sammendrag\" kan i enkelte tilfeller henvise til sammensatte og omfattende dokumenter, som epikriser og ut-notater. I openEHR vil en epikrise eller ut-notat representeres med aggregert informasjon fra underliggende arketyper vha templater. Klinisk Sammendrag vil da være kun én av flere arketyper som blir inkludert.">
+Begrepet \"Klinisk sammendrag\" kan i enkelte tilfeller henvise til sammensatte og omfattende dokumenter, som epikriser og ut-notater. I openEHR vil en epikrise eller ut-notat representeres med aggregert informasjon fra underliggende arketyper ved hjelp av templater. Klinisk Sammendrag vil da være kun én av flere arketyper som blir inkludert.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["zh-cn"] = <
@@ -167,10 +167,10 @@ Der Begriff \"Klinische Synopsis\" kann sich manchmal auf komplexe und umfangrei
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Clinical Synopsis (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: National E-Health Transition Authority; 2007 Jun 29 [cited 2009 Oct 12]; Available at http://www.nehta.gov.au/DGL/Resources/Downloads/Clinical%20Synopsis%20v1.0.pdf">
-		["build_uid"] = <"dc9e9244-9f85-4f72-b649-e96702ce0448">
+		["build_uid"] = <"387c20d6-02fb-4049-9375-399ddb7ca58e">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"1E1AA625FB315D14E559ABA71599C82E">
+		["MD5-CAM-1.0.1"] = <"5886DBEB6F4188DF48D10EEB86796BEE">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -308,16 +308,17 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Klinisk Sammendrag">
-					description = <"En oppsummering eller oversikt om en pasient, sett fra en helseyters perspektiv. Oppsummeringen/oversikten kan også inkludere fortolkninger.">
+					text = <"Klinisk sammendrag">
+					description = <"Fritekstsammendrag eller oversikt om en pasient fra helsepersonellets perspektiv, med eller uten tilhørende fortolkninger.
+">
 				>
 				["at0001"] = <
 					text = <"List">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Beskrivelse">
-					description = <"Oppsummering, evaluering og konklusjoner om kliniske funn.">
+					text = <"Sammendrag">
+					description = <"Oppsummering, vurdering, konklusjoner eller evaluering av de kliniske funnene.">
 				>
 			>
 		>
