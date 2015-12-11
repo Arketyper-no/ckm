@@ -13,28 +13,30 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å vurdere alle pasienter for trykksårrisiko ved innleggelse i sykehus og ved første møte med pasient i sykehjem.">
+			purpose = <"For å vurdere alle pasienter for trykksårrisiko ved innleggelse i sykehus og ved første møte med pasient i sykehjem.
+">
 			use = <"Brukes for å vurdere alle pasienter for trykksårrisiko ved innleggelse i sykehus og ved første møte med pasient i sykehjem. Alle nyinnlagte pasienter vurderes for trykksårrisiko innen 4 timer.">
+			keywords = <"trykk", "sår", "vurdering">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Øygunn Leite Kallevik, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Knut Nesheim, Helse Bergen, Norway", "Mona Oppedal, Helse Bergen, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["references"] = <"Pasientssikkerhetsprogrammets tiltakspakke for forebygging av trykksår. Hentet fra: http://www.pasientsikkerhetsprogrammet.no/no/I+trygge+hender/Innsatsomr%C3%A5der/_attachment/3304?_ts=14e26104012. 17.11.15.">
-		["build_uid"] = <"f5817fba-3cac-4e76-b5c2-3ce3c3ab7857">
+		["references"] = <"Pasientssikkerhetsprogrammets tiltakspakke for forebygging av trykksår [Internet]. [cited 17.11.15] Available from: <http://www.pasientsikkerhetsprogrammet.no/no/I+trygge+hender/Innsatsomr%C3%A5der/_attachment/3304?_ts=14e26104012>.">
+		["build_uid"] = <"91bf76ee-b240-48fd-bd2c-2a07cf2316b3">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"6CE5E5B9DEB4B76F522759A44B8AE093">
+		["MD5-CAM-1.0.1"] = <"17EDDF755D91A5A568153BEF34343677">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Risiko for trykksår NPSP
+	OBSERVATION[at0000] matches {	-- Risiko for trykksår Pasientsikkerhetsprogrammet
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -96,7 +98,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Risiko for trykksår Pasientsikkerhetsprogrammet">
-					description = <"Tre spørsmål for å vurdere trykksårrisiko hos nylig innlagte pasienter i sykehus, og ved første møte med pasienter i sykehjem. Gjengitt fra Tiltak 1 i Pasientsikkerhetsprogrammets innsatsområde \"Forebygging av trykksår\".">
+					description = <"Tre spørsmål for å vurdere alle pasienter for trykksårrisiko ved innleggelse i sykehus, og ved første møte med pasienter i sykehjem. Gjengitt fra Tiltak 1 i Pasientsikkerhetsprogrammets innsatsområde \"Forebygging av trykksår\".">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -124,7 +126,7 @@ ontology
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Tekstlig beskrivelse av skåringen som ikke er dekket av andre felt.">
+					description = <"Tekstlig beskrivelse av vurderingen som ikke er dekket av andre felt.">
 				>
 				["at0008"] = <
 					text = <"Ja">
