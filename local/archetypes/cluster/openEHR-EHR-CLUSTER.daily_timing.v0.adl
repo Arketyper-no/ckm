@@ -40,12 +40,12 @@ description
 	lifecycle_state = <"in_development">
 	other_contributors = <"Sharmila Biswas, Dr Sharmila Biswas, Australia", "Stephen Chu, NEHTA, Australia (Editor)", "David Evans, Queensland Health, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Richard Townley-O'Neill, NEHTA, Australia (Editor)">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
-		["build_uid"] = <"cdc21cd2-0303-45be-a7a1-eb30f3fb55b4">
-		["original_namespace"] = <"org.openehr">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["build_uid"] = <"fdabcb4c-494f-461e-8966-2c010de46e39">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"277EE0543777A48624F1AF5D82BF3EB5">
+		["original_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"D6B0E96D730B69E337F67DAADFAEDD45">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -143,6 +143,14 @@ definition
 			ELEMENT[at0004] occurrences matches {0..*} matches {	-- Specific time
 				value matches {
 					DV_TIME matches {*}
+					DV_INTERVAL<DV_DATE_TIME> matches {
+						upper matches {
+							DV_DATE_TIME matches {*}
+						}
+						lower matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
 				}
 			}
 			ELEMENT[at0026] occurrences matches {0..*} matches {	-- Named time event
@@ -182,8 +190,6 @@ definition
 	}
 
 
-
-
 ontology
 	term_definitions = <
 		["en"] = <
@@ -199,8 +205,13 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Specific time">
-					description = <"A specific time during a single day when the activity should occur.">
+					description = <"A specific time or interval of time  during a single day when the activity should occur.">
 					comment = <"e.g \"at 0800, 1400, 15.25.\"">
+				>
+				["at0014"] = <
+					text = <"Interval">
+					description = <"The time interval or minimum and maximum range of an interval between each scheduled activity, limited to a single day.">
+					comment = <"e.g. \"Every 4 hours\" or \"Every 4 to 6 hours\".">
 				>
 				["at0023"] = <
 					text = <"Exact timing critical">
@@ -221,11 +232,6 @@ ontology
 					description = <"A specific, named time event within a single day, when the activity should occur.">
 					comment = <"e.g. before each meal, at bedtime, in the morning.
 It is understood that these terms may not equate to the same exact times in different cultures.">
-				>
-				["at0014"] = <
-					text = <"Interval">
-					description = <"The time interval or minimum and maximum range of an interval between each scheduled activity, limited to a single day.">
-					comment = <"e.g. \"Every 4 hours\" or \"Every 4 to 6 hours\".">
 				>
 				["at0031"] = <
 					text = <"immediately (stat)">
@@ -261,6 +267,11 @@ It is understood that these terms may not equate to the same exact times in diff
 					description = <"*A specific time during a single day when the activity should occur.(en)">
 					comment = <"*e.g \"at 0800, 1400, 15.25.\"(en)">
 				>
+				["at0014"] = <
+					text = <"*Interval(en)">
+					description = <"*The time interval between each scheduled activity, limited to a single day.(en)">
+					comment = <"*e.g. \"Every 4 hours\".(en)">
+				>
 				["at0023"] = <
 					text = <"*Exact timing critical(en)">
 					description = <"*Is exact timing of the activity critical to patient safety or wellbeing?(en)">
@@ -280,11 +291,6 @@ It is understood that these terms may not equate to the same exact times in diff
 					description = <"*A specific, named time event within a single day, when the activity should occur.(en)">
 					comment = <"*e.g. before each meal, at bedtime, in the morning.
 It is understood that these terms may not equate to the same exact times in different cultures.(en)">
-				>
-				["at0014"] = <
-					text = <"*Interval(en)">
-					description = <"*The time interval between each scheduled activity, limited to a single day.(en)">
-					comment = <"*e.g. \"Every 4 hours\".(en)">
 				>
 				["at0031"] = <
 					text = <"*immediately (stat)(en)">
