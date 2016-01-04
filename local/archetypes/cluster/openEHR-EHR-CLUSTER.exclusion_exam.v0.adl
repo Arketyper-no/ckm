@@ -5,6 +5,15 @@ concept
 	[at0000]	-- Exclusion of examination
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand og Silje Ljosland Bakke">
+				["organisation"] = <"Helse Bergen og Nasjonal IKT">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -29,18 +38,33 @@ It is reasonable to assume that if the examination was partially performed, then
 Not to be used to record the exclusion or absence of adverse reactions, family history, medication use, procedures, problems or diagnoses in the subject etc - use specific specialisations of this archetype for this purpose.">
 			copyright = <"© National E-Health Transition Authority, openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere et eksplisitt utsagn om at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført.">
+			use = <"Brukes for å registrere et eksplisitt utsagn om at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført. Det er i tillegg ett valgfritt felt for å registrere årsak til at undersøkelsen ikke ble utført.
+
+Denne arketypen er laget for å tillate registrering av at \"ingen undersøkelse ble utført\" på ulike nivå i undersøkelsesprosessen. Arketypen vil alltid brukes i en undersøkelsesarketype som gir kontekst til hvilken undersøkelse det er snakk om. For eksempel om man bruker denne arketypen i arketypen OBSERVATION.exam (Funn ved fysisk undersøkelse) i SLOTet \"Undersøkelsesdetaljer\" tillater arketypen en registrering av at ingen fysisk undersøkelse ble utført. På samme måte kan denne arketypen brukes i \"Detaljer\" SLOTet i alle undersøkelsesrelaterte CLUSTER-arketyper, som CLUSTER.exam_eye_pupil for å gi mulighet får å registrere at kun undersøkelse av den spesifikke pupillen ikke ble utført, fordi en ansiktsskade gjorde at pupillen ikke var synlig.
+
+Arketypen er utviklet for å unngå bruk av flagg eller terminologi for å uttrykke negasjon ved registrering av en fysisk i undersøkelse i pasientjournalen.
+
+Dersom undersøkelsen ble delvis utført vil data om undersøkelsen som ble utført registreres. Var undersøkelsen vanskelig å gjennomføre, for eksempel om pasienten ikke samarbeidet, kan denne informasjonen legges til i dataelementet \"Konfunderende faktorer\" i den overordnede OBSERVATION.exam-arketypen, eller i dataelementet \"Kommentar\" i CLUSTER-arketypen for den spesifikke undersøkelsen.">
+			keywords = <"eksklusjon", "undersøkelse", "ikke utført">
+			misuse = <"Brukes ikke for å registrere eksplisitte utsagn om funn observert ved en fysisk undersøkelse. Bruk container-arketypen OBSERVATION.exam og/eller familien av CLUSTER-arketyper for spesifikke undersøkelser. For eksempel CLUSTER.exam_tympanic_membrane; CLUSTER.exam-ears eller CLUSTER.exam_heart.
+
+Brukes ikke for å registrere eksklusjon eller fravær av overfølsomhetsreaksjoner, familieanamnese, legemiddelbruk, prosedyrer, problemer eller diagnoser etc. Bruk spesifikke EVALUATION-arketyper for dette formålet.">
+		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia">
+	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Derived from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1383
 Derived from: Exclusion of examination, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2015-11-23]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1383">
-		["build_uid"] = <"255a33f6-4c70-41bf-9ece-0e67dc3f92f6">
+		["build_uid"] = <"7d7906da-2d6f-4033-9a33-9b04ebc35023">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"E34C616BC51DD9586941BB6B27FD1AA7">
+		["MD5-CAM-1.0.1"] = <"DB14B5CE8E96E92A67DBADAF70CC14CC">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -82,6 +106,24 @@ ontology
 					text = <"Reason">
 					description = <"Reason for the 'not done' statement.">
 					comment = <"For example: patient factors, equipment factors, time constraints.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Eksklusjon av en undersøkelse">
+					description = <"Eksplisitt utsagn for å registrere at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført.">
+				>
+				["at0001"] = <
+					text = <"Undersøkelse ikke utført">
+					description = <"Utsagn for å eksplisitt registrere at en undersøkelse ikke ble utført.">
+					comment = <"Registrer som Sann om undersøkelsen ikke ble utført.">
+				>
+				["at0002"] = <
+					text = <"Årsak">
+					description = <"Årsak for utsagnet \"ikke utført\".">
+					comment = <"For eksempel: faktorer knyttet til pasient, utstyr eller tidsbegrensninger.">
 				>
 			>
 		>
