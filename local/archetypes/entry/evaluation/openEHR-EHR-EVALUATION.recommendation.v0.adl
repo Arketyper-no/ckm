@@ -15,25 +15,28 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record a suggestion, advice or proposal for current healthcare management, or for future action.">
-			use = <"Use to record a suggestion, advice or proposal for current healthcare management, or for future action.">
+			purpose = <"To record a suggestion, advice or proposal for clinical management at a specific time.">
+			use = <"Use to record a suggestion, advice or proposal for clinical management at a specific time.
+
+The intended use case is to support a clinician recording a recommendation, or recommendations, at a specific point-in-time. 
+For example, as a component of the conclusions drawn as part of a clinical consultation.">
 			keywords = <"advice", "proposal", "suggestion">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
-		["build_uid"] = <"06e8c360-352c-4560-a7bf-9453cf227c87">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"1BE46F01B23FED716299EEA742F47034">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["build_uid"] = <"caddbac1-ccb9-435d-89c7-4727683f80e4">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"A700610DDD9B11AC4BDB6172E0976860">
+		["custodian_namespace"] = <"org.openehr">
+		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
@@ -41,7 +44,7 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Recommendation
+					ELEMENT[at0002] occurrences matches {0..*} matches {	-- Recommendation
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -54,7 +57,18 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0004] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
 	}
+
 
 
 ontology
@@ -63,7 +77,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Recommendation">
-					description = <"A suggestion, advice or proposal for current healthcare management or for future action.">
+					description = <"A suggestion, advice or proposal for clinical management.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -72,10 +86,20 @@ ontology
 				["at0002"] = <
 					text = <"Recommendation">
 					description = <"Narrative description of the recommendation.">
+					comment = <"May be coded, using a terminology, if required.">
 				>
 				["at0003"] = <
 					text = <"Rationale">
 					description = <"Justification for the recommendation.">
+				>
+				["at0004"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 			>
 		>
