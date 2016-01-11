@@ -15,10 +15,8 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Lars Bitsch-Larsen">
-				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
+				["name"] = <"unknown">
 			>
-			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
@@ -53,10 +51,22 @@ description
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For registrering av detaljer om et anatomisk sted.">
-			use = <"">
-			keywords = <"sted", "lokasjon", "anatomisk", "site">
-			misuse = <"Anvendes ikke for spesifisering av unilateral/bilateral forekomst - dette relateres til en vurdering som kanskje omfatter flere steder.">
+			purpose = <"*To identify and record structured details about a single physical site on, or within, the human body in terms of its relationship to other macroscopic anatomical landmarks.(en)">
+			use = <"*Use to record structured and consistent details about a single identified physical site on, or within, the human body by describing its location in relation to identified macroscopic anatomical landmarks. It may be necessary to describe the single physical location using more than one relative location - for example, 2 cm inferior to 'landmark A' AND 3 cm medial to 'landmark B'. 
+
+In practice, some archetypes carry a single data element for carrying a simple description of body site - for example, OBSERVATION.blood_pressure and CLUSTER.symptom when describing ear pain. In this situation, where the value set is predictable and simple to define, this single data element is a very accurate and pragmatic way to record the site in the body and to query at a later date. However in the situation where the anatomical location is not well defined or needs to be determined at run-time, it may be more flexible to use this structured archetype.
+
+This archetype is specifically designed to be used within the context of any appropriate ENTRY or CLUSTER archetypes which supply the context of the identified body site, including insertion within the CLUSTER.anatomical_location if 'Body site name' or other data elements are also required.
+
+Clinical use cases: 
+- 5 cm inferior to the left tibial tuberosity
+- 2 cm medial to the right nipple
+- medial aspect of R great toe nail.
+
+In the situation where the CLUSTER.anatomical_location can only be used to name a large and/or non-specific body part, the use of this archetype within the 'Alternative Structure' SLOT will support recording of a more precise location - for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below R costal margin on the chest wall in the mid-clavicular line.(en)">
+			misuse = <"*Not to be used for specifying unilateral/bilateral occurrences of an anatomical feature.
+
+Not to be used to specify a simple location of a named physical site in the body, such as left femur or medial aspect of nose. Use the CLUSTER.anatomical_location archetype for this purpose.(en)">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 		["en"] = <
@@ -87,10 +97,10 @@ Not to be used to specify a simple location of a named physical site in the body
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Derived from: <Relative anatomical location, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-01-11]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1892>">
-		["build_uid"] = <"a8e393c3-3ee4-4cf3-912d-233c5e445c09">
+		["build_uid"] = <"d76b547a-f82d-415b-8fb1-6484c3a59dc1">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"EAF96D3CBADD9A0961566AA68D4FFE8E">
+		["MD5-CAM-1.0.1"] = <"59ACF9D83523C2CF006ADCB3E9908864">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -479,28 +489,28 @@ ontology
 					comment = <"*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. Occurrences are set to allow for a maximum of six directions to be recorded. Within this value set, clinicians will recognise that there are six mutually exclusive directional pairs - for example, a body site cannot be simultaneously 'medial to' and 'lateral to' an identical landmark. Other mutually exclusive pairs are 'Superior to' and 'Inferior to'; 'Anterior to' and 'Posterior to'; 'Proximal to' and 'Distal to'; 'Superficial to' and 'Deep to'; and 'Within' and 'External to'. Combinations made from one selection from within each of the six pair sets is potentially valid, although in clinical practice it will be very unlikely to need to simultaneously record more than two directions to describe a specified body site.(en)">
 				>
 				["at0007"] = <
-					text = <"Medialt">
-					description = <"Det relative sted medialt til landemerket.">
+					text = <"*Medial to(en)">
+					description = <"*Towards the middle, from the landmark.(en)">
 				>
 				["at0008"] = <
-					text = <"Lateralt">
-					description = <"Det relative sted lateralt for landemerket.">
+					text = <"*Lateral to(en)">
+					description = <"*Towards the side, from the landmark.(en)">
 				>
 				["at0009"] = <
-					text = <"Superiort">
-					description = <"Det relative sted superiort til landemerket.">
+					text = <"*Superior to(en)">
+					description = <"*Above the landmark, often referring towards the head.(en)">
 				>
 				["at0010"] = <
-					text = <"Inferiort">
-					description = <"Det relative sted inferiort til landemerket.">
+					text = <"*Inferior to(en)">
+					description = <"*Below the landmark, often referring towards the feet.(en)">
 				>
 				["at0012"] = <
-					text = <"Anteriort">
-					description = <"Det relative sted anteriort til landemerket.">
+					text = <"*Anterior to(en)">
+					description = <"*Towards the front, or ventral aspect, from the landmark.(en)">
 				>
 				["at0013"] = <
-					text = <"Posteriort">
-					description = <"Det relative sted posteriort til landemerket.">
+					text = <"*Posterior to(en)">
+					description = <"*Towards the back, or dorsal aspect, from the landmark.(en)">
 				>
 				["at0020"] = <
 					text = <"*Relative location(en)">
@@ -514,7 +524,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"Avstand til landemerket">
-					description = <"Avstanden til det identifiserte landemerke.">
+					description = <"*Distance of location from the identified landmark.(en)">
 				>
 				["at0023"] = <
 					text = <"*Description(en)">
