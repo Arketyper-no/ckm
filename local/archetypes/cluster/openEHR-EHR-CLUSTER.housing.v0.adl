@@ -1,87 +1,107 @@
-﻿archetype (adl_version=1.4; uid=935d806c-cf08-4aa0-a0c6-d2e58972e239)
+﻿archetype (adl_version=1.4; uid=3c3171bd-c764-426f-8767-08711c25701c)
 	openEHR-EHR-CLUSTER.housing.v0
 
 concept
-	[at0000]	-- Housing
+	[at0000]	-- Bolig
 language
-	original_language = <[ISO_639-1::en]>
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
-		["name"] = <"Heather Leslie">
-		["organisation"] = <"Ocean Informatics">
-		["email"] = <"heather.leslie@oceaninformatics.com">
-		["date"] = <"2013-03-01">
+		["name"] = <"Tomas Nordheim Alme">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"tna@dips.no">
+		["date"] = <"2014-10-11">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record a summary of the housing or accomodation in which the subject resides to support decision-making for clinical management and provision of additional health services.">
-			use = <"Use to record a summary of the housing or accomodation in which the subject resides to support decision-making for clinical management and provision of additional health services.
-
-Specifically designed to be used within the EVALUATION.social_summary archetype, but may be used within any clinically appropriate ENTRY or CLUSTER archetype related to recording social context.">
-			keywords = <"housing", "accommodation", "residential care", "home", "house", "apartment", "homeless", "rent", "owner">
-			misuse = <"">
+			purpose = <"*Arketypen benyttes til å dokumentere boligforholdene til en pasient ifm kontakt med helsevesenet. Utviklet ifm interregional prosjekt for innkomstjournal i Norge 2014(nb)">
+			use = <"*Bruk for å dokumentere boforholdene til pasienten(nb)">
+			keywords = <"*hus(nb)", "*bolig(nb)">
+			misuse = <"*Skal ikke benyttes til å registrere boforhold for noen andre enn pasienten.(nb)">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Arketypen benyttes til å dokumentere boligforholdene til en pasient ifm kontakt med helsevesenet. Utviklet ifm interregional prosjekt for innkomstjournal i Norge 2014">
+			use = <"Bruk for å dokumentere boforholdene til pasienten">
+			keywords = <"hus", "bolig">
+			misuse = <"Skal ikke benyttes til å registrere boforhold for noen andre enn pasienten.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
-		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
 		["revision"] = <"0.0.1-alpha">
-		["references"] = <"METeOR (Metadata Online Registry) [Internet]. Australia: Australian Institute of Health and Welfare. Person—accommodation type (usual). Available from: http://meteor.aihw.gov.au/content/index.phtml/itemId/270088 (accessed 2013 Mar 01).">
-		["build_uid"] = <"d5f86907-b8b5-428f-9455-89dd5dbbde26">
-		["original_namespace"] = <"no.nasjonalikt">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"cbce2a4a-a954-4781-bc5a-f2230f8531cd">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"4B11103C93A0493550A2235CA50FC9D9">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"3C2BC1335E2D784606FFF88536579C34">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Housing
-		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Homeless
-				value matches {
-					DV_BOOLEAN matches {
-						value matches {True}
-					}
-				}
-			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Transient
-				value matches {
-					DV_BOOLEAN matches {
-						value matches {True, False}
-					}
-				}
-			}
-			ELEMENT[at0002] occurrences matches {0..*} matches {	-- Category
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Tenure
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Support Provided
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {	-- Detail
-				include
-					archetype_id/value matches {/.*/}
-			}
-		}
+	CLUSTER[at0000] matches {	-- Bolig
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Antall plan
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005, 	-- Ett plan (inkludert leilighet på bakkeplan)
+													at0006, 	-- Flere plan med heis (inkludert leilighet over bakkeplan med heis)
+													at0007]	-- Flere plan uten heis (inkl leilighet over bakkeplan uten heis)
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Boligforhold
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0011, 	-- Ingen bolig
+													at0012, 	-- Hospits/hybelhus/hotell
+													at0013, 	-- Institusjon
+													at0014, 	-- Egen privat bolig
+													at0015, 	-- Privat bolig eid av annen
+													at0016]	-- Annet
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Boligtype
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0017, 	-- Ordinær bolig
+													at0018, 	-- Bolig som kommunen disponerer til omsorgs- eller pleieformål, men som ikke er institusjon eller omsorgsbolig
+													at0019, 	-- Omsorgsbolig
+													at0020, 	-- Aldershjem
+													at0021, 	-- Sykehjem
+													at0022, 	-- Uten fast bopel
+													at0023]	-- Annen institusjon
+												}
+											}
+										}
+									}
+								}
+
 	}
+
 
 
 ontology
@@ -90,39 +110,167 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Housing">
-					description = <"Summary of the housing or accomodation in which the subject resides.">
-				>
-				["at0001"] = <
-					text = <"Homeless">
-					description = <"Is the subject homeless?">
-					comment = <"Record as 'True' if individual is homeless.">
-				>
-				["at0002"] = <
-					text = <"Category">
-					description = <"Type of accommodation where the subject usually resides.">
-					comment = <"Coding with a terminology is desirable, where possible. For example: a flat or apartment; caravan; or nursing home.">
-				>
-				["at0003"] = <
-					text = <"Tenure">
-					description = <"The type of legal right to occupy a dwelling, for example, owner or renter.">
+					description = <"unknown">
 				>
 				["at0004"] = <
-					text = <"Description">
-					description = <"Description of the housing or accommodation.">
+					text = <"Number of floors">
+					description = <"*">
 				>
 				["at0005"] = <
-					text = <"Support Provided">
-					description = <"Description of additional support provided as part of the housing/accommodation arrangement.">
-					comment = <"For example: nursing staff on-site overnight.">
+					text = <"One level (including appartment on ground level)">
+					description = <"*">
 				>
 				["at0006"] = <
-					text = <"Detail">
-					description = <"Additional details about housing.">
-					comment = <"For example: disability aids installed; number of stairs; or availability of refrigerator in which to store medications.">
+					text = <"Multiple levels with elevator (including one level appartment above ground level with elevator)">
+					description = <"*">
 				>
 				["at0007"] = <
-					text = <"Transient">
-					description = <"Is the subject moving between multiple home environements?">
+					text = <"Multiple levels without elevator (including one level appartment above groundlevel without elevator)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Housing situation">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Housing type">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"No housing">
+					description = <"Koden skal brukes når pasienten lengst tid av de siste fire ukene ikke har hatt noen form for husvære, heller ikke hospits, herberge eller hotell.">
+				>
+				["at0012"] = <
+					text = <"Hospits/hybelhus/hotell">
+					description = <"Koden skal brukes for pasienter som i de siste fire uker har bodd lengst tid på hospits eller annet tiltak for bostedsløse.">
+				>
+				["at0013"] = <
+					text = <"Institution">
+					description = <"Dette gjelder de som de siste fire ukene har bodd lengst tid på sykehus, i annen behandlingsinstitusjon, på vernehjem, omsorgshjem eller rehabiliteringssenter, eller i fengsel">
+				>
+				["at0014"] = <
+					text = <"Home privately owned">
+					description = <"Lengst tid siste fire uker har bodd i egen privat bolig, enten den er selveierbolig eller utleiebolig">
+				>
+				["at0015"] = <
+					text = <"Home privately owned by other">
+					description = <"Inkludert privat kollektiv">
+				>
+				["at0016"] = <
+					text = <"Other">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Ordinary home">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Bolig som kommunen disponerer til omsorgs- eller pleieformål, men som ikke er institusjon eller omsorgsbolig">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Omsorgsbolig">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Aldershjem">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Nursing home">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Uten fast bopel">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Annen institusjon">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Bolig">
+					description = <"Benyttes for å dokumentere pasientens boligforhold">
+				>
+				["at0004"] = <
+					text = <"Antall plan">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Ett plan (inkludert leilighet på bakkeplan)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Flere plan med heis (inkludert leilighet over bakkeplan med heis)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Flere plan uten heis (inkl leilighet over bakkeplan uten heis)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Boligforhold">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Boligtype">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ingen bolig">
+					description = <"Koden skal brukes når pasienten lengst tid av de siste fire ukene ikke har hatt noen form for husvære, heller ikke hospits, herberge eller hotell.">
+				>
+				["at0012"] = <
+					text = <"Hospits/hybelhus/hotell">
+					description = <"Koden skal brukes for pasienter som i de siste fire uker har bodd lengst tid på hospits eller annet tiltak for bostedsløse.">
+				>
+				["at0013"] = <
+					text = <"Institusjon">
+					description = <"Dette gjelder de som de siste fire ukene har bodd lengst tid på sykehus, i annen behandlingsinstitusjon, på vernehjem, omsorgshjem eller rehabiliteringssenter, eller i fengsel">
+				>
+				["at0014"] = <
+					text = <"Egen privat bolig">
+					description = <"Lengst tid siste fire uker har bodd i egen privat bolig, enten den er selveierbolig eller utleiebolig">
+				>
+				["at0015"] = <
+					text = <"Privat bolig eid av annen">
+					description = <"Inkludert privat kollektiv">
+				>
+				["at0016"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Ordinær bolig">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Bolig som kommunen disponerer til omsorgs- eller pleieformål, men som ikke er institusjon eller omsorgsbolig">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Omsorgsbolig">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Aldershjem">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Sykehjem">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Uten fast bopel">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Annen institusjon">
+					description = <"*">
 				>
 			>
 		>
