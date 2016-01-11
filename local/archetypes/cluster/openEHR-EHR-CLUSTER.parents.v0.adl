@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=1b1ff8f1-d5b7-4604-9c9d-15ea7125d019)
-	openEHR-EHR-OBSERVATION.parents.v0
+﻿archetype (adl_version=1.4; uid=bbe0e7c7-be02-4d3f-a7cc-84e7a0735e16)
+	openEHR-EHR-CLUSTER.parents.v0
 
 concept
 	[at0000]	-- Foreldre
@@ -42,23 +42,17 @@ description
 		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
-		["build_uid"] = <"7be1eacf-1e25-429b-8eea-f27c36a6eff0">
+		["build_uid"] = <"59b71b90-196b-46a2-b53c-2d785554f768">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"34AB438E36391D11C6FAC9324FB786AF">
+		["MD5-CAM-1.0.1"] = <"6FABC544CC552D3E3B0594BDC4341ADC">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Parents
-		data matches {
-			HISTORY[at0001] matches {	-- Event Series
-				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
-						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
-								items cardinality matches {0..*; unordered} matches {
+	CLUSTER[at0000] matches {	-- Parents
+								items cardinality matches {1..*; unordered} matches {
 									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Date of birth
 										value matches {
 											DV_DATE_TIME matches {*}
@@ -104,13 +98,8 @@ definition
 										}
 									}
 								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
+
 
 
 
@@ -121,18 +110,6 @@ ontology
 				["at0000"] = <
 					text = <"Parents">
 					description = <"unknown">
-				>
-				["at0001"] = <
-					text = <"Event Series">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Any event">
-					description = <"*">
-				>
-				["at0003"] = <
-					text = <"Tree">
-					description = <"@ internal @">
 				>
 				["at0004"] = <
 					text = <"Date of birth">
@@ -197,18 +174,6 @@ ontology
 				["at0000"] = <
 					text = <"Foreldre">
 					description = <"Brukes til å dokumentere pasientens foreldre">
-				>
-				["at0001"] = <
-					text = <"Event Series">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Any event">
-					description = <"*">
-				>
-				["at0003"] = <
-					text = <"Tree">
-					description = <"@ internal @">
 				>
 				["at0004"] = <
 					text = <"Fødselsdato">
