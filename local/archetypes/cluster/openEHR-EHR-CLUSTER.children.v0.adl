@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=03d5a601-b71e-456c-a81a-c9e951128392)
-	openEHR-EHR-OBSERVATION.children.v0
+﻿archetype (adl_version=1.4; uid=e6aaffd2-d570-4023-ab58-5d1a57c6e475)
+	openEHR-EHR-CLUSTER.children.v0
 
 concept
 	[at0000]	-- Barn
@@ -43,34 +43,28 @@ description
 		["current_contact"] = <"Tomas Nordheim Alme, DIPS ASA, tna@dips.no">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
-		["build_uid"] = <"08492c38-06e2-4658-b0d6-6d11e79b7757">
+		["build_uid"] = <"37df4502-9e4d-41e2-85a8-a0edb70f8d2a">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"42D7E6A9DA0669837B6B6E49258A8882">
+		["MD5-CAM-1.0.1"] = <"6AD9BA285EC6F3B73AB5FFACE9C95FF5">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Barn
-		data matches {
-			HISTORY[at0001] matches {	-- Event Series
-				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
-						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
-								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Fødselsdato
+	CLUSTER[at0000] matches {	-- Barn
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0001] occurrences matches {0..1} matches {	-- Fødselsdato
 										value matches {
 											DV_DATE_TIME matches {*}
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Navn
+									ELEMENT[at0002] occurrences matches {0..1} matches {	-- Navn
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Død
+									ELEMENT[at0003] occurrences matches {0..1} matches {	-- Død
 										value matches {
 											DV_BOOLEAN matches {
 												value matches {True, False}
@@ -78,13 +72,8 @@ definition
 										}
 									}
 								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
+
 
 
 
@@ -97,26 +86,14 @@ ontology
 					description = <"Use for documenting that the patient has children">
 				>
 				["at0001"] = <
-					text = <"Event Series">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Any event">
-					description = <"*">
-				>
-				["at0003"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0004"] = <
 					text = <"Date of birth">
 					description = <"*">
 				>
-				["at0005"] = <
+				["at0002"] = <
 					text = <"Name">
 					description = <"*">
 				>
-				["at0006"] = <
+				["at0003"] = <
 					text = <"Dead">
 					description = <"*">
 				>
@@ -129,26 +106,14 @@ ontology
 					description = <"Brukes til å dokumentere barn i familien til pasienten.">
 				>
 				["at0001"] = <
-					text = <"Event Series">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Any event">
-					description = <"*">
-				>
-				["at0003"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0004"] = <
 					text = <"Fødselsdato">
 					description = <"*">
 				>
-				["at0005"] = <
+				["at0002"] = <
 					text = <"Navn">
 					description = <"*">
 				>
-				["at0006"] = <
+				["at0003"] = <
 					text = <"Død">
 					description = <"*">
 				>
