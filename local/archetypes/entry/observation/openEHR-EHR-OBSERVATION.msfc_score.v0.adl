@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-OBSERVATION.msfc_score.v1
+﻿archetype (adl_version=1.4; uid=8cb196cf-47dd-42b9-a339-4e53c0accb2a)
+	openEHR-EHR-OBSERVATION.msfc_score.v0
 
 concept
 	[at0000]	-- MSFC-Wert
@@ -33,7 +33,7 @@ Der MSFC-Wert ist eine aus den gemittelten Ergebnissen der einzelnen Tests berec
 Siehe MSFC-Handbuch für weitere Auswertungsanweisungen, Formeln und Hintergrundinformationen.">
 			keywords = <"Multiple Sclerosis Functional Composite", "MSFC", "Multiple Sklerose", "MS", "Neurologie">
 			misuse = <"Nicht verwenden zur Aufzeichnung der Messergebnisse der drei einzelnen Tests des MSFC. Jeder Test sollte den speziell zutreffenden Archetyp verwenden: openEHR-EHR-OBSERVATION.timed_25_foot_walk.v1.adl, openEHR-EHR-OBSERVATION.nine_hole_peg_test.v1.adl und openEHR-EHR-OBSERVATION.paced_auditory_serial_addition_test.v1.adl.">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -45,15 +45,22 @@ The MSFC Score is a computed value based on the average of each test result, adj
 Use the MSFC Manual for further scoring instructions, formulas and background information.">
 			keywords = <"Multiple Sclerosis Functional Composite", "MSFC", "Multiple Sclerosis", "MS", "Neurology">
 			misuse = <"Not to be used to record the result of the three individual tests of the MSFC. Each test should use the correct specific archetype: openEHR-EHR-OBSERVATION.timed_25_foot_walk.v1.adl, openEHR-EHR-OBSERVATION.nine_hole_peg_test.v1.adl, and openEHR-EHR-OBSERVATION.paced_auditory_serial_addition_test.v1.adl.">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"Published">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Sebastian Bischoff, gfnmediber GmbH, Germany", "Martin Boeker, University Medical Center Freiburg, Germany", "Michael Braun, University Medical Center Freiburg, Germany (Editor)", "Heather Leslie, Ocean Informatics, Australia", "Sebastian Mansow-Model, gfnmediber GmbH, Germany", "Catalina Martínez-Costa, Medical University of Graz, Austria", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Alexander U. Brandt, gfnmediber GmbH, Germany">
 	other_details = <
 		["current_contact"] = <"Michael Braun, University Medical Center Freiburg, Germany, braun@imbi.uni-freiburg.de">
-		["references"] = <"Fischer JS, Jak AJ, Kniker JE, Rudick RA, Cutter G. Multiple Sclerosis Functional Composite (MSFC), Administration and Scoring Manual: National Multiple Sclerosis Society; 2001.">
-		["MD5-CAM-1.0.1"] = <"7FFADBBF329A7D225D8A1D800A08AE5E">
+		["revision"] = <"0.0.1-alpha">
+		["references"] = <"Derived from: MSFC Score, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-01-11]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1368
+Fischer JS, Jak AJ, Kniker JE, Rudick RA, Cutter G. Multiple Sclerosis Functional Composite (MSFC), Administration and Scoring Manual: National Multiple Sclerosis Society; 2001.">
+		["build_uid"] = <"74f66c57-45b0-468d-9a2c-91e767a54d4a">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"5159814F8DEDF5BEE8AB2FD54795A52C">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
