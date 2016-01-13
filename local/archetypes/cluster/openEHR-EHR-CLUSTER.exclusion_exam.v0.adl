@@ -43,15 +43,17 @@ Not to be used to record the exclusion or absence of adverse reactions, family h
 			purpose = <"For å registrere et eksplisitt utsagn om at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført.">
 			use = <"Brukes for å registrere et eksplisitt utsagn om at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført. Det er i tillegg ett valgfritt felt for å registrere årsak til at undersøkelsen ikke ble utført.
 
-Denne arketypen er laget for å tillate registrering av at \"ingen undersøkelse ble utført\" på ulike nivå i undersøkelsesprosessen. Arketypen vil alltid brukes i en undersøkelsesarketype som gir kontekst til hvilken undersøkelse det er snakk om. For eksempel om man bruker denne arketypen i arketypen OBSERVATION.exam (Funn ved fysisk undersøkelse) i SLOTet \"Undersøkelsesdetaljer\" tillater arketypen en registrering av at ingen fysisk undersøkelse ble utført. På samme måte kan denne arketypen brukes i \"Detaljer\" SLOTet i alle undersøkelsesrelaterte CLUSTER-arketyper, som CLUSTER.exam_eye_pupil for å gi mulighet får å registrere at kun undersøkelse av den spesifikke pupillen ikke ble utført, fordi en ansiktsskade gjorde at pupillen ikke var synlig.
+Denne arketypen er laget for å tillate registrering av at \"ingen undersøkelse ble utført\" på ulike nivå i undersøkelsesprosessen. Arketypen skal alltid brukes i en undersøkelsesarketype som gir kontekst til hvilken undersøkelse det er snakk om. For eksempel om man bruker denne arketypen i arketypen OBSERVATION.exam (Funn ved fysisk undersøkelse) i SLOTet \"Undersøkelsesdetaljer\" tillater arketypen en registrering av at ingen fysisk undersøkelse ble utført. På samme måte kan denne arketypen brukes i \"Detaljer\" SLOTet i alle undersøkelsesrelaterte CLUSTER-arketyper, som CLUSTER.exam_eye_pupil for å gi mulighet får å registrere at kun undersøkelse av den spesifikke pupillen ikke ble utført, fordi en ansiktsskade gjorde at pupillen ikke var synlig.
 
 Arketypen er utviklet for å unngå bruk av flagg eller terminologi for å uttrykke negasjon ved registrering av en fysisk i undersøkelse i pasientjournalen.
 
 Dersom undersøkelsen ble delvis utført vil data om undersøkelsen som ble utført registreres. Var undersøkelsen vanskelig å gjennomføre, for eksempel om pasienten ikke samarbeidet, kan denne informasjonen legges til i dataelementet \"Konfunderende faktorer\" i den overordnede OBSERVATION.exam-arketypen, eller i dataelementet \"Kommentar\" i CLUSTER-arketypen for den spesifikke undersøkelsen.">
-			keywords = <"eksklusjon", "undersøkelse", "ikke utført">
+			keywords = <"eksklusjon", "undersøkelse", "ikke utført", "unntak">
 			misuse = <"Brukes ikke for å registrere eksplisitte utsagn om funn observert ved en fysisk undersøkelse. Bruk container-arketypen OBSERVATION.exam og/eller familien av CLUSTER-arketyper for spesifikke undersøkelser. For eksempel CLUSTER.exam_tympanic_membrane; CLUSTER.exam-ears eller CLUSTER.exam_heart.
 
-Brukes ikke for å registrere eksklusjon eller fravær av overfølsomhetsreaksjoner, familieanamnese, legemiddelbruk, prosedyrer, problemer eller diagnoser etc. Bruk spesifikke EVALUATION-arketyper for dette formålet.">
+Brukes ikke for å registrere eksklusjon eller fravær av overfølsomhetsreaksjoner, familieanamnese, legemiddelbruk, prosedyrer, problemer eller diagnoser etc. Bruk spesifikke EVALUATION-arketyper for dette formålet.
+
+Brukes ikke for å registrere at en pasient ikke har møtt til en konsultasjon. Dette må registreres i egne administrative arketyper eller i andre strukturer.">
 		>
 	>
 	lifecycle_state = <"in_development">
@@ -61,10 +63,10 @@ Brukes ikke for å registrere eksklusjon eller fravær av overfølsomhetsreaksjo
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Derived from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1383
 Derived from: Exclusion of examination, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2015-11-23]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1383">
-		["build_uid"] = <"7d7906da-2d6f-4033-9a33-9b04ebc35023">
+		["build_uid"] = <"1fc98c65-8250-4907-9491-1f1bf988b7df">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"DB14B5CE8E96E92A67DBADAF70CC14CC">
+		["MD5-CAM-1.0.1"] = <"D1C6D0D495B113B4059856BF6207F1DF">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -112,7 +114,7 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Eksklusjon av en undersøkelse">
+					text = <"Eksklusjon av en fysisk undersøkelse">
 					description = <"Eksplisitt utsagn for å registrere at en fysisk undersøkelse eller en spesifisert del av en fysisk undersøkelse ikke ble gjennomført.">
 				>
 				["at0001"] = <
