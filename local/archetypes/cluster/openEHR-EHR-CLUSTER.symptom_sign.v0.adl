@@ -95,7 +95,7 @@ Arketypen skal settes inn i \"Detaljer\"-SLOTet i OBSERVATION.story-arketypen me
 Klinikere registrerer ofte frasen \"Ikke av betydning\" i forbindelse med spesifikke symptomer eller rapporterte tegn for å indikere at det er eksplisitt spurt om det spesifikke symptomet, og at det ble svart at symptomet ikke eksisterer i en slik grad at det påfører pasienten ubehag eller uro. Frasen brukes mer som en normalbeskrivelse enn en eksplisitt eksklusjon. Dataelementet \"Ikke av betydning\" er med hensikt lagt til for å tillate at klinikere enkelt og effektivt kan registrere denne informasjonen i det kliniske systemet. Eksempelvis kan \"Ikke av betydning\" brukes i brukergrensesnittet, er dette registrert som \"Sann\" kan de resterende dataelementene skjules i brukergrensesnittet. Denne pragmatiske tilnærmingen støtter hoveddelen av enkelt klinisk journalføring av symptomer og sykdomstegn. 
 
 Imidlertid kan det være fordelaktig å bruke arketypen CLUSTER.exclusion_symptom_sign dersom det eksisterer et klinisk behov for å eksplisitt registrere at et symptom eller sykdomstegn ikke er tilstede, for eksempel dersom dette vil brukes for å drive klinisk beslutningsstøtte. Bruk av CLUSTER.exclusion_symptom_sign vil øke kompleksiteten av templatmodellering, implementasjon og spørring. Det anbefales at CLUSTER.exclusion_symptom_sign kun vurderes brukt dersom man kan identifisere en klar gevinst, men bør ikke brukes for rutineregistreringer av symptomer eller sykdomstegn.">
-			keywords = <"lidelse", "plage", "problem", "ubehag", "symptom", "sykdomstegn">
+			keywords = <"lidelse", "plage", "problem", "ubehag", "symptom", "sykdomstegn", "lyte", "skavank">
 			misuse = <"Brukes ikke til eksplisitt registrering av at et symptom eller sykdomstegn ikke er tilstede. Bruk CLUSTER.exclusion_symptom_sign varsomt da det øker tidsbruk ved registrering og tilfører økt kompleksitet, og bare når dataelementet \"Ikke av betydning\" i denne arketypen ikke er eksplisitt nok for registreringen.
 
 Brukes ikke til registrering av objektive funn som en del av en fysisk undersøkelse. Bruk OBSERVATION.exam og relaterte CLUSTER.exam-arketyper for dette formålet. 
@@ -105,16 +105,16 @@ Brukes ikke til registrering av problemer og diagnoser som en del av en persiste
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Tomas Alme, DIPS, Norway", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Samuel Frade, Marand, Portugal", "Sebastian Garde, Ocean Informatics, Germany", "Yves Genevier, Privantis SA, Switzerland", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Oslo University Hospital, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Norwegian Review Summary, Nasjonal IKT, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "John Tore Valand, Helse Bergen, Norway">
+	other_contributors = <"Grethe Almenning, Bergen kommune, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Tone Engen, Norway", "Arild Faxvaag, NTNU, Norway", "Kåre Flø, DIPS ASA, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Samuel Frade, Marand, Portugal", "Sebastian Garde, Ocean Informatics, Germany", "Yves Genevier, Privantis SA, Switzerland", "Bente Gjelsvik, Helse Bergen, Norway", "Gyri Gradek, Senter for medisinsk genetikk og molekylærmedisin, Haukeland Universitetssykehus, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Dag Hanoa, Oslo universitetssykehus, Norway", "Knut Harboe, Stavanger Universitetssjukehus, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Roar Holm, Helse Vest IKT A/S, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "hanne joensen, Helse- bergen HUS, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Goran Karlstrom, County Of Värmland, Sweden", "Shinji Kobayashi, Kyoto University, Japan", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Elisabeth Kvile, Fysioterapiavdelingen, Haukeland Universitets Sykehus, Norway", "Siri Laronningen, Kreftregisteret, Norway", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "alberto maldonado, UPV, Spain", "Luis Marco Ruiz, NST, Spain (Nasjonal IKT redaktør)", "Ian McNicoll, Ocean Informatics, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjoern Naess, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Magne Rekdal, Emetra AS, Norway", "Norwegian Review Summary, Nasjonal IKT, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Thomas Schopf, University Hospital of North-Norway, Norway", "Anoop Shah, University College London, United Kingdom", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Arild Stangeland, Helse Bergen, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "Line Sørensen, Helse Bergen, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Lene Thoresen, St. Olavs Hospital, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "Till Uhlig, Nasjonal kompetansetjeneste for revmatologisk rehabilitering, Revmatologisk avd. , Diakonhjemmet Sykehus, Oslo, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Common Terminology Criteria for Adverse Events (CTCAE) [Internet]. National Cancer Institute, USA. Available from: http://ctep.cancer.gov/protocolDevelopment/electronic_applications/ctc.htm (accessed 2015-07-13).">
-		["build_uid"] = <"42674c8a-a722-4ab2-bf82-9f69be1b0635">
+		["build_uid"] = <"3c4bc734-80fe-4d7c-bde7-d43c011e679b">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8DD3291F6F9506F5F75630C22D00FBDF">
+		["MD5-CAM-1.0.1"] = <"A3CF375574215257656B540D2058AD87">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -182,6 +182,11 @@ definition
 			ELEMENT[at0028] occurrences matches {0..1} matches {	-- Varighet
 				value matches {
 					DV_DURATION matches {*}
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..*} matches {	-- Karakter
+				value matches {
+					DV_TEXT matches {*}
 				}
 			}
 			ELEMENT[at0021] occurrences matches {0..1} matches {	-- Alvorlighetskategori
@@ -356,7 +361,7 @@ ontology
 				["at0003"] = <
 					text = <"*Pattern(en)">
 					description = <"*Narrative description about the pattern of the symptom or sign during this episode.(en)">
-					comment = <"*For example: pain could be described as constant or colicky.(en)">
+					comment = <"*For example: Pain could be described as constant or intermittent. This element can be used to record textual descriptions (whether free or coded text) of the typical frequency and duration of fits, attacks or bouts of the symptom during this episode.(en)">
 				>
 				["at0017"] = <
 					text = <"*Effect(en)">
@@ -401,6 +406,11 @@ ontology
 				["at0031"] = <
 					text = <"*Number of previous episodes(en)">
 					description = <"*The number of times this symptom or sign has previously occurred.(en)">
+				>
+				["at0032"] = <
+					text = <"*Character(en)">
+					description = <"*A word or short phrase describing a character of the symptom, for aiding the diagnostic process.(en)">
+					comment = <"*Relevant values for Character will be different for each symptom. There is a possible overlap with associated symptoms, and deciding which items are characters and which are associated symptoms may not be trivial. Examples of characters may be \"subjective vertigo\" or \"feeling faint\" for the symptom \"dizziness\", \"pain on swallowing\" for the symptom \"sore throat\", \"throbbing\" or \"stabbing\" for the symptom \"headache\", or \"pain moving around\" for the symptom \"abdominal pain\". The character should be coded with a terminology, where possible.(en)">
 				>
 				["at0035"] = <
 					text = <"*Nil significant(en)">
@@ -574,7 +584,7 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				["at0003"] = <
 					text = <"Pattern">
 					description = <"Narrative description about the pattern of the symptom or sign during this episode.">
-					comment = <"For example: pain could be described as constant or intermittent.">
+					comment = <"For example: Pain could be described as constant or intermittent. This element can be used to record textual descriptions (whether free or coded text) of the typical frequency and duration of fits, attacks or bouts of the symptom during this episode.">
 				>
 				["at0017"] = <
 					text = <"Effect">
@@ -619,6 +629,11 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				["at0031"] = <
 					text = <"Number of previous episodes">
 					description = <"The number of times this symptom or sign has previously occurred.">
+				>
+				["at0032"] = <
+					text = <"Character">
+					description = <"A word or short phrase describing a character of the symptom, for aiding the diagnostic process.">
+					comment = <"Relevant values for Character will be different for each symptom. There is a possible overlap with associated symptoms, and deciding which items are characters and which are associated symptoms may not be trivial. Examples of characters may be \"subjective vertigo\" or \"feeling faint\" for the symptom \"dizziness\", \"pain on swallowing\" for the symptom \"sore throat\", \"throbbing\" or \"stabbing\" for the symptom \"headache\", or \"pain moving around\" for the symptom \"abdominal pain\". The character should be coded with a terminology, where possible.">
 				>
 				["at0035"] = <
 					text = <"Nil significant">
@@ -793,7 +808,7 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				["at0003"] = <
 					text = <"*Pattern(en)">
 					description = <"*Narrative description about the pattern of the symptom or sign during this episode.(en)">
-					comment = <"*For example: pain could be described as constant or colicky.(en)">
+					comment = <"*For example: Pain could be described as constant or intermittent. This element can be used to record textual descriptions (whether free or coded text) of the typical frequency and duration of fits, attacks or bouts of the symptom during this episode.(en)">
 				>
 				["at0017"] = <
 					text = <"*Effect(en)">
@@ -838,6 +853,11 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				["at0031"] = <
 					text = <"*Number of previous episodes(en)">
 					description = <"*The number of times this symptom or sign has previously occurred.(en)">
+				>
+				["at0032"] = <
+					text = <"*Character(en)">
+					description = <"*A word or short phrase describing a character of the symptom, for aiding the diagnostic process.(en)">
+					comment = <"*Relevant values for Character will be different for each symptom. There is a possible overlap with associated symptoms, and deciding which items are characters and which are associated symptoms may not be trivial. Examples of characters may be \"subjective vertigo\" or \"feeling faint\" for the symptom \"dizziness\", \"pain on swallowing\" for the symptom \"sore throat\", \"throbbing\" or \"stabbing\" for the symptom \"headache\", or \"pain moving around\" for the symptom \"abdominal pain\". The character should be coded with a terminology, where possible.(en)">
 				>
 				["at0035"] = <
 					text = <"*Nil significant(en)">
@@ -1006,13 +1026,13 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				>
 				["at0002"] = <
 					text = <"Beskrivelse">
-					description = <"Fritekstbeskrivelse av det rapporterte symptomet eller sykdomstegnet.
-">
+					description = <"Fritekstbeskrivelse av det rapporterte symptomet eller sykdomstegnet.">
+					comment = <"Eksempel: \"Svimmelhet med rotasjonsfølelse og av og til besvimelsesfølelse. Hurtig bevegelse fra sittende eller liggende til stående stilling virker å være en utløsende faktor. Opptrer typisk flere ganger daglig, og varer i ca et halvt til ett minutt hver gang. Å sette eller legge seg ned virker lindrende.\"">
 				>
 				["at0003"] = <
 					text = <"Mønster">
 					description = <"Fritekstbeskrivelse av symptomet eller sykdomstegnet i løpet av denne episoden.">
-					comment = <"For eksempel: Smerte kan beskrives som konstant eller intermitterende.">
+					comment = <"For eksempel: Smerte kan beskrives som konstant eller intermitterende. Dette elementet kan brukes til å registrere tekstlige beskrivelser (enten det er fri eller kodet tekst) av den typiske frekvensen og varigheten av symptomanfall under den aktuelle episoden.">
 				>
 				["at0017"] = <
 					text = <"Effekt">
@@ -1025,7 +1045,7 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				["at0019"] = <
 					text = <"Faktor">
 					description = <"Navn på den modifiserende faktoren.">
-					comment = <"Eksempel på modifiserende faktor: sengeleie med flere puter, spising eller administrering av et spesifikt legemiddel.">
+					comment = <"Eksempel på modifiserende faktor: sengeleie med flere puter, spising, eller administrering av et spesifikt legemiddel.">
 				>
 				["at0021"] = <
 					text = <"Alvorlighetskategori">
@@ -1058,10 +1078,15 @@ If the anatomical location is included in the Symptom name via precoordinated co
 					text = <"Antall tidligere episoder">
 					description = <"Antall ganger symptomet eller sykdomstegnet tidligere har forekommet.">
 				>
+				["at0032"] = <
+					text = <"Karakter">
+					description = <"Et ord eller en kort frase som beskriver symptomets karakter, med det formål i støtte den diagnostiske prosessen.">
+					comment = <"Relevante verdier for \"Karakter\" vil variere fra symptom til symptom. Det er en mulig overlapp med \"Tilknyttede symptomer/sykdomstegn\", og å skille mellom hva som er karakter og hva som er assosierte symptomer kan være utfordrende. Eksempler på karakterer kan være \"rotasjonsfølelse\" eller \"besvimelsesfølelse\" for symptomet \"svimmelhet\", \"smerte ved svelging\" for symptomet \"sår hals\", \"dunkende\" eller \"stikkende\" for symptomet \"hodepine\", eller \"smerten beveger seg\" for symptomet \"buksmerter\". Karakteren bør kodes med en terminologi, der det er mulig.">
+				>
 				["at0035"] = <
 					text = <"Ikke av betydning">
 					description = <"Symptomet eller sykdomstegnet ble rapportert at det ikke er tilstede i betydningsfull grad.">
-					comment = <"Registrer som Sann dersom helsetjenestemottakeren har rapportert symptomet eller sykdomstegnet som ikke tilstede i betydningsfull grad. For eksempel: Dersom individet aldri har opplevd symptomet vil det være riktig registrere \"Ikke av betydning\". Dersom individet vanligvis opplever symptomet, kan det i noen tilfeller være riktig å registrere \"Ikke av betydning\" dersom individet ikke har opplevd noen endring fra deres normaltilstand.">
+					comment = <"Registrer som Sann dersom helsetjenestemottakeren har rapportert symptomet eller sykdomstegnet som ikke tilstede i betydningsfull grad. For eksempel: Dersom individet aldri har opplevd symptomet vil det være riktig registrere \"Ikke av betydning\". Dersom individet vanligvis opplever symptomet, kan det i noen tilfeller være riktig å registrere \"Ikke av betydning\" dersom individet ikke har opplevd noen endring fra sin normaltilstand.">
 				>
 				["at0037"] = <
 					text = <"Episodebeskrivelse">
@@ -1137,7 +1162,7 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				>
 				["at0163"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekst om symptomet eller sykdomstegnet som ikke er registrert i andre felt.">
+					description = <"Ytterligere fritekst om symptomet eller sykdomstegnet som ikke dekkes i andre felt.">
 				>
 				["at0164"] = <
 					text = <"Debuttype">
@@ -1146,8 +1171,8 @@ If the anatomical location is included in the Symptom name via precoordinated co
 				>
 				["at0165"] = <
 					text = <"Utløsende/avsluttende faktor">
-					description = <"Detaljer om spesifikke faktorer som er forbundet med utløsning eller opphør av symptomet eller sykdomstegnet.">
-					comment = <"For eksempel: Debut av hodepine oppstod en uke før menstruasjon eller debut av hodepine oppstod en time etter fall på sykkel.">
+					description = <"Detaljer om spesifikke faktorer som utløser eller som får symptomet eller sykdomstegnet til å opphøre.">
+					comment = <"For eksempel: Debut av hodepine oppstod en uke før menstruasjon eller debut av hodepine oppstod en time etter fall på sykkel, halsbrannen forsvant ved administrasjon av syrenøytraliserende eller brystsmerter forsvant ved hvile.">
 				>
 				["at0167"] = <
 					text = <"Utløsende faktor">
