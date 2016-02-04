@@ -64,9 +64,9 @@ Não deve ser usado para registrar uma exclusão de História Familiar - utiliza
 			purpose = <"To record information about the occurrence of significant health-related problems in genetic and non-genetic family members - both alive and deceased. 
 
 The intended scope of this archetype is deliberately kept loose to include the broadest range of problems or issues that might be found within families. It specifically includes known problems and diagnoses, identified biological markers, plus any relevant psychosocial factors and environmental factors.">
-			use = <"Use to record a summary of information about problems or diagnoses found in family members. This information may be used to contribute to an assessment of risk to the individual from potentially familial conditions or initiation of preventive health activities.
+			use = <"Use to record a summary of information about problems or diagnoses found in family members. This information may be used to contribute to the identification of a current health problem, assessment of future risk from familial problems or conditions, or to initiate preventive health activities.
 
-Traditionally the scope of family history has been focused on genetic factors or biomarkers as indicators of risk or potential risk. However the scope of this archetype explicitly includes the recording of information about problems or diagnoses that may be influenced by familial exposure of non-genetic family members to psychosocial or environmental factors as well. Examples that are relevant for non-genetic family members include exposure to toxins in the family environment, domestic violence, sexual abuse, alcoholism and other addictions.
+Traditionally the scope of family history has been focused on genetic factors or biomarkers as indicators of risk or potential risk. The scope of this archetype includes both recording of problems or diagnoses that have an inheritable origin as well as those that are not inheritable but influenced in the family setting by non-genetic family members, psychosocial factors or environmental factors. Examples include exposure to toxins in the family environment, domestic violence, sexual abuse, alcoholism and other addictions.
 
 Non-genetic family members can include adopted or long term fostered children, those related by marriage, or other unrelated individuals who participate in the regular life and influence of the family.
 
@@ -84,98 +84,98 @@ It may be necessary to identify each family member specifically and not just by 
 			keywords = <"family", "history", "health", "condition", "problem", "diagnosis", "genetic", "pedigree", "genealogy", "family history", "relative", "hereditary", "family history">
 			misuse = <"Not to be used to record information about the relative or absolute risk of developing a condition due to family history - use the EVALUATION.health_risk archetype, including the CLUSTER.family_prevalence for details about the affected ratio of family members.
 
-Not to be used for contact tracing for infectious diseases requiring immediate action.
+Not to be used for contact tracing for infectious diseases requiring immediate action. Use specific archetypes for this purpose.
 
 Not to be used to record an exclusion of Family History - use the EVALUATION.exclusion-family_history archetype for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For registrering av informasjon om forekomst av signifikante helseproblemer hos både levende og døde, genetiske og ikke-genetiske slektninger.
+			purpose = <"For registrering av informasjon om forekomst av signifikante helserelaterte forhold hos både levende og døde, genetiske og ikke-genetiske familiemedlemmer.
 
 Arketypens avgrensninger er med vilje gjort utydelige, for å omfatte et bredest mulig spekter av problemer som kan opptre innenfor familier. Arketypen omfatter kjente problemer eller diagnoser, identifiserte biologiske markører, samt alle relevante psykososiale faktorer og miljøfaktorer.">
-			use = <"Brukes for å registrere et sammendrag av helseproblemer eller diagnoser hos familiemedlemmer. Informasjonen kan bidra til et grunnlag for å vurdere individets risiko for familiære sykdommer eller for å iverksette forebyggende helsearbeid.
+			use = <"Brukes for å registrere et sammendrag av helserelaterte forhold, problemer eller diagnoser hos familiemedlemmer. Informasjonen kan bidra til identifisering av et eksisterende helseproblem, et grunnlag for å vurdere individets fremtidige risiko for familiære sykdommer eller for å iverksette forebyggende helsearbeid.
 
-Tradisjonelt har familieanamnese fokusert på genetiske faktorer eller biomarkører som indikatorer for risiko eller potensiell risiko. Denne arketypen inkluderer eksplisitt registrering av informasjon om problemer eller diagnoser som kan være påvirket av familiær eksponering fra ikke-genetiske familiemedlemmer, psykososiale faktorer eller miljøfaktorer. Eksempler som er relevante for ikke-genetiske familiemedlemmer omfatter eksponering for toksiner i hjemmet, vold i nære relasjoner, seksuelle overgrep, alkoholisme eller andre avhengigheter.
+Tradisjonelt har familieanamnese fokusert på genetiske faktorer eller biomarkører som indikatorer for risiko eller potensiell risiko. Denne arketypen omfatter både registrering av informasjon om arvelige problemer eller diagnoser, og dem som ikke er arvelige men som kan være påvirket av familiær eksponering fra ikke-genetiske familiemedlemmer, psykososiale faktorer eller miljøfaktorer. Eksempler kan være eksponering for toksiner i hjemmet, vold i nære relasjoner, seksuelle overgrep, alkoholisme eller andre avhengigheter.
 
 Ikke-genetiske familiemedlemmer kan være adoptivbarn eller langtidsplasserte fosterbarn, ektefeller eller andre personer som deltar i familiehverdagen og har innflytelse på familien.
 
 Arketypen inneholder:
-- En fritekstlig oversikt. Dette tillater at detaljer om familieanamnesen kan importeres fra eksisterende systemer som en ustrukturert tekst.
+- En fritekstoversikt. Dette tillater at detaljer om familieanamnesen kan importeres fra eksisterende systemer som en ustrukturert tekst.
 - En detaljert del, som fokuserer på relevant helseinformasjon om spesifikke familiemedlemmer, deres medisinske anamnese og biomarkører.
 
-Arketypen kan brukes i mange sammenhenger. For eksempel: Registrering av familieanamnese i en klinisk konsultasjon, i en persistent oversikt over familieanamnese eller som del av en epikrise.
+Arketypen kan brukes i mange sammenhenger, for eksempel registrering av familieanamnese i en klinisk konsultasjon, i en persistent oversikt over familieanamnese eller som del av en epikrise.
 
 Ytterligere detaljer om et familiemedlems spesifikke problemer, diagnoser eller gjennomgåtte prosedyrer kan registreres ved å bruke EVALUATION.problem_diagnosis- eller ACTION.procedure-arketypen og spesifisere \"Subject of Care\" til familiemedlemmet, i stedet for individet som journalen omhandler.
 
 Arketypen kan brukes som basis for et slektstre over helseproblemer og diagnoser, eller for å understøtte risikoberegninger basert på forekomst i familieanamnesen eller kjente biomarkører.
 
 Det kan være nødvendig å identifisere hvert enkelt familiemedlem spesifikt og ikke bare relasjonen til pasienten. For eksempel: Det finnes bare én mormor men det er mulig at det finnes flere kvinnelige søskenbarn på morssiden. En slik registrering kan være nødvendig for å sikre at et slektstre blir nøyaktig, og kan også muliggjøre nøyaktige korreksjoner eller tillegg til journalen for hvert identifiserte familiemedlem.">
-			keywords = <"familie", "anamnese", "helse", "tilstand", "problem", "diagnose", "genetisk", "slektstre", "genealogi", "familieanamnese", "slektning", "arvelighet", "biologisk", "familietre", "hereditet", "ikke-genetisk", "ikke-biologisk", "familiær", "genetikk", "arvelig">
+			keywords = <"familie", "anamnese", "helse", "tilstand", "problem", "diagnose", "genetisk", "slektstre", "genealogi", "familieanamnese", "slektning", "arvelighet", "biologisk", "familietre", "hereditet", "ikke-genetisk", "ikke-biologisk", "familiær", "genetikk", "arvelig", "hereditær">
 			misuse = <"Skal ikke benyttes for å registrere informasjon om relativ eller absolutt risiko for å utvikle en tilstand ut fra en familieanamnese, bruk EVALUATION.health_risk-arketypen med CLUSTER.family_prevalence-arketypen for å registrere detaljer om andelen familiemedlemmer som er rammet.
 
-Brukes ikke for smittesporing av sykdommer som krever øyeblikkelig handling.
+Brukes ikke for smittesporing av sykdommer som krever øyeblikkelig handling. Bruk spesifikke arketyper for dette formålet.
 
 Brukes ikke for å registrere fravær av problemer og eller diagnoser i familieanamnesen, bruk EVALUATION.exclusion-family_history-arketypen.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Tomas Alme, DIPS, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Diego Bosca, IBIME group, Spain", "Hans Johan Breidablik, Helse Førde HF, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "B Christensen, HUS, Norway", "Stephen Chu, Queensland Health, Australia", "Eva Dybvik, Nasjonal kompetansetjeneste for leddproteser og hoftebrudd, Haukeland Universitetssjukehus, Norway", "David Evans, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Samuel Frade, Marand, Portugal", "Tim Garden, NTG Department of Health, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Andrew Goodchild, NEHTA, Australia", "Gyri Gradek, Senter for medisinsk genetikk og molekylærmedisin, Haukeland Universitetssykehus, Norway", "Elisabeth Gudmestad, Helse Bergen HF, Haukeland Universitetssykehus, Dokumentasjonsavdelingen, Norway", "Leif Ivar Havelin, Helse Bergen, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Nils-Harald Holsen, Nasjonal IKT HF, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Mary Kelaher, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Kirsten Steen Kyrkjebø, Helse Vest IKT AS, Norway", "Robert L'egan, NEHTA, Australia", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Chris Mitchell, RACGP, Australia", "Ann Iren Tellnes Moe, Helse Vest IKT, Norway", "Stewart Morrison, NEHTA, Australia", "Bjoern Naess, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Lynne Parsons, Primary and Community Health Services, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Gunn Anita Skjulhaug, Helse-Bergen HF, Norway", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "Møyfrid Stokke, Helse Vest IKT, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Taylor, NEHTA, Australia", "Micaela Thierley, Helse Bergen, Norway", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Donna Truran, ACCTI-UoW, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør, Nasjonal IKT oversettelsesredaktør)", "Ørjan Vermeer, Haukeland Universitetssjukehus, Kvinneklinikken, Norway", "Jo Wright, NT Dept of Health, Australia (Editor)">
+	other_contributors = <"Tomas Alme, DIPS, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Diego Bosca, IBIME group, Spain", "Hans Johan Breidablik, Helse Førde HF, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "B Christensen, HUS, Norway", "Stephen Chu, Queensland Health, Australia", "Eva Dybvik, Nasjonal kompetansetjeneste for leddproteser og hoftebrudd, Haukeland Universitetssjukehus, Norway", "David Evans, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Samuel Frade, Marand, Portugal", "Tim Garden, NTG Department of Health, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Andrew Goodchild, NEHTA, Australia", "Gyri Gradek, Senter for medisinsk genetikk og molekylærmedisin, Haukeland Universitetssykehus, Norway", "Elisabeth Gudmestad, Helse Bergen HF, Haukeland Universitetssykehus, Dokumentasjonsavdelingen, Norway", "Leif Ivar Havelin, Helse Bergen, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Nils-Harald Holsen, Nasjonal IKT HF, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Mary Kelaher, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Kirsten Steen Kyrkjebø, Helse Vest IKT AS, Norway", "Robert L'egan, NEHTA, Australia", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Chris Mitchell, RACGP, Australia", "Ann Iren Tellnes Moe, Helse Vest IKT, Norway", "Stewart Morrison, NEHTA, Australia", "Bjoern Naess, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Lynne Parsons, Primary and Community Health Services, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Gunn Anita Skjulhaug, Helse-Bergen HF, Norway", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "Møyfrid Stokke, Helse Vest IKT, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "John Taylor, NEHTA, Australia", "Micaela Thierley, Helse Bergen, Norway", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Donna Truran, ACCTI-UoW, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør, Nasjonal IKT oversettelsesredaktør)", "Ørjan Vermeer, Haukeland Universitetssjukehus, Kvinneklinikken, Norway", "Jo Wright, NT Dept of Health, Australia (Editor)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Family History, draft archetype [Internet]. Australia, National eHealth Transition Authority, NEHTA Clinical Knowledge Manager. Authored: 2010 12 15. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.927 (last accessed 2015 03 05).
 
 Risk of condition based on family history, rejected archetype, openEHR Clinical Knowledge Manager [Internet]. openEHR Foundation. Authored: 2006 04 23. Available at: http://www.openehr.org/ckm/#showArchetype_1013.1.125 (last accessed 2015 03 05).
 
 HL7 Version 3 Standard: Clinical Genomics; Pedigree, Release 1. ANSI/HL7 V3 CGPED, R1-2007. Published 2007 05 07. Available at: http://www.hl7.org/implement/standards/product_brief.cfm?product_id=8 (last accessed 2015 03 05).">
-		["build_uid"] = <"f3bed4e7-c602-4391-8d08-bed46f3d9b93">
+		["build_uid"] = <"54ee4474-2b03-4f46-b09f-6fd7e64f715e">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E628D708EF05A077BA9A731ADF9CA393">
+		["MD5-CAM-1.0.1"] = <"41D62740C7E366F039692F02EE91A202">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Family history
+	EVALUATION[at0000] matches {	-- Familieanamnese
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Summary
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Sammendrag
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
 					CLUSTER[at0028] occurrences matches {0..*} matches {	-- Per problem
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0029] occurrences matches {0..1} matches {	-- Problem name
+							ELEMENT[at0029] occurrences matches {0..1} matches {	-- Problem/diagnosenavn
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0036] occurrences matches {0..1} matches {	-- Present?
+							ELEMENT[at0036] occurrences matches {0..1} matches {	-- Tilstede?
 								value matches {
 									DV_BOOLEAN matches {
 										value matches {True}
 									}
 								}
 							}
-							ELEMENT[at0030] occurrences matches {0..1} matches {	-- Description
+							ELEMENT[at0030] occurrences matches {0..1} matches {	-- Beskrivelse
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0059] occurrences matches {0..*} matches {	-- Family prevalence
+							allow_archetype CLUSTER[at0059] occurrences matches {0..*} matches {	-- Familiær forekomst
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.family_prevalence(-[a-zA-Z0-9_]+)*\.v1/}
 							}
 						}
 					}
-					CLUSTER[at0003] occurrences matches {0..*} matches {	-- Per family member
+					CLUSTER[at0003] occurrences matches {0..*} matches {	-- Per familiemedlem
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Family member name
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Navn på familiemedlem
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -185,81 +185,86 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0048] occurrences matches {0..*} matches {	-- Family member
+							allow_archetype CLUSTER[at0048] occurrences matches {0..*} matches {	-- Familiemedlem
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.person_name(-[a-zA-Z0-9_]+)*\.v1/}
 							}
-							ELEMENT[at0060] occurrences matches {0..1} matches {	-- Sex
+							ELEMENT[at0060] occurrences matches {0..1} matches {	-- Biologisk kjønn
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0016] occurrences matches {0..1} matches {	-- Relationship
+							ELEMENT[at0016] occurrences matches {0..1} matches {	-- Slektsforhold
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Date of birth
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Fødselsdato
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0023] occurrences matches {0..1} matches {	-- Deceased?
+							ELEMENT[at0023] occurrences matches {0..1} matches {	-- Død?
 								value matches {
 									DV_BOOLEAN matches {
 										value matches {True}
 									}
 								}
 							}
-							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Age at death
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Alder ved død
 								value matches {
 									DV_DURATION matches {*}
 								}
 							}
-							ELEMENT[at0058] occurrences matches {0..1} matches {	-- Date of death
+							ELEMENT[at0058] occurrences matches {0..1} matches {	-- Dødsdato
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							CLUSTER[at0008] occurrences matches {0..*} matches {	-- Medical history
+							CLUSTER[at0008] occurrences matches {0..*} matches {	-- Medisinsk anamnese
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Problem/diagnosis
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Problem/diagnose
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Clinical description
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Klinisk beskrivelse
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Age at onset
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Debutalder
 										value matches {
 											DV_DURATION matches {*}
 										}
 									}
-									ELEMENT[at0014] occurrences matches {0..1} matches {	-- Cause of death?
+									ELEMENT[at0014] occurrences matches {0..1} matches {	-- Dødsårsak?
 										value matches {
-											DV_BOOLEAN matches {
-												value matches {True, False}
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0061, 	-- Direkte eller nært relatert
+													at0062, 	-- Urelatert
+													at0063]	-- Ubestemmelig
+												}
 											}
 										}
 									}
 								}
 							}
-							ELEMENT[at0046] occurrences matches {0..1} matches {	-- Comment
+							ELEMENT[at0046] occurrences matches {0..1} matches {	-- Kommentar
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							CLUSTER[at0024] occurrences matches {0..1} matches {	-- Biomarkers
+							CLUSTER[at0024] occurrences matches {0..1} matches {	-- Biomarkører
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Biomarker description
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Beskrivelse av biomarkør
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype ITEM[at0027] occurrences matches {0..*} matches {	-- Biomarker details
+									allow_archetype ITEM[at0027] occurrences matches {0..*} matches {	-- Detaljer om biomarkør
 										include
 											archetype_id/value matches {/.*/}
 									}
@@ -277,12 +282,12 @@ definition
 		protocol matches {
 			ITEM_TREE[at0025] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Last Updated
+					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Sist oppdatert
 						value matches {
 							DV_DATE_TIME matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0045] occurrences matches {0..*} matches {	-- Extension
+					allow_archetype CLUSTER[at0045] occurrences matches {0..*} matches {	-- Utvidelse
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -307,7 +312,7 @@ ontology
 				["at0002"] = <
 					text = <"Summary">
 					description = <"Narrative overview about problems, diagnoses, psychosocial, environmental and genetic markers that have been identified in family members.">
-					comment = <"Use this field to capture unstructured family history information recorded in clinical records or to import textual data from existing/legacy clinical systems.">
+					comment = <"This field can be used to record a summary or the conclusion of all the findings, for unstructured family history information recorded in clinical records, or to import textual data from existing/legacy clinical systems.">
 				>
 				["at0003"] = <
 					text = <"Per family member">
@@ -348,7 +353,7 @@ ontology
 				>
 				["at0014"] = <
 					text = <"Cause of death?">
-					description = <"True if the problem/diagnosis was a direct cause of death in this family member.">
+					description = <"Record if the problem/diagnosis was a direct cause or closely related too the cause of death in this family member.">
 				>
 				["at0016"] = <
 					text = <"Relationship">
@@ -393,7 +398,7 @@ Note: More data elements will be needed in future to record detailed genetic mar
 					comment = <"If the problem has a genetic predisposition within families, then only genetic relatives should be considered as part of this data. If the problem has psychosocial or environmental effects then non-genetic family members may also be included.">
 				>
 				["at0029"] = <
-					text = <"Problem name">
+					text = <"Problem/diagnosis name">
 					description = <"Identification of the problem or diagnosis, by name.">
 					comment = <"This is the problem for which aggregated data involving all family members will be collected. Coding of the index problem with a terminology is preferred, where possible.">
 				>
@@ -434,9 +439,21 @@ Note: More data elements will be needed in future to record detailed genetic mar
 					description = <"Details about family prevalence of the identified problem or diagnosis.">
 				>
 				["at0060"] = <
-					text = <"Sex">
+					text = <"Biological sex">
 					description = <"The family member's biological sex.">
 					comment = <"Coding of the sex with a terminology is preferred, where possible.">
+				>
+				["at0061"] = <
+					text = <"Direct cause or closely related">
+					description = <"The problem or diagnosis was a direct cause or closely related to the direct cause of death.">
+				>
+				["at0062"] = <
+					text = <"Unrelated">
+					description = <"The problem or diagnosis was unrelated to the cause of death.">
+				>
+				["at0063"] = <
+					text = <"Indeterminate">
+					description = <"It is impossible to determine whether the problem or diagnosis was closely related to the direct cause of death.">
 				>
 			>
 		>
@@ -584,13 +601,25 @@ Note: More data elements will be needed in future to record detailed genetic mar
 					description = <"*The family member's biological sex. (en)">
 					comment = <"*Coding of the sex with a terminology is preferred, where possible.(en)">
 				>
+				["at0061"] = <
+					text = <"*Direkte eller nært relatert(en)">
+					description = <"*Problemet eller diagnosen var en direkte årsak eller nært relatert til den direkte dødsårsaken.(en)">
+				>
+				["at0062"] = <
+					text = <"*Urelatert(en)">
+					description = <"*Problemet eller diagnosen var ikke relatert til den direkte dødsårsaken.(en)">
+				>
+				["at0063"] = <
+					text = <"*Ubestemmelig(en)">
+					description = <"*Det er ikke mulig å fastslå hvorvidt problemet eller diagnosen var nært relatert til den direkte dødsårsaken.(en)">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
 					text = <"Familieanamnese">
-					description = <"Sammenfattet informasjon om signifikante helserelaterte problemer hos familiemedlemmer.">
+					description = <"Sammenfattet informasjon om signifikante helserelaterte forhold hos familiemedlemmer.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -599,7 +628,7 @@ Note: More data elements will be needed in future to record detailed genetic mar
 				["at0002"] = <
 					text = <"Sammendrag">
 					description = <"Fritekstoversikt over problemer, diagnoser og psykososiale, miljømessige eller genetiske markører som er funnet hos familiemedlemmer.">
-					comment = <"Bruk dette feltet for å fange opp utstrukturert familieanamnese registrert i kliniske systemer eller for å importere tekstlige data fra eksisterende/ tidligere kliniske system.">
+					comment = <"Bruk dette feltet for å registrere et sammmendrag eller konklusjon, eller for å importere tekstlige data fra eksisterende/tidligere kliniske system.">
 				>
 				["at0003"] = <
 					text = <"Per familiemedlem">
@@ -640,7 +669,7 @@ Note: More data elements will be needed in future to record detailed genetic mar
 				>
 				["at0014"] = <
 					text = <"Dødsårsak?">
-					description = <"\"Sann\" dersom problemet eller diagnosen var en direkte dødsårsak for dette familiemedlemmet.">
+					description = <"Registrering av om problemet eller diagnosen var direkte eller nært relatert til dødsårsaken for dette familiemedlemmet.">
 				>
 				["at0016"] = <
 					text = <"Slektsforhold">
@@ -685,7 +714,7 @@ Merk: Flere dataelementer vil bli påkrevd i framtiden for en detaljert registre
 					comment = <"Har problemet en genetisk predisposisjon innen familier, skal bare genetiske slektninger inkluderes i dataene. Har problemet en psykososial eller miljømessig effekt kan ikke-genetiske familiemedlemmer også tas med i registreringen.">
 				>
 				["at0029"] = <
-					text = <"Problemnavn">
+					text = <"Problem/diagnosenavn">
 					description = <"Navn på problem eller diagnose.">
 					comment = <"For dette problemet eller diagnosen kan aggregerte data som omhandler alle familiemedlemmer registreres. Koding av problemet eller diagnosen med en terminologi er ønskelig om mulig.">
 				>
@@ -726,9 +755,21 @@ Merk: Flere dataelementer vil bli påkrevd i framtiden for en detaljert registre
 					description = <"Detaljer om familiær forekomst av det identifiserte problemet eller diagnosen.">
 				>
 				["at0060"] = <
-					text = <"Kjønn">
+					text = <"Biologisk kjønn">
 					description = <"Familiemedlemmets biologiske kjønn.">
 					comment = <"Koding av kjønnet med en terminologi er ønskelig om mulig.">
+				>
+				["at0061"] = <
+					text = <"Direkte eller nært relatert">
+					description = <"Problemet eller diagnosen var en direkte årsak eller nært relatert til den direkte dødsårsaken.">
+				>
+				["at0062"] = <
+					text = <"Urelatert">
+					description = <"Problemet eller diagnosen var ikke relatert til den direkte dødsårsaken.">
+				>
+				["at0063"] = <
+					text = <"Ubestemmelig">
+					description = <"Det er ikke mulig å fastslå hvorvidt problemet eller diagnosen var nært relatert til den direkte dødsårsaken.">
 				>
 			>
 		>
