@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Absence of Information
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Gro-Hilde Ulriksen">
+				["organisation"] = <"Nasjonalt senter for e-helse forskning">
+				["email"] = <"Gro-Hilde.Ulriksen@telemed.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -34,6 +44,25 @@ This archetype has been designed specifically to avoid the need to use of flags 
 Not to be used to record the exclusion of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of the EVALUATION.exclusion archetype for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en klinikers eksplisitte utsagn om at spesifikk helseinformasjon ikke er tilgjengelig, og ikke kan registreres i pasientjournalen på registreringstidspunktet.">
+			use = <"For å registrere en klinikers eksplisitte utsagn om at spesifikk helseinformasjon ikke er tilgjengelig, og ikke kan registreres i pasientjournalen på registreringstidspunktet.
+
+Denne arketypen er en av tre beslektede utsagn: Utsagn om tilstedeværelse, utsagn om eksklusjon, og utsagn om fravær av informasjon.
+- Utsagn om tilstedeværelse indikerer at det finnes relevant helseinformasjon i pasientens journal, for eksempel EVALUATION.adverse_reaction (overfølsomhetsreaksjon) som konstaterer at pasienten har en kjent allergi mot penicillin, eller EVALUATION.problem_diagnosis (problem/diagnose) som konstaterer at pasienten har diabetes.
+- Tilsvarende utsagn om eksklusjon er brukt for å konstatere at det er kjent at det ikke er noe relevant helseinformasjon i pasientens journal, f.eks EVALUATION.exclusion-adverse_reaction, som konstaterer at pasienten ikke har noen kjent allergi mot penicillin, eller arketypen EVALUATION.exclusion-problem_diagnosis (Eksklusjon av problem/diagnose) som konstaterer at pasienten ikke har kjent diabetes.
+- I denne sammenheng kan man bruke \"Fravær av informasjon\" for å registrere at det ikke finnes tilgjengelig informasjon om verken penicillinallergi eller diabetesdiagnose. Det finnes ingen tilgjengelig informasjon verken om at disse er påvist eller ekskludert.
+
+Denne arketypen er utviklet spesielt for å kunne brukes i tilfeller hvor klinikeren skal gjøre et uttrekk fra pasientens journal slik at mottakeren får en eksplisitt og entydig forståelse av tilgjengelig informasjon, uavhengig av om den er tilstede, ekskludert eller fraværende. Den er primært tenkt brukt innenfor SLOTs i persistente COMPOSITIONs som for eksempel \"terapeutiske forholdsregler\", \"medisinsliste,\" \"problemliste,\" eller \"liste over overfølsomhetsreaksjoner\". Det er også ment å være et bevisst utsagn fra en kliniker på samme måte som de ville registrere allergier eller diagnoser, og er ment å være forskjellig fra teknisk bruk av \"null-verdier\".
+
+Utsagn om fravær av informasjon kan kun anses å være oppdaterte og presise på registreringstidspunktet.
+
+Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke fravær av informasjon om en en klinisk oppføring i journalen.">
+			keywords = <"mangel", "informasjon", "overfølsomhet", "reaksjon", "problem", "diagnose", "medisinering", "prosedyre", "overfølsomhetsreaksjon", "fravær">
+			misuse = <"Brukes ikke for å registrere at det finnes overfølsomhetsreaksjoner, medisinbruk, prosedyrer, problemer eller diagnoser - egne arketyper skal brukes til dette formålet.
+Brukes ikke for å registrere eksklusjon av overfølsomhetsreaksjoner, medisinbruk, prosedyrer, problemer eller diagnoser - egne spesialiserte under arketyper av EVALUATION.exclusion (eksklusjonsutsagn) skal brukes til dette formålet.">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
@@ -41,10 +70,10 @@ Not to be used to record the exclusion of adverse reactions, medication use, pro
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["build_uid"] = <"834d3527-9cc1-4a29-bb21-820622b90bfb">
+		["build_uid"] = <"cb12550e-d11b-4a6d-86be-5e3206f83902">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"C8061F58D1B627A3933662FC4EAC6DFF">
+		["MD5-CAM-1.0.1"] = <"B231F6761503B391C0002D8E672A9461">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -120,6 +149,41 @@ ontology
 					text = <"Extension">
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fravær av informasjon">
+					description = <"Et eksplisitt utsagn om at spesifikk helseinformasjon ikke er tilgjengelig, og ikke kan registreres i pasientjournalen på registreringstidspunktet.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Fraværsutsagn">
+					description = <"Bekreftende utsagn om at det ikke finnes tilgjengelig informasjon.">
+					comment = <"For eksempel \" det finnes ingen tilgjengelig informasjon om overfølsomhetsreaksjoner\", \"ingen tilgjengelig informasjon om problem/diagnose\", \"ingen tilgjengelig informasjon om tidligere utførte prosedyrer\" eller \"ingen tilgjengelig informasjon om medisinbruk\".">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Sist oppdatert">
+					description = <"Datoen fraværsutsagnet sist ble oppdatert.">
+				>
+				["at0005"] = <
+					text = <"Årsak til fravær">
+					description = <"Fritekstbeskrivelse av årsak til at det mangler informasjon.">
+					comment = <"For eksempel: Pasienten er bevisstløs eller nekter å oppgi informasjon.">
+				>
+				["at0006"] = <
+					text = <"Utvidelse">
+					description = <"Tilleggsinformasjon for å fange opp lokalt innhold eller for å eller for å sammenstille med andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
