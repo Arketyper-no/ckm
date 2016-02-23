@@ -134,7 +134,7 @@ For at denne listen skal være oppdatert og trygg å bruke i beslutningsstøtte 
 
 I et lukket klinisk system er det forventet at opphavet til denne problemlisten kan håndteres gjennom versjonering av denne COMPOSITION-arketypen og dens innhold, med opsjon for å også benytte en systembasert endringslogg.
 
-Det ideelle vil vært å kun ha en problemliste per pasient, men i en virkelighet med mange ulike systemer er det mer realistisk å forvente at en en pasient vil ha flere ulike problemlister, som tas hånd om og prioriteres av klinikere i de ulike kontekstene. For eksempel vil en problemliste i primærhelsetjenesten ha et svært ulikt oppsett fra oppsettet som er nyttig for en spesialist i kirurgi under en innleggelse. I primærhelsetjenesten er det vanlig å organisere problemlisten basert på aktive eller inaktive problemer eller diagnoser. Spesialister kan foretrekke å se listen organisert rundt primærdiagnoser som er relatert til deres spesifikke spesialitet og sekundære som ikke er relatert. Ved en innleggelse kan ytterligere helseproblemer kreve sykepleietiltak som kun er aktuelle der og da, men som ikke er relevant når pasienten skrives ut fra sykehuset. Til dette kan \"Status\" SLOTet i arketypen Problem/diagnose benyttes for å legge til en CLUSTER-arketype som kliniske systemer kan bruke til organiseringen av problemlisten slik den er foretrukket av klinikerne som bruker systemet, uten å legge til disse kontekstrelaterte merkelappene til andre kliniske scenarier.
+Det ideelle ville vært å kun ha en problemliste per pasient, men i en virkelighet med mange ulike systemer er det mer realistisk å forvente at en pasient vil ha flere ulike problemlister, som tas hånd om og prioriteres av klinikere i de ulike kontekstene. For eksempel vil en problemliste i primærhelsetjenesten ha et svært ulikt oppsett fra oppsettet som er nyttig for en spesialist i kirurgi under en innleggelse. I primærhelsetjenesten er det vanlig å organisere problemlisten basert på aktive eller inaktive problemer eller diagnoser. Spesialister kan foretrekke å se listen organisert rundt primærdiagnoser som er relatert til deres spesifikke spesialitet og sekundære som ikke er relatert. Ved en innleggelse kan ytterligere helseproblemer kreve sykepleietiltak som kun er aktuelle der og da, men som ikke er relevant når pasienten skrives ut fra sykehuset. Til dette kan man i arketypen Problem/diagnose legge til en CLUSTER-arketype i «Status» SLOTet. Kliniske systemer kan bruke denne til organisering av problemlisten slik den er foretrukket av klinikerene som bruker systemet. Man unngår dermed å legge til disse kontekstrelaterte merkelappene til andre kliniske scenarier.
 
 Denne arketypen er vanligvis organisert som en persistent liste, men det kan være situasjoner hvor listen kan brukes i en episodisk setting og vil trenge ytterligere attributter som kontekst osv. for å sikre presis registrering. OpenEHRs referansemodell tillater for øyeblikket bare at kontekst registreres i Event-baserte COMPOSITION-arketyper. Som resultat av dette er arketypen modellert som en Event heller enn en persistent COMPOSITON for å tillate fleksibilitet slik at de kliniske systemene på en sikker måte kan administrere problemlisten for omsorgsepisoder mens andre vil velge å implementere denne COMPOSITION-arketypen som en persistent arketype.">
 			keywords = <"problem", "liste", "diagnose", "prosedyre", "problemliste">
@@ -148,10 +148,10 @@ Denne arketypen er vanligvis organisert som en persistent liste, men det kan væ
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Problem List, draft archetype [Internet]. National eHealth Transition Authority, NEHTA Clinical Knowledge Manager. Authored: 2013 Feb 19. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1235 [accessed 2015 Apr 28].">
-		["build_uid"] = <"143f7d37-ef80-4893-ac04-4a4bc76bcd8e">
+		["build_uid"] = <"f36cb7a0-1948-4b15-a3b5-85b3ea4ac244">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"90F7692819D35190343C73713A4D714F">
+		["MD5-CAM-1.0.1"] = <"95EA1DCD14C75BDFA68578EB1A15338F">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -361,7 +361,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Problemliste">
-					description = <"En varig og oppdaterbar liste over en hvilken som helst kombinasjon av diagnoser, problemer og prosedyrer som kan ha betydning for klinisk beslutningsstøtte og utøvelsen av helsehjelp.">
+					description = <"En varig og oppdaterbar liste over en hvilken som helst kombinasjon av diagnoser, problemer og prosedyrer som kan ha betydning for klinisk beslutningsstøtte og utøvelsen av helsehjelp, ved at den kan presenteres i et system for å gi et raskt overblikk over et individs sykehistorie.">
 				>
 				["at0002"] = <
 					text = <"Problemer, diagnoser eller helseproblemer">
