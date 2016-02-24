@@ -64,39 +64,39 @@ Not to be used to record the order for insertion of implants or medical devices 
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere instrukser for bruk av et legemiddel, en vaksine eller andre terapeutiske/medisinske varer.">
-			use = <"Brukes for å registrere instrukser for bruk av et legemiddel, en vaksine eller andre terapeutiske/medisinske varer.
+			purpose = <"For å registrere instrukser for bruk av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell.">
+			use = <"Brukes for å registrere instrukser for bruk av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell.
 
-Arketypen kan brukes i alle legemiddelrelaterte forordninger, enten de er for reseptpliktige legemidler forordnet av en kliniker, eller for reseptfrie legemidler. Arketypen dekker også forordninger av vaksiner eller andre terapeutiske/medisinske varer, som bandasjer eller andre varer som påføres eller administreres for å ha en terapeutisk effekt, og der dataene som skal registreres er de samme.
+Arketypen kan brukes i alle legemiddelrelaterte forordninger, enten de er for reseptpliktige legemidler forordnet av en kliniker, eller for reseptfrie legemidler. Arketypen dekker også forordninger av vaksiner eller annet medisinsk forbruksmateriell, som bandasjer eller andre varer som påføres eller administreres for å ha en terapeutisk effekt, og der dataene som skal registreres er de samme.
 
 Arketypen er designet for bruk i en rekke ulike kliniske sammenhenger, for eksempel:
 - en registrering i en klinisk konsultasjon (COMPOSITION.encounter).
-- en resept skrevet av en lege, tannlege eller annet helsepersonell, på et legemiddel som skal utleveres eller administreres (i en COMPOSITION.prescription).
+- en resept skrevet av en lege, tannlege eller annet helsepersonell, på et legemiddel som skal utdeles eller administreres (i en COMPOSITION.prescription).
 - et element i en legemiddelliste, resept eller legemiddelkurve (COMPOSITION.medication_list)
 - et element i et oppsummeringsdokument som f.eks. en epikrise (COMPOSITION.transfer_summary) eller en henvisning (COMPOSITION.request).
 
-I de fleste tilfeller vil forordningen være enkel - for et enkelt produkt med ukompliserte instruksjoner for utlevering og administrasjon. Arketypen er imidlertid også utviklet for å tillate mer komplekse forordninger, for eksempel: 
-- nedtrapping av en prednisolondose over flere uker.
-- en \"sliding scale\" for insulin, hvor dosering er avhengig av prøveresultater.
-- flere legemidler foreskrevet på samme tidspunkt som en del av et samlet behandlingsregime, for eksempel trippelbehandlng for magesår.
-- parenteral administrering av legemidler eller ernæring.
+I de fleste tilfeller vil forordningen være enkel - for et enkelt produkt med ukompliserte instruksjoner for utdeling og administrasjon. Arketypen er imidlertid også utviklet for å tillate mer komplekse forordninger, for eksempel: 
+- ved nedtrapping av en prednisolondose over flere uker.
+- som en \"sliding scale\" for insulin, hvor dosering er avhengig av prøveresultater.
+- flere legemidler foreskrevet på samme tidspunkt som en del av et samlet behandlingsregime, for eksempel trippelbehandling for magesår.
+- ved parenteral administrering av legemidler eller ernæring.
 
-Arketypen er utviklet for å tillate ulik kompleksitet, fra enkle fritekstinstrukser for forordninger som \"Furosemid 40 mg, to tabletter om morgenen og en til lunch\" for å sikre kompatibilitet med eksisterende systemer, 
+Arketypen er utviklet for å tillate ulik kompleksitet, fra enkle fritekstinstrukser for forordninger som \"Furosemid 40 mg, to tabletter om morgenen og en til lunsj\" for å sikre kompatibilitet med eksisterende systemer, 
 til strukturerte detaljer for dose, administrasjonsvei og administrasjonstidspunkter for at datamaskiner skal kunne lese og gjøre beregninger med dataene.
 
-Arketypen er designet slik at en enkel legemiddelforordning kan representere:
--komplekse sekvensielle legemiddelforordninger som bruker samme praparatstyrke i samme forordningsstruktur.
--flere legemiddelforordninger kan lenkes, der ulike legemidler eller blandinger må administreres sekvensielt.
+Arketypen er designet slik at en enkel legemiddelordinering kan representere:
+-komplekse sekvensielle legemiddelordineringer som bruker samme preparatstyrke i samme forordningsstruktur.
+-flere legemiddelordineringer kan lenkes, der ulike legemidler eller blandinger må administreres sekvensielt.
 
-Mengden av et legemiddel representeres vanligvis med et tall og en doseenhet, men det kan også omfatte et fritekstutsagn for å sikre kompatibilitet med eksisterende systemer og for å dekke alle scenarier.
+Mengden av et legemiddel representeres vanligvis med et tall og en doseenhet, men det kan også dokumenteres i fritekst for å sikre kompatibilitet med eksisterende systemer og for å dekke alle scenarier.
 
 CLUSTER-arketyper brukes for å representere deler av innholdet av to årsaker:
--i situasjoner hvor innholdet også brukes i andre kliniske kontekster, i hovedsak i den tilhørende arketypen ACTION.medication for å registrere faktisk utlevering, administrering osv.
+-i situasjoner hvor innholdet også brukes i andre kliniske kontekster, i hovedsak i den tilhørende arketypen ACTION.medication for å registrere faktisk utdeling, administrering osv.
 -for å fjerne mindre brukt innhold fra arketypens rammeverk.
 
 ">
-			keywords = <"medikasjon", "foreskriving", "forordning", "forordne", "terapi", "substans", "stoff", "virkestoff", "medikament", "legemiddel", "terapeutisk", "medisinsk forbruksmateriell", "terapeutisk vare">
-			misuse = <"Skal ikke brukes for å registrere faktisk administrering eller utlevering av legemidler, vaksiner eller andre terapeutiske/medisinske varer. Bruk arketypen ACTION.medication for dette formålet.
+			keywords = <"medikasjon", "foreskriving", "forordning", "forordne", "terapi", "substans", "stoff", "virkestoff", "medikament", "legemiddel", "terapeutisk", "medisinsk forbruksmateriell", "ordinering", "preparat", "spesialpreparat", "diagnostikum", "forskrivning", "forskriving", "resept", "legemiddelhåndtering", "ordinasjon">
+			misuse = <"Skal ikke brukes for å registrere faktisk administrering eller utdeling av legemidler, vaksiner eller annet medisinsk forbruksmateriell. Bruk arketypen ACTION.medication for dette formålet.
 
 Skal ikke brukes for å registrere forordning av blodkomponenter. Bruk arketypen INSTRUCTION.transfusion for dette formålet.
 
@@ -104,7 +104,7 @@ Skal ikke brukes for å registrere forordning av innlegging av implantater og me
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Sharmila Biswas, Australia", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Sarah Gaunt, NEHTA, Australia", "Trina Gregory, cpc, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Mary Kelaher, NEHTA, Australia", "Robert L'egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics Ltd., UK", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Chris Pearce, Melbourne East GP Network, Australia", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "John Taylor, NEHTA, Australia", "Richard Townley-O'Neill, NEHTA, Australia (Editor)", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Sharmila Biswas, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Laila Bruun, Oslo universitetssykehus HF, Norway", "Bjørn Christensen, HUS, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Sarah Gaunt, NEHTA, Australia", "Trina Gregory, cpc, Australia", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Øygunn Leite Kallevik, Helse Bergen, Norway", "Mary Kelaher, NEHTA, Australia", "Robert L'egan, NEHTA, Australia", "Statens Legemiddelverk, Norway", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics Ltd., UK", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Chris Pearce, Melbourne East GP Network, Australia", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "John Taylor, NEHTA, Australia", "Richard Townley-O'Neill, NEHTA, Australia (Editor)", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
 	other_details = <
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -117,10 +117,10 @@ Royal Australian College of General Practitioners. Fact Sheet: Medicines List. 2
 NHS HSCIC Messaging Implementation Manual (GP2GP messages) http://www.uktcregistration.nss.cfh.nhs.uk/trud3
 
 Standards for medication and medical device records – technical annex [Internet]. RCP London. [cited 2015 Dec 15]. Available from: https://www.rcplondon.ac.uk/projects/outputs/standards-medication-and-medical-device-records-technical-annex">
-		["build_uid"] = <"73afb2cc-f613-4a02-8f60-e8ac09fec20c">
+		["build_uid"] = <"a83247a7-8fd9-437e-b57c-5a0e95d9fd7e">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4C9E1D757A7EAA42E19A26287B392C34">
+		["MD5-CAM-1.0.1"] = <"E9235BB64FF8AE4B8B6B92B3C8D8D5BF">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -581,6 +581,7 @@ definition
 
 
 
+
 ontology
 	term_definitions = <
 		["en"] = <
@@ -918,12 +919,12 @@ Where the dispensing directions are fully carried by the structured, computable 
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Legemiddelforordning">
-					description = <"Instrukser for bruk av et legemiddel, en vaksine eller andre terapeutiske/medisinske varer.">
+					text = <"Legemiddelordinering">
+					description = <"Instrukser for bruk av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell.">
 				>
 				["at0001"] = <
 					text = <"Forordning">
-					description = <"Instruksjoner knyttet til et legemiddel, en vaksine eller annen terapeutisk/medisinsk vare.">
+					description = <"Instruksjoner knyttet til et legemiddel, en vaksine eller annet medisinsk forbruksmateriell.">
 				>
 				["at0002"] = <
 					text = <"Tree">
@@ -931,7 +932,7 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0004"] = <
 					text = <"Forordningsidentifikator">
-					description = <"Unik identifikator for legemiddelforordningen.">
+					description = <"Unik identifikator for legemiddelordineringen.">
 				>
 				["at0005"] = <
 					text = <"Tree">
@@ -1005,13 +1006,13 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0055"] = <
 					text = <"Beskrivelse av doseringstidspunkt">
-					description = <"Fritekstbeskrivelse av doseringsfrekvensen og andre doserngstidspunkt for legemiddelet, vaksinen eller den andre terapeutisk/medisinske varen.">
+					description = <"Fritekstbeskrivelse av doseringsfrekvensen og andre doserngstidspunkt for legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
 					comment = <"Brukes generelt sett bare for eldre formater der doseringsanvisningene er delt mellom tekstlige representasjoner av dose og mengde.">
 				>
 				["at0056"] = <
 					text = <"Doseringsanvisning">
-					description = <"Detaljer om doseringsanvisning for legemiddelforordningen.">
-					comment = <"For eksempel \"1 tablett om morgenen og en tablett om kvelden i tre uker, på mandager, onsdager og fredager. Clusteret kan repeteres for å åpne for representasjon av et fullstendig sett av doseringsanvisninger for en enkelt legemiddelforordning.">
+					description = <"Detaljer om doseringsanvisning for legemiddelordineringen.">
+					comment = <"For eksempel \"1 tablett om morgenen og en tablett om kvelden i tre uker, på mandager, onsdager og fredager. Clusteret kan repeteres for å åpne for representasjon av et fullstendig sett av doseringsanvisninger for en enkelt legemiddelordinering.">
 				>
 				["at0057"] = <
 					text = <"Anvisningsrekkefølge">
@@ -1020,7 +1021,7 @@ Where the dispensing directions are fully carried by the structured, computable 
 				["at0058"] = <
 					text = <"Doseringsmønster">
 					description = <"Kombinasjon av legemiddelmengde knyttet til et enkelt dosetidspunkt.">
-					comment = <"For eksempel: \"2 tabletter klokken 18.00\" eller \"20 mg tre ganger om dagen\". Merk at dette clusteret kan repeteres for å åpne for representasjon av et fullstendig sett av doseringsanvisninger for en enkelt legemiddelforordning.">
+					comment = <"For eksempel: \"2 tabletter klokken 18.00\" eller \"20 mg tre ganger om dagen\". Merk at dette clusteret kan repeteres for å åpne for representasjon av et fullstendig sett av doseringsanvisninger for en enkelt legemiddelordinering.">
 				>
 				["at0060"] = <
 					text = <"Antall administreringer utført">
@@ -1029,15 +1030,15 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0062"] = <
 					text = <"Legemiddelsikkerhet">
-					description = <"Detaljer knyttet til sikkerhet rundt legemidler, vaksiner eller andre medisinsk/terapeutiske varer.">
+					description = <"Detaljer knyttet til sikkerhet rundt legemidler, vaksiner eller medisinsk forbruksmateriell.">
 				>
 				["at0064"] = <
 					text = <"Overstyring ved stor dose?">
 					description = <"Bekrefter foreskriveren at den maksimale dosen er overstyrt på grunn av eksepsjonelle omstendigheter?">
 				>
 				["at0065"] = <
-					text = <"Utleveringsdetaljer">
-					description = <"Strukturerte tilleggsdetaljer om utlevering av legemiddelet, vaksinen eller den andre medisinsk/terapeutiske varen.">
+					text = <"Utdelingsdetaljer">
+					description = <"Strukturerte tilleggsdetaljer om utdeling av legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
 				>
 				["at0066"] = <
 					text = <"Anvisningsvarighet">
@@ -1059,8 +1060,8 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0070"] = <
 					text = <"Legemiddel">
-					description = <"Legemiddelet, vaksinen eller den andre terapeutisk/medisinske varen som blir forordnet.">
-					comment = <"Det anbefales sterkt at \"Legemiddel\" kodes med en terminologi som understøtter beslutningsstøtte der dette er mulig. Nivå av koding kan variere fra legemiddelnavn til strukturerte detaljer om den aktuelle legemiddelforpakningen som skal brukes. Fritekst bør bare brukes om ingen passende terminologi er tilgjengelig.">
+					description = <"Legemiddelet, vaksinen eller det medisinske forbruksmateriellet som blir forordnet.">
+					comment = <"Det anbefales sterkt at \"Legemiddel\" kodes med en terminologi som understøtter beslutningsstøtte der dette er mulig, f.eks. FEST. Nivå av koding kan variere fra legemiddelnavn til strukturerte detaljer om den aktuelle legemiddelforpakningen som skal brukes. Fritekst bør bare brukes om ingen passende terminologi er tilgjengelig.">
 				>
 				["at0090"] = <
 					text = <"Repetering av anvisning">
@@ -1101,8 +1102,8 @@ Where the dispensing directions are fully carried by the structured, computable 
 					comment = <"For eksempel \"Blodtrykksreduserende\", \"Blodfortynnende\", \"Unngå grapefrukt\". Dette dataelementet kan repeteres.">
 				>
 				["at0106"] = <
-					text = <"Utleveringsinstruksjon">
-					description = <"Tilleggsinstruksjon primært rettet mot personen som utleverer legemiddelet, vaksinen eller den andre medisinsk/terapeutiske varen.">
+					text = <"Utdelingsinstruksjon">
+					description = <"Tilleggsinstruksjon primært rettet mot personen som utdeler legemiddelet, vaksinen eller den andre medisinsk/terapeutiske varen.">
 				>
 				["at0107"] = <
 					text = <"Overvåkningsinstruksjon">
@@ -1126,11 +1127,11 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0113"] = <
 					text = <"Detaljer knyttet til kur">
-					description = <"Detaljer om legemiddelforordningen som en kur.">
+					description = <"Detaljer om legemiddelordineringen som en kur.">
 				>
 				["at0129"] = <
-					text = <"Utleveringsanvisning">
-					description = <"Detaljer om utlevering av legemiddelet, vaksinen eller den andre medisinsk/terapeutiske varen.">
+					text = <"Utdelingsanvisning">
+					description = <"Detaljer om utdeling av legemiddelet, vaksinen eller den andre medisinsk/terapeutiske varen.">
 				>
 				["at0130"] = <
 					text = <"Maksimum legemiddelmengde">
@@ -1138,8 +1139,8 @@ Where the dispensing directions are fully carried by the structured, computable 
 					comment = <"For eksempel 1, 1.5, 0.125.">
 				>
 				["at0131"] = <
-					text = <"Mengde til utlevering">
-					description = <"Mengden legemiddel, vaksine eller medisinsk/terapeutisk vare som skal utleveres.">
+					text = <"Mengde til utdeling">
+					description = <"Mengden legemiddel, vaksine eller medisinsk/terapeutisk vare som skal utdeles.">
 					comment = <"For eksempel 1, 1.5 eller 0.125.">
 				>
 				["at0132"] = <
@@ -1174,23 +1175,23 @@ Where the dispensing directions are fully carried by the structured, computable 
 				>
 				["at0139"] = <
 					text = <"Prioritet">
-					description = <"En indikator for hastegraden legemiddelet bør utleveres under.">
+					description = <"En indikator for hastegraden legemiddelet bør utdeles under.">
 				>
 				["at0140"] = <
-					text = <"Utleveringsbeskrivelse">
-					description = <"Fritekstbeskrivelse av mengden legemiddel som skal utleveres.">
-					comment = <"For eksempel \"30 tabletter\". Dette dataelementet er ment brukt i kliniske situasjoner der utleveringsinstruksjonene ikke håndteres strukturert.
+					text = <"Utdelingsbeskrivelse">
+					description = <"Fritekstbeskrivelse av mengden legemiddel som skal utdeles.">
+					comment = <"For eksempel \"30 tabletter\". Dette dataelementet er ment brukt i kliniske situasjoner der utdelingsinstruksjonene ikke håndteres strukturert.
 
-I tilfeller hvor utleveringsanvisningen er fullt strukturert, bør dette feltet inneholde en fritekstekvivalent som vanligvis autogenereres. Er det ikke mulig å representere de ønskede utleveringsanvisningene i en fullt strukturert form, er det ikke anbefalt med delvis strukturert representasjon, og anvisningen bør kun registreres som friekst i dette dataelementet.">
+I tilfeller hvor utdelingsanvisningen er fullt strukturert, bør dette feltet inneholde en fritekstekvivalent som vanligvis autogenereres. Er det ikke mulig å representere de ønskede utdelingsanvisningene i en fullt strukturert form, er det ikke anbefalt med delvis strukturert representasjon, og anvisningen bør kun registreres som fritekst i dette dataelementet.">
 				>
 				["at0141"] = <
-					text = <"Mengde til utlevering">
-					description = <"Detaljer om mengden legemiddel som skal utleveres.">
+					text = <"Mengde til utdeling">
+					description = <"Detaljer om mengden legemiddel som skal utdeles.">
 				>
 				["at0142"] = <
-					text = <"Varighet for utleveringsmengde">
-					description = <"Tidsperioden som skal dekkes av utlevert mengde legemiddel.">
-					comment = <"Apoteket skal utlevere en mengde av legemiddelet som dekker behovet i den angitte tidsperioden.">
+					text = <"Varighet for utdelingsmengde">
+					description = <"Tidsperioden som skal dekkes av utdelt mengde legemiddel.">
+					comment = <"Apoteket skal utdele en mengde av legemiddelet som dekker behovet i den angitte tidsperioden.">
 				>
 				["at0143"] = <
 					text = <"Preparat">
@@ -1213,13 +1214,13 @@ I tilfeller hvor utleveringsanvisningen er fullt strukturert, bør dette feltet 
 					comment = <"For eksempel \"tablett\", \"mg\". Koding av enheten med en terminologi foretrekkes der det er mulig.">
 				>
 				["at0147"] = <
-					text = <"Enhet til utleveringsmengde">
-					description = <"Doseenhet eller pakkeenhet som hører til utleveringsmengden.">
+					text = <"Enhet til utdelingsmengde">
+					description = <"Doseenhet eller pakkeenhet som hører til utdelingsmengden.">
 					comment = <"For eksempel \"tabletter\", \"pakker\", \"ml\".">
 				>
 				["at0148"] = <
 					text = <"Terapeutisk hensikt">
-					description = <"Overordnet terapeutisk hensikt med legemiddelforordningen.">
+					description = <"Overordnet terapeutisk hensikt med legemiddelordineringen.">
 					comment = <"For eksempel \"palliativt\" eller \"lavdose profylakse\".">
 				>
 				["at0150"] = <
@@ -1242,8 +1243,8 @@ I tilfeller hvor utleveringsanvisningen er fullt strukturert, bør dette feltet 
 				>
 				["at0155"] = <
 					text = <"Startdato">
-					description = <"Datoen legemiddelet kan utleveres for første gang.">
-					comment = <"Kan brukes til å kontrollere utleveringstidspunkt for legemidler med misbrukspotensiale, f.eks. benzodiazepiner og sterke smertestillende.">
+					description = <"Datoen legemiddelet kan utdeles for første gang.">
+					comment = <"Kan brukes til å kontrollere utdelingstidspunkt for legemidler med misbrukspotensiale, f.eks. benzodiazepiner og sterke smertestillende.">
 				>
 			>
 		>
