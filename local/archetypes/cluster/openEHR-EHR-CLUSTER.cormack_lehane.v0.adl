@@ -2,9 +2,18 @@
 	openEHR-EHR-CLUSTER.cormack_lehane.v0
 
 concept
-	[at0000]	-- Gradering anatomisk tilgjengelighet etter Cormack og Lehane
+	[at0000]	-- Cormack-Lehane classification
 language
-	original_language = <[ISO_639-1::nb]>
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand og Silje Ljosland Bakke">
+				["organisation"] = <"Helse Bergen HF og Nasjonal IKT HF">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"John Tore Valand">
@@ -13,12 +22,20 @@ description
 		["date"] = <"2016-01-06">
 	>
 	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Use to grade the visual availability of laryngeal structures under direct laryngoscopy.">
+			use = <"Use to grade the visual availability of laryngeal structures under direct laryngoscopy.">
+			keywords = <"intubation", "laryngoscopy">
+			misuse = <"Not to be used for recording Modified Cormack-Lehane grading (Yentis & Lee, 1998).">
+			copyright = <"© Nasjonal IKT HF">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"En del av vurderingen av vanskelighetsgrad for intubasjon i forkant av en planlagt anestesi.">
-			use = <"Brukes i forbindelse med evaluering av intubasjonens forventede vanskelighetsgrad hos et individ i forkant av en planlagt anestesi. Brukes for å gradere innsynsforhold til larynx ved direkte laryngoskopi.">
-			keywords = <"intubasjon", ...>
-			misuse = <"">
+			purpose = <"For å gradere innsynsforhold til larynx ved direkte laryngoskopi.">
+			use = <"Brukes til å gradere innsynsforhold til larynx ved direkte laryngoskopi.">
+			keywords = <"intubasjon", "laryngoskopi", "larynx", "luftvei", "innsyn">
+			misuse = <"Brukes ikke til å registrere Modifisert Cormack/Lehane-klassifikasjon (Yentis & Lee, 1998).">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -29,19 +46,19 @@ description
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Cormack RS, Lehane J. Difficult tracheal intubation in obstetrics. Anaesthesia 1984; 39: 1105–11.
 
-Direktoratet for e-helse. Kritisk og viktig informasjon i kjernejournal. Versjon 3.0 (november 2015). https://ehelse.no/Documents/Kjernejournal/IS-2405%20Kritisk%20og%20viktig%20helseinformasjon%20i%20kjernejournal_Versjon%203%200.pdf">
-		["build_uid"] = <"23339fef-a32e-41dd-8494-54ec1a3c21f9">
+Bjerkelund CE, Christensen P, Dragsund S, Aadahl P. [How to secure free airway?]. Tidsskrift for den Norske laegeforening : tidsskrift for praktisk medicin, ny raekke 2010; 130(5): 507-10.">
+		["build_uid"] = <"d6f2f6d6-35e2-439f-81f5-cda4a311c8f4">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"04034FAB79403E21132C85E722CF2AD1">
+		["MD5-CAM-1.0.1"] = <"7C472D49C0FDE950C337C4D064E6D685">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Gradering anatomisk tilgjengelighet for intubasjon
+	CLUSTER[at0000] matches {	-- Cormack/Lehane-klassifikasjon
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Gradering av anatomisk tilgjengelighet for intubasjon
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Gradering
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -68,20 +85,20 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Gradering anatomisk tilgjengelighet etter Cormack og Lehane">
-					description = <"Gradering av innsynsforhold til larynx ved direkte laryngoskopi etter Cormack & Lehane.">
+					text = <"Cormack/Lehane-klassifikasjon">
+					description = <"Cormack/Lehane-systemet klassifiserer innsynsforhold til larynx ved direkte laryngoskopi, basert på hvilke strukturer som kan ses.">
 				>
 				["at0001"] = <
-					text = <"Gradering av anatomisk tilgjengelighet for intubasjon">
-					description = <"Angir anatomisk tilgjengelighet for intubasjon.">
+					text = <"Gradering">
+					description = <"Gradering av anatomisk synlighet i larynx.">
 				>
 				["at0002"] = <
 					text = <"Grad 1">
-					description = <"Stemmebånd synlig.">
+					description = <"Hele larynx synlig.">
 				>
 				["at0003"] = <
 					text = <"Grad 2">
-					description = <"Bakre del av introitus kan sees.">
+					description = <"Epiglottis og aryregionen synlig.">
 				>
 				["at0004"] = <
 					text = <"Grad 3">
@@ -93,7 +110,39 @@ ontology
 				>
 				["at0006"] = <
 					text = <"Kommentar">
-					description = <"Kommentar til graderingen.">
+					description = <"Fritekstkommentar til graderingen.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cormack-Lehane classification">
+					description = <"The Cormack-Lehane system classifies views obtained by direct laryngoscopy based on the structures seen.">
+				>
+				["at0001"] = <
+					text = <"Grading">
+					description = <"A grading of the laryngeal anatomical visibility.">
+				>
+				["at0002"] = <
+					text = <"Grade 1">
+					description = <"Full view of the glottis.">
+				>
+				["at0003"] = <
+					text = <"Grade 2">
+					description = <"Partial view of the glottis or arytenoids.">
+				>
+				["at0004"] = <
+					text = <"Grade 3">
+					description = <"Only epiglottis visible.">
+				>
+				["at0005"] = <
+					text = <"Grade 4">
+					description = <"Neither glottis nor epiglottis visible.">
+				>
+				["at0006"] = <
+					text = <"Comment">
+					description = <"Narrative comment about the Cormack-Lehane grading.">
 				>
 			>
 		>
