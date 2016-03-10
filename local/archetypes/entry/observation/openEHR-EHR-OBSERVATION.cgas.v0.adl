@@ -40,7 +40,7 @@ usammenhengende eller upassende tale).
 
 20-11 Trenger betydelig tilsyn og omsorg for å hindre skade av andre eller seg selv (for eksempel ofte voldsom, gjentatte suicidalforsøk) eller for å ivareta personlig hygiene, eller alvorlig forstyrrelse av alle former for kommunikasjon, for eksempel alvorlig avvik i verbal eller nonverbal kommunikasjon, markert sosial reserverthet, stupor, etc.
 
-10-1 Trenger konstant tilsyn (24 timers omsorg) på grunn av alvorlig aggressiv eller selvdestruktiv atferd eller grov forstyrrelse i virkelighetsoppfatning, kommunikasjon, erkjennelse, følelser eller personlig hygiene. ">
+10-1 Trenger konstant tilsyn (24 timers omsorg) på grunn av alvorlig aggressiv eller selvdestruktiv atferd eller grov forstyrrelse i virkelighetsoppfatning, kommunikasjon, erkjennelse, følelser eller personlig hygiene.">
 			misuse = <"Brukes ikke til barn under 4 år.">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -48,15 +48,15 @@ usammenhengende eller upassende tale).
 	lifecycle_state = <"in_development">
 	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Shaffer, D, M. Gould, J. Brasic, P. Ambrosini, P. Fisher, H. Bird, S. Aluwahlia: “A Children's Global Assessment Scale (CGAS)”. Psychopharmacology Bulletin 1985, 21,747-48. Oversatt av I. H. Vandvik. http://www.kith.no/upload/3552/Akse%206%20CGAS%2020070803.pdf
 
 Hanssen-Bauer, K. (2008). \"Multiaksial klassifikasjon i psykisk helsevern for barn og unge\". Regionsenter for barn og unges psykiske helse, Helse Sør-Øst. https://helsedirektoratet.no/Documents/Medisinske%20koder%20og%20kodeverk/BUP/bup-klass.pdf">
-		["build_uid"] = <"7c9390f4-6d33-4298-a67e-e46060930411">
-		["original_namespace"] = <"no.nasjonalikt">
+		["build_uid"] = <"9d8bbb97-0cae-444e-81f8-1610cd19a7ee">
 		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"6F7937AABA3E27BD792E74EF5AFAD285">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"9DCB4E2FC1CC943386B1FDE9CBD45051">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -85,30 +85,30 @@ definition
 								}
 							}
 						}
-						state matches {
-							ITEM_TREE[at0007] matches {	-- Tree
-								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Skåringskontekst
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
-								}
-							}
-						}
 					}
-					INTERVAL_EVENT[at0006] occurrences matches {0..1} matches {	-- 1 måned
-						width matches {
-							DV_DURATION matches {
-								value matches {|P1M|}
-							}
-						}
+					POINT_EVENT[at0010] occurrences matches {0..1} matches {	-- Ved innleggelse
 						data matches {
 							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]	-- /data[Event Series]/events[Uspesifisert hendelse]/data[Tree]
 						}
-						state matches {
-							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0007]	-- /data[Event Series]/events[Uspesifisert hendelse]/state[Tree]
+					}
+					POINT_EVENT[at0011] occurrences matches {0..1} matches {	-- Ved utskrivning
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]	-- /data[Event Series]/events[Uspesifisert hendelse]/data[Tree]
 						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0012] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {	-- Skåring ikke utført
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -145,18 +145,26 @@ ontology
 					text = <"Kommentar">
 					description = <"Ytterligere kommentar til skalaen ikke fanget opp i andre felt.">
 				>
-				["at0006"] = <
-					text = <"1 måned">
-					description = <"Standard tidsintervall for registrering av CGAS på 1 måned.">
+				["at0010"] = <
+					text = <"Ved innleggelse">
+					description = <"CGAS utført ved innleggelse.">
 				>
-				["at0007"] = <
+				["at0011"] = <
+					text = <"Ved utskrivning">
+					description = <"CGAS utført ved utskrivning.">
+				>
+				["at0012"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0008"] = <
-					text = <"Skåringskontekst">
-					description = <"En beskrivelse av sammenhengen skåringen er utført i.">
-					comment = <"For eksempel ved innleggelse eller utskriving.">
+				["at0013"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0014"] = <
+					text = <"Skåring ikke utført">
+					description = <"Detaljer for eksplisitt dokumentasjon av at skåringen ikke ble utført.">
 				>
 			>
 		>
