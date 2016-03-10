@@ -1,0 +1,200 @@
+﻿archetype (adl_version=1.4; uid=1baeeebd-538a-4ced-b065-ec3012d2dc5e)
+	openEHR-EHR-EVALUATION.pews.v0
+
+concept
+	[at0000]	-- PEWS
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Hallvard Lærum">
+		["organisation"] = <"Oslo Universitetssykehus HF">
+		["email"] = <"hallar@ous-hf.no">
+		["date"] = <"2016-02-16">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes til å overvåke pediatriske pasienters almentilstand og kardiopulmonale funksjon, og sikre at eventuelle forverringer blir fanget opp tidligst mulig. Hvis score øker med mer enn to poeng, eller har en verdi over 3 kontaktes som regel lege. Ved verdi 4 skal pasienten som regel tilsees av lege innen 30 minutter, og umiddelbart ved verdi 5 eller høyere.">
+			use = <"Brukes kun til å regne ut PEVS/PEWS-score. Skal kun brukes på individer under 18 år">
+			keywords = <"PEVS", "PEWS", "NEWS", "MEWS">
+			misuse = <"Skal ikke benyttes hos individer som 18 år eller eldre. ">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Hallvard Lærum, Oslo Universitetssykehus HF, hallar@ous-hf.no">
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["references"] = <"Gold DL, Mihalov LK, Cohen DM. Evaluating the Pediatric Early Warning Score (PEWS) System for Admitted Patients in the Pediatric Emergency Department. Acad Emerg Med. 2014 Nov; 21(11): 1249–1256.
+
+Parshuram CS, Hutchison J, Middaugh K. Development and initial validation of the Bedside Paediatric Early Warning System Score Crit Care. 2009; 13(4). R135
+
+Monaghan A. Detecting and managing deterioration in children. Paediatr Nurs. 2005;17:32–5. 
+
+Duncan H, Hutchinson J, Parshuram CS. The Pediatric Early Warning System score: a severity of illness score to predict urgent medical need in hospitalized children. J Crit Care. 2006;21:271–8.
+
+Edgell P, Finlay L, Pedley DK. The PAWS score: validation of an early warning scoring system for the initial assessment of children in the emergency department. Emerg Med J. 2008;25:745–9. 
+
+Haines C, Perrott M, Weir P. Promoting care for acutely ill children development and evaluation of a paediatric early warning tool. Intensive Crit Care Nurs. 2006;22:73–81. 
+
+Chapman SM, Grocott MP, Franck LS. Systematic review of paediatric alert criteria for identifying hospitalised children at risk of critical deterioration. Intensive Care Med. 2010;36:600–11. 
+
+Oldroyd C, Day A. The use of pediatric early warning scores in the emergency department. J Emerg Nurs. 2011;37:374–6. 
+
+Tucker KM, Brewer TL, Baker RB, Demeritt B, Vossmeyer MT. Prospective evaluation of a pediatric inpatient early warning scoring system. J Spec Pediatr Nurs. 2009;14:79–85. 
+
+Skaletzky SM, Raszynski A, Totapally BR. Validation of a modified pediatric early warning system score: a retrospective case-control study. Clin Pediatr (Phila) 2012;51:431–5. ">
+		["build_uid"] = <"eebb199e-e62f-4d05-9faf-8b5157aaa4a4">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"AD0526D9500E51520FA5BDF2A0AA13C6">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- PEWS
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Respirasjon
+						value matches {
+							0|[local::at0005], 	-- 0 - Normal
+							1|[local::at0006], 	-- 1 - >=10 eller O2 (under 5l/min)
+							2|[local::at0007], 	-- 2 - >=20 eller 5 l/min O2
+							3|[local::at0008]  	-- 3 - >=30 eller 8 l/min O2
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Sirkulasjon
+						value matches {
+							0|[local::at0012], 	-- 0 - Normal
+							1|[local::at0013], 	-- 1 - Blek
+							2|[local::at0014], 	-- 2 - Grå/cyanotisk
+							3|[local::at0015]  	-- 3 - Grå og marmorert
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Adferd
+						value matches {
+							0|[local::at0016], 	-- 0 - Våken (Alert)
+							1|[local::at0017], 	-- 1 - Tiltale (Voice)
+							2|[local::at0018], 	-- 2 - Smerte (Pain)
+							3|[local::at0019]  	-- 3 - Reagerer ikke (Unresponsive)
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- CPAP/inhalasjon?
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Oppkast postoperativt?
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Score
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|0..13|}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"PEWS">
+					description = <"Pediatrisk tidlig varslingsskår (PEVS), på engelsk Pediatric Early Warning Score (PEWS).">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Respirasjon">
+					description = <"Respirasjonsfrekvens, respirasjonsarbeid og behov for ekstra O2">
+				>
+				["at0005"] = <
+					text = <"0 - Normal">
+					description = <"Normal respirasjonsfrekvens OG ingen inndragninger og norma SpO2 uten ekstra O2">
+				>
+				["at0006"] = <
+					text = <"1 - >=10 eller O2 (under 5l/min)">
+					description = <"Respirasjonsfrekvens >=10 over normal for alderen ELLER Inndragninger ELLER Behov for ekstra O2">
+				>
+				["at0007"] = <
+					text = <"2 - >=20 eller 5 l/min O2">
+					description = <"Respirasjonsfrekvens >=20 over normal for alderen ELLER jugulære inndragninger ELLER >40% O2 (CPAP/BiPAP) ELLER >=5 l/min O2 (maske)">
+				>
+				["at0008"] = <
+					text = <"3 - >=30 eller 8 l/min O2">
+					description = <"Respirasjonsfrekvens >=30 over normal for alderen ELLER <=5 under normal for alderen med inndragninger eller stønning ELLER >= 8l/min O2 (maske)">
+				>
+				["at0009"] = <
+					text = <"Sirkulasjon">
+					description = <"Hudfarge, puls og kapillærfyllning">
+				>
+				["at0010"] = <
+					text = <"Adferd">
+					description = <"Lik skala som for AVPU, men omgjort til en ordina 0 -3">
+				>
+				["at0011"] = <
+					text = <"Score">
+					description = <"Total sammenlagt score">
+				>
+				["at0012"] = <
+					text = <"0 - Normal">
+					description = <"Normal/upåfallende ELLER Kapillærfylning 1-2 sekunder">
+				>
+				["at0013"] = <
+					text = <"1 - Blek">
+					description = <"Blek ELLER Kapillærfylning 3 sekunder">
+				>
+				["at0014"] = <
+					text = <"2 - Grå/cyanotisk">
+					description = <"Grå/cyanotisk ELLER Takykardi >=20 over normal puls for alderen ELLER Kapillærfylning 4 sekunder">
+				>
+				["at0015"] = <
+					text = <"3 - Grå og marmorert">
+					description = <"Grå/cyanotisk og marmorert ELLER Takykardi >=30 over normal puls for alderen ELLER Bradykardi <5 under normal puls for alderen ELLER Kapillærfylning >=5 sekunder ">
+				>
+				["at0016"] = <
+					text = <"0 - Våken (Alert)">
+					description = <"Våken med normal kontakt/interesse for omgivelsene">
+				>
+				["at0017"] = <
+					text = <"1 - Tiltale (Voice)">
+					description = <"Slapp/somnolent. Reaksjon ved tiltale/berøring">
+				>
+				["at0018"] = <
+					text = <"2 - Smerte (Pain)">
+					description = <"Reaksjon kun ved smertestimuli">
+				>
+				["at0019"] = <
+					text = <"3 - Reagerer ikke (Unresponsive)">
+					description = <"Ingen reaksjon selv ved smertestimuli">
+				>
+				["at0020"] = <
+					text = <"CPAP/inhalasjon?">
+					description = <"Om pasienten får CPAP/Inhalasjon hvert 15.minutt, eller kontinuerlig inhalasjonsmedisin/puritanfukter/highflow. Hvis ja legges til 2 poeng til score.">
+				>
+				["at0021"] = <
+					text = <"Oppkast postoperativt?">
+					description = <"Om pasienten har vedvarende brekninger eller oppkast postoperativt. Hvis ja legges 2 poeng til score.">
+				>
+			>
+		>
+	>
