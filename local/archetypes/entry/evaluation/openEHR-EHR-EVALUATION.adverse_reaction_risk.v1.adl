@@ -15,6 +15,14 @@ language
 			>
 			accreditation = <"MD DEAA MBA spec in anesthesia and intensive care, spec in tropical med.">
 		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Osmeire Chamelette Sanzovo">
+				["organisation"] = <"Hospital Sírio Libanês">
+				["email"] = <"osmeire.acsanzovo@hsl.org.br">
+			>
+		>
 	>
 description
 	original_author = <
@@ -65,6 +73,8 @@ Valuable first-level information that could be presented to the clinician when t
 - the ‘Criticality’ flag.
 Second-level information can be drawn from each exposure event and links to additional detailed information such as history, examination and diagnoses stored elsewhere in the record, if it is available.
 
+This archetype is designed as one component of the therapeutic precautions family of archetypes that need to be considered when a clinician is about to commence a new treatment, test or procedure for a subject of care.
+
 Links to other parts of the health record where further details may be located, such as consultation notes, is allowed by the openEHR reference model, but not modelled explicitly in this archetype.
 
 The content of this archetype is a result of a collaboration between the openEHR and HL7 FHIR communities. FHIR specific content that was included as part of the peer review process has been removed from this openEHR archetype.">
@@ -87,6 +97,70 @@ Not to be used for the explicit recording of an absence (or negative presence) o
 
 Not to be used for the explicit recording that no information was able to be obtained about the adverse reaction status of a patient. Use the EVALUATION.absence archetype to record that a positive statement that information was not able to be obtained, for example, if a non-cooperative patient refuses to answer questions.">
 			copyright = <"© openEHR Foundation, HL7 International">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"
+Para gravar uma avaliação clínica de uma propensão para uma reação adversa após a exposição futura à substância especificada, ou classe de substância .
+
+Caso seja identificada um propensão , deve-se gravar informações ou provas sobre um ou mais eventos de reação que se caracterizam por qualquer resposta fisiológica prejudicial ou indesejável que é exclusivo para o indivíduo , e provocados pela exposição deste à substância ou substância\\classe identificada.">
+			use = <"Use para fornecer um lugar único dentro do registro de saúde para documentar uma gama de demonstrações clínicas sobre reações adversas, incluindo:
+- gravar uma avaliação clínica da propensão do indivíduo para uma reação potencial futura após a re-exposição; e
+- registrar informações cumulativas sobre a reação de cada exposição.
+
+Use para registrar informações sobre a presença positiva do risco de reação adversa:
+- para suporte direto do atendimento clínico de um indivíduo;
+- como parte de uma reação adversa gerenciada ou lista de alergia/intolerância;
+- apoiar o intercâmbio de informações sobre a propensão e eventos relacionados a reações adversas;
+- informar o relato de reação adversa; e
+- para apoiar as atividades informatizadas baseadas no conhecimento como apoio à decisão clínica e alertas.
+
+Uso para registrar informações sobre o risco de reações adversas a uma ampla gama de substâncias, incluindo: incipientes e excipientes em preparações medicinais; produtos biológicos; sais metálicos; e compostos químicos orgânicos.
+
+Efeito adverso pode ser:
+- uma reação imune-mediada - tipos I a IV (incluindo hipersensibilidade e reações alérgicas); ou
+- uma reação não imune-mediada por reação - incluindo pseudo reações alérgicas, intolerâncias, efeitos colaterais, toxicidade de drogas (por exemplo, a gentamicina).
+Na prática clínica, a distinção entre imune-mediada e não imune-mediada por reações é difícil e muitas vezes não é prático. A identificação do tipo de reação não é um indicador de gravidade ou risco de dano ao paciente, que é melhor expresso pela manifestação na prática clínica.
+
+O risco de um evento adverso ou manifestação não deve ser registrado sem identificar uma substância causal proposta ou classe de substância. Se houver incerteza que uma substância específica é a causa, esta incerteza pode ser gravada usando o elemento de dados de 'Status'. Se houver vários possíveis substâncias que podem ter causado um reação/manifestação, cada substância deve ser registrada utilizando-se uma instância separada do arquétipo desta reação adversa com o 'Status', definido como um estado inicial de 'Suspeita' para que a verificação de reação adversa possa ser ativado em sistemas clínicos. Uma vez que a substância, agente ou classe mais tarde não foi confirmada como a causa para uma determinada reação, então o 'Status' pode ser modificado para 'Refutada'.
+
+Este arquétipo foi projetado para permitir a gravação de informações sobre uma substância específica (veneno de abelha (picada), ostras ou amoxacilina) ou, alternativamente, uma classe de substâncias (por exemplo, penicilinas). Se uma classe de substância é gravada então, a identificação da substância exata pode ser gravada em uma base por exposição.
+
+O escopo deste arquétipo centrou-se deliberadamente na identificação de um conjunto de dados pragmáticos que são usados em sistemas mais clínicos ou será adequado para cenários clínicos mais comuns, no entanto, ele permite que a extensão do modelo quando adicionado detalhe é necessário, por exemplo detalhes de reação, detalhes de exposição e detalhes de relatórios. Exemplos de situações clínicas em que a extensão pode ser necessária: uma avaliação detalhada do alergista/imunologista, para emissão de relatórios para órgãos reguladores ou usar em um ensaio clínico.
+
+O ato de registrar qualquer risco de reação adversa em um registro de saúde envolve a avaliação clínica que um perigo potencial existe para que um indivíduo se eles são expostos para a mesma substância/agente/classe no futuro – ou seja, uma contra-indicação relativa - e o padrão 'Criticidade' valor deve ser definido como 'Baixo risco'. Se um médico considera que não é seguro para o indivíduo deliberadamente ser re-expostos para o substância/agente novamente, por exemplo, após uma manifestação de uma anafilaxia fatal e, a criticidade, deve ter seu status alterado para 'Alta'.
+
+Um relatório formal de evento adverso para órgãos reguladores é um documento que irá conter uma ampla gama de informações, além de detalhes específicos sobre o efeito adverso. O relatório pode utilizar partes deste risco do arquétipo de reação adversa, além disso, incluir dados adicionais conforme necessário por jurisdição.
+
+Uma lista de reação ou alergia/intolerância adversa é um registro de todas as propensões identificadas para uma reação adversa para o indivíduo após a futura exposição à substância ou à classe, além de fornecer acesso potencial para as provas fornecidas por detalhes sobre cada evento de reação, tais como a manifestação.
+
+Informações valiosas de primeiro nível que poderiam ser apresentadas ao médico quando eles precisam avaliar a propensão para futuras reações são:
+
+- instruções sobre manifestações clínicas anteriores após a exposição;
+- fonte da informação/relatório; e
+- a bandeira da 'Importância'.
+
+O nível de informação pode ser estabelecido de cada evento de exposição e links para obter informações detalhadas adicionais tais como história, exame e diagnósticos armazenados em outro lugar no registro, se estiver disponível.
+
+Links para outras partes do registro de saúde onde mais detalhes podem ser localizados, tais como notas de consulta, é permitido pelo modelo de referência de openEHR, mas não modelados">
+			keywords = <"reação", "alergia", "alérgico", "adversa", "evento", "efeito", "sensibilidade", "intolerância", "hipersensibilidade", "efeito colateral", "toxicidade", "droga", "alimento", "agente", "substância", "imune", "não imune", "químico", "anafilaxia", "alérgeno", "medicação", "suplemento", "medicamento", "remédio natural", "imunológico", "não imunológico", "risco">
+			misuse = <"Não deve ser usado para gravar as reações fisiológicas a agentes físicos, tais como calor, frio, luz solar, vibração, exercer a atividade, por agentes infecciosos ou contaminantes de alimentos. Use um arquétipo específico para EVALUATION.problem diagnosis ou CLUSTER.symptom sign para essa finalidade.
+
+Não deve ser usado para gravar eventos adversos, incluindo falhas de processo clínico, intervenções ou produtos. Por exemplo: uso anormal ou erros ocorridas pela má administração de um agente ou substância; dosagem incorreta; colheita; dano ou prejuízo causado por uma intervenção ou procedimento; envenenamento, etc. Use um arquétipo específico para o efeito.
+
+Não deve ser usado para gravar a reação adversa, onde a substância é desconhecida. Use EVALUATION.problem diagnosis ou CLUSTER.symptoms para gravar como parte do registro de saúde até que uma possível substância seja identificada.
+
+Não deve ser usado para registro de reações à transfusão de hemoderivados. Use um arquétipo específico para o efeito.
+
+Não deve ser usado como um proxy para um relatório de eventos adversos. Veja acima como ele pode ser usado como um componente de um relatório de eventos adversos.
+
+Não deve ser utilizado para gravação de alertas. Use o arquétipo de EVALUATION.alert para essa finalidade.
+
+Para não ser usado para gravação falha terapêutica.
+
+Não deve ser utilizado para a gravação explícita de uma ausência (ou presença negativa) de uma reação a qualquer substância ou a identificação de substâncias, por exemplo 'sem alergias conhecidas ou reações adversas ' ou 'Não conhecidas alergias à penicilina'. Use o arquétipo de EVALUATION.exclusionadversas para expressar uma declaração de exclusão de reação positiva.
+
+Não deve ser utilizado para a gravação explícita que nenhuma informação foi capaz de ser obtidos sobre o status de reação adversa de um paciente. Use o arquétipo de EVALUATION.absence que gravar uma declaração positiva que informação não pôde ser obtido, por exemplo, se um paciente não-cooperativo se recusa a responder perguntas.">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -155,11 +229,11 @@ Skal ikke brukes for eksplisitt registrering av at ingen informasjon er tilgjeng
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Fatima Almeida, Critical SW, Portugal", "Grethe Almenning, Bergen kommune, Norway", "Magnus Alsaker, Helsedirektoratet, Norway", "Torunn Apelseth, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Elaine Ayres, US National Institutes of Health, United States", "Russell B Leftwich MD, United States (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Steve Bentley, Allscripts, United Kingdom", "Sharmila Biswas, Dr Sharmila Biswas GP, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Laila Bruun, Oslo universitetssykehus HF, Norway", "Claire Chalopin, ICCAS, University of Leipzig, Germany", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Matthew Cordell, NEHTA, Australia", "Howard Edidin, Edidin Group, Inc, United States", "Brett Esler, Oridashi, Australia", "David Evans, Queensland Health, Australia", "Jerry Fahrni, Kaweah Delta Health Care District, United States", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Joanne Foster, School of Nursing & Midwifery, QLD University of Technology & Nursing Informatics Australia, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Sarah Gaunt, NEHTA, Australia", "Andrew Goodchild, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Trina Gregory, cpc, Australia", "Grahame Grieve, Health Intersections, Australia (Editor)", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Roar Holm, Helse Vest IKT A/S, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Andrew James, University of Toronto, Canada", "Julie James, Blue Wave Informatics LLP, United Kingdom", "Ivor Jones, Queensalnd Helath, Australia", "Silje Kaada, Helse-Bergen, Avdeling for immunologi og transfusjonsmedisin, Norway", "Konstantinos Kalliamvakos, Cambio Healthcare Systems, Sweden", "Lars Morgan Karlsen, DIPS ASA, Norway", "Goran Karlstrom, County Of Värmland, Sweden", "Mary Kelaher, NEHTA, Australia", "Diane Kirkham, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Robert L'egan, NEHTA, Australia", "Jobst Landgrebe, ii4sm, Switzerland", "Bent Asgeir Larsen, Helsedirektoratet, Norway", "Russell Leftwich, Russell B Leftwich MD, United States (openEHR Editor)", "Fest Legemiddelverket, Statens Legemiddelverk, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hugh Leslie, Ocean Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Sarah Mahoney, Australia", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Lloyd McKenzie, Gordon Point Informatics, Canada", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jörg Niggemann, Compugroup, Germany", "Bjørn Næss, DIPS ASA, Norway", "Tom Oniki, Intermountain Healthcare, United States", "Chris Pearce, Melbourne East GP Network, Australia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "General Practice Computing Group, Australia", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Norwegian Review Summary, National ICT Norway, Norway", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Stefan Sauermann, University of Applied Sciences Technikum Wien, Austria", "Thomas Schopf, University Hospital of North-Norway, Norway", "Thilo Schuler, Australia", "Peter Scott, Medical Objects, Australia", "Elena Shabanova, UMMSSOft, Russian Federation", "Anoop Shah, University College London, United Kingdom", "Lars Jostein Silihagen, Sopra Steria / Sykehuspartner / Sykehuset Innlandet, Norway", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Hwei-Yee Tai, Tan Tock Seng Hospital, Singapore", "John Taylor, NEHTA, Australia", "Micaela Thierley, Helse Bergen, Norway", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ines Vaz, UFN, Portugal", "Nils Widnes, Helse-Bergen, Norway", "Andrew Yap, Australia", "Kylie Young, The Royal Australian College of General Practitioners, Australia", "Lin Zhang, BIPH, China">
+	other_contributors = <"Fatima Almeida, Critical SW, Portugal", "Grethe Almenning, Bergen kommune, Norway", "Magnus Alsaker, Helsedirektoratet, Norway", "Torunn Apelseth, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Elaine Ayres, US National Institutes of Health, United States", "Russell B Leftwich MD, United States (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Bennett, NEHTA, Australia", "Steve Bentley, Allscripts, United Kingdom", "Sharmila Biswas, Dr Sharmila Biswas GP, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Laila Bruun, Oslo universitetssykehus HF, Norway", "Claire Chalopin, ICCAS, University of Leipzig, Germany", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Matthew Cordell, NEHTA, Australia", "Howard Edidin, Edidin Group, Inc, United States", "Brett Esler, Oridashi, Australia", "David Evans, Queensland Health, Australia", "Jerry Fahrni, Kaweah Delta Health Care District, United States", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Joanne Foster, School of Nursing & Midwifery, QLD University of Technology & Nursing Informatics Australia, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Sarah Gaunt, NEHTA, Australia", "Andrew Goodchild, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Trina Gregory, cpc, Australia", "Grahame Grieve, Health Intersections, Australia (Editor)", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Hilde Hollås, Norway", "Roar Holm, Helse Vest IKT A/S, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Andrew James, University of Toronto, Canada", "Julie James, Blue Wave Informatics LLP, United Kingdom", "Ivor Jones, Queensalnd Helath, Australia", "Silje Kaada, Helse-Bergen, Avdeling for immunologi og transfusjonsmedisin, Norway", "Konstantinos Kalliamvakos, Cambio Healthcare Systems, Sweden", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Goran Karlstrom, County Of Värmland, Sweden", "Mary Kelaher, NEHTA, Australia", "Diane Kirkham, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Robert L'egan, NEHTA, Australia", "Jobst Landgrebe, ii4sm, Switzerland", "Bent Asgeir Larsen, Helsedirektoratet, Norway", "Russell Leftwich, Russell B Leftwich MD, United States (openEHR Editor)", "Fest Legemiddelverket, Statens Legemiddelverk, Norway", "Heather Leslie, Ocean Informatics, Australia", "Hugh Leslie, Ocean Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Sarah Mahoney, Australia", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Lloyd McKenzie, Gordon Point Informatics, Canada", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jörg Niggemann, Compugroup, Germany", "Bjørn Næss, DIPS ASA, Norway", "Tom Oniki, Intermountain Healthcare, United States", "Chris Pearce, Melbourne East GP Network, Australia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "General Practice Computing Group, Australia", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Norwegian Review Summary, National ICT Norway, Norway", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Stefan Sauermann, University of Applied Sciences Technikum Wien, Austria", "Thomas Schopf, University Hospital of North-Norway, Norway", "Thilo Schuler, Australia", "Peter Scott, Medical Objects, Australia", "Elena Shabanova, UMMSSOft, Russian Federation", "Anoop Shah, University College London, United Kingdom", "Lars Jostein Silihagen, Sopra Steria / Sykehuspartner / Sykehuset Innlandet, Norway", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Line Sæle, Nasjonal IKT HF, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Hwei-Yee Tai, Tan Tock Seng Hospital, Singapore", "John Taylor, NEHTA, Australia", "Micaela Thierley, Helse Bergen, Norway", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ines Vaz, UFN, Portugal", "Nils Widnes, Helse-Bergen, Norway", "Andrew Yap, Australia", "Kylie Young, The Royal Australian College of General Practitioners, Australia", "Lin Zhang, BIPH, China">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, Australia">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["revision"] = <"1.0.0">
+		["revision"] = <"1.1.0">
 		["references"] = <"Adverse Reaction, draft archetype, National eHealth Transition Authority [Internet]. NEHTA Clinical Knowledge Manager. Authored: 08 Nov 2010. Available at: http://dcm.nehta.org.au/ckm/OKM.html#showarchetype_1013.1.868_7 (accessed Jan 16, 2012).
 
 Allergy and Intolerance Domain Analysis Model, Release 1, HL7 [Internet]. Publication pending, expected August 2014; Available at http://wiki.hl7.org/images/1/1b/Allergy_and_Intolerance_INFORM_2013_MAY.pdf (accessed 06 July 2014). 
@@ -192,23 +266,21 @@ Thien FC. Drug hypersensitivity. Med J Aust. 2006 Sep 18;185(6):333-8. Review. P
 
 - European Medicines Agency: http://www.ema.europa.eu/ema/
 
-- DIRECTIVE 2010/84/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL, of 15 December 2010, amending, as regards pharmacovigilance, Directive 2001/83/EC on the Community code relating to medicinal products for human use: http://ec.europa.eu/health/files/eudralex/vol-1/dir_2010_84/dir_2010_84_en.pdf
-
-- Review Committee of the World Allergy Organization, October 2003. Johansson SGO et al. J ALLERGY CLIN IMMUNOL: 832-836.">
-		["build_uid"] = <"b55745f5-612b-47cb-9e4c-9d8eb3413db3">
+- DIRECTIVE 2010/84/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL, of 15 December 2010, amending, as regards pharmacovigilance, Directive 2001/83/EC on the Community code relating to medicinal products for human use: http://ec.europa.eu/health/files/eudralex/vol-1/dir_2010_84/dir_2010_84_en.pdf">
+		["build_uid"] = <"cea7b285-51fd-46b4-9823-ce03e36d8a50">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"25AC5B846E091CCD5FAA376293706A6E">
+		["MD5-CAM-1.0.1"] = <"0F61EA5D9CB7400D691300AA7D577066">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Risiko for overfølsomhetsreaksjon
+	EVALUATION[at0000] matches {	-- Adverse reaction risk
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
-				items cardinality matches {2..*; unordered} matches {
-					ELEMENT[at0002] matches {	-- Substans
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] matches {	-- Substance
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -218,162 +290,162 @@ definition
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0127, 	-- Mistenkt
-									at0064, 	-- Sannsynlig
-									at0065, 	-- Bekreftet
-									at0067, 	-- Opphørt
-									at0066]	-- Avkreftet
+									at0127, 	-- Suspected
+									at0064, 	-- Likely
+									at0065, 	-- Confirmed
+									at0067, 	-- Resolved
+									at0066]	-- Refuted
 								}
 							}
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0101] occurrences matches {0..1} matches {	-- Alvorlighetsgrad
+					ELEMENT[at0101] occurrences matches {0..1} matches {	-- Criticality
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0102, 	-- Lav
-									at0103, 	-- Høy
-									at0124]	-- Ubestemt
+									at0102, 	-- Low
+									at0103, 	-- High
+									at0124]	-- Indeterminate
 								}
 							}
 						}
 					}
-					ELEMENT[at0120] occurrences matches {0..1} matches {	-- Kategori
+					ELEMENT[at0120] occurrences matches {0..1} matches {	-- Category
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0121, 	-- Mat
-									at0122, 	-- Legemiddel
-									at0123]	-- Annet
+									at0121, 	-- Food
+									at0122, 	-- Medication
+									at0123]	-- Other
 								}
 							}
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0117] occurrences matches {0..1} matches {	-- Debut av siste reaksjon
+					ELEMENT[at0117] occurrences matches {0..1} matches {	-- Onset of last reaction
 						value matches {
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Reaksjonsmekanisme
+					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Reaction mechanism
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0059, 	-- Immunmediert
-									at0060, 	-- Ikke-immunmediert
-									at0126]	-- Uviss
+									at0059, 	-- Immune mediated
+									at0060, 	-- Non-immune mediated
+									at0126]	-- Indeterminate
 								}
 							}
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Kommentar
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Comment
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					CLUSTER[at0009] occurrences matches {0..*} matches {	-- Reaksjonshendelse
+					CLUSTER[at0009] occurrences matches {0..*} matches {	-- Reaction event
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0010] occurrences matches {0..1} matches {	-- Spesifikk substans
+							ELEMENT[at0010] occurrences matches {0..1} matches {	-- Specific substance
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0021] occurrences matches {0..1} matches {	-- Sikkerhet
+							ELEMENT[at0021] occurrences matches {0..1} matches {	-- Certainty
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0095, 	-- Mistenkt
-											at0023, 	-- Sannsynlig
-											at0118]	-- Bekreftet
+											at0095, 	-- Suspected
+											at0023, 	-- Likely
+											at0118]	-- Confirmed
 										}
 									}
 								}
 							}
-							ELEMENT[at0011] occurrences matches {0..*} matches {	-- Reaksjonsmanifestasjon
+							ELEMENT[at0011] occurrences matches {0..*} matches {	-- Manifestation
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0012] occurrences matches {0..1} matches {	-- Reaksjonsbeskrivelse
+							ELEMENT[at0012] occurrences matches {0..1} matches {	-- Reaction description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0027] occurrences matches {0..1} matches {	-- Reaksjonsdebut
+							ELEMENT[at0027] occurrences matches {0..1} matches {	-- Onset of reaction
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0028] occurrences matches {0..1} matches {	-- Reaksjonens varighet
+							ELEMENT[at0028] occurrences matches {0..1} matches {	-- Duration of reaction
 								value matches {
 									DV_DURATION matches {*}
 								}
 							}
-							ELEMENT[at0089] occurrences matches {0..1} matches {	-- Reaksjonens alvorlighetsgrad
+							ELEMENT[at0089] occurrences matches {0..1} matches {	-- Severity of reaction
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
 											at0093, 	-- Mild
-											at0092, 	-- Moderat
-											at0090]	-- Alvorlig
+											at0092, 	-- Moderate
+											at0090]	-- Severe
 										}
 									}
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0029] occurrences matches {0..*} matches {	-- Reaksjonsdetaljer
+							allow_archetype CLUSTER[at0029] occurrences matches {0..*} matches {	-- Reaction details
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.symptom_sign(-[a-zA-Z0-9_]+)*\.v1/}
 							}
-							ELEMENT[at0020] occurrences matches {0..1} matches {	-- Første eksponering
+							ELEMENT[at0020] occurrences matches {0..1} matches {	-- Initial exposure
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0025] occurrences matches {0..1} matches {	-- Eksponeringsvarighet
+							ELEMENT[at0025] occurrences matches {0..1} matches {	-- Duration of exposure
 								value matches {
 									DV_DURATION matches {*}
 								}
 							}
-							ELEMENT[at0106] occurrences matches {0..1} matches {	-- Eksponeringsvei
+							ELEMENT[at0106] occurrences matches {0..1} matches {	-- Route of exposure
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0018] occurrences matches {0..1} matches {	-- Eksponeringsbeskrivelse
+							ELEMENT[at0018] occurrences matches {0..1} matches {	-- Exposure description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {	-- Eksponeringsdetaljer
+							allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {	-- Exposure details
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1/}
 							}
-							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Beskrivelse av klinisk håndtering
+							ELEMENT[at0040] occurrences matches {0..1} matches {	-- Clinical management description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0119] occurrences matches {0..*} matches {	-- Detaljer om klinisk håndtering
+							allow_archetype CLUSTER[at0119] occurrences matches {0..*} matches {	-- Clinical management details
 								include
 									archetype_id/value matches {/.*/}
 							}
-							allow_archetype CLUSTER[at0041] occurrences matches {0..*} matches {	-- Rapporteringsdetaljer
+							allow_archetype CLUSTER[at0041] occurrences matches {0..*} matches {	-- Reporting details
 								include
 									archetype_id/value matches {/.*/}
 							}
-							allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	-- Informasjonskilde
+							allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	-- Information source
 								include
 									archetype_id/value matches {/.*/}
 							}
-							ELEMENT[at0032] occurrences matches {0..1} matches {	-- Reaksjonskommentar
+							ELEMENT[at0032] occurrences matches {0..1} matches {	-- Reaction comment
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -386,36 +458,40 @@ definition
 		protocol matches {
 			ITEM_TREE[at0042] matches {	-- Tree
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0062] occurrences matches {0..1} matches {	-- Sist oppdatert
+					ELEMENT[at0062] occurrences matches {0..1} matches {	-- Last updated
 						value matches {
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0047] occurrences matches {0..1} matches {	-- Understøttende klinisk informasjon
+					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0047] occurrences matches {0..1} matches {	-- Supporting clinical record information
 						value matches {
 							DV_EHR_URI matches {*}
 						}
 					}
-					ELEMENT[at0044] occurrences matches {0..1} matches {	-- Reaksjon rapportert?
+					ELEMENT[at0044] occurrences matches {0..1} matches {	-- Reaction reported?
 						value matches {
 							DV_BOOLEAN matches {
 								value matches {True, False}
 							}
 						}
 					}
-					CLUSTER[at0099] occurrences matches {0..*} matches {	-- Rapporteringsdetaljer
+					CLUSTER[at0099] occurrences matches {0..*} matches {	-- Report summary
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0125] occurrences matches {0..1} matches {	-- Rapportdato
+							ELEMENT[at0125] occurrences matches {0..1} matches {	-- Date of report
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0048] occurrences matches {0..1} matches {	-- Rapportkommentar
+							ELEMENT[at0048] occurrences matches {0..1} matches {	-- Report comment
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0045] occurrences matches {0..*} matches {	-- Rapport om uønsket reaksjon
+							ELEMENT[at0045] occurrences matches {0..*} matches {	-- Adverse reaction report
 								value matches {
 									DV_URI matches {*}
 								}
@@ -426,6 +502,7 @@ definition
 			}
 		}
 	}
+
 
 
 ontology
@@ -725,6 +802,276 @@ However, 'Refuted' may be useful for reconciliation of the adverse reaction list
 					text = <"Suspected">
 					description = <"A low level of clinical certainty about the propensity of a reaction to the identified 'Substance'.">
 				>
+				["at0128"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["pt-br"] = <
+			items = <
+				["at0000"] = <
+					text = <"Risco de Reação Adversa">
+					description = <"Risco de resposta fisiológica prejudicial ou indesejável que é única para um indivíduo e associado com a exposição a uma substância">
+					comment = <"As substâncias incluem , mas não estão limitadas a: uma substância terapêutica administrada corretamente a uma dosagem apropriada para o indivíduo; alimento; material derivado de plantas ou animais ; ou veneno de picadas de insetos">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Substância">
+					description = <"A identificação de uma substância , ou classe de substâncias , que é considerada para colocar o indivíduo em risco de um evento de reação adversa.">
+					comment = <"Tanto uma substância individual e uma classe de substância são entradas válidas na sua essência. Se o valor em \"Substância\" é uma substância individual, ele pode ser duplicado em substância específica. É altamente recomendável que tanto a substância e a substância específica sejam codificados com uma terminologia capaz de desencadear o apoio à decisão, sempre que possível. Por exemplo: Snomed CT, DMD, Rx Norm, NDFRT, ATC, relação de medicamentos. Entrada de texto livre só deve ser utilizado se não há nenhuma terminologia adequada disponível.">
+				>
+				["at0006"] = <
+					text = <"Comentários">
+					description = <"Narrativa adicional sobre a propensão para a reação adversa, não capturada em outros campos.">
+					comment = <"Por exemplo: incluir motivo para sinalizar uma criticidade de alto risco; e instruções relacionadas com a exposição futura ou a administração da substância, tais como a administração dentro de uma unidade de terapia intensiva ou sob cobertura de corticosteróide">
+				>
+				["at0009"] = <
+					text = <"Evento da reação">
+					description = <"Detalhes sobre cada evento adverso ligando a exposição à substância identificada.">
+				>
+				["at0010"] = <
+					text = <"Substância Específica">
+					description = <"Identificação da substância considerada responsável pelo evento adverso específico.">
+					comment = <"Por exemplo: Amoxacilina. Apenas uma substância individual é uma entrada válida na substância específica. Se o valor da substância é uma substância individual e não uma classe de substância, então ele pode ser duplicado neste elemento de dados. É altamente recomendável que a substância específica seja codificada com uma terminologia capaz de desencadear o apoio à decisão, sempre que possível. Por exemplo: Rx Norm, Snomed CT, DMD, NDFRT, CID-10, UNI, ATC e CPT, livre entrada de texto só deve ser usada se não houver nenhuma terminologia adequada disponível">
+				>
+				["at0011"] = <
+					text = <"Manifestação">
+					description = <"Sintomas clínicos e/ou sinais que são observados ou associados com o efeito adverso.">
+					comment = <"Manifestação pode ser expressa com uma única palavra, frase ou descrição breve. Por exemplo: náuseas, erupção cutânea. \"Não Reação\" pode ser apropriado onde verificou-se uma reação anterior, mas a reação não re-ocorreu após a exposição. É preferível que a manifestação deve ser codificada com uma terminologia, sempre que possível. Os valores inseridos aqui podem ser usados para exibir em uma tela de aplicativo como parte de uma lista de reações adversas.
+
+Terminologias comumente usadas incluem, mas não estão limitadas a, SNOMED-CT ou CID10.">
+				>
+				["at0012"] = <
+					text = <"Descrição da Reação">
+					description = <"Descrição narrativa sobre a reação adversa como um todo, incluindo detalhes da manifestação, se necessário.">
+				>
+				["at0018"] = <
+					text = <"Descrição da Exposição">
+					description = <"Descrição narrativa sobre exposição à substância específica identificada.">
+				>
+				["at0020"] = <
+					text = <"Exposição inicial">
+					description = <"Registro da data e ou hora da primeira exposição à substância para este evento de reação.">
+					comment = <"Exposição pode ser mais complicada por mais de um evento de exposição, levando a uma reação. Para mais informações sobre a natureza da exposição podem ser fornecidas pelo uso de arquétipos adicionais em detalhes a exposição SLOT ou texto de descrição da exposição">
+				>
+				["at0021"] = <
+					text = <"Certeza">
+					description = <"Declaração sobre o grau de certeza clínica que a substância específica identificada foi a causa da manifestação neste evento de reação.">
+				>
+				["at0023"] = <
+					text = <"Provável">
+					description = <"Nível razoável de certeza clínica que a reação foi causada pela substância específica identificada.">
+				>
+				["at0025"] = <
+					text = <"Duração da Exposição">
+					description = <"A quantidade total de tempo que o indivíduo foi exposto à substância específica identificada.">
+				>
+				["at0027"] = <
+					text = <"Início da reação">
+					description = <"Registro da data e/ou hora do início da reação.">
+				>
+				["at0028"] = <
+					text = <"Duração da reação">
+					description = <"A quantidade total de tempo que a manifestação da reação adversa persistentes.">
+				>
+				["at0029"] = <
+					text = <"Detalhes da Reação">
+					description = <"Detalhes adicionais sobre a reação adversa, incluindo a localização anatômica e os critérios de toxicidade comuns, podem ser fornecidos pela inclusão dos arquétipos específicos neste campo">
+					comment = <"Pode incluir detalhes estruturados sobre os sintomas; a localização anatômica da manifestação; graduação, classificação ou avaliações de severidade formal como critérios de terminologia comum para eventos adversos; ou o arquétipo de CLUSTER multimídia. Nota: FHIR - estes seriam extensões conforme especificado em um perfil">
+				>
+				["at0032"] = <
+					text = <"Comentário das Reações">
+					description = <"Narrativa adicional sobre o evento adverso não capturada em outros campos.">
+				>
+				["at0040"] = <
+					text = <"Descrição do manejo clínico">
+					description = <"Descrição narrativa sobre o manejo clínico fornecido.">
+				>
+				["at0041"] = <
+					text = <"Relato de Detalhes">
+					description = <"Detalhes estruturados adicionais necessários para emissão de relatórios para órgãos reguladores podem ser fornecidos pela inclusão dos arquétipos específicos nesta slot.">
+				>
+				["at0042"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0044"] = <
+					text = <"Reação Notificada?">
+					description = <"A reação adversa já foi relatada para uma agência reguladora?">
+				>
+				["at0045"] = <
+					text = <"Relatório de reação adversa">
+					description = <"Link para uma reação adversa que relatório enviado a uma agência reguladora">
+				>
+				["at0047"] = <
+					text = <"Apoio às informações clínicas do registro">
+					description = <"Link para mais informações sobre a apresentação e as conclusões que existe em outro lugar no registro de saúde, incluindo relatórios de teste de alergia.">
+					comment = <"Por exemplo, apresentação de sintomas, achados de exames, diagnósticos, etc.
+Nota: FHIR, DAM: mapas para teste de sensibilidade.">
+				>
+				["at0048"] = <
+					text = <"Comentários">
+					description = <"Narrativa sobre o relatório de reação adversa ou processo de comunicação.">
+					comment = <"Por exemplo, reação não notificada">
+				>
+				["at0058"] = <
+					text = <"Mecanismo da Reação">
+					description = <"Identificação do mecanismo fisiológico subjacente para a reação adversa">
+					comment = <"Respostas imune-mediada tem sido tradicionalmente consideradas como um indicador para a escalada de risco significativo no futuro. Conhecimentos atuais sugerem que algumas reações que previamente se pensava serem imunes são na verdade não imunes e ainda carregam o risco de ameaça à vida.
+
+Testes imunológicos podem fornecer elementos de prova para o mecanismo e a substância causal, mas os testes não são 100% sensíveis ou específicos para uma sensibilidade.
+
+É reconhecido que a maioria dos clínicos não serão capazes de distinguir o mecanismo de qualquer reação específica. No entanto, este elemento de dados está incluído porque muitos sistemas legados tem capturado esse atributo">
+				>
+				["at0059"] = <
+					text = <"Imune - mediada">
+					description = <"Reação imune-mediada, incluindo hipersensibilidade e reações alérgicas.">
+				>
+				["at0060"] = <
+					text = <"Não imune-mediada">
+					description = <"Reação Não Imuno-mediada, que inclui pseudo alergias, intolerâncias, efeitos colaterais, toxicidade de drogas (por exemplo, a gentamicina).">
+				>
+				["at0062"] = <
+					text = <"Ultima atualização">
+					description = <"Data quando a propensão ou o evento de reação foi atualizado.">
+					comment = <"Nota: mapas para gravação dos dados em FHIR">
+				>
+				["at0063"] = <
+					text = <"Status">
+					description = <"Declaração sobre a certeza da propensão ou potenciais riscos futuros, da substância identificada para causar uma reação.">
+					comment = <"Apoio à decisão normalmente iria criar alertas para \"Suspeita\", \"Provável\", \"Confirmado\" e ignorar uma reação \"Refutada\". Sistemas clínicos podem optar por não exibir as entradas de reação adversa com status de \"Refutada\" na lista de reação adversa.
+
+No entanto, \"Refutada\" pode ser útil para a reconciliação da lista de reação adversa ou ao comunicar-se entre os sistemas.
+
+. Algumas implementações podem optar por fazer este campo obrigatório.
+\"Resolvido\" pode ser utilizado variavelmente entre sistemas, dependendo do uso clínico e contexto - parece haver opinião diferente, se isso ainda deve ser usado para aumentar o potencial de alertas ou para exibir em uma lista de reação adversa. O tipo de dados texto livre permitirá variação local, permitindo que outro conjunto de valor a ser aplicado a esse elemento de dados em um modelo - nesta situação, é recomendável que os valores devem ser codificados usando uma terminologia.">
+				>
+				["at0064"] = <
+					text = <"Provável">
+					description = <"Um razoável grau de certeza sobre a propensão para uma reação à substância identificada.">
+				>
+				["at0065"] = <
+					text = <"Confirmada">
+					description = <"Um elevado nível de certeza sobre a propensão para uma reação à substância identificada, que pode incluir evidências clínicas por meio de testes ou re-desafio.">
+				>
+				["at0066"] = <
+					text = <"Refutada">
+					description = <"A propensão para uma reação à substância identificada ter sido reavaliada clinicamente ou já ter sido refutada com um elevado nível de certeza clínica por re-exposição ou desafio deliberado.">
+				>
+				["at0067"] = <
+					text = <"Resolvida">
+					description = <"A anteriormente conhecida reação à substância identificada clinicamente foi reavaliada e considerada um risco não ativo.">
+				>
+				["at0089"] = <
+					text = <"Severidade da Reação">
+					description = <"Avaliação clínica da gravidade do evento de reação como um todo, potencialmente considerando múltiplas manifestações diferentes.">
+					comment = <"Reconhece-se que esta avaliação é muito subjetiva. Pode haver alguma prática específica nos domínios onde a escala de objetivo foram aplicados.
+Escalas objetivas podem ser incluídas neste modelo usando os \"Detalhes de Reação\" Cluster">
+				>
+				["at0090"] = <
+					text = <"Severo">
+					description = <"Causa severa dos efeitos fisiológicos">
+				>
+				["at0092"] = <
+					text = <"Moderado">
+					description = <"Causas moderadas dos efeitos fisiológicos">
+				>
+				["at0093"] = <
+					text = <"Suave">
+					description = <"Causas suaves dos efeitos fisiológicos">
+				>
+				["at0095"] = <
+					text = <"Suspeita">
+					description = <"Baixo nível de certeza clínica que a reação foi causada pela substância específica identificada.">
+				>
+				["at0096"] = <
+					text = <"Detalhes da Exposição">
+					description = <"Detalhes adicionais sobre a exposição à substância específica, especialmente em situações onde pode ter havido múltiplas ou exposições cumulativas podem ser fornecidas pela inclusão dos arquétipos específicos nesta slot.">
+				>
+				["at0099"] = <
+					text = <"Resumo">
+					description = <"Detalhes estruturados sobre relatórios que têm sido encaminhados para órgãos reguladores.">
+				>
+				["at0101"] = <
+					text = <"Criticidade">
+					description = <"Uma indicação do potencial de danos nos órgãos críticos do sistema ou conseqüência de ameaça à vida">
+					comment = <"Esta pode ser considerada um julgamento preditivo de um cenário de pior caso.
+Na maioria dos contextos \"Baixo\" poderia ser considerada como o valor padrão.">
+				>
+				["at0102"] = <
+					text = <"Baixo">
+					description = <"Exposição a substâncias passíveis de danos nos órgãos críticos do sistema ou conseqüência de ameaça à vida. Futura exposição à substância identificada deve ser considerada uma contra-indicação relativa em circunstâncias clínicas normais.">
+				>
+				["at0103"] = <
+					text = <"Alto">
+					description = <"Exposição à substância pode resultar em danos ao sistema, órgão crítico ou conseqüência de ameaça à vida. Futura exposição à substância identificada deve ser considerada uma contra-indicação absoluta em circunstâncias clínicas normais.">
+				>
+				["at0106"] = <
+					text = <"Via de Exposição">
+					description = <"Identificação da via pelo qual o sujeito foi exposto à substância específica identificada.">
+					comment = <"Codificação da via de exposição com uma terminologia, deve ser usado sempre que possível">
+				>
+				["at0116"] = <
+					text = <"Fonte de informação">
+					description = <"Detalhes sobre a proveniência da informação podem ser fornecidas pela inclusão dos arquétipos específicos nesta slot.">
+				>
+				["at0117"] = <
+					text = <"Início da última reação">
+					description = <"A data e/ou hora do início da última ocorrência de um evento de reação conhecida.">
+					comment = <"Esta data pode ser em duplicidade com o \"Início mais recente\" da reação.
+Onde uma representação textual da data da última ocorrência é exigido por exemplo na infância, há 10 anos o elemento de comentário deve ser usado.">
+				>
+				["at0118"] = <
+					text = <"Confirmada">
+					description = <"Elevado nível de certeza clínica que a reação foi devido a substância identificada, que pode incluir evidências clínicas por meio de testes ou re-desafio.">
+				>
+				["at0119"] = <
+					text = <"Detalhes do Manejo Clínico">
+					description = <"Detalhes adicionais de estruturado sobre manejo clínico para este evento de reação podem ser fornecidos pela inclusão dos arquétipos específicos nesta slot.">
+				>
+				["at0120"] = <
+					text = <"Categoria">
+					description = <"Categoria da substância identificada">
+					comment = <"Este elemento de dados foi incluído porque atualmente está sendo capturado em alguns sistemas clínicos. Esses dados podem ser derivados da substância onde são utilizados sistemas de codificação e é efetivamente redundante nessa situação.">
+				>
+				["at0121"] = <
+					text = <"Alimentos">
+					description = <"Qualquer substância consumida para fornecer suporte nutricional para o organismo, tais como o amendoim ou ovo.">
+				>
+				["at0122"] = <
+					text = <"Medicação">
+					description = <"Qualquer substância administrada para alcançar um efeito fisiológico.">
+				>
+				["at0123"] = <
+					text = <"Outros">
+					description = <"Qualquer outra substância encontrada incluindo veneno, látex e outras substâncias ambientais.">
+				>
+				["at0124"] = <
+					text = <"Indeterminado">
+					description = <"Não é possível avaliar com informações disponíveis.">
+				>
+				["at0125"] = <
+					text = <"Data da notificação">
+					description = <"Data da notificação à agência reguladora">
+				>
+				["at0126"] = <
+					text = <"Indeterminada">
+					description = <"O mecanismo fisiológico não pôde ser determinado.">
+				>
+				["at0127"] = <
+					text = <"Suspeita">
+					description = <"Um baixo nível de certeza clínica sobre a propensão de uma reação à substância identificada.">
+				>
+				["at0128"] = <
+					text = <"*Extension(en)">
+					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
+				>
 			>
 		>
 		["nb"] = <
@@ -857,6 +1204,7 @@ Det er erkjent at klinikere ofte ikke kan identifisere mekanismen for en gitt re
 				["at0062"] = <
 					text = <"Sist oppdatert">
 					description = <"Dato da tendensen eller reaksjonshendelsen ble oppdatert.">
+					comment = <"Mappes til \"recordedDate\" i FHIR.">
 				>
 				["at0063"] = <
 					text = <"Status">
@@ -980,6 +1328,11 @@ Når en tekstlig representasjon av datoen er påkrevd, f.eks. \"i barndommen\" e
 				["at0127"] = <
 					text = <"Mistenkt">
 					description = <"Lav grad av sikkerhet om tendensen til reaksjon på den identifiserte substansen.">
+				>
+				["at0128"] = <
+					text = <"Utvidelse">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
