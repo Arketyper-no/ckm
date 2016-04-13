@@ -79,22 +79,22 @@ Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjene
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rose Mari Eikås, Helse Bergen, Norway", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Bjørn Grøva, Helsedirektoratet, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT, Norway", "Jussara Rotzsch, UNB, Brazil", "Line Sæle, Nasjonal IKT HF, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Rose Mari Eikås, Helse Bergen, Norway", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT, Norway", "Jussara Rotzsch, UNB, Brazil", "Line Sæle, Nasjonal IKT HF, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics<heather.leslie@oceaninformatics.com>">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["revision"] = <"1.0.0">
+		["revision"] = <"1.1.0">
 		["references"] = <"FHIR ReferralRequest resource: http://hl7-fhir.github.io/referralrequest.html">
-		["build_uid"] = <"4f9c5f36-1cea-4002-ad71-259c6aaf6815">
+		["build_uid"] = <"009815d7-8841-4beb-bab3-adacd1a57fc1">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E626E8BF91A5E9465CDD027C1F8FDE48">
+		["MD5-CAM-1.0.1"] = <"115E5B757528A9F024C561692EAB86CF">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	COMPOSITION[at0000] matches {	-- Request for service
+	COMPOSITION[at0000] matches {	-- Tjenesteforespørsel
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {[openehr::433]}
@@ -104,8 +104,8 @@ definition
 			EVENT_CONTEXT matches {
 				other_context matches {
 					ITEM_TREE[at0001] matches {	-- Tree
-						items cardinality matches {3..*; unordered} matches {
-							allow_archetype CLUSTER[at0042] occurrences matches {0..*} matches {	-- Extension
+						items cardinality matches {1..*; unordered} matches {
+							allow_archetype CLUSTER[at0042] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
 								include
 									archetype_id/value matches {/.*/}
 							}
@@ -115,7 +115,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
