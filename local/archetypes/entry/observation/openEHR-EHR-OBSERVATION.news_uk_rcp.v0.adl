@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.news_uk_rcp.v0
 
 concept
-	[at0000]	-- National Early Warning Score
+	[at0000]	-- NEWS (UK RCP)
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -35,9 +35,9 @@ Benyttes vanligvis ikke for gravide.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record provide a composite score based on categorising physiological readings and observations, as a simple method to support objective assessment of the degree of illness in an unwell patient over the age of 16 years.">
-			use = <"Use to record a composite score to support assessment of the degree of illness in an unwell patient, over the age of 16 years.">
-			keywords = <"warning", "AVPU", "RR", "HR", "BP", "Temp", "SBP", "triage", "NEWS", "Sats">
+			purpose = <"To record a composite score based on categorising physiological readings and observations, as a simple method to support objective assessment of the degree of clinical deterioration in an unwell patient over the age of 16 years.">
+			use = <"Use to record a composite score to support assessment of the degree of clinical deterioration in an unwell patient, over the age of 16 years.">
+			keywords = <"warning", "AVPU", "RR", "HR", "BP", "Temp", "SBP", "triage", "NEWS", "Sats", "MEWS", "EWS", "oxygen", "saturation", "illness", "degree", "score">
 			misuse = <"Not to be used to record each physical measurement or clinical observation. Use specific OBSERVATION archetypes for this purpose - OBSERVATION.blood_pressure, OBSERVATION.pulse, OBSERVATION.respirations, OBSERVATION.body_temperature, OBSERVATION.avpu, CLUSTER.ambient_oxygen og OBSERVATION.indirect_oximetry.
 
 Not to be used for children/teens under the age of 16 years or in pregnancy.">
@@ -55,10 +55,10 @@ Not to be used for children/teens under the age of 16 years or in pregnancy.">
 Oslo universistetssykehus - eHåndbok - Internettutgave. National Early Warning Score (NEWS). (23.02.16). http://ehandboken.oslo-universitetssykehus.no/Modules/module_136/handbook_view.aspx?documentId=78636
 
 Modified Early Warning Score (NT RMP), draft archetype, NEHTA Clinical Knowledge Manager [Internet]. NEHTA. Authored: 07 Feb 2013. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1172_2 (accessed 01 June 2013).">
-		["build_uid"] = <"a5d36d85-27d6-438e-b4de-50aea170d704">
+		["build_uid"] = <"3a22ba86-d5e7-476c-9d4f-e8bb2bc4720d">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"A4FD0AE4389904C305A6149353685B5F">
+		["MD5-CAM-1.0.1"] = <"8E11E29497B1518EE88A183BD8D55A01">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -157,8 +157,8 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"National Early Warning Score">
-					description = <"A simple score used to provide an objective indication of the degree of illness of a patient. This version follows guidance issued by the UK Royal College of Physicians.">
+					text = <"NEWS (UK RCP)">
+					description = <"NEWS (National Early Warning Score) is a simple score used to provide an objective indication of a patient's degree of clinical deterioration. This version follows guidance issued by the UK Royal College of Physicians.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -185,7 +185,7 @@ ontology
 					description = <"Range category for the respiratory rate (RR) measurement of a patient.">
 				>
 				["at0007"] = <
-					text = <"Temperature">
+					text = <"Body temperature">
 					description = <"Range category for the body temperature (Temp) measurement of a patient.">
 				>
 				["at0008"] = <
@@ -257,9 +257,9 @@ ontology
 					description = <"The patient responds only to verbal, pain or stimulus; scored as 3 points.">
 				>
 				["at0028"] = <
-					text = <"Total Score">
-					description = <"The composite total score of each NEWS parameter category.">
-					comment = <"Totalscore may be generated at run-time.">
+					text = <"Total score">
+					description = <"The total sum of all the NEWS parameter ordinals.">
+					comment = <"Total score may be generated at run-time.">
 				>
 				["at0029"] = <
 					text = <"Oxygen Saturation">
@@ -302,8 +302,8 @@ ontology
 					description = <"The body temperature is less than/equal to 35 degrees Celcius ; scored as 3 points.">
 				>
 				["at0041"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
+					text = <"Tree">
+					description = <"@ internal @">
 				>
 				["at0043"] = <
 					text = <"Confounding factors">
@@ -315,8 +315,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"National Early Warning Score (NEWS)">
-					description = <"Et skåringsverktøy som benyttes for å gi en objektiv vurdering av grad av klinisk forverring hos en pasient. Denne versjonen følger retningslinjer utgitt av the UK Royal College of Physicians.">
+					text = <"NEWS">
+					description = <"NEWS (National Early Warning Score) er et skåringsverktøy som benyttes for å gi en objektiv vurdering av grad av klinisk forverring hos en pasient. Denne versjonen følger retningslinjer utgitt av the UK Royal College of Physicians.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -343,7 +343,7 @@ ontology
 					description = <"Pasientens respirasjonsfrekvens.">
 				>
 				["at0007"] = <
-					text = <"Temperatur">
+					text = <"Kroppstemperatur">
 					description = <"Pasientens kroppstemperatur.">
 				>
 				["at0008"] = <
@@ -466,7 +466,7 @@ ontology
 				["at0043"] = <
 					text = <"Konfunderende faktorer">
 					description = <"Kommentar til og registrering av faktorer som kan ha betydning for skåren.">
-					comment = <"For eksempel: Om pasienten har KOLS.">
+					comment = <"For eksempel om pasienten har KOLS.">
 				>
 			>
 		>
