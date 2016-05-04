@@ -11,11 +11,11 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Lars Bitsch-Larsen">
-				["organisation"] = <"Haukeland University Hospital Bergen Norway">
-				["email"] = <"lbla@helse-bergen.no">
+				["name"] = <"Lars Bitsch-Larsen, Rune Pedersen">
+				["organisation"] = <"Haukeland University Hospital Bergen Norway, University Hospital of North Norway">
+				["email"] = <"lbla@helse-bergen.no; rune.pedersen@unn.no">
 			>
-			accreditation = <"MD DEAA, MBA spec in anesthesia and intensive care, spec in tropical med.">
+			accreditation = <"MD DEAA, MBA spec in anesthesia and intensive care, spec in tropical med. Rune Pedersen RN, MPH, PhD Medical Informatics">
 		>
 	>
 description
@@ -35,7 +35,7 @@ Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjon
 
 Arketypen er utviklet for å kunne brukes på en rekke ulike måter. Den primære hensikten er å:
 - Representere flere \"Eksklusjonsutsagn\" i en instans av arketypen.
-- Lenke et \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\", for eksempel \"Ingen tidligere uønsket reaksjon til\" \"penicillin\" og \"erytromycin\".
+- Lenke et \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\", for eksempel \"Ingen tidligere familie historie for\" \"hjerte sykdom\" og \"diabetes\".
 
 Det er også mulig å bruke arketypen for følgende bruksområder, selv om gode og trygge kliniske bruksområder ikke er identifisert for dette:
 - Lenke flere \"Eksklusjonsutsagn\" med ett \"Spesifikt objekt\". Eksempel: \"Ingen familiær forekomst av\" og \"Aldri hatt\" som \"Eksklusjonsutsagn\", og \"diabetes\" som \"Spesifikt objekt\".
@@ -90,10 +90,10 @@ Not to be used to record the exclusion of any component of physical examination 
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Exclusion Statement, Draft Archetype [Internet]. NEHTA, Australia, NEHTA Clinical Knowledge Manager [cited: 2015-09-16]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1301">
-		["build_uid"] = <"4061c800-176b-4cce-9729-59f9afe0c060">
+		["build_uid"] = <"8aaff605-5598-4890-ba59-89d0105bcc6f">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"253F9063B1169E2821BC1280E7DA10F7">
+		["MD5-CAM-1.0.1"] = <"84BE8918322408B26ABC60986CA36142">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -199,8 +199,8 @@ ontology
 					description = <"Utsagn om kliniske tilstander, forhold eller bekymringer som ikke er tilstede nå og/eller ikke har vært tilstede tidligere.">
 				>
 				["at0000.1"] = <
-					text = <"*Exclusion of Family History(en)">
-					description = <"*Statement about significant health-related problems not found in family members that are either not currently present and/or have not been present in the past.(en)">
+					text = <"Eksklusjon av familiær sykdomshistorie">
+					description = <"Utsagn om signifikante helse relaterte problemer som ikke finnes i familiens sykdoms historie">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -212,14 +212,9 @@ ontology
 					comment = <"Brukes til å fange opp all helseinformasjon som eksplisitt skal registreres som ikke tilstede nå og/eller ikke til stede tidligere. Utsagnet støtter registrering av generelle utsagn som \"Ingen tidlgere...\" eller \"Ikke kjent...\". Den kan også støtte mer krevende utsagn om et spesifikt objekt som \"Ingen kjent historie om...\" der \"Spesifikt objekt\" identifiserer den aktuelle kliniske tilstanden, forholdet eller bekymringen. For eksplisitt modellerte eksempler, se spesialiseringer for legemidler, uønskede reaksjoner, problemer/diagnoser og prosedyrer.">
 				>
 				["at0002.1"] = <
-					text = <"*Exclusion statement(en)">
-					description = <"*Statement of exclusion of a family history.(en)">
-					comment = <"*This data element is used to enable exact statements like: 
-'No past family history of diabetes'. In this example, 'diabetes' would be an 
-example of the 'Family History' and the rest of the example phrase would be carried in the 
-'Exclusion statement'. Another possible use case might be 'there is no family history of heart disease'. 
-Please note: if coordinated phrases such as 'No known familiy history of diabetes' is available, 
-then this can be used as an alternative in the 'Exclusion statement' alone.(en)">
+					text = <"Eksklusjons utsagn">
+					description = <"utsagn vedrørende eksklusjon av familiær sykdoms historie">
+					comment = <"Brukes til å registrere et spesifikt utsagn om at kliniske tilstander, forhold eller bekymringer ikke er tilstede nå og/eller ikke har vært tilstede tidligere. Utsagnet kan brukes til å underbygge andre generelle utsagn som \"Ingen tidligere/tidligere familiær sykdoms historie av....\" eller \"Ingen kjent tidligere sykdoms historie av....\"">
 				>
 				["at0003"] = <
 					text = <"Spesifikt objekt">
@@ -228,9 +223,9 @@ then this can be used as an alternative in the 'Exclusion statement' alone.(en)"
 Merk at om prekoordinerte fraser som: \"Ingen kjent pencillinallergi\" finnes kan dette brukes som et alternativ i datalemententet \"Eksklusjonsutsagn\".">
 				>
 				["at0003.1"] = <
-					text = <"*Family History(en)">
-					description = <"*Identification of the specific family history to which the 'Exclusion statement' applies.(en)">
-					comment = <"*This data element is used to enable exact statements like: 'No past family history of diabetes'. In this example, 'diabetes' would be an example of the 'Family History' and the rest of the example phrase would be carried in the 'Exclusion statement'. Another possible use case might be 'there is no family history of heart disease'. Please note: if coordinated phrases such as 'No known familiy history of diabetes' is available, then this can be used as an alternative in the 'Exclusion statement' alone.(en)">
+					text = <"familiær sykdoms historie">
+					description = <"For å identifisere spesifikk familiær sykdoms historie hvor arketypen \"eksklusjon av utsagn\" bør benyttes">
+					comment = <"Denne arketypen brukes for konkrete utsagn som: \"Ingen tidligere familiær sykdomshistorie om diabetes\". I dette eksemplet skal \"Diabetes\" være et eksempel på \"familiær sykdoms historie\" og det resterende av utsagnet er \"eksklusjons utsagnet\". Et annet bruker scenario kan være \"Det er ingen familiær sykdoms historie for hjerte sykdom\". Vær oppmerksom på: Om koordinerte fraser som: \"Ingen tidligere familiær sykdomshistorie om diabetes\" er tilgjengelig, kan disse brukes som et alternativ i \"eksklusjons utsagn\" alene.">
 				>
 				["at0004"] = <
 					text = <"Sist oppdatert">
