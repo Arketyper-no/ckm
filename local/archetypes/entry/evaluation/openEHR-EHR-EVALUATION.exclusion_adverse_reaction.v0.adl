@@ -9,11 +9,11 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Lars Bitsch-Larsen">
-				["organisation"] = <"Haukeland University Hospital Bergen Norway">
+				["name"] = <"Kristian Berg">
+				["organisation"] = <"Universitetssykehuset Nord Norge">
 				["email"] = <"lbla@helse-bergen.no">
 			>
-			accreditation = <"MD DEAA, MBA spec in anesthesia and intensive care, spec in tropical med.">
+			accreditation = <"Bachelor i sykepleie, Master i Telemedisin og e-helse">
 		>
 	>
 description
@@ -55,30 +55,30 @@ Not to be used to record the exclusion of any component of physical examination 
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere utsagn om kliniske tilstander, forhold eller bekymringer som ikke er tilstede nå, eller ikke har vært tilstede tidligere.">
-			use = <"Brukes til å registrere et spesifikt utsagn om at kliniske tilstander, forhold eller bekymringer ikke er tilstede nå og/eller ikke har vært tilstede tidligere.
+			purpose = <"For å registrere et utsagn om overfølsomhetsreaksjoner som aldri er lagt merke til av individet eller bekreftet av en kliniker.">
+			use = <"Brukes for å registrere et utsagn om overfølsomhetsreaksjoner som aldri er lagt merke til av individet eller bekreftet av en kliniker.
 
-Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om en klinisk oppføring i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
+Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om en overfølsomhetsreaksjon i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
 
 Arketypen er utviklet for å kunne brukes på en rekke ulike måter. Den primære hensikten er å:
 - Representere flere \"Eksklusjonsutsagn\" i en instans av arketypen.
-- Lenke et \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\", for eksempel \"Ingen tidligere uønsket reaksjon til\" \"penicillin\" og \"erytromycin\".
+- Lenke et \"Eksklusjonsutsagn\" med flere \"Overfølsomhetsreaksjoner\", for eksempel \"Ingen tidligere overfølsomhetsreaksjon for\" \"penicillin\" og \"erytromycin\".
 
 Det er også mulig å bruke arketypen for følgende bruksområder, selv om gode og trygge kliniske bruksområder ikke er identifisert for dette:
-- Lenke flere \"Eksklusjonsutsagn\" med ett \"Spesifikt objekt\". Eksempel: \"Ingen familiær forekomst av\" og \"Aldri hatt\" som \"Eksklusjonsutsagn\", og \"diabetes\" som \"Spesifikt objekt\".
+- Lenke flere \"Eksklusjonsutsagn\" med en \"Overfølsomhetsreaksjon\". 
 
-Er det klinisk behov for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hvert enkelt \"Spesifikt objekt\".
+Er det klinisk behov for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Overfølsomhetsreaksjoner\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hver enkelt \"Overfølsomhetsreaksjon\".
 
-Spesialiseringer av denne arketypen vil fange opp spesifikk og mer detaljert informasjon om vanlige eksklusjoner, for eksempel problemer eller diagnoser.
-
-Merk at eksklusjonsutsagn kun anses å være oppdaterte og presise på registreringstidspunktet. Det er mulig at en journal fastslår at et individ på et tidspunkt hadde INGEN KJENT historie av XYZ (ved bruk at et eksklusjonsutsagn) samtidig som en senere registrerer evidens for debut av XYZ (ved bruk av en korresponderende arketype hvor en registrer det første tilfellet, f.eks. ved å bruke EVALUATION-arketypene for diagnose eller uønsket reaksjon). I framtidige journalutsagn kan individet deretter ha en KJENT forekomst av XYZ i problemlisten sin.">
-			keywords = <"eksklusjon, fravær, utsagn, ekskludert, funn, vurdering, negasjon, utelukkelse", ...>
-			misuse = <"Brukes ikke for registrering av eksklusjon eller fravær av klinisk informasjon hvor det finnes en spesialisering av denne arketypen for dette formålet.
+Merk at eksklusjonsutsagn kun anses å være oppdaterte og presise på registreringstidspunktet. Det er mulig at en journal fastslår at et individ på et tidspunkt hadde INGEN KJENT historie av XYZ (ved bruk at et eksklusjonsutsagn) samtidig som en senere registrerer evidens for debut av XYZ (ved bruk av en korresponderende arketype hvor en registrerer det første tilfellet, f.eks. ved å bruke EVALUATION.adverse_reaction). I framtidige journalutsagn kan individet deretter ha en KJENT forekomst av XYZ i problemlisten sin.">
+			keywords = <"eksklusjon, fravær, utsagn, ekskludert, funn, vurdering, negasjon, utelukkelse, problem", ...>
+			misuse = <"Brukes ikke for registrering av eksklusjon eller fravær av klinisk informasjon hvor det finnes en versjon av arketypen EVALUATION.exclusion for dette formålet.
 Det kan være, men er ikke begrenset til:
-- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til bruk av legemidler - bruk arketypen EVALUATION.exclusion-medication til dette formålet.
-- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til prosedyrer - bruk arketypen EVALUATION.exclusion-procedure til dette formålet.
-- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til problemer eller diagnoser - bruk arketypen EVALUATION.exclusion-problem_diagnosis til dette formålet.
-- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til familieanamnese - bruk arketypen EVALUATION.exclusion-family_history til dette formålet.
+- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til bruk av legemidler - bruk arketypen EVALUATION.exclusion_medication til dette formålet.
+- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til prosedyrer - bruk arketypen EVALUATION.exclusion_procedure til dette formålet.
+- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til problemer eller diagnoser - bruk arketypen EVALUATION.exclusion_problem_diagnosis til dette formålet.
+- Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til familieanamnese - bruk arketypen EVALUATION.exclusion_family_history til dette formålet.
+
+- Bruk ikke denne arketypen for registrering av fravær av infomasjon - bruk arketypen EVALUATION.absence for dette formålet.
 
 Brukes ikke for å registrere en eksklusjon av en del av en fysisk undersøkelse - bruk arketypen CLUSTER.exclusion_exam i den aktuelle OBSERVATION- eller CLUSTER-arketypen.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
@@ -91,10 +91,10 @@ Brukes ikke for å registrere en eksklusjon av en del av en fysisk undersøkelse
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Exclusion of an Adverse Reaction, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2016-05-03]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1302">
-		["build_uid"] = <"55af6c76-620c-4bb6-a30e-b53a7e76b018">
+		["build_uid"] = <"d5f21205-6841-4fb2-814b-1279e803aa0d">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"C02EA6D39F469B5E07C0782A47DA9A86">
+		["MD5-CAM-1.0.1"] = <"8EBEB8B6AB662EF0ADB6A59F8DDE0F61">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -184,22 +184,23 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Exclusion of an Adverse Reaction(en)">
-					description = <"*A statement about adverse reactions that have never been noted by the individual or recognised by a clinician.(en)">
+					text = <"Eksklusjon av en overfølsomhetsreaksjon">
+					description = <"Et utsagn om overfølsomhetsreaksjoner som aldri er lagt merke til av individet eller bekreftet av en kliniker.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*Exclusion statement(en)">
-					description = <"*Statement of exclusion of an adverse reaction.(en)">
-					comment = <"*Use to record a statement about adverse reactions that have never been noted by the individual or recognised by a clinician. This statement can support recording general statements such as \"No previous/past ...\" or \" No known ...\". Or it can support more exacting statements about a specified object such as \"No known history of ...\" where the 'Adverse reaction' element identifies the precise adverse reaction.(en)">
+					text = <"Eksklusjonsutsagn">
+					description = <"Utsagn om eksklusjon av en overfølsomhetsreaksjon.">
+					comment = <"Brukes for å registrere et utsagn om overfølsomhetsreaksjoner som aldri er lagt merke til av individet eller bekreftet av en kliniker. Utsagnet støtter registrering av generelle utsagn som \"Ingen tidligere...\" eller \"Ikke kjent...\". Den kan også støtte mer krevende utsagn om et spesifikt objekt som \"Ingen kjent forekomst av ...\" der \"Overfølsomhetsreaksjon\" identifiserer den aktuelle overfølsomhetsreaksjonen.
+">
 				>
 				["at0003"] = <
-					text = <"*Adverse Reaction(en)">
-					description = <"*Identification of the specific Adverse reaction to which the 'Exclusion statement' applies.(en)">
-					comment = <"*This data element is used to enable exact statements like: 'No past history of adverse reactions to penicillin for the individual'. In this example, 'penicillin' would be an example of the 'Adverse reaction' and the rest of the example phrase would be carried in the 'Exclusion statement'. Please note: if coordinated phrases such as 'No known adverse reaction to erythromicin' is available, then this can be used as an alternative in the 'Exclusion statement' alone.(en)">
+					text = <"Overfølsomhetsreaksjon">
+					description = <"Identifikasjon av den overfølsomhetsreaksjonen \"Eksklusjonsutsagnet\" gjelder for.">
+					comment = <"Dette dataelementet brukes for å gi presise utsagn som f.eks. \"Ingen tidligere kjent overfølsomhetsreaksjon for penicillin\". I dette eksempelet er \"penicillin\" et eksempel på \"Overfølsomhetsreaksjonen\", og resten av setningen registreres i \"Eksklusjonsutsagn\". Merk at om prekoordinerte fraser som \"Ingen kjent overfølsomhetsreaksjon for erythromysin\" finnes, kan dette brukes som et alternativ i dataelementet \"Eksklusjonsutsagn\".">
 				>
 				["at0004"] = <
 					text = <"Sist oppdatert">
