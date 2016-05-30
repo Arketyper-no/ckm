@@ -9,11 +9,10 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Lars Bitsch-Larsen">
-				["organisation"] = <"Haukeland University Hospital Bergen Norway">
-				["email"] = <"lbla@helse-bergen.no">
+				["name"] = <"Rune Pedersen, Lars Bitsch-Larsen">
+				["organisation"] = <"University Hospital of North Norway; Haukeland University Hospital Bergen Norway">
+				["email"] = <"rune.pedersen@unn.no; lbla@helse-bergen.no">
 			>
-			accreditation = <"MD DEAA, MBA spec in anesthesia and intensive care, spec in tropical med.">
 		>
 	>
 description
@@ -26,25 +25,23 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere utsagn om kliniske tilstander, forhold eller bekymringer som ikke er tilstede nå, eller ikke har vært tilstede tidligere.">
-			use = <"Brukes til å registrere et spesifikt utsagn om at kliniske tilstander, forhold eller bekymringer ikke er tilstede nå og/eller ikke har vært tilstede tidligere.
+			purpose = <"For å registrere et utsagn om familiens sykehistorie som aldri er lagt merke til av individet eller bekreftet av en kliniker.">
+			use = <"Brukes til å registrere et utsagn om familiens sykehistorie som aldri er lagt merke til av individet eller bekreftet av en kliniker. 
 
-Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om en klinisk oppføring i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
+Denne arketypen er spesifikt utviklet for å gi et tydelig og entydig eksklusjonsutsagn om familiær sykdomshistorie i journalen. Denne tilnærmingen foretrekkes framfor bruk av flagg eller terminologi for å uttrykke negasjon.
 
 Arketypen er utviklet for å kunne brukes på en rekke ulike måter. Den primære hensikten er å:
 - Representere flere \"Eksklusjonsutsagn\" i en instans av arketypen.
-- Lenke et \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\", for eksempel \"Ingen tidligere uønsket reaksjon til\" \"penicillin\" og \"erytromycin\".
+- Lenke et \"Eksklusjonsutsagn\" med flere \"Familieanamnese\", for eksempel \"Ingen familiær forekomst av\" \"hjertesykdom\" og \"KOLS\".
 
 Det er også mulig å bruke arketypen for følgende bruksområder, selv om gode og trygge kliniske bruksområder ikke er identifisert for dette:
-- Lenke flere \"Eksklusjonsutsagn\" med ett \"Spesifikt objekt\". Eksempel: \"Ingen familiær forekomst av\" og \"Aldri hatt\" som \"Eksklusjonsutsagn\", og \"diabetes\" som \"Spesifikt objekt\".
+- Lenke flere \"Eksklusjonsutsagn\" med ett \"Familieanamnese\". 
 
-Er det klinisk behov for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Spesifikke objekt\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hvert enkelt \"Spesifikt objekt\".
-
-Spesialiseringer av denne arketypen vil fange opp spesifikk og mer detaljert informasjon om vanlige eksklusjoner, for eksempel problemer eller diagnoser.
+Er det klinisk behov for at man lenker flere \"Eksklusjonsutsagn\" med flere \"Familieanamnese\" bør dette representeres ved flere instanser av denne arketypen for å sikre riktig gruppering av hvert enkelt \"Eksklusjonsutsagn\" med hvert enkelt \"Familieanamnese\".
 
 Merk at eksklusjonsutsagn kun anses å være oppdaterte og presise på registreringstidspunktet. Det er mulig at en journal fastslår at et individ på et tidspunkt hadde INGEN KJENT historie av XYZ (ved bruk at et eksklusjonsutsagn) samtidig som en senere registrerer evidens for debut av XYZ (ved bruk av en korresponderende arketype hvor en registrer det første tilfellet, f.eks. ved å bruke EVALUATION-arketypene for diagnose eller uønsket reaksjon). I framtidige journalutsagn kan individet deretter ha en KJENT forekomst av XYZ i problemlisten sin.">
 			keywords = <"eksklusjon, fravær, utsagn, ekskludert, funn, vurdering, negasjon, utelukkelse", ...>
-			misuse = <"Brukes ikke for registrering av eksklusjon eller fravær av klinisk informasjon hvor det finnes en spesialisering av denne arketypen for dette formålet.
+			misuse = <"Brukes ikke for registrering av eksklusjon eller fravær av klinisk informasjon hvor det finnes en versjon av arketypen EVALUATION.exclusion for dette formålet. 
 Det kan være, men er ikke begrenset til:
 - Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til bruk av legemidler - bruk arketypen EVALUATION.exclusion-medication til dette formålet.
 - Bruk ikke denne arketypen for registrering av eksklusjonsutsagn knyttet til prosedyrer - bruk arketypen EVALUATION.exclusion-procedure til dette formålet.
@@ -91,10 +88,10 @@ Not to be used to record the exclusion of any component of physical examination 
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Exclusion of Family History, Draft Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-05-04]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.625">
-		["build_uid"] = <"621f023d-b29d-448b-999e-b98977e8ed89">
+		["build_uid"] = <"d5418518-29f8-4696-89c2-876fbe2f0718">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"12BFC21ACB96FF0C7880581C6BD1B411">
+		["MD5-CAM-1.0.1"] = <"48635EFC89B21441390FBA565530E5DC">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -184,22 +181,22 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Exclusion of Family History(en)">
-					description = <"*A statement about family history that have never been noted by the individual or recognised by a clinician.(en)">
+					text = <"Eksklusjon av familiær sykdomshistorie">
+					description = <"Utsagn vedrørende familiær sykdomshistorie som aldri er lagt merke til av individet eller bekreftet av en kliniker.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*Exclusion statement(en)">
-					description = <"*Statement of exclusion of a family history.(en)">
-					comment = <"*Use to record a statement about problems or diagnoses that have never been noted by the individual or recognised by a clinician. This statement can support recording general statements such as \"No previous/past ...\" or \" No known ...\". Or it can support more exacting statements about a specified object such as \"No known history of ...\" where the 'Family History' identifies the precise condition.(en)">
+					text = <"Eksklusjonsutsagn">
+					description = <"Utsagn vedrørende eksklusjon av familiær sykdomshistorie.">
+					comment = <"Brukes for å registrere et utsagn om familiens sykehistorie som aldri er lagt merke til av individet eller bekreftet av en kliniker. Utsagnet kan brukes til å underbygge andre generelle utsagn som \"Ingen tidligere/tidligere familiær sykdomshistorie av....\" eller \"Ingen kjent...\" Den kan også støtte mer krevende utsagn om et spesifikt objekt som \"Ingen kjent familiær forekomst av ...\" der \"Familieanamnese\" identifiserer den aktuelle tilstanden.">
 				>
 				["at0003"] = <
-					text = <"*Family History(en)">
-					description = <"*Identification of the specific Family History to which the 'Exclusion statement' applies.(en)">
-					comment = <"*This data element is used to enable exact statements like: 'No past family history of diabetes'. In this example, 'diabetes' would be an example of the 'Family History' and the rest of the example phrase would be carried in the 'Exclusion statement'. Another possible use case might be 'there is no family history of heart disease'. Please note: if coordinated phrases such as 'No known familiy history of diabetes' is available, then this can be used as an alternative in the 'Exclusion statement' alone.(en)">
+					text = <"Familieanamnese">
+					description = <"Identifikasjon av spesifikk familiær sykdomshistorie \"Eksklusjonssutsagn\" gjelder.">
+					comment = <"Dette dataelementet brukes for å gi presise utsagn som f.eks. \"Ingen tidligere familiær sykdomshistorie om diabetes\". I dette eksempelet er \"diabetes\" et eksempel på \"Familieanamnese\", og det resterende av utsagnet er \"Eksklusjonsutsagn\". Et annet brukerscenario kan være \"Det er ingen familiær sykdomshistorie for hjertesykdom\". Merk at om prekoordinerte fraser som \"Ingen tidligere familiær sykdomshistorie om diabetes\" finnes, kan dette brukes som et alternativ i datalemententet \"Eksklusjonsutsagn\".">
 				>
 				["at0004"] = <
 					text = <"Sist oppdatert">
@@ -211,7 +208,7 @@ ontology
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekst om eksklusjonen som ikke fanges opp i andre felter.">
+					description = <"Ytterligere fritekst om eksklusjonen som ikke fanges opp i andre felt.">
 				>
 				["at0008"] = <
 					text = <"Tilleggsinformasjon">
