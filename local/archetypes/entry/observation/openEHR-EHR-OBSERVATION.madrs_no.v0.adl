@@ -17,26 +17,41 @@ description
 			purpose = <"MADRS (Montgomery and Åsberg Depression Rating Scale) brukes for å måle dybden av en depressiv tilstand og som hjelpemiddel for å følge opp en behandling. Denne arketypen er laget spesifikt for den norske versjonen av MADRS, fordi det er gjort semantiske endringer i oversettelsen fra den engelske originalen.">
 			use = <"Brukes for å måle dybden av en depressiv tilstand og som hjelpemiddel for å følge opp en behandling. 
 
-MADRS er delt inn i 10 punkter. For hvert punkt er det angitt i teksten hva man skal spørre om. Det gis en skår mellom 0 og 6. Skåringen 1,3 eller 5 velges hvis man er i tvil om svaret passer best til punktet over eller under. Vektlegg tilstanden de siden tre dagene. Ved døgnvariasjon, vektlegg den tid på døgnet hvor pasienten er mest deprimert. Still spørsmålene i den rekke følge de forekommer.">
-			keywords = <"MADRS", "psykiatri", "depresjon">
-			misuse = <"The MADRS Score is Copyright: Royal College of Psychiatrist, UK and should not be used outside the terms of the copyright. http://www.rcpsych.ac.uk/usefulresources/publications/permissions.aspx.">
+MADRS er delt inn i 10 punkter. For hvert punkt er det angitt i teksten hva man skal spørre om. Det gis en skår mellom 0 og 6. Skårene 1, 3 eller 5 velges hvis man er i tvil om svaret passer best til skårene over eller under. Vektlegg tilstanden de siste tre dagene. Ved døgnvariasjon, vektlegg den tid på døgnet hvor pasienten er mest deprimert. Still spørsmålene i den rekkefølge de forekommer.
+
+Det er terapeuten som skal intervjue pasienten og registrere svarene, men en kan også bruke opplysninger fra pårørende og pleiepersonell ved skåringen.
+
+Man summerer skåren for hvert enkelt spørsmål, noe som gir et resultat som et tall mellom 0 og 60.
+
+openEHR-arketyper er fritt tilgjengelige under en åpen lisens, men det spesifikke innholdet i denne MADRS-arketypen er opphavsrettslig beskyttet. All bruk av denne arketypen i implementasjoner må gjøres i henhold til vilkår gitt av innehaverne av opphavsretten.
+
+Erklæring om opphavsrett: The Montgomery-Åsberg Depression Scale (MADRS) is copyrighted by Stuart Montgomery, M.D.
+
+Informasjon om opphavsretten: http://www.rcpsych.ac.uk/usefulresources/publications/permissions.aspx.">
+			keywords = <"MADRS", "psykiatri", "depresjon", "psykometrisk">
+			misuse = <"MADRS skal ikke benyttes til annet enn å måle dybden av en depressiv tilstand.
+
+MADRS skal ikke brukes som pasientens eget spørreskjema.
+
+MADRS-arketypen skal ikke brukes med mindre opphavsrettsbetingelsene er oppfylt - for detaljer se: 
+http://www.rcpsych.ac.uk/usefulresources/publications/permissions.aspx.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Nasrin Amele Jamedari, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Stein Inge Klippen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Magne Rekdal, DIPS ASA, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Nasrin Amele Jamedari, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Terje Bless, Helse Nord FIKS, Norway", "Bjørn Christensen, HUS, Norway", "Cecilie Graver, Oslo universitetssykehus HF, Norway", "Daniel Habashi, PasientSky AS, Norway", "Stein Inge Klippen, DIPS ASA, Norway", "Gunnar Jårvik, Nasjonal IKT HF, Norway", "Karl Trygve Kalleberg, Oslo Universitetssykehus, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Kjell Krüger, Bergen kommune, Universitetet i Bergen, Norway", "Ole Kristian Losvik, Losol, Norway", "Bengt Nilssen, Sykehuset Innlandet HFq, Norway", "Martin Paulson, Sykehuset i Vestfold, Norway", "Magne Rekdal, Emetra AS, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Helene Trønnes, Helse Bergen, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["references"] = <"Montgomery, S.A. & Åsberg, M. (1979). A new depression scale designed to be sensitive to change. British Journal of Psychiatry, 134, 382-389.
+		["references"] = <"Montgomery SA, Asberg M. A new depression scale designed to be sensitive to change. Br J Psychiatry. 1979 Apr;134:382-9. PubMed PMID: 444788.
 
 Oversatt og bearbeidet til norsk av professor dr. med. Ulrik Malt. 
 Første publikasjon av oversettelsen: MH Kalfoss. Scand J Caring Sci 1992;6:23-28
 http://legeforeningen.no/Fagmed/Norsk-geriatrisk-forening/Geriatrisk-test--og-undervisningsmateriell/tester-og-registreringsskjemaer/montgommery-asberg-depression-rating-scale-madrs/">
-		["build_uid"] = <"8c07319d-bef3-45ec-b13b-972a5e73027c">
+		["build_uid"] = <"ef470882-cda7-4e33-a22d-e214684e5f44">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"1DBE8071E5CB077D35A6C9404448434F">
+		["MD5-CAM-1.0.1"] = <"5C768E8ABA75A10B9E0B44FCF3E7C881">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -53,111 +68,111 @@ definition
 									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Synlig tristhet - legeobservert
 										value matches {
 											0|[local::at0016], 	-- Ingen tristhet
-											1|[local::at0017], 	-- 
-											2|[local::at0018], 	-- Ser trist og humørløs ut, men kan leilighetsvis lyse opp
-											3|[local::at0019], 	-- 
+											1|[local::at0017], 	-- Mellom 0 og 2
+											2|[local::at0018], 	-- Ser trist og humørløs ut, men kan leilighetsvis lysne opp
+											3|[local::at0019], 	-- Mellom 2 og 4
 											4|[local::at0020], 	-- Virker trist og ulykkelig hele tiden
-											5|[local::at0021], 	-- 
+											5|[local::at0021], 	-- Mellom 4 og 6
 											6|[local::at0022]  	-- Ekstrem og vedvarende tristhet og fortvilelse
 										}
 									}
 									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Tristhet
 										value matches {
 											0|[local::at0014], 	-- Stort sett indifferent stemningsleie. Leilighetsvis tristhet når omstendighetene tilsier det
-											1|[local::at0015], 	-- 
+											1|[local::at0015], 	-- Mellom 0 og 2
 											2|[local::at0023], 	-- Overveiende følelse av nedstemthet, men lysere øyeblikk forekommer
-											3|[local::at0024], 	-- 
+											3|[local::at0024], 	-- Mellom 2 og 4
 											4|[local::at0025], 	-- Gjennomtrengende følelse av tristhet og dysterhet. Sinnsstemningen influeres knapt av ytre omstendigheter
-											5|[local::at0026], 	-- 
+											5|[local::at0026], 	-- Mellom 4 og 6
 											6|[local::at0027]  	-- Konstant opplevelse av sterk tristhet og fortvilelse
 										}
 									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Indre spenning
 										value matches {
 											0|[local::at0028], 	-- Rolig, bare antydning til indre spenning
-											1|[local::at0029], 	-- 
+											1|[local::at0029], 	-- Mellom 0 og 2
 											2|[local::at0030], 	-- Leilighetsvis følelse av ubehagelig psykisk spenning og vag uro
-											3|[local::at0031], 	-- 
+											3|[local::at0031], 	-- Mellom 2 og 4
 											4|[local::at0032], 	-- Vedvarende følelse av indre spenning eller panikkepisoder som pasienten bare kan mestre med vanskelighet
-											5|[local::at0033], 	-- 
+											5|[local::at0033], 	-- Mellom 4 og 6
 											6|[local::at0034]  	-- Vedvarende frykt og angst. Overveldende panikkfølelse
 										}
 									}
 									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Redusert nattesøvn
 										value matches {
 											0|[local::at0035], 	-- Sover som vanlig
-											1|[local::at0036], 	-- 
+											1|[local::at0036], 	-- Mellom 0 og 2
 											2|[local::at0037], 	-- Moderate innsovningsvansker eller moderat redusert, lett eller urolig søvn
-											3|[local::at0038], 	-- 
+											3|[local::at0038], 	-- Mellom 2 og 4
 											4|[local::at0039], 	-- Søvnen redusert eller avbrutt med minst to timer sammenlignet med vanlig
-											5|[local::at0040], 	-- 
+											5|[local::at0040], 	-- Mellom 4 og 6
 											6|[local::at0041]  	-- Mindre enn to til tre timers søvn om natten
 										}
 									}
 									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Svekket appetitt
 										value matches {
 											0|[local::at0042], 	-- Normal eller økt appetitt
-											1|[local::at0043], 	-- 
+											1|[local::at0043], 	-- Mellom 0 og 2
 											2|[local::at0044], 	-- Moderat redusert appetitt
-											3|[local::at0045], 	-- 
+											3|[local::at0045], 	-- Mellom 2 og 4
 											4|[local::at0046], 	-- Nesten ingen appetitt, maten smaker ikke, må tvinge seg selv til å spise
-											5|[local::at0047], 	-- 
+											5|[local::at0047], 	-- Mellom 4 og 6
 											6|[local::at0048]  	-- Næringsvegrende. Må overtales av andre til å spise
 										}
 									}
 									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Konsentrasjonsvansker
 										value matches {
 											0|[local::at0049], 	-- Ingen konsentrasjonsvansker
-											1|[local::at0050], 	-- 
+											1|[local::at0050], 	-- Mellom 0 og 2
 											2|[local::at0051], 	-- Leilighetsvis vansker med å samle tankene
-											3|[local::at0052], 	-- 
+											3|[local::at0052], 	-- Mellom 2 og 4
 											4|[local::at0053], 	-- Vansker med konsentrasjon og vedvarende oppmerksomhet, som forstyrrer lesing eller konversasjon
-											5|[local::at0054], 	-- 
+											5|[local::at0054], 	-- Mellom 4 og 6
 											6|[local::at0055]  	-- Invalidiserende mangel på konsentrasjonsevne
 										}
 									}
 									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Initiativløshet
 										value matches {
-											0|[local::at0056], 	-- Ingen spesielle vanskeligheter med å komme i gang med ting, ingen treghet
-											1|[local::at0057], 	-- 
+											0|[local::at0056], 	-- Ingen spesielle vansker med å komme i gang med ting, ingen treghet
+											1|[local::at0057], 	-- Mellom 0 og 2
 											2|[local::at0058], 	-- Visse vansker med å komme i gang med aktiviteter
-											3|[local::at0059], 	-- 
+											3|[local::at0059], 	-- Mellom 2 og 4
 											4|[local::at0060], 	-- Vanskeligheter med å komme i gang med enkelte rutineaktiviteter, som kan utføres bare med betydelig anstrengelse
-											5|[local::at0061], 	-- 
+											5|[local::at0061], 	-- Mellom 4 og 6
 											6|[local::at0062]  	-- Helt manglende evne til å ta initiativ. Uten evne til å igangsette aktiviteter uten hjelp
 										}
 									}
 									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Svekkede følelsesmessige reaksjoner
 										value matches {
 											0|[local::at0063], 	-- Normal interesse for omgivelsene og andre mennesker
-											1|[local::at0064], 	-- 
+											1|[local::at0064], 	-- Mellom 0 og 2
 											2|[local::at0065], 	-- Redusert evne til å glede seg over ting som vanligvis gleder. Redusert evne til å føle sinne
-											3|[local::at0066], 	-- 
-											4|[local::at0067], 	-- Tap av interesse for omverdenen. Tap av følelser for venner og kjente
-											5|[local::at0068], 	-- 
+											3|[local::at0066], 	-- Mellom 2 og 4
+											4|[local::at0067], 	-- Tap av interesse for omverdenen. Tap av følelser for venner og bekjente
+											5|[local::at0068], 	-- Mellom 4 og 6
 											6|[local::at0069]  	-- Opplevelsen av å være følelsesmessig lammet, uten evne til å føle sinne eller sorg, og til dels smertefull opplevelse av ikke å kunne føle noe for nære slektninger eller venner
 										}
 									}
 									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Depressivt tankeinnhold
 										value matches {
 											0|[local::at0070], 	-- Ingen depressive tanker
-											1|[local::at0071], 	-- 
-											2|[local::at0072], 	-- Fluktuerende tanker om ikke å strekke til, selvbebreidelser og mindreverdsfølelse
-											3|[local::at0073], 	-- 
-											4|[local::at0074], 	-- Vedvarende selvbebreidelser eller klare, men fortsatt rasjonelle tanker om skyld og synd Ser uttalt pessimistisk på fremtiden.
-											5|[local::at0075], 	-- 
-											6|[local::at0076]  	-- Vrangforestillinger om økonomisk ruin eller utilgivelige synder.
+											1|[local::at0071], 	-- Mellom 0 og 2
+											2|[local::at0072], 	-- Fluktuerende tanker om ikke å strekke til, selvbebreidelser og mindreverdighetsfølelse
+											3|[local::at0073], 	-- Mellom 2 og 4
+											4|[local::at0074], 	-- Vedvarende selvbebreidelser eller klare, men fortsatt rasjonelle tanker om skyld og synd. Ser uttalt pessimistisk på fremtiden.
+											5|[local::at0075], 	-- Mellom 4 og 6
+											6|[local::at0076]  	-- Vrangforestillinger om økonomisk ruin eller utilgivelige synder. Absurde selvanklager.
 										}
 									}
 									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Suicidaltanker
 										value matches {
 											0|[local::at0077], 	-- Ordinær livslyst, tar det som det kommer
-											1|[local::at0078], 	-- 
+											1|[local::at0078], 	-- Mellom 0 og 2
 											2|[local::at0079], 	-- Lei av livet, men bare flyktige suicidaltanker
-											3|[local::at0080], 	-- 
+											3|[local::at0080], 	-- Mellom 2 og 4
 											4|[local::at0081], 	-- Ville helst være død, suicidaltanker opptrer hyppig, og suicid anses som en mulig løsning uten at det foreligger spesifikke planer eller intensjoner
-											5|[local::at0082], 	-- 
-											6|[local::at0083]  	-- Uttalte planer om suicid når anledningen gir seg. Aktive forberedelser for suicid
+											5|[local::at0082], 	-- Mellom 4 og 6
+											6|[local::at0083]  	-- Uttalte planer om suicid når anledningen byr seg. Aktive forberedelser for suicid
 										}
 									}
 									ELEMENT[at0084] occurrences matches {0..1} matches {	-- MADRS skår
@@ -167,6 +182,11 @@ definition
 											}
 										}
 									}
+									ELEMENT[at0085] occurrences matches {0..1} matches {	-- Kommentar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
 								}
 							}
 						}
@@ -174,9 +194,21 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0086] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0087] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype CLUSTER[at0088] occurrences matches {0..1} matches {	-- Skåring ikke utført
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
 	}
-
-
 
 
 ontology
@@ -202,6 +234,7 @@ ontology
 				["at0004"] = <
 					text = <"Synlig tristhet - legeobservert">
 					description = <"Sikter på dysterhet, tungsinn, fortvilelse (mer enn bare vanlig forbigående dårlig humør) slik det avspeiler seg i tale, mimikk og holdning. Gradér på grunnlag av dybde og manglende evne til å lysne opp.">
+					comment = <"Fylles ut når intervjuet er over på grunnlag av observasjon.">
 				>
 				["at0005"] = <
 					text = <"Tristhet">
@@ -209,7 +242,7 @@ ontology
 				>
 				["at0006"] = <
 					text = <"Indre spenning">
-					description = <"Sikter på følelse av vag ulystfølelse, ubehagelig indre spenning, uro og angst stigende til panikk. Gradér i henhold til intensitet, varighet og behov for hjelp og støtte. Skilles fra tristhet (2).">
+					description = <"Sikter på følelse av vag ulystfølelse, ubehagelig indre spenning, uro, angst, stigende til panikk. Gradér i henhold til intensitet, varighet og behov for hjelp og støtte. Skilles fra \"Tristhet\".">
 				>
 				["at0007"] = <
 					text = <"Redusert nattesøvn">
@@ -229,11 +262,11 @@ ontology
 				>
 				["at0011"] = <
 					text = <"Svekkede følelsesmessige reaksjoner">
-					description = <"Sikter på den subjektive opplevelse av svekkede interesser for omgivelsene, eller for aktiviteter som normalt gir glede. Evnen til å reagere med adekvate følelser på omstendighetene eller andre mennesker er redusert.">
+					description = <"Sikter på den subjektive opplevelse av svekkede interesser for omgivelsene, eller for aktiviteter som normalt gir glede. Evnen til å reagere med adekvate følelser på omstendighetene eller andre mennesker er redusert. Skilles fra \"Initiativløshet\".">
 				>
 				["at0012"] = <
 					text = <"Depressivt tankeinnhold">
-					description = <"Sikter på tanker om skyld, mindreverdighet, selvbebreidelser, anger og tanker om økonomisk ruin.">
+					description = <"Sikter på tanker om skyld, mindreverdighet, selvbebreidelser, anger og tanker om økonomisk ruin, etc.">
 				>
 				["at0013"] = <
 					text = <"Suicidaltanker">
@@ -256,7 +289,7 @@ ontology
 					description = <"">
 				>
 				["at0018"] = <
-					text = <"Ser trist og humørløs ut, men kan leilighetsvis lyse opp">
+					text = <"Ser trist og humørløs ut, men kan leilighetsvis lysne opp">
 					description = <"">
 				>
 				["at0019"] = <
@@ -408,7 +441,7 @@ ontology
 					description = <"">
 				>
 				["at0056"] = <
-					text = <"Ingen spesielle vanskeligheter med å komme i gang med ting, ingen treghet">
+					text = <"Ingen spesielle vansker med å komme i gang med ting, ingen treghet">
 					description = <"">
 				>
 				["at0057"] = <
@@ -452,7 +485,7 @@ ontology
 					description = <"">
 				>
 				["at0067"] = <
-					text = <"Tap av interesse for omverdenen. Tap av følelser for venner og kjente">
+					text = <"Tap av interesse for omverdenen. Tap av følelser for venner og bekjente">
 					description = <"">
 				>
 				["at0068"] = <
@@ -472,7 +505,7 @@ ontology
 					description = <"">
 				>
 				["at0072"] = <
-					text = <"Fluktuerende tanker om ikke å strekke til, selvbebreidelser og mindreverdsfølelse">
+					text = <"Fluktuerende tanker om ikke å strekke til, selvbebreidelser og mindreverdighetsfølelse">
 					description = <"">
 				>
 				["at0073"] = <
@@ -480,7 +513,7 @@ ontology
 					description = <"">
 				>
 				["at0074"] = <
-					text = <"Vedvarende selvbebreidelser eller klare, men fortsatt rasjonelle tanker om skyld og synd Ser uttalt pessimistisk på fremtiden.">
+					text = <"Vedvarende selvbebreidelser eller klare, men fortsatt rasjonelle tanker om skyld og synd. Ser uttalt pessimistisk på fremtiden.">
 					description = <"">
 				>
 				["at0075"] = <
@@ -488,7 +521,7 @@ ontology
 					description = <"">
 				>
 				["at0076"] = <
-					text = <"Vrangforestillinger om økonomisk ruin eller utilgivelige synder.">
+					text = <"Vrangforestillinger om økonomisk ruin eller utilgivelige synder. Absurde selvanklager.">
 					description = <"">
 				>
 				["at0077"] = <
@@ -516,12 +549,30 @@ ontology
 					description = <"">
 				>
 				["at0083"] = <
-					text = <"Uttalte planer om suicid når anledningen gir seg. Aktive forberedelser for suicid">
+					text = <"Uttalte planer om suicid når anledningen byr seg. Aktive forberedelser for suicid">
 					description = <"">
 				>
 				["at0084"] = <
 					text = <"MADRS skår">
-					description = <"Summen av skår til hvert enkelt MADRS-parameter.">
+					description = <"Summen av skår fra hvert enkelt MADRS-parameter.">
+					comment = <"Det finnes tolknikngsveiledere for MADRS, der man ut fra MADRS skår havner på ingen depresjon, lett, moderat eller alvorlig.">
+				>
+				["at0085"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til MADRS som ikke er fanget opp i andre felt.">
+				>
+				["at0086"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0087"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0088"] = <
+					text = <"Skåring ikke utført">
+					description = <"Detaljer for eksplisitt dokumentasjon av at MADRS ikke ble utført.">
 				>
 			>
 		>
