@@ -2,14 +2,15 @@
 	openEHR-EHR-CLUSTER.inspection_body_fluid.v0
 
 concept
-	[at0000]	-- Examination of body fluid
+	[at0000]	-- Inspection of body fluid
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Johntore Valand, Kristian Berg">
+				["name"] = <"Kristian Berg, John Tore Valand">
+				["organisation"] = <"Helse Nord, Helse Vest">
 			>
 		>
 	>
@@ -23,83 +24,110 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"For recording the findings observed during the examination of a body fluid at an identified body site or from an identified body source.">
-			use = <"Use to record a narrative description of the overall findings observed during the  of a body fluid from an identified body source. This initial draft archetype consists only of the core examination pattern data elements (as per CLUSTER.exam_pattern) and will likely be expanded further over time as specific clinical requirements are identified.
+			purpose = <"For recording the findings observed during the inspection of body fluid at a body site or from an identified body source, usually as part of a physical examination by a clinician.">
+			use = <"Use to record a narrative description, structured details and clinical interpretation about findings observed during the inspection of any body fluid from an identified body site or source, usually as part of a physical examination by a clinician.
 
-Body fluids usually refer to fluids excreted or secreted from the body including, but not limited to:
+This archetype has been specifically designed to be used as the framework for recording any body fluid. In order to record examination findings for multicomponent body fluids such as amniotic fluid that may also contain obvious blood, meconium or pus, it is intended that one instance of this archetype be used to describe the amniotic fluid overall and additional instances of this same archetype will be nested with the 'Specific findings' SLOT to represent each of blood, meconium and pus.
+
+Body fluid is a liquid that originates from the human body, and this archetype is intended to support detailed description of:
+- normal physiological fluids; 
+- physiological fluids that may be altered due to a pathological process; and
+- fluids generated as part of a pathological process within the body.
+
+Examples include, but are not limited to:
 - Amniotic fluid;
 - Blood and plasma;
 - Cerebrospinal fluid;
 - Discharge;
-- Excreta, including urine and liquid faeces
-- Exudate;
-- Joint fluid;
+- Excreta, including urine and liquid faeces;
 - Pus;
-- Saliva; and
-- Sweat.
+- Saliva;
+- Sputum;
+- Synovial fluid;
+- Sweat; and
+- Vomitus.
 
-This archetype has been specifically designed to be used in the 'Examination findings' SLOT within the CLUSTER.exam_cervix, CLUSTER.exam.wound and similar archetypes, and also in the 'Additional details' SLOT within the OBSERVATION.urinalysis archetype. It can also be used within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.
+While this archetype will most likely be used in the context of a living subject, it is also appropriate to use in recording autopsy findings.
+
+Context of the body site or source will usually be carried in the archetypes in which it is nested, including but not limited to:
+-  in the 'Examination findings' SLOT within many of the CLUSTER.exam family of archetypes and related inspection and palpation archetypes;
+-  in the 'Additional details' SLOT within the OBSERVATION.urinalysis, the OBSERVATION.fluid_output archetypes; and
+- within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.
 
 The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
 
-Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.">
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical description' data element.">
+			keywords = <"biofluid", "bodily fluid", "amniotic", "blood", "plasma", "cerebrospinal", "fluid", "discharge", "urine", "pus", "saliva", "sputum", "synovial", "sweat", "vomit", "gastric", "diarrhoea", "mucous">
 			misuse = <"Not to be used for recording measurements of fluid volume - use OBSERVATION archetypes for this purpose. For example OBSERVATION.fluid_output.
 
-Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
+Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom_sign.
 
 Not to be used to record the results of a urinalysis test - use OBSERVATION.urinalysis. This archetype may be included in the 'Additional details' SLOT to provide additional context to the test result.
 
-Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+Not to be used to record the details of a specimen for use in laboratory testing - use CLUSTER.specimen.">
+			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere funn observert under undersøkelse av en kroppsvæske på et identifisert anatomisk sted eller fra en identifisert kroppskilde.">
-			use = <"Brukes for å registrere en fritekstbeskrivelse av samlede funn observert under undersøkelse av en kroppsvæske fra en identifisert kroppskilde. Denne tidlige versjonen av arketypen inneholder kun grunnleggende dataelementer og vil sannsynligvis utvides ytterligere over tid og etter hvert som kliniske behov identifiseres.
+			purpose = <"For registrering av funn observert under visuell ndersøkelse av en kroppsvæske på et kroppssted eller fra en navngitt kroppskilde. Undersøkelsen gjøres vanligvis som en del av en fysisk undersøkelse utført av en kliniker.">
+			use = <"Brukes for å registrere en fritekstbeskrivelse, strukturerte detaljer og klinisk fortolkning av funn observert under visuell undersøkelse av en kroppsvæske på et navngitt kroppssted eller kroppskilde. Undersøkelsen gjøres vanligvis som en del av en fysisk undersøkelse utført av en kliniker.
 
-Kroppsvæsker referer vanligvis til væsker som er utskilt eller sekrert fra menneskekroppen for eksempel:
+Arketypen er utviklet spesifikt for å benyttes som et rammeverk for registrering av en hvilken som helst kroppsvæske. For å registrere kroppsvæsker som består av flere komponenter som for eksempel fostervann registrerer man en instans av arketypen for å beskrive fostervannet, ytterligere instanser av den samme arketypen nøstes i dataelementet \"Spesifikke detaljer\" for å representere blod, mekonium og puss.
+
+Kroppsvæsker referer vanligvis til væsker som er utskilt eller sekrert fra menneskekroppen og arketypen støtter detaljert registrering av:
+- Vanlige fysiologiske væsker.
+- Fysiologiske væsker som forandrer seg som følge av en patologisk prosess.
+- Væsker som genereres som en del av en patologisk prosess i kroppen.
+
+Eksempler på kroppsvæsker kan være:
 - Fostervann
 - Blod eller plasma
 - Cerebrospinalvæske
 - Utflod
 - Ekskret, også urin og diare
-- Sårvæske
-- Leddvæske
 - Puss
 - Spytt
+- Ekspektorat
+- Leddvæske
 - Svette
+- Oppkast
 
-Arketypen er utviklet spesifikt for å benyttes i SLOTet \"Undersøkelsesfunn\" i arketypene CLUSTER.exam_cervix, CLUSTER.exam:wound og i liknende arketyper eller i SLOTet \"Tilleggsinformasjon\" i arketypen OBSERVATION.urinalysis. Arketypen kan også benyttes i andre OBSERVATION eller CLUSTER arketyper hvor det er klinisk relevant.
+Arketypen er vil i de fleste tilfeller brukes i hos levende individer, men den kan også benyttes for registrering av funn ved obduksjon.
 
-CLUSTER.exclusion_exam arketypen kan nøstes i dataelementet \"Undersøkelse ikke utført\" for å eksplisitt registrere at en undersøkelse ikke er utført.
+Kroppsted eller kroppskilde vil vanligvis identifiseres i konteksten arketypen nøstes i, eksempler på kontekst kan være:
+- I SLOTet \"Funn ved undersøkelse\" i mange av de spesifikke undersøkelsesarketypene og relaterterte inspeksjons- og palpasjonsarketypene.
+- I SLOTet \"Tilleggsinformasjon\" i arketypene OBSERVATION.urinanalysis og OBSERVATION.fluid_output
+- I andre OBSERVATION eller CLUSTER arketyper der dette er klinisk formålstjenlig.
 
-Dataelementet \"Klinisk beskrivelse\" kan brukes for å inkludere fritekstbeskrivelser fra eksisterende eller andre kliniske systemer i et arketypeformat.">
+Arketypen CLUSTER.exclusion_exam arketypen kan nøstes i SLOTet \"Undersøkelse ikke utført\" for å gi mulighet for en eksplisitt registrering av at en undersøkelse ikke er utført.
+
+Bruk for å innlemme fritekstbeskrivelser av kliniske funn fra eksisterende eller tidligere kliniske systemer i et arketypeformat ved å bruke dataelementet \"Klinisk beskrivelse\".">
+			keywords = <"kroppsvæske", "fosterhinne", "blod", "plasma", "cerebrospinal", "væske", "utflod", "urin", "puss", "spytt", "ekspektorat", "ledd", "svette", "oppkast", "mage", "diare", "slim">
 			misuse = <"Brukes ikke for å registrere målinger av væskevolum - bruk OBSERVATION-arketyper for dette formålet. For eksempel OBSERVATION.fluid_output.
 
 Brukes ikke for å registrere en klinisk anamnese. Bruk spesifikke OBSERVATION eller CLUSTER arketyper for dette formålet. For eksempel OBSERVATION.story og CLUSTER.symptom_sign.
 
 Brukes ikke for å registrere resultat av en urinanalyse - bruk OBSERVATION.urinalysis. Denne arketypen kan legges til i SLOTet \"Tilleggsinformasjon\" for å gi ytterligere kontekst til prøveresultatet.
 
-Brukes ikke for å registrere frittstående kliniske observasjoner, målinger eller prøvesvar - bruk spesifikke OBSERVATION arketyper. For eksempel OBSERVATION.blood_pressure eller OBSERVATION.imaging_exam.">
+Brukes ikke for å registrere detaljer om en prøve for bruk i laboratorier. Bruk CLUSTER.specimen for dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "John Tore Valand, Haukeland Universitetssjukehus, Norway", "Heather Leslie, Ocean Informatics, Australia">
+	other_contributors = <"Kerstin Adolfsson, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Kate Bryan, Stalis Ltd, United Kingdom", "David Burns, East Kent Hospitals University Foundation NHS Trust, United Kingdom", "Peter Coates, NHS England, United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Dave Kilroy, Application Insight Ltd, United Kingdom", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Kelvin Lok, Stalis Ltd, United Kingdom", "Mark McEvoy, SITS International, Sweden", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Colin Newell, OpusVL, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Rob Organ, Yeovil District Hospital NHS Foundation Trust, United Kingdom", "Petra Palm, Region Östergötland, Sweden", "Mike Pargeter, Across Health Ltd, United Kingdom", "John Pyle, self, United Kingdom", "Navin Ramachandran, NHS, United Kingdom", "Cecilia Revelj, Landstinget i Kalmar län, Sweden", "Ingela Sammeli, Landstinget i Värmland, Sweden", "Elin Tell, Region Ostergotland, Sweden", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Lina Öfverström, Region Östergötland, Sweden">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics<heather.leslie@oceaninformatics.com>">
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["references"] = <"Derived from: Examination of body fluid, Draft Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2015-10-19]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.2255">
-		["build_uid"] = <"1434a18d-9806-49af-b1f2-2cff4c77d078">
-		["original_publisher"] = <"Nasjonal IKT">
-		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"773AEE2D46A1CD20546D0C6B75278404">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["build_uid"] = <"811c5c17-d0ee-467f-98f6-93855f589f0c">
+		["original_publisher"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"53880652B708731C4F7B85E67654BDD3">
+		["custodian_namespace"] = <"org.openehr">
+		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Examination of body fluid
+	CLUSTER[at0000] matches {	-- Inspection of body fluid
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Fluid name
 				value matches {
@@ -111,6 +139,13 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- No abnormality detected
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True}
+					}
+				}
+			}
 			allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {	-- Structured body source
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_clock(-[a-zA-Z0-9_]+)*\.v0/}
@@ -120,7 +155,7 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Presence?
+			ELEMENT[at0019] occurrences matches {0..1} matches {	-- Presence?
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -147,9 +182,9 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- Additional findings
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- Specific findings
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exam_body_fluid(-[a-zA-Z0-9_]+)*\.v0/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.inspection_body_fluid(-[a-zA-Z0-9_]+)*\.v0/}
 			}
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	-- Multimedia representation
 				include
@@ -179,26 +214,27 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Examination of body fluid">
-					description = <"Findings observed during the examination of body fluid at a body site or from an identified body source.">
+					text = <"Inspection of body fluid">
+					description = <"Findings observed during the inspection of body fluid at a body site or from an identified body source, usually as part of a physical examination by a clinician.">
 				>
 				["at0001"] = <
 					text = <"Fluid name">
 					description = <"The name of the body fluid.">
+					comment = <"Coding of the 'Fluid name' with a coding system is desirable, if available.">
 				>
 				["at0002"] = <
-					text = <"Presence?">
-					description = <"Statement that the fluid was, or was not, observed at the identified body site.">
-					comment = <"Record as true if the body fluid was observed. This data element is intended for examination of body fluid in wounds, or similar, and at a specific body site and is not applicable to body fluids that are being examined away from the source such as urine.">
+					text = <"No abnormality detected">
+					description = <"Statement that no abnormality was detected (NAD) on inspection of the body fluid.">
+					comment = <"Record as True if no abnormality was detected on inspection. Specific statements about the normality of the findings can be included in the 'Clinical Interpretation' data element.">
 				>
 				["at0003"] = <
 					text = <"Clinical description">
-					description = <"Narrative description about the fluid, including appearance.">
+					description = <"Narrative description about the fluid.">
 				>
 				["at0004"] = <
-					text = <"Additional findings">
+					text = <"Specific findings">
 					description = <"Additional structured details about the body fluid.">
-					comment = <"For example: inclusion of further CLUSTER.exam_body_fluid archetypes could describe components of substances such as required to describe a mixture of blood and meconium post childbirth.">
+					comment = <"For example: inclusion of detailed CLUSTER archetypes for specific fluids such as urine; or inclusion of further CLUSTER.exam_body_fluid archetypes could describe components of substances such as required to describe a mixture of blood and meconium post childbirth.">
 				>
 				["at0005"] = <
 					text = <"Multimedia representation">
@@ -231,17 +267,17 @@ ontology
 				["at0014"] = <
 					text = <"Amount">
 					description = <"Description of the amount of fluid observed at the identified body site.">
-					comment = <"This data element is intended for examination of body fluid in wounds, or similar, and at a specific body site and is not applicable to body fluids that are being examined away from the source such as urine. Can be described as a free text narrative or coded to a value set such as small/medium/profuse or normal/increased where appropriate in a template.">
+					comment = <"The intent of this data element is to record either a narrative description of the amount, or to code with a value set such as small/medium/profuse or normal/increased where appropriate in a template. This data element is not intended for quantitative assessment of body fluids - use OBSERVATION.fluid_output for this purpose.">
 				>
 				["at0015"] = <
 					text = <"Body source">
-					description = <"Identification of the body site or source .">
-					comment = <"If the body site has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.">
+					description = <"Identification of the body site or source.">
+					comment = <"Coding of the 'Body source' with a coding system is desirable, if available. If the body site has previously been identified in the 'Fluid name' data element or another archetype in which this archetype is nested, this data element becomes redundant. Please note: while this archetype will most likely be used in the context of a living subject, it is also appropriate to use in recording autopsy findings.">
 				>
 				["at0016"] = <
 					text = <"Structured body source">
 					description = <"A structured representation of the body source.">
-					comment = <"If the body site has previously been identified in another archetype in which this archetype is then nested, this SLOT becomes redundant.">
+					comment = <"If the body source has previously been identified in the 'Fluid name' data element or another archetype in which this archetype is nested, this SLOT becomes redundant.">
 				>
 				["at0017"] = <
 					text = <"Odour">
@@ -251,82 +287,93 @@ ontology
 					text = <"Colour">
 					description = <"Description of the colour of body fluid.">
 				>
+				["at0019"] = <
+					text = <"Presence?">
+					description = <"Statement that the fluid was, or was not, observed at the identified body site.">
+					comment = <"This data element is intended for examination of body fluid in wounds, or similar, and at a specific body site and is not applicable to body fluids that are being examined away from the source such as urine. It may also be used to record that bloody fluid or meconium was observed within amniotic fluid, by nesting another instance of this archetype inside the 'Additional findings' SLOT'.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Undersøkelse av kroppsvæske">
-					description = <"Funn observert ved undersøkelse av en kroppsvæske på et identifisert kroppssted eller fra en identifisert kroppskilde.">
+					text = <"Inspeksjon av kroppsvæske">
+					description = <"Funn observert under visuell undersøkelse av en kroppsvæske på et kroppssted eller fra en identifisert kroppskilde. Undersøkelsen gjøres vanligvis som en del av en fysisk undersøkelse utført av en kliniker.">
 				>
 				["at0001"] = <
-					text = <"Kroppsvæske">
-					description = <"Navnet på kroppsvæsken.">
+					text = <"Væskenavn">
+					description = <"Navn på kroppsvæsken.">
+					comment = <"Koding av \"Væskenavn\" med et kodeverk er ønskelig, dersom tilgjengelig.">
 				>
 				["at0002"] = <
-					text = <"Til stede?">
-					description = <"Utsagn om væsken ble observert eller ikke ble observert på det identifiserte kroppsstedet.">
-					comment = <"Er dette riktig refererer til coded text??? Registrer som sann om kroppsvæsken ble observert. Dataelementet er tenkt brukt ved undersøkelse av kroppsvæsker i sår eller liknende og på et spesifikt kroppssted. Dataelementet skal ikke brukes om kroppsvæsker som ikke undersøkes på angitt sted for eksempel urin.">
+					text = <"Uten anmerkning">
+					description = <"Utsagn om at ingen avvik var oppdaget ved undersøkelsen av kroppsvæsken.">
+					comment = <"Registrer som Sann om ingen avvik ble oppdaget ved undersøkelsen. Spesifikke utsagn om normalfunnet kan registreres i dataelementet \"Klinisk fortolkning\".">
 				>
 				["at0003"] = <
 					text = <"Klinisk beskrivelse">
-					description = <"Fritekstbeskrivelse av væsken og utseende.">
+					description = <"Fritekstbeskrivelse av væsken.">
 				>
 				["at0004"] = <
-					text = <"Tilleggsfunn">
+					text = <"Spesifikke funn">
 					description = <"Ytterligere strukturerte detaljer om kroppsvæsken.">
-					comment = <"For eksempel: inkludering av ytterligere CLUSTER.exam_body_fluid arketyper kan brukes til å beskrive komponenter av substanser som behøves for å beskrive en miks av blod og mekonium etter en fødsel.">
+					comment = <"For eksempel: Detaljerte CLUSTER arketyper for spesifikke væsker som for eksempel urin. Eller ved å legge til CLUSTER.exam_body_fluid arketyper for å beskrive komponenter av substanser for for eksempel å kunne beskrive blandinger av blod og mekonium etter fødsel.">
 				>
 				["at0005"] = <
 					text = <"Multimedia">
-					description = <"Digitalt bilde, video eller diagram som representerer funn.">
+					description = <"Digitale bilder, video eller diagram som representerer funn ved undersøkelsen.">
 				>
 				["at0006"] = <
 					text = <"Klinisk fortolkning">
-					description = <"Ord, frase eller kort beskrivelse som representerer klinisk betydning og signifikans til funn.">
+					description = <"Enkelt ord, frase eller kort beskrivelse som representerer klinisk betydning og signifikans ved funnene.">
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekst om funn som ikke er registrert i andre felt.">
+					description = <"Ytterligere fritekst om funn ved undersøkelsen ikke registrert i andre felt.">
 				>
 				["at0008"] = <
-					text = <"Undersøkelse ikke utført.">
-					description = <"Detaljer for å eksplisitt registrere at undersøkelsen ikke ble utført.">
+					text = <"Undersøkelse ikke utført">
+					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
 				>
 				["at0009"] = <
 					text = <"Tilstede">
-					description = <"Væsken ble observert på kroppstedet.">
+					description = <"Kroppsvæsken ble observert ved kroppsstedet.">
 				>
 				["at0010"] = <
-					text = <"Uviss">
-					description = <"Det var ikke mulig å fastslå om væsken var tilstede eller fraværende på kroppsstedet.">
+					text = <"Ubestemmelig">
+					description = <"Det var ikke mulig å bestemme om væsken var tilstede på kroppsstedet.">
 				>
 				["at0011"] = <
-					text = <"Fraværende">
+					text = <"Ikke tilstede">
 					description = <"Væsken var ikke tilstede på kroppsstedet.">
 				>
 				["at0014"] = <
 					text = <"Mengde">
-					description = <"Beskrivelse av væskemengde observert på kroppsstedet.">
-					comment = <"Dette dataelementet skal brukes ved undersøkelse av kroppsvæske i sår eller liknende og på et spesifikt kroppssted. Dataelementet skal ikke brukes om kroppsvæsker som ikke undersøkes på angitt sted for eksempel urin.">
+					description = <"Beskrivelse av mengde av væske observert på det identifiserte kroppssstedet.">
+					comment = <"Dataelementet brukes for å registrere en fritekstbeskrivelse av mengde, eller for å kode mengde med et verdisett som for eksempel liten/middels/stor eller normal/økt i et templat. Dataelementet skal ikke benyttes for en kvantitativ vurdering av kroppsvæsken - bruk OBSERVATION.fluid_output for dette formålet.">
 				>
 				["at0015"] = <
 					text = <"Kroppskilde">
-					description = <"Identifisering av sted på kroppen eller kilde.">
-					comment = <"Er sted på kroppen tidligere identifisert i en annen arketype som denne arketypen er nøstet i, blir dette dataelementet overflødig.">
+					description = <"Navn på kroppssted eller kroppskilde.">
+					comment = <"Koding av \"Kroppskilde\" med et kodeverk er ønskelig, dersom tilgjengelig. Er stedet på kroppen tidligere identifisert i dataelementet \"Væskenavn\" eller i en annen arketype som denne arketypen er nøstet i vil dette dataelementet være redundant. Merk: Arketypen vil vanligvis brukes hos levende individer, men den kan også brukes ved registrering av funn ved obduksjon.">
 				>
 				["at0016"] = <
 					text = <"Strukturert kroppskilde">
-					description = <"En strukturert representasjon av kroppskilde.">
-					comment = <"Er sted på kroppen tidligere identifisert i en annen arketype som denne arketypen er nøstet i, blir dette dataelementet overflødig.">
+					description = <"En strukturert representasjon av kroppskilden.">
+					comment = <"Er kroppskilden tidligere identifisert i dataelementet \"Væskenavn\" eller i en annen arketype som denne arketypen er nøstet i, er dette SLOTet redundant.">
 				>
 				["at0017"] = <
 					text = <"Lukt">
-					description = <"Beskrivelse av kroppsvæskens lukt.">
+					description = <"Beskrivelse av hvordan kroppsvæsken lukter.">
 				>
 				["at0018"] = <
 					text = <"Farge">
 					description = <"Beskrivelse av kroppsvæskens farge.">
+				>
+				["at0019"] = <
+					text = <"Tilstede?">
+					description = <"Utsagn om væsken ble observert eller ikke ved det identifiserte kroppsstedet.">
+					comment = <"Dette dataelementet benyttes ved registrering av kroppsvæsker i sår eller liknende på et spesifikt kroppssted, det skal ikke benyttes ved kroppsvæsker som for eksempel urin som ikke undersøkes ved kroppsstedet. Dataelementet kan også benyttes for å registre at blodvæske eller mekonium ble observert i forstervann ved å nøste en annen instans av arketypen i SLOTet \"Spesifikke funn\".">
 				>
 			>
 		>
