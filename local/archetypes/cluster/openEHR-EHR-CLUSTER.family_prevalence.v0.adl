@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Family prevalence
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Hallvard Laerum">
+				["organisation"] = <"Oslo Universitetssykehus HF">
+				["email"] = <"hallaeru@online.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -23,6 +33,13 @@ This archetype has  specifically been designed to be used in the 'Detail' SLOT w
 			misuse = <"Not to be used to record actual health information about problems or diagnoses in individual family members - use EVALUATION.family_history for this purpose.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å registrere informasjon om prevalensen av en bestemt risikofaktor, problem eller diagnose i beslektede eller ikke-beslektede familiemedlemmer.">
+			use = <"Denne arketypen er spesielt utviklet for \"Detaljer\"-utvidelsen i arketypen EVALUATION.health_risk for å støtte vurdering av den aktuelle risikofaktoren hos individet, og \"Familieforekomst\"-utvidelsen i arketypen EVALUATION.family_history. Den kan også brukes i \"Spesifikke detaljer\"-utvidelsen i arketypen EVALUATION.problem_diagnosis, eller andre EVALLUATION eller CLUSTER-arketyper, der det egner seg klinisk.">
+			keywords = <"familieanamnese", "prevalens", "affisert", "genetisk", "risikofaktor">
+			misuse = <"Må ikke brukes til å registrere informasjon om faktiske problemer eller diagnoser hos individets familiemedlemmer - bruk heller arketype EVALUATION.family_history til dette.">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil">
@@ -32,10 +49,10 @@ This archetype has  specifically been designed to be used in the 'Detail' SLOT w
 		["revision"] = <"0.0.1-alpha">
 		["references"] = <"Derived from: Family prevalence, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-01-11]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1975
 Risk of condition based on family history, rejected archetype, openEHR Clinical Knowledge Manager [Internet]. openEHR Foundation. Authored: 2006 04 23. Available at: http://www.openehr.org/ckm/#showArchetype_1013.1.125 (last accessed 2015 03 05).">
-		["build_uid"] = <"a3a17933-ac7e-4f1f-8557-28a529811f2a">
+		["build_uid"] = <"1de069d5-31de-4cf2-85c5-1ac7afaba8d4">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"04FA7460A262798DED48DA09963BF8E6">
+		["MD5-CAM-1.0.1"] = <"D233C9105A6BDB5D5C408C6EAB7C6D8A">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -209,6 +226,96 @@ ontology
 					text = <"Inheritance type">
 					description = <"Category of inheritance for the identified identified risk factor, problem or diagnosis.">
 					comment = <"For example: autosomal dominant, autosomal recessive, X-linked dominant, X-linked recessive, condominant, or mitochondrial.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Familieprevalens">
+					description = <"Oppsummerende informasjon om forekomsten av en bestemt risikofaktor, problem eller diagnose hos alle familiemedlemmer.">
+				>
+				["at0030"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse av forekomsten i familien.">
+				>
+				["at0031"] = <
+					text = <"Affiserte familiemedlemmer">
+					description = <"Detaljer om antall familiemedlemmer som er affisert">
+					comment = <"Dette interne clusteret blir repetert for hvert slektskap, familielinje eller kjønn eller kombinasjonen av alle tre. For eksempel vil clusteret bli repetert for hver førstegradsslektninger (uten å nevne kjønn), mannlige førstegradsslektninger fra morrsiden, mannlige førstegradsslektninger eller kvinnelige førstegradsslektninger; eller alle menn, alle kvinner.">
+				>
+				["at0032"] = <
+					text = <"Slektskap">
+					description = <"Graden av slektskap mellom individet og et utvalg familiemedlemmer.">
+				>
+				["at0033"] = <
+					text = <"Biologisk kjønn">
+					description = <"Familiemedlemmenes biologiske kjønn">
+				>
+				["at0034"] = <
+					text = <"Antall affisert">
+					description = <"Antall familiemedlemmer som er kjent affisert av tilstanden.">
+					comment = <"Dette er antall familiemedlemmer som er rammet OG som passer det valgte slektskapet, familieside eller kjønn. I praksis er dette telleren for å regne ut andel affiserte familiemedlemmer.">
+				>
+				["at0037"] = <
+					text = <"Førstgradsslektninger">
+					description = <"Deler 50% av genene med individet - for eksempel forelder, søsken eller barn.">
+				>
+				["at0038"] = <
+					text = <"Andregradsslektninger">
+					description = <"Deler 25% av genene med individet - for eksempel besteforelder, tante, onkel, niese, nevø, barnebarn eller halvsøsken.">
+				>
+				["at0039"] = <
+					text = <"Tredjegradsslektninger">
+					description = <"Deler 12,5% av genene med individet - for eksempel oldeforelder, grandtante, grandonkel, fetter, kusine, barn av nieser og nevøer og barnebarns barn (oldebarn).">
+				>
+				["at0040"] = <
+					text = <"Morssiden">
+					description = <"Er beslektet gjennom individets mor">
+				>
+				["at0041"] = <
+					text = <"Farssiden">
+					description = <"Er beslektet gjennom individets far.">
+				>
+				["at0042"] = <
+					text = <"Genetisk familie">
+					description = <"Alle familiemedlemmer som er genetisk beslektet.">
+				>
+				["at0043"] = <
+					text = <"Mann">
+					description = <"Familiemedlem som er biologisk mann.">
+				>
+				["at0044"] = <
+					text = <"Kvinne">
+					description = <"Familiemedlem som er biologisk kvinne.">
+				>
+				["at0050"] = <
+					text = <"Ikke-genetisk familie">
+					description = <"Alle familiemedlemmer som ikke er genetisk beslektet.">
+				>
+				["at0051"] = <
+					text = <"Familieside">
+					description = <"Identifisering av morsside eller farsside i slektskapet.">
+					comment = <"Brukes bare for genetisk beslektede familiemedlemmer">
+				>
+				["at0052"] = <
+					text = <"Ubestemt/Intersex/Uspesifisert">
+					description = <"Familiemedlemmer som enten har kjønnskarakteristika fra begge kjønn, eller mangler kjønnskarakteristika regnet som nødvendig for å bli definert som mann eller kvinne.">
+				>
+				["at0054"] = <
+					text = <"Antall familiemedlemmer i gruppen">
+					description = <"Antall familiemedlemmer som passer i dette utvalget.">
+					comment = <"Dette er antall familiemedlemmer som potensielt kan ha blitt rammet OG som også passer det valgte slektskapet, familieside og kjønn. I praksis er dette nevneren for å regne ut andel affiserte familiemedlemmer.">
+				>
+				["at0055"] = <
+					text = <"Genetisk predisposisjon?">
+					description = <"Har den identifiserte risikofaktoren, problemet eller diagnosen en genetisk årsak?">
+					comment = <"Valgfritt å registrere som \"Sann\" hvis det finnes en bekreftet genetisk predisposisjon. I mange tilfeller kan man resonnere seg til dette ut fra risikofaktoren, problemet eller diagnosen, og trenger ikke ble registrert eksplisitt.">
+				>
+				["at0056"] = <
+					text = <"Type arvelighet">
+					description = <"Hvordan den identifiserte risikofaktoren, problemet eller diagnosen arves i familien.">
+					comment = <"For eksempel: autosomal dominant, autosmal recessiv, X-bundet dominant, X-bundet recessiv, condominant eller mitokondriell">
 				>
 			>
 		>
