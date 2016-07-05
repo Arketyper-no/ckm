@@ -5,6 +5,17 @@ concept
 	[at0000]	-- Vaccination List
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo universitetssykehus HF">
+				["email"] = <"varntzen@ous-hf.no">
+			>
+			accreditation = <"RN, Enterprise Architect">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -23,6 +34,15 @@ In local systems it is possible to generate a list of vaccinations by querying t
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å lagre en persistent liste over vaksiner som har blitt gitt til individet over tid, og for å kunne gjøre det mulig å dele vaksinasjonsliste til andre helsetilbydere.">
+			use = <"Bruk til å lagre en persistent liste over alle vaksiner som er gitt til individet.
+
+I lokale systemer er det mulig å lage en liste over vaksiner ved å lage en spørring mot databasen etter alle ACTION.medication-arketyper som har blitt brukt for å lagre vaksinasjoner. Imidlertid er denne listen nyttig for å støtte utveksling av en lokal vaksinasjonsliste med andre helsetilbydere.">
+			keywords = <"vaksinasjon", "immunisering", "liste">
+			misuse = <"">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Sam Heard, Ocean Informatics, Australia", "Sistine Barretto-Daniels, Ocean Informatics, Australia">
@@ -30,10 +50,10 @@ In local systems it is possible to generate a list of vaccinations by querying t
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["build_uid"] = <"9ff0866f-aa85-464e-8d97-f0dc0319f9fa">
+		["build_uid"] = <"1bb60b90-9c48-4260-973f-c8810275f683">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"23232AD265740E11910FE45B9AFD1F58">
+		["MD5-CAM-1.0.1"] = <"7A67D08DCEF9856844E88645567E7DA3">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -82,6 +102,27 @@ ontology
 				["at0003"] = <
 					text = <"Absent Information">
 					description = <"Positive statement that no information is available about vaccine administration.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vaksineliste">
+					description = <"En persistent liste over vaksiner som har blitt gitt til individet gjennom tidene, som kan virke inn på klinisk beslutningsstøtte og helsetilbud.">
+				>
+				["at0001"] = <
+					text = <"Administrerte vaksiner">
+					description = <"Detaljer om vaksiner som har blitt gitt til individet.">
+				>
+				["at0002"] = <
+					text = <"Ekslusjonsutsagn">
+					description = <"Et positivt utsagn om kjent manglende administrasjon av vaksine.">
+					comment = <"For eksempel: \"Ingen vaksiner har blitt gitt\".">
+				>
+				["at0003"] = <
+					text = <"Fraværende informasjon">
+					description = <"Utsagn om at det ikke finnes tilgjengelig informasjon om gitte vaksiner.">
 				>
 			>
 		>
