@@ -1,0 +1,176 @@
+﻿archetype (adl_version=1.4; uid=65c8c736-9d60-48a6-bdca-74c24aa9be56)
+	openEHR-EHR-CLUSTER.exam_cervix_v0_1.v0
+
+concept
+	[at0000]	-- Examination of cervix
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Morten Aas">
+				["organisation"] = <"Oslo Universitetssykehus">
+				["email"] = <"uxaort@ous-hf.no">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Morten Aas">
+		["organisation"] = <"Oslo Universitetssykehus">
+		["email"] = <"uxaort@ous-hf.no">
+		["date"] = <"2016-05-02">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For recording a narrative description and clinical interpretation of the findings observed during the physical examination of cervix
+">
+			use = <"This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.exam archetype, but can also be used within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.
+
+The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.">
+			misuse = <"Not to be used for recording data not related to examination of cervix
+
+Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
+
+Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en tekstlig beskrivelse og klinisk tolkning av funn ved fysisk undersøkelse av cervix">
+			use = <"Denne arketypen er spesielt designet for å brukes i \"Undersøkelsesdetaljer\" SLOTet innenfor arketypen OBSERVATION.exam, men kan også brukes innenfor andre OBSERVATION- eller CLUSTER-arketyper, der det er klinisk passende.
+
+Arketypen CLUSTER.exclusion_exam kan nøstes innenfor \"Undersøkelse ikke utført\"-SLOTet for å kunne registrere eksplisitt at undersøkelsen ikke er utført.
+
+Brukes for å innlemme fritekstbeskrivelser av kliniske funn innenfor eksisterende eller eldre kliniske systemer i arketypeformat, ved hjelp av dataelementet \"Klinisk beskrivelse\".">
+			misuse = <"Må ikke brukes for registrering av data som ikke er relatert til undersøkelse av cervix.
+
+Må ikke brukes for opptak av sykehistorie - bruk spesifikke OBSERVATION- og CLUSTER-arketyper, for eksempel OBSERVATION.story og CLUSTER.symptom_sign.
+
+Skal ikke brukes til å ta opp frittstående kliniske observasjoner, målinger eller testresultater - bruk spesifikke OBSERVATION-arketyper til dette, for eksempel OBSERVATION.blood_pressure eller OBSERVATION.imaging_exam.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Vebjørn Arntzen, Oslo Universitetssykehus", ...>
+	other_details = <
+		["current_contact"] = <"Morten Aas, Oslo Universitetssykehus, uxaort@ous-hf.no">
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"c2c9c96e-99ac-4cb7-9b5c-2d94879533b5">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"8C057BCED70528E8A7AD472F31BEFBD0">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Examination of cervix
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- No abnormality detected
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {	-- Clinical interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- Examination findings
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {	-- Exam not done
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Examination of cervix">
+					description = <"Findings observed during the physical examination of cervix">
+				>
+				["at0002"] = <
+					text = <"No abnormality detected">
+					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
+					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element.">
+				>
+				["at0003"] = <
+					text = <"Clinical description">
+					description = <"Narrative description of the overall findings observed during the physical examination.">
+				>
+				["at0004"] = <
+					text = <"Examination findings">
+					description = <"Structured details about the  physical examination findings.">
+				>
+				["at0006"] = <
+					text = <"Clinical interpretation">
+					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.">
+				>
+				["at0007"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the physical examination findings, not captured in other fields.">
+				>
+				["at0008"] = <
+					text = <"Exam not done">
+					description = <"Details to explicitly record that this examination was not performed.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Undersøkelse av cervix">
+					description = <"Funn observert under en fysisk undersøkelse av livmorhalsen.">
+				>
+				["at0002"] = <
+					text = <"Uten anmerkning">
+					description = <"Bekreftelse på at ingen abnormalitet ble oppdaget under undersøkelsen.">
+					comment = <"Registrering at ingen abnormalitet ble oppdaget ved undersøkelsen. Spesielle opplysninger om undersøkelsen kan legges i elementet \"Klinisk tolkning\".">
+				>
+				["at0003"] = <
+					text = <"Klinisk beskrivelse">
+					description = <"Fritekstbeskrivelse av generelle observasjoner under den fysiske undersøkelsen.">
+				>
+				["at0004"] = <
+					text = <"Funn ved undersøkelse">
+					description = <"Strukturerte detaljer om funn ved fysisk undersøkelse.">
+				>
+				["at0006"] = <
+					text = <"Klinisk tolkning">
+					description = <"Enkelt ord, fraser eller en kort beskrivelse som reprsenterer den kliniske mening og signifikans av funn ved fysisk undersøkelse.">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om funn ved undersøkelsen ikke registrert i andre felt.">
+				>
+				["at0008"] = <
+					text = <"Undersøkelse ikke utført">
+					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
+				>
+			>
+		>
+	>
