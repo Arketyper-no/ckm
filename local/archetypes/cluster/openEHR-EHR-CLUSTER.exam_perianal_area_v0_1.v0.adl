@@ -5,6 +5,17 @@ concept
 	[at0000]	-- Examination of perianal area
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo universitetssykehus HF">
+				["email"] = <"varntzen@ous-hf.no">
+			>
+			accreditation = <"RN, Enterprise Architect">
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Morten Aas">
@@ -15,30 +26,58 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"For recording a narrative description and clinical interpretation of the findings observed during the physical examination of perianal area ">
-			use = <"This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.exam archetype, but can also be used within other OBSERVATION or CLUSTER archetypes, where clinically appropriate. 
+			purpose = <"For recording a narrative description and clinical interpretation of the findings observed during the physical examination of perianal area.">
+			use = <"Use to record a narrative description of the overall findings observed during the examination of the perianal area. This initial draft archetype consists only of the core examination pattern data elements (as per CLUSTER.exam_pattern) and will likely be expanded further over time as specific clinical requirements are identified.
+
+This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.exam archetype, but can also be used within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.
+
+Use to provide a framework in which CLUSTER archetypes can be nested in the 'Examination findings' SLOT to record additional structured physical examination findings - for example CLUSTER.skin or CLUSTER.lesion.
+
+This archetype can be a part of a template for rectal examination along with other CLUSTERs to record structured findings - for example palpation of rectum or blood in stool.
 
 The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
 
 Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.">
-			misuse = <"Not to be used for recording data not related to examination of perianal
+			keywords = <"perianal", ...>
+			misuse = <"Not to be used for recording data not related to examination of perianal area.
 
 Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
 
 Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes til å registrere en fritekstbeskrivelse og klinisk tolkning av funn ved perianal undersøkelse.">
+			use = <"Brukes for å registrere en fritekstbeskrivelse av overordnede funn ved perianal undersøkelse. Denne arketypen inneholder bare de basale dataelementer som er identifisert i et felles mønster for undersøkelsesarketyper (CLUSTER.exam_pattern) og kan bli utvidet over tid etter som man finner kliniske krav til det.
+
+Denne arketypen har blitt designet spesielt for å settes inn i SLOT'et \"Undersøkelsesdetaljer\" i arketypen OBSERVATION.exam (Norsk: Funn ved fysisk undersøkelse), men kan også bli brukt i andre OBSERVATION- eller CLUSTER-arketyper der det er klinisk hensiktsmessig.
+
+Brukes som rammeverk der andre CLUSTER-arketyper kan nøstes i SLOT'et \"Undersøkelsesdetaljer\" for å romme detaljerte strukturerte funn i tillegg, for eksempel CLUSTER.skin og CLUSTER.lesion.
+
+Denne arketypen kan inngå i en templat for rektaleksplorasjon sammen med andre CLUSTER for å registrere data knyttet til for eksempel palpasjon av rektum eller blodig avføring.
+
+CLUSTER.exclusion_exam (Norsk: Eksklusjon av en fysisk undersøkelse) kan som en opsjon bli nøstet i SLOT'et for \"Undersøkelse ikke utført\" for å registrere detaljer om hvorfor undersøkelsen ikke ble gjennomført.
+
+Bruk dataelementet \"Klinisk beskrivelse\" for å innlemme fritekstbeskrivelser av kliniske funn fra eksisterende eller historiske kliniske IT-systemer inn i et arketypeformat.">
+			keywords = <"perianal undersøkelse", ...>
+			misuse = <"Skal ikke brukes for å registrere data som ikke er knyttet til undersøkelse av perianalt område.
+
+Skal ikke brukes for å registrere anamnestiske opplysninger - bruk spesifikke OBSERVATION- og CLUSTER-arketyper til dette, for eksempel OBSERVATION.story (Norsk: Anamnese) og CLUSTER.symptom_sign (Norsk: Symptom/Sykdomstegn).
+
+Skal ikke brukes for å registrere frittstående kliniske observasjoner eller målinger eller testresultater. Bruk spesifikke OBSERVATION-arketyper, for eksempel OBSERVATION.blood_pressure eller OBSERVATION.imaging_exam.">
+		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo Universitetssykehus", ...>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Helse Bergen HF, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics<heather.leslie@oceaninformatics.com>">
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["build_uid"] = <"afb5a9e3-e7a3-44db-b8ec-9e70d235f9c8">
+		["build_uid"] = <"7bd3e5a5-2da4-4627-ba5a-eee56f741b98">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"9B4231D8996675A54D80F85A53ECE95F">
+		["MD5-CAM-1.0.1"] = <"6A9063541D7FB17F69544A22E30A1D18">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -90,7 +129,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Examination of perianal area">
-					description = <"Findings observed during the physical examination of perianal area">
+					description = <"Findings observed during the physical examination of perianal area.">
 				>
 				["at0002"] = <
 					text = <"No abnormality detected">
@@ -99,11 +138,11 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Clinical description">
-					description = <"Narrative description of the overall findings observed during the physical examination.">
+					description = <"Narrative description of the overall findings observed during the examination of the perianal area.">
 				>
 				["at0004"] = <
-					text = <"Examination findings">
-					description = <"Structured details about the  physical examination findings.">
+					text = <"Specific findings">
+					description = <"Structured details about the physical examination findings.">
 				>
 				["at0005"] = <
 					text = <"Multimedia representation">
@@ -118,8 +157,45 @@ ontology
 					description = <"Additional narrative about the physical examination findings, not captured in other fields.">
 				>
 				["at0008"] = <
-					text = <"Exam not done">
+					text = <"Examination not done">
 					description = <"Details to explicitly record that this examination was not performed.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Undersøkelse av perianalt område">
+					description = <"Funn gjort ved undersøkelse av perianalt område.">
+				>
+				["at0002"] = <
+					text = <"Uten anmerkning">
+					description = <"Utsagn om at ingen avvik ble oppdaget ved undersøkelsen (U.a.).">
+					comment = <"Registrer som Sann dersom ingen avvik ble oppdaget ved undersøkelsen. Spesifikke utsagn om undersøkelsen kan registreres i dataelementet \"Klinisk fortolkning\".">
+				>
+				["at0003"] = <
+					text = <"Klinisk beskrivelse">
+					description = <"Overordnet fritekstbeskrivelse av funnene ved undersøkelse av perianalt område.">
+				>
+				["at0004"] = <
+					text = <"Spesifikke funn">
+					description = <"Ytterligere strukturerte detaljer om undersøkelsesfunnene.">
+				>
+				["at0005"] = <
+					text = <"Multimedia">
+					description = <"Digitale bilder, video eller diagram som representerer undersøkelsesfunnene.">
+				>
+				["at0006"] = <
+					text = <"Klinisk fortolkning">
+					description = <"Enkelt ord, frase eller kort beskrivelse som representerer klinisk betydning og signifikans ved funnene.">
+				>
+				["at0007"] = <
+					text = <"Kommnentar">
+					description = <"Ytterligere fritekst om funn ved undersøkelsen ikke registrert i andre felt.">
+				>
+				["at0008"] = <
+					text = <"Undersøkelse ikke utført">
+					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
 				>
 			>
 		>
