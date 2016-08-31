@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Examination pubic ingunial area
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Morten Aas">
+				["organisation"] = <"Oslo Universitetssykehus HF">
+				["email"] = <"uxaort@ous-hf.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Morten Aas">
@@ -15,7 +25,7 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"For recording a narrative description and clinical interpetation of the findings observed druing the physical examination of pubic inguinal area">
+			purpose = <"For recording a narrative description and clinical interpetation of the findings observed druing the physical examination of pubic inguinal area.">
 			use = <"This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.exam archetype, but can also be used within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.
 
 The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
@@ -26,6 +36,19 @@ Use to incorporate the narrative descriptions of clinical findings within existi
 Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For registrering av narrativ beskrivelse og klinisk fortolkning av funn observert ved en undersøkelse av underliv-/lyskeområdet.">
+			use = <"Denne arketypen har blitt designet spesielt for å settes inn i SLOT'et \"Undersøkelsesdetaljer\" i arketypen OBSERVATION.exam (Norsk: Funn ved fysisk undersøkelse), men kan også bli brukt i andre OBSERVATION- eller CLUSTER-arketyper der det er klinisk hensiktsmessig.
+
+CLUSTER.exclusion_exam (Norsk: Eksklusjon av en fysisk undersøkelse) kan som en opsjon bli nøstet i SLOT'et for \"Undersøkelse ikke utført\" for å registrere detaljer om hvorfor undersøkelsen ikke ble gjennomført.
+
+Brukes for å innlemme de narrative beskrivelser av kliniske funn innenfor eksisterende eller eldre kliniske systemer i en arketype format, ved hjelp av \"Klinisk Beskrivelse 'dataelement.">
+			keywords = <"underliv, lyske, nedentil, skritt", ...>
+			misuse = <"Må ikke brukes til å ta opp anamnese- bruk da spesifikke OBSERVATION og CLUSTER arketyper. For eksempel OBSERVATION.anamnese og CLUSTER.symptom/sykdomstegn.
+
+Skal ikke brukes til å ta opp frittstående klinisk observasjoner eller målinger eller testresultater - bruke bestemte OBSERVATION arketyper. For eksempel OBSERVATION.blodtrykk.">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo Universitetssykehus", ...>
@@ -34,10 +57,10 @@ Not to be used to record stand-alone clinical observations or measurements or te
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["references"] = <"Avgrenet fra: <Legg til en referanse til den originale ressursen her>">
-		["build_uid"] = <"8f65d865-6489-4efc-a7bf-7e99d3d3e7f7">
+		["build_uid"] = <"72727cfa-9ed5-4621-b786-e95433665950">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"53EE0F53922A7844BF0D8DCD4B360455">
+		["MD5-CAM-1.0.1"] = <"2209563084683703E58944E4D1B8C423">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -102,7 +125,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Examination findings">
-					description = <"Structured details about the  physical examination findings.">
+					description = <"Structured details about the physical examination findings.">
 				>
 				["at0005"] = <
 					text = <"Multimedia representation">
@@ -119,6 +142,43 @@ ontology
 				["at0008"] = <
 					text = <"Exam not done">
 					description = <"Details to explicitly record that this examination was not performed.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Undersøkelse av underliv-/lyskeområde">
+					description = <"Funn observertunder en fysisk undersøkelse av underliv-/lyskeområde">
+				>
+				["at0002"] = <
+					text = <"Uten anmerkning">
+					description = <"Utsagn om at ingen avvik ble oppdaget ved undersøkelsen (U.a.).">
+					comment = <"Registrer som Sann dersom ingen avvik ble oppdaget ved undersøkelsen. Spesifikke utsagn om undersøkelsen kan registreres i dataelementet \"Klinisk fortolkning\".">
+				>
+				["at0003"] = <
+					text = <"Klinisk beskrivelse">
+					description = <"Overordnet fritekstbeskrivelse av funnene ved undersøkelse av underliv-/lyskeområde.">
+				>
+				["at0004"] = <
+					text = <"Spesifikke funn">
+					description = <"Ytterligere strukturerte detaljer om undersøkelsesfunnene.">
+				>
+				["at0005"] = <
+					text = <"Multimedia">
+					description = <"Digitale bilder, video eller diagram som representerer undersøkelsesfunnene.">
+				>
+				["at0006"] = <
+					text = <"Klinisk fortolkning">
+					description = <"Enkelt ord, frase eller kort beskrivelse som representerer klinisk betydning og signifikans ved funnene.">
+				>
+				["at0007"] = <
+					text = <"Kommnentar">
+					description = <"Ytterligere fritekst om funn ved undersøkelsen ikke registrert i andre felt.">
+				>
+				["at0008"] = <
+					text = <"Undersøkelse ikke utført">
+					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
 				>
 			>
 		>
