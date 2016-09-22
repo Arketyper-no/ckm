@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Precaution
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Silje Ljosland Bakke og John Tore Valand">
+				["organisation"] = <"Nasjonal IKT HF, Helse Bergen HF">
+				["email"] = <"silje.ljosland.bakke@nasjonalikt.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Silje Ljosland Bakke / John Tore Valand">
@@ -32,6 +42,25 @@ Examples of a precaution include, but are not limited to:
 			misuse = <"Not to be used to record personal preferences of the individual. Use specific archetypes for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en klinisk vesentlig tilstand eller status som er unik eller idiosynkratisk for et individ, og som regnes som viktig informasjon i forbindelse med beslutninger om behandling.">
+			use = <"Brukes for å registrere en klinisk vesentlig tilstand eller status som er unik eller idiosynkratisk for et individ, og som regnes som viktig informasjon i forbindelse med beslutning om behandling.
+
+Denne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.
+
+Eksempler på forsiktighetshensyn kan være:
+- Immunhemmende/-modulerende behandling - med en referanse til en ordinasjon av kjemoterapi eller steroider, eller en leukemidiagnose
+- Nyresvikt - lenket til nyrefunksjonstester eller en formell nyresviktdiagnose
+- Står i transplantasjonskø
+- Pågående utredning/oppfølging av mistenkt eller
+verifisert malign lidelse
+- Deltagelse i klinisk farmakologiske studie
+- Viktig blodfortynnende behandling
+- Kjent alvorlig psykiatrisk sykdom.">
+			keywords = <"forholdsregel", "pågående behandling", "forebygging", "unngå", "uønsket hendelse">
+			misuse = <"Brukes ikke til å registrere individets personlige preferanser. Bruk spesifikke arketyper for dette formålet.">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Tomas Alme, DIPS ASA, Norway (Nasjonal IKT redaktør)", "Vebjørn Arntzen, Oslo University Hospital, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "John Tore Valand, Helse Bergen, Norway">
@@ -39,10 +68,10 @@ Examples of a precaution include, but are not limited to:
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["build_uid"] = <"e53110c8-97bc-4070-bec7-b6293518ffbd">
+		["build_uid"] = <"e299125f-56b4-488b-acd1-8334cd83ee60">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3FA3CD5FEB95B9F5D37D50889E47C278">
+		["MD5-CAM-1.0.1"] = <"A8AB2B0A1196D5F615993FED2E4403C2">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -197,6 +226,85 @@ ontology
 					text = <"Valid period start">
 					description = <"Date/time when the 'Precaution' becomes active.">
 					comment = <"This data element is intended for use when a precaution is identified to start at some time in the future. For example: XXXX.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Forsiktighetshensyn">
+					description = <"En klinisk vesentlig tilstand eller status som er unik eller idiosynkratisk for et individ, og som regnes som viktig informasjon i forbindelse med beslutninger om behandling.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tilstand/status">
+					description = <"Navnet på tilstanden eller statusen.">
+					comment = <"Koding av Forsiktighetshensynet med en terminologi er ønskelig, der det er mulig.">
+				>
+				["at0003"] = <
+					text = <"Rasjonale">
+					description = <"Fritekstbeskrivelse av evidensen eller rasjonalet for tilstanden/statusen.">
+					comment = <"Dette dataelementet kan dersom ønskelig lenkes til en diagnose, testresultat eller legemiddelordinering ved hjelp av en URI (spesifisert i referansemodellen) for å oppgi rasjonalet eller evidensen for forsiktighetshensynet. NB: Siden URI-lenken kan være utilgjengelige fra en melding eller et mottakende system, er det ønskelig at en fritekstbeskrivelse av rasjonalet registreres eksplisitt.">
+				>
+				["at0004"] = <
+					text = <"Sist oppdatert">
+					description = <"Dato da forsiktighetshensynsinformasjonen sist ble oppdatert.">
+				>
+				["at0006"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere informasjon om forsiktighetshensynet, som ikke kan registreres i andre felter.">
+				>
+				["at0009"] = <
+					text = <"Evalueringsdato">
+					description = <"Dato for neste kliniske evaluering.">
+					comment = <"Ved omstendigheter der forsiktighetshensyn ikke er på ubestemt tid eller livslange, kan dette dataelementet brukes til å registrere når forsiktighetshensynet bør evalueres.">
+				>
+				["at0013"] = <
+					text = <"Kategori">
+					description = <"Kategorisering av tilstanden/statusen.">
+					comment = <"Dette dataelementet er inkludert fordi det registreres i flere eksisterende kliniske systemer. Informasjonen kan avledes fra Tilstand/status dersom hierarkiske kodesystemer er brukt, og vil i slike tilfeller være redundant.">
+				>
+				["at0014"] = <
+					text = <"Status">
+					description = <"Påstand om hvor sikkert det er at individet har en framtidig skaderisiko på grunn av tilstanden/statusen.">
+					comment = <"Beslutningsstøtte vil typisk utløse advarsler for \"Mistenkt\", \"Sannsynlig\", \"Bekreftet\", og ignorere \"Avkreftet\". Kliniske systemer kan velge å ikke vise registreringer med status \"Avkreftet\" i en liste. Likevel kan \"Avkreftet\" være nyttig for sammenstilling av ulike lister eller ved kommunikasjon mellom systemer. Noen systemer kan velge å gjøre dette elementet obligatorisk. \"Opphørt\" kan brukes ulikt i ulike systemer avhengig av klinisk bruk og kontekst. Fritekst-datatypen tillater lokal variasjon ved å gjøre det mulig å bruke andre verdisett for dette dataelementet i en templat. Det er i denne situasjonen anbefalt å kode verdiene med en terminologi.">
+				>
+				["at0015"] = <
+					text = <"Mistenkt">
+					description = <"Lav grad av sikkerhet om at tilstanden/statusen vil forårsake skade på individet eller familiemedlemmet.">
+				>
+				["at0016"] = <
+					text = <"Sannsynlig">
+					description = <"Rimelig grad av sikkerhet om at tilstanden/statusen vil forårsake skade på individet eller familiemedlemmet.">
+				>
+				["at0017"] = <
+					text = <"Bekreftet">
+					description = <"Høy grad av sikkerhet om at tilstanden/statusen vil forårsake skade på individet eller familiemedlemmet.">
+				>
+				["at0018"] = <
+					text = <"Opphørt">
+					description = <"Den tidligere kjente tilstanden/statusen er klinisk revurdert ved testing, og regnes ikke lenger for å være en aktiv risiko.">
+				>
+				["at0019"] = <
+					text = <"Avkreftet">
+					description = <"Tilstanden/statusen har blitt klinisk revurdert eller er avkreftet med høy grad av sikkerhet ved testing.">
+				>
+				["at0020"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0022"] = <
+					text = <"Start av gyldighetsperiode">
+					description = <"Dato/tid når forsiktighetshensynet blir aktiv.">
+					comment = <"Dette dataelementet er ment for å brukes når et forsiktighetshensyn er ment å starte på et tidspunkt i fremtiden.">
 				>
 			>
 		>
