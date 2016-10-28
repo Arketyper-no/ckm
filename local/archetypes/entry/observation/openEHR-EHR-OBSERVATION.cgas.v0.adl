@@ -52,10 +52,10 @@ Skåringen benyttes på personer over 4 år. Ulike kilder har ulik øvre begrens
 Vandvik, I H. Akse 6 – CGAS (Children’s Global Assessment Scale) - Norsk oversettelse. [Internet]. The Norwegian Directorate of eHealth; 2007. Available from: https://ehelse.no/Documents/Helsefaglig%20kodeverk/retningslinjer-for-multiaksial-klass-bup.pdf  [Accessed 2016-09-16].
 
 Hanssen-Bauer, K. (2008). \"Multiaksial klassifikasjon i psykisk helsevern for barn og unge\". Regionsenter for barn og unges psykiske helse, Helse Sør-Øst. https://helsedirektoratet.no/Documents/Medisinske%20koder%20og%20kodeverk/BUP/bup-klass.pdf.">
-		["build_uid"] = <"7f9eda19-670f-478e-8c61-0dd9acc3d645">
+		["build_uid"] = <"0b3c5009-166d-4ffa-b988-b2b132faf8d4">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"4BBF13C2DAA66C687986A5930D312045">
+		["MD5-CAM-1.0.1"] = <"F5CA6EBE53C4B766590492A135CA6A12">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -65,7 +65,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Uspesifisert hendelse
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -76,7 +76,7 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Beskrivelse
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Kommentar
 										value matches {
 											DV_TEXT matches {*}
 										}
