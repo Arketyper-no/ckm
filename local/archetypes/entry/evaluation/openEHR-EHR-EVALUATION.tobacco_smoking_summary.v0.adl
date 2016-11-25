@@ -29,7 +29,7 @@ description
 
 This archetype is to be used to record information about both current and previous smoking behaviour.
 
-The specific focus of this archetype is on documentation about the use of all types of inhaled tobacco because of the associated health risks from direct inhalation of tobacco and associated chemicals. Amount of nicotine and tar, use of filters and additives has been left outside of scope for the core archetype, but could be added into the Episode SLOT if required.
+The specific scope of this archetype is on documentation about the use of all types of inhaled tobacco smoke because of the associated health risks from direct inhalation of tobacco and associated chemicals. Amount of nicotine and tar, use of filters and additives has been left outside of scope for the core archetype, but could be added into the Episode SLOT if required. Please note that the scope of this archetype does not include unintentional exposure to tobacco smoke (see Misuse). 
 
 The 'Per type' cluster of data elements allows for recording of specific details and episodes about each type of tobacco smoked and can be repeated once per type. The list of tobacco types listed in the 'Per type' run-time name constraint identifies the type of tobacco. This name constraint can be applied during template modelling or at run-time within a software application.
 
@@ -41,7 +41,7 @@ Triggers for closing one episode and commencing a new one will largely reflect l
 - quits for a significant period of time (which will likely be locally defined); or
 - significantly changes their amount of use or pattern of their smoking.
 
-If only one type of tobacco is smoked, the value for 'Pack years' will be identical to the 'Overall pack years' data element. If more than one type of tobacco is smoked, the calculation for the value for 'Overall pack years' will required a more complex algorithm such as http://smokingpackyears.com/.
+If only one type of tobacco is smoked, the value for 'Pack years' will be identical to the 'Overall pack years' data element. If more than one type of tobacco is smoked, the calculation for the value for 'Overall pack years' will require a more complex algorithm such as http://smokingpackyears.com/.
 
 Use to incorporate the narrative descriptions of tobacco smoking habits within existing or legacy clinical systems into an archetyped format, using the 'Overall description' data element.">
 			keywords = <"tobacco", "cigarette", "cigar", "pipe", "smoking", "kretek", "beedi", "bidi", "cigarillo", "smoker", "waterpipe", "shisha", "hookah", "narguileh", "hubble-bubble", "roll-up", "RYO", "rollie", "roll-your-own">
@@ -49,17 +49,23 @@ Use to incorporate the narrative descriptions of tobacco smoking habits within e
 
 Not to be used to record information about smokeless tobacco use - for example: snus; snuff; chewing tobacco; dip; and gutka. Use the archetype EVALUATION.smokeless_tobacco_summary archetype for this purpose.
 
-Not to be used to record an assessment about cigarette or nicotine dependence. Use the archetype OBSERVATION.fagerstrom for this purpose.">
-			copyright = <"© openEHR Foundation, NEHTA (Australia)">
+Not to be used to record an assessment about cigarette or nicotine dependence. Use the archetype OBSERVATION.fagerstrom for this purpose.
+
+Not to be used to record details about unintended exposure to tobacco smoke or passive smoking. Use the archetype EVALUATION.exposure for this purpose.
+
+Not to be used for recording any other administration of nicotine, such as e-cigarettes, nicotine patches or nicotine chewing gum. Use seoparate archetypes for this purpose. 
+
+Not to be used to record evidence of nicotine dependency. Use the OBSERVATION.fagerstrom for this purpose.">
+			copyright = <"© openEHR Foundation, Australian Digital Health Agency, Nasjonal IKT (Norway)">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere et sammendrag om individets mønster for røyking av tobakk og produkter som inneholder tobakk.">
-			use = <"Bruk for å registrere et sammendrag om individets mønster for røyking av tobakk og produkter som inneholder tobakk.
+			use = <"Brukes for å registrere et sammendrag om individets mønster for røyking av tobakk og produkter som inneholder tobakk.
 
 Denne arketypen brukes for å registrere både nåværende og tidligere tobakksrøyking.
 
-Arketypen fokuserer spesifikt på dokumentasjon om bruk av alle typer tobakk som inhaleres, på grunn av helserisikoen knyttet til inhalering og kjemikaliene tilknyttet dette. Mengden av nikotin og tjære, filterbruk og tilsetningstoffer er ikke dekket av arketypen, men kan legges til i SLOTet \"Episodedetaljer\" ved behov.
+Arketypen fokuserer spesifikt på dokumentasjon om bruk av alle typer inhalert tobakksrøyk, på grunn av helserisikoen knyttet til inhalering og kjemikaliene tilknyttet dette. Mengden av nikotin og tjære, filterbruk og tilsetningstoffer er ikke dekket av arketypen, men kan legges til i SLOTet \"Episodedetaljer\" ved behov. Arketypen omfatter ikke utilsiktet eksponering for tobakksrøyk (se Feil bruk).
 
 Clusteret \"Per type\" tillater registrering av spesifikke detaljer og episoder om hver enkelt ulik type tobakk som røykes og kan repeteres en gang per type. 
 Tobakkstyper er listet i \"run-time name constraint\" (navnebegrensning) lagt på \"Per type\". Denne navnebegrensningen kan brukes ved templatmodellering eller i applikasjonen.
@@ -74,7 +80,7 @@ Hva som trigger en avslutning av en episode og start av en ny avhenger av behove
 
 Røyker individet kun en type tobakk vil verdien for dataelementet \"Pakkeår\" være identisk med dataelementet \"Overordnet pakkeår\". Røykes mer enn en type tobakk vil kalkulasjonen av verdien for \"Overordnet pakkeår\" kreve en mer kompleks algoritme som http://smokingpackyears.com/.
 
-Bruk for å overføre fritekstbeskrivelser av tobakksrøykevaner fra eksisterende eller tidligere kliniske systemer til arketypeformat, ved å bruke dataelementet \"Overordnet beskrivelse\".">
+Dataelementet \"Overordnet beskrivelse\" brukes til å overføre fritekstbeskrivelser fra eksisterende eller tidligere kliniske systemer til arketypeformat">
 			keywords = <"tobakk", "sigarett", "sigar", "pipe", "røyking", "kretek", "beedi", "bidi", "sigarillo", "røyker", "vannpipe", "shisha", "hookah", "narguileh", "rulletobakk", "rullings", "røyk">
 			misuse = <"Brukes ikke for å registrere informasjon som ikke handler om tobakksrøyking eller som handler om tobakk blandet med andre rusmidler, bruk egne arketyper for dette formålet.
 
@@ -82,11 +88,15 @@ Brukes ikke for å registrere hendelses- eller periodisk informasjon om tobakksr
 
 Brukes ikke for å registrere informasjon om bruk av røykfri tobakk, for eksempel snus, luktsnus/snuff, tyggetobakk, dip og gutka. Bruk arketypen EVALUATION.smokeless_tobacco_summary for dette formålet.
 
-Brukes ikke for å registrere en vurdering av sigarett- eller nikotinavhengighet. Arketypen OBSERVATION.fagerstrom kan brukes for dette formålet.">
+Brukes ikke for å registrere en vurdering av sigarett- eller nikotinavhengighet. Arketypen OBSERVATION.fagerstrom kan brukes for dette formålet.
+
+Brukes heller ikke for annen tilførsel av nikotin som e-sigarett, nikotinplaster eller niktotintyggegummi. Bruk egne arketyper for dette formålet.
+
+Brukes ikke for å registrere informasjon om nikotinavhengighet. Bruk arketypen OBSERVATION.fagerstrom til dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Fredrik Borchsenius, Oslo universitetssykehus, Norway", "Chris Bullen, University of Auckland, New Zealand", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Are Edvardsen, SKDE, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Liv Grøtvedt, Folkehelseinstituttet, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Heather Leslie, Ocean Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Camilla Lund, Institute for Cancer Genetics and Informatics, Norway", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Rosalie Schultz, Anyinginyi Health Aboriginal Corporation, Australia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ping-Cheng Wei, New Zealand">
+	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Fredrik Borchsenius, Oslo universitetssykehus, Norway", "Chris Bullen, University of Auckland, New Zealand (Domain expert)", "Fatemeh Chalabianloo, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Are Edvardsen, SKDE, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Liv Grøtvedt, Folkehelseinstituttet, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Adriana Kitajima, CORE Consulting, Brazil", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Heather Leslie, Ocean Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden (openEHR Editor)", "Camilla Lund, Institute for Cancer Genetics and Informatics, Norway", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Rosalie Schultz, Anyinginyi Health Aboriginal Corporation, Australia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Lisbeth Sommervoll, Akershus Universitetssykehus, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Jørn Henrik Vold, Helse Bergen, Avdeling for rusmedisin, Norway", "Ping-Cheng Wei, New Zealand">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -95,6 +105,8 @@ Brukes ikke for å registrere en vurdering av sigarett- eller nikotinavhengighet
 
 Centres for Disease Control (CDC). Tobacco glossary [cited: 2016-07-05]. Available from: http://www.cdc.gov/nchs/nhis/tobacco/tobacco_glossary.htm.
 
+Definitions of smoking status [Internet]. New Zealand Ministry of Health; 2015 Jun 04 [cited: 2016-11-23]. Available from: http://www.health.govt.nz/our-work/preventative-health-wellness/tobacco-control/tobacco-control-guidance-practitioners/definitions-smoking-status.
+
 Masters N & Tutt C. Smoking Pack Years [Internet]. United Kingdom: Highfield Surgery; 2007. Available from: http://smokingpackyears.com/.
 
 Tobacco Use Summary, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2016-06-06]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1026.
@@ -102,10 +114,10 @@ Tobacco Use Summary, Draft Archetype [Internet]. nehta, Australia, nehta Clinica
 Tobacco Use Summary, Rejected Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-06-06]. Available from: http://www.openehr.org/ckm/#showArchetype_1013.1.1520.
 
 Wood DM, Mould MG, Ong SB, Baker EH. \"Pack year\" smoking histories: what about patients who use loose tobacco? Tob Control. 2005 Apr;14(2):141-2. PubMed PMID: 15791025; PubMed Central PMCID: PMC1748001.">
-		["build_uid"] = <"bb7870d5-9aee-4a5c-9d8e-143d5d6aa326">
+		["build_uid"] = <"df049bf5-7313-40db-ba4f-ca2abfdaf3e5">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"82423290331281B8A3124FA3FC8BF94D">
+		["MD5-CAM-1.0.1"] = <"9367677544AD8CD834D36C699CC35032">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -132,7 +144,7 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Smoking commenced
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Regular smoking commenced
 						value matches {
 							DV_DATE matches {*}
 						}
@@ -273,7 +285,7 @@ definition
 							}
 							allow_archetype CLUSTER[at0077] occurrences matches {0..*} matches {	-- Type details
 								include
-									archetype_id/value matches {/openEHR-EHR-CLUSTER\.change(-[a-zA-Z0-9_]+)*\.v1/}
+									archetype_id/value matches {/.*/}
 							}
 							ELEMENT[at0017] occurrences matches {0..1} matches {	-- Pack years
 								value matches {
@@ -414,9 +426,9 @@ ontology
 					comment = <"Can be a partial date, for example, only a year. Definitions for a 'Quit date' vary enormously and can be defined using the 'Quit data definition' data element in the Protocol section of this archetype. This date will be identical to the 'Episode end date' for the most recent episode. This date could be used by decision support guidance to determine if the  individual is at risk of relapse, for example in the first 12 months since quitting.">
 				>
 				["at0015"] = <
-					text = <"Smoking commenced">
-					description = <"The date or partial date when the individual first started frequent or regular, but non-daily, smoking of tobacco of any type.">
-					comment = <"For example: smoking every Friday night or at parties. Can be a partial date, for example, only a year.">
+					text = <"Regular smoking commenced">
+					description = <"The date or partial date when the individual first started frequent or regular, but usually non-daily, smoking of tobacco of any type.">
+					comment = <"Can be a partial date, for example, only a year. For example, this date could represent when the individual commenced smoking every Friday night or at parties. ">
 				>
 				["at0016"] = <
 					text = <"Overall quit date">
@@ -543,12 +555,13 @@ ontology
 				["at0075"] = <
 					text = <"Current smoker definition">
 					description = <"The applied definition for the 'Current smoker' value in each of the 'Status' data elements used in this archetype.">
-					comment = <"Definition may need to be specified per type.">
+					comment = <"Definition may need to be specified per type. Current smoker definitions vary in different jurisdictions. For example: USA Centre for Disease Control refers to smoking during the past one month and New Zealand Ministry of Health uses 28 days.
+">
 				>
 				["at0076"] = <
 					text = <"Former smoker definition">
 					description = <"The applied definition for the 'Former smoker' value in each of the 'Status' data elements used in this archetype.">
-					comment = <"Definition may need to be specified per type.">
+					comment = <"Definition may need to be specified per type. Former smoker definitions vary in different jurisdictions. For example: New Zealand Ministry of Health refers to smoking during the past 28 days.">
 				>
 				["at0077"] = <
 					text = <"Type details">
@@ -618,7 +631,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Røykeanamnese">
-					description = <"Sammendrag eller oppdaterbar informasjon om et individs tobakksrøykevaner.">
+					description = <"Sammendrag eller detaljer om et individs tidligere og nåværende tobakksrøykevaner.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -647,9 +660,9 @@ ontology
 					comment = <"Kan være en deldato, for eksempel årstall. Definisjoner for \"Sluttdato\" varierer enormt og kan defineres ved å bruke datalementet \"Definisjon på Sluttdato\" i protokolldelen av denne arketypen. Denne datoen vil være identisk med \"Episodens sluttdato\" for den siste episoden. Denne datoen kan brukes av beslutningsstøttesystemer for å beregne om individet er i faresonen for tilbakefall, for eksempel i løpet av de først 12 månedene etter å ha sluttet.">
 				>
 				["at0015"] = <
-					text = <"Start røyking">
-					description = <"Dato eller deldato da individet for første gang begynte å røyke hyppig men ikke daglig.">
-					comment = <"For eksempel: Røyking hver fredagskveld eller på fester. Kan være en deldato, for eksempel kun årstall.">
+					text = <"Startet regelmessig røyking">
+					description = <"Dato eller deldato da individet for første gang begynte å røyke hyppig eller regelmessig, men ikke daglig.">
+					comment = <"Kan være en deldato, for eksempel kun årstall. For eksempel kan denne datoen representere tidspunktet da individet begynte å røyke hver fredagskveld eller på fest.">
 				>
 				["at0016"] = <
 					text = <"Samlet sluttdato">
@@ -736,7 +749,7 @@ ontology
 				>
 				["at0062"] = <
 					text = <"Vannpipe">
-					description = <"Også kjent som \"hookah\", \"shisha\" og \"narguileh\". Tobakk som ofte er smaksatt brennes, for deretter og kjøles ned i en vannfylt beholder. Røyken inhaleres gjennom en slange og et munnstykke.">
+					description = <"Også kjent som \"hookah\", \"shisha\" og \"narguileh\". Tobakk som ofte er smaksatt brennes, for deretter å kjøles ned i en vannfylt beholder. Røyken inhaleres gjennom en slange og et munnstykke.">
 				>
 				["at0064"] = <
 					text = <"Per episode">
@@ -777,12 +790,12 @@ ontology
 				["at0075"] = <
 					text = <"Definisjon på Nåværende røyker">
 					description = <"Den anvendte definisjonen på verdien \"Nåværende røyker\" i datalementet \"Status\" benyttet i denne arketypen.">
-					comment = <"Definisjonen kan spesifiseres per tobakkstype.">
+					comment = <"Definisjonen kan spesifiseres per tobakkstype. Definisjon av nåværende røyker kan variere fra land til land. For eksempel refererer USAs Center for Disease Control til røyking den siste måneden, og New Zealand Ministry of Health til røyking i løpet av de siste 28 dagene.">
 				>
 				["at0076"] = <
 					text = <"Definisjon på Tidligere røyker">
 					description = <"Den anvendte definisjonen på verdien \"Tidligere røyker\" i dataelementet \"Status\" benyttet i denne arketypen.">
-					comment = <"Definisjonen kan spesifiseres per tobakkstype.">
+					comment = <"Definisjonen kan måtte spesifiseres per tobakkstype. Definisjon av tidligere røyker kan variere fra land til land. For eksempel refererer New Zealand Ministry of Health til røyking i løpet av de siste 28 dagene.">
 				>
 				["at0077"] = <
 					text = <"Detaljer om tobakkstypen">
@@ -800,7 +813,7 @@ ontology
 				>
 				["at0080"] = <
 					text = <"Start daglig røyking">
-					description = <"Dato eller deldato individet begynte å røyke daglig">
+					description = <"Dato eller deldato individet begynte å røyke daglig.">
 					comment = <"Kan være en deldato, for eksempel kun årstall.">
 				>
 				["at0081"] = <
@@ -832,7 +845,7 @@ ontology
 				>
 				["at0087"] = <
 					text = <"Kommentar til episoden">
-					description = <"Ytterligere fritekst om tobakksrøyking innenfor den spesifiserte episoden ikke fanget i andre felt.">
+					description = <"Ytterligere fritekst om tobakksrøyking innenfor den spesifiserte episoden, som ikke er omfattet av andre felt.">
 				>
 				["at0088"] = <
 					text = <"Kretek">
