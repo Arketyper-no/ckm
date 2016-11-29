@@ -7,26 +7,36 @@ language
 	original_language = <[ISO_639-1::en]>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Nasjonal IKT HF">
+		["email"] = <"silje.ljosland.bakke@nasjonalikt.no">
+		["date"] = <"2016-11-23">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"">
-			use = <"">
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			purpose = <"To record the findings and interpretation of histopathology (anatomic pathology) tests performed on tissues and body fluids.">
+			use = <"Use to record any histopathology test result, including intra-operative, microscopic, macroscopic examinations of tissue.
+
+This archetype is designed specifically to be used in the \"Test findings\" SLOT within the OBSERVATION.laboratory_test archetype, but may also be used withing other ENTRY class archetypes where appropriate.
+
+Detailed structured findings are captured within child cluster archetypes.">
+			misuse = <"Not to be used for reporting on non-histopathology test results e.g. biochemistry or haematology tests.
+
+Not to be used to record an autopsy report, although tests on some specimens that are taken at autopsy may be represented using this archetype.">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Jan-Arne Ludvigsen, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristin Eik, Kreftregisteret, Norway", "Anca Heyd, DIPS ASA, Norway", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia", "Ole Martin Sand, DIPS ASA, Norway", "Ian McNicoll, Ocean Informatics, United Kingdom", "Bjørn Næss, DIPS ASA, Norway", "Sveinung Sørbye, UNN HF, Norway", "John Tore Valand, Helse Bergen HF, Norway">
 	other_details = <
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["build_uid"] = <"90d380f9-294e-4ce6-b7c6-25d9c252d66f">
+		["references"] = <"Derived from Histopathology test, Draft Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-11-29]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.2195">
+		["build_uid"] = <"f3ac9479-bc81-4ad9-a20b-6c8fd7d1db25">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"B52E100275682696944549F1421DB9D6">
+		["MD5-CAM-1.0.1"] = <"C1F8E0D5781164C489A2D5ABA002026C">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -93,11 +103,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Histopathology findings">
-					description = <"Findings of a broad category of histopathological examination e.g. \"Microscopic findings\".">
-				>
-				["at0004"] = <
-					text = <"Histopathology  findings">
-					description = <"General histopathology findings.">
+					description = <"Findings and interpretation of histopathology (anatomic pathology) tests performed on tissues and body fluids.">
 				>
 				["at0001"] = <
 					text = <"Intra-operative findings">
@@ -110,6 +116,10 @@ ontology
 				["at0003"] = <
 					text = <"Microscopic findings">
 					description = <"Findings recorded after microsopic examination.">
+				>
+				["at0004"] = <
+					text = <"Histopathology  findings">
+					description = <"General histopathology findings.">
 				>
 				["at0005"] = <
 					text = <"Histopathology finding">
@@ -141,7 +151,7 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Histopathology findings">
-					description = <"*">
+					description = <"A group of findings within the histopathology examination. The Runtime name constraint allows identification of the type of histopathology examination performed.">
 				>
 			>
 		>
