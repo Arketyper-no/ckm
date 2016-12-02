@@ -28,10 +28,10 @@ distress based on questions about anxiety and depressive symptoms that a person 
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Kessler, R.C., Andrews, G., Colpe, L.J., Hiripi, E., Mroczek, D.K., Normand, S.-L.T., Walters, E.E. and Zaslavsky, A.M. (2002) \"Short screening scales to monitor population prevalences and trends in non-specific psychological distress\", Psychological Medicine, 32(6), pp. 959–976. doi: 10.1017/S0033291702006074.">
-		["build_uid"] = <"0ac6c18a-ae18-4260-af9d-d13dddc89ba3">
+		["build_uid"] = <"d51cc11e-a681-452a-838d-fbf97cc0250c">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"0571BDF7FEBDB6C410082DF3B8ACDA3C">
+		["MD5-CAM-1.0.1"] = <"A3029380BCFCD536F6D1593AD61BE694">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -41,12 +41,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					INTERVAL_EVENT[at0002] occurrences matches {0..1} matches {	-- Last 30 days
-						width matches {
-							DV_DURATION matches {
-								value matches {|P30D|}
-							}
-						}
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -157,6 +152,7 @@ definition
 	}
 
 
+
 ontology
 	term_definitions = <
 		["en"] = <
@@ -170,8 +166,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Last 30 days">
-					description = <"The 30 days prior to the questionnaire being administered.">
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
 					text = <"Tree">
