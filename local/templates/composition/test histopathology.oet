@@ -82,17 +82,7 @@
       <Rule path="/protocol[at0004]/items[at0094]" max="0" />
       <Rule path="/protocol[at0004]/items[at0111]" max="0" />
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Histopathology findings" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
-        <Rule path="/items[at0012]/items[at0005]" max="1" name="Macroscopic findings container 1" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 1']/items[at0006]" max="0" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 1']/items[at0008]" default="2 cores, 20 and 15 mm long" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 1']/items[at0010]" max="0" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 1']/items[at0014]" max="0" />
-        <Rule path="/items[at0012]/items[at0005]" max="1" clone="true" name="Macroscopic findings container 2" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 2']/items[at0006]" max="0" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 2']/items[at0008]" default="1 core, 19 mm long" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 2']/items[at0010]" max="0" />
-        <Rule path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 2']/items[at0014]" max="0" />
-        <Rule path="/items[at0012]/items[at0011]" default="Overall description of macroscopic findings, if relevant" />
+        <Rule path="/items[at0012]" max="0" />
         <Rule path="/items[at0012]" max="1" clone="true" name="Microscopic findings" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]" max="1" name="Microscopic finding 1" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 1']/items[at0006]" max="0" />
@@ -101,16 +91,26 @@
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 1']/items[at0014]" max="0" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]" max="1" clone="true" name="Microscopic finding 2" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0006]" max="0" />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0008]" default="Description, description, description, description" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0010]" max="0" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0014]" max="0" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]" max="1" clone="true" name="Electron microscopic finding" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Electron microscopic finding']/items[at0006]" max="0" />
         <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Electron microscopic finding']/items[at0010]" max="0" />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Electron microscopic finding']/items[at0014]" default="Electron microscopy images go here." />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0011]" default="Overall description of microscopic findings, if relevant" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" max="1" path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 1']/items[at0007]" name="Kidney needle biopsy on formalin">
-          <Rule path="/items[at0029]" default="Kidney needle biopsy on formalin" />
+        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0011]" default="Overall description of microscopic findings, if relevant " />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Macroscopic findings" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]" max="1" name="Macroscopic findings container 1" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 1']/items[at0006]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 1']/items[at0008]" default="2 cores, 20 and 15 mm long" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 1']/items[at0010]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 1']/items[at0014]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]" max="1" clone="true" name="Macroscopic findings container 2" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 2']/items[at0006]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 2']/items[at0008]" default="1 core, 19 mm long" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 2']/items[at0010]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 2']/items[at0014]" max="0" />
+        <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0011]" default="Overall description of macroscopic findings, if relevant" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 1']/items[at0007]">
+          <Rule path="/items[at0029]" default="Kidney needle biopsy microscopy slide 1" />
           <Rule path="/items[at0015]" max="0" />
           <Rule path="/items[at0008]" max="0" />
           <Rule path="/items[at0007]" max="0" />
@@ -121,8 +121,103 @@
           <Rule path="/items[at0080]" max="0" />
           <Rule path="/items[at0039]" max="0" />
           <Rule path="/items[at0046]" max="0" />
-          <Rule path="/items[at0081]" hide_on_form="true" />
-          <Rule path="/items[at0081]/items[at0003]" default="B1612345" />
+          <Rule path="/items[at0081]/items[at0003]" default="Pathlab::Assigner::B1612345::Specimen" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
+            <Rule path="/items[at0005]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0006</excludedValues>
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0011</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0026]" max="0" />
+            <Rule path="/items[at0013]" max="0" />
+            <Rule path="/items[at0024]" max="0" />
+            <Rule path="/items[at0003]" max="0" />
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0025]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0007]">
+          <Rule path="/items[at0029]" default="Kidney needle biopsy microscopy slide 2" />
+          <Rule path="/items[at0015]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0079]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0067]" max="0" />
+          <Rule path="/items[at0070]" max="0" />
+          <Rule path="/items[at0080]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0081]/items[at0003]" default="Pathlab::Assigner::B1612345::Specimen" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
+            <Rule path="/items[at0005]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0006</excludedValues>
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0011</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0026]" max="0" />
+            <Rule path="/items[at0013]" max="0" />
+            <Rule path="/items[at0024]" max="0" />
+            <Rule path="/items[at0003]" max="0" />
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0025]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Electron microscopic finding']/items[at0007]">
+          <Rule path="/items[at0029]" default="Kidney needle biopsy electron microscopy grid" />
+          <Rule path="/items[at0015]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0079]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0067]" max="0" />
+          <Rule path="/items[at0070]" max="0" />
+          <Rule path="/items[at0080]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0081]/items[at0003]" default="Pathlab::Assigner::B1612345::Specimen" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
+            <Rule path="/items[at0005]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0006</excludedValues>
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0009</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0026]" max="0" />
+            <Rule path="/items[at0013]" max="0" />
+            <Rule path="/items[at0024]" max="0" />
+            <Rule path="/items[at0003]" max="0" />
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0025]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 1']/items[at0007]">
+          <Rule path="/items[at0029]" default="Kidney needle biopsy in formalin" />
+          <Rule path="/items[at0015]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0079]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0067]" max="0" />
+          <Rule path="/items[at0070]" max="0" />
+          <Rule path="/items[at0080]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0081]/items[at0003]" default="Pathlab::Assigner::B1612345::Specimen" />
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
             <Rule path="/items[at0005]">
               <constraint xsi:type="textConstraint">
@@ -142,8 +237,8 @@
             <Rule path="/items[at0025]" max="0" />
           </Items>
         </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" max="1" path="/items[at0012]/items[at0005 and name/value='Macroscopic findings container 2']/items[at0007]" name="Kidney needle biopsy on McDowell solution">
-          <Rule path="/items[at0029]" default="Kidney needle biopsy on McDowell solution" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005 and name/value='Macroscopic findings container 2']/items[at0007]">
+          <Rule path="/items[at0029]" default="Kidney needle biopsy in McDowell solution" />
           <Rule path="/items[at0015]" max="0" />
           <Rule path="/items[at0008]" max="0" />
           <Rule path="/items[at0007]" max="0" />
@@ -154,8 +249,7 @@
           <Rule path="/items[at0080]" max="0" />
           <Rule path="/items[at0039]" max="0" />
           <Rule path="/items[at0046]" max="0" />
-          <Rule path="/items[at0081]" hide_on_form="true" />
-          <Rule path="/items[at0081]/items[at0003]" default="B1612345" />
+          <Rule path="/items[at0081]/items[at0003]" default="Pathlab::Assigner::B1612345::Specimen" />
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
             <Rule path="/items[at0005]">
               <constraint xsi:type="textConstraint">
@@ -168,105 +262,6 @@
               </constraint>
             </Rule>
             <Rule path="/items[at0026]" default="McDowell solution" />
-            <Rule path="/items[at0013]" max="0" />
-            <Rule path="/items[at0024]" max="0" />
-            <Rule path="/items[at0003]" max="0" />
-            <Rule path="/items[at0002]" max="0" />
-            <Rule path="/items[at0025]" max="0" />
-          </Items>
-        </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" max="1" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 1']/items[at0007]" name="Kidney needle biopsy microscopy slide 1">
-          <Rule path="/items[at0029]" default="Kidney needle biopsy microscopy slide 1" />
-          <Rule path="/items[at0015]" max="0" />
-          <Rule path="/items[at0008]" max="0" />
-          <Rule path="/items[at0007]" max="0" />
-          <Rule path="/items[at0079]" max="0" />
-          <Rule path="/items[at0005]" max="0" />
-          <Rule path="/items[at0067]" max="0" />
-          <Rule path="/items[at0070]" max="0" />
-          <Rule path="/items[at0080]" max="0" />
-          <Rule path="/items[at0039]" max="0" />
-          <Rule path="/items[at0046]" max="0" />
-          <Rule path="/items[at0081]" hide_on_form="true" />
-          <Rule path="/items[at0081]/items[at0003]" default="B1612345" />
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
-            <Rule path="/items[at0005]">
-              <constraint xsi:type="textConstraint">
-                <excludedValues>local::at0006</excludedValues>
-                <excludedValues>local::at0007</excludedValues>
-                <excludedValues>local::at0008</excludedValues>
-                <excludedValues>local::at0010</excludedValues>
-                <excludedValues>local::at0011</excludedValues>
-                <excludedValues>local::at0012</excludedValues>
-              </constraint>
-            </Rule>
-            <Rule path="/items[at0026]" max="0" />
-            <Rule path="/items[at0013]" max="0" />
-            <Rule path="/items[at0024]" max="0" />
-            <Rule path="/items[at0003]" max="0" />
-            <Rule path="/items[at0002]" max="0" />
-            <Rule path="/items[at0025]" max="0" />
-          </Items>
-        </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" max="1" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Microscopic finding 2']/items[at0007]" name="Kidney needle biopsy microscopy slide 2">
-          <Rule path="/items[at0029]" default="Kidney needle biopsy microscopy slide 2" />
-          <Rule path="/items[at0015]" max="0" />
-          <Rule path="/items[at0008]" max="0" />
-          <Rule path="/items[at0007]" max="0" />
-          <Rule path="/items[at0079]" max="0" />
-          <Rule path="/items[at0005]" max="0" />
-          <Rule path="/items[at0067]" max="0" />
-          <Rule path="/items[at0070]" max="0" />
-          <Rule path="/items[at0080]" max="0" />
-          <Rule path="/items[at0039]" max="0" />
-          <Rule path="/items[at0046]" max="0" />
-          <Rule path="/items[at0081]" hide_on_form="true" />
-          <Rule path="/items[at0081]/items[at0003]" default="B1612345" />
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
-            <Rule path="/items[at0005]">
-              <constraint xsi:type="textConstraint">
-                <excludedValues>local::at0006</excludedValues>
-                <excludedValues>local::at0007</excludedValues>
-                <excludedValues>local::at0008</excludedValues>
-                <excludedValues>local::at0010</excludedValues>
-                <excludedValues>local::at0011</excludedValues>
-                <excludedValues>local::at0012</excludedValues>
-              </constraint>
-            </Rule>
-            <Rule path="/items[at0026]" max="0" />
-            <Rule path="/items[at0013]" max="0" />
-            <Rule path="/items[at0024]" max="0" />
-            <Rule path="/items[at0003]" max="0" />
-            <Rule path="/items[at0002]" max="0" />
-            <Rule path="/items[at0025]" max="0" />
-          </Items>
-        </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" max="1" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Electron microscopic finding']/items[at0007]" name="Kidney needle biopsy electron microscopy grid">
-          <Rule path="/items[at0029]" default="Kidney needle biopsy electron microscopy grid" />
-          <Rule path="/items[at0015]" max="0" />
-          <Rule path="/items[at0008]" max="0" />
-          <Rule path="/items[at0007]" max="0" />
-          <Rule path="/items[at0079]" max="0" />
-          <Rule path="/items[at0005]" max="0" />
-          <Rule path="/items[at0067]" max="0" />
-          <Rule path="/items[at0070]" max="0" />
-          <Rule path="/items[at0080]" max="0" />
-          <Rule path="/items[at0039]" max="0" />
-          <Rule path="/items[at0046]" max="0" />
-          <Rule path="/items[at0081]" hide_on_form="true" />
-          <Rule path="/items[at0081]/items[at0003]" default="B1612345" />
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0" concept_name="Specimen container" path="/items[at0085]">
-            <Rule path="/items[at0005]">
-              <constraint xsi:type="textConstraint">
-                <excludedValues>local::at0006</excludedValues>
-                <excludedValues>local::at0007</excludedValues>
-                <excludedValues>local::at0008</excludedValues>
-                <excludedValues>local::at0009</excludedValues>
-                <excludedValues>local::at0010</excludedValues>
-                <excludedValues>local::at0012</excludedValues>
-              </constraint>
-            </Rule>
-            <Rule path="/items[at0026]" max="0" />
             <Rule path="/items[at0013]" max="0" />
             <Rule path="/items[at0024]" max="0" />
             <Rule path="/items[at0003]" max="0" />
