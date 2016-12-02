@@ -33,10 +33,10 @@ Not to be used to record an autopsy report, although tests on some specimens tha
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Derived from Histopathology test, Draft Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2016-11-29]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.2195">
-		["build_uid"] = <"f3ac9479-bc81-4ad9-a20b-6c8fd7d1db25">
+		["build_uid"] = <"30c370a4-05da-4cd7-b772-0d961db1cac9">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"C1F8E0D5781164C489A2D5ABA002026C">
+		["MD5-CAM-1.0.1"] = <"2F170E3AAD849CBC2B82ABE6CCE9C391">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -44,7 +44,7 @@ Not to be used to record an autopsy report, although tests on some specimens tha
 definition
 	CLUSTER[at0000] occurrences matches {0..*} matches {	-- Histopathology findings
 		items cardinality matches {1..*; unordered} matches {
-			CLUSTER[at0012] occurrences matches {0..1} matches {	-- Histopathology findings
+			CLUSTER[at0012] occurrences matches {0..*} matches {	-- Histopathology findings
 				name matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -82,6 +82,13 @@ definition
 							ELEMENT[at0010] occurrences matches {0..*} matches {	-- Pathological interpretation
 								value matches {
 									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..*} matches {	-- Test representation
+								value matches {
+									DV_MULTIMEDIA matches {
+										media_type matches {[openEHR::]}
+									}
 								}
 							}
 						}
@@ -152,6 +159,11 @@ ontology
 				["at0012"] = <
 					text = <"Histopathology findings">
 					description = <"A group of findings within the histopathology examination. The Runtime name constraint allows identification of the type of histopathology examination performed.">
+				>
+				["at0014"] = <
+					text = <"Test representation">
+					description = <"Rich text or other multimedia representation of this particular result as issued by the diagnostic service.">
+					comment = <"Multiple formats are allowed but they must be semantically equivalent.">
 				>
 			>
 		>
