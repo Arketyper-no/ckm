@@ -28,10 +28,10 @@ distress based on questions about anxiety and depressive symptoms that a person 
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Kessler, R.C., Andrews, G., Colpe, L.J., Hiripi, E., Mroczek, D.K., Normand, S.-L.T., Walters, E.E. and Zaslavsky, A.M. (2002) \"Short screening scales to monitor population prevalences and trends in non-specific psychological distress\", Psychological Medicine, 32(6), pp. 959–976. doi: 10.1017/S0033291702006074.">
-		["build_uid"] = <"d51cc11e-a681-452a-838d-fbf97cc0250c">
+		["build_uid"] = <"06e64e79-2b78-4bf7-a4bc-8a9cdb79bc30">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"A3029380BCFCD536F6D1593AD61BE694">
+		["MD5-CAM-1.0.1"] = <"531F58D569C3CD8A6A754A5314C0C9EB">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -138,8 +138,13 @@ definition
 									ELEMENT[at0014] occurrences matches {0..1} matches {	-- Total score
 										value matches {
 											DV_COUNT matches {
-												magnitude matches {|5..50|}
+												magnitude matches {|10..50|}
 											}
+										}
+									}
+									ELEMENT[at0069] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -149,8 +154,17 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0070] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0071] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
 	}
-
 
 
 ontology
@@ -416,6 +430,19 @@ ontology
 				["at0068"] = <
 					text = <"All of the time">
 					description = <"">
+				>
+				["at0069"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the overall Kessler Psychological Distress Scale not captured in other fields.">
+				>
+				["at0070"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0071"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"e.g. Local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 			>
 		>
