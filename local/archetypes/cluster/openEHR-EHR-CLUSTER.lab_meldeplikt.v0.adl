@@ -1,0 +1,117 @@
+﻿archetype (adl_version=1.4; uid=f38c56f5-2d4b-4e59-9f2e-58ee1a57f6a0)
+	openEHR-EHR-CLUSTER.lab_meldeplikt.v0
+
+concept
+	[at0000]	-- Lab meldeplikt
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"094f4d26-5230-4bc9-9da4-ebdd6aa1b0ab">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"75977276B26758F93CAE202826D4E698">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Lab meldeplikt
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Kategori
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Varslingspliktig
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False; True}
+					}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {1..*} matches {	-- Varslingsinstans
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Tdspunkt varslet
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- Varselmottaker
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Varslet
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Varsler
+						value matches {
+							DV_IDENTIFIER matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lab meldeplikt">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Kategori">
+					description = <"Meldepliktskategori. ">
+					comment = <"I utgangspunktet \"Gruppe A med umiddelbar varslingsplikt\", \"Gruppe A uten umiddelbar varslingsplikt\", \"Gruppe B\" og \"Gruppe C\".">
+				>
+				["at0002"] = <
+					text = <"Varslingspliktig">
+					description = <"Varslingsplikt ved mistanke om utbrudd">
+				>
+				["at0003"] = <
+					text = <"Varslingsinstans">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Varselmottaker">
+					description = <"Adresse og kontaktdata til varslingsinstans">
+				>
+				["at0005"] = <
+					text = <"Varslet">
+					description = <"Er varsel sendt">
+				>
+				["at0006"] = <
+					text = <"Tdspunkt varslet">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Varsler">
+					description = <"Identitet for person eller enhet ansvarlig for å ha varslet.">
+				>
+			>
+		>
+	>
