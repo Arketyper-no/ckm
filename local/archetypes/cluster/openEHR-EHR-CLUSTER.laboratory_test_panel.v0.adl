@@ -2,26 +2,15 @@
 	openEHR-EHR-CLUSTER.laboratory_test_panel.v0
 
 concept
-	[at0000]	-- Laboratory Test Panel
+	[at0000]	-- Laboratory test panel
 language
 	original_language = <[ISO_639-1::en]>
-	translations = <
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			author = <
-				["name"] = <"Vebjørn Arntzen">
-				["organisation"] = <"Oslo universitetssykehus HF">
-				["email"] = <"varntzen@ous-hf.no">
-			>
-			accreditation = <"RN, Enterprise Architect TOGAF sertified">
-		>
-	>
 description
 	original_author = <
 		["name"] = <"Ian McNicoll">
 		["organisation"] = <"freshEHR Clinical Informatics, UK">
 		["email"] = <"ian@freshehr.com">
-		["date"] = <"2014-04-18">
+		["date"] = <"2015-07-20">
 	>
 	details = <
 		["en"] = <
@@ -29,30 +18,19 @@ description
 			purpose = <"To record laboratory test results as a single value or in a panel/battery format common to clinical pathology testing such as biochemistry, haematology and immunology.">
 			use = <"To record laboratory test results as a single value or in a panel/battery format common to clinical pathology testing such as biochemistry, haematology and immunology. Normally used in conjunction with a parent Laboratory test result (Observation) archetype.
 
-The name attribute of the Laboratory Test Panel/Result value element is normally replaced in a template or at run-time to carry the name of the specific analyte e.g. 'Haemoglobin' 
+The name attribute of the Laboratory test panel/Result value element is normally replaced in a template or at run-time to carry the name of the specific analyte e.g. 'Haemoglobin', often coded with a reference terminology such as LOINC, SNOMED CT or NPU.
 
-
-">
+Where other more complex result patterns are required it may be helpful to specialise this archetype or substitute another.">
 			keywords = <"laboratory", "pathology", "panel", "battery", "analyte">
 			misuse = <"Should not be used to record Anatomical pathology macroscopic/microscopic findings.">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere laboratoriesvar, enten som en enkeltverdi eller i grupper/pakker i et format som er vanlig for klinisk analyse, som biokjemi, hematologi og immunologi.">
-			use = <"For å registrere laboratoriesvar, enten som en enkeltverdi eller i grupper/pakker i et format som er vanlig for klinisk analyse, som biokjemi, hematologi og immunologi. Brukes vanligvis i sammenmeheng med en overordnet OBSERVATION-arketype for laboratorieprøvesvar.
-
-Dataelementet \"Prøvesvar\" skal vanligvis omdøpes i templat eller i applikasjonen til den spesifikke analytten, f.eks \"Hemoglobin\".">
-			keywords = <"laboratorie", "prøvepakker", "analyse", "analytt">
-			misuse = <"Bør ikke brukes for å lagre funn fra patologi-undersøkelser der det er brukt makroskopiske eller mikroskopiske metoder.">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Sabine Leh, Helse-Bergen, Norway", "Heather Leslie, Ocean Informatics, Australia (Nasjonal IKT redaktør)", "Ian McNicoll, Ocean Informatics, United Kingdom (Nasjonal IKT redaktør)">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["references"] = <"Based on NEHTA 'Pathology Test' archetype. Available from: http://dcm.nehta.org.au/ckm/OKM.html#showarchetype_1013.1.839_8
 
 Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: National E-Health Transition Authority; 2007 May 29 [cited 2011 Jul 11]; Available at http://www.nehta.gov.au/component/docman/doc_download/962-pathology-v10.
@@ -60,16 +38,16 @@ Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: Natio
 Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory
 
 Hl7 FHIR Observation resource: HL7 FHIR; Available from http://www.hl7.org/implement/standards/fhir/observation.html">
-		["build_uid"] = <"6ecf2bb7-89f5-49a4-9012-d84e27c1de6f">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["MD5-CAM-1.0.1"] = <"139214ECA31C7C7275416A1B9F85303D">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["build_uid"] = <"aff3456b-7649-4706-8eb7-984e073db9e0">
+		["original_publisher"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"56E91837D84F997E024D3FCFED705F86">
+		["custodian_namespace"] = <"org.openehr">
+		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Laboratory Test Panel
+	CLUSTER[at0000] matches {	-- Laboratory test panel
 		items cardinality matches {1..*; unordered} matches {
 			CLUSTER[at0002] occurrences matches {0..*} matches {	-- Laboratory result
 				items cardinality matches {1..*; unordered} matches {
@@ -104,14 +82,19 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
+					allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {	-- Result detail
+						include
+							archetype_id/value matches {/.*/}
+					}
 				}
 			}
 			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Other detail
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v1/}
+					archetype_id/value matches {/.*/}
 			}
 		}
 	}
+
 
 
 ontology
@@ -119,7 +102,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Laboratory Test Panel">
+					text = <"Laboratory test panel">
 					description = <"Laboratory test result as a single value or in a panel/battery format common to clinical pathology testing.">
 				>
 				["at0001"] = <
@@ -182,65 +165,9 @@ ontology
 					text = <"Other detail">
 					description = <"Further details including the specimen for the panel or a further nested panel.">
 				>
-			>
-		>
-		["nb"] = <
-			items = <
-				["at0000"] = <
-					text = <"Laboratoriesvargruppe">
-					description = <"Laboratoriesvar som en enkeltverdi eller i grupper/pakker som er vanlig i kliniske prøveanalyser.">
-				>
-				["at0001"] = <
-					text = <"Svarverdi">
-					description = <"Faktisk verdi av prøvesvaret. Navnet på dette dataelementet er vanligvis erstattet i templat eller i applikasjon, slik at det samsvarer med den faktiske analysen. For eksempel \"S-Na\" eller \"Serum Natrium\". Det vil også som regel være kodet ved hjelp av et kodeverk.">
-				>
-				["at0002"] = <
-					text = <"Analysesvar">
-					description = <"Spesifikt detaljert svar, som inkluderer både verdien og tilleggsinformasjon som kan være nyttig for klinisk tolkning.">
-				>
-				["at0003"] = <
-					text = <"Kommentar">
-					description = <"Kommentar til svaret.">
-				>
-				["at0004"] = <
-					text = <"Veiledning til referanseområdet">
-					description = <"Tilleggsinformasjon med råd for referanseområdets hensiktsmessighet.">
-				>
-				["at0005"] = <
-					text = <"Svarstatus">
-					description = <"Svarverdiens status">
-				>
-				["at0006"] = <
-					text = <"Tidspunkt for svarstatus">
-					description = <"Dato og/eller tidspunkt hele svaret ble utstedt for den registrerte Svarstatus.">
-				>
-				["at0007"] = <
-					text = <"Registrert">
-					description = <"Ikke tilgjengelig svar ennå.">
-				>
-				["at0008"] = <
-					text = <"Foreløpig">
-					description = <"Dette er et midlertidig eller foreløpig svar. Data kan mangle, eller være uverifisert.">
-				>
-				["at0009"] = <
-					text = <"Endelig">
-					description = <"Svaret er komplett og verifisert av ansvarlig laboratorielege.">
-				>
-				["at0010"] = <
-					text = <"Endret">
-					description = <"Svaret er endret etter å ha hatt status Endelig, og er komplett og verifisert av ansvarlig laboratorielege.">
-				>
-				["at0011"] = <
-					text = <"Kansellert">
-					description = <"Svaret er ikke tilgjengelig fordi analysen ikke ble påbegynt eller ferdigstilt.">
-				>
-				["at0012"] = <
-					text = <"Ikke bestilt">
-					description = <"Svaret er ikke tilgjengelig siden analysen ikke ble bestilt.">
-				>
-				["at0013"] = <
-					text = <"Andre detaljer">
-					description = <"Ytterligere detaljer, inkludert informasjon om prøveeksemplaret i analysepakker, eller når materialet deles opp i flere forskjellige analyser.">
+				["at0014"] = <
+					text = <"Result detail">
+					description = <"Further detail regarding an individual result.">
 				>
 			>
 		>
