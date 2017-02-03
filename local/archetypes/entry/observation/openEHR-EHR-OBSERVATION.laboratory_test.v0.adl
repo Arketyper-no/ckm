@@ -99,83 +99,83 @@ Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: Natio
 Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory
 
 Hl7 FHIR Diagnostic Report resource: HL7 fhir; Available from http://www.hl7.org/implement/standards/fhir/diagnosticreport.html">
-		["build_uid"] = <"5d441bd0-2823-454a-9f3d-1b07f5914688">
+		["build_uid"] = <"f06591b6-d58f-4006-8d6c-09f17a5c92a9">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"DBE79F52155374829241D7C3D932F620">
+		["MD5-CAM-1.0.1"] = <"D176702FB7AE616457FBFCF4A574B05D">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Laboratory test
+	OBSERVATION[at0000] matches {	-- Laboratoriesvar
 		data matches {
-			HISTORY[at0001] matches {	-- Event Series
+			HISTORY[at0001] matches {	-- *Event Series(en)
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
 						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
+							ITEM_TREE[at0003] matches {	-- *Tree(en)
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0005] matches {	-- Test name
+									ELEMENT[at0005] matches {	-- Analysenavn
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype CLUSTER[at0065] occurrences matches {0..*} matches {	-- Specimen detail
+									allow_archetype CLUSTER[at0065] occurrences matches {0..1} matches {	-- Prøvedetaljer
 										include
 											archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v0/}
 									}
-									ELEMENT[at0073] occurrences matches {0..1} matches {	-- Test status
+									ELEMENT[at0073] occurrences matches {0..1} matches {	-- Analysestatus
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0107, 	-- Registered
-													at0037, 	-- Partial
-													at0038, 	-- Final
-													at0115, 	-- Corrected
-													at0040, 	-- Amended
-													at0074, 	-- Cancelled
-													at0116]	-- Entered in error
+													at0107, 	-- Registrert
+													at0037, 	-- Delvis
+													at0038, 	-- Endelig
+													at0115, 	-- Korrigert
+													at0040, 	-- Revidert
+													at0074, 	-- Kansellert
+													at0116]	-- Feilregistrert
 												}
 											}
 										}
 									}
-									ELEMENT[at0075] occurrences matches {0..1} matches {	-- Test status timestamp
+									ELEMENT[at0075] occurrences matches {0..1} matches {	-- Dato/tid svarrapport
 										value matches {
 											DV_DATE_TIME matches {*}
 										}
 									}
-									ELEMENT[at0077] occurrences matches {0..1} matches {	-- Diagnostic service category
+									ELEMENT[at0077] occurrences matches {0..1} matches {	-- Kategori laboratoriefag
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0100] occurrences matches {0..1} matches {	-- Clinical information provided
+									ELEMENT[at0100] occurrences matches {0..1} matches {	-- Tilgjengelig klinisk informasjon
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype CLUSTER[at0097] occurrences matches {0..*} matches {	-- Test findings
+									allow_archetype CLUSTER[at0097] occurrences matches {0..*} matches {	-- Analysesvar
 										include
 											archetype_id/value matches {/.*/}
 									}
-									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Conclusion
+									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Konklusjon
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0098] occurrences matches {0..*} matches {	-- Pathological diagnosis
+									ELEMENT[at0098] occurrences matches {0..*} matches {	-- Diagnose
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0101] occurrences matches {0..1} matches {	-- Comment
+									ELEMENT[at0101] occurrences matches {0..1} matches {	-- Kommentar
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0010] occurrences matches {0..*} matches {	-- Test representation
+									ELEMENT[at0010] occurrences matches {0..*} matches {	-- Svarrepresentasjon
 										value matches {
 											DV_MULTIMEDIA matches {
 												media_type matches {[openEHR::]}
@@ -186,14 +186,14 @@ definition
 							}
 						}
 						state matches {
-							ITEM_TREE[at0112] matches {	-- Tree
+							ITEM_TREE[at0112] matches {	-- *Tree(en)
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0113] occurrences matches {0..*} matches {	-- Confounding factors
+									ELEMENT[at0113] occurrences matches {0..*} matches {	-- Konfunderende faktorer
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype CLUSTER[at0114] occurrences matches {0..*} matches {	-- Patient state details
+									allow_archetype CLUSTER[at0114] occurrences matches {0..*} matches {	-- Detaljer om pasienttilstand
 										include
 											archetype_id/value matches {/.*/}
 									}
@@ -205,56 +205,56 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0004] matches {	-- Tree
+			ITEM_TREE[at0004] matches {	-- *Tree(en)
 				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0017] occurrences matches {0..1} matches {	-- Responsible laboratory
+					allow_archetype CLUSTER[at0017] occurrences matches {0..1} matches {	-- Ansvarlig laboratorium
 						include
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0068] occurrences matches {0..1} matches {	-- Laboratory test identifier
+					ELEMENT[at0068] occurrences matches {0..1} matches {	-- Laboratoriets svarID
 						value matches {
 							DV_IDENTIFIER matches {*}
 						}
 					}
-					CLUSTER[at0094] occurrences matches {0..*} matches {	-- Test request details
+					CLUSTER[at0094] occurrences matches {0..*} matches {	-- Rekvisisjonsdetaljer
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0106] occurrences matches {0..*} matches {	-- Original test requested Name
+							ELEMENT[at0106] occurrences matches {0..*} matches {	-- Navn på opprinnelig rekvirert analyse
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Requester order identifier
+							ELEMENT[at0062] occurrences matches {0..1} matches {	-- Rekvirentens rekvisisjonsID
 								value matches {
 									DV_IDENTIFIER matches {*}
 								}
 							}
-							ELEMENT[at0063] occurrences matches {0..1} matches {	-- Receiver order identifier
+							ELEMENT[at0063] occurrences matches {0..1} matches {	-- Rekvisisjonsmottakers rekvisisjonsID
 								value matches {
 									DV_IDENTIFIER matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0090] occurrences matches {0..1} matches {	-- Requester
+							allow_archetype CLUSTER[at0090] occurrences matches {0..1} matches {	-- Rekvirent
 								include
 									archetype_id/value matches {/.*/}
 							}
-							allow_archetype CLUSTER[at0035] occurrences matches {0..*} matches {	-- Distribution list
+							allow_archetype CLUSTER[at0035] occurrences matches {0..*} matches {	-- Distribusjonsliste
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution(-[a-zA-Z0-9_]+)*\.v1/}
 							}
 						}
 					}
-					ELEMENT[at0111] occurrences matches {0..1} matches {	-- Point of care device
+					ELEMENT[at0111] occurrences matches {0..1} matches {	-- Pasientnært analyseutstyr
 						value matches {
 							DV_BOOLEAN matches {
 								value matches {True, False; False}
 							}
 						}
 					}
-					allow_archetype CLUSTER[at0110] occurrences matches {0..*} matches {	-- Test method/device details
+					allow_archetype CLUSTER[at0110] occurrences matches {0..*} matches {	-- Detaljer om analysemetode/utstyr
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
 					}
-					allow_archetype CLUSTER[at0117] occurrences matches {0..*} matches {	-- Extension
+					allow_archetype CLUSTER[at0117] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -262,7 +262,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
@@ -667,13 +666,13 @@ ontology
 					description = <"Konsis, tekstlig tolkning av laboratoriesvaret, satt i en klinisk sammenheng.">
 				>
 				["at0062"] = <
-					text = <"RekvisisjonsID">
-					description = <"Lokal ID som er tildelt rekvisisjonen av den som har rekvirert.">
+					text = <"Rekvirentens rekvisisjonsID">
+					description = <"Lokal ID som er tildelt rekvisisjonen av rekvirenten.">
 					comment = <"Tilsvarende HL7 \"Placer Order Identifier\".">
 				>
 				["at0063"] = <
-					text = <"Laboratoriets rekvisisjonsID">
-					description = <"Lokal ID som er tildelt rekvisisjonen av utførende laboratorie, vanligvis av laboratoriesystemet (LIS).">
+					text = <"Rekvisisjonsmottakers rekvisisjonsID">
+					description = <"Lokal ID som er tildelt rekvisisjonen av rekvisisjonsmottakeren, vanligvis av laboratoriesystemet (LIS).">
 					comment = <"En ID tilordnet rekvisisjonen av laboratorieinformasjonssystemet (LIS) åpner for sporing av fremdrift og til å koble svar til rekvisisjoner. Det gir også en referanse for forespørsler, og tilsvarer som regel HL7 \"Filler Order Identifier\".">
 				>
 				["at0065"] = <
@@ -681,7 +680,7 @@ ontology
 					description = <"Detaljer om prøven dersom alle prøveresultater er avledet fra samme prøvemateriale. Hvis prøvematerialet er tilstrekkelig spesifisert med en kode i Prøvenavn, er dette dataelementet overflødig. Hvis det er multiple prøver, kan disse representeres per \"resultatgruppe\".">
 				>
 				["at0068"] = <
-					text = <"SvarID">
+					text = <"Laboratoriets svarID">
 					description = <"Lokal ID som er gitt til analysesvaret av laboratoriesystemet (LIS).">
 				>
 				["at0073"] = <
