@@ -120,35 +120,11 @@
       </item>
     </items>
   </annotations>
-  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 2']/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[openEHR-EHR-CLUSTER.specimen.v0]/items[openEHR-EHR-CLUSTER.specimen_container.v0]/items[at0026]">
-    <items>
-      <item>
-        <key>Notes.Example</key>
-        <value>McDowell</value>
-      </item>
-    </items>
-  </annotations>
   <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0]/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[openEHR-EHR-CLUSTER.specimen.v0]/items[openEHR-EHR-CLUSTER.specimen_container.v0]/items[at0026]">
     <items>
       <item>
         <key>Notes.Example</key>
         <value>Formalin</value>
-      </item>
-    </items>
-  </annotations>
-  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 2']/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Elektronmikroskopi']/items[at0008]">
-    <items>
-      <item>
-        <key>Notes.Reviewers Note</key>
-        <value>Det er enda ikke laget et strukturert CLUSTER for dette så det må være fritekst for nå.</value>
-      </item>
-    </items>
-  </annotations>
-  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 1']/items[at0012 and name/value='Microscopic findings']/items[at0005]/items[at0008]">
-    <items>
-      <item>
-        <key>Notes.Reviewers Note</key>
-        <value>Immunhistokjemi CLUSTER ikke laget enda. Må legges inn under strukturerte funn.</value>
       </item>
     </items>
   </annotations>
@@ -240,6 +216,30 @@
       </item>
     </items>
   </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 1']/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[openEHR-EHR-CLUSTER.tnm_stage_pathological.v0]">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Blir det riktig å bruke TNM her? Usikkert om det er dekkende for alle use caser?</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 1']/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[openEHR-EHR-CLUSTER.tnm_stage_pathological.v0 and name/value='Tumors dypeste infiltrasjon']">
+    <items>
+      <item>
+        <key>Notes.Comment</key>
+        <value>Usikkert om dette er tilstrekkelig, vil være ulikt behov i ulike usecaser</value>
+      </item>
+    </items>
+  </annotations>
+  <annotations path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histopathology_findings.v0 and name/value='Container 1']/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[openEHR-EHR-CLUSTER.tnm_stage_pathological.v0 and name/value='Lymfeknutestatus']/items[at0002]">
+    <items>
+      <item>
+        <key>Notes.Example</key>
+        <value>Patologer beskriver hvor mange lymfeknuter og metastaser, tnm har en kategorisering? 3-5 lymfeknuter, mer enn 6 lymfeknuter</value>
+      </item>
+    </items>
+  </annotations>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Rapport">
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test.v0" concept_name="Laboratoriesvar" path="/content">
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" name="Colon resection tumor" />
@@ -266,12 +266,11 @@
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Histopathology findings" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Container 1">
         <Rule path="/items[at0012]" max="0" />
-        <Rule path="/items[at0012]" max="1" clone="true" name="Microscopic findings" />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]/items[at0006]" max="0" />
         <Rule path="/items[at0012]" max="1" clone="true" name="Macroscopic findings" />
         <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0010]" max="0" />
         <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0014]" max="0" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.microscopy_renal_biopsy_non_neoplastic.v0" concept_name="Microscopy renal biopsy non neoplastic" path="/items[at0012 and name/value='Microscopic findings']/items[at0005]/items[at0009]" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Microscopic findings" />
+        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]/items[at0006]" max="0" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0007]">
           <Rule path="/items[at0029]" max="0" />
           <Rule path="/items[at0015]" max="0" />
@@ -285,114 +284,11 @@
           <Rule path="/items[at0039]" max="0" />
           <Rule path="/items[at0046]" max="0" />
           <Rule path="/items[at0081]" max="0" />
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1" concept_name="Anatomisk lokalisering" path="/items[at0013]" />
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" path="/items[at0013]">
-            <Rule path="/items[at0018]" name="Nærmeste endereseksjonsrand" />
-            <Rule path="/items[at0001]" max="0" />
-            <Rule path="/items[at0006]" max="0" />
-            <Rule path="/items[at0008]" max="0" />
-            <Rule path="/items[at0010]" max="0" />
-            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
-              <Rule path="/items[at0020]/items[at0021]">
-                <constraint xsi:type="textConstraint">
-                  <includedValues>Tumor</includedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0020]/items[at0062]" max="0" />
-              <Rule path="/items[at0020]/items[at0006]">
-                <constraint xsi:type="textConstraint">
-                  <excludedValues>local::at0007</excludedValues>
-                  <excludedValues>local::at0008</excludedValues>
-                  <excludedValues>local::at0009</excludedValues>
-                  <excludedValues>local::at0010</excludedValues>
-                  <excludedValues>local::at0012</excludedValues>
-                  <excludedValues>local::at0013</excludedValues>
-                  <excludedValues>local::at0055</excludedValues>
-                  <excludedValues>local::at0056</excludedValues>
-                  <excludedValues>local::at0057</excludedValues>
-                  <excludedValues>local::at0058</excludedValues>
-                  <excludedValues>local::at0059</excludedValues>
-                  <excludedValues>local::at0060</excludedValues>
-                  <excludedValues>local::at0064</excludedValues>
-                  <excludedValues>local::at0065</excludedValues>
-                  <excludedValues>local::at0066</excludedValues>
-                  <excludedValues>local::at0067</excludedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0023]" max="0" />
-            </Items>
-          </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" max="1" path="/items[at0013]" name="Tumour - Surgical resection margins #1">
-            <Rule path="/items[at0018]" name="Fjerneste endereseksjonsrand" />
-            <Rule path="/items[at0001]" max="0" />
-            <Rule path="/items[at0006]" max="0" />
-            <Rule path="/items[at0008]" max="0" />
-            <Rule path="/items[at0010]" max="0" />
-            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
-              <Rule path="/items[at0020]/items[at0021]">
-                <constraint xsi:type="textConstraint">
-                  <includedValues>Tumor</includedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0020]/items[at0062]" max="0" />
-              <Rule path="/items[at0020]/items[at0006]">
-                <constraint xsi:type="textConstraint">
-                  <excludedValues>local::at0007</excludedValues>
-                  <excludedValues>local::at0008</excludedValues>
-                  <excludedValues>local::at0009</excludedValues>
-                  <excludedValues>local::at0010</excludedValues>
-                  <excludedValues>local::at0012</excludedValues>
-                  <excludedValues>local::at0013</excludedValues>
-                  <excludedValues>local::at0055</excludedValues>
-                  <excludedValues>local::at0056</excludedValues>
-                  <excludedValues>local::at0057</excludedValues>
-                  <excludedValues>local::at0058</excludedValues>
-                  <excludedValues>local::at0059</excludedValues>
-                  <excludedValues>local::at0060</excludedValues>
-                  <excludedValues>local::at0063</excludedValues>
-                  <excludedValues>local::at0065</excludedValues>
-                  <excludedValues>local::at0066</excludedValues>
-                  <excludedValues>local::at0067</excludedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0023]" max="0" />
-            </Items>
-          </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" max="1" path="/items[at0013]" name="Tumour - Surgical resection margins #2">
-            <Rule path="/items[at0018]" name="Sirkumferent reseksjonsrand" />
-            <Rule path="/items[at0001]" max="0" />
-            <Rule path="/items[at0006]" max="0" />
-            <Rule path="/items[at0008]" max="0" />
-            <Rule path="/items[at0010]" max="0" />
-            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
-              <Rule path="/items[at0020]/items[at0021]">
-                <constraint xsi:type="textConstraint">
-                  <includedValues>Tumor</includedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0020]/items[at0062]" max="0" />
-              <Rule path="/items[at0020]/items[at0006]">
-                <constraint xsi:type="textConstraint">
-                  <excludedValues>local::at0007</excludedValues>
-                  <excludedValues>local::at0008</excludedValues>
-                  <excludedValues>local::at0009</excludedValues>
-                  <excludedValues>local::at0010</excludedValues>
-                  <excludedValues>local::at0012</excludedValues>
-                  <excludedValues>local::at0055</excludedValues>
-                  <excludedValues>local::at0056</excludedValues>
-                  <excludedValues>local::at0057</excludedValues>
-                  <excludedValues>local::at0058</excludedValues>
-                  <excludedValues>local::at0059</excludedValues>
-                  <excludedValues>local::at0060</excludedValues>
-                  <excludedValues>local::at0063</excludedValues>
-                  <excludedValues>local::at0064</excludedValues>
-                  <excludedValues>local::at0065</excludedValues>
-                  <excludedValues>local::at0066</excludedValues>
-                  <excludedValues>local::at0067</excludedValues>
-                </constraint>
-              </Rule>
-              <Rule path="/items[at0023]" max="0" />
-            </Items>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1" concept_name="Anatomisk lokalisering" path="/items[at0013]">
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0064]" max="0" />
+            <Rule path="/items[at0055]" max="0" />
+            <Rule path="/items[at0023]" max="0" />
           </Items>
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.physical_properties.v0" concept_name="Fysiske egenskaper til et objekt" max="1" path="/items[at0027]" name="Hemikolektomi">
             <Rule path="/items[at0036]">
@@ -437,18 +333,156 @@
             <Rule path="/items[at0025]" max="0" />
           </Items>
         </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm_stage_pathological.v0" concept_name="TNM stage - pathological" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Tumors dypeste infiltrasjon" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]">
+          <Rule path="/items[at0018]" name="Nærmeste endereseksjonsrand" />
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
+            <Rule path="/items[at0020]/items[at0021]">
+              <constraint xsi:type="textConstraint">
+                <includedValues>Tumor</includedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0020]/items[at0062]" max="0" />
+            <Rule path="/items[at0020]/items[at0006]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0009</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+                <excludedValues>local::at0013</excludedValues>
+                <excludedValues>local::at0055</excludedValues>
+                <excludedValues>local::at0056</excludedValues>
+                <excludedValues>local::at0057</excludedValues>
+                <excludedValues>local::at0058</excludedValues>
+                <excludedValues>local::at0059</excludedValues>
+                <excludedValues>local::at0060</excludedValues>
+                <excludedValues>local::at0064</excludedValues>
+                <excludedValues>local::at0065</excludedValues>
+                <excludedValues>local::at0066</excludedValues>
+                <excludedValues>local::at0067</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0023]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Tumour - Surgical resection margins #1">
+          <Rule path="/items[at0018]" name="Fjerneste endereseksjonsrand" />
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
+            <Rule path="/items[at0020]/items[at0021]">
+              <constraint xsi:type="textConstraint">
+                <includedValues>Tumor</includedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0020]/items[at0062]" max="0" />
+            <Rule path="/items[at0020]/items[at0006]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0009</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+                <excludedValues>local::at0013</excludedValues>
+                <excludedValues>local::at0055</excludedValues>
+                <excludedValues>local::at0056</excludedValues>
+                <excludedValues>local::at0057</excludedValues>
+                <excludedValues>local::at0058</excludedValues>
+                <excludedValues>local::at0059</excludedValues>
+                <excludedValues>local::at0060</excludedValues>
+                <excludedValues>local::at0063</excludedValues>
+                <excludedValues>local::at0065</excludedValues>
+                <excludedValues>local::at0066</excludedValues>
+                <excludedValues>local::at0067</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0023]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0" concept_name="Tumour - Surgical resection margins" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Tumour - Surgical resection margins #2">
+          <Rule path="/items[at0018]" name="Sirkumferent reseksjonsrand" />
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1" concept_name="Relativ anatomisk lokalisering" path="/items[at0019]">
+            <Rule path="/items[at0020]/items[at0021]">
+              <constraint xsi:type="textConstraint">
+                <includedValues>Tumor</includedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0020]/items[at0062]" max="0" />
+            <Rule path="/items[at0020]/items[at0006]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0007</excludedValues>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0009</excludedValues>
+                <excludedValues>local::at0010</excludedValues>
+                <excludedValues>local::at0012</excludedValues>
+                <excludedValues>local::at0055</excludedValues>
+                <excludedValues>local::at0056</excludedValues>
+                <excludedValues>local::at0057</excludedValues>
+                <excludedValues>local::at0058</excludedValues>
+                <excludedValues>local::at0059</excludedValues>
+                <excludedValues>local::at0060</excludedValues>
+                <excludedValues>local::at0063</excludedValues>
+                <excludedValues>local::at0064</excludedValues>
+                <excludedValues>local::at0065</excludedValues>
+                <excludedValues>local::at0066</excludedValues>
+                <excludedValues>local::at0067</excludedValues>
+              </constraint>
+            </Rule>
+            <Rule path="/items[at0023]" max="0" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm_stage_pathological.v0" concept_name="TNM stage - pathological" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Tumors dypeste infiltrasjon">
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0011]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0009]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+          <Rule path="/items[at0013]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm_stage_pathological.v0" concept_name="TNM stage - pathological" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Lymfeknutestatus">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0011]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0009]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+          <Rule path="/items[at0013]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1" concept_name="Anatomisk lokalisering" max="1" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0009]" name="Tumour site">
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0064]" max="0" />
+          <Rule path="/items[at0055]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+        </Items>
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Histopathology findings" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Container 2">
         <Rule path="/items[at0012]" max="0" />
-        <Rule path="/items[at0012]" max="1" clone="true" name="Microscopic findings" />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]" max="1" name="Semitynnsnitt" />
-        <Rule path="/items[at0012 and name/value='Microscopic findings']/items[at0005]" max="1" clone="true" name="Elektronmikroskopi" />
         <Rule path="/items[at0012]" max="1" clone="true" name="Macroscopic findings" />
         <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0008]" max="0" />
         <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0010]" max="0" />
         <Rule path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0014]" max="0" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.microscopy_renal_biopsy_non_neoplastic.v0" concept_name="Microscopy renal biopsy non neoplastic" path="/items[at0012 and name/value='Microscopic findings']/items[at0005 and name/value='Semitynnsnitt']/items[at0009]" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Microscopic findings" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0012 and name/value='Macroscopic findings']/items[at0005]/items[at0007]">
           <Rule path="/items[at0007]" max="0" />
           <Rule path="/items[at0079]" max="0" />
@@ -460,11 +494,6 @@
           <Rule path="/items[at0046]" max="0" />
           <Rule path="/items[at0081]" max="0" />
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.physical_properties.v0" concept_name="Fysiske egenskaper til et objekt" path="/items[at0027]">
-            <Rule path="/items[at0036]">
-              <constraint xsi:type="textConstraint">
-                <includedValues>Needle core biopsy</includedValues>
-              </constraint>
-            </Rule>
             <Rule path="/items[at0020]" max="0" />
             <Rule path="/items[at0037]/items[at0034]" max="0" />
             <Rule path="/items[at0037]/items[at0032]" max="0" />
@@ -500,23 +529,20 @@
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0">
     <digest id="MD5-CAM-1.0.1">2F170E3AAD849CBC2B82ABE6CCE9C391</digest>
   </integrity_checks>
-  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.microscopy_renal_biopsy_non_neoplastic.v0">
-    <digest id="MD5-CAM-1.0.1">45ED5CF84F253443E59D1D1B2084F07C</digest>
-  </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1">
     <digest id="MD5-CAM-1.0.1">33356F0DCB42FC6801A9CBCB49BF1EAF</digest>
-  </integrity_checks>
-  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0">
-    <digest id="MD5-CAM-1.0.1">756A9B8E1250859F631341ECA83135E1</digest>
-  </integrity_checks>
-  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1">
-    <digest id="MD5-CAM-1.0.1">84F2AA81E69B41488926C072482DF67E</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.physical_properties.v0">
     <digest id="MD5-CAM-1.0.1">0EBE45E8750FCBF66E0555D4A0A1A022</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.specimen_container.v0">
     <digest id="MD5-CAM-1.0.1">9683850C811C4F5C4322A4A24B3E5937</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v0">
+    <digest id="MD5-CAM-1.0.1">756A9B8E1250859F631341ECA83135E1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_relative.v1">
+    <digest id="MD5-CAM-1.0.1">84F2AA81E69B41488926C072482DF67E</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tnm_stage_pathological.v0">
     <digest id="MD5-CAM-1.0.1">6A8A6D9618DD686CF76CB561951EF3EE</digest>
