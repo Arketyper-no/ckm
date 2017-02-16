@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=91731d1b-67b4-4b14-9d45-255315828bfe)
-	openEHR-EHR-COMPOSITION.report-result.v1
+﻿archetype (adl_version=1.4; uid=090c1e8b-bd13-4ab3-a2d1-41f86200a0cd)
+	openEHR-EHR-COMPOSITION.report-result.v0
 specialise
 	openEHR-EHR-COMPOSITION.report.v1
 
@@ -14,6 +14,12 @@ language
 				["name"] = <"?">
 			>
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			author = <
@@ -22,12 +28,6 @@ language
 				["email"] = <"alandmarch@gmail.com">
 			>
 			accreditation = <"physician">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
-			>
 		>
 	>
 description
@@ -48,7 +48,7 @@ description
 و قد تم تعمد جعل مُكَوِّن المقاطع غير مقيد للوصول إلى الحد الأقصى لإعادة استخدام هذا النموذج.">
 			keywords = <"تقرير", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
@@ -60,7 +60,7 @@ The Context component contains an optional unnamed slot that can be used to:
 The Sections component has been deliberately left unconstrained to maximise re-use of this archetype.(en)">
 			keywords = <"*report(en)", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
@@ -71,7 +71,7 @@ El componente de Contexto contiene un slot innominado que puede ser utilizado pa
 -agregar arquetipos del modelo demográfico de openEHR que representen a las partes participantes. En tanto que esto puede no ser deseable durante una implementación, puede ser útil para demostrar como los datos demográficos pueden ser utilizados en una implementación (ejemplo: como apoyo a los requerimientos de recolección de contenido clínico o revisión de una plantilla). El componente de Secciones ha sido dejado libre de restricciones a fin de maximizar el uso de este arquetipo.">
 			keywords = <"informe", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -91,21 +91,22 @@ The Sections component has been deliberately left unconstrained to maximise re-u
 			misuse = <"Not to be used for reports that are not related to a result for a test or assessment. Use the generic COMPOSITION.report or purpose specific COMPOSITIONs as appropriate.
 
 Not to be used for test or assessment results that are recorded as part of a consultation note, for example Glasgow coma scale in the context of an emergency consultation - use the OBSERVATION.glasgow_coma_scale archetype as one component within the COMPOSITION.encouter for this purpose.">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"published">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heath Frankel, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["revision"] = <"1.0.0">
+		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["build_uid"] = <"826442a8-e998-4771-85f2-389363b51489">
-		["original_publisher"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1853F80CFF69F14444CF1C21D9A64834">
-		["custodian_namespace"] = <"org.openehr">
-		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Avgrenet fra: Result Report, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-02-16]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1324">
+		["build_uid"] = <"82c04aa6-a176-4b03-98ba-92b5416e98c6">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"F7683EE5C7BC495C6B8B0C225F18F010">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
 	>
 
 definition
