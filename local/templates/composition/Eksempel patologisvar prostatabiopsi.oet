@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>1e63c66e-46d4-407f-9ea0-ad618b01ee7b</id>
+  <name>Eksempel patologisvar prostatabiopsi</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose>Eksempel på hvordan modellere patologisvar for nålebiopsi av prostata med 10 prøver tatt i ulike vinkler. Templaten eksponerer alle mulige elementer i arketypene. I praktisk bruk vil elementbruken nesten alltid være mer begrenset.</purpose>
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report-result.v0" concept_name="Result Report">
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test.v0" concept_name="Laboratoriesvar" path="/content">
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+        <constraint xsi:type="textConstraint">
+          <includedValues>Nålebiopsi prostata</includedValues>
+        </constraint>
+      </Rule>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #1">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #2">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #3">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #4">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #5">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #6">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #7">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #8">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #9">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0067</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0" concept_name="Patologifunn" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]" name="Patologifunn #10">
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Makroskopisk undersøkelse" />
+        <Rule path="/items[at0012]" max="1" clone="true" name="Mikroskopisk undersøkelse" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/items[at0007]">
+          <Rule path="/items[at0029]">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Prostata nålebiopsi</includedValues>
+            </constraint>
+          </Rule>
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0" concept_name="Anatomisk lokalisering på urskive" path="/items[at0013]">
+            <Rule path="/items[at0061]">
+              <constraint xsi:type="textConstraint">
+                <excludedValues>local::at0068</excludedValues>
+                <excludedValues>local::at0069</excludedValues>
+                <excludedValues>local::at0070</excludedValues>
+                <excludedValues>local::at0071</excludedValues>
+                <excludedValues>local::at0072</excludedValues>
+                <excludedValues>local::at0073</excludedValues>
+                <excludedValues>local::at0074</excludedValues>
+                <excludedValues>local::at0075</excludedValues>
+                <excludedValues>local::at0076</excludedValues>
+                <excludedValues>local::at0077</excludedValues>
+              </constraint>
+            </Rule>
+          </Items>
+        </Items>
+      </Items>
+    </Content>
+    <Context />
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.report-result.v0">
+    <digest id="MD5-CAM-1.0.1">F7683EE5C7BC495C6B8B0C225F18F010</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test.v0">
+    <digest id="MD5-CAM-1.0.1">B6774000934EDCA36723E33B2F10370F</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.histopathology_findings.v0">
+    <digest id="MD5-CAM-1.0.1">7EA19098AFD34CA1ED5CABDA4D761AB8</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.specimen.v0">
+    <digest id="MD5-CAM-1.0.1">45FEE028DAC4039E25E059752AE0B9EB</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.anatomical_location_clock.v0">
+    <digest id="MD5-CAM-1.0.1">44FCC6414A850A9C590398D0F5529BC1</digest>
+  </integrity_checks>
+</template>
