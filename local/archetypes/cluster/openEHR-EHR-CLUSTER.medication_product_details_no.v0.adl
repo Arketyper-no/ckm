@@ -1,0 +1,227 @@
+﻿archetype (adl_version=1.4; uid=616d6013-2b6b-4fa1-ba2d-09430a987b5a)
+	openEHR-EHR-CLUSTER.medication_product_details_no.v0
+
+concept
+	[at0000]	-- Legemiddel produktdetaljer NO
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Hilde Hollås">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"hho@dips.no">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Registrering av legemiddeldetaljer som må lagres bl.a. pga manglende historikk i FEST.">
+			use = <"">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["revision"] = <"0.0.1-alpha">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["build_uid"] = <"f4e6008d-3754-4b3a-b0e8-724f0014b871">
+		["original_publisher"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"3A5075A023BBF55874A3C40DE7065281">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_organisation"] = <"Nasjonal IKT">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Legemiddel produktdetaljer NO
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Produsent
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {	-- Reseptgruppe
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0033] occurrences matches {0..1} matches {	-- ATC
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0034] occurrences matches {0..1} matches {	-- MedikamentId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0011] occurrences matches {0..1} matches {	-- Medikamenthåndtering
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Knuses?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Åpnes?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Deles
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Bolus
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Infusjonshastighet bolus
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Konservering
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Oppevaring
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0019] occurrences matches {0..1} matches {	-- Smak
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0021] occurrences matches {0..1} matches {	-- Markedsføringstillatelse
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Markedsføringstillatelse
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- Begrunnelse
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {	-- Direktesøknad SLV
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0026] occurrences matches {0..1} matches {	-- Opioidsøknad
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0032] occurrences matches {0..*} matches {	-- Ytterligere detaljer
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Legemiddel produktdetaljer NO">
+					description = <"Legemiddel produktdetaljer fra FEST.">
+				>
+				["at0001"] = <
+					text = <"Produsent">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Reseptgruppe">
+					description = <"draft">
+				>
+				["at0011"] = <
+					text = <"Medikamenthåndtering">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Knuses?">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Åpnes?">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Deles">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Bolus">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Infusjonshastighet bolus">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Konservering">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Oppevaring">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Smak">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Markedsføringstillatelse">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Markedsføringstillatelse">
+					description = <"Skal ikke søkes, søknad vurderes apotek, må søkes">
+				>
+				["at0023"] = <
+					text = <"Begrunnelse">
+					description = <"Begrunnelse for hvorfor legemiddelet ordineres til tross for at det ikke har markedsføringstillatelse.">
+				>
+				["at0024"] = <
+					text = <"Direktesøknad SLV">
+					description = <"Det er sendt direktesøknad til Statens Legemiddelverk.">
+				>
+				["at0026"] = <
+					text = <"Opioidsøknad">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Ytterligere detaljer">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"ATC">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"MedikamentId">
+					description = <"*">
+				>
+			>
+		>
+	>
