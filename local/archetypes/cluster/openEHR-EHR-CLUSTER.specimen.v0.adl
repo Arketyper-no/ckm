@@ -6,6 +6,15 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Kristian Berg, Gro-Hilde Ulriksen, Line Silsand">
+				["organisation"] = <"Universitetssykehuset Nord-Norge">
+				["email"] = <"kristian.berg@unn.no, gro-hilde.ulriksen@unn.no, line.silsand@unn.no">
+			>
+			accreditation = <"*">
+		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			author = <
@@ -42,6 +51,15 @@ It will finally be used within a laboratory result archetype to describe the spe
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å registrere detaljer knyttet til en laboratorieprøve. Dette CLUSTERet kan brukes i flere ulike sammenhenger, som for eksempel i en INSTRUCTION-arketype for å beskrive hvilken prøve som skal tas, eller for å beskrive prøven som er tilknyttet en laboratorierekvisisjon. CLUSTERet kan også brukes i en ACTION-arketype for eksempel for å beskrive prøver som skal tas som en del av en kirurgisk prosedyre. 
+
+CLUSTERet vil også kunne brukes i \"Laboratoriesvar\"-arketypen for å beskrive prøven det rapporteres på.">
+			use = <"Generelt brukes denne CLUSTER-arketypen i en OBSERVATION.laboratory_test og andre laboratorierelaterte INSTRUCTION og ACTION-arketyper.">
+			keywords = <"laboratorium", "prøve", "prøvetaking", "laboratorieprøve", "prøvemateriale">
+			misuse = <"">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Koray Atalag University of Auckland", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sam Heard Ocean Informatics", "Heather Leslie Ocean Informatics", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
@@ -51,10 +69,10 @@ It will finally be used within a laboratory result archetype to describe the spe
 		["references"] = <"Hl7 FHIR Specimen resource: HL7 FHIR; Available from http://www.hl7.org/implement/standards/fhir/specimen.html
 
 Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory">
-		["build_uid"] = <"8c1ffdfd-991b-4afe-8884-8c17d2a418eb">
+		["build_uid"] = <"e5e34223-4176-4ae7-9b00-7584e2159978">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"45FEE028DAC4039E25E059752AE0B9EB">
+		["MD5-CAM-1.0.1"] = <"991FE4D0CA43C3E901270CEADF323769">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -553,6 +571,166 @@ of the result.">
 				["at0085"] = <
 					text = <"Container details">
 					description = <"Details of container(s) used.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Laboratorieprøve">
+					description = <"For å registrere detaljer tilknyttet en laboratorieprøve.">
+				>
+				["at0001"] = <
+					text = <"Prøveidentifikator">
+					description = <"Unik identifikator av prøven som normalt blir tildelt av laboratoriet">
+					comment = <"Noen ganger kalt Accession Identifier.">
+				>
+				["at0003"] = <
+					text = <"Identifikator av overordnet prøve">
+					description = <"Unik identifikator for den overordnede prøven i de tilfeller der prøven deles inn i flere del-prøver.">
+				>
+				["at0005"] = <
+					text = <"Potensiell risiko">
+					description = <"Enhver risiko eller biologisk fare forbundet med prøvetaking eller håndtering av prøven.">
+				>
+				["at0007"] = <
+					text = <"Prøvetakingsmetode">
+					description = <"Fremgangsmåten som skal benyttes for å samle prøvemateriale, for eksempel venepunksjon, biopsi eller reseksjon.">
+				>
+				["at0008"] = <
+					text = <"Forutsetning for prøvetaking">
+					description = <"Forutsetninger som skal imøtekommes før prøven blir tatt.">
+					comment = <"For eksempel fastende, \"full blære\", \"sterilt område\" eller andre spesielle instruksjoner tilknyttet håndtering eller øyeblikkelig behandling av prøven, for eksempel sentrifugering ved mottak. 
+
+Kan også brukes for å dokumentere kjente avvik fra instruksjoner tilknyttet håndtering eller øyeblikkelig behandling av prøven, for eksempel \"pasienten var ikke fastende\".">
+				>
+				["at0013"] = <
+					text = <"Prøvetakingslokalisasjon">
+					description = <"Det anatomiske området hvor prøven ble tatt.">
+				>
+				["at0015"] = <
+					text = <"Tidspunkt for prøvetaking">
+					description = <"Dato og tid for når prøvetakingen skal skje eller har skjedd.">
+				>
+				["at0027"] = <
+					text = <"Fysiske egenskaper">
+					description = <"Dimensjoner/vekt/mengden på prøven. Dette SLOTet er satt til ubegrenset for å tillate variasjoner ved for eksempel vekt av prostatakjertel med og uten sædblærer.">
+				>
+				["at0029"] = <
+					text = <"Type prøvemateriale">
+					description = <"Type prøvemateriale som skal innhentes for eksempel venøst blod, prostatabiopsi ***usikkert om det er snakk om type prøve, eller prøvemateriale***">
+				>
+				["at0034"] = <
+					text = <"Tidspunkt for mottak">
+					description = <"Datoen og klokkeslettet da prøven ble mottatt på laboratoriet.">
+				>
+				["at0039"] = <
+					text = <"Prøvekvalitet">
+					description = <"Problemer med den mottatte prøven.">
+				>
+				["at0041"] = <
+					text = <"Tilstrekkelig for testing">
+					description = <"Er prøven tilstrekkelig for testing?">
+				>
+				["at0042"] = <
+					text = <"Problemer med mottatt prøve">
+					description = <"Spesifikke problemer med en mottatt prøve.">
+				>
+				["at0044"] = <
+					text = <"Problemer med laboratoriehåndtering">
+					description = <"Problem som oppstår med håndtering eller behandling av prøven i laboratoriet">
+				>
+				["at0045"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar om kvaliteten på den mottatte prøven.">
+				>
+				["at0046"] = <
+					text = <"Behandling">
+					description = <"Arbeidsflyt for prøvebehandling/håndtering.">
+				>
+				["at0052"] = <
+					text = <"Hemolysert">
+					description = <"Prøven var hemolysert.">
+				>
+				["at0053"] = <
+					text = <"Lipemisk">
+					description = <"Prøven var lipemisk.">
+				>
+				["at0054"] = <
+					text = <"Feil transportmedium">
+					description = <"Feil tilsetningsstoff ble brukt ved transport av prøven.">
+				>
+				["at0055"] = <
+					text = <"Utilstrekkelig mengde">
+					description = <"Utilstrekkelig mengde prøvemateriale for å foreta målingen.">
+				>
+				["at0056"] = <
+					text = <"Håndteringsfeil">
+					description = <"En feil oppsto ved håndtering av prøven.">
+				>
+				["at0057"] = <
+					text = <"Alder">
+					description = <"Prøven var for gammel for å analyseres nøyaktig.">
+				>
+				["at0058"] = <
+					text = <"Laboratorieuhell">
+					description = <"Et uhell inntraff ved prøvehåndtering i laboratoriet.">
+				>
+				["at0059"] = <
+					text = <"Teknisk feil">
+					description = <"Prøven ble ikke analysert av tekniske årsaker.">
+				>
+				["at0062"] = <
+					text = <"Tilfredstillende">
+					description = <"Prøven er av tilfredsstillende kvalitet.">
+				>
+				["at0063"] = <
+					text = <"Utilfredstillende - behandlet">
+					description = <"Prøven er utilfredsstillende, men har blitt behandlet.">
+				>
+				["at0064"] = <
+					text = <"Utilfredstillende - ikke behandlet">
+					description = <"Prøven er utilfredsstillende og har ikke blitt behandlet.">
+				>
+				["at0067"] = <
+					text = <"Prøvetakings">
+					description = <"Beskrivelse av prøvetakingssituasjonen. Prøven tas ofte av helsepersonell, men kan også tas av pasienten selv eller en en annen omsorgsperson i hjemmet.
+">
+					comment = <"Beskriver forhold tilknyttet prøvetakingen for å gjøre det mulig for laboratoriet å stille spørsmål om innsamling av prøven, hvis nødvendig. Prøvetakingsforholdene kan gi ytterligere informasjon som er relevant for tolkning av prøveresultatet.">
+				>
+				["at0068"] = <
+					text = <"Behandlingsdetaljer">
+					description = <"Tillater detaljerte beskrivelser av et spesifikt steg av analysen, for eksempel farging eller fiksering for eksempel ved å bruke CLUSTER.specimen_preparation.
+">
+				>
+				["at0070"] = <
+					text = <"Prøvetaker ID">
+					description = <"Identifikator av personen eller instansen som er ansvarlig for å samle inn prøvematerialet. 
+">
+				>
+				["at0071"] = <
+					text = <"Detaljer om prøvetaker">
+					description = <"Personen eller instansen som er ansvarlig for prøvetakingen.">
+				>
+				["at0079"] = <
+					text = <"Beskrivelse av prøvetakingsmetode">
+					description = <"Detaljert tilleggsbeskrivelse av prøvetakingsmetoden.">
+				>
+				["at0080"] = <
+					text = <"Antall beholdere">
+					description = <"Det totale antall beholdere som prøven er fordelt på.">
+				>
+				["at0081"] = <
+					text = <"Relatert prøve">
+					description = <"Detaljer om en relatert prøve.">
+				>
+				["at0083"] = <
+					text = <"Ytterlige detaljer om prøvetakingsmetode">
+					description = <"Ytterligere detaljer om spesifikke prøvetakingsmetoder, for eksempel nålebiopsi.">
+				>
+				["at0085"] = <
+					text = <"Detaljer om beholder">
+					description = <"Detaljer om beholder(e) som er benyttet.">
 				>
 			>
 		>
