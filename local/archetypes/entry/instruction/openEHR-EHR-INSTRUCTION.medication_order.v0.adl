@@ -24,10 +24,10 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record all aspects of a medication, vaccine or other therapeutic item order for an identified individual.">
-			use = <"Use to record all aspects of a medication, vaccine or other therapeutic item order for an identified individual.
+			purpose = <"To record all aspects of an order of a medication, vaccine, parenteral fluid, nutritional product or other therapeutic item for an identified individual.">
+			use = <"Use to record all aspects of an order of a medication, vaccine, parenteral fluid, nutritional product or other therapeutic item for an identified individual.
 
-It is intended to be used for any type of medication and related order, whether prescribed by a health professional or available for purchase 'over the counter'. The scope of this medication archetype also includes orders for vaccinations or other therapeutic goods, such as bandages, nutritional products or other items that are applied or administered to have a therapeutic effect and which have a common pattern for data recording.
+It is intended to be used for any type of medication and related order, whether prescribed by a health professional or available for purchase 'over the counter'. The scope of this medication archetype also includes orders for vaccinations, parenteral fluids or other therapeutic goods, such as bandages, nutritional products or other items that are applied or administered to have a therapeutic effect and which have a common pattern for data recording.
 
 This archetype is designed to be used in a number of clinical contexts, including but not limited to:
 - a record in a clinical consultation (COMPOSITION.encounter); 
@@ -43,7 +43,7 @@ In most cases the order will be simple - for a single item with uncomplicated in
 - multiple medications prescribed simultaneously as part of a single drug regimen, such as a triple therapy for peptic ulcer; and
 - intravenous administration of medications or nutrition supplements.
 
-This archetype is also suitable for ordering fluids, particularly parenteral fluids, in care settings where it is normal practice to make these 'prescribable' items.  In other settings a separate 'fluid order' may be appropriate.
+This archetype is also suitable for ordering parenteral fluids, in care settings where it is normal practice to make these 'prescribable' items.  In other settings a separate 'fluid order' may be appropriate.
 
 The archetype has been designed to allow for a range of complexity, from:
 - simple narrative instructions for orders like 'furosemide 40mg two tablets in the morning and one at lunch' to ensure compatibility with existing systems; through to
@@ -60,20 +60,20 @@ Cluster archetypes have been used to represent some of the content for two reaso
 - to remove less commonly used content from the core archetype framework.
 
 Multiple orders can be used within this single archetype instance to represent tightly bound orders of different medications. For example: H. pylori therapy when this is not prescribed as a single pack.">
-			keywords = <"medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "otc", "therapeutic good", "pharmaceutical", "product", "posology">
-			misuse = <"Not to be used to record the activities related to carrying out the order for medication, vaccine or therapeutic good, such as details about actual administration or dispensing. Use the ACTION.medication for this purpose.
+			keywords = <"medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "otc", "therapeutic good", "pharmaceutical", "product", "posology", "treatment", "fluid", "nutrition">
+			misuse = <"Not to be used to record the activities related to carrying out the order for medication, vaccine, nutritional product or therapeutic item, such as details about actual administration or dispensing. Use the ACTION.medication for this purpose.
 
-Not to be used to record the ordering of blood products. Use the INSTRUCTION.transfusion for this purpose.
+Not to be used to record the ordering of blood products, which involves a fundamentally different clinical process and is likely to require different supporting information Use the INSTRUCTION.transfusion for this purpose.
 
 Not to be used to record the order for insertion of implants or medical devices such as pacemakers and defibrillators. Use the INSTRUCTION.procedure for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere alle aspekter av ordinering av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell for et spesifikt individ.">
-			use = <"Brukes for å registrere alle aspekter av ordinering av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell for et spesifikt individ.
+			purpose = <"For å registrere alle aspekter av ordinering av et legemiddel, en vaksine, parenteral væske, ernæringsprodukt eller medisinsk forbruksmateriell for et spesifikt individ.">
+			use = <"Brukes for å registrere alle aspekter av ordinering av et legemiddel, en vaksine, parenteral væske, enæringsvare eller medisinsk forbruksmateriell for et spesifikt individ.
 
-Arketypen kan brukes i alle legemiddelrelaterte ordineringer, enten de er for reseptpliktige legemidler ordinert av en kliniker, eller for reseptfrie legemidler. Arketypen dekker også ordinering av vaksiner eller annet medisinsk forbruksmateriell, som bandasjer, ernæringsprodukter eller andre varer som påføres eller administreres for å ha en terapeutisk effekt, og der dataene som skal registreres er de samme.
+Arketypen kan brukes i alle legemiddelrelaterte ordineringer, enten de er for reseptpliktige legemidler ordinert av en kliniker, eller for reseptfrie legemidler. Arketypen dekker også ordinering av vaksiner, parenterale væsker, eller medisinsk forbruksmateriell, som bandasjer, ernæringsprodukter eller andre varer som påføres eller administreres for å ha en terapeutisk effekt, og der dataene som skal registreres er de samme.
 
 Arketypen er designet for bruk i en rekke ulike kliniske sammenhenger, for eksempel:
 - en registrering i en klinisk konsultasjon (COMPOSITION.encounter).
@@ -83,15 +83,15 @@ Arketypen er designet for bruk i en rekke ulike kliniske sammenhenger, for eksem
 
 Merk at disse bruksområdene omfatter FHIR-ressursene for både Medication Order og Medication Statement.
 
-I de fleste tilfeller vil ordineringen være enkel - for et enkelt produkt med ukompliserte instruksjoner for utdeling og administrasjon. Arketypen er imidlertid også utviklet for å tillate mer komplekse ordineringer, for eksempel: 
+I de fleste tilfeller vil ordineringen være enkel - for en enkelt vare med ukompliserte instruksjoner for utdeling og administrering. Arketypen er imidlertid også utviklet for å tillate mer komplekse ordineringer, for eksempel: 
 - ved nedtrapping av en prednisolondose over flere uker.
 - ved titrering av insulin, hvor dosering er avhengig av prøveresultater.
 - flere legemidler ordinert på samme tidspunkt som en del av et samlet behandlingsregime, for eksempel trippelbehandling for magesår.
 - ved parenteral administrering av legemidler eller ernæring.
 
-Arketypen er også egnet for å ordinere væsker, spesielt for parenteral administrasjon, i settinger der det er vanlig å ordinere disse. I andre settinger kan det være mer passende å bruke en egen arketype for væskeforordninger.
+Arketypen er også egnet for å ordinere parenterale væsker, der det er vanlig at disse ordineres. I andre sammenhenger kan det være mer passende å bruke en egen arketype for væskeforordninger.
 
-Arketypen er utviklet for å tillate ulik kompleksitet, fra enkle fritekstinstrukser for ordineringer som \"Furosemid 40 mg, to tabletter om morgenen og en til lunsj\" for å sikre kompatibilitet med eksisterende systemer, til strukturerte detaljer for dose, administrasjonsvei og administrasjonstidspunkter for at datamaskiner skal kunne lese og gjøre beregninger med dataene.
+Arketypen er utviklet for å tillate ulik kompleksitet, fra enkle fritekstinstrukser for ordineringer som \"Furosemid 40 mg, to tabletter om morgenen og en til lunsj\" for å sikre kompatibilitet med eksisterende systemer, til strukturerte detaljer for dose, administreringssvei og administreringsstidspunkter for at datamaskiner skal kunne lese og gjøre beregninger med dataene.
 
 Arketypen er designet slik at en enkel legemiddelordinering kan representere:
 -komplekse sekvensielle legemiddelordineringer som bruker samme preparatstyrke i samme ordineringsstruktur.
@@ -100,20 +100,20 @@ Arketypen er designet slik at en enkel legemiddelordinering kan representere:
 Mengden av et legemiddel representeres vanligvis med et tall og en enhet, men det kan også dokumenteres i fritekst for å sikre kompatibilitet med eksisterende systemer og for å dekke alle scenarier.
 
 CLUSTER-arketyper brukes for å representere deler av innholdet av to årsaker:
--i situasjoner hvor innholdet også brukes i andre kliniske kontekster, i hovedsak i den tilhørende arketypen ACTION.medication for å registrere faktisk utdeling, administrering osv.
--for å fjerne mindre brukt innhold fra arketypens rammeverk.
+- i situasjoner hvor innholdet også brukes i andre kliniske kontekster, i hovedsak i den tilhørende arketypen ACTION.medication for å registrere faktisk utdeling, administrering osv.
+- for å fjerne mindre brukt innhold fra arketypens rammeverk.
 
 Det er mulig å legge inn flere ordinasjoner innenfor én instans av arketypen for å representere tett sammenbundne ordinasjoner av forskjellige legemidler, for eksempel en legemiddelpakke mot H. pylori der denne ikke ordineres som en enkelt pakning.">
-			keywords = <"medikasjon", "foreskriving", "forordning", "forordne", "terapi", "substans", "stoff", "virkestoff", "medikament", "legemiddel", "terapeutisk", "medisinsk forbruksmateriell", "ordinering", "preparat", "spesialpreparat", "diagnostikum", "forskrivning", "forskriving", "resept", "legemiddelhåndtering", "farmasøytisk", "produkt", "posologi", "ordinasjon", "rekvirering">
-			misuse = <"Skal ikke brukes for å registrere faktisk administrering eller utdeling av legemidler, vaksiner eller annet medisinsk forbruksmateriell. Bruk arketypen ACTION.medication for dette formålet.
+			keywords = <"medikasjon", "foreskriving", "forordning", "forordne", "terapi", "substans", "stoff", "virkestoff", "medikament", "legemiddel", "terapeutisk", "medisinsk forbruksmateriell", "ordinering", "preparat", "spesialpreparat", "diagnostikum", "forskrivning", "forskriving", "resept", "legemiddelhåndtering", "farmasøytisk", "produkt", "posologi", "ordinasjon", "rekvirering", "behandling", "væske", "ernæring", "ordinere">
+			misuse = <"Skal ikke brukes for å registrere faktisk administrering eller utdeling av legemidler, vaksiner, parenterale væsker, ernæringsprodukter eller annet medisinsk forbruksmateriell. Bruk arketypen ACTION.medication for dette formålet.
 
-Skal ikke brukes for å registrere ordinering av blodkomponenter. Bruk arketypen INSTRUCTION.transfusion for dette formålet.
+Skal ikke brukes for å registrere ordinering av blodkomponenter, som omfatter en fundamentalt ulik klinisk prosess og sannsynligvis vil trenge ulik støtteinformasjon. Bruk arketypen INSTRUCTION.transfusion for dette formålet.
 
 Skal ikke brukes for å registrere ordinering av innlegging av implantater og medisinsk utstyr som pacemakere og defibrillatorer. Bruk arketypen INSTRUCTION.procedure for dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "John Bennett, NEHTA, Australia", "SB BHATTACHARYYA, Sudisa Consultancy Services, India", "SBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Sharmila Biswas, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Laila Bruun, Oslo universitetssykehus HF, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Inderjit Daphu, Helse Bergen, Norway", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sarah Gaunt, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Cecilie Graver, Oslo universitetssykehus HF, Norway", "Trina Gregory, cpc, Australia", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Erling Are Hole, Helse Bergen, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Øygunn Leite Kallevik, Helse Bergen, Norway", "Mary Kelaher, NEHTA, Australia", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Robert L'egan, NEHTA, Australia", "Russell Leftwich, Russell B Leftwich MD, United States", "Fest Legemiddelverket, Statens Legemiddelverk, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Colin Macfarlane, Elsevier, United Kingdom", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Martin Paulson, Sykehuset i Vestfold, Norway", "Chris Pearce, Melbourne East GP Network, Australia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Iztok Stotl, UKCLJ, Slovenia", "John Taylor, NEHTA, Australia", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, OUS, Norway", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)", "Richard Townley-O'Neill, NEHTA, Australia", "Ines Vaz, UFN, Portugal", "Nils Widnes, Helse-Bergen, Norway", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "John Bennett, NEHTA, Australia", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "SB BHATTACHARYYA, Sudisa Consultancy Services, India", "SBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Sharmila Biswas, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Gunn Elin Blakkisrud, DIPS ASA, Norway", "Laila Bruun, Oslo universitetssykehus HF, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Inderjit Daphu, Helse Bergen, Norway", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Samuel Frade, Marand, Portugal", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sarah Gaunt, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Cecilie Graver, Oslo universitetssykehus HF, Norway", "Trina Gregory, cpc, Australia", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Erling Are Hole, Helse Bergen, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Gunnar Jårvik, Nasjonal IKT HF, Norway", "Øygunn Leite Kallevik, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Mary Kelaher, NEHTA, Australia", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Robert L'egan, NEHTA, Australia", "Russell Leftwich, Russell B Leftwich MD, United States", "Fest Legemiddelverket, Statens Legemiddelverk, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Colin Macfarlane, Elsevier, United Kingdom", "Alan March, Hospital Universitario Austral, Argentina", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Martin Paulson, Sykehuset i Vestfold, Norway", "Chris Pearce, Melbourne East GP Network, Australia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Tanja Riise, Nasjonal IKT HF, Norway", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Annette Hole Sjøborg, DIPS ASA, Norway", "Iztok Stotl, UKCLJ, Slovenia", "John Taylor, NEHTA, Australia", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, Norway", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)", "Richard Townley-O'Neill, Australian Digital Health Agency, Australia", "Ines Vaz, UFN, Portugal", "Nils Widnes, Helse-Bergen, Norway", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
 	other_details = <
 		["current_contact"] = <"Ian McNicoll, freshEHR Clinical Informatics, UK <ian@freshehr.com>">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -127,10 +127,10 @@ Royal Australian College of General Practitioners. Fact Sheet: Medicines List. 2
 NHS HSCIC Messaging Implementation Manual (GP2GP messages) http://www.uktcregistration.nss.cfh.nhs.uk/trud3
 
 Standards for medication and medical device records – technical annex [Internet]. RCP London. [cited 2015 Dec 15]. Available from: https://www.rcplondon.ac.uk/projects/outputs/standards-medication-and-medical-device-records-technical-annex">
-		["build_uid"] = <"68ef5865-011f-45ad-8476-76e5ef800bf6">
+		["build_uid"] = <"06d9df20-c8c4-4eea-a15a-0f1e6f859b79">
 		["original_publisher"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"C1B76045C7A920B6090ED49DA894D52C">
+		["MD5-CAM-1.0.1"] = <"9D51EC96EB73252760FDD3CE9C8A33AE">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -165,7 +165,7 @@ definition
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_clock(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1/}
 							}
-							ELEMENT[at0009] occurrences matches {0..1} matches {	-- Directions description
+							ELEMENT[at0009] occurrences matches {0..1} matches {	-- Overall directions description
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -177,17 +177,17 @@ definition
 									}
 								}
 							}
-							ELEMENT[at0109] occurrences matches {0..1} matches {	-- Amount description
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0055] occurrences matches {0..1} matches {	-- Timing description
+							ELEMENT[at0173] occurrences matches {0..*} matches {	-- Specific directions description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0135] occurrences matches {0..*} matches {	-- Dosage formula
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0174] occurrences matches {0..*} matches {	-- Dosage justification
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -256,7 +256,7 @@ definition
 												include
 													archetype_id/value matches {/openEHR-EHR-CLUSTER\.timing_daily(-[a-zA-Z0-9_]+)*\.v0/}
 											}
-											ELEMENT[at0134] occurrences matches {0..1} matches {	-- Infusion rate
+											ELEMENT[at0134] occurrences matches {0..1} matches {	-- Administration rate
 												value matches {
 													C_DV_QUANTITY <
 														property = <[openehr::126]>
@@ -289,10 +289,6 @@ definition
 													}
 												}
 											}
-											allow_archetype CLUSTER[at0156] occurrences matches {0..1} matches {	-- Conditional administration
-												include
-													archetype_id/value matches {/openEHR-EHR-CLUSTER\.conditional_medication_rules(-[a-zA-Z0-9_]+)*\.v0/}
-											}
 										}
 									}
 									ELEMENT[at0066] occurrences matches {0..1} matches {	-- Direction duration
@@ -308,6 +304,17 @@ definition
 												value matches {|>=PT0S|}
 											}
 											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0156] occurrences matches {0..1} matches {	-- Administration details
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.conditional_medication_rules(-[a-zA-Z0-9_]+)*\.v0/}
+									}
+									ELEMENT[at0172] occurrences matches {0..1} matches {	-- Direction administration count
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|>=1|}
+											}
 										}
 									}
 									allow_archetype CLUSTER[at0090] occurrences matches {0..1} matches {	-- Direction repetition
@@ -347,14 +354,19 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0064] occurrences matches {0..1} matches {	-- Exceptional dose override?
+									ELEMENT[at0171] occurrences matches {0..*} matches {	-- Clinical safety advice
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0064] occurrences matches {0..1} matches {	-- Exceptional safety override?
 										value matches {
 											DV_BOOLEAN matches {
 												value matches {True, False}
 											}
 										}
 									}
-									ELEMENT[at0162] occurrences matches {0..1} matches {	-- Override reason
+									ELEMENT[at0162] occurrences matches {0..*} matches {	-- Override reason
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -556,17 +568,18 @@ definition
 
 
 
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"Medication order">
-					description = <"A medication, vaccine or other therapeutic item order for an identified individual.">
+					description = <"An order for a medication, vaccine, nutritional product or other therapeutic item for an identified individual.">
 				>
 				["at0001"] = <
 					text = <"Order">
-					description = <"Order.">
+					description = <"Details of the requested order.">
 				>
 				["at0002"] = <
 					text = <"Tree">
@@ -587,9 +600,9 @@ ontology
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 				["at0009"] = <
-					text = <"Directions description">
-					description = <"Complete narrative description about how the medication is to be used.">
-					comment = <"This narrative should subsume data captured in 'Dose amount', 'Dose timing' and any additional instructions for use. Where the medication dose directions are fully carried by the structured, computable dose directions, this element should carry the narrative equivalent, generally auto-generated. If it is not possible to represent the intended 'Dose direction' fully in computable form, partial representation is not recommended, and the directions should be only recorded in narrative form using this data element.">
+					text = <"Overall directions description">
+					description = <"Complete narrative description about how the ordered item is to be used.">
+					comment = <"This narrative should normally subsume data captured in 'Dose amount', 'Dose timing' and any additional instructions for use. Where the medication dose directions are fully carried by the structured, computable dose directions, this element should carry the narrative equivalent, generally auto-generated. If it is not possible to represent the intended 'Dose direction' fully in computable form, partial representation is not recommended, and the directions should be only recorded in narrative form using this data element.">
 				>
 				["at0011"] = <
 					text = <"Order start criterion">
@@ -598,11 +611,11 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Order start date/time">
-					description = <"The date and optional time to commence use of the medication, vaccine or other therapeutic good.">
+					description = <"The date and optional time to commence use of the ordered item.">
 				>
 				["at0013"] = <
 					text = <"Order stop date/time">
-					description = <"The date and optional time when it is planned to cease use of the medication, vaccine or other therapeutic good.">
+					description = <"The date and optional time when it is planned to cease use of the ordered item.">
 				>
 				["at0016"] = <
 					text = <"Order stop criterion">
@@ -611,7 +624,7 @@ ontology
 				>
 				["at0018"] = <
 					text = <"Clinical indication">
-					description = <"The clinical reason for ordering the medication, vaccine or other therapeutic good.">
+					description = <"The clinical reason for use of the ordered item.">
 					comment = <"For example: 'Angina'. Coding of the clinical indication with a terminology is preferred, where possible. This data element allows multiple occurrences. It is not intended to carry an indication for administrative authorisation purposes.">
 					map_FHIR = <"reason">
 				>
@@ -623,8 +636,8 @@ ontology
 				>
 				["at0044"] = <
 					text = <"Additional instruction">
-					description = <"An additional instruction on how to use the medication, vaccine or other therapeutic good.">
-					comment = <"For example: precautions as 'take with food', 'Avoid grapefruit', 'Dissolve in water'. This data element allows multiple occurrences and should be coded with a reference terminology, where possible.">
+					description = <"An additional instruction on how to use or store the ordered item.">
+					comment = <"For example: precautions as 'take with food', 'Avoid grapefruit', 'Dissolve in water', 'store in a cool, dry place'. This data element allows multiple occurrences and should be coded with a reference terminology, where possible.">
 					map_FHIR = <"additionalInstructions">
 				>
 				["at0047"] = <
@@ -634,13 +647,13 @@ ontology
 				>
 				["at0050"] = <
 					text = <"Duration of order completed">
-					description = <"The time period during which the individual/patient has already been using the medication, vaccine or other therapeutic good, as a part of the intended whole order but prior to the issuance of this order.">
+					description = <"The time period during which the individual/patient has already been using the ordered item as a part of the intended whole order but prior to the issuance of this order.">
 					comment = <"For example: To record that the patient had been taking antibiotics 3 days prior to hospital admission, in the context of a 7 day course.">
 				>
 				["at0051"] = <
 					text = <"Maximum dose">
-					description = <"Details about the maximum, cumulative dose allowed over a defined period.">
-					comment = <"For example: 'up to 1gram per day'. This cluster allows multiple occurrences to enable representation of multiple maximum doses that apply to different time periods. ">
+					description = <"Details about the maximum, cumulative dose allowed over a defined period for the ordered item.">
+					comment = <"For example: 'up to 1gram per day'. This cluster allows multiple occurrences to enable representation of multiple maximum doses that apply to different time periods. Lifetime maximum dose should not be carried here as it refers to multiple orders over time.">
 					map_FHIR = <"maximumDosePerPeriod">
 				>
 				["at0053"] = <
@@ -648,51 +661,46 @@ ontology
 					description = <"The period of time during which the maximum dose is calculated.">
 					comment = <"Example: 24 hours.">
 				>
-				["at0055"] = <
-					text = <"Timing description">
-					description = <"A narrative description of the timing (including frequency) of the medication, vaccine or other therapeutic item.">
-					comment = <"Example: 'in the morning'. Will generally only be used for legacy formats where dose directions are simply split between textual representations of dose and amount.">
-				>
 				["at0056"] = <
 					text = <"Direction">
-					description = <"Structured details of a single direction for the medication order.">
-					comment = <"For example: '1 tab in the morning, 1 tab at night, for 3 weeks, on Mondays, Wednesdays and Fridays'. This cluster allows multiple occurrences to enable representation of a complete set of dose directions for a single medication order. ">
+					description = <"Structured details of a single  dosage direction for the medication order.">
+					comment = <"For example: '1 tab in the morning, 1 tab at night, for 3 weeks, on Mondays, Wednesdays and Fridays'. This cluster allows multiple occurrences to enable representation of a complete set of dosage directions for a single medication order. The cluster can be renamed in template or at run-time to represent a specific dosing event such as 'loading dose', 'bolus'.">
 					map_FHIR = <"dosageInstruction">
 				>
 				["at0057"] = <
 					text = <"Direction sequence">
 					description = <"The intended position of this direction within the overall sequence of directions.">
 					comment = <"For example: ''1' '2', '3'.
-Where multiple dose directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.  ">
+Where multiple dosage directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.  ">
 				>
 				["at0058"] = <
 					text = <"Administration pattern">
-					description = <"The combination of a medication amount associated with a single medication timing.">
+					description = <"The combination of a medication amount and a single medication timing.">
 					comment = <"For example: '2 tablets at 6pm' or '20mg three times per day'. Please note: this cluster allows multiple occurrences to enable representation of a complete set of dose patterns for a single dose direction.">
 				>
 				["at0060"] = <
 					text = <"Administrations completed">
-					description = <"The number of administrations of the medication, vaccine or other therapeutic good that have been completed, as part of the intended whole order but prior to the issuance of this order.">
-					comment = <"For example: To record that the patient had been taking antibiotics three days prior to hospital admission, in the context of a 7-day course.">
+					description = <"The number of administrations of the medication or other therapeutic good that have been completed, as part of the intended whole order but prior to the issuance of this order.">
+					comment = <"For example: To record that the patient has taken the two first antibiotic tablets of a three day course, prior to discharge from the hospital to a nursing home.">
 				>
 				["at0062"] = <
 					text = <"Medication safety">
-					description = <"Details about medication safety for the medication, vaccine or other therapeutic item.">
+					description = <"Details about medication safety for the ordered item.">
 				>
 				["at0064"] = <
-					text = <"Exceptional dose override?">
-					description = <"Confirmation by the prescriber that the normal dose has been overridden due to exceptional circumstances.">
+					text = <"Exceptional safety override?">
+					description = <"Confirmation by the prescriber that the normal dose or other safety limit  has been overridden due to exceptional circumstances.">
 				>
 				["at0065"] = <
 					text = <"Dispense amount">
-					description = <"Details about the amount of the medication, vaccine or other therapeutic good to be dispensed.">
+					description = <"Details about the amount of the ordered item to be dispensed.">
 					comment = <" This SLOT allows for local variation in the different jurisdictions regarding medication dispensing amount to be managed.">
 					map_FHIR = <"quantity /expectedSupplyDuration">
 				>
 				["at0066"] = <
 					text = <"Direction duration">
-					description = <"The duration of this dose direction.">
-					comment = <"For example: 'for 7 days','Indefinite'.">
+					description = <"The length of time for which this direction should be applied.">
+					comment = <"For example: 'for 7 days','Indefinite'. An example of a set of multiple directions, with varying durations might be ... \"1 tablet daily for 3 days, 2 tablets daily for 4 days, then 3 tablets Indefinite\".">
 				>
 				["at0067"] = <
 					text = <"Indefinite">
@@ -704,48 +712,47 @@ Where multiple dose directions are expressed, the 'Direction sequence' makes the
 				>
 				["at0069"] = <
 					text = <"Authorisation directions">
-					description = <"Details of authorisation of the medication, vaccine or other therapeutic good.">
+					description = <"Details of authorisation of the ordered item, including supporting local self-administration, issue and endorsement policies.">
 					comment = <"For example: details of repeat supply. This SLOT allows for local variation in the different jurisdictions regarding medication authorisation and re-authorisation to be managed.">
 				>
 				["at0070"] = <
 					text = <"Medication item">
-					description = <"Identification of the medication, vaccine or other therapeutic item being ordered.">
-					comment = <"Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available. 
-">
+					description = <"Name of the medication, vaccine or other therapeutic item being ordered.">
+					comment = <"Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.">
 					map_FHIR = <"medication">
 				>
 				["at0090"] = <
 					text = <"Direction repetition">
-					description = <"Structured details about pattern of repetition for each set of daily dose directions.">
+					description = <"Structured details about pattern of repetition for each set of daily directions.">
 					comment = <"For example: 'every 3 days', 'on Thursdays and Sundays', '3 days after onset of menstruation'.">
 				>
 				["at0091"] = <
 					text = <"Route">
-					description = <"The route of administration.">
+					description = <"The route by which the ordered item is to be administered into the subject's body.">
 					comment = <"For example: 'oral', 'intravenous', or 'topical'. 
 Coding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.">
 					map_FHIR = <"route">
 				>
 				["at0092"] = <
 					text = <"Body site">
-					description = <"Identification of the site of administration of the medication, vaccine or therapeutic good.">
+					description = <"Name of the site of administration of the ordered item.">
 					comment = <"For example: 'left upper arm', 'intravenous catheter right hand'.
  Coding of the body site with a terminology is preferred, where possible.">
 					map_FHIR = <"site">
 				>
 				["at0093"] = <
 					text = <"Structured body site">
-					description = <"Structured description of the site of administration  of the medication, vaccine or therapeutic good.">
+					description = <"Structured description of the site of administration  of the ordered item.">
 				>
 				["at0094"] = <
 					text = <"Delivery method">
-					description = <"The technique or device by which the medication is to be delivered.">
+					description = <"The technique or device by which the ordered item is to be delivered.">
 					comment = <"For example: ' via Z-track injection'; 'via nebuliser'. Coding of the method with a terminology is preferred, where possible.">
 					map_FHIR = <"method">
 				>
 				["at0095"] = <
 					text = <"Delivery device details">
-					description = <"Details of the medical device used to assist delivery of the medication.">
+					description = <"Details of the medical device used to assist delivery of the ordered item.">
 				>
 				["at0102"] = <
 					text = <"Administration duration">
@@ -760,31 +767,26 @@ Coding of the route with a terminology is preferred, where possible. Multiple po
 				>
 				["at0106"] = <
 					text = <"Dispense instruction">
-					description = <"An additional instruction directed primarily at the person dispensing the medication, vaccine or therapeutic good.">
+					description = <"An additional instruction directed primarily at the person dispensing the ordered item.">
 					comment = <"Example: Detailed instructions for phased dispensing of opiates.">
 					map_FHIR = <"additionalInstructions">
 				>
 				["at0107"] = <
 					text = <"Monitoring instruction">
-					description = <"An additional instruction which gives advice on recommended or required monitoring of the medication.">
+					description = <"An additional instruction which gives advice on recommended or required monitoring of the ordered item.">
 					comment = <"For example: 'Please check renal function in 2 weeks'. This data element allows multiple occurrences. ">
 					map_FHIR = <"additionalInstructions">
 				>
 				["at0108"] = <
 					text = <"Administration instruction">
-					description = <"An additional instruction directed primarily at the person administering the medication, vaccine or therapeutic good.">
+					description = <"An additional instruction directed primarily at the person administering the ordered item.">
 					comment = <"For example: 'Give slowly', 'Avoid right arm - risk of lymphoedema'.
 This data element allows multiple occurrences.">
 					map_FHIR = <"additionalInstructions">
 				>
-				["at0109"] = <
-					text = <"Amount description">
-					description = <"The narrative description of the dose amount of the medication, vaccine or other therapeutic item.">
-					comment = <"Example: '100mg'. Will generally only be used for legacy formats where dose directions are simply split between textual representations of dose and amount.">
-				>
 				["at0112"] = <
 					text = <"Order summary">
-					description = <"Summary information about the medication, such as current status or key dates, generally used in non-prescription contexts.">
+					description = <"Summary information about use of the orered item, such as current status or key dates, generally used in non-prescription contexts.">
 					comment = <"Course summary may be required when transmitting medication information between systems. For example: as part of a referral, emergency patient summary or discharge communication.">
 				>
 				["at0113"] = <
@@ -793,7 +795,7 @@ This data element allows multiple occurrences.">
 				>
 				["at0129"] = <
 					text = <"Dispense directions">
-					description = <"Directions about the dispensing of the medication, vaccine or other therapeutic good.">
+					description = <"Directions about the dispensing of the ordered item.">
 				>
 				["at0130"] = <
 					text = <"Maximum amount">
@@ -802,28 +804,28 @@ This data element allows multiple occurrences.">
 				>
 				["at0132"] = <
 					text = <"Substitution direction">
-					description = <"Permission for substitution with a bioequivalent medication.">
+					description = <"Permission for substitution with a bioequivalent item.">
 					comment = <"In many jurisdictions, substitution of a prescribed medication, vaccine or other therapeutic good as a generic form or with a different brand name, which has been determined as bioequivalent, is allowed at the point of dispense or supply. In other cases subsitution is assumed and the clinician has to explicitly request non-substitution.">
 					map_FHIR = <"substitution">
 				>
 				["at0133"] = <
 					text = <"Administration directions">
-					description = <"Details about the administration of the medication, vaccine or other therapeutic good.">
+					description = <"Details about the administration of the ordered item.">
 				>
 				["at0134"] = <
-					text = <"Infusion rate">
-					description = <"The rate at which the medication infusion is to be administered.">
+					text = <"Administration rate">
+					description = <"The rate at which the medication, such as an infusion, is to be administered.">
 					comment = <"For example:  '200 ml/h'. Use the text data type to record non- or semi-quantifiable instructions.">
 					map_FHIR = <"rate">
 				>
 				["at0135"] = <
 					text = <"Dosage formula">
 					description = <"A description of the formula used to calculate the dose amount or administration rate where this is dependent on some other factor.">
-					comment = <"For example: '10mg/kg/day'.">
+					comment = <"For example: '10mg/kg/day''.">
 				>
 				["at0139"] = <
 					text = <"Priority">
-					description = <"An indicator of the urgency with which the medication should be dispensed.">
+					description = <"An indicator of the urgency with which the ordered item should be dispensed.">
 				>
 				["at0143"] = <
 					text = <"Preparation details">
@@ -832,62 +834,62 @@ This data element allows multiple occurrences.">
 				>
 				["at0144"] = <
 					text = <"Dose amount">
-					description = <"The value of the amount of medication as a real number.">
+					description = <"The value of the amount of medication administered at one time, as a real number, or range of real numbers, and associated with the Dose unit.">
 					comment = <"For example: 1, 1.5, 0.125 or 1-2, 12.5-20.5">
 					map_FHIR = <"dose">
 				>
 				["at0145"] = <
 					text = <"Dose unit">
-					description = <"The unit in which the  Dose amount is measured.">
+					description = <"The unit which is associated with the Dose amount.">
 					comment = <"For example: 'tablet','mg'. Coding of the dose unit with a terminology is preferred, where possible.">
 					map_FHIR = <"dose">
 				>
 				["at0146"] = <
 					text = <"Maximum amount unit">
-					description = <"The unit for the cumulative, maximum amount allowed.">
+					description = <"The unit for the  maximum amount allowed.">
 					comment = <"For example: 'tablet','mg'. Coding of the dose unit with a terminology is preferred, where possible.">
 				>
 				["at0148"] = <
 					text = <"Therapeutic intent">
-					description = <"The overall therapeutic intent of the medication.">
+					description = <"The overall therapeutic intent of the ordered item.">
 					comment = <"For example: 'pain relief'; 'palliative care'; 'low-dose prophylaxis'; 'rehydration'; 'nutritional infusion'.">
 				>
 				["at0150"] = <
 					text = <"Total daily dose">
-					description = <"Details about the proposed total daily amount of medication.">
+					description = <"Details about the proposed total daily amount of the ordered item.">
 					comment = <"The dose goal will record the expected effective dose, and thus support titration of an initial low dose towards the effective dose over a period of time.">
 				>
 				["at0151"] = <
 					text = <"Total daily amount">
-					description = <"The amount of medication which is intended to be taken each day if the medication is administered as intended.">
+					description = <"The amount of ordered item which is intended to be taken each day if  administered as intended.">
 				>
 				["at0152"] = <
 					text = <"Total daily amount unit">
-					description = <"The dose unit associated with the total daily dose amount.">
+					description = <"The dose unit associated with the total daily amount.">
 					comment = <"The dose units are normally scientific units such as mg, ml rather than 'tablets'.">
 				>
 				["at0154"] = <
 					text = <"Non-substitution reason">
-					description = <"The reason why a medication should not be substituted at dispense.">
+					description = <"The reason why an ordered item should not be substituted at dispense.">
 					map_FHIR = <"substitution/reason">
 				>
 				["at0155"] = <
 					text = <"Start date">
-					description = <"The date after which the medication is permitted to be dispensed for the first time.">
+					description = <"The date from which the ordered item is permitted to be dispensed for the first time.">
 					comment = <"May be used to control the time of dispensing of medications with potential for abuse. For example: benzodiazepines or analgesics.">
 				>
 				["at0156"] = <
-					text = <"Conditional administration">
-					description = <"Details of dose amount / administration rate dependent on specific conditions.">
+					text = <"Administration details">
+					description = <"Further details of dose administration including amount / administration rate dependent on specific conditions.">
 				>
 				["at0161"] = <
 					text = <"Expiry date">
-					description = <"The date after which the prescription is no longer valid to be dispensed.">
+					description = <"The date after which the ordered item is no longer valid to be dispensed.">
 				>
 				["at0162"] = <
 					text = <"Override reason">
-					description = <"The reason for a maximum dose override.">
-					comment = <"For example: 'Not responsive at maximum recommended dose. Critical situation.'">
+					description = <"The reason for a clinical safety or maximum dose override.">
+					comment = <"For example: 'Not responsive at maximum recommended dose. Critical situation.', 'Peniciilin is only valid treatment, likelihood of true penicillin allergy is low'">
 				>
 				["at0164"] = <
 					text = <"Pattern sequence">
@@ -902,7 +904,7 @@ Where multiple administration patterns are expressed, the 'Pattern sequence' mak
 				>
 				["at0166"] = <
 					text = <"Additional details">
-					description = <"Additional structured details about the medication order not captured in other fields.">
+					description = <"Additional structured details about the ordered item not captured in other fields.">
 				>
 				["at0167"] = <
 					text = <"Comment">
@@ -922,17 +924,37 @@ Where multiple administration patterns are expressed, the 'Pattern sequence' mak
 					description = <"Further details related to dispense directions.">
 					comment = <"This SLOT allows for local variation in the different jurisdictions regarding medication dispensing.">
 				>
+				["at0171"] = <
+					text = <"Clinical safety advice">
+					description = <"A known or recognised safety issue which applies to this subject, such as an allergy, drug duplication warning or contraindication. Normally only recorded when this safety advice is overriden.">
+					comment = <"For example: 'Allergic to penicillin', 'Atenolol duplicated'.">
+				>
+				["at0172"] = <
+					text = <"Direction administration count">
+					description = <"The maximum number of administrations to be given for this direction.">
+					comment = <"Example: 'Give once only' = 1 or '400mg 12hrly for 3 doses' = 3.">
+				>
+				["at0173"] = <
+					text = <"Specific directions description">
+					description = <"A narrative description of a specific part of overall dosage directions.">
+					comment = <"In some settings, it is common to split an overall narrative directions into more specific segments of narrative. For example in hospital settings, it can be common to split the overall directions into 'Dose amount' and 'Dose timing', both as narrative text.  These terms can be applied at temple or run-time.">
+				>
+				["at0174"] = <
+					text = <"Dosage justification">
+					description = <"A description of the justification used to calculate a dose amount or administration rate where this is dependent on some other factor.">
+					comment = <"For example: 'Adjusted for amputation'">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
 					text = <"Legemiddelordinering">
-					description = <"Ordinering av et legemiddel, en vaksine eller annet medisinsk forbruksmateriell, for et spesifikt individ.">
+					description = <"Ordinering av et legemiddel, en vaksine, parentereal væske, ernæringsprodukt eller medisinsk forbruksmateriell, for et spesifikt individ.">
 				>
 				["at0001"] = <
 					text = <"Ordinering">
-					description = <"Instruksjoner knyttet til et legemiddel, en vaksine eller medisinsk forbruksmateriell.">
+					description = <"Detaljer knyttet til ordineringen.">
 				>
 				["at0002"] = <
 					text = <"Tree">
@@ -940,7 +962,7 @@ Where multiple administration patterns are expressed, the 'Pattern sequence' mak
 				>
 				["at0004"] = <
 					text = <"Ordineringsidentifikator">
-					description = <"Unik identifikator for legemiddelordineringen.">
+					description = <"Unik identifikator for ordineringen.">
 					comment = <"Dette dataelementet tillater flere forekomster, som ved behov kan defineres mer spesifikt i applikasjonen.">
 				>
 				["at0005"] = <
@@ -953,72 +975,67 @@ Where multiple administration patterns are expressed, the 'Pattern sequence' mak
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 				["at0009"] = <
-					text = <"Beskrivelse av anvisninger">
-					description = <"En komplett fritekstbeskrivelse av hvordan legemiddelet, vaksinen eller det medisinske forbruksmateriellet skal brukes.">
-					comment = <"Denne fritekstbeskrivelsen bør omfatte data i \"Dosemengde\", \"Timing\" og eventuelle andre instruksjoner. I tilfeller hvor legemiddelets anvisning er fullt strukturert, bør dette feltet inneholde en fritekstekvivalent som vanligvis autogenereres. Er det ikke mulig å representere de ønskede anvisningene i en fullt strukturert form, er det ikke anbefalt med delvis strukturert representasjon, og anvisningen bør kun registreres som fritekst i dette dataelementet.">
+					text = <"Samlet anvisningsbeskrivelse">
+					description = <"En komplett fritekstbeskrivelse av hvordan den ordinerte varen skal brukes.">
+					comment = <"Denne fritekstbeskrivelsen bør vanligvis omfatte data i \"Dosemengde\", \"Timing\" og eventuelle andre instruksjoner. I tilfeller hvor legemiddelets anvisning er fullt strukturert, bør dette feltet inneholde en fritekstekvivalent som vanligvis autogenereres. Er det ikke mulig å representere de ønskede anvisningene i en fullt strukturert form, anbefales ikke delvis strukturert form. I stedet bør anvisningen kun registreres som fritekst i dette dataelementet.">
 				>
 				["at0011"] = <
 					text = <"Startkriterium">
-					description = <"Et vilkår for at legemiddelet kan tas i bruk.">
+					description = <"Et vilkår for at den ordinerte varen kan tas i bruk.">
 					comment = <"For eksempel \"Start dersom symptomer kommer tilbake\". Dette er ment som et generelt kriterium som setter i gang hele ordineringen, og ikke for behovsadministrering i en pågående ordinering.">
 				>
 				["at0012"] = <
 					text = <"Startdato/tid for ordineringen">
-					description = <"Dato og valgfri tid for oppstart av legemiddel, vaksine eller annet medisinsk forbruksmateriell.">
+					description = <"Dato og valgfri tid for oppstart av den ordinerte varen.">
 				>
 				["at0013"] = <
 					text = <"Dato/tid for seponering">
-					description = <"Dato og valgfri tid når det er planlagt å seponere legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Dato og valgfri tid når det er planlagt å seponere den ordinerte varen.">
 				>
 				["at0016"] = <
 					text = <"Seponeringskriterium">
-					description = <"Et vilkår for at legemiddelet skal seponeres.">
+					description = <"Et vilkår for at den ordinerte varen skal seponeres.">
 					comment = <"For eksempel \"Seponer når symptomer forsvinner\".">
 				>
 				["at0018"] = <
 					text = <"Klinisk indikasjon">
-					description = <"Den kliniske begrunnelsen for å ordinere legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Den kliniske begrunnelsen for bruk av den ordinerte varen.">
 					comment = <"For eksempel \"Angina\". Koding av klinisk indikasjon med en terminologi foretrekkes, der det er mulig. Dette dataelementet kan repeteres. Elementet er ikke ment for administrativ autorisering.">
 				>
 				["at0037"] = <
-					text = <"Administrasjonstidspunkt">
-					description = <"Strukturerte detaljer om tidspunktet for en enkelt administrasjon.">
+					text = <"Administreringstidspunkt">
+					description = <"Strukturerte detaljer om tidspunktet for en enkelt administrering.">
 					comment = <"For eksempel \"om morgenen\", \"kl 6, 14 og 21\".">
 				>
 				["at0044"] = <
 					text = <"Tilleggsinstruksjon">
-					description = <"Tilleggsinstruksjon for hvordan bruke legemiddelet, vaksinen, eller det medisinske forbruksmateriellet.">
-					comment = <"For eksempel forholdsregler som \"tas med mat\", \"unngå grapefrukt\" eller \"løses opp i vann\". Dette dataelementet kan repeteres, og bør dersom mulig kodes med en terminologi, f.eks. FEST.">
+					description = <"Tilleggsinstruksjon for hvordan bruke eller lagre den ordinerte varen.">
+					comment = <"For eksempel forholdsregler som \"tas med mat\", \"unngå grapefrukt\", \"løses opp i vann\" eller \"oppbevares på et kjølig tørt sted\". Dette dataelementet kan repeteres, og bør dersom mulig kodes med en terminologi, f.eks. FEST.">
 				>
 				["at0047"] = <
 					text = <"Maskinlesbare anvisninger">
 					description = <"En strukturert og maskinlesbar fremstilling av doseringsanvisningene.">
-					comment = <"Brukes vanligvis ved deling av informasjon mellom eldre systemer. For eksempel FEST kortdoser.">
+					comment = <"Brukes vanligvis ved deling av informasjon mellom eldre systemer.">
 				>
 				["at0050"] = <
 					text = <"Del av ordinering allerede administrert">
-					description = <"Tidsperioden individet/pasienten har brukt legemiddelet i forkant av denne instruksjonen.">
-					comment = <"For å registrere at pasienten har tatt antibiotika i 3 dager av en 7-dagerskur før en sykehusinnleggelse.">
+					description = <"Tidsperioden individet/pasienten har brukt den ordinerte varen i forkant av denne instruksjonen.">
+					comment = <"Eksempel: For å registrere at pasienten har tatt antibiotika i 3 dager av en 7-dagerskur før en sykehusinnleggelse.">
 				>
 				["at0051"] = <
 					text = <"Maksimumsdose">
-					description = <"Detaljer om den maksimale kumulative doses som er tillatt i en definert tidsperiode.">
-					comment = <"For eksempel \"maks 1 g per dag\". Dette clusteret kan repeteres for å gjøre det mulig å registrere flere maksimumsdoser som gjelder forskjellige tidsperioder.">
+					description = <"Detaljer om den maksimale kumulative dosen av den ordinerte varen som er tillatt i en definert tidsperiode.">
+					comment = <"For eksempel \"maks 1 g per dag\". Dette clusteret kan repeteres for å gjøre det mulig å registrere flere maksimumsdoser som gjelder forskjellige tidsperioder. Maksimumsdose for individets levetid registreres ikke har da det viser til flere ordineringer over tid.">
 				>
 				["at0053"] = <
 					text = <"Tidsperiode">
 					description = <"Tidsperioden maksimumsdosen er kalkulert for.">
 					comment = <"Eksempel: 24 timer.">
 				>
-				["at0055"] = <
-					text = <"Timingbeskrivelse">
-					description = <"Fritekstbeskrivelse av administrasjonstiming (f.eks. frekvens) for legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
-					comment = <"Brukes generelt sett bare for eldre formater der anvisningene er delt mellom tekstlige representasjoner av dose og mengde.">
-				>
 				["at0056"] = <
 					text = <"Anvisning">
-					description = <"Detaljer om en enkelt anvisning innenfor legemiddelordineringen.">
-					comment = <"For eksempel \"1 tablett om morgenen og en tablett om kvelden i tre uker, på mandager, onsdager og fredager\". Clusteret kan repeteres for å kunne representere et fullstendig sett av anvisninger for en enkelt legemiddelordinering.">
+					description = <"Detaljer om en enkelt doseanvisning innenfor ordineringen.">
+					comment = <"For eksempel \"1 tablett om morgenen og en tablett om kvelden i tre uker, på mandager, onsdager og fredager\". Clusteret kan repeteres for å kunne representere et fullstendig sett av anvisninger for en enkelt legemiddelordinering. Clusteret kan gis nytt navn i et templat eller i applikasjonen for å representere en spesifikk dosering som for eksempel: \"Bolus\" eller \"Startdose\".">
 				>
 				["at0057"] = <
 					text = <"Anvisningsrekkefølge">
@@ -1027,32 +1044,32 @@ Where multiple administration patterns are expressed, the 'Pattern sequence' mak
 I tilfeller der ordineringen består av flere doseringsanvisninger, spesifiserer anvisningsrekkefølgen i hvilken rekkefølge anvisningene skal utføres. For eksempel \"(1) 1 tablett daglig i 3 dager, (2) 1 tablett to ganger daglig i 4 dager, (3) 1 tablett i 7 dager.\"">
 				>
 				["at0058"] = <
-					text = <"Administrasjonsmønster">
-					description = <"Kombinasjon av dose og et enkelt administrasjonstidspunkt.">
+					text = <"Administreringsmønster">
+					description = <"Kombinasjon av dose og et enkelt administreringstidspunkt.">
 					comment = <"For eksempel: \"2 tabletter klokken 18.00\" eller \"20 mg tre ganger om dagen\". Merk at dette clusteret kan repeteres for å kunne representere et fullstendig sett av doseringsanvisninger for en enkelt legemiddelordinering.">
 				>
 				["at0060"] = <
-					text = <"Antall administrasjoner utført">
-					description = <"Antall administrasjoner av legemiddelet, vaksinen eller annet medisinsk forbruksmateriell som er utført som del av den planlagte ordineringen, men i forkant av denne instruksjonen.">
-					comment = <"For eksempel for å registrere at pasienten har tatt antibiotika i 3 dager av en 7-dagerskur før en sykehusinnleggelse.">
+					text = <"Antall administreringer utført">
+					description = <"Antall administreringer av den ordinerte varen som er utført som del av den planlagte ordineringen, men i forkant av denne instruksjonen.">
+					comment = <"For eksempel for å registrere at pasienten har tatt de to første antibiotikatablettene av en 3 dagers kur, i forkant av utskrivelse fra sykehus til sykehjem.">
 				>
 				["at0062"] = <
 					text = <"Legemiddelsikkerhet">
-					description = <"Detaljer knyttet til sikkerhet rundt legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Detaljer knyttet til sikkerhet rundt den ordinerte varen.">
 				>
 				["at0064"] = <
-					text = <"Overstyring ved stor dose?">
-					description = <"Bekreftelse fra forskriveren om at den maksimale dosen er overstyrt på grunn av spesielle omstendigheter.">
+					text = <"Overstyring av sikkerhetsgrenser?">
+					description = <"Bekreftelse fra forskriveren om at den maksimale dosen eller andre sikkerhetsgrenser er overstyrt på grunn av spesielle omstendigheter.">
 				>
 				["at0065"] = <
 					text = <"Utdelingsmengde">
-					description = <"Detaljer om mengden av legemiddelet, vaksinen eller det medisinske forbruksmateriellet som skal utdeles.">
+					description = <"Detaljer om mengden av den ordinerte varen som skal utdeles.">
 					comment = <"Dette SLOTet tillater lokal variasjon i regelverk for legemiddelutdeling mellom forskjellige myndighetsområder.">
 				>
 				["at0066"] = <
 					text = <"Anvisningsvarighet">
 					description = <"Varigheten av denne anvisningen.">
-					comment = <"For eksempel \"i 7 dager\" eller \"på ubestemt tid\".">
+					comment = <"For eksempel \"i 7 dager\" eller \"på ubestemt tid\". Et eksempel som er sammensatt av flere ulike varigheter kan være: \"1 tablett daglig i 3 dager\", \"2 tabletter daglig i 4 dager\", \"3 tabletter på ubestemt tid\".">
 				>
 				["at0067"] = <
 					text = <"Ubestemt">
@@ -1064,13 +1081,13 @@ I tilfeller der ordineringen består av flere doseringsanvisninger, spesifiserer
 				>
 				["at0069"] = <
 					text = <"Autoriseringsveiledning">
-					description = <"Detaljer om autoriseringen for legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Detaljer om autoriseringen for den ordinerte varen, støtter også selvadministrering, utlevering og retningslinjer for godkjenning.">
 					comment = <"For eksempel detaljer om reiterering. Dette SLOTet tillater lokale variasjoner mellom forskjellige myndighetsområder når det gjelder legemiddelautorisering og re-autorisering.">
 				>
 				["at0070"] = <
 					text = <"Legemiddel">
-					description = <"Legemiddelet, vaksinen eller det medisinske forbruksmateriellet som blir ordinert.">
-					comment = <"Avhengig av kontekst kan dette elementet brukes enten for generisk eller produktbasert ordinering. Dataelementet kan brukes til å registrere tett sammenbundne ordineringer av forskjellige legemidler når de ordineres som en pakke. Det anbefales sterkt at \"Legemiddel\" kodes med en terminologi som understøtter beslutningsstøtte der dette er mulig, f.eks. FEST. Nivå av koding kan variere fra legemiddelnavn til strukturerte detaljer om den aktuelle legemiddelforpakningen som skal brukes. Fritekst bør bare brukes om ingen passende terminologi er tilgjengelig.">
+					description = <"Navn på legemiddelet, vaksinen, den parenterale væsken, ernæringsproduktet eller det medisinske forbruksmateriellet som blir ordinert.">
+					comment = <"Avhengig av kontekst kan dette elementet brukes enten for generisk eller varebasert ordinering. Dataelementet kan brukes til å registrere tett sammenbundne ordineringer av forskjellige legemidler når de ordineres som en pakke. Det anbefales sterkt at \"Legemiddel\" kodes med en terminologi som understøtter beslutningsstøtte der dette er mulig, f.eks. FEST. Nivå av koding kan variere fra legemiddelnavn til strukturerte detaljer om den aktuelle legemiddelforpakningen som skal brukes. Fritekst bør bare brukes om ingen passende terminologi er tilgjengelig.">
 				>
 				["at0090"] = <
 					text = <"Repetering av anvisning">
@@ -1078,28 +1095,28 @@ I tilfeller der ordineringen består av flere doseringsanvisninger, spesifiserer
 					comment = <"For eksempel \"hver 3. dag\", \"på tirsdager og søndager\", \"3 dager etter menstruasjonsblødningens 1. dag\".">
 				>
 				["at0091"] = <
-					text = <"Administrasjonsvei">
-					description = <"Legemiddelets administrasjonsvei.">
-					comment = <"For eksempel \"peroralt\", \"intravenøst\", \"på huden\".
-Det bør om mulig benyttes terminologi, f.eks. FEST, for å angi administrasjonsvei. Det kan spesifiseres flere mulige administrasjonsveier.">
+					text = <"Administreringsvei">
+					description = <"Administreringsveien for den ordinerte varen.">
+					comment = <"For eksempel \"oral bruk\", \"intravenøst\", \"på huden\".
+Det bør om mulig benyttes terminologi, f.eks. FEST, for å angi administreringsvei. Det kan spesifiseres flere mulige administreringsveier.">
 				>
 				["at0092"] = <
-					text = <"Kroppssted">
-					description = <"Kroppsstedet der legemiddelet, vaksinen eller det medisinske forbruksmateriellet administreres.">
+					text = <"Anatomisk lokalisering">
+					description = <"Navn på kroppsstedet der den ordinerte varen skal administreres.">
 					comment = <"For eksempel \"venstre overarm\", \"intravenøst kateter høyre hånd\". Det bør om mulig benyttes terminologi, f.eks. SNOMED CT eller EDQM standardtermer, for å angi kroppssted.">
 				>
 				["at0093"] = <
 					text = <"Strukturert anatomisk lokalisering">
-					description = <"Strukturert beskrivelse av administrasjonsstedet for legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Strukturert beskrivelse av administreringsstedet for den ordinerte varen.">
 				>
 				["at0094"] = <
-					text = <"Administrasjonsmetode">
-					description = <"Teknikken eller utstyret som brukes for å administrere legemiddelet.">
-					comment = <"For eksempel \"via Z-trackinjeksjon\", \"via forstøver\". Koding av administrasjonsmetoden med en terminologi er anbefalt, der det er mulig.">
+					text = <"Administreringsmetode">
+					description = <"Teknikken eller utstyret som brukes for å administrere den ordinerte varen.">
+					comment = <"For eksempel \"via Z-trackinjeksjon\", \"via forstøver\". Koding av administreringsmetoden med en terminologi er anbefalt, der det er mulig.">
 				>
 				["at0095"] = <
-					text = <"Detaljer om administrasjonsutstyr">
-					description = <"Detaljer om det medisinske utstyret som brukes til å administrere legemiddelet.">
+					text = <"Detaljer om administreringsutstyr">
+					description = <"Detaljer om det medisinske utstyret som brukes til å administrere den ordinerte varen.">
 				>
 				["at0102"] = <
 					text = <"Varighet av administrering">
@@ -1109,32 +1126,27 @@ Det bør om mulig benyttes terminologi, f.eks. FEST, for å angi administrasjons
 				["at0105"] = <
 					text = <"Bruksområde">
 					description = <"Tilleggsinstruksjon primært rettet mot pasient og pårørende.">
-					comment = <"For eksempel \"Blodtrykksreduserende\", \"Blodfortynnende\". Dette dataelementet kan repeteres, og bør kodes dersom mulig kodes med en terminologi, f.eks. FEST. Ved behov kan man bruke en LINK-attributt for å assosiere dette elementet med f.eks. den opprinnelige diagnosen i en Problemliste, men det bør likevel registreres tekst her for å sikre data for fremtiden, siden målet for lenken kan endre seg over tid.">
+					comment = <"For eksempel \"Blodtrykksreduserende\", \"Blodfortynnende\". Dette dataelementet kan repeteres, og bør dersom mulig kodes med en terminologi, f.eks. FEST. Ved behov kan man bruke en lenke for å assosiere dette elementet med f.eks. den opprinnelige diagnosen i en Problemliste, men det bør likevel registreres tekst her for å sikre data for fremtiden, siden målet for lenken kan endre seg over tid.">
 				>
 				["at0106"] = <
 					text = <"Utdelingsinstruksjon">
-					description = <"Tilleggsinstruksjon primært rettet mot personen som deler ut legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Tilleggsinstruksjon primært rettet mot personen som deler ut den ordinerte varen.">
 					comment = <"Eksempel: Detaljerte instruksjoner for stegvis utdeling av opiater.">
 				>
 				["at0107"] = <
 					text = <"Overvåkningsinstruksjon">
-					description = <"Tilleggsinstruksjon som gir råd om anbefalt eller nødvendig overvåkning ved bruk av legemiddelet.">
+					description = <"Tilleggsinstruksjon som gir råd om anbefalt eller nødvendig overvåkning ved bruk av den ordinerte varen.">
 					comment = <"For eksempel \"kontroller nyrefunksjon om 2 uker\". Dette dataelementet kan repeteres.">
 				>
 				["at0108"] = <
-					text = <"Administrasjonsinstruksjon">
-					description = <"Tilleggsinstruksjon primært rettet mot personen som administrerer legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					text = <"Administreringsinstruksjon">
+					description = <"Tilleggsinstruksjon primært rettet mot personen som administrerer den ordinerte varen.">
 					comment = <"For eksempel:\"Administreres sakte\", \"Unngå høyre arm, risiko for lymfeødem\".
 Dette dataelementet kan repeteres.">
 				>
-				["at0109"] = <
-					text = <"Dosebeskrivelse">
-					description = <"Fritekstbeskrivelse av dose for legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
-					comment = <"For eksempel \"100mg\". Brukes generelt sett bare for eldre formater der doseringsanvisningene er delt mellom tekstlige representasjoner av dose og mengde.">
-				>
 				["at0112"] = <
 					text = <"Sammendrag av ordineringen">
-					description = <"Oppsummerende informasjon om legemiddelet, f.eks. nåværende status eller nøkkeldatoer, som regel brukt i andre sammenhenger enn resepter.">
+					description = <"Oppsummerende informasjon om bruk av den ordinerte varen, f.eks. nåværende status eller nøkkeldatoer, som regel brukt i andre sammenhenger enn resepter.">
 					comment = <"Sammendrag av ordineringsinformasjon kan være påkrevd når man overfører legemiddelinformasjon mellom systemer, f.eks. som del av en henvisning, overføringsnotat, eller epikrise/utskrivingsrapport.">
 				>
 				["at0113"] = <
@@ -1143,7 +1155,7 @@ Dette dataelementet kan repeteres.">
 				>
 				["at0129"] = <
 					text = <"Utdelingsanvisning">
-					description = <"Veiledning for utdeling av legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					description = <"Veiledning for utdeling av den ordinerte varen.">
 				>
 				["at0130"] = <
 					text = <"Maksimum legemiddelmengde">
@@ -1152,35 +1164,35 @@ Dette dataelementet kan repeteres.">
 				>
 				["at0132"] = <
 					text = <"Generisk bytte">
-					description = <"Indikerer om generisk bytte med et bioekvivalent legemiddel er tillatt.">
-					comment = <"I mange myndighetsområder er generisk bytte av et ordinert legemiddelprodukt mot et bioekvivalent produkt fra en annen produsent tillatt. I andre områder er bytte forutsatt, og ordinerende kliniker må eksplisitt avslå bytte.">
+					description = <"Indikerer om generisk bytte med et bioekvivalent vare er tillatt.">
+					comment = <"I mange myndighetsområder er generisk bytte av en ordinert vare mot en bioekvivalent vare fra en annen produsent tillatt. I andre områder er bytte forutsatt, og ordinerende kliniker må eksplisitt avslå bytte.">
 				>
 				["at0133"] = <
-					text = <"Administrasjonsveiledning">
-					description = <"Detaljer om administrering av legemiddelet, vaksinen eller det medisinske forbruksmateriellet.">
+					text = <"Administreringsveiledning">
+					description = <"Detaljer om administrering av den ordinerte varen.">
 				>
 				["at0134"] = <
-					text = <"Infusjonshastighet">
-					description = <"Infusjonshastigheten som skal benyttes under administrasjon.">
+					text = <"Administreringshastighet">
+					description = <"Hastigheten som skal benyttes under administreringen, for eksempel ved en infusjon.">
 					comment = <"For eksempel \"200 ml/t\". Bruk datatypen \"tekst\" for å registrere ikke- eller semikvantifiserbare instruksjoner.">
 				>
 				["at0135"] = <
 					text = <"Doseringsformel">
-					description = <"Formelen som er brukt for å regne ut \"Dosemengde\" eller \"Administrasjonshastighet\" der dette er betinget av andre faktorer som f.eks. pasientens vekt. For eksempel 10 mg/kg/dag.">
+					description = <"Formelen som er brukt for å regne ut \"Dosemengde\" eller \"Administreringshastighet\" der dette er betinget av andre faktorer som f.eks. pasientens vekt. For eksempel 10 mg/kg/dag.">
 					comment = <"For eksempel \"10mg/kg/dag\".">
 				>
 				["at0139"] = <
 					text = <"Prioritet">
-					description = <"En indikator for hastegraden legemiddelet bør utdeles under.">
+					description = <"En indikator for hastegraden den ordinerte varen bør utdeles under.">
 				>
 				["at0143"] = <
 					text = <"Legemiddeldetaljer">
 					description = <"Strukturerte detaljer om det overordnede legemiddelet, blant annet styrke, form og substansene det består av.">
-					comment = <"Bruk dette SLOTet der man må spesifisere en detaljert beskrivelse av legemiddelordineringen. For eksempel form, styrke, fortynningsmiddel eller blandinger av ingredienser.">
+					comment = <"Bruk dette SLOTet til å spesifisere en detaljert beskrivelse av legemiddelordineringen. For eksempel form, styrke, fortynningsmiddel eller blandinger av ingredienser.">
 				>
 				["at0144"] = <
 					text = <"Dosemengde">
-					description = <"Verdien av legemiddelmengden (dosen) som et reelt tall.">
+					description = <"Verdien av legemiddelmengden (dosen) administrert på en gang, som et reelt tall eller som et intervall av reelle tall. Dette elementet er tilknyttet elementet Doseenhet.">
 					comment = <"For eksempel 1, 1.5, 0.125 eller 1-2, 12.5-20.5. Dette elementet inneholder kun talldelen av dosen, mens \"Doseenhet\" inneholder enheten.">
 				>
 				["at0145"] = <
@@ -1195,17 +1207,17 @@ Dette dataelementet kan repeteres.">
 				>
 				["at0148"] = <
 					text = <"Terapeutisk hensikt">
-					description = <"Overordnet terapeutisk hensikt med legemiddelordineringen.">
+					description = <"Overordnet terapeutisk hensikt med den ordinerte varen.">
 					comment = <"For eksempel \"smertelindring\", \"palliasjon\", \"lavdose profylakse\", \"rehydrering\" eller \"ernæringsinfusjon\".">
 				>
 				["at0150"] = <
 					text = <"Doseringsmål">
-					description = <"Detaljer om måldosen for en opptrapping eller nedtrapping av legemiddeldosen.">
+					description = <"Detaljer om måldosen for en opptrapping eller nedtrapping av dosen av den ordinerte varen.">
 					comment = <"Doseringsmålet er den forventede terapeutiske dosen, og støtter i så måte titrering av en i utgangspunktet lav dose mot en terapeutisk dose over en tidsperiode.">
 				>
 				["at0151"] = <
 					text = <"Total daglig dosemengde">
-					description = <"Mengden legemiddel som skal tas per dag dersom legemiddelet administreres som ordinert.">
+					description = <"Mengden ordinert vare som skal tas per dag dersom det administreres som ordinert.">
 				>
 				["at0152"] = <
 					text = <"Enhet for total daglig dosemengde">
@@ -1214,29 +1226,29 @@ Dette dataelementet kan repeteres.">
 				>
 				["at0154"] = <
 					text = <"Begrunnelse for byttereservasjon">
-					description = <"Begrunnelsen for beslutningen om at generisk bytte ikke tillates.">
+					description = <"Begrunnelsen for beslutningen om at generisk bytte av den ordinerte varen ikke tillates.">
 				>
 				["at0155"] = <
 					text = <"Startdato">
-					description = <"Datoen legemiddelet kan utdeles for første gang.">
-					comment = <"Kan brukes til å kontrollere utdelingstidspunkt for legemidler med misbrukspotensiale, f.eks. benzodiazepiner og sterke smertestillende.">
+					description = <"Datoen den ordinerte varen kan utdeles for første gang.">
+					comment = <"Kan brukes til å kontrollere utdelingstidspunkt for varer med misbrukspotensiale, f.eks. benzodiazepiner og sterke smertestillende.">
 				>
 				["at0156"] = <
-					text = <"Betinget administrering">
-					description = <"Detaljer om dose og administrasjonshastighet der denne er betinget av spesifikke forhold.">
+					text = <"Administreringsdetaljer">
+					description = <"Ytterligere detaljer om dose og administreringshastighet der denne er betinget av spesifikke forhold.">
 				>
 				["at0161"] = <
 					text = <"Utløpsdato">
-					description = <"Dato da resepten utløper og ikke lenger er gyldig for utdeling.">
+					description = <"Dato da den ordinerte varen ikke lenger er gyldig for utdeling.">
 				>
 				["at0162"] = <
 					text = <"Årsak til overstyring">
-					description = <"Begrunnelsen for hvorfor maksimumsdosen er overstyrt.">
-					comment = <"For eksempel \"Ingen effekt ved maksimum anbefalte dose. Kritisk situasjon.\".">
+					description = <"Begrunnelsen for hvorfor sikkerhetsgrensen eller maksimumsdosen er overstyrt.">
+					comment = <"For eksempel \"Ingen effekt ved maksimum anbefalte dose. Kritisk situasjon.\". \"Pencillin er den eneste mulige behandlingen, sannsynlighet for faktisk pencillinallergi er lav\".">
 				>
 				["at0164"] = <
 					text = <"Mønsterrekkefølge">
-					description = <"Tilsiktet rekkefølge for dette administrasjonsmønsteret i den overordnede sekvensen av administrasjonsmønstre.">
+					description = <"Tilsiktet rekkefølge for dette administreringsmønsteret i den overordnede sekvensen av administreringsmønstre.">
 					comment = <"For eksempel \"1\", \"2\", \"3\".
 Der det er spesifisert flere mønstre, gjør Mønsterrekkefølge det tydelig hvilken rekkefølge de hører hjemme i. Eksempel: (1) 1 tablett om morgenen, (2) 2 tabletter kl. 14, (3) 1 tablett om kvelden.">
 				>
@@ -1247,7 +1259,7 @@ Der det er spesifisert flere mønstre, gjør Mønsterrekkefølge det tydelig hvi
 				>
 				["at0166"] = <
 					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere strukturerte detaljer om legemiddelordineringen som ikke omfattes av andre felt.">
+					description = <"Ytterligere strukturerte detaljer om den ordinerte varen som ikke omfattes av andre felt.">
 				>
 				["at0167"] = <
 					text = <"Kommentar">
@@ -1265,6 +1277,26 @@ Der det er spesifisert flere mønstre, gjør Mønsterrekkefølge det tydelig hvi
 					text = <"Utdelingsdetaljer">
 					description = <"Ytterligere detaljer relatert til utdelingsanvisningene.">
 					comment = <"Dette SLOTet tillater lokal variasjon i regelverk for legemiddelutdeling mellom forskjellige myndighetsområder.">
+				>
+				["at0171"] = <
+					text = <"Sikkerhetsanbefaling">
+					description = <"Et kjent problem relatert til legemiddelsikkerhet for dette individet, f.eks. allergi, advarsel om legemiddelduplisering, eller kontraindikasjon. Registreres ordinært bare dersom anbefalingen overstyres.">
+					comment = <"For eksempel \"allergisk mot penicillin\" eller \"atenolol duplisert\".">
+				>
+				["at0172"] = <
+					text = <"Antall administreringer">
+					description = <"Maksimalt antall administreringer som skal gis innenfor denne anvisningen.">
+					comment = <"For eksempel \"kun én dose\" = 1, eller \"3 doser á 400 mg hver 12 time\" = 3.">
+				>
+				["at0173"] = <
+					text = <"Spesifikk anvisningsbeskrivelse">
+					description = <"Fritekstbeskrivelse av en spesifikk del av den overordede anvisningen.">
+					comment = <"I noen sammenhenger er det vanlig å dele den samlede fritekstbeskrivelsen av anvisningen inn i mer spesifikke segmenter. For eksempel kan det i sykehus være vanlig å dele de samlede anvisningene opp i \"Mengde\" og \"Administreringstidspunkt\", selv om begge er i fritekst. Segmentnavnene kan legges til i et templat eller i applikasjonen.">
+				>
+				["at0174"] = <
+					text = <"Begrunnelse for dose">
+					description = <"En beskrivelse av begrunnelsen for hvorfor en spesifikk dose er valgt, der dette er avhengig av en ytre faktor.">
+					comment = <"For eksempel: \"Justert pga amputasjon\".">
 				>
 			>
 		>
