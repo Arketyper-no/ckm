@@ -2,7 +2,7 @@
 	openEHR-EHR-EVALUATION.exclusion_global.v0
 
 concept
-	[at0000]	-- Global exclusion statement
+	[at0000]	-- Exclusion - global
 language
 	original_language = <[ISO_639-1::en]>
 description
@@ -27,7 +27,7 @@ In order to capture a global exclusion that does not have a runtime name constra
 The 'Global statement' data element allows for recording of a single Global statement. The different Global statements listed in the \"Global statement' run-time name constraint identifies the the different global exclusions. This name constraint can be applied during template modelling or at run-time within a software application.
 
 Please note that exclusion statements can only be considered to be current and accurate at the point-in-time of recording. It is possible for a record to be able to state that an individual has NO KNOWN history of problem or diagnosis (using an exclusion statement) at the same consultation as recording the evidence of their first experience of the same problem or diagnosis (using the EVALUATION.problem_diagnosis archetype). In future record statements, the individual may have a KNOWN history of the problem or diagnosis recorded in their problem list.">
-			keywords = <"exclusion", ...>
+			keywords = <"exclusion, negation, rule out, rule-out, r/o", ...>
 			misuse = <"Not to be used to record the exclusion of a specific problem/diagnosis, medication, procedure, family history, adverse reaction or other clinical item - use the EVALUATION.exclusion_specific archetype for this purpose.
 
 Not to be used to record the exclusion of any component of a physical examination - use the CLUSTER.exclusion_exam archetype within an appropriate OBSERVATION or CLUSTER archetype.
@@ -44,10 +44,10 @@ Not to be used to record the absence of information - use the EVALUATION.absense
 		["revision"] = <"0.0.1-alpha">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["references"] = <"Exclusion statement, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-02-17]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.617">
-		["build_uid"] = <"b53d02af-cde9-4eab-a0ed-e658e266f222">
+		["build_uid"] = <"80a7cf9e-86b1-4342-b2a4-207a904ef718">
 		["original_publisher"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"DBBD58AC543F74DC57113B50ADF2D49D">
+		["MD5-CAM-1.0.1"] = <"07D6685067A2D06278FC4718F5872178">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["custodian_organisation"] = <"Nasjonal IKT">
 	>
@@ -100,7 +100,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Global exclusion statement">
+					text = <"Exclusion - global">
 					description = <"An overall statement of exclusion about all Problems/diagnoses, Family history, Medications, Procedures, Adverse reactions or other clinical items that are either not currently present, or have not been present in the past.">
 				>
 				["at0001"] = <
