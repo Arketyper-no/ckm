@@ -32,7 +32,6 @@ description
 Et væskeregnskap vil vanligvis bestå av en kombinasjon av OBSERVATION.fluid_input (Norsk: Væskeinntak), OBSERVATION.fluid_output (Norsk: Væsketap) og denne arketypen for å fange alle nødvendige komponenter.">
 			keywords = <"væske, balanse, væskeinntak, væsketap, tap, inntak, svette, perspiratio, fordamping", ...>
 			misuse = <"Skal ikke brukes for å registrere enkeltmålinger av væskeinntak eller væsketap. Bruk OBSERVATION.fluid_input (Væskeinntak) eller OBSERVATION.fluid_output (Væsketap) for dette.">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -42,22 +41,21 @@ Et væskeregnskap vil vanligvis bestå av en kombinasjon av OBSERVATION.fluid_in
 A fluid balance chart will typically require a combination of OBSERVATION.fluid_input, OBSERVATION.fluid_output and this archetype to capture all the required components.">
 			keywords = <"fluid", "balance", "input", "output", "loss", "sweat", "insensible", "evaporation", "perspiratio">
 			misuse = <"Not to be used to record individual measurements of fluid input or output. Use OBSERVATION.fluid_input or OBSERVATION.fluid_output for these purposes.">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© National E-Health Transition Authority, openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Ian McNicoll, Ocean Informatics, United Kingdom", "Vebjørn Arntzen, Oslo University Hospital HF, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Ian McNicoll, Ocean Informatics, United Kingdom", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["revision"] = <"0.0.1-alpha">
-		["references"] = <"Avgrenet fra: Fluid Balance, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-03-16]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1682
-Derived from: Fluid Balance, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2015-11-08]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1203">
-		["build_uid"] = <"ac1ccc98-7da2-46aa-bd8b-a139fce86b79">
-		["original_publisher"] = <"Nasjonal IKT">
-		["original_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"E5E2966AAA656884E6B1864F823ACB08">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Derived from: Fluid Balance, Draft Archetype [Internet]. nehta, Australia, nehta Clinical Knowledge Manager [cited: 2015-11-08]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1203">
+		["build_uid"] = <"c676f59a-2f3c-49b1-b5a7-da7ed46f0653">
+		["original_publisher"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"A3A3E4355A3C9F321310FF301A54F3AF">
+		["custodian_namespace"] = <"org.openehr">
+		["custodian_organisation"] = <"openEHR Foundation">
 	>
 
 definition
@@ -276,7 +274,7 @@ ontology
 					description = <"Den totale mengden væsketap i et gitt tidsintervall.">
 				>
 				["at0007"] = <
-					text = <"Væsskebalanse">
+					text = <"Væskebalanse">
 					description = <"Overordnet væskebalanse for en gitt tidsperiode, fremkommet ved å trekke det totale væsketapet pluss perspiratio fra det totale væskeinntaket.">
 					comment = <"Væskebalanse = Totalt væskeinntak - (Totalt væsketap + perspiratio).">
 				>
