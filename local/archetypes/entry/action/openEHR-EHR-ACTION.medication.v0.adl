@@ -2,10 +2,31 @@
 	openEHR-EHR-ACTION.medication.v0
 
 concept
-	[at0000]	-- Medication action
+	[at0000]	-- Medication
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Art Latyp; Артур Латыпов">
+				["organisation"] = <"RusBITech; Русбитех, Москва">
+			>
+			accreditation = <"hmm">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Guillermo Palli">
+			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen, Silje L. Bakke">
+				["organisation"] = <"Oslo universitetssykehus HF, Nasjonal IKT HF, Norway">
+			>
+		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
 			author = <
@@ -14,25 +35,11 @@ language
 				["email"] = <"biljana.princic@marand.si">
 			>
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			author = <
-				["name"] = <"Guillermo Palli">
-			>
-		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			author = <
 				["name"] = <"Mona Saleh">
 			>
-		>
-		["ru"] = <
-			language = <[ISO_639-1::ru]>
-			author = <
-				["name"] = <"Art Latyp; Артур Латыпов">
-				["organisation"] = <"RusBITech; Русбитех, Москва">
-			>
-			accreditation = <"hmm">
 		>
 	>
 description
@@ -53,7 +60,7 @@ Such a record may be made to indicate the administration of a dose, dispensing o
 There is a date and time at which this ACTION took place (as there is for all ACTIONs)  and use of this archetype indicates that some action has actually occurred.">
 			keywords = <"*medication", "*prescibe", "*dispense", "*administration", "*cessation", "*therapeutic good", "*supply", "*medicine", "*drug">
 			misuse = <"*Do not use when recording an instruction or order (use INSTRUCTION.medication).">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
@@ -65,7 +72,7 @@ Such a record may be made to indicate the administration of a dose, dispensing o
 There is a date and time at which this ACTION took place (as there is for all ACTIONs)  and use of this archetype indicates that some action has actually occurred.(en)">
 			keywords = <"*medication(en)", "*prescibe(en)", "*dispense(en)", "*administration(en)", "*cessation(en)", "*therapeutic good(en)", "*supply(en)", "*medicine(en)", "*drug(en)">
 			misuse = <"*Do not use when recording an instruction or order (use INSTRUCTION.medication).(en)">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -77,7 +84,7 @@ Such a record may be made to indicate the administration of a dose, dispensing o
 There is a date and time at which this ACTION took place (as there is for all ACTIONs)  and use of this archetype indicates that some action has actually occurred.">
 			keywords = <"medication", "prescibe", "dispense", "administration", "cessation", "therapeutic good", "supply", "medicine", "drug">
 			misuse = <"Do not use when recording an instruction or order (use INSTRUCTION.medication).">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
@@ -89,7 +96,7 @@ Such a record may be made to indicate the administration of a dose, dispensing o
 There is a date and time at which this ACTION took place (as there is for all ACTIONs)  and use of this archetype indicates that some action has actually occurred.(en)">
 			keywords = <"*medication(en)", "*prescibe(en)", "*dispense(en)", "*administration(en)", "*cessation(en)", "*therapeutic good(en)", "*supply(en)", "*medicine(en)", "*drug(en)">
 			misuse = <"*Do not use when recording an instruction or order (use INSTRUCTION.medication).(en)">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["ru"] = <
 			language = <[ISO_639-1::ru]>
@@ -101,28 +108,44 @@ Such a record may be made to indicate the administration of a dose, dispensing o
 There is a date and time at which this ACTION took place (as there is for all ACTIONs)  and use of this archetype indicates that some action has actually occurred.(en)">
 			keywords = <"лекарство", "медикамент", "введение", "прием">
 			misuse = <"*Do not use when recording an instruction or order (use INSTRUCTION.medication).(en)">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere alle aktiviteter utført i forbindelse med et legemiddel, vaksine, parenteral væske eller ernæringsprodukt og, dersom det er passende, en lenke til forordningen.">
+			use = <"For å registrere planlegging, ordinering, utdeling, administrering, seponering, utsettelse og fullførelse av medisinering eller vaksinering. Dette vil vanligvis følge av en legemiddelordinering, men kan i gitte tilfeller skje uten en forutgående ordinering og krever dermed kun en registrering av administreringen (for eksempel i en akuttsituasjon).
+
+Slike oppføringer kan gjøres for å markere administrering av en dose, utdeling av en bestemt mengde eller som dokumentasjon av seponering. Statusen til legemiddelordineringen blir endret i henhold til prosesstrinnene.
+
+Som for alle ACTION-arketyper, er det et tidsstempel på når legemiddelhandlingen fant sted. Bruk av denne arketypen indikerer derfor at en handling faktisk har blitt utført.">
+			keywords = <"medikasjon", "foreskriving", "foreskrive", "utdeling", "administrasjon", "utsettelse", "seponering", "terapeutisk vare", "medisinsk vare", "tilførsel", "medisin", "apotekervare", "legemiddel">
+			misuse = <"Brukes ikke for ordinering av legemidler (bruk da INSTRUCTION.medication_order).">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Stephen Chu, NEHTA, Australia (Editor)", "Samo Drnovšek, Marand, Slovenia (Editor)", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Robert L'egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, UK", "Jude Michel, Queensland Health, Australia", "Chris Mitchell, RACGP, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia (Editor)", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["references"] = <"Based on NEHTA Medication action archetype http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.876_6
-NEHTA Therapeutic Good Use Datagroup http://nehta.gov.au/data-group-library/data-specifications/dgl-therapeutic-good-action">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"11082CFDDADA33050DF0A66C53D2D438">
-		["build_uid"] = <"91988b25-22cc-41b6-9bca-319a512b649b">
+
+NEHTA Therapeutic Good Use Datagroup http://nehta.gov.au/data-group-library/data-specifications/dgl-therapeutic-good-action
+
+Intermountain Healthcare Medication order model, Personal Communication to Sam Heard by Dr Stan Huff.
+
+Royal Australian College of General Practitioners. Fact Sheet: Medicines List. 2010.
+
+NHS HSCIC Messaging Implementation Manual (GP2GP messages) http://www.uktcregistration.nss.cfh.nhs.uk/trud3
+
+Standards for medication and medical device records – technical annex [Internet]. RCP London. [cited 2015 Dec 15]. Available from: https://www.rcplondon.ac.uk/projects/outputs/standards-medication-and-medical-device-records-technical-annex">
+		["MD5-CAM-1.0.1"] = <"B4C5E46AE8AE2AE501219DAA87A8816B">
+		["build_uid"] = <"9678629f-5164-45a1-8214-6c9bc8f87490">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	ACTION[at0000] matches {	-- Medication action
+	ACTION[at0000] matches {	-- Medication
 		ism_transition matches {
-			ISM_TRANSITION[at0042] matches {	-- Recommend medication
+			ISM_TRANSITION[at0109] matches {	-- Medication recommended
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::526]}
@@ -130,23 +153,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0042]}		-- Recommend medication
+						defining_code matches {[local::at0109]}		-- Medication recommended
 					}
 				}
 			}
-			ISM_TRANSITION[at0001] matches {	-- Plan medication
-				current_state matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::524]}
-					}
-				}
-				careflow_step matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0001]}		-- Plan medication
-					}
-				}
-			}
-			ISM_TRANSITION[at0013] matches {	-- Suspend medication plan
+			ISM_TRANSITION[at0013] matches {	-- Scheduled medication postponed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::527]}
@@ -154,11 +165,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0013]}		-- Suspend medication plan
+						defining_code matches {[local::at0013]}		-- Scheduled medication postponed
 					}
 				}
 			}
-			ISM_TRANSITION[at0012] matches {	-- Cancel medication plan
+			ISM_TRANSITION[at0012] matches {	-- Medication course cancelled
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::528]}
@@ -166,11 +177,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0012]}		-- Cancel medication plan
+						defining_code matches {[local::at0012]}		-- Medication course cancelled
 					}
 				}
 			}
-			ISM_TRANSITION[at0016] matches {	-- Set medication start date
+			ISM_TRANSITION[at0016] matches {	-- Medication start date/condition set
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::529]}
@@ -178,43 +189,23 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0016]}		-- Set medication start date
+						defining_code matches {[local::at0016]}		-- Medication start date/condition set
 					}
 				}
 			}
-			ISM_TRANSITION[at0002] matches {	-- Issue prescription for medication
+			ISM_TRANSITION[at0137] matches {	-- Medication restart date/condition set
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {
-							[openehr::
-							245, 
-							524]
-						}
+						defining_code matches {[openehr::529]}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0002]}		-- Issue prescription for medication
+						defining_code matches {[local::at0137]}		-- Medication restart date/condition set
 					}
 				}
 			}
-			ISM_TRANSITION[at0003] matches {	-- Dispense medication
-				current_state matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[openehr::
-							245, 
-							524]
-						}
-					}
-				}
-				careflow_step matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0003]}		-- Dispense medication
-					}
-				}
-			}
-			ISM_TRANSITION[at0004] matches {	-- Commence medication
+			ISM_TRANSITION[at0002] matches {	-- Prescription first issued
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -222,11 +213,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0004]}		-- Commence medication
+						defining_code matches {[local::at0002]}		-- Prescription first issued
 					}
 				}
 			}
-			ISM_TRANSITION[at0005] matches {	-- Review medication
+			ISM_TRANSITION[at0003] matches {	-- Medication dispensed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -234,11 +225,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0005]}		-- Review medication
+						defining_code matches {[local::at0003]}		-- Medication dispensed
 					}
 				}
 			}
-			ISM_TRANSITION[at0041] matches {	-- Medication order modified
+			ISM_TRANSITION[at0004] matches {	-- Medication course commenced
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -246,11 +237,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0041]}		-- Medication order modified
+						defining_code matches {[local::at0004]}		-- Medication course commenced
 					}
 				}
 			}
-			ISM_TRANSITION[at0006] matches {	-- Administer medication
+			ISM_TRANSITION[at0005] matches {	-- Medication course reviewed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -258,11 +249,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0006]}		-- Administer medication
+						defining_code matches {[local::at0005]}		-- Medication course reviewed
 					}
 				}
 			}
-			ISM_TRANSITION[at0010] matches {	-- Re-issue prescription for medication
+			ISM_TRANSITION[at0041] matches {	-- Minor change to order
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -270,11 +261,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0010]}		-- Re-issue prescription for medication
+						defining_code matches {[local::at0041]}		-- Minor change to order
 					}
 				}
 			}
-			ISM_TRANSITION[at0018] matches {	-- Withhold medication
+			ISM_TRANSITION[at0006] matches {	-- Dose administered
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -282,11 +273,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0018]}		-- Withhold medication
+						defining_code matches {[local::at0006]}		-- Dose administered
 					}
 				}
 			}
-			ISM_TRANSITION[at0044] matches {	-- Defer administration
+			ISM_TRANSITION[at0106] matches {	-- Medication re-authorised
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -294,11 +285,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0044]}		-- Defer administration
+						defining_code matches {[local::at0106]}		-- Medication re-authorised
 					}
 				}
 			}
-			ISM_TRANSITION[at0019] matches {	-- Medication declined
+			ISM_TRANSITION[at0010] matches {	-- Prescription re-issued
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -306,27 +297,47 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0019]}		-- Medication declined
+						defining_code matches {[local::at0010]}		-- Prescription re-issued
 					}
 				}
 			}
-			ISM_TRANSITION[at0035] matches {	-- Return medication
+			ISM_TRANSITION[at0018] matches {	-- Dose administration omitted
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {
-							[openehr::
-							245, 
-							524]
-						}
+						defining_code matches {[openehr::245]}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0035]}		-- Return medication
+						defining_code matches {[local::at0018]}		-- Dose administration omitted
 					}
 				}
 			}
-			ISM_TRANSITION[at0008] matches {	-- Delay medication supply
+			ISM_TRANSITION[at0044] matches {	-- Dose administration deferred
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0044]}		-- Dose administration deferred
+					}
+				}
+			}
+			ISM_TRANSITION[at0035] matches {	-- Dispensed medication returned.
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[openehr::245]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {[local::at0035]}		-- Dispensed medication returned.
+					}
+				}
+			}
+			ISM_TRANSITION[at0008] matches {	-- Medication course supply delayed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::530]}
@@ -334,11 +345,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0008]}		-- Delay medication supply
+						defining_code matches {[local::at0008]}		-- Medication course supply delayed
 					}
 				}
 			}
-			ISM_TRANSITION[at0009] matches {	-- Suspend administration
+			ISM_TRANSITION[at0009] matches {	-- Medication course suspended
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::530]}
@@ -346,11 +357,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0009]}		-- Suspend administration
+						defining_code matches {[local::at0009]}		-- Medication course suspended
 					}
 				}
 			}
-			ISM_TRANSITION[at0011] matches {	-- Suspend re-issue of prescription
+			ISM_TRANSITION[at0011] matches {	-- Prescription re-issue suspended
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::530]}
@@ -358,11 +369,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0011]}		-- Suspend re-issue of prescription
+						defining_code matches {[local::at0011]}		-- Prescription re-issue suspended
 					}
 				}
 			}
-			ISM_TRANSITION[at0015] matches {	-- Cease administration
+			ISM_TRANSITION[at0015] matches {	-- Medication course stopped
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::531]}
@@ -370,11 +381,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0015]}		-- Cease administration
+						defining_code matches {[local::at0015]}		-- Medication course stopped
 					}
 				}
 			}
-			ISM_TRANSITION[at0014] matches {	-- Reverse prescription for medication
+			ISM_TRANSITION[at0039] matches {	-- Major change to order.
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::531]}
@@ -382,23 +393,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0014]}		-- Reverse prescription for medication
+						defining_code matches {[local::at0039]}		-- Major change to order.
 					}
 				}
 			}
-			ISM_TRANSITION[at0039] matches {	-- Change dose or timing
-				current_state matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::531]}
-					}
-				}
-				careflow_step matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0039]}		-- Change dose or timing
-					}
-				}
-			}
-			ISM_TRANSITION[at0007] matches {	-- Complete medication
+			ISM_TRANSITION[at0007] matches {	-- Medication course completed
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -406,7 +405,7 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0007]}		-- Complete medication
+						defining_code matches {[local::at0007]}		-- Medication course completed
 					}
 				}
 			}
@@ -419,22 +418,17 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0104] occurrences matches {0..1} matches {	-- Preparation details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_substance(-[a-zA-Z0-9_]+)*\.v0/}
-					}
-					ELEMENT[at0033] occurrences matches {0..*} matches {	-- Patient instructions
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0021] occurrences matches {0..*} matches {	-- Reason
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					CLUSTER[at0082] occurrences matches {0..1} matches {	-- Product
+					CLUSTER[at0082] occurrences matches {0..*} matches {	-- Product
 						items cardinality matches {1..*; unordered} matches {
+							allow_archetype CLUSTER[at0104] occurrences matches {0..1} matches {	-- Preparation details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_substance(-[a-zA-Z0-9_]+)*\.v0/}
+							}
+							ELEMENT[at0130] occurrences matches {0..1} matches {	-- Manufacturer
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
 							ELEMENT[at0083] occurrences matches {0..1} matches {	-- Batch ID
 								value matches {
 									DV_TEXT matches {*}
@@ -445,45 +439,9 @@ definition
 									DV_DATE matches {*}
 								}
 							}
-							ELEMENT[at0058] occurrences matches {0..1} matches {	-- Substitution applied
-								value matches {
-									DV_BOOLEAN matches {
-										value matches {True, False}
-									}
-								}
-							}
-						}
-					}
-					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Sequence number
-						value matches {
-							DV_COUNT matches {*}
-						}
-					}
-					CLUSTER[at0059] occurrences matches {0..1} matches {	-- Quantity supplied
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0060] occurrences matches {0..1} matches {	-- Quantity
-								value matches {
-									C_DV_QUANTITY <
-										property = <[openehr::380]>
-										list = <
-											["1"] = <
-												units = <"1">
-											>
-										>
-									>
-								}
-							}
-							ELEMENT[at0061] occurrences matches {0..1} matches {	-- Units
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0102] occurrences matches {0..1} matches {	-- Duration supplied
-								value matches {
-									DV_DURATION matches {
-										value matches {PMWD}
-									}
-								}
+							allow_archetype CLUSTER[at0131] occurrences matches {0..1} matches {	-- Amount
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_supply_amount(-[a-zA-Z0-9_]+)*\.v0/}
 							}
 							ELEMENT[at0105] occurrences matches {0..1} matches {	-- Max class dose administered
 								value matches {
@@ -494,15 +452,99 @@ definition
 									}
 								}
 							}
+							ELEMENT[at0132] occurrences matches {0..1} matches {	-- Dispensing substitution
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0138, 	-- Substitute product dispensed
+											at0139]	-- Substitute product not dispensed
+										}
+									}
+								}
+							}
+							ELEMENT[at0133] occurrences matches {0..1} matches {	-- Dispensing substitution reason
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
 						}
 					}
-					allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Pathway step details
+					ELEMENT[at0043] occurrences matches {0..1} matches {	-- Order scheduled datetime
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..*} matches {	-- Reason
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0117] occurrences matches {0..*} matches {	-- Reason course amended/stopped
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0118, 	-- Allergy/Adverse Reaction/ Intolerance
+									at0119, 	-- Inadequate clinical response
+									at0120, 	-- Patient choice / difficulty
+									at0121, 	-- Prescribed in error
+									at0122, 	-- Additional information available
+									at0123, 	-- Temporarily suspended
+									at0124]	-- Change to dose form/ strength /route
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0116] occurrences matches {0..*} matches {	-- Reason dose not administered
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0125, 	-- Patient refused
+									at0126, 	-- Nil by mouth
+									at0127, 	-- Medicine unavailable
+									at0128, 	-- Patient unavailable
+									at0129]	-- Clinical reason
+								}
+							}
+						}
+					}
+					CLUSTER[at0140] occurrences matches {0..1} matches {	-- Delivery details
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0141] occurrences matches {0..1} matches {	-- Body site
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0142] occurrences matches {0..1} matches {	-- Structured body site
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_clock(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+							ELEMENT[at0143] occurrences matches {0..*} matches {	-- Delivery method
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0144] occurrences matches {0..*} matches {	-- Delivery device details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {	-- Details
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_authorisation(-[a-zA-Z0-9_]+)*\.v0/}
 					}
-					ELEMENT[at0043] occurrences matches {0..1} matches {	-- Scheduled datetime
+					ELEMENT[at0033] occurrences matches {0..*} matches {	-- Patient guidance
 						value matches {
-							DV_DATE_TIME matches {*}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Sequence number
+						value matches {
+							DV_COUNT matches {*}
 						}
 					}
 					ELEMENT[at0024] occurrences matches {0..1} matches {	-- Comment
@@ -531,89 +573,78 @@ definition
 	}
 
 
+
 ontology
 	term_definitions = <
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Medication action(en)">
+					text = <"*Medication(en)">
 					description = <"*Details of use, administration, dispensing or other care step relating to a medicine, vaccine or other therapeutic good which may arise from an instruction from a clinician.(en)">
 				>
-				["at0001"] = <
-					text = <"الخطة">
-					description = <"تم تخطيط استخدام الدواء و لكن لم يتم التنفيذ">
-				>
 				["at0002"] = <
-					text = <"تم عمل وصفة طبية">
-					description = <"تم تحويل الأمر إلى محل الصرف">
+					text = <"*Prescription first issued(en)">
+					description = <"*The instruction has issued as an item on a prescription.(en)">
 				>
 				["at0003"] = <
-					text = <"تم الصرف">
-					description = <"تم صرف الدواء">
+					text = <"*Medication dispensed(en)">
+					description = <"*The medication has been dispensed.(en)">
 				>
 				["at0004"] = <
-					text = <"بدأ التناول">
-					description = <"تم بالفعل تناول الدواء بواسطة المريض">
+					text = <"*Medication course commenced(en)">
+					description = <"*The medication has been taken by, or administered to, the patient for the first time.(en)">
 				>
 				["at0005"] = <
-					text = <"مراجعة">
-					description = <"تمت مراجعة الأدوية">
+					text = <"*Medication course reviewed(en)">
+					description = <"*The medication has been reviewed.(en)">
 				>
 				["at0006"] = <
-					text = <"إعطاء الدواء - عند نقطة زمنية">
-					description = <"تم إعطاء الدواء">
+					text = <"*Dose administered(en)">
+					description = <"*A single administration of the medication has taken place.(en)">
 				>
 				["at0007"] = <
-					text = <"اكتمل">
-					description = <"تم استكمال الدواء كما هو بالوصفة الطبية">
+					text = <"*Medication course completed(en)">
+					description = <"*The medication course has been completed as planned.(en)">
 				>
 				["at0008"] = <
-					text = <"تم التأخر في الإمداد">
-					description = <"لن يتم صرف الدواء حيث إنه غير متاح/متوفر">
+					text = <"*Medication course supply delayed(en)">
+					description = <"*The medication course has not been dispensed as supply is not yet available.(en)">
 				>
 				["at0009"] = <
-					text = <"تم تعليق إعطاء الدواء">
-					description = <"تم تعليق إعطاء الدواء">
+					text = <"*Medication course suspended(en)">
+					description = <"*The administration of the medication has been suspended.(en)">
 				>
 				["at0010"] = <
-					text = <"إعادة تفعيل الوصفة الطبية">
-					description = <"تم إعادة الأمر أو إعادة تفعيل الوصفة الطبية">
+					text = <"*Prescription re-issued(en)">
+					description = <"*A prescription token has been re-issued for an existing medication order.(en)">
 				>
 				["at0011"] = <
-					text = <"تم تعليق إعادة الأمر بالدواء">
-					description = <"إعادة الأمر بالدواء غير متاحة">
+					text = <"*Prescription re-issue suspended(en)">
+					description = <"*Reissuing of this prescription is not available without some intervention.(en)">
 				>
 				["at0012"] = <
-					text = <"ملغى">
-					description = <"تم إلغاء تناول الدواء الذي كان مخططا له">
+					text = <"*Medication course cancelled(en)">
+					description = <"*The planned administration has been cancelled prior to any administration.(en)">
 				>
 				["at0013"] = <
-					text = <"تم تعليق الخطة">
-					description = <"تم تعليق الخطة الخاصة بالأمر بالدواء">
-				>
-				["at0014"] = <
-					text = <"تم إلغاء الوصفة الطبية">
-					description = <"تم إلغاء الوصفة الطبية">
+					text = <"*Scheduled medication postponed(en)">
+					description = <"*A scheduled medication has been postponed prior to any administration.(en)">
 				>
 				["at0015"] = <
-					text = <"تم إلغاء الإعطاء">
-					description = <"تم إلغاء الإعطاء">
+					text = <"*Medication course stopped(en)">
+					description = <"*The administration of this medication has been ceased before anticipated completion.(en)">
 				>
 				["at0016"] = <
-					text = <"تم تحديد توقيت البداية">
-					description = <"تم تحديد الوقت الخاص ببداية استخدام الدواء">
+					text = <"*Medication start date/condition set(en)">
+					description = <"*The time to start this medication, or other starting condition, has been set.(en)">
 				>
 				["at0017"] = <
 					text = <"*Tree(en)">
 					description = <"*@ internal @(en)">
 				>
 				["at0018"] = <
-					text = <"*Withhold medication(en)">
-					description = <"*The administration of a medication has been withheld and not given.(en)">
-				>
-				["at0019"] = <
-					text = <"*Medication declined(en)">
-					description = <"*An administration of the medication was refused by the subject of care (patient).(en)">
+					text = <"*Dose administration omitted(en)">
+					description = <"*The administration of a medication has been withheld and not given. There is no expectation that it will be given later, though the next dose (if any) should be administered according to the original order.(en)">
 				>
 				["at0020"] = <
 					text = <"*Medication(en)">
@@ -625,7 +656,7 @@ ontology
 				>
 				["at0024"] = <
 					text = <"*Comment(en)">
-					description = <"*A comment on the action taken.(en)">
+					description = <"*A comment on the action taken including details of any variance between the intended action and the action actually performed.(en)">
 				>
 				["at0025"] = <
 					text = <"*Sequence number(en)">
@@ -636,57 +667,37 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0033"] = <
-					text = <"*Instructions(en)">
-					description = <"*Any instructions given to the subject of care or carer at the time of the action.(en)">
+					text = <"*Patient guidance(en)">
+					description = <"*Any guidance, instructions or advice given to the subject of care or carer at the time of the action.(en)">
 				>
 				["at0035"] = <
-					text = <"*Return medication(en)">
-					description = <"*A dispensed medication is returned or not collected without use.(en)">
+					text = <"*Dispensed medication returned.(en)">
+					description = <"*A dispensed medication is returned, or not collected, without being used.(en)">
 				>
 				["at0039"] = <
-					text = <"*Change dose or timing(en)">
-					description = <"*A new instruction with changed dose or timing has been created that replaces this one.(en)">
+					text = <"*Major change to order.(en)">
+					description = <"*A major change to the order was required, resulting in this order being stopped and a replacement order being started.(en)">
 				>
 				["at0041"] = <
-					text = <"*Medication order modified(en)">
+					text = <"*Minor change to order(en)">
 					description = <"*The medication order has been changed in a manner which does not require a new instruction/order to be issued, according to local clinical rules.(en)">
 				>
-				["at0042"] = <
-					text = <"*Recommend medication(en)">
-					description = <"*The medication has been recommended, generally from one clinician to another, where the latter has the responsibility to order/authorise the medication.(en)">
-				>
 				["at0043"] = <
-					text = <"*Scheduled datetime(en)">
-					description = <"*The datetime at which the action was scheduled to occur.(en)">
+					text = <"*Order scheduled datetime(en)">
+					description = <"*The datetime at which the medication order was scheduled to occur.(en)">
 					comment = <"* Used to compare variance from actual action time where this is not readily calculable from the original instruction.(en)">
 				>
 				["at0044"] = <
-					text = <"*Defer administration(en)">
-					description = <"*Defer administration of the medication until a later time.(en)">
+					text = <"*Dose administration deferred(en)">
+					description = <"*Administration of a dose of mediciation has been delayed but is expected to be given as soon as possible.(en)">
 				>
 				["at0053"] = <
-					text = <"*Cluster(en)">
-					description = <"**(en)">
-				>
-				["at0058"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0059"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
-				>
-				["at0060"] = <
-					text = <"*Quantity(en)">
-					description = <"*The physical quantity, number of dose units or packs administered, dispensed or authorised.(en)">
-				>
-				["at0061"] = <
-					text = <"*Units(en)">
-					description = <"*The dose or pack units of the medication supplied.(en)">
+					text = <"*Details(en)">
+					description = <"*Further structured details of the action, possibly specific to a pathway step.(en)">
 				>
 				["at0082"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
+					text = <"*Product(en)">
+					description = <"*Details of the product dispensed, authorised or administered.(en)">
 				>
 				["at0083"] = <
 					text = <"*New element(en)">
@@ -700,10 +711,6 @@ ontology
 					text = <"*Cluster(en)">
 					description = <"**(en)">
 				>
-				["at0102"] = <
-					text = <"*Duration supplied(en)">
-					description = <"*The period of time covered by the quantity of medication supplied.(en)">
-				>
 				["at0103"] = <
 					text = <"*Order ID(en)">
 					description = <"*The identifier assigned with the original order. (en)">
@@ -716,89 +723,192 @@ ontology
 					text = <"*Max dose administered(en)">
 					description = <"*The proportion of the maximum allowed dose administered.(en)">
 				>
+				["at0106"] = <
+					text = <"*Medication re-authorised(en)">
+					description = <"*A repeat prescription or dispense has been re-authorised.(en)">
+				>
+				["at0109"] = <
+					text = <"*Medication recommended(en)">
+					description = <"*The medication has been recommended but no steps have been taken to initiate prescribing.(en)">
+				>
+				["at0116"] = <
+					text = <"*Reason dose not administered(en)">
+					description = <"*The reason(s) why a particular dose administration did not take place, including complte omission of the dose and deferral of the dose.(en)">
+				>
+				["at0117"] = <
+					text = <"*Reason course amended/stopped(en)">
+					description = <"*The reason(s) for amending or stopping a course of medication.(en)">
+				>
+				["at0118"] = <
+					text = <"*Allergy/Adverse Reaction/ Intolerance(en)">
+					description = <"*The patient experienced an adverse reaction.(en)">
+				>
+				["at0119"] = <
+					text = <"*Inadequate clinical response(en)">
+					description = <"*The clinical response to the medication was inadequate.(en)">
+				>
+				["at0120"] = <
+					text = <"*Patient choice / difficulty(en)">
+					description = <"*The course was changed because of patient preference or difficulty.(en)">
+				>
+				["at0121"] = <
+					text = <"*Prescribed in error(en)">
+					description = <"*The medication was prescribed in error.(en)">
+				>
+				["at0122"] = <
+					text = <"*Additional information available(en)">
+					description = <"*Addiotnal information informed the amendment.(en)">
+				>
+				["at0123"] = <
+					text = <"*Temporarily suspended(en)">
+					description = <"*The medication was suspended for a temporary period only.(en)">
+				>
+				["at0124"] = <
+					text = <"*Change to dose form/ strength /route(en)">
+					description = <"*The dose form/strength and or route were changed.(en)">
+				>
+				["at0125"] = <
+					text = <"*Patient refused(en)">
+					description = <"*The patient refused to take the medication.(en)">
+				>
+				["at0126"] = <
+					text = <"*Nil by mouth(en)">
+					description = <"*The patient is on a nil-by-mouth regime.(en)">
+				>
+				["at0127"] = <
+					text = <"*Medicine unavailable(en)">
+					description = <"*The medicine was unavailable.(en)">
+				>
+				["at0128"] = <
+					text = <"*Patient unavailable(en)">
+					description = <"*The patient was not available.(en)">
+				>
+				["at0129"] = <
+					text = <"*Clinical reason(en)">
+					description = <"*The medication administration was withheld/deferred for a clinical reason.(en)">
+				>
+				["at0130"] = <
+					text = <"*Manufacturer(en)">
+					description = <"*The manufacturer of the medication.(en)">
+				>
+				["at0131"] = <
+					text = <"*Amount(en)">
+					description = <"*Details of the amount of medication supplied i.e. authorised, dispensed or administered.(en)">
+				>
+				["at0132"] = <
+					text = <"*Dispensing substitution(en)">
+					description = <"*Subsitution action taken by the dispenser.(en)">
+				>
+				["at0133"] = <
+					text = <"*Dispensing substitution reason(en)">
+					description = <"*The reason or justification for the substitution action taken.(en)">
+				>
+				["at0137"] = <
+					text = <"*Medication restart date/condition set(en)">
+					description = <"*A  suspended medication has had its restart date or condition set.(en)">
+				>
+				["at0138"] = <
+					text = <"*Substitute product dispensed(en)">
+					description = <"*A medication was dispensed which is bioequivalent to that ordered.(en)">
+				>
+				["at0139"] = <
+					text = <"*Substitute product not dispensed(en)">
+					description = <"*Although allowed by the medication order a substitute bioequvalent medication was not dispensed.(en)">
+				>
+				["at0140"] = <
+					text = <"*Delivery details(en)">
+					description = <"*Details of body site and delivery of the medication.(en)">
+				>
+				["at0141"] = <
+					text = <"*Body site(en)">
+					description = <"*Identification of the site of administration of the medication, vaccine or therapeutic good.(en)">
+					comment = <"*For example: 'left upper arm', 'intravenous catheter right hand'.
+Coding of the body site with a terminology is preferred, where possible.(en)">
+				>
+				["at0142"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Structured description of the site of administration  of the medication, vaccine or therapeutic good.(en)">
+				>
+				["at0143"] = <
+					text = <"*Delivery method(en)">
+					description = <"*The method by which the medication is to be delivered.(en)">
+					comment = <"*For example: 'via nebuliser'.(en)">
+				>
+				["at0144"] = <
+					text = <"*Delivery device details(en)">
+					description = <"*Details of the medical device used to assist delivery of the medication.(en)">
+				>
 			>
 		>
 		["sl"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Medication action(en)">
+					text = <"*Medication(en)">
 					description = <"*Details of use, administration, dispensing or other care step relating to a medicine, vaccine or other therapeutic good which may arise from an instruction from a clinician.(en)">
 				>
-				["at0001"] = <
-					text = <"*Plan medication(en)">
-					description = <"*The medication is planned but no execution has taken place.(en)">
-				>
 				["at0002"] = <
-					text = <"*Issue prescription for medication(en)">
+					text = <"*Prescription first issued(en)">
 					description = <"*The instruction has issued as an item on a prescription.(en)">
 				>
 				["at0003"] = <
-					text = <"*Dispense medication(en)">
+					text = <"*Medication dispensed(en)">
 					description = <"*The medication has been dispensed.(en)">
 				>
 				["at0004"] = <
-					text = <"*Commence medication(en)">
-					description = <"*The medication has been taken by the patient for the first time.(en)">
+					text = <"*Medication course commenced(en)">
+					description = <"*The medication has been taken by, or administered to, the patient for the first time.(en)">
 				>
 				["at0005"] = <
-					text = <"*Review medication(en)">
+					text = <"*Medication course reviewed(en)">
 					description = <"*The medication has been reviewed.(en)">
 				>
 				["at0006"] = <
-					text = <"*Administer medication(en)">
+					text = <"*Dose administered(en)">
 					description = <"*A single administration of the medication has taken place.(en)">
 				>
 				["at0007"] = <
-					text = <"*Complete medication(en)">
-					description = <"*The medication has been completed as instructed.(en)">
+					text = <"*Medication course completed(en)">
+					description = <"*The medication course has been completed as planned.(en)">
 				>
 				["at0008"] = <
-					text = <"*Delay medication supply(en)">
-					description = <"*The medication has not been dispensed as supply is not yet available.(en)">
+					text = <"*Medication course supply delayed(en)">
+					description = <"*The medication course has not been dispensed as supply is not yet available.(en)">
 				>
 				["at0009"] = <
-					text = <"*Suspend administration(en)">
-					description = <"*The administration of the  medication has been suspended.(en)">
+					text = <"*Medication course suspended(en)">
+					description = <"*The administration of the medication has been suspended.(en)">
 				>
 				["at0010"] = <
-					text = <"*Re-issue prescription for medication(en)">
-					description = <"*The medication has been re-prescribed for an existing instruction.(en)">
+					text = <"*Prescription re-issued(en)">
+					description = <"*A prescription token has been re-issued for an existing medication order.(en)">
 				>
 				["at0011"] = <
-					text = <"*Suspend re-issue of prescription(en)">
+					text = <"*Prescription re-issue suspended(en)">
 					description = <"*Reissuing of this prescription is not available without some intervention.(en)">
 				>
 				["at0012"] = <
-					text = <"*Cancel medication plan(en)">
+					text = <"*Medication course cancelled(en)">
 					description = <"*The planned administration has been cancelled prior to any administration.(en)">
 				>
 				["at0013"] = <
-					text = <"*Suspend medication plan(en)">
-					description = <"*The plan to order medication has been suspended.(en)">
-				>
-				["at0014"] = <
-					text = <"*Reverse prescription for medication(en)">
-					description = <"*The prescription has been cancelled but administration or dispensing may have occurred.(en)">
+					text = <"*Scheduled medication postponed(en)">
+					description = <"*A scheduled medication has been postponed prior to any administration.(en)">
 				>
 				["at0015"] = <
-					text = <"*Cease administration(en)">
+					text = <"*Medication course stopped(en)">
 					description = <"*The administration of this medication has been ceased before anticipated completion.(en)">
 				>
 				["at0016"] = <
-					text = <"*Set medication start date(en)">
-					description = <"*The time to start this medication has been set.(en)">
+					text = <"*Medication start date/condition set(en)">
+					description = <"*The time to start this medication, or other starting condition, has been set.(en)">
 				>
 				["at0017"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0018"] = <
-					text = <"*Withhold medication(en)">
-					description = <"*The administration of a medication has been withheld and not given.(en)">
-				>
-				["at0019"] = <
-					text = <"Zavrnjeno zdravilo">
-					description = <"Zdravilo, ki ni bilo dano pacientu zato, ker ga je pacient zavrnil">
+					text = <"*Dose administration omitted(en)">
+					description = <"*The administration of a medication has been withheld and not given. There is no expectation that it will be given later, though the next dose (if any) should be administered according to the original order.(en)">
 				>
 				["at0020"] = <
 					text = <"*Medication(en)">
@@ -809,8 +919,8 @@ ontology
 					description = <"Razlog cepljenja z dolečnim cepivom">
 				>
 				["at0024"] = <
-					text = <"Komentar o cepljenju">
-					description = <"Komentar o izvedbi cepljenja">
+					text = <"*Comment(en)">
+					description = <"*A comment on the action taken including details of any variance between the intended action and the action actually performed.(en)">
 				>
 				["at0025"] = <
 					text = <"Zaporedna številka cepljenja ">
@@ -821,57 +931,37 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0033"] = <
-					text = <"Navodila za pacienta">
-					description = <"Kakršnakoli navodila za pacienta">
+					text = <"*Patient guidance(en)">
+					description = <"*Any guidance, instructions or advice given to the subject of care or carer at the time of the action.(en)">
 				>
 				["at0035"] = <
-					text = <"Vrnjeno">
-					description = <"Povrnjeno izdano zdravilo, ki ni bilo uporabljeno">
+					text = <"*Dispensed medication returned.(en)">
+					description = <"*A dispensed medication is returned, or not collected, without being used.(en)">
 				>
 				["at0039"] = <
-					text = <"*Change dose or timing(en)">
-					description = <"*A new instruction with changed dose or timing has been created that replaces this one.(en)">
+					text = <"*Major change to order.(en)">
+					description = <"*A major change to the order was required, resulting in this order being stopped and a replacement order being started.(en)">
 				>
 				["at0041"] = <
-					text = <"*Medication order modified(en)">
+					text = <"*Minor change to order(en)">
 					description = <"*The medication order has been changed in a manner which does not require a new instruction/order to be issued, according to local clinical rules.(en)">
 				>
-				["at0042"] = <
-					text = <"*Planned(en)">
-					description = <"**(en)">
-				>
 				["at0043"] = <
-					text = <"*Scheduled datetime(en)">
-					description = <"*The datetime at which the action was scheduled to occur.(en)">
+					text = <"*Order scheduled datetime(en)">
+					description = <"*The datetime at which the medication order was scheduled to occur.(en)">
 					comment = <"* Used to compare variance from actual action time where this is not readily calculable from the original instruction.(en)">
 				>
 				["at0044"] = <
-					text = <"*Defer administration(en)">
-					description = <"*Defer administration of the medication until a later time.(en)">
+					text = <"*Dose administration deferred(en)">
+					description = <"*Administration of a dose of mediciation has been delayed but is expected to be given as soon as possible.(en)">
 				>
 				["at0053"] = <
-					text = <"*Cluster(en)">
-					description = <"**(en)">
-				>
-				["at0058"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0059"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
-				>
-				["at0060"] = <
-					text = <"*Quantity(en)">
-					description = <"*The physical quantity, number of dose units or packs administered, dispensed or authorised.(en)">
-				>
-				["at0061"] = <
-					text = <"*Units(en)">
-					description = <"*The dose or pack units of the medication supplied.(en)">
+					text = <"*Details(en)">
+					description = <"*Further structured details of the action, possibly specific to a pathway step.(en)">
 				>
 				["at0082"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
+					text = <"*Product(en)">
+					description = <"*Details of the product dispensed, authorised or administered.(en)">
 				>
 				["at0083"] = <
 					text = <"*New element(en)">
@@ -885,10 +975,6 @@ ontology
 					text = <"*Cluster(en)">
 					description = <"**(en)">
 				>
-				["at0102"] = <
-					text = <"*Duration supplied(en)">
-					description = <"*The period of time covered by the quantity of medication supplied.(en)">
-				>
 				["at0103"] = <
 					text = <"*Order ID(en)">
 					description = <"*The identifier assigned with the original order. (en)">
@@ -900,90 +986,193 @@ ontology
 				["at0105"] = <
 					text = <"*Max dose administered(en)">
 					description = <"*The proportion of the maximum allowed dose administered.(en)">
+				>
+				["at0106"] = <
+					text = <"*Medication re-authorised(en)">
+					description = <"*A repeat prescription or dispense has been re-authorised.(en)">
+				>
+				["at0109"] = <
+					text = <"*Medication recommended(en)">
+					description = <"*The medication has been recommended but no steps have been taken to initiate prescribing.(en)">
+				>
+				["at0116"] = <
+					text = <"*Reason dose not administered(en)">
+					description = <"*The reason(s) why a particular dose administration did not take place, including complte omission of the dose and deferral of the dose.(en)">
+				>
+				["at0117"] = <
+					text = <"*Reason course amended/stopped(en)">
+					description = <"*The reason(s) for amending or stopping a course of medication.(en)">
+				>
+				["at0118"] = <
+					text = <"*Allergy/Adverse Reaction/ Intolerance(en)">
+					description = <"*The patient experienced an adverse reaction.(en)">
+				>
+				["at0119"] = <
+					text = <"*Inadequate clinical response(en)">
+					description = <"*The clinical response to the medication was inadequate.(en)">
+				>
+				["at0120"] = <
+					text = <"*Patient choice / difficulty(en)">
+					description = <"*The course was changed because of patient preference or difficulty.(en)">
+				>
+				["at0121"] = <
+					text = <"*Prescribed in error(en)">
+					description = <"*The medication was prescribed in error.(en)">
+				>
+				["at0122"] = <
+					text = <"*Additional information available(en)">
+					description = <"*Addiotnal information informed the amendment.(en)">
+				>
+				["at0123"] = <
+					text = <"*Temporarily suspended(en)">
+					description = <"*The medication was suspended for a temporary period only.(en)">
+				>
+				["at0124"] = <
+					text = <"*Change to dose form/ strength /route(en)">
+					description = <"*The dose form/strength and or route were changed.(en)">
+				>
+				["at0125"] = <
+					text = <"*Patient refused(en)">
+					description = <"*The patient refused to take the medication.(en)">
+				>
+				["at0126"] = <
+					text = <"*Nil by mouth(en)">
+					description = <"*The patient is on a nil-by-mouth regime.(en)">
+				>
+				["at0127"] = <
+					text = <"*Medicine unavailable(en)">
+					description = <"*The medicine was unavailable.(en)">
+				>
+				["at0128"] = <
+					text = <"*Patient unavailable(en)">
+					description = <"*The patient was not available.(en)">
+				>
+				["at0129"] = <
+					text = <"*Clinical reason(en)">
+					description = <"*The medication administration was withheld/deferred for a clinical reason.(en)">
+				>
+				["at0130"] = <
+					text = <"*Manufacturer(en)">
+					description = <"*The manufacturer of the medication.(en)">
+				>
+				["at0131"] = <
+					text = <"*Amount(en)">
+					description = <"*Details of the amount of medication supplied i.e. authorised, dispensed or administered.(en)">
+				>
+				["at0132"] = <
+					text = <"*Dispensing substitution(en)">
+					description = <"*Subsitution action taken by the dispenser.(en)">
+				>
+				["at0133"] = <
+					text = <"*Dispensing substitution reason(en)">
+					description = <"*The reason or justification for the substitution action taken.(en)">
+				>
+				["at0137"] = <
+					text = <"*Medication restart date/condition set(en)">
+					description = <"*A  suspended medication has had its restart date or condition set.(en)">
+				>
+				["at0138"] = <
+					text = <"*Substitute product dispensed(en)">
+					description = <"*A medication was dispensed which is bioequivalent to that ordered.(en)">
+				>
+				["at0139"] = <
+					text = <"*Substitute product not dispensed(en)">
+					description = <"*Although allowed by the medication order a substitute bioequvalent medication was not dispensed.(en)">
+				>
+				["at0140"] = <
+					text = <"*Delivery details(en)">
+					description = <"*Details of body site and delivery of the medication.(en)">
+				>
+				["at0141"] = <
+					text = <"*Body site(en)">
+					description = <"*Identification of the site of administration of the medication, vaccine or therapeutic good.(en)">
+					comment = <"*For example: 'left upper arm', 'intravenous catheter right hand'.
+Coding of the body site with a terminology is preferred, where possible.(en)">
+				>
+				["at0142"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Structured description of the site of administration  of the medication, vaccine or therapeutic good.(en)">
+				>
+				["at0143"] = <
+					text = <"*Delivery method(en)">
+					description = <"*The method by which the medication is to be delivered.(en)">
+					comment = <"*For example: 'via nebuliser'.(en)">
+				>
+				["at0144"] = <
+					text = <"*Delivery device details(en)">
+					description = <"*Details of the medical device used to assist delivery of the medication.(en)">
 				>
 			>
 		>
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Medication action(en)">
+					text = <"*Medication(en)">
 					description = <"*Details of use, administration, dispensing or other care step relating to a medicine, vaccine or other therapeutic good which may arise from an instruction from a clinician.(en)">
 				>
-				["at0001"] = <
-					text = <"Plan">
-					description = <"El medicamento se ha previsto para la administrcion, pero no ha tenido lugar aún">
-				>
 				["at0002"] = <
-					text = <"Prescribir">
-					description = <"El pedido ha sido enviado a la enfermería o a la farmacia">
+					text = <"*Prescription first issued(en)">
+					description = <"*The instruction has issued as an item on a prescription.(en)">
 				>
 				["at0003"] = <
-					text = <"Dosificación">
-					description = <"El medicamento se ha dispensado">
+					text = <"*Medication dispensed(en)">
+					description = <"*The medication has been dispensed.(en)">
 				>
 				["at0004"] = <
-					text = <"Comenzar la administración">
-					description = <"El medicamento ha sido tomada por el paciente">
+					text = <"*Medication course commenced(en)">
+					description = <"*The medication has been taken by, or administered to, the patient for the first time.(en)">
 				>
 				["at0005"] = <
-					text = <"revisión">
-					description = <"El medicamento ha sido revisado">
+					text = <"*Medication course reviewed(en)">
+					description = <"*The medication has been reviewed.(en)">
 				>
 				["at0006"] = <
-					text = <"Administrado (punto en el tiempo)">
-					description = <"El medicamento se ha administrado">
+					text = <"*Dose administered(en)">
+					description = <"*A single administration of the medication has taken place.(en)">
 				>
 				["at0007"] = <
-					text = <"Completado">
-					description = <"El medicamento se ha completado según lo prescrito">
+					text = <"*Medication course completed(en)">
+					description = <"*The medication course has been completed as planned.(en)">
 				>
 				["at0008"] = <
-					text = <"Entrega demorada">
-					description = <"El medicamento no se ha entregado o no está disponible">
+					text = <"*Medication course supply delayed(en)">
+					description = <"*The medication course has not been dispensed as supply is not yet available.(en)">
 				>
 				["at0009"] = <
-					text = <"Suspender la administración">
-					description = <"La administracion del medicamento ha sido suspendida">
+					text = <"*Medication course suspended(en)">
+					description = <"*The administration of the medication has been suspended.(en)">
 				>
 				["at0010"] = <
-					text = <"Renovar prescipcion">
-					description = <"La medicacion ha sido renovada o prescripta nuevamente">
+					text = <"*Prescription re-issued(en)">
+					description = <"*A prescription token has been re-issued for an existing medication order.(en)">
 				>
 				["at0011"] = <
-					text = <"Suspender la renovacion">
-					description = <"No es posible la renovacion de esta medicacion">
+					text = <"*Prescription re-issue suspended(en)">
+					description = <"*Reissuing of this prescription is not available without some intervention.(en)">
 				>
 				["at0012"] = <
-					text = <"Cancelado">
-					description = <"La prescipcion en curso a sido cancelada">
+					text = <"*Medication course cancelled(en)">
+					description = <"*The planned administration has been cancelled prior to any administration.(en)">
 				>
 				["at0013"] = <
-					text = <"Plan suspendedido">
-					description = <"La prescripcion enviada ha sido suspendida">
-				>
-				["at0014"] = <
-					text = <"Prescipcion cancelada">
-					description = <"La prescripcion ha sido canselada">
+					text = <"*Scheduled medication postponed(en)">
+					description = <"*A scheduled medication has been postponed prior to any administration.(en)">
 				>
 				["at0015"] = <
-					text = <"Administración cancelada">
-					description = <"La administracion ha sido cancelada">
+					text = <"*Medication course stopped(en)">
+					description = <"*The administration of this medication has been ceased before anticipated completion.(en)">
 				>
 				["at0016"] = <
-					text = <"Fecha de inicio configurado">
-					description = <"La fecha para el inicio de la medicacion ha sido configurado">
+					text = <"*Medication start date/condition set(en)">
+					description = <"*The time to start this medication, or other starting condition, has been set.(en)">
 				>
 				["at0017"] = <
 					text = <"*Tree(en)">
 					description = <"*@ internal @(en)">
 				>
 				["at0018"] = <
-					text = <"*Withhold medication(en)">
-					description = <"*The administration of a medication has been withheld and not given.(en)">
-				>
-				["at0019"] = <
-					text = <"*Medication declined(en)">
-					description = <"*An administration of the medication was refused by the subject of care (patient).(en)">
+					text = <"*Dose administration omitted(en)">
+					description = <"*The administration of a medication has been withheld and not given. There is no expectation that it will be given later, though the next dose (if any) should be administered according to the original order.(en)">
 				>
 				["at0020"] = <
 					text = <"*Medication(en)">
@@ -995,7 +1184,7 @@ ontology
 				>
 				["at0024"] = <
 					text = <"*Comment(en)">
-					description = <"*A comment on the action taken.(en)">
+					description = <"*A comment on the action taken including details of any variance between the intended action and the action actually performed.(en)">
 				>
 				["at0025"] = <
 					text = <"*Sequence number(en)">
@@ -1006,57 +1195,37 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0033"] = <
-					text = <"*Instructions(en)">
-					description = <"*Any instructions given to the subject of care or carer at the time of the action.(en)">
+					text = <"*Patient guidance(en)">
+					description = <"*Any guidance, instructions or advice given to the subject of care or carer at the time of the action.(en)">
 				>
 				["at0035"] = <
-					text = <"*Return medication(en)">
-					description = <"*A dispensed medication is returned or not collected without use.(en)">
+					text = <"*Dispensed medication returned.(en)">
+					description = <"*A dispensed medication is returned, or not collected, without being used.(en)">
 				>
 				["at0039"] = <
-					text = <"*Change dose or timing(en)">
-					description = <"*A new instruction with changed dose or timing has been created that replaces this one.(en)">
+					text = <"*Major change to order.(en)">
+					description = <"*A major change to the order was required, resulting in this order being stopped and a replacement order being started.(en)">
 				>
 				["at0041"] = <
-					text = <"*Medication order modified(en)">
+					text = <"*Minor change to order(en)">
 					description = <"*The medication order has been changed in a manner which does not require a new instruction/order to be issued, according to local clinical rules.(en)">
 				>
-				["at0042"] = <
-					text = <"*Recommend medication(en)">
-					description = <"*The medication has been recommended, generally from one clinician to another, where the latter has the responsibility to order/authorise the medication.(en)">
-				>
 				["at0043"] = <
-					text = <"*Scheduled datetime(en)">
-					description = <"*The datetime at which the action was scheduled to occur.(en)">
+					text = <"*Order scheduled datetime(en)">
+					description = <"*The datetime at which the medication order was scheduled to occur.(en)">
 					comment = <"* Used to compare variance from actual action time where this is not readily calculable from the original instruction.(en)">
 				>
 				["at0044"] = <
-					text = <"*Defer administration(en)">
-					description = <"*Defer administration of the medication until a later time.(en)">
+					text = <"*Dose administration deferred(en)">
+					description = <"*Administration of a dose of mediciation has been delayed but is expected to be given as soon as possible.(en)">
 				>
 				["at0053"] = <
-					text = <"*Cluster(en)">
-					description = <"**(en)">
-				>
-				["at0058"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0059"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
-				>
-				["at0060"] = <
-					text = <"*Quantity(en)">
-					description = <"*The physical quantity, number of dose units or packs administered, dispensed or authorised.(en)">
-				>
-				["at0061"] = <
-					text = <"*Units(en)">
-					description = <"*The dose or pack units of the medication supplied.(en)">
+					text = <"*Details(en)">
+					description = <"*Further structured details of the action, possibly specific to a pathway step.(en)">
 				>
 				["at0082"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
+					text = <"*Product(en)">
+					description = <"*Details of the product dispensed, authorised or administered.(en)">
 				>
 				["at0083"] = <
 					text = <"*New element(en)">
@@ -1070,10 +1239,6 @@ ontology
 					text = <"*Cluster(en)">
 					description = <"**(en)">
 				>
-				["at0102"] = <
-					text = <"*Duration supplied(en)">
-					description = <"*The period of time covered by the quantity of medication supplied.(en)">
-				>
 				["at0103"] = <
 					text = <"*Order ID(en)">
 					description = <"*The identifier assigned with the original order. (en)">
@@ -1085,90 +1250,193 @@ ontology
 				["at0105"] = <
 					text = <"*Max dose administered(en)">
 					description = <"*The proportion of the maximum allowed dose administered.(en)">
+				>
+				["at0106"] = <
+					text = <"*Medication re-authorised(en)">
+					description = <"*A repeat prescription or dispense has been re-authorised.(en)">
+				>
+				["at0109"] = <
+					text = <"*Medication recommended(en)">
+					description = <"*The medication has been recommended but no steps have been taken to initiate prescribing.(en)">
+				>
+				["at0116"] = <
+					text = <"*Reason dose not administered(en)">
+					description = <"*The reason(s) why a particular dose administration did not take place, including complte omission of the dose and deferral of the dose.(en)">
+				>
+				["at0117"] = <
+					text = <"*Reason course amended/stopped(en)">
+					description = <"*The reason(s) for amending or stopping a course of medication.(en)">
+				>
+				["at0118"] = <
+					text = <"*Allergy/Adverse Reaction/ Intolerance(en)">
+					description = <"*The patient experienced an adverse reaction.(en)">
+				>
+				["at0119"] = <
+					text = <"*Inadequate clinical response(en)">
+					description = <"*The clinical response to the medication was inadequate.(en)">
+				>
+				["at0120"] = <
+					text = <"*Patient choice / difficulty(en)">
+					description = <"*The course was changed because of patient preference or difficulty.(en)">
+				>
+				["at0121"] = <
+					text = <"*Prescribed in error(en)">
+					description = <"*The medication was prescribed in error.(en)">
+				>
+				["at0122"] = <
+					text = <"*Additional information available(en)">
+					description = <"*Addiotnal information informed the amendment.(en)">
+				>
+				["at0123"] = <
+					text = <"*Temporarily suspended(en)">
+					description = <"*The medication was suspended for a temporary period only.(en)">
+				>
+				["at0124"] = <
+					text = <"*Change to dose form/ strength /route(en)">
+					description = <"*The dose form/strength and or route were changed.(en)">
+				>
+				["at0125"] = <
+					text = <"*Patient refused(en)">
+					description = <"*The patient refused to take the medication.(en)">
+				>
+				["at0126"] = <
+					text = <"*Nil by mouth(en)">
+					description = <"*The patient is on a nil-by-mouth regime.(en)">
+				>
+				["at0127"] = <
+					text = <"*Medicine unavailable(en)">
+					description = <"*The medicine was unavailable.(en)">
+				>
+				["at0128"] = <
+					text = <"*Patient unavailable(en)">
+					description = <"*The patient was not available.(en)">
+				>
+				["at0129"] = <
+					text = <"*Clinical reason(en)">
+					description = <"*The medication administration was withheld/deferred for a clinical reason.(en)">
+				>
+				["at0130"] = <
+					text = <"*Manufacturer(en)">
+					description = <"*The manufacturer of the medication.(en)">
+				>
+				["at0131"] = <
+					text = <"*Amount(en)">
+					description = <"*Details of the amount of medication supplied i.e. authorised, dispensed or administered.(en)">
+				>
+				["at0132"] = <
+					text = <"*Dispensing substitution(en)">
+					description = <"*Subsitution action taken by the dispenser.(en)">
+				>
+				["at0133"] = <
+					text = <"*Dispensing substitution reason(en)">
+					description = <"*The reason or justification for the substitution action taken.(en)">
+				>
+				["at0137"] = <
+					text = <"*Medication restart date/condition set(en)">
+					description = <"*A  suspended medication has had its restart date or condition set.(en)">
+				>
+				["at0138"] = <
+					text = <"*Substitute product dispensed(en)">
+					description = <"*A medication was dispensed which is bioequivalent to that ordered.(en)">
+				>
+				["at0139"] = <
+					text = <"*Substitute product not dispensed(en)">
+					description = <"*Although allowed by the medication order a substitute bioequvalent medication was not dispensed.(en)">
+				>
+				["at0140"] = <
+					text = <"*Delivery details(en)">
+					description = <"*Details of body site and delivery of the medication.(en)">
+				>
+				["at0141"] = <
+					text = <"*Body site(en)">
+					description = <"*Identification of the site of administration of the medication, vaccine or therapeutic good.(en)">
+					comment = <"*For example: 'left upper arm', 'intravenous catheter right hand'.
+Coding of the body site with a terminology is preferred, where possible.(en)">
+				>
+				["at0142"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Structured description of the site of administration  of the medication, vaccine or therapeutic good.(en)">
+				>
+				["at0143"] = <
+					text = <"*Delivery method(en)">
+					description = <"*The method by which the medication is to be delivered.(en)">
+					comment = <"*For example: 'via nebuliser'.(en)">
+				>
+				["at0144"] = <
+					text = <"*Delivery device details(en)">
+					description = <"*Details of the medical device used to assist delivery of the medication.(en)">
 				>
 			>
 		>
 		["ru"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Medication action(en)">
+					text = <"*Medication(en)">
 					description = <"*Details of use, administration, dispensing or other care step relating to a medicine, vaccine or other therapeutic good which may arise from an instruction from a clinician.(en)">
 				>
-				["at0001"] = <
-					text = <"Запланировано">
-					description = <"Применение лечения запланировано, но не выполнено ">
-				>
 				["at0002"] = <
-					text = <"Приготовление">
-					description = <"Заказ передан на изготовление">
+					text = <"*Prescription first issued(en)">
+					description = <"*The instruction has issued as an item on a prescription.(en)">
 				>
 				["at0003"] = <
-					text = <"Подготовка">
-					description = <"Лечение подготовлено">
+					text = <"*Medication dispensed(en)">
+					description = <"*The medication has been dispensed.(en)">
 				>
 				["at0004"] = <
-					text = <"Подтверждение выполнения">
-					description = <"Лечение проведено больному">
+					text = <"*Medication course commenced(en)">
+					description = <"*The medication has been taken by, or administered to, the patient for the first time.(en)">
 				>
 				["at0005"] = <
-					text = <"пересмотр">
-					description = <"Лечение пересмотрено">
+					text = <"*Medication course reviewed(en)">
+					description = <"*The medication has been reviewed.(en)">
 				>
 				["at0006"] = <
-					text = <"Назначено (момент времени)">
-					description = <"Время назначения">
+					text = <"*Dose administered(en)">
+					description = <"*A single administration of the medication has taken place.(en)">
 				>
 				["at0007"] = <
-					text = <"Выполнено">
-					description = <"Лечение выполнено, как предписано">
+					text = <"*Medication course completed(en)">
+					description = <"*The medication course has been completed as planned.(en)">
 				>
 				["at0008"] = <
-					text = <"Задержка">
-					description = <"Лечение не подготовлено из-за отсутствия препарата">
+					text = <"*Medication course supply delayed(en)">
+					description = <"*The medication course has not been dispensed as supply is not yet available.(en)">
 				>
 				["at0009"] = <
-					text = <"Отложенное применение">
-					description = <"Применение назначенного лечения отложено">
+					text = <"*Medication course suspended(en)">
+					description = <"*The administration of the medication has been suspended.(en)">
 				>
 				["at0010"] = <
-					text = <"Обновление назначения">
-					description = <"Лечение назначено повторно ">
+					text = <"*Prescription re-issued(en)">
+					description = <"*A prescription token has been re-issued for an existing medication order.(en)">
 				>
 				["at0011"] = <
-					text = <"Отложенный повторный заказ">
-					description = <"Повторный заказ данного лечения невозможен">
+					text = <"*Prescription re-issue suspended(en)">
+					description = <"*Reissuing of this prescription is not available without some intervention.(en)">
 				>
 				["at0012"] = <
-					text = <"Отменено">
-					description = <"Запланированное назначение отменено">
+					text = <"*Medication course cancelled(en)">
+					description = <"*The planned administration has been cancelled prior to any administration.(en)">
 				>
 				["at0013"] = <
-					text = <"Приостановлено">
-					description = <"Заказ лечения приостановлен">
-				>
-				["at0014"] = <
-					text = <"Назначение отменено">
-					description = <"Назначение отменено">
+					text = <"*Scheduled medication postponed(en)">
+					description = <"*A scheduled medication has been postponed prior to any administration.(en)">
 				>
 				["at0015"] = <
-					text = <"Применение отменено">
-					description = <"Применение отменено">
+					text = <"*Medication course stopped(en)">
+					description = <"*The administration of this medication has been ceased before anticipated completion.(en)">
 				>
 				["at0016"] = <
-					text = <"Начало применения">
-					description = <"Время начала применения">
+					text = <"*Medication start date/condition set(en)">
+					description = <"*The time to start this medication, or other starting condition, has been set.(en)">
 				>
 				["at0017"] = <
 					text = <"*Tree(en)">
 					description = <"*@ internal @(en)">
 				>
 				["at0018"] = <
-					text = <"*Withhold medication(en)">
-					description = <"*The administration of a medication has been withheld and not given.(en)">
-				>
-				["at0019"] = <
-					text = <"*Medication declined(en)">
-					description = <"*An administration of the medication was refused by the subject of care (patient).(en)">
+					text = <"*Dose administration omitted(en)">
+					description = <"*The administration of a medication has been withheld and not given. There is no expectation that it will be given later, though the next dose (if any) should be administered according to the original order.(en)">
 				>
 				["at0020"] = <
 					text = <"*Medication(en)">
@@ -1180,7 +1448,7 @@ ontology
 				>
 				["at0024"] = <
 					text = <"*Comment(en)">
-					description = <"*A comment on the action taken.(en)">
+					description = <"*A comment on the action taken including details of any variance between the intended action and the action actually performed.(en)">
 				>
 				["at0025"] = <
 					text = <"*Sequence number(en)">
@@ -1191,57 +1459,37 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0033"] = <
-					text = <"*Instructions(en)">
-					description = <"*Any instructions given to the subject of care or carer at the time of the action.(en)">
+					text = <"*Patient guidance(en)">
+					description = <"*Any guidance, instructions or advice given to the subject of care or carer at the time of the action.(en)">
 				>
 				["at0035"] = <
-					text = <"*Return medication(en)">
-					description = <"*A dispensed medication is returned or not collected without use.(en)">
+					text = <"*Dispensed medication returned.(en)">
+					description = <"*A dispensed medication is returned, or not collected, without being used.(en)">
 				>
 				["at0039"] = <
-					text = <"*Change dose or timing(en)">
-					description = <"*A new instruction with changed dose or timing has been created that replaces this one.(en)">
+					text = <"*Major change to order.(en)">
+					description = <"*A major change to the order was required, resulting in this order being stopped and a replacement order being started.(en)">
 				>
 				["at0041"] = <
-					text = <"*Medication order modified(en)">
+					text = <"*Minor change to order(en)">
 					description = <"*The medication order has been changed in a manner which does not require a new instruction/order to be issued, according to local clinical rules.(en)">
 				>
-				["at0042"] = <
-					text = <"*Planned(en)">
-					description = <"**(en)">
-				>
 				["at0043"] = <
-					text = <"*Scheduled datetime(en)">
-					description = <"*The datetime at which the action was scheduled to occur.(en)">
+					text = <"*Order scheduled datetime(en)">
+					description = <"*The datetime at which the medication order was scheduled to occur.(en)">
 					comment = <"* Used to compare variance from actual action time where this is not readily calculable from the original instruction.(en)">
 				>
 				["at0044"] = <
-					text = <"*Defer administration(en)">
-					description = <"*Defer administration of the medication until a later time.(en)">
+					text = <"*Dose administration deferred(en)">
+					description = <"*Administration of a dose of mediciation has been delayed but is expected to be given as soon as possible.(en)">
 				>
 				["at0053"] = <
-					text = <"*Cluster(en)">
-					description = <"**(en)">
-				>
-				["at0058"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0059"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
-				>
-				["at0060"] = <
-					text = <"*Quantity(en)">
-					description = <"*The physical quantity, number of dose units or packs administered, dispensed or authorised.(en)">
-				>
-				["at0061"] = <
-					text = <"*Units(en)">
-					description = <"*The dose or pack units of the medication supplied.(en)">
+					text = <"*Details(en)">
+					description = <"*Further structured details of the action, possibly specific to a pathway step.(en)">
 				>
 				["at0082"] = <
-					text = <"*New cluster(en)">
-					description = <"**(en)">
+					text = <"*Product(en)">
+					description = <"*Details of the product dispensed, authorised or administered.(en)">
 				>
 				["at0083"] = <
 					text = <"*New element(en)">
@@ -1255,10 +1503,6 @@ ontology
 					text = <"*Cluster(en)">
 					description = <"**(en)">
 				>
-				["at0102"] = <
-					text = <"*Duration supplied(en)">
-					description = <"*The period of time covered by the quantity of medication supplied.(en)">
-				>
 				["at0103"] = <
 					text = <"*Order ID(en)">
 					description = <"*The identifier assigned with the original order. (en)">
@@ -1271,89 +1515,192 @@ ontology
 					text = <"*Max dose administered(en)">
 					description = <"*The proportion of the maximum allowed dose administered.(en)">
 				>
+				["at0106"] = <
+					text = <"*Medication re-authorised(en)">
+					description = <"*A repeat prescription or dispense has been re-authorised.(en)">
+				>
+				["at0109"] = <
+					text = <"*Medication recommended(en)">
+					description = <"*The medication has been recommended but no steps have been taken to initiate prescribing.(en)">
+				>
+				["at0116"] = <
+					text = <"*Reason dose not administered(en)">
+					description = <"*The reason(s) why a particular dose administration did not take place, including complte omission of the dose and deferral of the dose.(en)">
+				>
+				["at0117"] = <
+					text = <"*Reason course amended/stopped(en)">
+					description = <"*The reason(s) for amending or stopping a course of medication.(en)">
+				>
+				["at0118"] = <
+					text = <"*Allergy/Adverse Reaction/ Intolerance(en)">
+					description = <"*The patient experienced an adverse reaction.(en)">
+				>
+				["at0119"] = <
+					text = <"*Inadequate clinical response(en)">
+					description = <"*The clinical response to the medication was inadequate.(en)">
+				>
+				["at0120"] = <
+					text = <"*Patient choice / difficulty(en)">
+					description = <"*The course was changed because of patient preference or difficulty.(en)">
+				>
+				["at0121"] = <
+					text = <"*Prescribed in error(en)">
+					description = <"*The medication was prescribed in error.(en)">
+				>
+				["at0122"] = <
+					text = <"*Additional information available(en)">
+					description = <"*Addiotnal information informed the amendment.(en)">
+				>
+				["at0123"] = <
+					text = <"*Temporarily suspended(en)">
+					description = <"*The medication was suspended for a temporary period only.(en)">
+				>
+				["at0124"] = <
+					text = <"*Change to dose form/ strength /route(en)">
+					description = <"*The dose form/strength and or route were changed.(en)">
+				>
+				["at0125"] = <
+					text = <"*Patient refused(en)">
+					description = <"*The patient refused to take the medication.(en)">
+				>
+				["at0126"] = <
+					text = <"*Nil by mouth(en)">
+					description = <"*The patient is on a nil-by-mouth regime.(en)">
+				>
+				["at0127"] = <
+					text = <"*Medicine unavailable(en)">
+					description = <"*The medicine was unavailable.(en)">
+				>
+				["at0128"] = <
+					text = <"*Patient unavailable(en)">
+					description = <"*The patient was not available.(en)">
+				>
+				["at0129"] = <
+					text = <"*Clinical reason(en)">
+					description = <"*The medication administration was withheld/deferred for a clinical reason.(en)">
+				>
+				["at0130"] = <
+					text = <"*Manufacturer(en)">
+					description = <"*The manufacturer of the medication.(en)">
+				>
+				["at0131"] = <
+					text = <"*Amount(en)">
+					description = <"*Details of the amount of medication supplied i.e. authorised, dispensed or administered.(en)">
+				>
+				["at0132"] = <
+					text = <"*Dispensing substitution(en)">
+					description = <"*Subsitution action taken by the dispenser.(en)">
+				>
+				["at0133"] = <
+					text = <"*Dispensing substitution reason(en)">
+					description = <"*The reason or justification for the substitution action taken.(en)">
+				>
+				["at0137"] = <
+					text = <"*Medication restart date/condition set(en)">
+					description = <"*A  suspended medication has had its restart date or condition set.(en)">
+				>
+				["at0138"] = <
+					text = <"*Substitute product dispensed(en)">
+					description = <"*A medication was dispensed which is bioequivalent to that ordered.(en)">
+				>
+				["at0139"] = <
+					text = <"*Substitute product not dispensed(en)">
+					description = <"*Although allowed by the medication order a substitute bioequvalent medication was not dispensed.(en)">
+				>
+				["at0140"] = <
+					text = <"*Delivery details(en)">
+					description = <"*Details of body site and delivery of the medication.(en)">
+				>
+				["at0141"] = <
+					text = <"*Body site(en)">
+					description = <"*Identification of the site of administration of the medication, vaccine or therapeutic good.(en)">
+					comment = <"*For example: 'left upper arm', 'intravenous catheter right hand'.
+Coding of the body site with a terminology is preferred, where possible.(en)">
+				>
+				["at0142"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Structured description of the site of administration  of the medication, vaccine or therapeutic good.(en)">
+				>
+				["at0143"] = <
+					text = <"*Delivery method(en)">
+					description = <"*The method by which the medication is to be delivered.(en)">
+					comment = <"*For example: 'via nebuliser'.(en)">
+				>
+				["at0144"] = <
+					text = <"*Delivery device details(en)">
+					description = <"*Details of the medical device used to assist delivery of the medication.(en)">
+				>
 			>
 		>
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Medication action">
+					text = <"Medication">
 					description = <"Details of use, administration, dispensing or other care step relating to a medicine, vaccine or other therapeutic good which may arise from an instruction from a clinician.">
 				>
-				["at0001"] = <
-					text = <"Plan medication">
-					description = <"The medication is planned but no execution has taken place.">
-				>
 				["at0002"] = <
-					text = <"Issue prescription for medication">
+					text = <"Prescription first issued">
 					description = <"The instruction has issued as an item on a prescription.">
 				>
 				["at0003"] = <
-					text = <"Dispense medication">
+					text = <"Medication dispensed">
 					description = <"The medication has been dispensed.">
 				>
 				["at0004"] = <
-					text = <"Commence medication">
-					description = <"The medication has been taken by the patient for the first time.">
+					text = <"Medication course commenced">
+					description = <"The medication has been taken by, or administered to, the patient for the first time.">
 				>
 				["at0005"] = <
-					text = <"Review medication">
+					text = <"Medication course reviewed">
 					description = <"The medication has been reviewed.">
 				>
 				["at0006"] = <
-					text = <"Administer medication">
+					text = <"Dose administered">
 					description = <"A single administration of the medication has taken place.">
 				>
 				["at0007"] = <
-					text = <"Complete medication">
-					description = <"The medication has been completed as instructed.">
+					text = <"Medication course completed">
+					description = <"The medication course has been completed as planned.">
 				>
 				["at0008"] = <
-					text = <"Delay medication supply">
-					description = <"The medication has not been dispensed as supply is not yet available.">
+					text = <"Medication course supply delayed">
+					description = <"The medication course has not been dispensed as supply is not yet available.">
 				>
 				["at0009"] = <
-					text = <"Suspend administration">
-					description = <"The administration of the  medication has been suspended.">
+					text = <"Medication course suspended">
+					description = <"The administration of the medication has been suspended. No further doses should be given until further notice, or when the restart date or conditions have been met.">
 				>
 				["at0010"] = <
-					text = <"Re-issue prescription for medication">
-					description = <"The medication has been re-prescribed for an existing instruction.">
+					text = <"Prescription re-issued">
+					description = <"A prescription token has been re-issued for an existing medication order.">
 				>
 				["at0011"] = <
-					text = <"Suspend re-issue of prescription">
+					text = <"Prescription re-issue suspended">
 					description = <"Reissuing of this prescription is not available without some intervention.">
 				>
 				["at0012"] = <
-					text = <"Cancel medication plan">
+					text = <"Medication course cancelled">
 					description = <"The planned administration has been cancelled prior to any administration.">
 				>
 				["at0013"] = <
-					text = <"Suspend medication plan">
-					description = <"The plan to order medication has been suspended.">
-				>
-				["at0014"] = <
-					text = <"Reverse prescription for medication">
-					description = <"The prescription has been cancelled but administration or dispensing may have occurred.">
+					text = <"Scheduled medication postponed">
+					description = <"A scheduled medication has been postponed prior to any administration.">
 				>
 				["at0015"] = <
-					text = <"Cease administration">
+					text = <"Medication course stopped">
 					description = <"The administration of this medication has been ceased before anticipated completion.">
 				>
 				["at0016"] = <
-					text = <"Set medication start date">
-					description = <"The time to start this medication has been set.">
+					text = <"Medication start date/condition set">
+					description = <"The time to start this medication, or other starting condition, has been set.">
 				>
 				["at0017"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0018"] = <
-					text = <"Withhold medication">
-					description = <"The administration of a medication has been withheld and not given.">
-				>
-				["at0019"] = <
-					text = <"Medication declined">
-					description = <"An administration of the medication was refused by the subject of care (patient).">
+					text = <"Dose administration omitted">
+					description = <"The administration of a medication has been withheld and not given. There is no expectation that it will be given later, though the next dose (if any) should be administered according to the original order.">
 				>
 				["at0020"] = <
 					text = <"Medication">
@@ -1366,7 +1713,7 @@ ontology
 				>
 				["at0024"] = <
 					text = <"Comment">
-					description = <"A comment on the action taken.">
+					description = <"A comment on the action taken including details of any variance between the intended action and the action actually performed.">
 				>
 				["at0025"] = <
 					text = <"Sequence number">
@@ -1377,57 +1724,37 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0033"] = <
-					text = <"Patient instructions">
-					description = <"Any instructions given to the subject of care or carer at the time of the action.">
+					text = <"Patient guidance">
+					description = <"Any guidance, instructions or advice given to the subject of care or carer at the time of the action.">
 				>
 				["at0035"] = <
-					text = <"Return medication">
-					description = <"A dispensed medication is returned or not collected without use.">
+					text = <"Dispensed medication returned.">
+					description = <"A dispensed medication is returned, or not collected, without being used.">
 				>
 				["at0039"] = <
-					text = <"Change dose or timing">
-					description = <"A new instruction with changed dose or timing has been created that replaces this one.">
+					text = <"Major change to order.">
+					description = <"A major change to the order was required, resulting in this order being stopped and a replacement order being started.">
 				>
 				["at0041"] = <
-					text = <"Medication order modified">
+					text = <"Minor change to order">
 					description = <"The medication order has been changed in a manner which does not require a new instruction/order to be issued, according to local clinical rules.">
 				>
-				["at0042"] = <
-					text = <"Recommend medication">
-					description = <"The medication has been recommended, generally from one clinician to another, where the latter has the responsibility to order/authorise the medication.">
-				>
 				["at0043"] = <
-					text = <"Scheduled datetime">
-					description = <"The datetime at which the action was scheduled to occur.">
+					text = <"Order scheduled datetime">
+					description = <"The datetime at which the medication order was scheduled to occur.">
 					comment = <" Used to compare variance from actual action time where this is not readily calculable from the original instruction.">
 				>
 				["at0044"] = <
-					text = <"Defer administration">
-					description = <"Defer administration of the medication until a later time.">
+					text = <"Dose administration deferred">
+					description = <"Administration of a dose of mediciation has been delayed but is expected to be given as soon as possible.">
 				>
 				["at0053"] = <
-					text = <"Pathway step details">
-					description = <"Details of the action specific to a pathway step.">
-				>
-				["at0058"] = <
-					text = <"Substitution applied">
-					description = <"Was the ordered brand substituted for a different preparation?">
-				>
-				["at0059"] = <
-					text = <"Quantity supplied">
-					description = <"Details of the quantity of medicinal product issued, authorised, dispensed or administered.">
-				>
-				["at0060"] = <
-					text = <"Quantity">
-					description = <"The physical quantity, number of dose units or packs administered, dispensed or authorised.">
-				>
-				["at0061"] = <
-					text = <"Units">
-					description = <"The dose or pack units of the medication supplied.">
+					text = <"Details">
+					description = <"Further structured details of the action, possibly specific to a pathway step.">
 				>
 				["at0082"] = <
 					text = <"Product">
-					description = <"Details of the product dispensed or administered.">
+					description = <"Details of the product dispensed, authorised or administered.">
 				>
 				["at0083"] = <
 					text = <"Batch ID">
@@ -1442,10 +1769,6 @@ ontology
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
-				["at0102"] = <
-					text = <"Duration supplied">
-					description = <"The period of time covered by the quantity of medication supplied.">
-				>
 				["at0103"] = <
 					text = <"Order ID">
 					description = <"The identifier assigned with the original order.">
@@ -1458,6 +1781,387 @@ ontology
 					text = <"Max class dose administered">
 					description = <"The proportion of the maximum allowed dose equivalent administered.">
 					comment = <"Used in mental health to allow monitoring of total amount of a drug class andministered e.g. anti-psychotics, where each medication is associated with a percentage contribution towards a total daily maximum, normally 100%.">
+				>
+				["at0106"] = <
+					text = <"Medication re-authorised">
+					description = <"A repeat prescription or dispense has been re-authorised.">
+				>
+				["at0109"] = <
+					text = <"Medication recommended">
+					description = <"The medication has been recommended but no steps have been taken to initiate prescribing.">
+				>
+				["at0116"] = <
+					text = <"Reason dose not administered">
+					description = <"The reason(s) why a particular dose administration did not take place, including complte omission of the dose and deferral of the dose.">
+				>
+				["at0117"] = <
+					text = <"Reason course amended/stopped">
+					description = <"The reason(s) for amending or stopping a course of medication.">
+				>
+				["at0118"] = <
+					text = <"Allergy/Adverse Reaction/ Intolerance">
+					description = <"The patient experienced an adverse reaction.">
+				>
+				["at0119"] = <
+					text = <"Inadequate clinical response">
+					description = <"The clinical response to the medication was inadequate.">
+				>
+				["at0120"] = <
+					text = <"Patient choice / difficulty">
+					description = <"The course was changed because of patient preference or difficulty.">
+				>
+				["at0121"] = <
+					text = <"Prescribed in error">
+					description = <"The medication was prescribed in error.">
+				>
+				["at0122"] = <
+					text = <"Additional information available">
+					description = <"Addiotnal information informed the amendment.">
+				>
+				["at0123"] = <
+					text = <"Temporarily suspended">
+					description = <"The medication was suspended for a temporary period only.">
+				>
+				["at0124"] = <
+					text = <"Change to dose form/ strength /route">
+					description = <"The dose form/strength and or route were changed.">
+				>
+				["at0125"] = <
+					text = <"Patient refused">
+					description = <"The patient refused to take the medication.">
+				>
+				["at0126"] = <
+					text = <"Nil by mouth">
+					description = <"The patient is on a nil-by-mouth regime.">
+				>
+				["at0127"] = <
+					text = <"Medicine unavailable">
+					description = <"The medicine was unavailable.">
+				>
+				["at0128"] = <
+					text = <"Patient unavailable">
+					description = <"The patient was not available.">
+				>
+				["at0129"] = <
+					text = <"Clinical reason">
+					description = <"The medication administration was withheld/deferred for a clinical reason.">
+				>
+				["at0130"] = <
+					text = <"Manufacturer">
+					description = <"The manufacturer of the medication.">
+				>
+				["at0131"] = <
+					text = <"Amount">
+					description = <"Details of the amount of medication supplied i.e. authorised, dispensed or administered.">
+				>
+				["at0132"] = <
+					text = <"Dispensing substitution">
+					description = <"Subsitution action taken by the dispenser.">
+				>
+				["at0133"] = <
+					text = <"Dispensing substitution reason">
+					description = <"The reason or justification for the substitution action taken.">
+				>
+				["at0137"] = <
+					text = <"Medication restart date/condition set">
+					description = <"A  suspended medication has had its restart date or condition set.">
+				>
+				["at0138"] = <
+					text = <"Substitute product dispensed">
+					description = <"A medication was dispensed which is bioequivalent to that ordered.">
+				>
+				["at0139"] = <
+					text = <"Substitute product not dispensed">
+					description = <"Although allowed by the medication order a substitute bioequvalent medication was not dispensed.">
+				>
+				["at0140"] = <
+					text = <"Delivery details">
+					description = <"Details of body site and delivery of the medication.">
+				>
+				["at0141"] = <
+					text = <"Body site">
+					description = <"Identification of the site of administration of the medication, vaccine or therapeutic good.">
+					comment = <"For example: 'left upper arm', 'intravenous catheter right hand'.
+Coding of the body site with a terminology is preferred, where possible.">
+				>
+				["at0142"] = <
+					text = <"Structured body site">
+					description = <"Structured description of the site of administration  of the medication, vaccine or therapeutic good.">
+				>
+				["at0143"] = <
+					text = <"Delivery method">
+					description = <"The method by which the medication is to be delivered.">
+					comment = <"For example: 'via nebuliser'.">
+				>
+				["at0144"] = <
+					text = <"Delivery device details">
+					description = <"Details of the medical device used to assist delivery of the medication.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Legemiddelhandling">
+					description = <"Detaljer om bruk, administrasjon, utdeling eller andre steg i behandlingsprosessen som er knyttet til legemiddel eller vaksine som kan følge en forordning.">
+				>
+				["at0002"] = <
+					text = <"Utstedt resept for legemiddelet">
+					description = <"Det er utstedt en resept for legemiddelet.">
+				>
+				["at0003"] = <
+					text = <"Legemiddel utdelt">
+					description = <"Legemiddelet er utdelt.">
+				>
+				["at0004"] = <
+					text = <"Medisinering startet">
+					description = <"Legemiddelet er tatt av eller administrert til pasienten for første gang.">
+				>
+				["at0005"] = <
+					text = <"Medisinering gjennomgått">
+					description = <"Medisineringen er gjennomgått.">
+				>
+				["at0006"] = <
+					text = <"Legemiddel administrert">
+					description = <"En enkelt administrering av legemiddelet er utført.">
+				>
+				["at0007"] = <
+					text = <"Medisinering fullført">
+					description = <"Medisineringen er fullført som foreskrevet.">
+				>
+				["at0008"] = <
+					text = <"Forsinket levering">
+					description = <"Legemiddelet er ikke utdelt fordi det ikke er på lager enda.">
+				>
+				["at0009"] = <
+					text = <"Administrasjon satt på vent">
+					description = <"Administrasjon av legemiddelet er satt på vent. Ingen ytterligere doser gis inntil videre, eller settes i gang først når vilkår eller dato for å sette medisineringen i gang igjen er møtt.">
+				>
+				["at0010"] = <
+					text = <"Resept fornyet">
+					description = <"Legemiddelet har fått en fornyet resept for den eksisterende ordineringen.">
+				>
+				["at0011"] = <
+					text = <"Reseptfornying satt på vent">
+					description = <"Reseptfornying kan ikke utføres uten inngripen.">
+				>
+				["at0012"] = <
+					text = <"Planlagt medisinering er avbrutt">
+					description = <"Den planlagte administrasjonen er avbrutt før noe er administrert.">
+				>
+				["at0013"] = <
+					text = <"Planlagt medisinering satt på vent">
+					description = <"Den planlagte medisineringen er satt på vent før noe er administert.">
+				>
+				["at0015"] = <
+					text = <"Seponert">
+					description = <"Legemiddelet er seponert før antatt fullførelse.">
+				>
+				["at0016"] = <
+					text = <"Oppstartsdato satt">
+					description = <"Tidspunktet eller vilkår for å starte medisineringen er satt.">
+				>
+				["at0017"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0018"] = <
+					text = <"Legemiddel holdt tilbake">
+					description = <"Administrasjon av et legemiddel er stoppet, og legemiddelet er holdt tilbake. Det er ingen forventing om at legemiddelet skal gis på et senere tidspunkt, men neste dose administreres i henhold til ordineringen.">
+				>
+				["at0020"] = <
+					text = <"Legemiddel">
+					description = <"Legemiddelet eller vaksinen som var i fokus i denne aktiviteten (ACTION). Dette elementet vil normalt sett bli kodet med en legemiddelterminologi, men i noen tilfeller kan fritekst være nødvendig.">
+					comment = <"For eksempel: 'Atenolol 100mg' eller 'Atenolol 100mg tabletter'.">
+				>
+				["at0021"] = <
+					text = <"Årsak">
+					description = <"Årsak eller årsaker til at den aktuelle handlingen (ACTION) eller prosessteget ble utført. NB: Dette er ikke årsaken til legemiddelordineringen, heller de spesifikke årsakene til for eksempel administrasjonen.">
+				>
+				["at0024"] = <
+					text = <"Kommentar">
+					description = <"En kommentar til handlingen (ACTION) som ble foretatt.">
+				>
+				["at0025"] = <
+					text = <"Sekvensnummer">
+					description = <"Sekvensnummeret for den spesifikke handlingen som blir registrert.">
+				>
+				["at0030"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0033"] = <
+					text = <"Pasientinstruksjoner">
+					description = <"Enhver instruksjon som gis til pasienten eller en omsorgsperson når handlingen utføres.">
+				>
+				["at0035"] = <
+					text = <"Legemiddel returnert">
+					description = <"Utdelt legemiddel er returnert ubrukt eller ikke hentet.">
+				>
+				["at0039"] = <
+					text = <"Endret dose eller timing">
+					description = <"Det er utført en endring i ordingeringen, denne ordineringen er stoppet og en ny ordinering er igangsatt.">
+				>
+				["at0041"] = <
+					text = <"Forordning endret">
+					description = <"Legemiddelordineringen er endret, men på en slik måte at det etter lokale retningslinjer ikke er behov for en ny ordinering.">
+				>
+				["at0043"] = <
+					text = <"Planlagt tid for ordinering">
+					description = <"Planlagt tidspunkt for legemiddelordineringen.">
+					comment = <"Brukes til å sammenligne varians fra faktisk tidspunkt for en handling (ACTION), der dette ikke er mulig å beregne ut fra den opprinnelige foreskrivningen.">
+				>
+				["at0044"] = <
+					text = <"Utsatt administrering">
+					description = <"Administrasjon av legemiddelet er forsinket, men legemiddelet forventes administrert så raskt som mulig.">
+				>
+				["at0053"] = <
+					text = <"Prosesstrinndetaljer">
+					description = <"Detaljer for handlingen spesifikk for et prosesstrinn.">
+				>
+				["at0082"] = <
+					text = <"Produkt">
+					description = <"Detaljer om produktet som er utdelt eller administrert.">
+				>
+				["at0083"] = <
+					text = <"Batch-ID">
+					description = <"Tilordnet av produsenten for å identifisere produksjons-batchen for produktet.">
+				>
+				["at0084"] = <
+					text = <"Utløpsdato">
+					description = <"Utløpsdatoen for legemiddelet, som dokumentert av produsenten.">
+				>
+				["at0085"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som er nødvendig for å sammenstille med andre referansemodeller/formalismer.">
+					comment = <"F.eks. lokale informasjonskrav eller ekstra metadata for å samsvare med FHIR eller CIMI ekvivalenter.">
+				>
+				["at0103"] = <
+					text = <"ForordningsID">
+					description = <"Identifikatoren for den opprinnelige forordningen.">
+				>
+				["at0104"] = <
+					text = <"Preparatdetaljer">
+					description = <"Detaljer om legemiddelpreparatet.">
+				>
+				["at0105"] = <
+					text = <"Maksimal klassedose administrert">
+					description = <"Proporsjonen av den maksimale tillatte doseekvivalenten som er administrert.">
+					comment = <"Brukes innenfor psykisk helsevern for å overvåke den totale mengden av en klasse legemidler, f.eks. antopsykotika, som administreres. Hvert legemiddel har et bidrag til det daglige maksimum angitt i prosent. Det daglige maksimum er normalt 100%.">
+				>
+				["at0106"] = <
+					text = <"Legemiddel reautorisert">
+					description = <"En repeterende resept eller utdeling har blitt reautorisert.">
+				>
+				["at0109"] = <
+					text = <"Anbefalt medisinering">
+					description = <"Medisineringen er anbefalt, men ordinering er ikke iverksatt.">
+				>
+				["at0116"] = <
+					text = <"Begrunnelse for at dose ikke ble administrert">
+					description = <"Begrunnelse(r) for hvorfor en spesifikk dose ikke ble administrert, både når dosen hoppes over og når den utsettes.">
+				>
+				["at0117"] = <
+					text = <"Årsak til endring/seponering">
+					description = <"Årsaken(e) for å endre eller seponere ordineringen.">
+				>
+				["at0118"] = <
+					text = <"Overfølsomhetsreaksjon">
+					description = <"Pasienten opplevde en overfølsomhetsreaksjon.">
+				>
+				["at0119"] = <
+					text = <"Utilstrekkelig klinisk respons">
+					description = <"Den kliniske responsen på legemiddelet var utilstrekkelig.">
+				>
+				["at0120"] = <
+					text = <"Pasientpreferanser">
+					description = <"Endring/seponering på grunn av pasientpreferanser eller vanskeligheter.">
+				>
+				["at0121"] = <
+					text = <"Feilordinering">
+					description = <"Legemiddelet ble ordinert ved en feil.">
+				>
+				["at0122"] = <
+					text = <"Ytterligere informasjon tilgjengelig">
+					description = <"Ytterligere informasjon førte til endringen.">
+				>
+				["at0123"] = <
+					text = <"Midlertidig satt på vent">
+					description = <"Legemiddelet ble satt på vent midlertidig.">
+				>
+				["at0124"] = <
+					text = <"Endring av dose / form / styrke / administrasjonsvei">
+					description = <"Dosen, formen, styrken eller administrasjonsveien ble endret.">
+				>
+				["at0125"] = <
+					text = <"Pasient nektet">
+					description = <"Pasienten nektet å ta legemiddelet.">
+				>
+				["at0126"] = <
+					text = <"Faster">
+					description = <"Pasienten faster.">
+				>
+				["at0127"] = <
+					text = <"Legemiddel ikke tilgjengelig">
+					description = <"Legemiddelelet var ikke tilgjengelig.">
+				>
+				["at0128"] = <
+					text = <"Pasient ikke tilgjengelig">
+					description = <"Pasienten var ikke tilgjengelig.">
+				>
+				["at0129"] = <
+					text = <"Klinisk begrunnelse">
+					description = <"Legemiddelet ble stoppet/utsatt av en klinisk årsak.">
+				>
+				["at0130"] = <
+					text = <"Produsent">
+					description = <"Produsenten av legemiddelet.">
+				>
+				["at0131"] = <
+					text = <"Mengde">
+					description = <"Detaljer om mengden legemiddel som skal utdeles eller administreres.">
+				>
+				["at0132"] = <
+					text = <"Generisk bytte ved utdeling">
+					description = <"Generisk bytte ved utdeling.">
+				>
+				["at0133"] = <
+					text = <"Begrunnelse for bytte">
+					description = <"Begrunnelsen for om det ble utført generisk bytte eller ikke.">
+				>
+				["at0137"] = <
+					text = <"Vilkår satt for å sette medisineringen i gang igjen">
+					description = <"Et legemiddel som er satt på vent har fått satt dato eller vilkår for å starte igjen.">
+				>
+				["at0138"] = <
+					text = <"Generisk bytte utført">
+					description = <"Et legemiddel som var bioekvivalent til det ordinerte ble utdelt.">
+				>
+				["at0139"] = <
+					text = <"Generisk bytte ikke utført">
+					description = <"Det ble ikke utført generisk bytte, til tross for at dette var tillatt i ordineringen.">
+				>
+				["at0140"] = <
+					text = <"Administrasjonsdetaljer">
+					description = <"Detaljer om kroppssted og administrasjon av legemiddelet.">
+				>
+				["at0141"] = <
+					text = <"Anatomisk lokalisering">
+					description = <"Kroppsstedet der legemiddelet eller vaksinen ble administrert.">
+					comment = <"For eksempel \"venstre overarm\" eller \"PVK høyre hånd\". Koding av den anatoiske lokaliseringen med en terminologi foretrekkes der det er mulig.">
+				>
+				["at0142"] = <
+					text = <"Strukturert anatomisk lokalisering">
+					description = <"Strukturert beskrivelse av administrasjonsstedet for legemiddelet eller vaksinen.">
+				>
+				["at0143"] = <
+					text = <"Administrasjonsmetode">
+					description = <"Metoden legemiddelet ble administrert.">
+					comment = <"For eksempel \"via forstøver\".">
+				>
+				["at0144"] = <
+					text = <"Detaljer om administrasjonsutstyr">
+					description = <"Detaljer om utstyret som ble brukt for å administrere legemiddelet.">
 				>
 			>
 		>
