@@ -19,7 +19,6 @@ language
 				["name"] = <"Lars Bitsch-Larsen, Vebjørn Arntzen">
 				["organisation"] = <"Haukeland University Hospital of Bergen / Oslo University Hospital, Norway">
 			>
-			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
 		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
@@ -62,14 +61,14 @@ Where not specifically recorded, values of 21% O2, FiO2 of 0.21 and Oxygen flow 
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For registrering av mengden av tilgjengelig oksygen som gis til en pasient på observasjons tidspunktet. Standard verdi 21% O2, Fi02 of 0.21 og Oksygen flow 0.">
-			use = <"Brukes i en ACTION-arketype for å spesifisere oksygenterapi eller i en OBSERVATION-arketype, som for eksempelBlodgass eller Respirasjon som en del av pasientstatus, hvor kunnskap om eventuell oksygentilførsel er kritisk for tolking av observasjonen.
+			purpose = <"For registrering av mengden av tilgjengelig oksygen som gis til en pasient på observasjonstidspunktet. Standard verdi 21% O2, Fi02 of 0.21 og Oksygen flow 0.">
+			use = <"Brukes i en ACTION-arketype for å spesifisere oksygenterapi eller i en OBSERVATION-arketype, som for eksempel \"Oksimetri\" eller \"Åndedrett\" som en del av pasientstatus, hvor kunnskap om eventuell oksygentilførsel er kritisk for tolking av observasjonen.
 
 Atmosfærisk trykk er antatt å være tilsvarende som ved havoverflaten, dersom det ikke er nærmere angitt.
 
 Hvis det ikke er angitt nærmere, kan det antas at individet er i omgivelser der det er 21% O2, FiO2 er 0.21 og ingen ekstra oksygentilførsel er gitt.
 
-Selv om konseptnavnet i denne arketypen er \"Innåndet oksygen\" betyr det ikke at mengden oksygen som er ordinert eller gitt, og som normalt er rapportert i kliniske journaler som for eksempel \"pasienten får 3 liter O2 på nesekateter\", nødvendigvis at individet faktisk fysiologisk puster inn 3 liter O2. Dette vil variere med administrasjonsmåte eller andre utenomforliggende faktorer.">
+Selv om konseptnavnet i denne arketypen er \"Innåndet oksygen\" betyr det ikke at mengden oksygen som er ordinert eller gitt at individet nødvendigvis faktisk puster inn den oppgitte oksygenblandingen. For eksempel kan det være rapportert i kliniske journaler at \"pasienten får 3 liter O2 på nesekateter\". Den faktisk innpustede oksygenblandingen vil variere med administrasjonsmåte eller andre utenomforliggende faktorer.">
 			keywords = <"pusting", "respirasjon", "luft", "oksygen", "O2">
 			misuse = <"Skal ikke brukes for andre innpustede gasser, som nitrogenoksid.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
@@ -85,8 +84,8 @@ Oxygen therapy. In: Wikipedia, the free encyclopedia [Internet]. 2015 [cited 201
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"463BA49ABEC5E092F4152CC55304FBF0">
-		["build_uid"] = <"ae1bb95a-0302-44d7-ba32-c7fb579bc7eb">
+		["MD5-CAM-1.0.1"] = <"FDE4C58C1172F2A3A0083580CBCF0AD7">
+		["build_uid"] = <"8b61a295-8cc2-4381-ac3e-4dd5be2955c7">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -276,17 +275,17 @@ ontology
 				["at0051"] = <
 					text = <"Oksygen flow">
 					description = <"Oksygen flow gitt til et individ.">
-					comment = <"For eksempel '5l/min'.">
+					comment = <"For eksempel '5 l/min'.">
 				>
 				["at0052"] = <
 					text = <"FiO2">
 					description = <"Oksygenfraksjonen av innåndet oksygen.">
-					comment = <"For eksempel '0.28'.">
+					comment = <"For eksempel '0,28'.">
 				>
 				["at0053"] = <
 					text = <"Prosent O2">
 					description = <"Prosent innåndet oksygen.">
-					comment = <"For eksempel '24%'.">
+					comment = <"For eksempel '24 %'.">
 				>
 				["at0054"] = <
 					text = <"Administrasjonsmåte for oksygen">
@@ -295,13 +294,13 @@ ontology
 				>
 				["at0057"] = <
 					text = <"På romluft">
-					description = <"Individet får luft som tilsvarer 21% O2, 0.21 FiO2 og en oksygenflow rate på 0 liter per minutt.">
+					description = <"Individet får luft som tilsvarer 21 % O2 (alternativt 0.21 FiO2) og en oksygenflow rate på 0 liter per minutt.">
 					comment = <"Hvis \"På romluft\" er satt som Sann, bør ikke Flow rate, FiO2 og Prosent O2 registreres. Motsatt: \"På romluft\" bør være uutfyllt eller satt til Usann, dersom FiO2 eller Prosent O2 er registrert.">
 				>
 				["at0058"] = <
 					text = <"Detaljer om oksygentilførsel">
 					description = <"Ytterligere detaljer om administrasjonsmåte på oksygentilførselen.">
-					comment = <"For eksemlpel detaljer om assistert ventilasjon (CPAP, etc), intubering, uftfukting">
+					comment = <"For eksempel detaljer om assistert ventilasjon (CPAP, etc), intubering, luftfukting, puritanmaske, etc.">
 				>
 			>
 		>
