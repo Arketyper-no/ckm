@@ -22,20 +22,6 @@ description
 		["date"] = <"2016-11-17">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"To record the identification of the individual's religious or non-religious beliefs and/or practices which may be used for purposes related to provision of healthcare or other services.">
-			use = <"Use to record the identification of the individual's religious or non-religious beliefs and/or practices and a general description about the impact of the individual's identified religious affiliation on the delivery of health services.
-
-If this archetype is being used within a health record context where a demographic server is deployed, then the relevant demographic data may be used to populate the data elements in this archetype.
-
-This archetype has been designed to be used within the EVALUATION.social_summary or other archetypes where clinically relevant.
-
-If the religion of someone other than the subject of care, such as their parents, needs to be recorded, restrict the \"Subject\" reference model element to specify the role.">
-			keywords = <"religion", "spiritual", "belief", "religious", "atheism", "agnosticism", "attitude", "sacred", "profane", "secular", "atheist", "agnostic", "faith", "creed", "practice">
-			misuse = <"Not to be used to record the specific preferences for care that may be related to a religious affiliation, especially those that might drive decision support. For example, record a dietary preference within archetypes recording diet requirements or a treatment preference within archetypes recording patient preferences.">
-			copyright = <"© Australian Digital Health Agency, Nasjonal IKT HF, openEHR Foundation">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere et individs livssyn og/eller religiøs eller ikke-religiøs praksis som kan ha betydning for utføring av helsetjenester eller andre tjenester.">
@@ -46,13 +32,27 @@ Brukes denne arketypen i et EPJ som benytter seg av et sentralt demografiregiste
 Arketypen er ment brukt i arketypen EVALUATION.social_summary (Sosialanamnese) eller i andre relevante arketyper.
 
 Har man behov for å registrere livssynet til noen andre enn individet som dokumentasjonen omhandler, for eksempel individets foreldre, settes begrensinger på referansemodellelementet \"Subject\" for å spesifisere rollen.">
-			keywords = <"religion", "åndelig", "tro", "religiøs", "ateisme", "ateist", "agnostisisme", "agnostiker", "holdning", "hellig", "profan", "sekulær", "verdisyn", "overbevisning", "humanisme">
+			keywords = <"religion", "åndelig", "tro", "religiøs", "ateisme", "ateist", "agnostisisme", "agnostiker", "holdning", "hellig", "profan", "sekulær", "verdisyn", "overbevisning", "humanisme", "trosretning">
 			misuse = <"Brukes ikke for å registrere pasientens behandlingsønsker som kan være knyttet til et livssyn, særlig de som kan benyttes ved beslutningsstøtte. For eksempel skal ønsker knyttet til ernæring registreres i arketyper som omhandler ernæringsbehov. Behandlingsønsker registreres i arketyper som omhandler pasientens behandlingsønsker.">
+			copyright = <"© Australian Digital Health Agency, Nasjonal IKT HF, openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the identification of the individual's religious or non-religious beliefs and/or practices which may be used for purposes related to provision of healthcare or other services.">
+			use = <"Use to record the identification of the individual's religious or non-religious beliefs and/or practices and a general description about the impact of the individual's identified religious affiliation on the delivery of health services.
+
+If this archetype is being used within a health record context where a demographic server is deployed, then the relevant demographic data may be used to populate the data elements in this archetype.
+
+This archetype has been designed to be used within the EVALUATION.social_summary or other archetypes where clinically relevant.
+
+If the religion of someone other than the individual who is the subject of the health record, such as their parents, needs to be recorded, restrict the \"Subject\" reference model element to specify the role.">
+			keywords = <"religion", "spiritual", "belief", "religious", "atheism", "agnosticism", "attitude", "sacred", "profane", "secular", "atheist", "agnostic", "faith", "creed", "practice">
+			misuse = <"Not to be used to record the specific preferences for care that may be related to a religious affiliation, especially those that might drive decision support. For example, record a dietary preference within archetypes recording diet requirements or a treatment preference within archetypes recording patient preferences.">
 			copyright = <"© Australian Digital Health Agency, Nasjonal IKT HF, openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Ivar Berge, Oslo Universitetssykehus, Norway", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Mate Bestek, Ministry of Health of the Republic of Slovenia, Slovenia", "Anita Bjørnnes, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Daniel Habashi, PasientSky AS, Norway", "Stig Erik Hegrestad, Helse Førde, Norway", "Anca Heyd, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Gunn-Lisbeth Kleiven, Oslo universitetssykehus HF, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Liv Ingrid Svela, Helse Bergen HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Ivar Berge, Oslo Universitetssykehus, Norway", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Mate Bestek, National Institute of Public Health of Slovenia, Slovenia", "Anita Bjørnnes, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Daniel Habashi, PasientSky AS, Norway", "Stig Erik Hegrestad, Helse Førde, Norway", "Anca Heyd, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Gunnar Jårvik, Nasjonal IKT HF, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Gunn-Lisbeth Kleiven, Oslo universitetssykehus HF, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Liv Ingrid Svela, Helse Bergen HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -63,20 +63,20 @@ Religion, Draft Archetype [Internet]. Australian Digital Health Agency, Australi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"AE2EF0A65CD86928D0F7DD961D2BEB02">
-		["build_uid"] = <"ca3dd066-7435-4f24-a4b7-edd7fbbd45fa">
+		["MD5-CAM-1.0.1"] = <"35BE5842B211C3BE1F0187E2F98EC374">
+		["build_uid"] = <"a4244b85-c72e-460f-95e3-7604c2ddc0af">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Livvsyn
+	CLUSTER[at0000] matches {	-- Livssyn
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] occurrences matches {0..*} matches {	-- Livvsyn
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Beskrivelse
+			ELEMENT[at0003] occurrences matches {0..*} matches {	-- *Impact on care(en)
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -115,8 +115,8 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Impact on care">
-					description = <"Narrative description about how care needs to be modified to support the individual's religious practice.">
-					comment = <"For example: Needs assistance to get out of bed to pray. Would like regular pastoral care.">
+					description = <"Description about how care needs to be modified to support the individual's religious practice.">
+					comment = <"For example: requires a female clinician; needs assistance to get out of bed to pray; or would like regular pastoral care.">
 				>
 				["at0004"] = <
 					text = <"Details">
@@ -133,7 +133,7 @@ ontology
 					comment = <"For eksempel: Kristendom, Katolisisme, Islam, Wiccan, Humanisme, Animisme, Ateisme, Agnostisisme eller ingen.">
 				>
 				["at0001"] = <
-					text = <"Livvsyn">
+					text = <"Livssyn">
 					description = <"Navn på livssyn og/eller praksis som individet identifiserer seg med, eller har tilknytning til.">
 					comment = <"For eksempel: Kristendom, Katolisisme, islamisme, wicca, humanisme, animisme, ateisme, agnostisisme eller ingen. Koding av \"Livssyn\" med en terminologi er ønskelig der det er mulig.">
 				>
@@ -144,7 +144,7 @@ ontology
 				["at0003"] = <
 					text = <"Innvirkning på behandling">
 					description = <"Fritekstbeskrivelse av hvordan behandling/pleie må tilpasses for å støtte individets livssyn og praksis.">
-					comment = <"For eksempel: Trenger hjelp til å stå opp av senga for å be. Ønsker regelmessig kontakt med en prest.">
+					comment = <"For eksempel: Foretrekker en kvinnelig kliniker, trenger hjelp til å stå opp av sengen for å be. Ønsker regelmessig kontakt med en prest.">
 				>
 				["at0004"] = <
 					text = <"Detaljer">
