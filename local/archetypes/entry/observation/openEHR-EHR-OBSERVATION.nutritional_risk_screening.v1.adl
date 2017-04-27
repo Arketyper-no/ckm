@@ -2,14 +2,15 @@
 	openEHR-EHR-OBSERVATION.nutritional_risk_screening.v1
 
 concept
-	[at0000]	-- NRS 2002
+	[at0000]	-- Nutritional Risk Screening (NRS 2002)
 language
-	original_language = <[ISO_639-1::nb]>
+	original_language = <[ISO_639-1::en]>
 	translations = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"?">
+				["name"] = <"Gro-Hilde Ulriksen">
+				["organisation"] = <"Nasjonal senter for ehelseforskning/Forvaltningssenter EPJ Helse Nord">
 			>
 		>
 	>
@@ -23,15 +24,17 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"Tool for screening of patiens nutritional status.">
-			use = <"To be used in adults 
-The first 4 questions are prescreening, if any of theses questions is answered YES
-Calculate the total score:
-  1. Find score (0–3) for Impaired nutritional status (only one: choose the variable with highest score) and Severity of disease (≈stress metabolism, i.e. increase in nutritional requirements).
-  2. Add the two scores (→ total score)
-  3. If age ≥70 years: add 1 to the total score to correct for frailty of elderly
-  4. If age-corrected total ≥3: start nutritional support">
-			misuse = <"Not to be used in children">
+			purpose = <"NRS is a tool used for screening the patients nutritional status. There are several NRS models, in this case a translation from 2014 made by Lene Thoresen and Hilde Wøie and corrected by Jens Kondrup is used. The version recommended by the Norwegian Directorate of Health has other time interval values ​​in the scores.
+Nutritional risk is defined by combining current nutritional status and the risk of impaired nutritional status due to increased need for nutrition, caused by stress metabolism in the clinical situation.">
+			use = <"To be used for adults only. 
+The first 4 questions are used as a initial screening.
+The main screening is only done if any of the questions in the initial screening are answered YES
+If all the questions in the initial screening is answered \"NO\" the patient needs a weekly re screening. 
+If a patient, e.g will undergo a planned major surgery, a preventive nutritional plan needs to be considered to avoid expected nutritional risks.
+
+Is the total score ≥3 the patient has a nutritional risk, and a nutritional plan needs to be effectuated. If the total score is <3 the patient needs weekly re screening. If the patient e.g will undergo major surgery a preventive nutrition plan have to be considered to avoid the expected nutritional risk.">
+			keywords = <"nutrition", "Nutritional risk screening", "NRS", "NRS 2002", "malnutrition", "undernourishment", "weight loss", "weight", "BMI", "nutritional risk">
+			misuse = <"Not to be used in children under the age of 18 years old.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
@@ -67,8 +70,8 @@ Thoresen og Wøien (2014), Screening for ernæringsmessig risiko (Nutritional Ri
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"7946FB984163A3DEC720A3EC2D980D1E">
-		["build_uid"] = <"0ccaa73d-d3e6-4a54-b2dd-82f0965b45a3">
+		["MD5-CAM-1.0.1"] = <"F69BECBC0C25A015F24DFAA9A18DD13F">
+		["build_uid"] = <"9b3dc8bd-edeb-446f-9ead-b7740d50d1df">
 		["revision"] = <"1.0.1-alpha">
 	>
 
@@ -170,138 +173,148 @@ definition
 	}
 
 
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Nutritional risk screening(nb)">
-					description = <"*Screening for malnutrition using the tool NRS 2002.(nb)">
+					text = <"Nutritional Risk Screening (NRS 2002)">
+					description = <"Screening for malnutrition using the tool NRS 2002.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*Any event(nb)">
-					description = <"*(nb)">
+					text = <"Unspecified event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
-					text = <"*Tree(nb)">
-					description = <"*@ internal @(nb).(nb)">
+					text = <"Tree">
+					description = <"@ internal @(nb).">
 				>
 				["at0004"] = <
-					text = <"*Er BMI < 20,5?(nb)">
-					description = <"*Er pasientens BMI under 20,5?(nb)">
+					text = <"Is the body mass index <20.5 kg/m²?">
+					description = <"Is the patients body mass index below 20.5 kg/m²?">
 				>
 				["at0005"] = <
-					text = <"*Har pasienten tapt vekt de siste tre månendene?(nb)">
-					description = <"*Vekttap de siste ukene?(nb)">
+					text = <"Has the patient lost weight in the previous 3 months?">
+					description = <"Weightloss during the last 3 months?">
 				>
 				["at0006"] = <
-					text = <"*Har pasienten hatt redusert næringsinntak den siste uken?(nb)">
-					description = <"*Redusert ernæringsinntak siste uken?(nb)">
+					text = <"Was nutritional intake reduced in the previous week?">
+					description = <"Reduced nutritional intake in the previous week?">
 				>
 				["at0007"] = <
-					text = <"*Er pasienten alvorlig syk.(nb)">
-					description = <"*Alvorlig sykdom? (Eksempel intensivopphold).(nb)">
+					text = <"Is the patient very ill? (e.g. in intensive care)?">
+					description = <"Do the patient have an increased stress metabolism related to relevant disease (trauma, intensive care patient).">
 				>
 				["at0016"] = <
-					text = <"*Ernæringstilstand(nb)">
-					description = <"*Kartlegging av ernæringstilstand.(nb)">
+					text = <"Nutritional status">
+					description = <"Nutritional status (≈ degree of weakening).">
 				>
 				["at0017"] = <
-					text = <"Severity of disease.">
-					description = <"*">
+					text = <"Illness severity">
+					description = <"Severity of disease (≈ increased needs).">
+					comment = <"Indicates that a study directly underpins dividing the disease severity in mild, moderate and severe disease for patients with a certain diagnosis.
+#Indicates the the diagnosis is based on the prototypes below: 
+
+Score=1: a patient with chronic illness admitted to the hospital with complications. The patient is weakened but ambulatory. The protein requirement is substantially increased, this is manageable with food and/or nutritional supplements. 
+
+Score=2: a patient at bed rest due to illness e.g. after major abdominal surgery. The protein requirement is significantly increased, this is manageable, however it is often necessary to use tube feeding and/or intravenous nutrition. 
+
+Score=3: an intensive care patient needing ventilation support etc. The protein requirement is increased and is not manageable even with tube feeding and/or intravenous nutrition. There is a risk of significantly inhibiting the degeneration of proteins and nitrogen loss.">
 				>
 				["at0018"] = <
-					text = <"*Normal(nb)">
-					description = <"*Normal ernæringstilstand.(nb)">
+					text = <"None">
+					description = <"Normal nutritional status.">
 				>
 				["at0019"] = <
-					text = <"*Mild(nb)">
-					description = <"*Vekttap > 5 % siste 3 mnd. eller  matinntak < 50 – 75 % av behov siste uke.(nb)">
+					text = <"Mild">
+					description = <"Weight loss > 5% over the last 3 months or nutritional intake <50–75% of required nutritional intake in the previous week.">
 				>
 				["at0020"] = <
-					text = <"*Moderat(nb)">
-					description = <"*Vekttap  > 5 % siste 2 mnd. eller BMI 18.5 – 20.5 og redusert allmenntilstand eller  matinntak 25–50 % av behov sist uke.(nb)">
+					text = <"Moderate">
+					description = <"Weight loss >5% within 2 months or BMI 18.5–20.5 kg/m² and reduced general condition (GC) or nutritional intake 25–50% of required nutritional intake in the previous week.">
 				>
 				["at0021"] = <
-					text = <"*Alvorlig(nb)">
-					description = <"*Vekttap > 5 % siste mnd. eller BMI < 18.5 og redusert allmenntilstand eller  matinntak 0–25 % av behov siste uke.(nb)">
+					text = <"Severe">
+					description = <"Weight loss >5 % within a month (>15% over the last 3 months) or BMI <18.5
+kg/m² and reduced general condition or nutritional intake 0–25% of required nutritional intake in the previous week.">
 				>
 				["at0022"] = <
-					text = <"Absent.">
-					description = <" Normal nutritional requirements.">
+					text = <"None">
+					description = <"Normal nutritional requirements.">
 				>
 				["at0023"] = <
-					text = <"*Mild(nb)">
-					description = <"*En pasient med kronisk sykdom eller en pasient som har 
-gjennomgått et mindre kirurgisk inngrep.(nb)">
+					text = <"Mild">
+					description = <"For example: Femoral neck fracture, chronic disease especially if complications are present: liver cirrhosis*, chronic obstructive lung disease*, chronic hemodialysis#, diabetes#, cancer#. Patients that have a disease that causes a mildly reduced general condition status.">
 				>
 				["at0024"] = <
-					text = <"*Moderat(nb)">
-					description = <"*En pasient med tydelig redusert allmenntilstand pga sin sykdom.(nb)">
+					text = <"Moderate">
+					description = <"For example: Major abdominal surgery*, stroke*, severe pneumonia, hematologic cancers.">
 				>
 				["at0025"] = <
-					text = <"*Alvorlig(nb)">
-					description = <"*En pasient som er alvorlig syk.(nb)">
+					text = <"Severe">
+					description = <"For example: Head injury*, bone marrow transplantation*,
+patients in intensive care (APACHE-II >10).">
 				>
 				["at0027"] = <
-					text = <"Age 70 and over.">
-					description = <"*">
+					text = <"Is the patients age ≥ 70?">
+					description = <"Is the patients age 70 or more.">
 				>
 				["at0028"] = <
-					text = <"*Nei(nb)">
-					description = <"*Pasienten er yngre enn 70 år.(nb)">
+					text = <"No">
+					description = <"The patient is younger than 70 years.">
 				>
 				["at0029"] = <
-					text = <"*Ja(nb)">
-					description = <"*Pasienten er 70 år eller eldre.(nb)">
+					text = <"Yes">
+					description = <"The patient is 70 years or old.">
 				>
 				["at0030"] = <
-					text = <"*Total aldersjustert score(nb)">
-					description = <"*Summen av score fra ernæringstilstand, sykdommens alvorlighetsgrad og aldersjustering.(nb)">
+					text = <"Total score (age adjusted)">
+					description = <"The total score is a combination of nutritional status, disease severity and age.">
 				>
 				["at0031"] = <
-					text = <"*Innledende screening(nb)">
-					description = <"*Dersom svaret er \"Ja\" på noen av de innledende spørsmålene, gjennomføres hovedscreeningen.(nb)">
+					text = <"Initial screening">
+					description = <"The main screening is done if any of the questions in the inital iscreening is answered \"YES\".">
 				>
 				["at0032"] = <
-					text = <"*Hovedscreening(nb)">
-					description = <"*Den avsluttende screeningen gjennomføres kun dersom det svares \"Ja\" på noen av spørsmålene i den innledende screeningen.(nb)">
+					text = <"Main screening">
+					description = <"The main screening is performed only if any of the questions in the initial screening is answered \"YES\".">
 				>
 				["at0033"] = <
-					text = <"*Ja(nb)">
-					description = <"*Pasientens BMI er under 20,5.(nb)">
+					text = <"Yes">
+					description = <"The patients body mass index is below 20.5 kg/m².">
 				>
 				["at0034"] = <
-					text = <"*Nei(nb)">
-					description = <"*Pasientens BMI er over eller lik 20,5.(nb)">
+					text = <"No">
+					description = <"The patients body mass index is equal or above 20.5 kg/m².">
 				>
 				["at0035"] = <
-					text = <"*Ja(nb)">
-					description = <"*Pasienten har tapt vekt i løpet av de 3 siste månedene.(nb)">
+					text = <"Yes">
+					description = <"The patient has lost weight during the last 3 months.">
 				>
 				["at0036"] = <
-					text = <"*Nei(nb)">
-					description = <"*Pasienten har ikke tapt vekt i løpet av de 3 siste månedene.(nb)">
+					text = <"No">
+					description = <"The patient did not lose weight during the last 3 months">
 				>
 				["at0037"] = <
-					text = <"*Ja(nb)">
-					description = <"*Pasienten har hatt redusert næringsinntak i den siste uken.(nb)">
+					text = <"Yes">
+					description = <"The patient had reduced nutritional intake in the previous week.">
 				>
 				["at0038"] = <
-					text = <"*Nei(nb)">
-					description = <"*Pasienten har ikke hatt redusert næringsinntak i den siste uken.(nb)">
+					text = <"No">
+					description = <"Reduced nutritional intake in the previous week?">
 				>
 				["at0039"] = <
-					text = <"*Ja(nb)">
-					description = <"*Pasienten er alvorlig/kritisk syk.(nb)">
+					text = <"Yes">
+					description = <"The patient is very ill (e.g. in intensive care).">
 				>
 				["at0040"] = <
-					text = <"*Nei(nb)">
-					description = <"*Pasienten er ikke alvorlig/kritisk syk.(nb)">
+					text = <"No">
+					description = <"The patient is not very ill.">
 				>
 			>
 		>
