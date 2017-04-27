@@ -86,8 +86,8 @@ NEL - Nevrologiske prosedyrer (30.07.15) Overvåkning og Glasgow Coma Scale. Hen
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"13FA86A3462CDEE72019FFF90453F47E">
-		["build_uid"] = <"20b94f5b-ec57-4be1-8e7f-22da8a7d7d44">
+		["MD5-CAM-1.0.1"] = <"775ECBA10B07787131ABF388FC795138">
+		["build_uid"] = <"2bf62e83-5095-4aed-baa7-593392aa1cef">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -96,7 +96,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- Tidspunkt
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {3..*; unordered} matches {
@@ -341,8 +341,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uspesifisert hendelse">
-					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+					text = <"Tidspunkt">
+					description = <"Spesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
