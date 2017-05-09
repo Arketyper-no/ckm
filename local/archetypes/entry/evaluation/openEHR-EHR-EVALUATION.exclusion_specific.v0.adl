@@ -29,7 +29,7 @@ description
 
 This archetype has been specifically designed to make a clear and unambiguous statement of a specific exclusion of a type of clinical item from the health record. This approach is used in preference to relying on flags or terminology to express negation.
 
-The data element 'Excluded concept' allows for recording of a single specific statement. The different specific concepts listed in the \"Excluded concept' run-time name constraint identifies the the different specific exclusions. This name constraint can be applied during template modelling or at run-time within a software application.
+The data element 'Excluded concept' allows for recording of a single specific statement. The different specific concepts listed in the \"Excluded concept' run-time name constraint identifies the different specific exclusions. This name constraint can be applied during template modelling or at run-time within a software application.
 
 Each specific exclusion should be recorded in a separate instance of this archetype. For example: record 'no past history of adverse reaction to penicillin V', 'no past history of adverse reaction to cephalosporins' and 'no known family history of heart disease' in 3 separately constrained instances of this archetype.
 
@@ -68,7 +68,7 @@ Brukes ikke denne arketypen for registrering av fravær av infomasjon - bruk ark
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "SumanBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Annette Hole Sjøborg, DIPS ASA, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Hanne Joensen, Helse- bergen HUS, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Arild Stangeland, Helse Bergen, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "SumanBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Annette Hole Sjøborg, DIPS ASA, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Hanne Joensen, Helse Bergen HUS, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Navin Ramachandran, NHS, United Kingdom", "Arild Stangeland, Helse Bergen, Norway", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -78,8 +78,8 @@ Exclusion statement, Deprecated Archetype [Internet]. openEHR Foundation, openEH
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"42E1A62D06EC2CCD8E887788EA6F4C60">
-		["build_uid"] = <"7bbb1f5f-1b9f-4c40-9cef-bfff9cec7503">
+		["MD5-CAM-1.0.1"] = <"5BECABC6309644ADCC6F62F3D8987848">
+		["build_uid"] = <"2b8d3774-1a3d-4fdf-961b-1bc0176a799d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -152,7 +152,8 @@ ontology
 				["at0003"] = <
 					text = <"Excluded concept">
 					description = <"Identification of the specific concept which has been excluded.">
-					comment = <"Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using ''Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.
+					comment = <"Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.
+
 Coding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.
 
 If a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant.">
