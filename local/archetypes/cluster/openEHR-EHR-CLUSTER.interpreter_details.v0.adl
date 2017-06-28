@@ -5,6 +5,15 @@ concept
 	[at0000]	-- Interpreter details
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand">
+				["organisation"] = <"Helse Bergen HF, Norway">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -27,6 +36,19 @@ Use to provide persistent information about the individual's needs for an interp
 			misuse = <"">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere detaljer om individets tolkebehov i kommunikasjon.">
+			use = <"Brukes for å registrere detaljer om individets tolkebehov i kommunikasjon.
+
+Denne arketypen er utviklet for bruk i en hvilken som helst ENTRY- eller CLUSTER-arketype for å gi kontekst enten til en forespørsel om tolk, en tolkning som er gjennomført eller for å gi en varig oversikt over individets behov for tolk.
+
+Brukes for å registrere en strukturert forespørsel etter tolk som en del av en henvisning, for eksempel ved å benytte SLOT'et \"Pasientens behov\" i arketypen INSTRUCTION.request (Helsetjenesterekvirering).
+
+Brukes for å gi en varig oversikt over individets behov for tolk ved benytte SLOTet \"Detaljer\" i arketypen EVALUATION.social_summary (Sosialanamnese).">
+			keywords = <"tolk", "språk">
+			misuse = <"">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"John Tore Valand, Helse Bergen HF, Norway", ...>
@@ -37,8 +59,8 @@ Use to provide persistent information about the individual's needs for an interp
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"C367CA310069E092DBD0C889663DE77D">
-		["build_uid"] = <"b5b487dd-59fa-46c7-8b61-4c90a146074d">
+		["MD5-CAM-1.0.1"] = <"A89B5422C0D9F51830E78704DD464E95">
+		["build_uid"] = <"b41f41c1-bc7c-4214-bd16-ac911c286060">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -149,7 +171,6 @@ ontology
 				["at0004"] = <
 					text = <"Interpreter">
 					description = <"Identification of the interpreter that either performed or is requested for the interpretation, including qualifications.">
-					comment = <"Only use this SLOT if Participations are not implemented.">
 				>
 				["at0005"] = <
 					text = <"Sign language">
@@ -161,7 +182,7 @@ ontology
 				>
 				["at0008"] = <
 					text = <"Dialect">
-					description = <"The individual's dialect.">
+					description = <"The name of the dialect.">
 				>
 				["at0009"] = <
 					text = <"Modality">
@@ -215,6 +236,97 @@ ontology
 				["at0029"] = <
 					text = <"Female">
 					description = <"The individual preferres a female interpretor or the interpretation was performed by a female interpretor.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tolk">
+					description = <"Detaljer om individets behov for å ha en tolk involvert i kommunikasjon.">
+				>
+				["at0001"] = <
+					text = <"Type tolkning">
+					description = <"Identifisering av hvilken type tolkning det er behov for.">
+				>
+				["at0002"] = <
+					text = <"Språk">
+					description = <"Navnet på språket.">
+					comment = <"For eksempel norsk, nederlandsk eller tysk. Koding av \"Språk\" med en terminologi er ønskelig om mulig.">
+				>
+				["at0003"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekstbeskrivelse om tolken eller tolkningen.">
+					comment = <"For eksempel: Interaksjonen med tolken var utilfredsstillende og individet har muligens ikke forstått inneholdet i samtalen med klinikeren.">
+				>
+				["at0004"] = <
+					text = <"Detaljer">
+					description = <"Detaljer om tolken som enten utførte eller er forespurt om tolkning. Også kvalifikasjoner.">
+				>
+				["at0005"] = <
+					text = <"Tegnspråk">
+					description = <"Tegnspråktolk">
+				>
+				["at0006"] = <
+					text = <"Språk">
+					description = <"Språktolk">
+				>
+				["at0008"] = <
+					text = <"Dialekt">
+					description = <"Navnet på dialekten.">
+				>
+				["at0009"] = <
+					text = <"Modalitet">
+					description = <"Foretrukket modalitet for tolkning eller modalitet som ble benyttet under tolkningen.">
+				>
+				["at0010"] = <
+					text = <"Oppmøte">
+					description = <"Fysisk tilstedeværelse av tolken.">
+				>
+				["at0011"] = <
+					text = <"Video">
+					description = <"Tolkning via skjerm.">
+				>
+				["at0012"] = <
+					text = <"Telefon">
+					description = <"Telefontolking">
+				>
+				["at0013"] = <
+					text = <"Ingen preferanser">
+					description = <"Individet har ingen preferanser tolkingens modalitet.">
+				>
+				["at0018"] = <
+					text = <"Språk">
+					description = <"Individets språk, dialekter og individets evne til å kommunisere det spesifiserte språket eller dialekten. Brukes for å spesifisere preferanser for tolkningen eller for å beskrive måten tolkningen ble gjennomført på.">
+				>
+				["at0019"] = <
+					text = <"Primærspråk">
+					description = <"Individets primærspråk.">
+				>
+				["at0020"] = <
+					text = <"Sekundærspråk">
+					description = <"Individets sekundærspråk.">
+				>
+				["at0025"] = <
+					text = <"Taktilt tegnspråk">
+					description = <"Taktilt tegnspråk tolk">
+				>
+				["at0026"] = <
+					text = <"Ferdighet">
+					description = <"Individets evne til å kommunisere språket eller dialekten.">
+					comment = <"Koding av \"Ferdighet\" med en terminologi er ønskelig om mulig.">
+				>
+				["at0027"] = <
+					text = <"Kjønn">
+					description = <"Individets ønske om tolk med et spesifikt kjønn eller kjønn på tolken som utførte tolkningen.">
+				>
+				["at0028"] = <
+					text = <"Mann">
+					description = <"Individet foretrekker en mannlig tolk eller tolkningen ble utført av en mannlig tolk.">
+				>
+				["at0029"] = <
+					text = <"Kvinne">
+					description = <"Individet foretrekker en kvinnelig tolk eller tolkningen ble utført av en kvinnelig tolk.">
 				>
 			>
 		>
