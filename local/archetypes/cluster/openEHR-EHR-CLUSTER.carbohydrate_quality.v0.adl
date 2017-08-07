@@ -1,0 +1,461 @@
+﻿archetype (adl_version=1.4; uid=9671b511-7a8d-4e8b-91e5-04a924f2f4e9)
+	openEHR-EHR-CLUSTER.carbohydrate_quality.v0
+
+concept
+	[at0000]	-- Dietary carbohydrate accessibility
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Inge Lindseth">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To register foods in the diet of an individual, based on the accessability of carbohydrates, which can be used in a composite index of the degree of accessability of carbohydrates in an individual's diet.">
+			use = <"To estimate the carbohydate quality in clinical trials and epidemiologic studies. If the carbohydrate quality as defined here can predict health outcomes, the arcehtypes as defined here can be used in clinical practice to give dietary advice to patients.
+			
+			This archetype has been designed to be used within the \"Nutrients\" SLOT of the OBSERVATION.food_item or in other ENTRY archetypes where clinically appropriate.">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"9398757991C5316BC9DFA5601D556E95">
+		["build_uid"] = <"2ef8baf5-1810-491d-b3f2-931de3588040">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Dietary carbohydrate accessability 
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Sifted grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Wholemeal grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Cracked/steel cut grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Cracked/steel gut grains (leavened)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {	-- Puffed grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {	-- Polished/pearled grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Rolled grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Whole grains
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0013] occurrences matches {0..1} matches {	-- Whole fruit/berries
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..1} matches {	-- Fruit/berry juice
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0015] occurrences matches {0..1} matches {	-- Fruit/berry smoothie
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0016] occurrences matches {0..1} matches {	-- Fruit/berry jam (no sugar added)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0017] occurrences matches {0..1} matches {	-- Dried fruit/berries
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0018] occurrences matches {0..1} matches {	-- Whole vegetables
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0019] occurrences matches {0..1} matches {	-- Mashed vegetables
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0020] occurrences matches {0..1} matches {	-- Powdered/"flour" vegetables
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0021] occurrences matches {0..1} matches {	-- Fructose
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0022] occurrences matches {0..1} matches {	-- High fructose corn syrup
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Sucrose
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {	-- Maltose
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0025] occurrences matches {0..1} matches {	-- Lactose
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0026] occurrences matches {0..1} matches {	-- Honey
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {	-- Agave
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {	-- Other mono- and disaccharides
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dietary carbohydrate accessibility">
+					description = <"\"Accessibility\" refers to the immediate accessability of carbohydrates from foods for the digestive system, based on the level of processing after harvest. I.e. accessability does not refer to intrinsic properties of a given food in the unprocessed form, but rather to the changes that have been introduced to a food due to processing.">
+				>
+				["at0005"] = <
+					text = <"Sifted grains">
+					description = <"The amount of sifted grains consumed.">
+				>
+				["at0006"] = <
+					text = <"Wholemeal grains">
+					description = <"The amount of wholemeal grains consumed.">
+				>
+				["at0007"] = <
+					text = <"Cracked/steel cut grains">
+					description = <"The amount of cracked/steel cut grains consumed.">
+				>
+				["at0008"] = <
+					text = <"Cracked/steel gut grains (leavened)">
+					description = <"The amount of cracked/steel cut grains (leavened) consumed.">
+				>
+				["at0009"] = <
+					text = <"Puffed grains">
+					description = <"The amount of puffed grains consumed.">
+				>
+				["at0010"] = <
+					text = <"Polished/pearled grains">
+					description = <"The amount of polished/pearled grains consumed.">
+				>
+				["at0011"] = <
+					text = <"Rolled grains">
+					description = <"The amount of rolled grains consumed.">
+				>
+				["at0012"] = <
+					text = <"Whole grains">
+					description = <"The amount of whole grains consumed.">
+				>
+				["at0013"] = <
+					text = <"Whole fruit/berries">
+					description = <"The amount of whole fruit/berries consumed.">
+				>
+				["at0014"] = <
+					text = <"Fruit/berry juice">
+					description = <"The amount of fruit/berry juice consumed.">
+				>
+				["at0015"] = <
+					text = <"Fruit/berry smoothie">
+					description = <"The amount of fruit/berry smoothie consumed.">
+				>
+				["at0016"] = <
+					text = <"Fruit/berry jam (no sugar added)">
+					description = <"The amount of fruit/berry jam (no sugar added) consumed.">
+				>
+				["at0017"] = <
+					text = <"Dried fruit/berries">
+					description = <"The amount of dried fruit/berries consumed.">
+				>
+				["at0018"] = <
+					text = <"Whole vegetables">
+					description = <"The amount of whole vegetables consumed.">
+				>
+				["at0019"] = <
+					text = <"Mashed vegetables">
+					description = <"The amount of mashed vegetables consumed.">
+				>
+				["at0020"] = <
+					text = <"Powdered/\"flour\" vegetables">
+					description = <"The amount of powdered/\"flour\" vegetables consumed.">
+				>
+				["at0021"] = <
+					text = <"Fructose">
+					description = <"The amount of fructose consumed.">
+				>
+				["at0022"] = <
+					text = <"High fructose corn syrup">
+					description = <"The amount of high fructose corn syrup consumed.">
+				>
+				["at0023"] = <
+					text = <"Sucrose">
+					description = <"The amount of sucrose consumed.">
+				>
+				["at0024"] = <
+					text = <"Maltose">
+					description = <"The amount of maltose consumed.">
+				>
+				["at0025"] = <
+					text = <"Lactose">
+					description = <"The amount of lactose consumed.">
+				>
+				["at0026"] = <
+					text = <"Honey">
+					description = <"The amount of honey consumed.">
+				>
+				["at0027"] = <
+					text = <"Agave">
+					description = <"The amount of agave consumed.">
+				>
+				["at0028"] = <
+					text = <"Other mono- and disaccharides">
+					description = <"The amount of other mono- or disaccharides consumed.">
+				>
+			>
+		>
+	>
