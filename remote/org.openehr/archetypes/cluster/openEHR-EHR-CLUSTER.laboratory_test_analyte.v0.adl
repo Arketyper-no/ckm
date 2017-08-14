@@ -1,0 +1,271 @@
+﻿archetype (adl_version=1.4; uid=1bee5cff-c5f5-4ee1-a8cf-8667a20dc2ca)
+	openEHR-EHR-CLUSTER.laboratory_test_analyte.v0
+
+concept
+	[at0000]	-- Laboratory test analyte
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Silje Ljosland Bakke">
+				["organisation"] = <"Nasjonal IKT HF">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"freshEHR Clinical Informatics, UK">
+		["email"] = <"ian@freshehr.com">
+		["date"] = <"2015-07-20">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere laboratorieanalyser som en enkeltverdi eller i en analysepakke.">
+			use = <"For å registrere laboratorieanalyser som en enkeltverdi eller i en analysepakke. Brukes normalt i arketypen OBSERVATION.laboratory_test.
+
+Navnene på elementene Laboratoriesvar/Svarverdi vil ordinært erstattes i en templat elller applikasjon med navnet på den spesifikke analysen. f.eks. \"Hemoglobin\", og ofte kodet med en terminologi som NLK, SNOMED CT eller LOINC.
+
+Der det kreves mer komplekse svarmønstre kan det være nødvendig å spesialisere denne arketypen, eller erstatte den med en annen.">
+			keywords = <"laboratorie", "panel", "batteri", "analytt", "analyse", "svar", "resultat", "pakke">
+			misuse = <"Skal ikke brukes til å registrere funn ved patologiundersøkelser.">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record individual, single value laboratory test analyte results, as are common to clinical pathology testing for example biochemistry, haematology and immunology.">
+			use = <"To record individual, single value laboratory test analyte results, as are common to clinical pathology testing, for example biochemistry, haematology and immunology. Normally used in conjunction with a parent OBSERVATION.laboratory_test_result archetype and in some circumstances will be carried within a CLUSTER.laboratory_test_panel archetype, along with other analytes which are normally tested and/or reported as part of a battery,panel or profile, though this is not necessary i.e multiple analytes may be carried directly within the OBERVATION.laboratory_test.
+
+The name attribute of the 'Analyte result' element is normally replaced in a specialisation, template or at run-time to carry the name of the specific analyte e.g. 'Haemoglobin', often coded with a reference terminology such as LOINC, SNOMED CT or NPU.
+
+This archetype may be used within the setting of more complex laboratory/pathology reporting such as Histopathlogy/ Anatomical synoptic reports where quantitative results such as cytometric flow studies or genetic testing are often reported alongside conventional macroscopic and microscopic reporting.">
+			keywords = <"laboratory", "pathology", "analyte", "constituent", "result">
+			misuse = <"Should not be used to record detailed Anatomical pathology macroscopic/microscopic findings, other then for additional testing such as cytometric flow studies or genetic testing.">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", "Nasjonal IKT, Norway">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Pathology Test Result, Draft Archetype [Internet]. Australian Digital Health Agency, Australian Digital Health Agency Clinical Knowledge Manager [cited: 2017-06-27]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.839 
+
+Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: National E-Health Transition Authority; 2007 May 29 [cited 2011 Jul 11]; Available at http://www.nehta.gov.au/component/docman/doc_download/962-pathology-v10
+
+Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory
+
+Hl7 FHIR Observation resource: HL7 [Internet]; [cited 2017 Jun 27]. Available from http://www.hl7.org/implement/standards/fhir/observation.html">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"2D45775CC5D1464E36A9CDE78B90E1F9">
+		["build_uid"] = <"6f37318e-ffe9-4976-a664-703e367239fb">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Laboratory test analyte
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {*}
+			ELEMENT[at0003] occurrences matches {0..*} matches {	-- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Reference range guidance
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Analyte result status
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0015, 	-- Registered
+							at0016, 	-- Partial
+							at0017, 	-- Preliminary
+							at0018, 	-- Final
+							at0019, 	-- Corrected
+							at0020, 	-- Amended
+							at0021, 	-- Appended
+							at0022, 	-- Entered in error
+							at0023]	-- Cancelled
+						}
+					}
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Analyte result status timestamp
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {	-- Analyte result detail
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Laboratory test analyte">
+					description = <"The result of a laboratory test for a single analyte value.">
+					comment = <"For example: 'Sodium', 'White cell count', 'T3'. Commonly coded with an external terminology,">
+				>
+				["at0001"] = <
+					text = <"Analyte result">
+					description = <"Actual value of the analyte result. The name of this element is normally replaced in a specialisation, in a template or at run-time to reflect the actual analyte e.g. Serum sodium and will often be coded.">
+					hl7v2_mapping = <"OBX.2,OBX.5,OBX.6; OBX-3-observation identifier">
+					fhir_mapping = <"Observation.result; Observation.name">
+				>
+				["at0003"] = <
+					text = <"Comment">
+					description = <"Comment about the analyte result.">
+					hl7v2_mapping = <"NTE.3">
+					fhir_mapping = <"Observation.comments">
+				>
+				["at0004"] = <
+					text = <"Reference range guidance">
+					description = <"Additional advice on the applicability of the reference range to this result or may carry text or coded textual guidance as to whether the result is within the normal range.">
+				>
+				["at0005"] = <
+					text = <"Analyte result status">
+					description = <"The status of the result value.">
+					hl7v2_mapping = <"OBX-11-observation result status">
+					fhir_mapping = <"status">
+				>
+				["at0006"] = <
+					text = <"Analyte result status timestamp">
+					description = <"The date and/or time that the entire result was issued for the recorded ‘Analyte result status’.">
+					hl7v2_mapping = <"OBX-22 and/or OBX-19">
+					fhir_mapping = <"Observation.issued">
+				>
+				["at0014"] = <
+					text = <"Analyte result detail">
+					description = <"Further detail regarding an individual result.">
+				>
+				["at0015"] = <
+					text = <"Registered">
+					description = <"The existence of the test is registered in the Laboratory Information System, but there is nothing yet available.">
+				>
+				["at0016"] = <
+					text = <"Partial">
+					description = <"This is a partial (e.g. initial, interim or preliminary) Test Result: data in the Test Result may be incomplete or unverified.">
+				>
+				["at0017"] = <
+					text = <"Preliminary">
+					description = <"Verified early results are available, but not all results are final. This is a sub-category of 'Partial'.">
+				>
+				["at0018"] = <
+					text = <"Final">
+					description = <"The Test result is complete and verified by an authorised person.">
+				>
+				["at0019"] = <
+					text = <"Corrected">
+					description = <"The result has been modified subsequent to being Final, and is complete and verified by the responsible pathologist.">
+				>
+				["at0020"] = <
+					text = <"Amended">
+					description = <"The result has been modified subsequent to being Final, and is complete and verified by the responsible pathologist, and result data has been changed. This is a sub-category of 'Corrected'.">
+				>
+				["at0021"] = <
+					text = <"Appended">
+					description = <"Subsequent to being final, the report has been modified by adding new content. The existing content is unchanged. This is a sub-category of 'Corrected'.">
+				>
+				["at0022"] = <
+					text = <"Entered in error">
+					description = <"The Test Result has been withdrawn following previous Final release.">
+				>
+				["at0023"] = <
+					text = <"Cancelled">
+					description = <"The result is unavailable because the test was not started or not completed (also sometimes called 'aborted').">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Laboratory test analyte(en)">
+					description = <"*The result of a laboratory test for a single laboratory test analyte. (en)">
+					comment = <"*For example: 'Sodium', 'White cell count', 'T3'. Commonly coded with an external terminology,(en)">
+				>
+				["at0001"] = <
+					text = <"*Analyte result(en)">
+					description = <"*Actual value of the analyte result. The name of this element is normally replaced in a specialisation, in a template or at run-time to relfect the actual analyte e.g. Serum sodium and will often be coded.(en)">
+					hl7v2_mapping = <"*OBX.2,OBX.5,OBX.6; OBX-3-observation identifier(en)">
+					fhir_mapping = <"*Observation.result; Observation.name(en)">
+				>
+				["at0003"] = <
+					text = <"Kommentar">
+					description = <"Kommentar om svaret.">
+				>
+				["at0004"] = <
+					text = <"*Reference range guidance(en)">
+					description = <"*Additional advice on the applicability of the reference range to this result or may carry text or coded textual guidance as to whether the result is within the normal range.(en)">
+				>
+				["at0005"] = <
+					text = <"*Analyte result status(en)">
+					description = <"*The status of the result value.(en)">
+					hl7v2_mapping = <"*OBX-11-observation result status(en)">
+					fhir_mapping = <"*status(en)">
+				>
+				["at0006"] = <
+					text = <"*Analyte result status timestamp(en)">
+					description = <"*The date and/or time that the entire result was issued for the recorded ‘Result status’.(en)">
+					hl7v2_mapping = <"*OBX-22 and/or OBX-19(en)">
+					fhir_mapping = <"*Observation.issued(en)">
+				>
+				["at0014"] = <
+					text = <"*Analyte result detail(en)">
+					description = <"*Further detail regarding an individual result.(en)">
+				>
+				["at0015"] = <
+					text = <"*Registered(en)">
+					description = <"*The existence of the test is registered in the Laboratory Information System, but there is nothing yet available.(en)">
+				>
+				["at0016"] = <
+					text = <"*Partial(en)">
+					description = <"*This is a partial (e.g. initial, interim or preliminary) Test Result: data in the Test Result may be incomplete or unverified.(en)">
+				>
+				["at0017"] = <
+					text = <"*Preliminary(en)">
+					description = <"*Verified early results are available, but not all results are final. This is a sub-category of 'Partial'.(en)">
+				>
+				["at0018"] = <
+					text = <"*Final(en)">
+					description = <"*The Test result is complete and verified by an authorised person.(en)">
+				>
+				["at0019"] = <
+					text = <"*Corrected(en)">
+					description = <"*The result has been modified subsequent to being Final, and is complete and verified by the responsible pathologist.(en)">
+				>
+				["at0020"] = <
+					text = <"*Amended(en)">
+					description = <"*The result has been modified subsequent to being Final, and is complete and verified by the responsible pathologist, and result data has been changed. This is a sub-category of 'Corrected'.(en)">
+				>
+				["at0021"] = <
+					text = <"*Appended(en)">
+					description = <"*Subsequent to being final, the report has been modified by adding new content. The existing content is unchanged. This is a sub-category of 'Corrected'.(en)">
+				>
+				["at0022"] = <
+					text = <"*Entered in error(en)">
+					description = <"*The Test Result has been withdrawn following previous Final release.(en)">
+				>
+				["at0023"] = <
+					text = <"*Cancelled(en)">
+					description = <"*The result is unavailable because the test was not started or not completed (also sometimes called 'aborted').(en)">
+				>
+			>
+		>
+	>
