@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>f71a0468-9cb9-408e-8e5c-e03bdb00c0b1</id>
+  <name>Oversikt over arketyper relatert til legemiddelordinering</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Klinisk kontakt">
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Legemiddelordinering" path="/content">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_substance.v0" concept_name="Legemiddelsubstans" path="/activities[at0001]/description[at0002]/items[at0143]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.therapeutic_direction.v1" concept_name="Terapeutisk anvisning" path="/activities[at0001]/description[at0002]/items[at0177]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.dosage_administration.v0" concept_name="Administreringsmønster" path="/items[at0176]">
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_daily.v0" concept_name="Timing - daily" path="/items[at0037]" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_repetition.v0" concept_name="Timing - repetition" path="/items[at0090]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.conditional_medication_rules.v0" concept_name="Conditional medication instructions" path="/items[at0156]" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_order_summary.v0" concept_name="Medication course summary" path="/activities[at0001]/description[at0002]/items[at0113]/items[at0112]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_authorisation.v0" concept_name="Medication authorisation" path="/activities[at0001]/description[at0002]/items[at0069]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_supply_amount.v0" concept_name="Leveringsmengde for legemidler" path="/activities[at0001]/description[at0002]/items[at0129]/items[at0065]" />
+    </Content>
+    <Context>
+      <Rule path="/context/other_context[at0001]" hide_on_form="true" />
+      <hide_on_form>true</hide_on_form>
+    </Context>
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1">
+    <digest id="MD5-CAM-1.0.1">6562F732112B8B3F94790E178F4243A5</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1">
+    <digest id="MD5-CAM-1.0.1">CD74983C407CE068D5ED37A6060B093A</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.medication_substance.v0">
+    <digest id="MD5-CAM-1.0.1">A7AAD6671DE8A1E92FF311E6F77A9BF3</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.therapeutic_direction.v1">
+    <digest id="MD5-CAM-1.0.1">48F2AA7A3E1BCF0C860C3FD4B123E2F1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.dosage_administration.v0">
+    <digest id="MD5-CAM-1.0.1">4E1334CD653140F684664CDC93E10F97</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.timing_daily.v0">
+    <digest id="MD5-CAM-1.0.1">B479AA8F61F176A3E1A82B4567263EC4</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.timing_repetition.v0">
+    <digest id="MD5-CAM-1.0.1">A182F8A4EA32F8F75E6C0573A5A3B94C</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.conditional_medication_rules.v0">
+    <digest id="MD5-CAM-1.0.1">210EE9A45C212800EEE2E904DFCEA37D</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.medication_order_summary.v0">
+    <digest id="MD5-CAM-1.0.1">EC6F51A4CD0D4A77E44E56EF799E1DFF</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.medication_authorisation.v0">
+    <digest id="MD5-CAM-1.0.1">0368944C92A220B9835A3272699B7877</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.medication_supply_amount.v0">
+    <digest id="MD5-CAM-1.0.1">D29D5172E0F84E842EC1C06D43177A92</digest>
+  </integrity_checks>
+</template>
