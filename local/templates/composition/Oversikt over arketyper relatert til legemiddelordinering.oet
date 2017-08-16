@@ -61,18 +61,18 @@
     </other_details>
   </description>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Klinisk kontakt">
-    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Legemiddelordinering" path="/content">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_substance.v0" concept_name="Legemiddelsubstans" path="/activities[at0001]/description[at0002]/items[at0143]" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.therapeutic_direction.v1" concept_name="Terapeutisk anvisning" path="/activities[at0001]/description[at0002]/items[at0177]">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.dosage_administration.v0" concept_name="Administreringsmønster" path="/items[at0176]">
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_daily.v0" concept_name="Timing - daily" path="/items[at0037]" />
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Legemiddelordinering" max="1" path="/content" name="Arketypen &quot;Legemiddelordinering&quot; ✓">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_substance.v0" concept_name="Legemiddelsubstans" max="1" path="/activities[at0001]/description[at0002]/items[at0143]" name="Arketypen &quot;Legemiddelsubstans&quot; ■" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.therapeutic_direction.v1" concept_name="Terapeutisk anvisning" max="1" path="/activities[at0001]/description[at0002]/items[at0177]" name="Arketypen &quot;Terapeutisk anvisning&quot; ✓">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.dosage_administration.v0" concept_name="Administreringsmønster" max="1" path="/items[at0176]" name="Arketypen &quot;Administreringsmønster&quot;">
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_daily.v0" concept_name="Timing - daily" max="1" path="/items[at0037]" name="Arketypen &quot;Timing - daily&quot; ■" />
         </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_repetition.v0" concept_name="Timing - repetition" path="/items[at0090]" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.conditional_medication_rules.v0" concept_name="Conditional medication instructions" path="/items[at0156]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_repetition.v0" concept_name="Timing - repetition" max="1" path="/items[at0090]" name="Arketypen &quot;Timing - repetition&quot; ■" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.conditional_medication_rules.v0" concept_name="Conditional medication instructions" max="1" path="/items[at0156]" name="Arketypen &quot;Conditional medication instructions&quot; ■" />
       </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_order_summary.v0" concept_name="Medication course summary" path="/activities[at0001]/description[at0002]/items[at0113]/items[at0112]" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_authorisation.v0" concept_name="Medication authorisation" path="/activities[at0001]/description[at0002]/items[at0069]" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_supply_amount.v0" concept_name="Leveringsmengde for legemidler" path="/activities[at0001]/description[at0002]/items[at0129]/items[at0065]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_order_summary.v0" concept_name="Medication course summary" max="1" path="/activities[at0001]/description[at0002]/items[at0113]/items[at0112]" name="Arketypen &quot;Medication course summary&quot; ■" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_authorisation.v0" concept_name="Medication authorisation" max="1" path="/activities[at0001]/description[at0002]/items[at0069]" name="Arketypen &quot;Medication authorisation&quot; ■" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_supply_amount.v0" concept_name="Leveringsmengde for legemidler" max="1" path="/activities[at0001]/description[at0002]/items[at0129]/items[at0065]" name="Arketypen &quot;Leveringsmengde for legemidler&quot; ■" />
     </Content>
     <Context>
       <Rule path="/context/other_context[at0001]" hide_on_form="true" />
