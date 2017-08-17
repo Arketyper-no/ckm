@@ -21,20 +21,20 @@ description
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", ...>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"9398757991C5316BC9DFA5601D556E95">
-		["build_uid"] = <"2ef8baf5-1810-491d-b3f2-931de3588040">
+		["MD5-CAM-1.0.1"] = <"8793B55FFAAAA346DC14E7C84270461B">
+		["build_uid"] = <"95c74e7d-cbcd-42a1-a502-75391145e1ef">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Dietary carbohydrate accessability 
+	CLUSTER[at0000] matches {	-- Dietary carbohydrate accessibility
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0005] occurrences matches {0..1} matches {	-- Sifted grains
 				value matches {
@@ -193,6 +193,32 @@ definition
 				}
 			}
 			ELEMENT[at0017] occurrences matches {0..1} matches {	-- Dried fruit/berries
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0029] occurrences matches {0..1} matches {	-- Milk products (containing lactose)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::124]>
+						list = <
+							["1"] = <
+								units = <"g">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0030] occurrences matches {0..1} matches {	-- Milk products (containing lactose broken down to individual sugars)
 				value matches {
 					C_DV_QUANTITY <
 						property = <[openehr::124]>
@@ -455,6 +481,14 @@ ontology
 				["at0028"] = <
 					text = <"Other mono- and disaccharides">
 					description = <"The amount of other mono- or disaccharides consumed.">
+				>
+				["at0029"] = <
+					text = <"Milk products (containing lactose)">
+					description = <"The amount of Milk products (containing lactose) consumed.">
+				>
+				["at0030"] = <
+					text = <"Milk products (containing lactose broken down to individual sugars)">
+					description = <"The amount of Milk products (containing lactose broken down to individual sugars) consumed.">
 				>
 			>
 		>
