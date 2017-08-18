@@ -5,6 +5,15 @@ concept
 	[at0000]	-- Health summary
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand">
+				["organisation"] = <"Helse Bergen HF">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -35,6 +44,27 @@ Even though clinical content is unconstrained, this archetype supports simple qu
 			misuse = <"Not to be used to record details about a single clinical consultation, procedure, test or assessment etc.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere et sammendrag av helseinformasjon om et individ på et spesifisert tidspunkt.">
+			use = <"Brukes som en generisk kontainer for et sammendrag eller en oversikt over pasientens helse og/eller omsorgsstatus på et spesifikt tidspunkt.
+
+Forfatteren av helsesammendraget er vanligvis en kliniker som er kjent med alle de relevante aspektene om individets helse som sammendraget består av.
+
+Formålet med helsesammendraget kan variere utfra ulike kontekster, eksempler på helsesammendrag kan være en oversikt over alle relevant viktige aspekter knyttet til pasientens helse og/eller omsorg eller et sammendrag av informasjon fokusert på et begrenset område av individets helse.
+
+Mottakere av helsesammendraget vil variere utfra sammendragets primærfokus og kan være:
+- Framtidige helsetjenesteytere.
+- Klinikere som ikke har noe personlig kjennskap til individet, men som må yte helsetjenester, som akuttbehandling eller behandling når individet er på reise.
+som ved diabetes eller gravidiet.
+- Individet selv.
+
+Det er ikke satt begrensinger på hovedkomponenten Section/content. Dette gjør at man kan legge til hvilken som helst SECTION eller ENTRY arketype som er passende for det kliniske formålet i et templat.
+
+Selv om det kliniske innholdet er ubegrenset, gir denne arketypen muligheter for enkle spørringer etter alle sammendrag av helseinformasjon i en journal.">
+			keywords = <"sammendrag", "oversikt", "synopsis", "sammenfatning", "status">
+			misuse = <"Brukes ikke for å registrere detaljer om en enkelt klinisk konsultasjon, prosedyre, prøve, vurdering eller lignende.">
+		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Yang Lu, University of Melbourne, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia">
@@ -46,8 +76,8 @@ Even though clinical content is unconstrained, this archetype supports simple qu
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"0CC5E68B9E9D7627E735B0CEEF487994">
-		["build_uid"] = <"57c09024-fe7f-4fd6-af1a-306e9568be14">
+		["MD5-CAM-1.0.1"] = <"70DF04D5CEC964C6A60A1D6C12CC2F9F">
+		["build_uid"] = <"ff060f09-fc34-447b-8ae7-82dfb886ffbe">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -92,6 +122,23 @@ ontology
 					text = <"Extension">
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sammendrag av helseinformasjon">
+					description = <"Generisk dokument som inneholder sammendrag av helseinformasjon om et individ.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som er nødvendig for å registrere lokalt innhold/kontekst, eller for å sammenstille med andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
