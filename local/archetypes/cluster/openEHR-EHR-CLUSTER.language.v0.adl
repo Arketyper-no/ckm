@@ -22,6 +22,15 @@ description
 		["date"] = <"2017-07-06">
 	>
 	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For recording details about a spoken, written or symbolic system of communication.">
+			use = <"Use to record details about a spoken, written or symbolic system of communication.
+
+Use for example to record the requested or actual language for interpretation in the CLUSTER.interpreter_details archetype.">
+			keywords = <"signing", "sign language", "speake", "tongue">
+			misuse = <"">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere detaljer om et muntlig, skrevet eller tegnbasert system for kommunikasjon.">
@@ -32,15 +41,6 @@ Brukes for eksempel for å registrere hvilket språk som er ønsket eller hvilke
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"For recording details about a spoken, written or symbolic system of communication.">
-			use = <"Use to record details about a spoken, written or symbolic system of communication.
-
-Use for example to record the requested or actual language for interpretation in the CLUSTER.interpreter_details archetype.">
-			keywords = <"signing", "sign language", "speake", "tongue">
-			misuse = <"">
-		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway", "Heather Leslie, Ocean Health Systems, Australia", "John Tore Valand, Helse Bergen HF, Norway">
@@ -50,8 +50,8 @@ Use for example to record the requested or actual language for interpretation in
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"8E30B3C2C98BD1BD0734BC63A02DCE43">
-		["build_uid"] = <"f7dd4341-f36a-4f4c-ab52-cfdb93885a53">
+		["MD5-CAM-1.0.1"] = <"DCE97772C9D153CC9C7CCB07DA92EC5F">
+		["build_uid"] = <"8ca916bb-b7af-4533-b193-5093e12c92a8">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -78,9 +78,12 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	-- Details
+				include
+					archetype_id/value matches {/.*/}
+			}
 		}
 	}
-
 
 
 ontology
@@ -109,6 +112,11 @@ ontology
 					text = <"Kommentar">
 					description = <"Ytterligere fritekstbeskrivelse om språket.">
 				>
+				["at0005"] = <
+					text = <"Detaljer">
+					description = <"Ytterligere detaljer om individets språk eller evne til å kommunisere språket eller dialekten.">
+					comment = <"For eksempel: Ulike skalaer for språkferdigheter eller andre strukturerte detaljer om språket eller dialekten.">
+				>
 			>
 		>
 		["en"] = <
@@ -134,6 +142,11 @@ ontology
 				["at0004"] = <
 					text = <"Comment">
 					description = <"Additional narrative description about the language.">
+				>
+				["at0005"] = <
+					text = <"Details">
+					description = <"Additional details about the individual's language or the ability to communicate in the language or dialect.">
+					comment = <"For example: Grading scales for language profiency or other structured details about the language or dialect.">
 				>
 			>
 		>
