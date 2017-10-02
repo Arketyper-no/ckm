@@ -33,10 +33,10 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the circumference of the waist of an individual.">
-			use = <"Use to record the circumference of the waist of an individual. 
+			purpose = <"To record the circumference of the waist.">
+			use = <"Use to record the circumference of the waist. 
 
-Use to record change from repeated measurements. This can currently be modelled by constraining the 'any event' to an interval in a template with an associated mathematical function, as appropriate.">
+Use to record change from repeated measurements. This can currently be modeled by constraining the 'any event' to an interval in a template with an associated mathematical function, as appropriate.">
 			keywords = <"anthropometry", "measurement", "estimation", "circumference">
 			misuse = <"Not to be used to record the speed of which the waist circumference is growing or decreasing. Use a growth velocity archetype for this purpose.
 
@@ -59,14 +59,14 @@ Não deve ser usado para gravar a circunferência de outra parte do corpo. Usar 
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere et individs midjeomkrets.">
-			use = <"Bruk for å registrere et individs midjeomkrets.
+			purpose = <"For å registrere midjeomkrets.">
+			use = <"Bruk for å registrere midjeomkrets.
 
 Brukes til å registrere endring ved gjentatte målinger. Dette kan modelleres ved å begrense \"Uspesifisert hendelse\" i en templat til et intervall med en tilhørende matematisk funksjon for \"økning\".">
 			keywords = <"antropometri", "måling", "estimering", "omkrets", "livvidde">
-			misuse = <"Brukes ikke til å registrere hastigheten hofteomkretsen øker eller avtar, bruk en egen arketype for veksthastighet for dette formålet.
+			misuse = <"Brukes ikke til å registrere hastigheten midjeomkretsen øker eller avtar, bruk en egen arketype for veksthastighet for dette formålet.
 
-Brukes ikke til å registrere omkretsen av andre kroppsdeler. Bruk OBSERVATION.body_segment i disse tilfellene med unntak av hvor det finnes mer spesifikke arketyper som for eksempel OBSERVATION.head_circumference.">
+Brukes ikke til å registrere omkretsen av andre kroppsdeler. Bruk OBSERVATION.body_segment i disse tilfellene med unntak av hvor det finnes mer spesifikke arketyper som for eksempel OBSERVATION.hip_circumference.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 	>
@@ -75,25 +75,29 @@ Brukes ikke til å registrere omkretsen av andre kroppsdeler. Bruk OBSERVATION.b
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Waist circumference, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-08-28]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.2814">
+		["references"] = <"Avgrenet fra: Waist circumference, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-08-28]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.2814
+
+World Health Organization. (2011). Waist circumference and waist-hip ratio: Report of a WHO expert consultation, Geneva, 8-11 December 2008 [cited 2017 oct 2]. Available from: http://apps.who.int/iris/bitstream/10665/44583/1/9789241501491_eng.pdf
+
+Júlíusson, P. B., Vinsjansen, S., Nilsen, B., Sælensminde, H., Vågset, R., & Eide, G. E. (2005). Måling av vekst og vekt: En oversikt over anbefalte teknikker. Pediatrisk Endokrinologi, 19, 23-9  [cited 2017 oct 2]. Available from: http://pediatrisk-endokrinologi.no/2005/1/Juliusson_et_al_2005_1.pdf">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"BC7EEAB14128612B44C0753C8FD899CB">
-		["build_uid"] = <"f08374d7-39b3-4158-afa6-ee52d3a2c6b9">
+		["MD5-CAM-1.0.1"] = <"1FF9A5A6B79B54F5CDF4EB30B7D95F14">
+		["build_uid"] = <"725e0fd0-80f9-413c-bc0a-07fb39c9d811">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Midjeomkrets
+	OBSERVATION[at0000] matches {	-- Waist circumference
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0010] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
+					EVENT[at0010] occurrences matches {0..*} matches {	-- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Midjeomkrets
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Waist circumference
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::122]>
@@ -112,7 +116,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Kommentar
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Comment
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -123,7 +127,7 @@ definition
 						state matches {
 							ITEM_TREE[at0008] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0009] occurrences matches {0..*} matches {	-- Konfunderende faktorer
+									ELEMENT[at0009] occurrences matches {0..*} matches {	-- Confounding factors
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -138,11 +142,11 @@ definition
 		protocol matches {
 			ITEM_TREE[at0005] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {	-- Måleutstyr
+					allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {	-- Device
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
 					}
-					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
+					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {	-- Extension
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -159,8 +163,8 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Waist circumference">
-					description = <"The measurement of the distance around the waist just above the hip bone.">
-					comment = <"The measurement is usually taken just above the hip bone.">
+					description = <"The measurement of the circumference of the waist.">
+					comment = <"The measurement is usually taken at the approximate midpoint between the lower margin of the last palpable rib and the top of the iliac crest.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -172,8 +176,8 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Waist circumference">
-					description = <"The measurement of the distance around the waist just above the hip bone.">
-					comment = <"The measurement is usually taken just above the hip bone.">
+					description = <"The measurement of the distance around the waist.">
+					comment = <"The measurement is usually taken at the approximate midpoint between the lower margin of the last palpable rib and the top of the iliac crest.">
 				>
 				["at0005"] = <
 					text = <"Tree">
@@ -211,8 +215,8 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"*Waist circumference(en)">
-					description = <"*The measurement of the distance around the waist just above the hip bone.(en)">
-					comment = <"*The measurement is usually taken just above the hip bone.(en)">
+					description = <"*The measurement of the circumference of the waist.(en)">
+					comment = <"*The measurement is usually taken the approximate midpoint between the lower margin of the last palpable rib and the top of the iliac crest.(en)">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -224,8 +228,8 @@ ontology
 				>
 				["at0004"] = <
 					text = <"*Waist circumference(en)">
-					description = <"*The measurement of the distance around the waist just above the hip bone.(en)">
-					comment = <"*The measurement is usually taken just above the hip bone.(en)">
+					description = <"*The measurement of the distance around the waist.(en)">
+					comment = <"*The measurement is usually taken the approximate midpoint between the lower margin of the last palpable rib and the top of the iliac crest.(en)">
 				>
 				["at0005"] = <
 					text = <"Tree">
@@ -263,8 +267,8 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Midjeomkrets">
-					description = <"Måling av distansen rundt midjen like ovenfor hoftekammen.">
-					comment = <"Målingen utføres vanligvis like ovenfor hoftekammen.">
+					description = <"Måling av midjeomkretsen.">
+					comment = <"Målingen utføres vanligvis på det smaleste nivået mellom costae 10 og crista iliaca.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -276,8 +280,8 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Midjeomkrets">
-					description = <"Måling av distansen rundt midjen like ovenfor hoftekammen.">
-					comment = <"Målingen utføres vanligvis like ovenfor hoftekammen.">
+					description = <"Måling av midjeomkretsen.">
+					comment = <"Målingen utføres vanligvis på det smaleste nivået mellom costae 10 og crista iliaca.">
 				>
 				["at0005"] = <
 					text = <"Tree">
