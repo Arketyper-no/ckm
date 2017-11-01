@@ -7,6 +7,15 @@ concept
 	[at0000.1]	-- Procedure Report
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Vebjørn Arntzen; John Tore Valand">
+				["organisation"] = <"Oslo univeristetsykehus HF; Helse Bergen HF">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -17,27 +26,68 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"Generic container archetype to carry information about a procedure or operation performed.">
-			use = <"Use as a generic procedure-related archetype to carry information about any procedure or operation performed.  Common examples are: any procedure carried out as a stand-alone activity and not part of a consultation, such as a lumbar puncture or interventional radiology procedure; Endoscopy Report; through to a complete surgical operation report.
-The Context component contains an optional unnamed slot that can be used to:
-- add optional content during templating to support a use-case specific requirements;
-- add EHR model demographic archetypes representing participating parties. While this may not be desired at implementation, this can be useful to demonstrate how demographics may be represented in an implementation ie as a support to clinical content requirements gathering or template review.
+			purpose = <"Generic container archetype to carry information about any stand-alone procedure or operation performed.">
+			use = <"Use as a generic procedure-related archetype to carry information about any stand-alone procedure or operation performed. 
+
+It is anticipated that each COMPOSITION.report-procedure archetype will contain at least one ACTION.procedure (or related archetype) but depending on the complexity of the procedure it may contain a variety of other archetypes depending on the nature and complexity of the procedure performed. For example, archetypes to describe the associated anaesthetic or imaging activities carried out during the procedure.
+
+Common use cases are: 
+- any procedure that is not recorded as part of a consultation but needs to be carried out recorded as a stand-alone activity; 
+- Endoscopy Report; through to a 
+- complete Operation Report for an laparotomy or joint replacement.
+
+Record of the anaesthetic used to cover the procedure will be recorded using purpose-specific archetypes. They can be committed to the health record at the same time as the Procedure report, most likely in one of two ways:
+- in a separate Anaesthetic report. This is most likely if the anaesthetic is administered by a separate clinician to the one performing the procedure; or
+- in the same Procedure report as the procedure is recorded. This is most likely if the anaesthetic was administered by the same clinician who performed the procedure.
+
 The Sections component has been deliberately left unconstrained to maximise re-use of this archetype.">
-			keywords = <"report", ...>
-			misuse = <"">
+			keywords = <"report", "procedure", "operation">
+			misuse = <"Not to be used for reports that are not related to a procedure. Use the generic COMPOSITION.report or purpose specific COMPOSITIONs as appropriate.
+
+Not to be used for procedures that are recorded as part of a consultation note, for example removal of a skin lesion in a primary care consultation - use a ACTION.procedure archetype inside the COMPOSITION.encouter for this purpose.
+
+Not to be used for procedures that are recorded as part of a nursing progress note, for example insertion of a catheter - use an ACTION.procedure archetype inside the COMPOSITION.progress_note.">
 			copyright = <"© openEHR Foundation">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"En generisk container-arketype for å lagre informasjon om enkeltstående prosedyrer eller operasjoner som er gjennomført.
+">
+			use = <"En generisk container-arketype for å lagre informasjon om enkeltstående prosedyrer eller operasjoner som er gjennomført.
+
+Det forventes at hver enkelt COMPOSTION.report_procedure inneholder minst en ACTION.procedure (eller beslektet arketype), men den kan også inneholde en stor variasjon av andre arketyper avhengig av kompleksiteten av prosedyren som er gjennomført. For eksempel: arketyper som omhandler aktiviteter knyttet til anestesi eller radiologi gjennomført under prosedyren.
+
+Vanlige bruksområder: 
+- Enhver prosedyre som ikke er en del av en konsultasjon, men som må registreres som en enkeltstående aktivitet.
+- Alt fra en endoskopirapport til en komplett operasjonsbekrivelse for en laparatomi eller utskifting av et hofteledd.
+
+Dokumentasjon knyttet til anestesi benyttet i forbindelse med prosedyren registreres i egne spesifikke arketyper. 
+- I de fleste tilfeller vil dette bli dokumentert i en egen anestesirapport og dokumentert av en annen kliniker enn den som faktisk utfører prosedyren.
+- Dersom anestesi ble gjort av samme kliniker som utførte prosedyren (for eksempel en anestesilege) kan det være naturlig at dette blir dokumentert i samme prosedyrerapport.
+
+Innholdet i arketypen er bevisst ubegrenset, slik at alle SECTION- og/eller ENTRY-arketyper som er nødvendig/hensiktsmessig i den aktuelle kliniske konteksten kan brukes i templaten.
+
+
+">
+			keywords = <"rapport", "prosedyre", "operasjon", "anestesirapport", "operasjonsbeskrivelse">
+			misuse = <"Brukes ikke for å dokumentere rapporter som ikke er relatert til en prosedyre. Bruk den generiske COMPOSTION.report eller en spesfikk COMPOSITON-arketype for dette formålet.
+
+Brukes ikke for prosedyrer som er dokumentert som del av et konsultasjonsnotat. For eksempel fjerning av en hudlesjon under en konsultasjon i primærhelsetjenesten. Bruk arketypen ACTION.procedure i arketypen COMPOSITION.encouter for dette formålet.
+
+Brukes ikke for å registrere prosedyrer som er en del av et sykepleienotat, for eksempel innleggelse av urinkateter. Bruk ACTION.procedure i arketypen COMPOSTION.progess_note for dette formålet.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Heath Frankel, Ocean Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics, Australia">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Heath Frankel, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"26C35AC18FF5EE4AA50CD7D58774848B">
-		["build_uid"] = <"1c61fd9c-973d-415b-a216-9595951750ad">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9ED6DB9F98C1100C73D58285CCBFC881">
+		["build_uid"] = <"8e6a7afd-a976-4440-b9d3-065d7b8601e3">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -63,7 +113,7 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER occurrences matches {0..*} matches {
+							allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {	-- Extension
 								include
 									archetype_id/value matches {/.*/}
 							}
@@ -99,6 +149,40 @@ ontology
 				["at0005"] = <
 					text = <"Status">
 					description = <"The status of the entire report. Note: This is not the status of any of the report components.">
+				>
+				["at0006"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Report(en)">
+					description = <"*Document to communicate information to others, commonly in response to a request from another party.(en)">
+				>
+				["at0000.1"] = <
+					text = <"Prosedyrerapport">
+					description = <"Dokument for å kommunisere informasjon om enkeltstående prosedyrer eller operasjoner som er utført.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Rapport-ID">
+					description = <"Informasjon som identifiserer rapporten.">
+				>
+				["at0005"] = <
+					text = <"Status">
+					description = <"Status for hele rapporten. Merk: Dette er ikke statusen for noen av enkeltkomponentene i rapporten.">
+				>
+				["at0006"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
