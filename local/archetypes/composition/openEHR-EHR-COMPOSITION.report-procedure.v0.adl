@@ -51,25 +51,20 @@ Not to be used for procedures that are recorded as part of a nursing progress no
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"En generisk container-arketype for å lagre informasjon om enkeltstående prosedyrer eller operasjoner som er gjennomført.
-">
+			purpose = <"En generisk COMPOSITION-arketype for å lagre informasjon om enkeltstående prosedyrer eller operasjoner som er gjennomført.">
 			use = <"En generisk container-arketype for å lagre informasjon om enkeltstående prosedyrer eller operasjoner som er gjennomført.
 
 Det forventes at hver enkelt COMPOSTION.report_procedure inneholder minst en ACTION.procedure (eller beslektet arketype), men den kan også inneholde en stor variasjon av andre arketyper avhengig av kompleksiteten av prosedyren som er gjennomført. For eksempel: arketyper som omhandler aktiviteter knyttet til anestesi eller radiologi gjennomført under prosedyren.
 
 Vanlige bruksområder: 
-- Enhver prosedyre som ikke er en del av en konsultasjon, men som må registreres som en enkeltstående aktivitet.
+- Rapport etter prosedyrer som utføres som selvstendige aktiviteter, og som ikke inngår i en ordinær konsultasjon.
 - Alt fra en endoskopirapport til en komplett operasjonsbekrivelse for en laparatomi eller utskifting av et hofteledd.
-
-Dokumentasjon knyttet til anestesi benyttet i forbindelse med prosedyren registreres i egne spesifikke arketyper. 
-- I de fleste tilfeller vil dette bli dokumentert i en egen anestesirapport og dokumentert av en annen kliniker enn den som faktisk utfører prosedyren.
-- Dersom anestesi ble gjort av samme kliniker som utførte prosedyren (for eksempel en anestesilege) kan det være naturlig at dette blir dokumentert i samme prosedyrerapport.
 
 Innholdet i arketypen er bevisst ubegrenset, slik at alle SECTION- og/eller ENTRY-arketyper som er nødvendig/hensiktsmessig i den aktuelle kliniske konteksten kan brukes i templaten.
 
 
 ">
-			keywords = <"rapport", "prosedyre", "operasjon", "anestesirapport", "operasjonsbeskrivelse">
+			keywords = <"rapport", "prosedyre", "operasjon", "anestesirapport", "operasjonsbeskrivelse", "operasjonsprotokoll", "prosedyrebeskrivelse">
 			misuse = <"Brukes ikke for å dokumentere rapporter som ikke er relatert til en prosedyre. Bruk den generiske COMPOSTION.report eller en spesfikk COMPOSITON-arketype for dette formålet.
 
 Brukes ikke for prosedyrer som er dokumentert som del av et konsultasjonsnotat. For eksempel fjerning av en hudlesjon under en konsultasjon i primærhelsetjenesten. Bruk arketypen ACTION.procedure i arketypen COMPOSITION.encouter for dette formålet.
@@ -87,7 +82,7 @@ Brukes ikke for å registrere prosedyrer som er en del av et sykepleienotat, for
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["MD5-CAM-1.0.1"] = <"B065CB376F3FAE11E015560C7E3D2AC9">
-		["build_uid"] = <"4a03313c-aa4e-464c-98a9-1f45796c6768">
+		["build_uid"] = <"d2381218-ebd7-4983-a5dd-f4b753e752b2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
