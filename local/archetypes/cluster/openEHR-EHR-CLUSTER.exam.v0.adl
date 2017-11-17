@@ -33,7 +33,7 @@ Arketypen er laget spesifikt for å brukes i \"Undersøkelsesdetaljer\"-SLOTet i
 
 Denne arketypen kan benyttes for alle typer undersøkelser, alt fra enkle undersøkelser som undersøkelse av et hudområde, inspeksjon av ører og til artroskopi av et kne.
 
-Brukes for å nøste CLUSTER-arketyper i SLOTet \"Undersøkelsesdetaljer\" for å registrere ytterligere strukturerte funn ved fysiske undersøkelser.
+Kan for eksempel nøstes i SLOTet \"Undersøkelsesdetaljer\" i arketypen OBSERVATION.exam (Norsk Funn ved fysisk undersøkelse) for å registrere ytterligere strukturerte funn ved fysiske undersøkelser.
 
 Arketypen CLUSTER.exclusion_exam kan nøstes i SLOTet \"Undersøkelse ikke utført\" der en har behov for å registrere informasjon om at en undersøkelse ikke ble utført.
 
@@ -65,7 +65,7 @@ Not to be used for recording the clinical history - use specific OBSERVATION and
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom (openEHR Editor)", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Morgan Karlsen, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia (openEHR Editor)", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom (openEHR Editor)", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Morgan Karlsen, DIPS ASA, Norway", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Nyree Taylor, Ocean Informatics, Australia (openEHR Editor)", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -73,8 +73,8 @@ Not to be used for recording the clinical history - use specific OBSERVATION and
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9E827A61BB8D32E9E5798340C514909D">
-		["build_uid"] = <"ae7355d0-4a5d-40ba-b757-213e0fc18e08">
+		["MD5-CAM-1.0.1"] = <"97A9656A74B1287D6D0356D773BE8FF4">
+		["build_uid"] = <"edbbd046-720d-4636-a012-65c12f7d4bf1">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -203,7 +203,7 @@ ontology
 				["at0002"] = <
 					text = <"Uten anmerkning">
 					description = <"Utsagn om at ingen avvik var oppdaget ved undersøkelsen (U.a.).">
-					comment = <"Registrer som Sann dersom ingen avvik ble oppdaget ved undersøkelsen. Spesifikke utsagn om undersøkelsen kan registreres i dataelementet \"Klinisk fortolkning\". Registrerer man \"Uten anmerkning\", vil registrering av andre dataelementer i arketypen være overflødig med unntak av dataelementet \"Klinisk fortolkning\", som kan være nyttig om en har behov for en normalbeskrivelse.">
+					comment = <"Registrer som Sann dersom ingen avvik ble oppdaget ved undersøkelsen. Spesifikke utsagn om undersøkelsen kan registreres i dataelementet \"Fortolkning\". Registrerer man \"Uten anmerkning\", vil registrering av andre dataelementer i arketypen være overflødig med unntak av dataelementet \"Fortolkning\", som kan være nyttig om en har behov for en normalbeskrivelse.">
 				>
 				["at0003"] = <
 					text = <"Klinisk beskrivelse">
@@ -220,7 +220,7 @@ ontology
 				["at0006"] = <
 					text = <"Fortolkning">
 					description = <"Enkelt ord, setning, frase eller kort beskrivelse som representerer den kliniske betydning og viktigheten av funnene ved den kliniske undersøkelsen.">
-					comment = <"Koding med terminologi foretrekkes når mulig.">
+					comment = <"Koding med terminologi foretrekkes når mulig. For eksempel \"normal undersøkelse\" eller \"tympanisk membran perforasjon\".">
 				>
 				["at0007"] = <
 					text = <"Kommentar">
@@ -233,7 +233,7 @@ ontology
 				["at0011"] = <
 					text = <"Strukturert anatomisk lokalisasjon">
 					description = <"Angivelse av en strukturert anatomisk lokalisering av det undersøkte organsystemet eller anatomiske strukturen.">
-					comment = <"Hvis anatomisk lokalisasjon er entydig identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette SLOT ikke nødvendig å benytte.">
+					comment = <"Hvis anatomisk lokalisasjon er entydig identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette SLOTet ikke nødvendig å benytte.">
 				>
 				["at0012"] = <
 					text = <"Anatomisk lokalisasjon">
