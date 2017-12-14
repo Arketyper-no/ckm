@@ -29,7 +29,7 @@ description
 			keywords = <"information", "education", "fact sheet">
 			misuse = <"Not to be used to record consent - for example consent to a vasectomy after provision of a fact sheet about vasectomy.
 
-Not to be used to record given general information about the individual, such as examination findings, information about the outcome of a surgical procedure or a general statement, neither to the individual or their relatives.">
+Not to be used to record the communication  of personalised health information by a clinician to an individual - for example, a diagnosis, prognosis or outcome of surgery.">
 			copyright = <"© National E-Health Transition Authority, openEHR Foundation">
 		>
 		["nb"] = <
@@ -39,7 +39,7 @@ Not to be used to record given general information about the individual, such as
 			keywords = <"informasjon", "opplæring", "undervisning", "brosjyre", "faktaark", "opplæringsmateriell">
 			misuse = <"Skal ikke brukes for å registrere samtykke, for eksempel samtykke til vasektomi etter å ha fått utdelt faktaark om vasektomi.
 
-Skal ikke brukes for å gi informasjon om et individs helse, som for eksempel funn ved undersøkelse, informasjon om resultat av et inngrep eller tilstanden til et individ, verken til individet selv eller til pårørende.">
+Skal ikke brukes for å registrere informasjon kommunisert av en kliniker om et individs helse. For eksempel diagnoser, prognoser, funn ved undersøkelser eller resultatet av et ingrep.">
 		>
 	>
 	lifecycle_state = <"in_development">
@@ -51,15 +51,15 @@ Skal ikke brukes for å gi informasjon om et individs helse, som for eksempel fu
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"330933BC8B309F2573083228D596D72D">
-		["build_uid"] = <"939349f4-553e-4a5e-bb1d-221c0e840418">
+		["MD5-CAM-1.0.1"] = <"8DD6709C96156ED649F0ECB1C7C58020">
+		["build_uid"] = <"fd3a6ab7-dfbf-4852-b3bc-2f3a612ead64">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	ACTION[at0000] matches {	-- Health education
+	ACTION[at0000] matches {	-- Helseinformasjon
 		ism_transition matches {
-			ISM_TRANSITION[at0006] matches {	-- Education planned
+			ISM_TRANSITION[at0006] matches {	-- Informasjonsøkt planlagt
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::526]}
@@ -67,11 +67,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0006]}		-- Education planned
+						defining_code matches {[local::at0006]}		-- Informasjonsøkt planlagt
 					}
 				}
 			}
-			ISM_TRANSITION[at0018] matches {	-- Education Recommended
+			ISM_TRANSITION[at0018] matches {	-- Informasjonsøkt anbefalt
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::526]}
@@ -79,11 +79,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0018]}		-- Education Recommended
+						defining_code matches {[local::at0018]}		-- Informasjonsøkt anbefalt
 					}
 				}
 			}
-			ISM_TRANSITION[at0014] matches {	-- Education postponed
+			ISM_TRANSITION[at0014] matches {	-- Informasjonsøkt utsatt
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::527]}
@@ -91,11 +91,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0014]}		-- Education postponed
+						defining_code matches {[local::at0014]}		-- Informasjonsøkt utsatt
 					}
 				}
 			}
-			ISM_TRANSITION[at0015] matches {	-- Education cancelled
+			ISM_TRANSITION[at0015] matches {	-- Informasjonsøkt avlyst
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::528]}
@@ -103,11 +103,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0015]}		-- Education cancelled
+						defining_code matches {[local::at0015]}		-- Informasjonsøkt avlyst
 					}
 				}
 			}
-			ISM_TRANSITION[at0007] matches {	-- Education scheduled
+			ISM_TRANSITION[at0007] matches {	-- Informasjonsøkt tidsfestet
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::529]}
@@ -115,11 +115,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0007]}		-- Education scheduled
+						defining_code matches {[local::at0007]}		-- Informasjonsøkt tidsfestet
 					}
 				}
 			}
-			ISM_TRANSITION[at0008] matches {	-- Education provided
+			ISM_TRANSITION[at0008] matches {	-- Informasjonsøkt gjennomført
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::245]}
@@ -127,11 +127,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0008]}		-- Education provided
+						defining_code matches {[local::at0008]}		-- Informasjonsøkt gjennomført
 					}
 				}
 			}
-			ISM_TRANSITION[at0017] matches {	-- Education suspended
+			ISM_TRANSITION[at0017] matches {	-- Informasjonsøkt midlertidig stanset
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::530]}
@@ -139,11 +139,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0017]}		-- Education suspended
+						defining_code matches {[local::at0017]}		-- Informasjonsøkt midlertidig stanset
 					}
 				}
 			}
-			ISM_TRANSITION[at0016] matches {	-- Education not completed
+			ISM_TRANSITION[at0016] matches {	-- Informasjonsøkt ikke fullført
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::531]}
@@ -151,11 +151,11 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0016]}		-- Education not completed
+						defining_code matches {[local::at0016]}		-- Informasjonsøkt ikke fullført
 					}
 				}
 			}
-			ISM_TRANSITION[at0013] matches {	-- Education completed
+			ISM_TRANSITION[at0013] matches {	-- Informasjonsøkt fullført
 				current_state matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {[openehr::532]}
@@ -163,7 +163,7 @@ definition
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0013]}		-- Education completed
+						defining_code matches {[local::at0013]}		-- Informasjonsøkt fullført
 					}
 				}
 			}
@@ -171,42 +171,46 @@ definition
 		description matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0002] matches {	-- Topic
+					ELEMENT[at0002] matches {	-- Emne
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Description
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Beskrivelse
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Method
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Metode
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0012] occurrences matches {0..*} matches {	-- Identification
-						value matches {
-							DV_TEXT matches {*}
-						}
+					allow_archetype CLUSTER[at0025] occurrences matches {0..*} matches {	-- Detaljer om opplæringsmateriale
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v0/}
 					}
-					ELEMENT[at0005] occurrences matches {0..*} matches {	-- Link
-						value matches {
-							DV_URI matches {*}
-						}
-					}
-					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Session Number
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Sesjonsnummer
 						value matches {
 							DV_COUNT matches {*}
 						}
 					}
-					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Reason
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Begrunnelse
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Outcome
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Resultat
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Planlagt dato/tid
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {	-- Kommentar
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -217,14 +221,34 @@ definition
 		protocol matches {
 			ITEM_TREE[at0021] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Interpreter Present
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Tolk tilstede
 						value matches {
 							DV_BOOLEAN matches {
 								value matches {True}
 							}
 						}
 					}
-					allow_archetype CLUSTER[at0023] occurrences matches {0..*} matches {	-- Extension
+					ELEMENT[at0030] occurrences matches {0..1} matches {	-- Rekvisisjonsidentifikator
+						value matches {
+							DV_TEXT matches {*}
+							DV_IDENTIFIER matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0028] occurrences matches {0..*} matches {	-- Rekvirent
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0031] occurrences matches {0..1} matches {	-- Mottakers rekvisisjonsidentifikator
+						value matches {
+							DV_TEXT matches {*}
+							DV_IDENTIFIER matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0029] occurrences matches {0..*} matches {	-- Mottaker
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype CLUSTER[at0023] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -232,7 +256,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
@@ -260,10 +283,6 @@ ontology
 					description = <"Method by which the health education information was provided.">
 					comment = <"For example, verbal or written. This is not the same as participation. Material can be exchanged between an educator and an individual in various ways during a face-to-face consultation or via teleconference. In specific situations it may be important to document that writtern fact sheets have been physically handed to the individual, for example regarding the risks of vasectomy.">
 				>
-				["at0005"] = <
-					text = <"Link">
-					description = <"Internet link to the information provided.">
-				>
 				["at0006"] = <
 					text = <"Education planned">
 					description = <"Exchange of information planned.">
@@ -280,10 +299,6 @@ ontology
 					text = <"Reason">
 					description = <"Reason for the activity.">
 					comment = <"For example: reason why the information exchange is planned; or why the exchange was not successful.">
-				>
-				["at0012"] = <
-					text = <"Identification">
-					description = <"Title or identifier of health education information provided.">
 				>
 				["at0013"] = <
 					text = <"Education completed">
@@ -332,6 +347,37 @@ ontology
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
+				["at0025"] = <
+					text = <"Material details">
+					description = <"Structured  details about the material provided to the individual.">
+				>
+				["at0026"] = <
+					text = <"Scheduled date/ time">
+					description = <"The date and/or time on which the education is intended to be performed.">
+					comment = <"Only for use in association with the 'Education scheduled' pathway step.">
+				>
+				["at0027"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the activity or care pathway step not captured in other fields.">
+				>
+				["at0028"] = <
+					text = <"Requestor">
+					description = <"Details about the healthcare provider or organisation requesting the education.">
+				>
+				["at0029"] = <
+					text = <"Receiver">
+					description = <"Details about the healthcare provider or organisation receiving the request for education.">
+				>
+				["at0030"] = <
+					text = <"Requestor order identifier">
+					description = <"The local ID assigned to the order by the healthcare provider or organisation requesting the education.">
+					comment = <"This is equivalent to Placer Order Number in HL7 v2 specifications.">
+				>
+				["at0031"] = <
+					text = <"Receiver order identifier">
+					description = <"The ID assigned to the order by the healthcare provider or organisation receiving the request for education. This is also referred to as Filler Order Identifier.">
+					comment = <"This is equivalent to Filler Order Number in HL7 v2 specifications.">
+				>
 			>
 		>
 		["nb"] = <
@@ -357,10 +403,6 @@ ontology
 					description = <"Hvilken metode som ble brukt da den helserelaterte informasjonen ble gitt.">
 					comment = <"For eksempel muntlig eller skriftlig. Dette er ikke det samme som deltakelse. Materiell og informasjon kan bli utvekslet mellom avsender og mottaker på mange måter, for eksempel ansikt til ansikt eller via telefon. I noen spesielle tilfeller kan det være viktig å dokumentere at et faktaark har vært overlevert til et individ, for eksempel med informasjon om risikoer ved vasektomi.">
 				>
-				["at0005"] = <
-					text = <"Lenke">
-					description = <"Internettlenke til informasjonen som ble gitt.">
-				>
 				["at0006"] = <
 					text = <"Informasjonsøkt planlagt">
 					description = <"Utveksling av informasjon planlagt.">
@@ -377,10 +419,6 @@ ontology
 					text = <"Begrunnelse">
 					description = <"Begrunnelse for aktiviteten.">
 					comment = <"For eksempel begrunnelsen for hvorfor det ble planlagt å gi helserelatiert informasjon, eller hvorfor den ikke ble vellykket.">
-				>
-				["at0012"] = <
-					text = <"Navn på informasjonsenhet">
-					description = <"Navn eller identifikator for informasjonsenheten, for eksempel brosjyren eller kurset, som er gitt.">
 				>
 				["at0013"] = <
 					text = <"Informasjonsøkt fullført">
@@ -428,6 +466,37 @@ ontology
 					text = <"Tilleggsinformasjon">
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0025"] = <
+					text = <"Detaljer om opplæringsmateriale">
+					description = <"Strukturerte detaljer om opplæringsmateriellet som er gitt til individet.">
+				>
+				["at0026"] = <
+					text = <"Planlagt dato/tid">
+					description = <"Dato/tid når informasjonsøkten er planlagt utført.">
+					comment = <"Kun til bruk i forbindelse med prosesstrinnet \"Informasjonsøkt planlagt\".">
+				>
+				["at0027"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekstbeskrivelse av aktivitet eller prosesstrinn som ikke er registrert i andre felt.">
+				>
+				["at0028"] = <
+					text = <"Rekvirent">
+					description = <"Detaljer om helsepersonellet eller organisasjonen som har rekvirert informasjonsøkten.">
+				>
+				["at0029"] = <
+					text = <"Mottaker">
+					description = <"Detaljer om helsepersonellet eller organisasjonen som mottar forespørselen.">
+				>
+				["at0030"] = <
+					text = <"Rekvisisjonsidentifikator">
+					description = <"Den lokale IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som rekvirerer informasjonsøkten.">
+					comment = <"Tilsvarer \"Placer Order Number\" i HL7 v2-spesifikasjonene.">
+				>
+				["at0031"] = <
+					text = <"Mottakers rekvisisjonsidentifikator">
+					description = <"IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som mottar forespørselen.">
+					comment = <"Tilsvarer \"Filler Order Number\" i HL7 v2-spesifikasjonene.">
 				>
 			>
 		>
