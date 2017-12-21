@@ -62,16 +62,16 @@ Not to be used to record summary details about an identified contraindication - 
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "SBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Ole Andreas Bjordal, Webmed, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Chris Dickson, NHS Digital, United Kingdom", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Bente Gjelsvik, Helse Bergen, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Hanne Joensen, Helse Bergen HUS, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Siri Larønningen, Kreftregisteret, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Navin Ramachandran, NHS, United Kingdom", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Iztok Stotl, UKCLJ, Slovenia", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Mette Wam, Esito AS, Norway">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "SB BHATTACHARYYA, Sudisa Consultancy Services, India", "SBhusan Bhattacharyya, Sudisa Consultancy Services, India", "Ole Andreas Bjordal, Webmed, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Chris Dickson, NHS Digital, United Kingdom", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Bente Gjelsvik, Helse Bergen, Norway", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Evelyn Hovenga, EJSH Consulting, Australia", "Hanne Joensen, Helse Bergen HUS, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Siri Laronningen, Kreftregisteret, Norway", "Siri Larønningen, Kreftregisteret, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Navin Ramachandran, NHS, United Kingdom", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Iztok Stotl, UKCLJ, Slovenia", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Mette Wam, Esito AS, Norway">
 	other_details = <
 		["custodian_organisation"] = <"openEHR Foundation">
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9B78CA663809B46AC41812F071954401">
-		["build_uid"] = <"7c86af81-6bdc-471e-a5e6-26bd9d823391">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"40B62DB1C52097933A3963406D8D102D">
+		["build_uid"] = <"8f6c98c3-4d06-4521-b630-07c570bb2081">
+		["revision"] = <"1.1.0">
 	>
 
 definition
@@ -97,7 +97,7 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			ELEMENT[at0022] occurrences matches {0..1} matches {	-- Method
+			ELEMENT[at0022] occurrences matches {0..*} matches {	-- Method
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -131,7 +131,7 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Method description">
-					description = <"Narrative description of the method used to identify the evidence.">
+					description = <"Narrative description of the method/s used to identify the evidence.">
 				>
 				["at0003"] = <
 					text = <"Finding">
@@ -179,7 +179,7 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Metodebeskrivelse">
-					description = <"Fritekstbeskrivelse av metoden som ble brukt for å komme fram til funnet.">
+					description = <"Fritekstbeskrivelse av metoden eller metodene som ble brukt for å komme fram til funnet.">
 				>
 				["at0003"] = <
 					text = <"Funn">
