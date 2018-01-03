@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.indirect_oximetry.v0
 
 concept
-	[at0000]	-- Indirect oximetry
+	[at0000]	-- Pulse oximetry
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -18,6 +18,14 @@ language
 			author = <
 				["name"] = <"Vyacheslav Mavrin">
 				["organisation"] = <"JSC Comsoft">
+			>
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Kirsi Poikela">
+				["organisation"] = <"Tieto Sweden Healthcare & Welfare AB">
+				["email"] = <"ext.kirsi.poikela@tieto.com">
 			>
 		>
 		["es-ar"] = <
@@ -151,12 +159,14 @@ OBSERVATION.heart_rate-pulse
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record indirect, currently non-invasive, blood oxygen measurements, such as SpO₂ and SpCO, via pulse oximetry or other methods.">
-			use = <"Use to record indirect, currently non-invasive, blood oxygen measurements, such as SpO₂ and SpCO, via pulse oximetry or other methods.
+			purpose = <"To record blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.">
+			use = <"Use to record blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.
 
 Waveforms should be recorded here when used to document quality of the blood gas measurement.">
-			keywords = <"oxygen", "oxygenation", "saturation", "SpO2", "spMet", "spCO", "spOC", "carboxyhaemoglobin", "methaemoglobin", "transcutaneous", "pulse", "oximeter", "oximetry", "concentration", "partial", "pressure", "non-invasive", "vital", "O2", "CO2", "carbon dioxide", "SaO₂", "SaO2">
-			misuse = <"Not to be used for recording plesmythography. Use another appropriate archetype for this purpose.
+			keywords = <"oxygen", "oxygenation", "saturation", "SpO2", "spMet", "spCO", "spOC", "carboxyhaemoglobin", "methaemoglobin", "pulse", "oximeter", "oximetry", "concentration", "partial", "pressure", "non-invasive", "vital", "O2", "SaO₂", "SaO2", "sat", "sats">
+			misuse = <"Not used for other non-invasive blood gas measurements such as transcutaneous CO₂, lateral end-tidal CO₂ or non-invasive cerebral oximetry.
+
+Not to be used for recording plethysmography. Use another appropriate archetype for this purpose.
 
 Not to be used for recording another type of measurement, such as pulse rate, where the recording device also provides this. This should be recorded in a separate archetype, appropriate for that particular measurement to allow consistent querying. In this example, record the pulse rate in the OBSERVATION.pulse archetype.
 
@@ -167,25 +177,40 @@ Not to be used to record invasive blood gas measurement. For example, arterial (
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere indirekte, for tiden ikke-invasive, blodgassmålinger, slik som SpO2 og SpCO, via pulsoksimetri eller andre metoder.">
-			use = <"Brukes til å registrere indirekte blodoksygenmålinger som SpO₂ og SpCO, ved hjelp av pulsoksimetri eller andre metoder.
+			purpose = <"For å registrere blodoksygen og beslektede målinger, målt ved pulsoksymetri eller puls-CO-oksymetri.">
+			use = <"Brukes til å registrere blodoksygen og beslektede målinger, målt ved pulsoksymetri eller puls-CO-oksymetri.
 
 Bølgeformer bør registreres her, når det benyttes til å dokumentere kvalitet på blodgassmåling.
 ">
 			keywords = <"oksygen", "oksygenering", "saturasjon", "SpO2", "spMet", "spCO", "spCaO", "karbonmonoksid hemoglobin", "methemoglobin", "puls", "oksimetri", "oksimeter", "konsentrasjon", "partial", "trykk", "non-invasiv", "vital", "O2", "CO2", "karbondioksid", "oksimetri", "oksymetri">
-			misuse = <"Brukes ikke til å registrere plesmytografi. Bruk en annen passende arketype for dette formålet.
+			misuse = <"Brukes ikke til å registrere andre non-invasive blodgassmålinger, som transkutan CO₂, sidestrøms endetidal CO₂ eller noninasiv cerebral oksimetri.
+
+Brukes ikke til å registrere pletysmografi. Bruk en annen passende arketype for dette formålet.
 
 Brukes ikke til å registrer andre typer målinger som for eksempel puls, der måleutstyret også angir disse. Dette dette registreres i en egen arketype som er passende for den aktuelle målingen, for å muliggjøre konsekvent spørring. I dette eksempelet registreres puls i OBSERVATION.pulse-arketypen. 
 
 Brukes ikke til å registrere perifere blodgassmålinger som involverer direkte kontakt med blod. For eksempel bør PaO₂, PaCO₂ registreres i OBSERVATION.laboratory_test_result arketypen.
 
-Brukes ikke til å registrere invasiv blodgassmåling. For eksempel arteriell (SaO₂) eller venøs (SvO₂) oksygenmetning eller oksygeninnhold (CaOC) som vanligvis måles ved hjelp av invasive metoder som blodgasser eller vaskulære katetere. Bruk OBSERVATION.laboratory_test_result til dette formålet.
+Brukes ikke til å registrere invasiv blodgassmåling, for eksempel arteriell (SaO₂) eller venøs (SvO₂) oksygenmetning eller oksygeninnhold (CaOC) som vanligvis måles ved hjelp av invasive metoder. Bruk OBSERVATION.laboratory_test_result til dette formålet.">
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"Att mäta den nuvarande icke-invasiva syrehalten i blodet såsom SpO2 och SpCO sekundärt, genom pulsoximetri eller andra metoder.">
+			use = <"Används för att mäta nuvarande icke-invasiva, syrehalter i blodet, såsom SpO2 och SpCO, sekundärt genom pulsoximetri eller andra metoder.
 
-">
+Vågformer bör registreras här vid användning för att dokumentera kvaliteten av blodgasmätningen.">
+			keywords = <"syre", "syrsättning", "syremättnad", "SpO2", "spMet", "spCO", "spOC", "karboxihemoglobin", "methemoglobin", "transkutan", "puls", "oximeter", "oximetri", "koncentration", "partiell", "tryck", "icke-invasiv", "vital", "O2", "CO2", "koldioxid", "SaO₂", "SaO2">
+			misuse = <"Används inte för mätning av pletysmografi. Använd en annan lämplig arketyp för det ändamålet.
+
+Används inte för andra typer av mätningar, t.ex. pulsfrekvens, eftersom mätenheten också tillhandahåller informationen. För dessa används en separat arketyp som är lämplig för den specifika mätningen för att möjliggöra konsekventa förfrågningar. I det här exemplet registrerar du pulsfrekvensen i OBSERVATION.pulse arketypen.
+
+Används inte för mätning av perifert blodgas som innebär direktkontakt med blod. PaO2, PaCO2 bör till exempel mätas med hjälp av OBSERVATION.laboratory_test_result arketypen.
+
+Används inte för invasiv blodgasmätning, t.ex. arteriell (Sa02), venös (SvO2) syremättnad eller syreinnehåll (CaOC) som vanligtvis fastställs av invasiva metoder såsom laboratorieblodgaser eller vaskulära katetrar. De bör också mätas med arketypen OBSERVATION.laboratory_test_result.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Tomas Alme, DIPS, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Mate Bestek, National Institute of Public Health of Slovenia, Slovenia", "Marja Buur, Medisch Centrum Alkmaar/ Code24, Netherlands", "Sergio Carmona, Chile", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Tamsin Cockayne, Australia", "Ed Conley, Cardiff University", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Samo Drnovsek, Marand ltd, Slovenia", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany (Editor)", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Karsten Heusser, Hannover Medical School, Germany", "Omer Hotomaroglu, Turkey (Editor)", "Evelyn Hovenga, EJSH Consulting, Australia", "Pieter Hummel, Medisch Centrum Alkmaar, Netherlands", "Eugene Igras, IRIS Systems, Inc., Canada", "Sundaresan Jagannathan, Scottish NHS, United Kingdom", "Gorazd Kalan, University Medical Centre Ljubljana, Slovenia", "Konstantinos Kalliamvakos, Cambio Healthcare Systems, Sweden", "Russell Leftwich, Russell B Leftwich MD, United States", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Vincent McCauley, Medical Software Industry Association, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Lars Morgan Karlsen, DIPS ASA, Norway", "Udo Müller, CompuGROUP Software, Germany", "Andrej Orel, Marand d.o.o., Slovenia", "Arturo Romero, SESCAM, Spain", "Tony Shannon, frectal ltd, United Kingdom", "Micaela Thierley, Helse Bergen, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Tomas Alme, DIPS, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Mate Bestek, National Institute of Public Health of Slovenia, Slovenia", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Marja Buur, Medisch Centrum Alkmaar/ Code24, Netherlands", "Sergio Carmona, Chile", "Ady Angelica Castro Acosta, CIBERES-Hospital 12 de Octubre, Spain", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Tamsin Cockayne, Australia", "Ed Conley, Cardiff University", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Samo Drnovsek, Marand ltd, Slovenia", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sebastian Garde, Ocean Informatics, Germany (Editor)", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Karsten Heusser, Hannover Medical School, Germany", "Omer Hotomaroglu, Turkey (Editor)", "Evelyn Hovenga, EJSH Consulting, Australia", "Pieter Hummel, Medisch Centrum Alkmaar, Netherlands", "Eugene Igras, IRIS Systems, Inc., Canada", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Sundaresan Jagannathan, Scottish NHS, United Kingdom", "Gorazd Kalan, University Medical Centre Ljubljana, Slovenia", "Konstantinos Kalliamvakos, Cambio Healthcare Systems, Sweden", "Lars Morgan Karlsen, DIPS ASA, Norway", "Harmony Kosola, Alberta Health Services, Canada", "Russell Leftwich, Russell B Leftwich MD, United States", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Vincent McCauley, Medical Software Industry Association, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Udo Müller, CompuGROUP Software, Germany", "Andrej Orel, Marand d.o.o., Slovenia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Arturo Romero, SESCAM, Spain", "Anoop Shah, University College London, United Kingdom", "Tony Shannon, frectal ltd, United Kingdom", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Micaela Thierley, Helse Bergen, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Stian Torleif Varpe, Helse Bergen, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -204,13 +229,13 @@ Jubran A. Pulse oximetry. Crit Care. 1999;3(2):R11-R17. PubMed PMID: 11094477; P
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"60F300B8DDF60CE920485E424EC16192">
-		["build_uid"] = <"e4ba8033-f26c-4556-8e8a-54effc5cb4c6">
+		["MD5-CAM-1.0.1"] = <"6333A93B4019ABF1F9B4A20233D1E85C">
+		["build_uid"] = <"8d420520-d3f2-46ad-a0e0-4ca711834d4e">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Indirect oximetry
+	OBSERVATION[at0000] matches {	-- Pulse oximetry
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -232,7 +257,7 @@ definition
 												property = <[openehr::119]>
 												list = <
 													["1"] = <
-														units = <"ml/ml">
+														units = <"ml/dl">
 														magnitude = <|>=0.0|>
 													>
 												>
@@ -255,44 +280,13 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0039] occurrences matches {0..1} matches {	-- X - ptcO₂
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::125]>
-												list = <
-													["1"] = <
-														units = <"mm[Hg]">
-														magnitude = <|>=0.0|>
-														precision = <|1|>
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0040] occurrences matches {0..1} matches {	-- X - ptcCO₂
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::125]>
-												list = <
-													["1"] = <
-														units = <"mm[Hg]">
-														magnitude = <|>=0.0|>
-														precision = <|1|>
-													>
-												>
-											>
-										}
-									}
 									allow_archetype CLUSTER[at0054] occurrences matches {0..*} matches {	-- Waveform
 										include
 											archetype_id/value matches {/openEHR-EHR-CLUSTER\.waveform(-[a-zA-Z0-9_]+)*\.v1/}
 									}
-									ELEMENT[at0019] occurrences matches {0..*} matches {	-- Multimedia image
-										value matches {
-											DV_MULTIMEDIA matches {
-												media_type matches {[openEHR::]}
-											}
-										}
+									allow_archetype CLUSTER[at0060] occurrences matches {0..*} matches {	-- Multimedia image
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
 									}
 									ELEMENT[at0058] occurrences matches {0..*} matches {	-- Interpretation
 										value matches {
@@ -346,30 +340,10 @@ definition
 									at0048, 	-- Transmittal
 									at0049, 	-- Reflective
 									at0050, 	-- Clamp
-									at0051, 	-- Strip
-									at0052]	-- X - Electrode
+									at0051]	-- Strip
 								}
 							}
 							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0037] occurrences matches {0..1} matches {	-- X - Electrode operating temperature
-						value matches {
-							C_DV_QUANTITY <
-								property = <[openehr::127]>
-								list = <
-									["1"] = <
-										units = <"Cel">
-										magnitude = <|0.0..100.0|>
-										precision = <|1|>
-									>
-								>
-							>
-						}
-					}
-					ELEMENT[at0038] occurrences matches {0..1} matches {	-- X - Time of sensor application
-						value matches {
-							DV_DATE_TIME matches {*}
 						}
 					}
 					allow_archetype CLUSTER[at0018] occurrences matches {0..1} matches {	-- Oximetry device
@@ -393,8 +367,8 @@ ontology
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Indirect oximetry(en)">
-					description = <"*Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.(en)">
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
 				>
 				["at0001"] = <
 					text = <"*Event Series(en)">
@@ -446,12 +420,6 @@ ontology
 تفاصيل حول جهيزة قياس التأكسج بطريقة غير باضعة.
 ">
 				>
-				["at0019"] = <
-					text = <"  صورة الوسائط المتعدةة">
-					description = <"تفاصيل سلسلة قراءات التأكسج, بخلاف التموجات, و يتم التعبير عنها على هيئة صورة أو سلسلة من الصور. 
-ينبغي تسجيل التموجات في شرفة التموجات التي يتم ربطها بعنقود نماذج مناسبة.
-">
-				>
 				["at0020"] = <
 					text = <"  نوع المجس – الحاسة">
 					description = <" 
@@ -471,29 +439,9 @@ ontology
 تعليق نَصي حول نتيجة قياس التأكسج غير المباشر.
 ">
 				>
-				["at0037"] = <
-					text = <"*X - Electrode Operating Temperature(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The operating temperature of a transcutaneous oximeter electrode.(en)">
-				>
-				["at0038"] = <
-					text = <"*X - Time of Sensor Application(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)">
-				>
-				["at0039"] = <
-					text = <"*X - ptcO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)">
-				>
-				["at0040"] = <
-					text = <"*X - ptcCO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)">
-				>
 				["at0044"] = <
 					text = <"*SpOC(en)">
-					description = <"*The oxygen content of the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
 				>
 				["at0045"] = <
 					text = <"*SpCO(en)">
@@ -501,7 +449,7 @@ ontology
 				>
 				["at0046"] = <
 					text = <"*SpMet(en)">
-					description = <"*The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
 				>
 				["at0048"] = <
 					text = <"  الامتراق">
@@ -527,10 +475,6 @@ ontology
 تم استخدام مجس لقياس التأكسج عند النبض على هيئة شريط.
 ">
 				>
-				["at0052"] = <
-					text = <"*X - Electrode(en)">
-					description = <"*Value deprecated. (A transcutaneous electrode sensor was applied.)(en)">
-				>
 				["at0054"] = <
 					text = <"التموج">
 					description = <" 
@@ -539,7 +483,7 @@ ontology
 				>
 				["at0058"] = <
 					text = <"*Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
 					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
 				>
 				["at0059"] = <
@@ -547,13 +491,17 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)">
 				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
+				>
 			>
 		>
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Indirect oximetry(en)">
-					description = <"*Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.(en)">
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
 				>
 				["at0001"] = <
 					text = <"*Event Series(en)">
@@ -597,10 +545,6 @@ ontology
 					text = <"Dispositivo">
 					description = <"Detalles del dispositivo de oximetría no invasiva utilizado.">
 				>
-				["at0019"] = <
-					text = <"Imágen multimedia">
-					description = <"Detalles de series de lecturas de oximetría, diferentes de las formas de ondas, expresados como una imágen multimedia o una serie de imágenes. Las formas de onda deberían ser registradas usando el slot Waveform y el arquetipo cluster asociado.">
-				>
 				["at0020"] = <
 					text = <"Tipo de sensor">
 					description = <"El tipo de sensor de medición usado. Ej. transmisión, reflectivo, pinza o banda, electrodos, etc.">
@@ -614,29 +558,9 @@ ontology
 					text = <"Comentarios">
 					description = <"Un texto de comentarios acerca del resultado de la oximetría indirecta.">
 				>
-				["at0037"] = <
-					text = <"*X - Electrode Operating Temperature(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The operating temperature of a transcutaneous oximeter electrode.(en)">
-				>
-				["at0038"] = <
-					text = <"*X - Time of Sensor Application(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)">
-				>
-				["at0039"] = <
-					text = <"*X - ptcO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)">
-				>
-				["at0040"] = <
-					text = <"*X - ptcCO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)">
-				>
 				["at0044"] = <
 					text = <"*SpOC(en)">
-					description = <"*The oxygen content of the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
 				>
 				["at0045"] = <
 					text = <"*SpCO(en)">
@@ -644,7 +568,7 @@ ontology
 				>
 				["at0046"] = <
 					text = <"*SpMet(en)">
-					description = <"*The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
 				>
 				["at0048"] = <
 					text = <"Transmisión">
@@ -662,17 +586,13 @@ ontology
 					text = <"Tira">
 					description = <"Se utilizó un sensor tipo tira o banda, de oximetría de pulso.">
 				>
-				["at0052"] = <
-					text = <"*X - Electrode(en)">
-					description = <"*Value deprecated. (A transcutaneous electrode sensor was applied.)(en)">
-				>
 				["at0054"] = <
 					text = <"Forma de onda de pulso">
 					description = <"La lectura o el registro de la forma de onda con la medición de oximetría.">
 				>
 				["at0058"] = <
 					text = <"*Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
 					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
 				>
 				["at0059"] = <
@@ -680,13 +600,17 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)">
 				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Indirect oximetry(en)">
-					description = <"*Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.(en)">
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -730,10 +654,6 @@ ontology
 					text = <"*Device(en)">
 					description = <"*Details of the non-invasive oximetry device used.(en)">
 				>
-				["at0019"] = <
-					text = <"*Multimedia image(en)">
-					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
-				>
 				["at0020"] = <
 					text = <"*Sensor Type(en)">
 					description = <"*The type of measurement sensor used.(en)">
@@ -747,29 +667,9 @@ ontology
 					text = <"*Comment(en)">
 					description = <"*A text comment about the indirect oximetry result.(en)">
 				>
-				["at0037"] = <
-					text = <"*X - Electrode Operating Temperature(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The operating temperature of a transcutaneous oximeter electrode.(en)">
-				>
-				["at0038"] = <
-					text = <"*X - Time of Sensor Application(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)">
-				>
-				["at0039"] = <
-					text = <"*X - ptcO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)">
-				>
-				["at0040"] = <
-					text = <"*X - ptcCO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)">
-				>
 				["at0044"] = <
 					text = <"*SpOC(en)">
-					description = <"*The oxygen content of the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
 				>
 				["at0045"] = <
 					text = <"*SpCO(en)">
@@ -777,7 +677,7 @@ ontology
 				>
 				["at0046"] = <
 					text = <"*SpMet(en)">
-					description = <"*The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
 				>
 				["at0048"] = <
 					text = <"*Transmittal(en)">
@@ -795,30 +695,30 @@ ontology
 					text = <"*Strip(en)">
 					description = <"*A pulse oximetry strip sensor was applied.(en)">
 				>
-				["at0052"] = <
-					text = <"*X - Electrode(en)">
-					description = <"*Value deprecated. (A transcutaneous electrode sensor was applied.)(en)">
-				>
 				["at0054"] = <
 					text = <"*Waveform(en)">
 					description = <"*A waveform reading associated with the oximetry measurement.(en)">
 				>
 				["at0058"] = <
 					text = <"*Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
 					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
 				>
 				["at0059"] = <
 					text = <"*Cluster(en)">
 					description = <"**(en)">
 				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
+				>
 			>
 		>
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Indirect oximetry">
-					description = <"Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.">
+					text = <"Pulse oximetry">
+					description = <"Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -862,10 +762,6 @@ ontology
 					text = <"Oximetry device">
 					description = <"Details of the non-invasive oximetry device used.">
 				>
-				["at0019"] = <
-					text = <"Multimedia image">
-					description = <"Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.">
-				>
 				["at0020"] = <
 					text = <"Sensor type">
 					description = <"The type of measurement sensor used.">
@@ -879,37 +775,17 @@ ontology
 					text = <"Comment">
 					description = <"A text comment about the indirect oximetry result.">
 				>
-				["at0037"] = <
-					text = <"X - Electrode operating temperature">
-					description = <"Data element deprecated.">
-					comment = <"The operating temperature of a transcutaneous oximeter electrode.">
-				>
-				["at0038"] = <
-					text = <"X - Time of sensor application">
-					description = <"Data element deprecated.">
-					comment = <"The date and time at which the sensor was applied. Significant for transcutaneous oximetry.">
-				>
-				["at0039"] = <
-					text = <"X - ptcO₂">
-					description = <"Data element deprecated.">
-					comment = <"Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.">
-				>
-				["at0040"] = <
-					text = <"X - ptcCO₂">
-					description = <"Data element deprecated.">
-					comment = <"Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.">
-				>
 				["at0044"] = <
 					text = <"SpOC">
-					description = <"The oxygen content of the peripheral blood, measured via pulse CO-oximetry.">
+					description = <"The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.">
 				>
 				["at0045"] = <
 					text = <"SpCO">
-					description = <"The saturation of carboxyhaemoglobin in the perpiheral blood, measured via pulse CO-oximetry.">
+					description = <"The saturation of carboxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.">
 				>
 				["at0046"] = <
 					text = <"SpMet">
-					description = <"The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.">
+					description = <"The saturation of methaemoglobin in the peripheral blood, measured via pulse CO-oximetry.">
 				>
 				["at0048"] = <
 					text = <"Transmittal">
@@ -927,17 +803,13 @@ ontology
 					text = <"Strip">
 					description = <"A pulse oximetry strip sensor was applied.">
 				>
-				["at0052"] = <
-					text = <"X - Electrode">
-					description = <"Value deprecated. (A transcutaneous electrode sensor was applied.).">
-				>
 				["at0054"] = <
 					text = <"Waveform">
 					description = <"A waveform reading associated with the oximetry measurement.">
 				>
 				["at0058"] = <
 					text = <"Interpretation">
-					description = <"Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.">
+					description = <"Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.">
 					comment = <"Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.">
 				>
 				["at0059"] = <
@@ -945,13 +817,17 @@ ontology
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.">
 				>
+				["at0060"] = <
+					text = <"Multimedia image">
+					description = <"Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.">
+				>
 			>
 		>
 		["fa"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Indirect oximetry(en)">
-					description = <"*Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.(en)">
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
 				>
 				["at0001"] = <
 					text = <"*Event Series(en)">
@@ -995,10 +871,6 @@ ontology
 					text = <"تجهیز">
 					description = <"جزییاتی در مورد تجهیزات غیر تهاجمی استفاده شده">
 				>
-				["at0019"] = <
-					text = <"تصویر چند رسانه ای">
-					description = <"جزییات مربوط به یک سری از موارد خوانده شده اندازه گیری اکسیژن ، غیر ازشکل موجی ، بیان شده بصورت تصویر چند رسانه ای یا سریهایی از تصاویر. شکل موجی باید با استفاده  گره شکل موجی و الگوساز خوشه ای مربوطه ثبت شوند">
-				>
 				["at0020"] = <
 					text = <"نوع سنسور">
 					description = <"نوع سنسور اندازه گیری استفاده شده به عنوان مثال انتقالی ، بازتابی ، گیره ای یا نواری ، الکترود ">
@@ -1012,29 +884,9 @@ ontology
 					text = <"نظر">
 					description = <"نظرکتبی درباره نتیجه اندازه گیری غیر مستقیم اکسیژن">
 				>
-				["at0037"] = <
-					text = <"*X - Electrode Operating Temperature(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The operating temperature of a transcutaneous oximeter electrode.(en)">
-				>
-				["at0038"] = <
-					text = <"*X - Time of Sensor Application(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)">
-				>
-				["at0039"] = <
-					text = <"*X - ptcO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)">
-				>
-				["at0040"] = <
-					text = <"*X - ptcCO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)">
-				>
 				["at0044"] = <
 					text = <"*SpOC(en)">
-					description = <"*The oxygen content of the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
 				>
 				["at0045"] = <
 					text = <"*SpCO(en)">
@@ -1042,7 +894,7 @@ ontology
 				>
 				["at0046"] = <
 					text = <"*SpMet(en)">
-					description = <"*The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
 				>
 				["at0048"] = <
 					text = <"انتقالی">
@@ -1060,17 +912,13 @@ ontology
 					text = <"نوار">
 					description = <"سنسور نواری اندازه گیری اکسیژن نبضی بکار برده شد">
 				>
-				["at0052"] = <
-					text = <"*X - Electrode(en)">
-					description = <"*Value deprecated. (A transcutaneous electrode sensor was applied.)(en)">
-				>
 				["at0054"] = <
 					text = <"شکل موجی">
 					description = <"شکل موجی خوانده شده در ارتباط با اندازه گیری میزان اکسیژن">
 				>
 				["at0058"] = <
 					text = <"*Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
 					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
 				>
 				["at0059"] = <
@@ -1078,13 +926,17 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)">
 				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
+				>
 			>
 		>
 		["ru"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Indirect oximetry(en)">
-					description = <"*Method of monitoring blood gas measurements such as SpO₂ and SpCO by indirect, currently non-invasive, means.(en)">
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
 				>
 				["at0001"] = <
 					text = <"Событие серии">
@@ -1128,10 +980,6 @@ ontology
 					text = <"Устройство">
 					description = <"Информация об используемом неинвазивном оксиметрическом устройстве.">
 				>
-				["at0019"] = <
-					text = <"Мультимедийное изображение">
-					description = <"Информация о серии оксиметрических считываний, кроме осциллограмм, выраженная в виде мультимедийного изображения или серии изображений. Графические изображения волн должны быть записаны с помощью слота волнового сигнала и связаны архетипом типа кластер.">
-				>
 				["at0020"] = <
 					text = <"Тип датчика">
 					description = <"Тип используемого измерительного датчика, например, передающий, отражающий, зажим или полоса, электрод.">
@@ -1145,29 +993,9 @@ ontology
 					text = <"Комментарий">
 					description = <"Текстовый комментарий о результатах непрямой оксиметрии.">
 				>
-				["at0037"] = <
-					text = <"*X - Electrode Operating Temperature(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The operating temperature of a transcutaneous oximeter electrode.(en)">
-				>
-				["at0038"] = <
-					text = <"*X - Time of Sensor Application(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)">
-				>
-				["at0039"] = <
-					text = <"*X - ptcO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)">
-				>
-				["at0040"] = <
-					text = <"*X - ptcCO₂(en)">
-					description = <"*Data element deprecated.(en)">
-					comment = <"*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)">
-				>
 				["at0044"] = <
 					text = <"*SpOC(en)">
-					description = <"*The oxygen content of the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
 				>
 				["at0045"] = <
 					text = <"*SpCO(en)">
@@ -1175,7 +1003,7 @@ ontology
 				>
 				["at0046"] = <
 					text = <"*SpMet(en)">
-					description = <"*The saturation of methoxyhaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
 				>
 				["at0048"] = <
 					text = <"Передающий">
@@ -1193,17 +1021,13 @@ ontology
 					text = <"Полоска">
 					description = <"Применён датчик пульсовой оксиметрии в форме полоски.">
 				>
-				["at0052"] = <
-					text = <"*X - Electrode(en)">
-					description = <"*Value deprecated. (A transcutaneous electrode sensor was applied.)(en)">
-				>
 				["at0054"] = <
 					text = <"Осциллограмма">
 					description = <"Графическое изображение волны, связанное с оксиметрическим измерением.">
 				>
 				["at0058"] = <
 					text = <"*Interpretation(en)">
-					description = <"*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
 					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
 				>
 				["at0059"] = <
@@ -1211,13 +1035,17 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)">
 				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Indirekte oksimetri">
-					description = <"Metode for å måle blodoksygen som SpO₂ og SpCO ved indirekte midler.">
+					text = <"Pulsoksymetri">
+					description = <"Blodoksygen og beslektede målinger, målt ved pulsoksymetri eller puls-CO-oksymetri.">
 				>
 				["at0001"] = <
 					text = <"*Event Series(en)">
@@ -1225,7 +1053,7 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Uspesifisert hendelse">
-					description = <"Standard, uspesifisert tidspunkt eller intervallhendelse som kan være eksplisitt definert i en mal eller i applikasjonen.">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"*Tree(en)">
@@ -1254,23 +1082,17 @@ ontology
 					comment = <"Antatt å være 21% oksygenkonsentrasjon, FiO₂ på 0,21, og oksygenflow på 0 l/min eller 0 ml/min.">
 				>
 				["at0016"] = <
-					text = <"Kompliserende faktorer">
-					description = <"Kommentar til og registrering av andre tilfeldige faktorer som kan påvirke tolkning av observasjonen. For eksempel, bevegelse, smerte, dårlig perfusjon, spedbarnsernæring.">
+					text = <"Konfunderende faktorer">
+					description = <"Fritekstbeskrivelse av problemer eller faktorer som kan ha påvirkning på målingene. For eksempel bevegelse, smerte, dårlig perfusjon, amming.">
 				>
 				["at0018"] = <
-					text = <"Monitor">
-					description = <"Detaljer om den monitor som anvendes.
-
-Oversetterens kommentar: (bare oksygenmålinger er oksimetri. CO2 målinger er ikke oksimetri).">
-				>
-				["at0019"] = <
-					text = <"Multimedia-bilde">
-					description = <"Detaljer fra en serie oksimetrimålinger, annet enn kurveformer, uttrykt som multimediabilder eller serier av bilder. Kurveformer bør registreres i Waveform slot og tilhørende clusterarketyper.">
+					text = <"Måleutstyr">
+					description = <"Detaljer om måleutstyret som ble brukt.">
 				>
 				["at0020"] = <
 					text = <"Sensortype">
-					description = <"Den type sensor som anvendes.">
-					comment = <"For eksempel: transmisjons eller utstrålings elektrode; en reflekterende elektrode; en klemmeelektrode, eller båndelektrode.">
+					description = <"Sensortypen som ble brukt.">
+					comment = <"For eksempel: transmisjons- eller utstrålingselektrode; en reflekterende elektrode; en klemmeelektrode, eller båndelektrode.">
 				>
 				["at0034"] = <
 					text = <"Belastning">
@@ -1280,65 +1102,33 @@ Oversetterens kommentar: (bare oksygenmålinger er oksimetri. CO2 målinger er i
 					text = <"Kommentar">
 					description = <"En tekstlig kommentar om det indirekte oksimetri-måleresultatet.">
 				>
-				["at0037"] = <
-					text = <"X - Elektrodens driftstemperatur">
-					description = <"Dataelementet er avskrevet.">
-					comment = <"Driftstemperaturen av en transkutan elektrode til indirekte blodgassmåling.">
-				>
-				["at0038"] = <
-					text = <"X - Tidspunkt for sensorpåsettelse">
-					description = <"Dataelementet er avskrevet.">
-					comment = <"Dato og tidspunkt for påsettelse av sensor. Relevant for transkutane målinger.">
-				>
-				["at0039"] = <
-					text = <"X - ptcO₂">
-					description = <"Dataelementet er avskrevet.">
-					comment = <"Partielltrykk av oksygen i perifert blod, målt via transkutan elektrodeoksimetri.">
-				>
-				["at0040"] = <
-					text = <"X - ptcCO₂">
-					description = <"Dataelementet er avskrevet.">
-					comment = <"Partielltrykk av karbondioksyd i perifert blod, målt via transkutan elektrodeoksimetri.">
-				>
 				["at0044"] = <
 					text = <"SpOC">
-					description = <"Oksygeninnholdet i perifert blod, målt via puls-CO-oksimetri.">
+					description = <"Oksygeninnholdet i perifert blod, kalkulert basert på pulsoksymetri og puls-CO-oksymetri.">
 				>
 				["at0045"] = <
 					text = <"SpCO">
-					description = <"Metningen av karboksyhemoglobin i perifert blod, målt via puls-CO-oksimetri.">
+					description = <"Metningen av karboksyhemoglobin i perifert blod, målt via puls-CO-oksymetri.">
 				>
 				["at0046"] = <
 					text = <"SpMet">
-					description = <"Metning av metoksyhemoglobin i perifert blod, målt via puls-CO-oksimetri.">
+					description = <"Metning av methemoglobin i perifert blod, målt via puls-CO-oksimetri.">
 				>
 				["at0048"] = <
 					text = <"Transmisjons- eller utstrålingselektrode">
-					description = <"En transmisjons eller utstrålings elektrode ble anvendt.
-
-Oversetterens kommentar: (alle oksimetri elektroder er transmisjonselektroder)">
+					description = <"En transmisjons- eller utstrålingselektrode ble brukt.">
 				>
 				["at0049"] = <
 					text = <"Reflektive">
-					description = <"En puls reflektiv oksimeter elektrode ble anvendt.
-
-Oversetterens kommentar: (alle oksimetri elektroder er transmisjons elektroder).">
+					description = <"En puls reflektiv oksymetrielektrode ble brukt.">
 				>
 				["at0050"] = <
 					text = <"Klemme">
-					description = <"En pulsoksimeter klemme ble anvendt
-
-Oversetterens kommentar: (alle oksimetri elektroder er transmisjonselektroder, også i de typer som er utformet som klemmer).">
+					description = <"En pulsoksymetriklemme ble brukt.">
 				>
 				["at0051"] = <
 					text = <"Bånd">
-					description = <"En pulsoksimeter båndelektrode ble anvendt
-
-Oversetterens kommentar: (alle oksimetri elektroder er transmisjons elektroder også de er utformet som bånd med tape).">
-				>
-				["at0052"] = <
-					text = <"X - Elektrode">
-					description = <"Verdien er avskrevet. (En transkutan eletrode ble anvendt.)">
+					description = <"En båndelektrode ble brukt.">
 				>
 				["at0054"] = <
 					text = <"Kurveform">
@@ -1346,13 +1136,128 @@ Oversetterens kommentar: (alle oksimetri elektroder er transmisjons elektroder o
 				>
 				["at0058"] = <
 					text = <"Fortolkning">
-					description = <"Et enkelt ord, frase eller kort beskrivelse som representerer den kliniske betydningen og viktigheten av funnene ved den kliniske undersøkelsen.">
-					comment = <"Anvendelse av en standard terminologi er å foretrekke, hvis mulig. For eksempel, normal oksygenmetning eller hypoksemi.">
+					description = <"Et enkelt ord, frase eller kort beskrivelse som representerer den kliniske betydningen og viktigheten av målingen.">
+					comment = <"Koding med en standardisert terminologi er å foretrekke, hvis mulig. For eksempel, normal oksygenmetning eller hypoksemi.">
 				>
 				["at0059"] = <
 					text = <"Tilleggsinformasjon">
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0060"] = <
+					text = <"Multimedia-bilde">
+					description = <"Detaljer fra en serie oksymetrimålinger, annet enn kurveformer, uttrykt som multimediabilder eller serier av bilder. Kurveformer bør registreres i Kurveform-SLOTet.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Pulse oximetry(en)">
+					description = <"*Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry.(en)">
+				>
+				["at0001"] = <
+					text = <"Händelseförlopp">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Ospecificerad händelse">
+					description = <"Standardval, händelse vid ospecificerad tidpunkt eller tidsintervall som tydligt kan definieras i en mall eller vid körning av program.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"SpO2">
+					description = <"Syremättnaden i det perifera blodet, mätt genom pulsoximetri.">
+					comment = <"SpO2 definieras som förhållandet mellan oxihemoglobin (HbO2) och den totala koncentrationen av hemoglobin (HbO2 + deoxihemoglobin) i perifert blod.
+">
+				>
+				["at0007"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Sensorplats">
+					description = <"Mätningssensorns plats på kroppen.">
+				>
+				["at0014"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0015"] = <
+					text = <"Tillförd syrgas">
+					description = <"Detaljer om mängden syre som patienten inandas vid observationstillfället.
+">
+					comment = <"Antagna värden på 21% syrekoncentration, Fi02 av 0,21 och syrgasflödeshastighet av 0 l/min eller 0 ml/ min.">
+				>
+				["at0016"] = <
+					text = <"Påverkande faktorer">
+					description = <"Kommentera och registrera andra tillfälliga faktorer som kan påverka tolkningen av observationen, t.ex. rörelse, smärta, dålig perfusion, spädbarnsmatning.">
+				>
+				["at0018"] = <
+					text = <"Oximetriutrustning">
+					description = <"Detaljer om den använda icke-invasiva oximeteranordningen.">
+				>
+				["at0020"] = <
+					text = <"Sensortyp">
+					description = <"Typ av mätningssensor som används.">
+					comment = <"Exempelvis: transmissionselektrod; reflekterande elektrod; klämelektrod eller elektrodremsa.">
+				>
+				["at0034"] = <
+					text = <"Ansträngning">
+					description = <"Detaljer om fysisk aktivitet vid mätningstillfället.">
+				>
+				["at0036"] = <
+					text = <"Kommentar">
+					description = <"En textkommentar om syremättnadsresultatet.">
+				>
+				["at0044"] = <
+					text = <"*SpOC(en)">
+					description = <"*The oxygen content of the peripheral blood, calculated based on pulse oximetry and pulse CO-oximetry.(en)">
+				>
+				["at0045"] = <
+					text = <"SpCO">
+					description = <"Mättnaden av karboxihemoglobin i perifert blod, mätt genom puls CO-oximetri.">
+				>
+				["at0046"] = <
+					text = <"*SpMet(en)">
+					description = <"*The saturation of metaemoglobin in the peripheral blood, measured via pulse CO-oximetry.(en)">
+				>
+				["at0048"] = <
+					text = <"Överföring">
+					description = <"En pulsoximeter med transmittalsensor applicerades.">
+				>
+				["at0049"] = <
+					text = <"Reflexiv">
+					description = <"En pulsoximeter med reflexiv sensor applicerades.">
+				>
+				["at0050"] = <
+					text = <"Klämma">
+					description = <"En pulsoximeter med klämsensor applicerades.">
+				>
+				["at0051"] = <
+					text = <"Remsa">
+					description = <"En pulsoximeter med sensorremsa applicerades.">
+				>
+				["at0054"] = <
+					text = <"Vågform">
+					description = <"Ett mätvärde av en vågform kopplad till oximetrimätningen.">
+				>
+				["at0058"] = <
+					text = <"*Interpretation(en)">
+					description = <"*Single word, phrase or brief description which represents the clinical meaning and significance of the measurements.(en)">
+					comment = <"*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)">
+				>
+				["at0059"] = <
+					text = <"Övrig information">
+					description = <"Ytterligare information som krävs för att fånga lokal kontext eller för att kunna anpassa sig till andra referensmodeller / formalismer.">
+					comment = <"T.ex. information om en lokal sjukhusavdelning eller ytterligare metadata för att anpassa sig till HL7- eller CDISC-ekvivalenter.">
+				>
+				["at0060"] = <
+					text = <"*Multimedia image(en)">
+					description = <"*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)">
 				>
 			>
 		>
@@ -1368,10 +1273,11 @@ Oversetterens kommentar: (alle oksimetri elektroder er transmisjons elektroder o
 		>
 		["LOINC"] = <
 			items = <
-				["at0006"] = <[LOINC::2709-4]>
+				["at0006"] = <[LOINC::59408-5]>
 				["at0009"] = <[LOINC::20081-6]>
-				["at0039"] = <[LOINC::33437-5]>
-				["at0040"] = <[LOINC::33022-5]>
+				["at0044"] = <[LOINC::57800-5]>
+				["at0045"] = <[LOINC::86904-0]>
+				["at0046"] = <[LOINC::2614-6]>
 			>
 		>
 	>
