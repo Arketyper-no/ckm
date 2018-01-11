@@ -22,39 +22,49 @@ description
 		["date"] = <"2017-04-26">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"To record the volume of an individual's testicles.">
-			use = <"Use to record the volume of an individual's testicles.
-
-While the measurement of testicular volume may be one component of a full genital examination, this archetype for recording testicular volume has been developed as a standalone OBSERVATION to support the common monitoring of testicular volume by use of growth charts in childhood and puberty.">
-			keywords = <"testis", ...>
-			misuse = <"Not to be used to record the volume of an object or other bodypart.">
-			copyright = <"© Nasjonal IKT HF, openEHR Foundation">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere testikkelvolumet til et individ.">
 			use = <"Brukes for å registrere testikkelvolumet til et individ.
 
-Måling av testikkelvolum kan være en komponent i en overordnet undersøkelse av genitalia, arketypen er allikevel utviklet som en frittstående OBSERVATION-arketype for å støtte monitorering av testikkelvolum i vekstkurver.">
-			keywords = <"testikler", "testikkel", "orchidometer">
-			misuse = <"Brukes ikke for å registrere volumet til et objekt eller andre kroppsdeler.">
+Måling av testikkelvolum kan være en komponent i en overordnet undersøkelse av genitalia, arketypen er allikevel utviklet som en frittstående OBSERVATION-arketype for å støtte monitorering av testikkelvolum i vekstkurver.
+
+Brukes til å registrere endring ved gjentatte målinger. Dette kan modelleres ved å begrense \"Uspesifisert hendelse\" i en templat til et intervall med en tilhørende matematisk funksjon for \"økning\".
+
+Denne arketypen kan også brukes for å registrere et anslag av testikkelvolum i et klinisk scenario der det ikke er mulig å få til en nøyaktig måling, f.eks. ved måling av et barn som ikke samarbeider. Dette er ikke modellert eksplisitt inn i arketypen, siden openEHR referansemodellen tillater attributten \"Approksimering\" for datatypen \"Quantity\". Ved implementasjon kan f.eks. et brukergrensesnitt tillate klinikerne å velge en avkrysningsboks ved siden av elementet \"Testikkelvolum\" for å indikere at omkretsen er en approksimering heller enn en faktisk måling.">
+			keywords = <"testikler", "testikkel", "orchidometer", "orchiometer">
+			misuse = <"Brukes ikke for å registrere volumet av et objekt eller av andre kroppsdeler enn testikler. Bruk egne arketyper for dette formålet.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the volume of an individual's testicle.">
+			use = <"Use to record the volume of an individual's testicle.
+
+While the measurement of testicular volume may be one component of a full genital examination, this archetype for recording testicular volume has been developed as a standalone OBSERVATION to support the common monitoring of testicular volume by use of growth charts in childhood and puberty.
+
+Use to record change from repeated measurements. This can currently be modeled by constraining the 'any event' to an interval in a template with an associated mathematical function, as appropriate.
+
+This archetype can also be used for recording an approximation of the testiclular volume measurement in a clinical scenario where it is not possible to measure an accurate testicular volume - for example, measuring an uncooperative child. This is not modelled explicitly in the archetype as the openEHR Reference model allows the attribute of Approximation for any Quantity data type. At implementation, for example, an application user interface could allow clinicians to select an appropriately labelled check box adjacent to the 'Testicular volume' data field to indicate that the recorded testicular volume is an approximation, rather than actual.">
+			keywords = <"testis", "testicle", "orchiometer", "orchidometer">
+			misuse = <"Not to be used to record the volume of an object or other bodypart than testicles. Use an appropriate archetype for this purpose.">
+			copyright = <"© Nasjonal IKT HF, openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS AS, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Morgan Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Health Systems, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Stian Torleif Varpe, Helse Bergen, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Sotos, J. F., & Tokar, N. J. (2012). Testicular volumes revisited: A proposal for a simple clinical method that can closely match the volumes obtained by ultrasound and its clinical application. International journal of pediatric endocrinology, 2012(1), 17.
 
-Lin, C. C., Huang, W. J., & Chen, K. K. (2009). Measurement of testicular volume in smaller testes: how accurate is the conventional orchidometer?. Journal of andrology, 30(6), 685-689.">
+Lin, C. C., Huang, W. J., & Chen, K. K. (2009). Measurement of testicular volume in smaller testes: how accurate is the conventional orchidometer?. Journal of andrology, 30(6), 685-689.
+
+Mbaeri, T. U., Orakwe, J. C., Nwofor, A. M. E., Oranusi, C. K., & Mbonu, O. O. (2013). Ultrasound measurements of testicular volume: Comparing the three common formulas with the true testicular volume determined by water displacement. African Journal of Urology, 19(2), 69-73.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"B02EC694CFFF70D859AF942F1C61B514">
-		["build_uid"] = <"184bcfad-37e5-452d-8fb6-a748f2e23a57">
+		["MD5-CAM-1.0.1"] = <"E2AFA5A6EACE71E123B8F18C924105DA">
+		["build_uid"] = <"855813f9-e8d8-4996-926b-40377fa6bbd8">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -66,8 +76,8 @@ definition
 					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
-								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Testicular volume
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0010] matches {	-- Testicular volume
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::129]>
@@ -112,7 +122,7 @@ definition
 		protocol matches {
 			ITEM_TREE[at0006] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Body site
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Laterality
 						value matches {
 							DV_TEXT matches {*}
 							DV_CODED_TEXT matches {
@@ -148,13 +158,15 @@ definition
 	}
 
 
+
 ontology
+	terminologies_available = <"en", "nb", "SNOMED-CT">
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"Testicular volume">
-					description = <"The volume of the testicles measured or calculated.">
+					description = <"The estimated, measured or calculated volume of a testicle.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -184,10 +196,11 @@ ontology
 				["at0008"] = <
 					text = <"Formula">
 					description = <"The formula used to calculate the testicular volume.">
+					comment = <"For example: 'L × W × H × 0.71'.">
 				>
 				["at0010"] = <
 					text = <"Testicular volume">
-					description = <"Measured or calculated volume of the testicles.">
+					description = <"Estimated, measured or calculated volume of a testicle.">
 				>
 				["at0011"] = <
 					text = <"Tree">
@@ -209,7 +222,7 @@ ontology
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 				["at0020"] = <
-					text = <"Body site">
+					text = <"Laterality">
 					description = <"Identification of the testicle that was measured.">
 					comment = <"For example: Left or right testicle.">
 				>
@@ -227,7 +240,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Testikkelvolum">
-					description = <"Testiklenens volum enten målt eller utregnet.">
+					description = <"Testiklenens volum enten estimert, målt eller utregnet.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -256,11 +269,12 @@ ontology
 				>
 				["at0008"] = <
 					text = <"Formel">
-					description = <"Formelen som ble brukt for å regne ut testikkelvolum.">
+					description = <"Formel som ble brukt for å regne ut testikkelvolumet.">
+					comment = <"For eksempel: \"L × W × H × 0.71\".">
 				>
 				["at0010"] = <
 					text = <"Testikkelvolum">
-					description = <"Målt eller utregnet testikkelvolum.">
+					description = <"Estimert, målt eller utregnet testikkelvolum.">
 				>
 				["at0011"] = <
 					text = <"Tree">
@@ -282,7 +296,7 @@ ontology
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 				["at0020"] = <
-					text = <"Kroppssted">
+					text = <"Kroppsside">
 					description = <"Testikkelen som ble målt.">
 					comment = <"For eksempel høyre eller venstre testikkel.">
 				>
@@ -294,6 +308,15 @@ ontology
 					text = <"Høyre testikkel">
 					description = <"Måling av høyre testikkel.">
 				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0010"] = <[SNOMED-CT::251828008]>
+				["at0021"] = <[SNOMED-CT::63239009]>
+				["at0022"] = <[SNOMED-CT::15598003]>
 			>
 		>
 	>
