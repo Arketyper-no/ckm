@@ -46,6 +46,37 @@ description
 		["date"] = <"2012-12-11">
 	>
 	details = <
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Arquetipo contenedor genérico para la portación de información que necesita ser compartida con otros.">
+			use = <"Utilizar como un arquetipo genérico para portar información que necesita ser compartida con otros. Son ejemplos habituales: documentación de la respuesta a una solicitud de información; el resultado de un test; actividades que han sido realizadas o eventos que han ocurrido.
+El componente de Contexto contiene un slot innominado que puede ser utilizado para:
+-agregar contenido opcional durante la confección de una plantilla para apoyar requerimientos específicos del caso de uso;
+-agregar arquetipos del modelo demográfico de openEHR que representen a las partes participantes. En tanto que esto puede no ser deseable durante una implementación, puede ser útil para demostrar como los datos demográficos pueden ser utilizados en una implementación (ejemplo: como apoyo a los requerimientos de recolección de contenido clínico o revisión de una plantilla). El componente de Secciones ha sido dejado libre de restricciones a fin de maximizar el uso de este arquetipo.">
+			keywords = <"informe", ...>
+			misuse = <"">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Generisk COMPOSITION-arketype som skal inneholde informasjon om resultatet av en undersøkelse eller vurdering.">
+			use = <"Brukes som en generisk arketype for informasjon om resultatet av en frittstående undersøkelse eller vurdering, eller en gruppe av relaterte resultater.
+
+Det er forventet at hver COMPOSITION.report-resultat arketype vil inneholde minst én OBSERVATION-arketype som vil inneholde undersøkelsesresultatene, men avhengig av kompleksiteten av undersøkelsen eller vurderingene kan også andre arketyper inkluderes for å gi en fullstendig klinisk kontekst.
+
+Vanlige bruksområder kan være:
+- Ett eller flere patologi/laboratoriesvar;
+- Ett eller flere bildediagnostiske svar;
+- EKG-svar
+- Vurdering av audiogram.
+
+Innholdskomponenten er bevisst latt være ubegrenset. Dette tillater bruk av enhver SECTION- og/eller ENTRY-arketype som er nødvendig/hensiktsmessig i templaten brukt i den aktuelle kliniske konteksten.
+">
+			keywords = <"rapport", "test", "prøve", "svar", "resultat", "diagnostikk", "undersøkelse", "informasjon", "vurdering">
+			misuse = <"Skal ikke brukes for rapporter som ikke er knyttet til et svar på en prøve eller undersøkelse. Bruk den generiske COMPOSITION.report eller en annen passende formåls-spesifikk COMPOSITION.
+
+Skal ikke brukes til prøve- eller undersøkelsessvar som er registrert som en del av et konsultasjonsnotat, for eksempel Glasgow Coma Scale i forbindelse med en akutt konsultasjon. For dette eksempelet bruk OBSERVATION.glasgow_coma_scale arketypen som en komponent i arketypen COMPOSITION.encounter for dette formålet.">
+		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			purpose = <"نموذج جنيس (غير محدود الملكية) يحتوي على معلومات من أجل مشاركتها مع الجميع.">
@@ -70,17 +101,6 @@ The Sections component has been deliberately left unconstrained to maximise re-u
 			misuse = <"">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Arquetipo contenedor genérico para la portación de información que necesita ser compartida con otros.">
-			use = <"Utilizar como un arquetipo genérico para portar información que necesita ser compartida con otros. Son ejemplos habituales: documentación de la respuesta a una solicitud de información; el resultado de un test; actividades que han sido realizadas o eventos que han ocurrido.
-El componente de Contexto contiene un slot innominado que puede ser utilizado para:
--agregar contenido opcional durante la confección de una plantilla para apoyar requerimientos específicos del caso de uso;
--agregar arquetipos del modelo demográfico de openEHR que representen a las partes participantes. En tanto que esto puede no ser deseable durante una implementación, puede ser útil para demostrar como los datos demográficos pueden ser utilizados en una implementación (ejemplo: como apoyo a los requerimientos de recolección de contenido clínico o revisión de una plantilla). El componente de Secciones ha sido dejado libre de restricciones a fin de maximizar el uso de este arquetipo.">
-			keywords = <"informe", ...>
-			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"Generic container archetype to carry information about the result of a test or assessment.">
@@ -101,26 +121,6 @@ The Sections component has been deliberately left unconstrained to maximise re-u
 Not to be used for test or assessment results that are recorded as part of a consultation note, for example Glasgow coma scale in the context of an emergency consultation - use the OBSERVATION.glasgow_coma_scale archetype as one component within the COMPOSITION.encouter for this purpose.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"Generisk COMPOSITION-arketype som skal inneholde informasjon om resultatet av en test eller vurdering.">
-			use = <"Brukes som en generisk arketype for informasjon om resultatet av en frittstående test eller vurdering, eller en gruppe av relaterte resultater.
-
-Det er forventet at hver COMPOSITION.report-resultat arketype vil inneholde minst én OBSERVATION-arketype som vil inneholde testresultatene, men avhengig av kompleksiteten av testene eller vurderingene vil også andre arketyper kunne bli inkludert for å gi fullstendig klinisk sammenheng.
-
-Vanlige bruksområder kan være:
-- Et eller flere patologi/laboratoriesvar;
-- Et eller flere bildediagnostiske svar;
-- EKG-svar
-- Vurdering av audiogram.
-
-Sections-komponenten er bevisst satt til ubegrenset for å maksimere gjenbruk av denne arketypen.
-">
-			keywords = <"rapport", "test", "prøve", "svar", "resultat", "diagnostikk">
-			misuse = <"Skal ikke brukes for rapporter som ikke er knyttet til et svar på en prøve eller undersøkelse. Bruk den generiske COMPOSITION.report eller en annen passende formåls-spesifikk COMPOSITION.
-
-Skal ikke brukes til prøve- eller undersøkelsessvar som er registrert som en del av et konsultasjonsnotat, for eksempel Glasgow Coma Scale i forbindelse med en akutt konsultasjon - bruk OBSERVATION.glasgow_coma_scale arketypen som en komponent i COMPOSITION.encounter for dette formålet.">
-		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heath Frankel, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia">
@@ -133,7 +133,7 @@ Skal ikke brukes til prøve- eller undersøkelsessvar som er registrert som en d
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
 		["MD5-CAM-1.0.1"] = <"A860A0F0855542B424CFA4CF11C7A612">
-		["build_uid"] = <"a20addf7-95a5-445b-b4a5-3a53867972bf">
+		["build_uid"] = <"e024cc9b-51c7-466e-9aa9-516e757a2338">
 		["revision"] = <"0.0.1-alpha">
 	>
 
