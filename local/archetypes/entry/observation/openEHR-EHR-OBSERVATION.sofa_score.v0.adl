@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.sofa_score.v0
 
 concept
-	[at0000]	-- SOFA skår
+	[at0000]	-- SOFA-skår
 language
 	original_language = <[ISO_639-1::nb]>
 description
@@ -15,19 +15,23 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For gradering av av organdysfunksjon i seks vitale organsystem.">
-			use = <"Brukes for vurdere graden av abnormalitet i organfunksjonen i seks vitale organsystem i forbindelse med infeksjoner og gradering av eventuell sepsis.
+			purpose = <"For å gradere og følge utvikling av organdysfunksjon i seks vitale organsystem.">
+			use = <"Brukes for å gradere og følge utvikling av organdysfunksjon i seks vitale organsystem og for å anslå mortalitet for pasienter med organdysfunksjon.
 
-SOFA skår benyttes hos voksne (> 16 år) intensivpasienter.">
+SOFA-skår benyttes vanligvis i intensivavdelinger og i akuttmottak, men kan brukes på alle pasienter hvor man mistenker eller ønsker å følge utviklingen av organdysfunksjon, f.eks. hos pasienter med sepsis.
+
+SOFA-skår benyttes hos voksne (≥ 16 år).">
 			keywords = <"sepsis", "organsvikt", "organdysfunksjon", "septisk sjokk", "infeksjon">
 			misuse = <"Anvendes ikke for registrering av hver enkelt fysiologisk parameter eller klinisk observasjon. Bruk spesifikke OBSERVATION-arketyper for dette formål - OBSERVATION.Glascow_coma_scale, OBSERVATION.pao2_fio2_ratio, OBSERVATION.blood_pressure, OBSERVATION.laboratory_test.
 
-Anvendes ikke for registrering av SOFA skår hos barn som er > 16 år gamle.">
+Anvendes ikke for registrering av SOFA-skår hos barn som er < 16 år gamle.
+
+Skal ikke brukes for registrering av qSOFA (quick SOFA) bruk arketypen OBSERVATION.qsofa_score for dette formålet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Siv Fauchald, DIPS ASA, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS AS, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Marit Ludvigsen, St Olavs Hospital, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Gro-Hilde Ulriksen, Norwegian center for ehealthresearch, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Stian Torleif Varpe, Helse Bergen, Norway", "Marianne Warholm, Helse Vest IKT, Norway">
+	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Siv Fauchald, DIPS ASA, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS AS, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Marit Ludvigsen, St Olavs Hospital, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Gro-Hilde Ulriksen, Norwegian center for ehealthresearch, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Stian Torleif Varpe, Helse Bergen, Norway", "Marianne Warholm, Helse Vest IKT, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
@@ -37,13 +41,13 @@ Norsk Intensivregister (NIR) [Internett]. Bergen: Helse Bergen HF; 2017 [sitert 
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"9B9930AD702AAEBAB5907507F5F3C2CC">
-		["build_uid"] = <"ea0de980-8f7d-45e7-8f3e-7d558f13ae8a">
+		["MD5-CAM-1.0.1"] = <"5EA529517B21A92311A48DD4A325275D">
+		["build_uid"] = <"73eb8320-499e-4b49-aa6d-db5f454480f7">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- SOFA skår
+	OBSERVATION[at0000] matches {	-- SOFA-skår
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -105,7 +109,7 @@ definition
 											4|[local::at0039]  	-- TPK < 20 (x10³/µl)
 										}
 									}
-									ELEMENT[at0041] occurrences matches {0..1} matches {	-- SOFA score
+									ELEMENT[at0041] occurrences matches {0..1} matches {	-- SOFA-skår
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..24|}
@@ -127,13 +131,15 @@ definition
 	}
 
 
+
+
 ontology
 	term_definitions = <
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"SOFA skår">
-					description = <"Sequential (sepsis related) organ failure assessment SOFA) er et scoringssystem for gradering av organdysfunksjon i seks vitale organsystem.">
+					text = <"SOFA-skår">
+					description = <"Sequential organ failure assessment (SOFA) er et skåringssystem for å gradere og følge utvikling av organdysfunksjon i seks vitale organsystem. Tidligere betegnet som \"sepsis related organ feilure assessment\".">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -198,27 +204,27 @@ ontology
 				>
 				["at0016"] = <
 					text = <"Sentralnervesystemet">
-					description = <"Glasgow Coma Score (GCS) er indikator for eventuell dysfunksjon i sentralnervesystemet.">
+					description = <"Glasgow Coma Scale (GCS) er indikator for eventuell dysfunksjon i sentralnervesystemet.">
 				>
 				["at0017"] = <
 					text = <"GCS 15">
-					description = <"Glasgow Coma Score er lik 15.">
+					description = <"Glasgow Coma Scale er lik 15.">
 				>
 				["at0018"] = <
 					text = <"GCS 13 - 14">
-					description = <"Glasgow Coma Score er lik 13 eller 14.">
+					description = <"Glasgow Coma Scale er lik 13 eller 14.">
 				>
 				["at0019"] = <
 					text = <"GCS 10 - 12">
-					description = <"Glasgow Coma Score er fra 10 til 12.">
+					description = <"Glasgow Coma Scale er fra 10 til 12.">
 				>
 				["at0020"] = <
 					text = <"GCS 6 - 9">
-					description = <"Glasgow Coma Score er fra 6 til 9.">
+					description = <"Glasgow Coma Scale er fra 6 til 9.">
 				>
 				["at0021"] = <
 					text = <"GCS < 6">
-					description = <"Glasgow Coma Score er mindre enn 6.">
+					description = <"Glasgow Coma Scale er mindre enn 6.">
 				>
 				["at0022"] = <
 					text = <"Nyrefunksjon">
@@ -293,8 +299,8 @@ ontology
 					description = <"TPK er mindre enn 20 000 per mikroliter.">
 				>
 				["at0041"] = <
-					text = <"SOFA score">
-					description = <"SOFA score er summen av score for de enkelte parametrene.">
+					text = <"SOFA-skår">
+					description = <"SOFA-skår er summen av skår for de enkelte parametrene.">
 				>
 				["at0044"] = <
 					text = <"Kommentar">
