@@ -6,6 +6,13 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand, Silje Ljosland Bakke">
+				["organisation"] = <"Helse Bergen HF, Nasjonal IKT HF">
+			>
+		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			author = <
@@ -32,6 +39,19 @@ description
 		["date"] = <"2013-05-29">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en eller flere kontekstuelle eller tidsspesifikke kvalifikatorer for et problem eller en diagnose.">
+			use = <"Brukes for å registrere en eller flere kontekst- eller tidsspesifikke kvalifikatorer som gir ytterligere detaljer som er relevant på tidspunktet man registrerer et problem eller en diagnose, eller er relevant i den kliniske konteksten hvor problemet eller diagnosen registreres og som ikke nødvendigvis er passende på et annet tidspunkt eller i en annen klinisk kontekst.
+
+Arketypen skal brukes i SLOTet \"Status\" i arketypen EVALUATION.problem_diagnosis (Problem/diagnose).
+
+Kvalifikatorene bør brukes med omhu siden de i praksis brukes på mange forskjellige måter, og interoperabilitet kan ikke garanteres med mindre bruken er klart definert innenfor det kliniske miljøet der arketypeparet \"Problem/diagnose\" og \"Problemkvalifikator\" deles.
+
+Fullstendig DRG-koding vil kreve dataelementer fra denne arketypen samt fra arketypen CLUSTER.procedure_status som benyttes i arketypen ACTION.procedure (Prosedyre) samt pasientattributter.">
+			keywords = <"problem", "aktivt", "inaktivt", "status", "episode">
+			misuse = <"Brukes ikke for å representere differensialdiagnoser. Bruk arketypen EVALUATION.differantial_diagnosis for dette formålet.">
+		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			purpose = <"Para gravar um ou mais qualificadores de estado clínico, específicos do contexto ou do tempo, para um problema ou diagnóstico específico">
@@ -75,15 +95,16 @@ The 'Unspecified' data element has been added to support addition of other quali
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjoern Arntzen, Oslo university hospital, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Iran", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "chunlan ma, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Richard Townley-O'Neill, Australian Digital Health Agency, Australia", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)">
+	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Arild Faxvaag, NTNU, Norway", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Bente Gjelsvik, Helse Bergen, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Anca Heyd, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Direktoratet for e-helse, Norway", "chunlan ma, Ocean Informatics, Australia", "Luis Marco Ruiz, NST, Spain", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Jussara Rotzsch, UNB, Brazil", "Thomas Schopf, University Hospital of North-Norway, Norway", "Anoop Shah, University College London, United Kingdom", "Line Sæle, Nasjonal IKT HF, Norway", "Richard Townley-O'Neill, Australian Digital Health Agency, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
+		["current_contact"] = <"Heather Leslie, Atomica Informatics<heather.leslie@atomicainformatics.com>">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"49DEEE2F355B8DFE6D0564AA91517942">
-		["build_uid"] = <"670ba0c3-5c6b-4c0e-bb27-e987fe40c93d">
+		["MD5-CAM-1.0.1"] = <"19F71D3A27BD69E4F1106F2E93D7DE7F">
+		["build_uid"] = <"2ef6eb4c-e057-437b-a298-1a18de4f1077">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -151,13 +172,13 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Episodicity
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Episode
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0034, 	-- New episode
-							at0035, 	-- Ongoing episode
+							at0034, 	-- New
+							at0035, 	-- Ongoing
 							at0070]	-- Indeterminate
 						}
 					}
@@ -181,7 +202,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0063] occurrences matches {0..1} matches {	-- Diagnostic category
+			ELEMENT[at0063] occurrences matches {0..*} matches {	-- Diagnostic category
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -191,6 +212,7 @@ definition
 							at0076]	-- Complication
 						}
 					}
+					DV_TEXT matches {*}
 				}
 			}
 			ELEMENT[at0073] occurrences matches {0..1} matches {	-- Present on admission?
@@ -215,7 +237,7 @@ ontology
 					description = <"Contextual or temporal qualifier for a specified problem or diagnosis.">
 				>
 				["at0001"] = <
-					text = <"Episodicity">
+					text = <"Episode">
 					description = <"Category of this episode for the identified problem/diagnosis.">
 				>
 				["at0003"] = <
@@ -249,11 +271,11 @@ ontology
 					description = <"The problem or diagnosis is not completely resolved but is inactive or felt less relevant to the current clinical context.">
 				>
 				["at0034"] = <
-					text = <"New episode">
+					text = <"New">
 					description = <"A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.">
 				>
 				["at0035"] = <
-					text = <"Ongoing episode">
+					text = <"Ongoing">
 					description = <"The issue, problem or diagnosis continues, without occurrences of new episodes.">
 				>
 				["at0060"] = <
@@ -271,8 +293,9 @@ ontology
 				>
 				["at0063"] = <
 					text = <"Diagnostic category">
-					description = <"Category of the diagnosis within a specified episode of care and care context, relative to other diagnoses.">
-					comment = <"In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.">
+					description = <"Category of the problem or diagnosis within a specified episode of care and/or local care context.">
+					comment = <"This data element contains a value set commonly used in diagnostic categorisation. In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.
+In addition, the free text choice permits use of other local value sets, as required.">
 				>
 				["at0064"] = <
 					text = <"Principal diagnosis">
@@ -368,7 +391,7 @@ ontology
 					description = <"*Contextual or temporal qualifier for a specified problem or diagnosis.(en)">
 				>
 				["at0001"] = <
-					text = <"*Episodicity(en)">
+					text = <"*Episode(en)">
 					description = <"*Category of this episode for the identified problem/diagnosis.(en)">
 				>
 				["at0003"] = <
@@ -402,11 +425,11 @@ ontology
 					description = <"Problem trenutno ni aktiven">
 				>
 				["at0034"] = <
-					text = <"*New episode(en)">
-					description = <"*A first occurrence of a new diagnosis or new occurrence of a previous diagnosis. A flag for 'First ever' occurrence can be recorded separately.(en)">
+					text = <"*New(en)">
+					description = <"*A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.(en)">
 				>
 				["at0035"] = <
-					text = <"*Ongoing episode(en)">
+					text = <"*Ongoing(en)">
 					description = <"*The issue, problem or diagnosis continues, without occurrences of new episodes.(en)">
 				>
 				["at0060"] = <
@@ -424,8 +447,9 @@ ontology
 				>
 				["at0063"] = <
 					text = <"*Diagnostic category(en)">
-					description = <"*Category of the diagnosis within a specified episode of care and care context, relative to other diagnoses.(en)">
-					comment = <"*In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.(en)">
+					description = <"*Category of the problem or diagnosis within a specified episode of care and/or local care context.(en)">
+					comment = <"*This data element contains a value set commonly used in diagnostic categorisation. In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.
+In addition, the free text choice permits use of other local value sets, as required.(en)">
 				>
 				["at0064"] = <
 					text = <"*Principal diagnosis(en)">
@@ -521,7 +545,7 @@ ontology
 					description = <"*Contextual or temporal qualifier for a specified problem or diagnosis.(en)">
 				>
 				["at0001"] = <
-					text = <"*Episodicity(en)">
+					text = <"*Episode(en)">
 					description = <"*Category of this episode for the identified problem/diagnosis.(en)">
 				>
 				["at0003"] = <
@@ -555,12 +579,12 @@ ontology
 					description = <"O problema ou diagnóstico não está completamente resolvido, mas está inativo ou é menos relevante no contexto clínico atual.">
 				>
 				["at0034"] = <
-					text = <"Novo episódio">
-					description = <"Uma nova ocorrência de um problema ou de um diagnóstico novo ou existente. Uma \"flag\" para 'Primeira ocorrência' pode ser gravado separadamente para distinguir a primeira das outras ocorrências.">
+					text = <"*New(en)">
+					description = <"*A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.(en)">
 				>
 				["at0035"] = <
-					text = <"Episódio em curso">
-					description = <"A questão, problema ou diagnóstico continua, sem a ocorrência de novos episódios.">
+					text = <"*Ongoing(en)">
+					description = <"*The issue, problem or diagnosis continues, without occurrences of new episodes.(en)">
 				>
 				["at0060"] = <
 					text = <"*Current/Past?(en)">
@@ -577,8 +601,9 @@ ontology
 				>
 				["at0063"] = <
 					text = <"*Diagnostic category(en)">
-					description = <"*Category of the diagnosis within a specified episode of care and care context, relative to other diagnoses.(en)">
-					comment = <"*In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.(en)">
+					description = <"*Category of the problem or diagnosis within a specified episode of care and/or local care context.(en)">
+					comment = <"*This data element contains a value set commonly used in diagnostic categorisation. In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.
+In addition, the free text choice permits use of other local value sets, as required.(en)">
 				>
 				["at0064"] = <
 					text = <"Diagnóstico principal">
@@ -664,6 +689,159 @@ ontology
 				["at0093"] = <
 					text = <"*Indeterminate(en)">
 					description = <"*It is not possible to determine if there have been diminution of the signs or symptoms of the disease have been identified.(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Problem/diagnose-kvalifikator">
+					description = <"Kontekst- eller tidsspesifikke kvalifikatorer for et problem eller en diagnose.">
+				>
+				["at0001"] = <
+					text = <"Episode">
+					description = <"Kategorisering av denne episoden av problemet/diagnosen.">
+				>
+				["at0003"] = <
+					text = <"Aktiv/inaktiv?">
+					description = <"Kategori som støtter oppdeling av problemer og diagnoser i lister over aktive og inaktive problemer.">
+					comment = <"Elementene Aktiv/inaktiv og Nåværende/tidligere og lignende klinisk innflytelse, men representerer noe forskjellig betydning. Begge brukes aktivt i forskjellige kliniske settinger, men som regel ikke sammen. Dersom Nåværende/tidligere er registrert, er dette elementet sannsynligvis overflødig.">
+				>
+				["at0004"] = <
+					text = <"Diagnostisk status">
+					description = <"Den diagnostiske prosessens stadie eller fase.">
+					comment = <"Statusen bestemmes vanligvis av en kombinasjon av tidspunkt for diagnosen sammen med nivå av klinisk sikkerhet som et resultat av diagnostiske undersøkelser og det kliniske grunnlaget som er tilgjengelig. Termene er tilpasset SNOMED CT.">
+				>
+				["at0016"] = <
+					text = <"Tentativ diagnose">
+					description = <"En foreløpig diagnose som er en utredningshypotese, og som antas å kunne bli bekreftet ved videre utredning eller observasjon av utvikling.">
+				>
+				["at0017"] = <
+					text = <"Arbeidsdiagnose">
+					description = <"Midlertidig diagnose, basert på en rimelig grad av klinisk sikkerhet, men som avventer videre undersøkelsesresultater eller kliniske råd. Den kan fortsatt endres etter som undersøkelsesresultater eller råd blir tilgjengelige.">
+				>
+				["at0018"] = <
+					text = <"Fastslått diagnose">
+					description = <"Endelig underbygget diagnose, basert på en høy grad av klinisk sikkerhet, som omfatter klinisk evidens fra undersøkelser. Den er ikke forventet å endres.">
+				>
+				["at0026"] = <
+					text = <"Aktiv">
+					description = <"Problemet eller diagnosen er aktivt og kliniske relevant ved registreringstidspunktet.">
+				>
+				["at0027"] = <
+					text = <"Inaktiv">
+					description = <"Problemet eller diagnosen er ikke fullstendig bedret, men er inaktivt eller mindre relevant for den nåværende kliniske sammenhengen.">
+				>
+				["at0034"] = <
+					text = <"Ny">
+					description = <"En ny forekomst av enten et nytt eller et eksisterende problem eller diagnose. Et flagg for \"Første forekomst\" kan registreres separat for å skille den første forekomsten fra påfølgende.">
+				>
+				["at0035"] = <
+					text = <"Pågående">
+					description = <"Problemet eller diagnosen er pågående, uten at det har forekommet nye episoder.">
+				>
+				["at0060"] = <
+					text = <"Nåværende/tidligere?">
+					description = <"Kategori som støtter oppdeling av problemer og diagnoser i lister over nåværende og tidligere problemer.">
+					comment = <"Tilpasset SNOMED CT. Elementene Nåværende/tidligere og Aktiv/inaktiv har lignende klinisk innflytelse, men representerer noe forskjellig betydning. Begge brukes aktivt i forskjellige kliniske settinger, men som regel ikke sammen. Dersom Aktiv/inaktiv er registrert, er dette elementet sannsynligvis overflødig.">
+				>
+				["at0061"] = <
+					text = <"Tidligere">
+					description = <"Problemet/diagnosen var ikke lenger tilstede ved registreringstidspunktet.">
+				>
+				["at0062"] = <
+					text = <"Nåværende">
+					description = <"Problemet/diagnosen er tilstede ved registreringstidspunktet.">
+				>
+				["at0063"] = <
+					text = <"Diagnosisk kategori">
+					description = <"Kategorisering av problemet eller diagnosen innenfor en spesifikk kontakt og/eller lokal behandlingskontekst.">
+					comment = <"Dette elementet inneholder et verdisett som er i vanlig bruk innen diagnosekategorisering. I episodiske behandlingskontekster (som regel spesialisthelsetjenesten) er det vanlig å kategorisere/organisere diagnoser i henhold til deres forhold til hoveddiagnosen som behandles i den aktuelle kontakten. Disse kategoriene kan også brukes for klinisk koding, rapportering og fakturering. I noen land omtales diagnosekategorien som \"en DRG\". I tillegg gjør muligheten for å legge til annen fri eller kodet tekst at det er mulig å bruke andre lokale verdisett ved behov.">
+				>
+				["at0064"] = <
+					text = <"Hoveddiagnose">
+					description = <"Diagnosen som er bestemt å være hovedårsaken til den aktuelle kontakten.">
+				>
+				["at0066"] = <
+					text = <"Sekundærdiagnose">
+					description = <"Et problem eller diagnose som opptrer samtidig som hoveddiagnosen. Kan også omtales som en komorbiditet.">
+				>
+				["at0070"] = <
+					text = <"Ubestemmelig">
+					description = <"Det er ikke mulig å bestemme hvorvidt denne forekomsten av problemet eller diagnosen er ny eller pågående.">
+				>
+				["at0071"] = <
+					text = <"Første forekomst?">
+					description = <"Er dette den første forekomsten av dette problemet eller diagnosen?">
+					comment = <"Registrer som \"sann\" dersom dette er den første forekomsten av dette problemet eller diagnosen. Dette dataelementet kan brukes som en ytterligere kvalifikator i tillegg til verdien \"Ny\" i elementet \"Episode\". For eksempel kan en sykdom som astma ha gjentakende episoder med bedre perioder mellom, men det kan likevel være viktig å kunne identifisert den første astmaepisoden fra de påfølgende.">
+				>
+				["at0073"] = <
+					text = <"Tilstede ved innleggelse?">
+					description = <"Var problemet eller diagnosen tilstede ved innleggelse?">
+					comment = <"Registrer som \"sann\" dersom problemet eller diagnosen var tilstede ved innleggelse. Dette elementet er et krav i forbindelse med DRG i noen land.">
+				>
+				["at0076"] = <
+					text = <"Komplikasjon">
+					description = <"En ugunstig utvikling av et problem eller diagnose.">
+				>
+				["at0077"] = <
+					text = <"Forløpsbetegnelse">
+					description = <"Kategorisering som betegner varigheten av problemet eller diagnosen.">
+					comment = <"Definisjoner av akutt og kronisk vil varierer fra diagnose til diagnose.">
+				>
+				["at0079"] = <
+					text = <"Kronisk">
+					description = <"Et problem eller diagnose med varige eller langvarige effekter, eller som utvikler seg over tid.">
+				>
+				["at0081"] = <
+					text = <"Akutt">
+					description = <"Et problem eller diagnose med en rask inntreden, kortvarig forløp, eller begge.">
+				>
+				["at0083"] = <
+					text = <"Fase av bedring">
+					description = <"Fase av tilheling for et akutt problem eller diagnose.">
+					comment = <"For eksempel for å spore tilhelingen av en mellomørebetennelse.">
+				>
+				["at0084"] = <
+					text = <"Bedret">
+					description = <"Problemet eller diagnosen har fullført de vanlige stadiene av bedring eller tilheling, og kan regnes som bedret.">
+				>
+				["at0085"] = <
+					text = <"I bedring">
+					description = <"Problemet eller diagnosen utvikler seg i ønsket retning gjennom de vanlige stadiene av bedring, eller under tilheling.">
+				>
+				["at0086"] = <
+					text = <"Ikke i bedring">
+					description = <"Problemet eller diagnosen utvikler seg ikke i ønsket retning gjennom de vanlige stadiene av bedring, eller er ikke under tilheling.">
+				>
+				["at0087"] = <
+					text = <"Ubestemmelig">
+					description = <"Det er ikke mulig å bestemme problemet eller diagnosens fase av bedring.">
+				>
+				["at0088"] = <
+					text = <"Avkreftet">
+					description = <"Diagnosen har blitt klinisk revurdert, eller er motbevist med en høy grad av klinisk sikkerhet.">
+				>
+				["at0089"] = <
+					text = <"Status for remisjon">
+					description = <"Status for remisjon av en ikke-kurerbar diagnose.">
+					comment = <"For eksempel status for kreft eller en hematologisk diagnose.">
+				>
+				["at0090"] = <
+					text = <"I fullstendig remisjon">
+					description = <"Ingen minsking av sykdomstegn eller symptomer har blitt identifisert.">
+				>
+				["at0091"] = <
+					text = <"I delvis remisjon">
+					description = <"Minsking av sykdomstegn eller symptomer har blitt identifisert.">
+				>
+				["at0092"] = <
+					text = <"Ikke i remisjon">
+					description = <"Ingen minsking av sykdomstegn eller symptomer har blitt identifisert.">
+				>
+				["at0093"] = <
+					text = <"Ubestemmelig">
+					description = <"Det er ikke mulig å bestemme om sykdomstegnene eller symptomene av sykdommen har minsket.">
 				>
 			>
 		>
