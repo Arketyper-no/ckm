@@ -1,11 +1,19 @@
-﻿archetype (adl_version=1.4)
-	openEHR-DEMOGRAPHIC-ROLE.healthcare_provider_organisation.v1
+﻿archetype (adl_version=1.4; uid=c7be68ba-2f0e-43cc-8f0b-fc9c59b99223)
+	openEHR-DEMOGRAPHIC-ROLE.healthcare_provider_organisation.v0
 
 concept
 	[at0000]	-- Prestador de assistência à saúde
 language
 	original_language = <[ISO_639-1::pt-br]>
 	translations = <
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			author = <
+				["name"] = <"Seung-Jong Yu">
+				["organisation"] = <"NOUSCO Co.,Ltd.">
+			>
+			accreditation = <"Certified Board of Family Medicine in South Korea">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			author = <
@@ -23,13 +31,13 @@ description
 		["date"] = <"22/05/2009">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"Representation of an organisations's demographic data in the role of healthcare provider">
-			use = <"Used in demographic service to collect demographic data about an organisation in the role of a healthcare provider">
-			keywords = <"demographic service", "healthcare provider organisation">
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			purpose = <"진료제공자의 역할에서 기관의 인적 데이터의 표현.">
+			use = <"진료 제공자의 역할에서 기관에 대한 인적 데이터를 수집하는 인적정보 서비스에서 사용.">
+			keywords = <"*인적정보 서비스(ko)", "*진료 제공 기관(ko)", "*의료기관(ko)">
 			misuse = <"">
-			copyright = <"copyright (c) 2009 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -37,11 +45,29 @@ description
 			use = <"Usado em serviços de demografia para coletar dados demográficos sobre uma organização no papel de prestador de assistência à saúde">
 			keywords = <"serviço demográfico", "organização prestadora de assistência à saúde">
 			misuse = <"">
-			copyright = <"copyright (c) 2009 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Representation of an organisations's demographic data in the role of healthcare provider">
+			use = <"Used in demographic service to collect demographic data about an organisation in the role of a healthcare provider">
+			keywords = <"demographic service", "healthcare provider organisation">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"Authordraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"17BE079BC462EFCDA1D6F9B4F590E41A">
+		["build_uid"] = <"bf4693f1-7681-484b-a219-774456ea8a4a">
+		["revision"] = <"0.0.1-alpha">
+	>
 
 definition
     ROLE[at0000] matches {   
@@ -143,6 +169,38 @@ ontology
 				["at0031"] = <
 					text = <"identifier used in the relationship">
 					description = <"Identifier used by the healthcare provider in the relationship with the third-party payer">
+				>
+			>
+		>
+		["ko"] = <
+			items = <
+				["at0000"] = <
+					text = <"진료 제공 기관">
+					description = <"진료 제공자의 역할에서 기관.">
+				>
+				["at0001"] = <
+					text = <"식별자">
+					description = <"진료 제공 기관으로 행동하는 기관에 의해 사용되는 식별자.">
+				>
+				["at0002"] = <
+					text = <"제공자 이름">
+					description = <"어떻게 진료 제공 기관이 알려지는지를 나타냄.">
+				>
+				["at0003"] = <
+					text = <"보험지불자 관계">
+					description = <"진료 제공 기관과 보험지불자 간의 관계">
+				>
+				["at0010"] = <
+					text = <"식별자">
+					description = <"진료 제공 기관의 역할에서 기관에서 사용되는 식별자.">
+				>
+				["at0030"] = <
+					text = <"상세내용">
+					description = <"관계의 상세내용.">
+				>
+				["at0031"] = <
+					text = <"관계에서 사용되는 식별자">
+					description = <"보험지불자와 관계에서 진료 제공자에의해 사용되는 식별자">
 				>
 			>
 		>
