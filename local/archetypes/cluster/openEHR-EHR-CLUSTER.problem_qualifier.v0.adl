@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=fb60afae-a90a-4d8a-849b-583fd16025b1)
-	openEHR-EHR-CLUSTER.problem_status.v0
+﻿archetype (adl_version=1.4; uid=ae784e73-22b1-4211-a719-911fca5d6831)
+	openEHR-EHR-CLUSTER.problem_qualifier.v0
 
 concept
 	[at0000]	-- Problem/Diagnosis qualifier
@@ -32,6 +32,21 @@ description
 		["date"] = <"2013-05-29">
 	>
 	details = <
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Para gravar um ou mais qualificadores de estado clínico, específicos do contexto ou do tempo, para um problema ou diagnóstico específico">
+			use = <"Use para gravar um ou mais qualificadores relevantes que fornecem detalhes adicionais de contexto específico ou de tempo específico e que sejam relevantes no momento do registro de um problema ou diagnóstico, ou dentro do contexto clínico onde é registrado, mas que pode não ser apropriado em outro tempo ou em outro contexto clínico.
+
+Este arquétipo foi desenvolvido para ser incluído no slot do Estado no arquétipo EVALUATION.problem_diagnosis archetype.
+
+Estes qualificadores de estado devem ser usados com cuidado, pois eles são variáveis aplicados na prática e a interoperabilidade não pode ser assegurada, salvo se as diretrizes de uso forem claramente definidas dentro da comunidade clínica em que o par de arquétipos 'Problema / Diagnóstico\" e \"Estado do problema' podem ser compartilhados.
+
+A codificação DRG completa vai exigir os elementos de dados DRG deste arquétipo e o arquétipo CLUSTER.procedure_status equivalente, utilizado dentro do arquétipo ACTION.procedure, além de atributos sobre o paciente.
+
+O elemento de dados 'não especificado' foi adicionado para facilitar a adição de outros qualificadores que só podem ser usados localmente ou quando o caso de uso não foi claramente estabelecido no momento em que este arquétipo foi publicado. Como outros qualificadores são identificados, eles podem ser adicionados a este arquétipo como uma revisão retroativa.">
+			keywords = <"problema", "ativo", "inativo", "estado", "episódio", "diagnóstico">
+			misuse = <"Não deve ser usado para representar um diagnóstico diferencial - use o arquétipo EVALUATION.differential_diagnosis para esta finalidade.">
+		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
 			purpose = <"Za zapisovanje različnih statusov, ki se ponavadi uporablja za aplikacijskimi in kliničnimi sporočili, ki so odvisna od definirane vsebine
@@ -58,21 +73,6 @@ The 'Unspecified' data element has been added to support addition of other quali
 			misuse = <"Not to be used to represent Differential diagnosis - use the archetype EVALUATION.differential_diagnosis for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
-		["pt-br"] = <
-			language = <[ISO_639-1::pt-br]>
-			purpose = <"Para gravar um ou mais qualificadores de estado clínico, específicos do contexto ou do tempo, para um problema ou diagnóstico específico">
-			use = <"Use para gravar um ou mais qualificadores relevantes que fornecem detalhes adicionais de contexto específico ou de tempo específico e que sejam relevantes no momento do registro de um problema ou diagnóstico, ou dentro do contexto clínico onde é registrado, mas que pode não ser apropriado em outro tempo ou em outro contexto clínico.
-
-Este arquétipo foi desenvolvido para ser incluído no slot do Estado no arquétipo EVALUATION.problem_diagnosis archetype.
-
-Estes qualificadores de estado devem ser usados com cuidado, pois eles são variáveis aplicados na prática e a interoperabilidade não pode ser assegurada, salvo se as diretrizes de uso forem claramente definidas dentro da comunidade clínica em que o par de arquétipos 'Problema / Diagnóstico\" e \"Estado do problema' podem ser compartilhados.
-
-A codificação DRG completa vai exigir os elementos de dados DRG deste arquétipo e o arquétipo CLUSTER.procedure_status equivalente, utilizado dentro do arquétipo ACTION.procedure, além de atributos sobre o paciente.
-
-O elemento de dados 'não especificado' foi adicionado para facilitar a adição de outros qualificadores que só podem ser usados localmente ou quando o caso de uso não foi claramente estabelecido no momento em que este arquétipo foi publicado. Como outros qualificadores são identificados, eles podem ser adicionados a este arquétipo como uma revisão retroativa.">
-			keywords = <"problema", "ativo", "inativo", "estado", "episódio", "diagnóstico">
-			misuse = <"Não deve ser usado para representar um diagnóstico diferencial - use o arquétipo EVALUATION.differential_diagnosis para esta finalidade.">
-		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Nadim Anani, Karolinska Institutet, Sweden", "Vebjoern Arntzen, Oslo university hospital, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain", "Shahla Foozonkhah, Iran", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "chunlan ma, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Richard Townley-O'Neill, Australian Digital Health Agency, Australia", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)">
@@ -82,8 +82,8 @@ O elemento de dados 'não especificado' foi adicionado para facilitar a adição
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3C903AF68D9E88F0D527B86606669B24">
-		["build_uid"] = <"69bfe3ee-5e8f-484c-8cb4-b5c9869f9073">
+		["MD5-CAM-1.0.1"] = <"49DEEE2F355B8DFE6D0564AA91517942">
+		["build_uid"] = <"670ba0c3-5c6b-4c0e-bb27-e987fe40c93d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
