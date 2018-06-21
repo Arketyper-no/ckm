@@ -47,7 +47,7 @@ Use to record change from repeated measurements. This can currently be modeled b
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Malin Berg, DIPS ASA, Norway", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Stig Erik Hegrestad, Helse Førde, Norway", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Hilde Hollås, DIPS AS, Norway", "Alfred Honore, Haukeland, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Pétur Júlíusson, Barneklinikken, HUS og K2, UIB, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Gro-Hilde Ulriksen, Norwegian center for ehealthresearch, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Stian Torleif Varpe, Helse Bergen, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Malin Berg, DIPS ASA, Norway", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Stig Erik Hegrestad, Helse Førde, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Ingrid Heitmann, Oslo universitetssykehus HF, Norway", "Annette Hole Sjøborg, DIPS ASA, Norway", "Hilde Hollås, DIPS AS, Norway", "Alfred Honore, Haukeland, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Pétur Júlíusson, Barneklinikken, HUS og K2, UIB, Norway", "Heather Leslie, Atomica Informatics, Australia", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Stian Torleif Varpe, Helse Bergen, Norway", "Gro-Hilde Ulriksen, Norwegian center for ehealthresearch, Norway", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -59,21 +59,34 @@ Mbaeri TU, Orakwe JC, Nwofor AM, Oranusi CK, Mbonu OO. Ultrasound measurements o
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"582A3E406247BE3C729D893402CB4EEA">
-		["build_uid"] = <"e91db6f2-8a53-4817-a8aa-8120d696e23f">
+		["MD5-CAM-1.0.1"] = <"CE8957E807D1DB95F9655F9AC8ACAB2E">
+		["build_uid"] = <"b0bddd12-148f-445d-a455-53de6fc5aefe">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Testikkelvolum
+	OBSERVATION[at0000] matches {	-- Testicular volume
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
-								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0010] matches {	-- Testikkelvolum
+								items cardinality matches {2..*; unordered} matches {
+									ELEMENT[at0020] matches {	-- Testicle examined
+										value matches {
+											DV_TEXT matches {*}
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0021, 	-- Left testicle
+													at0022]	-- Right testicle
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] matches {	-- Testicular volume
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::129]>
@@ -92,7 +105,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Kommentar
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Comment
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -103,7 +116,7 @@ definition
 						state matches {
 							ITEM_TREE[at0011] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Konfunderende faktorer
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Confounding factors
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -118,33 +131,21 @@ definition
 		protocol matches {
 			ITEM_TREE[at0006] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Undersøkt testikkel
-						value matches {
-							DV_TEXT matches {*}
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0021, 	-- Venstre testikkel
-									at0022]	-- Høyre testikkel
-								}
-							}
-						}
-					}
-					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Metode
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Method
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Formel
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Formula
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {	-- Måleutstyr
+					allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {	-- Device
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
 					}
-					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
+					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {	-- Extension
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -152,6 +153,7 @@ definition
 			}
 		}
 	}
+
 
 
 
