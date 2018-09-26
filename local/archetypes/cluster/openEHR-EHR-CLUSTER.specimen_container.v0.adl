@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Specimen container
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Kristian Berg; Line Silsand">
+				["organisation"] = <"Universitetssykehuset Nord-Norge">
+				["email"] = <"kristian.berg@unn.no; line.silsand@unn.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Dr Ian McNicoll">
@@ -13,6 +23,13 @@ description
 		["date"] = <"21/06/2009">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere detaljer om beholderen som brukes for å oppbevare en laboratorieprøve.">
+			use = <"Brukes inne i en overordnet OBSERVATION.laboratory_test arketype eller spesialisering.">
+			keywords = <"prøve", "laboratorium", "lab", "patologi", "beholder", "glass", "bøtte", "pensel", "prøveglass">
+			misuse = <"">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details of the container used to hold a pathology specimen.">
@@ -35,8 +52,8 @@ Hl7 FHIR Specimen resource: HL7 FHIR; Available from http://www.hl7.org/implemen
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"9683850C811C4F5C4322A4A24B3E5937">
-		["build_uid"] = <"c9e12bdc-3ab0-45a0-ab43-0539e4aaa0da">
+		["MD5-CAM-1.0.1"] = <"3B8F10B506584D0004233DF0E7BDE62F">
+		["build_uid"] = <"600d838f-e9a0-4291-bc8e-56f30f09764a">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -235,6 +252,74 @@ and of the coverslip).">
 				["at0028"] = <
 					text = <"*Cluster(en)">
 					description = <"**(en)">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prøvebeholder">
+					description = <"Detaljer om en prøvebeholder. Dette er ofte en integrert del av arbeidsflyt og rapportering av laboratorieprøver, særlig anatomiske og histologiske laboratorieprøver.">
+				>
+				["at0002"] = <
+					text = <"Identifikator for hentested">
+					description = <"Identifikator av stedet hvor beholderen skal hentes.">
+				>
+				["at0003"] = <
+					text = <"Beholder ID">
+					description = <"Identifikator av beholderen. Dataelementet kan gjentas.">
+				>
+				["at0005"] = <
+					text = <"Type beholder">
+					description = <"Beskrivelse av typen beholder.">
+				>
+				["at0006"] = <
+					text = <"Vevskassett">
+					description = <"Plastbeholder for parafinstøping av prøve.">
+				>
+				["at0007"] = <
+					text = <"TMA-blokk">
+					description = <"Posisjonsbeholder for parafinstøping av prøve.">
+				>
+				["at0008"] = <
+					text = <"Prøveglass">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Objektglass">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Prøvebeholder">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Grid">
+					description = <"Rutenett for elektronmikroskopi.">
+				>
+				["at0012"] = <
+					text = <"Prøvebrønn">
+					description = <"Prøvebrønn til prøve.">
+				>
+				["at0013"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse av beholderen.">
+				>
+				["at0024"] = <
+					text = <"Tidspunkt for transport">
+					description = <"Datoen og klokkeslettet da prøven ble klargjort for transport til laboratoriet.">
+				>
+				["at0025"] = <
+					text = <"Identifikator på transportør">
+					description = <"Identifikator av personen eller instansen som er ansvarlig for å frakte prøvebeholderen til laboratoriet.">
+				>
+				["at0026"] = <
+					text = <"Tilsetningsstoff">
+					description = <"Spesielle tilsetninger for fiksering eller til preservering.">
+				>
+				["at0028"] = <
+					text = <"Komponent av beholder">
+					description = <"Detaljer om del-komponenter som omfatter beholderen (for eksempel beskrivelse av objektglass og dekkglass)">
 				>
 			>
 		>
