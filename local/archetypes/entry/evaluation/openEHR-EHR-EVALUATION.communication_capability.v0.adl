@@ -31,7 +31,7 @@ description
 Hensikten med arketypen er å registrere hvordan individet kommuniserer med andre og hvordan klinikere best kan kommunisere med individet.
 
 Arketypen CLUSTER.language (Språk) kan nøstes i SLOTene \"Foretrukket kommunikasjon\" og \"Annen kommunikasjon\".">
-			keywords = <"språk", "tolk", "oversettelse", "oversetter">
+			keywords = <"språk", "tolk", "oversettelse", "oversetter", "kommunikasjon", "informasjonsutveksling", "formidle", "videreformidle", "tilpasset kommunikasjon", "tilrettelagt kommunikasjon">
 			misuse = <"Brukes ikke for å registrere detaljer om et språk, bruk arketypen CLUSTER.language (Språk) for dette formålet.
 
 Brukes ikke for å registrere detaljer om en forespørsel om tolketjenester. Bruk arketypen CLUSTER.interpreter_requirements (Tolkebehov) i en egnet INSTRUCTION-arketype, for eksempel INSTRUCTION.service_request (Helsetjenesteforespørsel).
@@ -57,7 +57,7 @@ Not to be used to record details about an interpretation that was performed - us
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway", "John Tore Valand, Helse Bergen HF, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Rose Mari Eikås, Helse Bergen, Norway", "Valborg Ellingsen, Haraldsplass Diakonale sykehus, Norway", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway", "Jessica Hansen, Universitetet i Oslo, Norway", "Erling Are Hole, Helse Bergen, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Øygunn Leite Kallevik, Helse Bergen, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Siren Kraakenes, Helse Vest IKT, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Anine Ramberg, DIPS ASA, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Susanne Trønnes, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
@@ -65,8 +65,8 @@ Not to be used to record details about an interpretation that was performed - us
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"47FB18A8041FBE58FC5280E3861B290B">
-		["build_uid"] = <"cfe468d2-0c7d-439d-9b7a-3503910a8c77">
+		["MD5-CAM-1.0.1"] = <"42147262B4D639F667C39DBA78A77780">
+		["build_uid"] = <"010faa88-2ff5-482b-8c3c-d6dcc4c81652">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -224,7 +224,7 @@ ontology
 					comment = <"For eksempel detaljer om høreapparat eller leselist.">
 				>
 				["at0006"] = <
-					text = <"Tolkebehov">
+					text = <"Per språk">
 					description = <"Detaljer om individets evne til kommunikasjon for et spesifikt språk.">
 					comment = <"I kliniske system er det vanlig å registrere om det er behov for tolk med en registrering i et enkelt boolsk dataelement. Oversettelsesspråket er underforstått og spesifiseres ikke. Utveksles denne verdien til en lokalisering hvor oversettelsesspråket er et annet kan den registrerte boolske verdien være feil. For å sikre en riktig utveksling av dette dataelementet, må både språket og behov for tolk utveksles sammen. Hvert språk som individet snakker vil trenge en en egen vurdering av om det er et tolkebehov. For eksempel vil ikke en engelsktalende i Quebec trenge engelsk tolk, men det kan være behov for tolk om konsultasjonen utføres på fransk.">
 				>
@@ -233,8 +233,8 @@ ontology
 					description = <"Detaljer om et språk.">
 				>
 				["at0008"] = <
-					text = <"Trenger tolk">
-					description = <"Indikererer at det er et tolkebehov på det spesifiserte språket.">
+					text = <"Individet trenger tolk">
+					description = <"Indikererer om det er et tolkebehov på det spesifiserte språket.">
 				>
 				["at0009"] = <
 					text = <"Kommentar">
