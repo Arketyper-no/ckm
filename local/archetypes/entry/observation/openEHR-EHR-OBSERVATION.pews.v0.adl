@@ -25,7 +25,7 @@ Brukes ikke for registrering av hver enkelt fysiologisk parameter eller klinisk 
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
@@ -34,8 +34,8 @@ Brukes ikke for registrering av hver enkelt fysiologisk parameter eller klinisk 
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"767F941EDD9910A41FDBDC38996562F6">
-		["build_uid"] = <"519323d9-25b5-40be-8e62-05804430e40e">
+		["MD5-CAM-1.0.1"] = <"096C2D3D9720C0F5EED5E588574B1A5E">
+		["build_uid"] = <"eac16921-61fc-4bea-82d7-f236ad9495bf">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -44,7 +44,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Uspesifisert hendelse
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- Uspesifisert hendelse
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
