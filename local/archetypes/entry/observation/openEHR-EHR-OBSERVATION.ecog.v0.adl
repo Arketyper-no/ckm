@@ -32,25 +32,25 @@ description
 
 Erklæring om opphavsrett: ECOG performance status er ikke beheftet med opphavsrett og derfor tilgjengelig for offentlig bruk. 
 For mer informasjon kontakt: The Eastern Cooperative Oncology Group, Robert Comis M.D., Group Chair - http://www.ecog.org/general/perf_stat.html.">
-			keywords = <"prestasjon", "prestasjonsevne", "status", "onkologi", "zubrod">
+			keywords = <"prestasjon", "prestasjonsevne", "status", "onkologi", "zubrod", "performance status", "World Health Organization">
 			misuse = <"">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the measurement of the functional performance status of a patient with cancer.">
-			use = <"Used to record the measurement of the functional performance status of a patient with cancer, to:
+			purpose = <"To record the measurement of the functional performance status of a patient with a diagnosis of cancer.">
+			use = <"Used to record the measurement of the functional performance status of a patient with a diagnosis of cancer, to:
 - assess how a patient's disease is progressing;
 - assess how the disease affects the daily living abilities of the patient; and 
 - determine appropriate treatment and prognosis. 
 
 The ECOG performance status is in the public domain therefore available for public use. For more information, contact the Eastern Cooperative Oncology Group, Robert Comis M.D., Group Chair - http://www.ecog.org/general/perf_stat.html.">
-			keywords = <"performance", "status", "oncology", "who", "zubrod">
+			keywords = <"performance", "status", "oncology", "who", "zubrod", "World Health Organization">
 			misuse = <"">
 			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Cailin Lowry, Lifehouse, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Bjørn Christensen, Helse Bergen HF, Norway", "Kristin Eik, Kreftregisteret, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway", "Hilde Hollås, DIPS AS, Norway", "Alfred Honore, Haukeland, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Thomas Kilvær, Universitetssykehuset Nord Norge, Norway", "Siri Laronningen, Kreftregisteret, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Cailin Lowry, Lifehouse, Australia", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Omar Peña-Curiel, TECSalud, Mexico", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Laila Storesund, Haraldsplass diakonale sykehus, Norway", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -64,8 +64,8 @@ The Norwegian translation is based on: Helsedirektoratet (2016). Nasjonalt handl
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D60C0770CC97950D1A1DCA603C3DF799">
-		["build_uid"] = <"0ecbf877-315b-46ff-8d2b-7d0d658beb3a">
+		["MD5-CAM-1.0.1"] = <"06057B249EED4AEB5287ADBAB6E0A96C">
+		["build_uid"] = <"453a2de8-5f40-40a9-b597-e33e13568bf4">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -78,7 +78,7 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0004] matches {	-- Performance status
+									ELEMENT[at0004] matches {	-- ECOG performance status
 										value matches {
 											0|[local::at0005], 	-- Asymptomatic
 											1|[local::at0006], 	-- Symptomatic, fully ambulatory
@@ -120,7 +120,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"ECOG performance status">
-					description = <"A scale used by clinicians to assess the functional performance status of a patient with cancer. Also known as the WHO performance status or Zubrod performance status.">
+					description = <"A scale used by clinicians to assess the functional performance status of a patient with a diagnosis of cancer. Also known as the WHO performance status or Zubrod performance status.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -135,8 +135,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Performance status">
-					description = <"The functional performance status of a patient with cancer.">
+					text = <"ECOG performance status">
+					description = <"The functional performance status of a patient with a diagnosis of cancer.">
 				>
 				["at0005"] = <
 					text = <"Asymptomatic">
@@ -196,9 +196,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Funksjonsstatus">
-					description = <"Funksjonsstatus hos en pasient med kreft.
-">
+					text = <"ECOG funksjonsstatus">
+					description = <"Funksjonsstatus hos en pasient med kreft.">
 				>
 				["at0005"] = <
 					text = <"Asymptomatisk">
