@@ -9,8 +9,8 @@ language
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
 			author = <
-				["name"] = <"Carrick Gillespie">
-				["email"] = <"carrickg@gmail.com">
+				["name"] = <"Carrick Gillespie & Erik Sundvall">
+				["email"] = <"carrickg@gmail.com & erik.sundvall@regionostergotland.se">
 			>
 		>
 		["nb"] = <
@@ -33,7 +33,7 @@ description
 	details = <
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
-			purpose = <"Att registrerar sammanfattad information om individens mönster för rökfri tobaksbruk.">
+			purpose = <"Sammanfattade information om individens mönster av snusande och annat rökfritt tobaksbruk.">
 			use = <"*Use to record summary information about the individual's pattern of smokeless tobacco use. 
 This archetype is to be used to record information about both current and previous use of smokeless tobacco.
 The specific scope of this archetype is on documentation about the use of all types of smokeless tobacco because of the associated health risks from this kind of consumption. Amount of nicotine and tar, use of bags and additives has been left outside of scope for the core archetype, but could be added into the Episode SLOT if required. 
@@ -44,19 +44,19 @@ Triggers for closing one episode and commencing a new one will largely reflect l
 - quits for a significant period of time (which will likely be locally defined); or
 - significantly changes their amount of use or pattern of their usage.
 Use to incorporate the narrative descriptions of smokeless tobacco usage habits within existing or legacy clinical systems into an archetyped format, using the 'Overall description' data element.(en)">
-			keywords = <"tobak", "snus", "*snuff(en)", "tuggtobak", "*dip(en)", "*gutka(en)">
+			keywords = <"tobak", "snus", "luktsnus", "snuff", "tuggtobak", "dopptobak", "gutka">
 			misuse = <"*Not to be used to record event-or period-based information about usage of smokeless tobacco, such as actual daily use or the average use over a specified period of time - use the OBSERVATION.smokeless_tobacco archetype.
 Not to be used for recording any other administration of nicotine, such as e-cigarettes, nicotine patches or nicotine chewing gum. Use seoparate archetypes for this purpose. 
 Not to be used to record information about tobacco smoking. Use the EVALUATION.tobacco_smoking_summary archetype for this purpose.(en)">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere et sammendrag om individets mønster for bruk av røykfri tobakk.">
-			use = <"Brukes for å registrere et sammendrag om individets mønster for bruk av røykfri tobakk.
+			purpose = <"For å registere et sammendrag eller persistent informasjon om individets bruk av røykfri tobakk.">
+			use = <"Brukes for å registrere sammendrag eller persistent informasjon om individets bruk av røykfri tobakk.
 
 Denne arketypen brukes for å registrere både nåværende og tidligere bruk av røykfri tobakk.
 
-Arketypen fokuserer spesifikt på dokumentasjon om bruk av alle typer røykfri tobakk, på grunn av helserisikoen knyttet tilknyttet dette. Mengden av nikotin og tjære, bruk av poser og tilsetningstoffer er ikke dekket av arketypen, men kan legges til i SLOTet \"Episodedetaljer\" ved behov. 
+Arketypen fokuserer spesifikt på dokumentasjon om bruk av alle typer røykfri tobakk, på grunn av helserisikoen knyttet til dette. Mengden av nikotin og tjære, bruk av poser og tilsetningstoffer er ikke dekket av arketypen, men kan legges til i SLOTet \"Episodedetaljer\" ved behov. 
 
 Clusteret \"Per type\" tillater registrering av spesifikke detaljer og episoder om hver enkelt ulik type røykfri tobakk som brukes og kan repeteres en gang per type. Tobakkstyper er listet i \"run-time name constraint\" (navnebegrensning) lagt på \"Per type\". Denne navnebegrensningen kan brukes ved templatmodellering eller i applikasjonen.
 
@@ -69,8 +69,8 @@ Hva som trigger en avslutning av en episode og start av en ny avhenger av behove
 - Betydningsfulle endringer i mengde eller bruksmønster.
 
 Dataelementet \"Overordnet beskrivelse\" brukes til å overføre fritekstbeskrivelser fra eksisterende eller tidligere kliniske systemer til arketypeformat.">
-			keywords = <"tobakk", "snus", "snuff", "tygge", "dip", "gutka", "skrå">
-			misuse = <"Brukes ikke for å registrere hendelses- eller periodisk informasjon om bruk av røykfri tobakk, for eksempel: faktisk daglig bruk eller gjennomsnittlig bruk over en spesifisert tidsperiode. Bruk arketypen OBSERVATION.smokeless_tobacco for dette formålet.
+			keywords = <"tobakk", "snus", "snuff", "tygge", "dip", "gutka", "skrå", "iqmik", "naswar", "toombak", "shammah", "mawa", "gadakhu", "habit", "babul", "zarda", "dokta", "paan", "pan", "khilli", "pan masala", "dohra", "tombol", "sada pata", "chadha", "kapoori", "manipuri", "Twist", "niswar", "nass", "nasway", "nasvay", "sute", "ammari", "saood", "sauté", "gudakhu", "kiwam", "mishri", "gul", "tuibur", "hidakpha", "hsaypaung yay", "chaw">
+			misuse = <"Brukes ikke for å registrere hendelses- eller periodisk informasjon om bruk av røykfri tobakk, for eksempel: faktisk daglig bruk eller gjennomsnittlig bruk over en spesifisert tidsperiode. Bruk arketypen OBSERVATION.smokeless_tobacco (ikke utviklet enda) for dette formålet.
 
 Brukes ikke for å registrere annen tilførsel av nikotin som e-sigarett, nikotinplaster eller niktotintyggegummi. Bruk egne arketyper for dette formålet.
 
@@ -78,8 +78,8 @@ Brukes ikke for å registrere informasjon om tobakksrøyking. Bruk arketypen EVA
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record summary information about the individual's pattern of smokeless tobacco use.">
-			use = <"Use to record summary information about the individual's pattern of smokeless tobacco use. 
+			purpose = <"To record summary or persistent information about smokeless tobacco use by an individual.">
+			use = <"Use to record summary or persistent information about smokeless tobacco use by an individual. 
 
 This archetype is to be used to record information about both current and previous use of smokeless tobacco.
 
@@ -89,26 +89,26 @@ The 'Per type' cluster of data elements allows for recording of specific details
 
 In many situations the individual will only use one type of smokeless tobacco, such as snus or snuff. If other types of tobacco are used the details will be recorded in another instance of the 'Per type' cluster.
 
-The history of waxing and waning of use for each type of tobacco over time can be captured using the repeatable 'Per episode' cluster. This cluster of data elements allows for a very detailed pattern of tobacco usage behaviour to be recorded for each type of tobacco used such as daily usage of snus, alongside occasional use of chewing tobacco while on holiday. 
+The history of varying use for each type of tobacco over time can be captured using the repeatable 'Per episode' cluster. This cluster of data elements allows for a very detailed pattern of tobacco usage behaviour to be recorded for each type of tobacco used such as daily usage of snus, alongside occasional use of chewing tobacco while on holiday. 
 
 Triggers for closing one episode and commencing a new one will largely reflect local data collection preferences, including if the individual: 
 - quits for a significant period of time (which will likely be locally defined); or
 - significantly changes their amount of use or pattern of their usage.
 
 Use to incorporate the narrative descriptions of smokeless tobacco usage habits within existing or legacy clinical systems into an archetyped format, using the 'Overall description' data element.">
-			keywords = <"tobacco", "snus", "snuff", "chewing", "dip", "gutka">
-			misuse = <"Not to be used to record event-or period-based information about usage of smokeless tobacco, such as actual daily use or the average use over a specified period of time - use the OBSERVATION.smokeless_tobacco archetype.
+			keywords = <"tobacco", "snus", "snuff", "dip", "gutka", "iqmik", "naswar", "toombak", "shammah", "mawa", "gadakhu", "habit", "babul", "zarda", "dokta", "paan", "pan", "khilli", "pan masala", "dohra", "tombol", "sada pata", "chadha", "kapoori", "manipuri", "Twist", "niswar", "nass", "nasway", "nasvay", "sute", "ammari", "saood", "sauté", "gudakhu", "kiwam", "mishri", "gul", "tuibur", "hidakpha", "hsaypaung yay", "chaw">
+			misuse = <"Not to be used to record event-or period-based information about usage of smokeless tobacco, such as actual daily use or the average use over a specified period of time - use the OBSERVATION.smokeless_tobacco archetype (not yet developed).
 
-Not to be used for recording any other administration of nicotine, such as e-cigarettes, nicotine patches or nicotine chewing gum. Use seoparate archetypes for this purpose. 
+Not to be used for recording any other administration of nicotine, such as e-cigarettes, nicotine patches or nicotine chewing gum. Use separate archetypes for this purpose. 
 
 Not to be used to record information about tobacco smoking. Use the EVALUATION.tobacco_smoking_summary archetype for this purpose.">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Fatemeh Chalabianloo, Helse Bergen, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Helge Hagen, Norway", "Hilde Hollås, DIPS AS, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Neranga Liyanaarachchi, Ministry of Health, Postgraduate Institute of Medicine, Sri Lanka", "James McClay, University of Nebraska Medical Center, United States", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Paul Miller, SCIMP NHS Scotland, United Kingdom", "Jayashree Panickar, Karolinska Institute, Sweden", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Niclas Skyttberg, Karolinska Institutet, Sweden", "Trine Strand, Oslo Universitetssykehus (OUS), Norway", "Erik Sundvall, Region Östergötland + Linköping University, Sweden", "Nyree Taylor, Ocean Informatics, Australia (openEHR Editor)", "Anders Thurin, SU, Sweden", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Lin Zhang, Taikang Insurance Group, China">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Tobacco smoking summary, Published archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2018-06-01]. Available from: https://ckm.openehr.org/ckm/#showArchetype_1013.1.2466
 
@@ -116,91 +116,77 @@ Gupta PC. Gutka: a major new tobacco hazard in India. Tob Control. 1999 Summer;8
 
 Hedström AK, Bäärnhielm M, Olsson T, Alfredsson L. Tobacco smoking, but not Swedish snuff use, increases the risk of multiple sclerosis. Neurology. 2009 Sep 1;73(9):696-701. doi: 10.1212/WNL.0b013e3181b59c40. PubMed PMID: 19720976
 
+Idris AM, Ibrahim SO, Vasstrand EN, Johannessen AC, Lillehaug JR, Magnusson B, Wallström M, Hirsch JM, Nilsen R. The Swedish snus and the Sudanese toombak: are they different? Oral Oncol. 1998 Nov;34(6):558-66. Review. PubMed PMID: 9930371.
+
 Niaz K, Maqbool F, Khan F, Bahadar H, Ismail Hassan F, Abdollahi M. Smokeless tobacco (paan and gutkha) consumption, prevalence, and contribution to oral cancer. Epidemiol Health. 2017 Mar 9;39:e2017009. doi: 10.4178/epih.e2017009. eCollection 2017. Review. PubMed PMID: 28292008; PubMed Central PMCID: PMC5543298.">
 		["current_contact"] = <"Heather Leslie, Atomica Informatics, Australia<heather.leslie@atomicainformatics.com>">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"F9095DB92F3836E664C64F40E7FA01A6">
-		["build_uid"] = <"0c5fcc59-1fdc-4e0a-b2d5-e5c42f7c58ba">
+		["MD5-CAM-1.0.1"] = <"4C3FFC1B636E35DEE36D132568FB6664">
+		["build_uid"] = <"60831ffb-93c6-41ba-bde7-ce58bacb6604">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Smokeless tobacco summary
+	EVALUATION[at0000] matches {	-- Røykfri tobakkanamnese
 		data matches {
 			ITEM_TREE[at0001] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0089] occurrences matches {0..1} matches {	-- Overall status
+					ELEMENT[at0089] occurrences matches {0..1} matches {	-- Overordnet status
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0006, 	-- Never used
-									at0003, 	-- Current user
-									at0005]	-- Former user
+									at0006, 	-- Aldri brukt
+									at0003, 	-- Nåværende bruker
+									at0005]	-- Tidligere bruker
 								}
 							}
 						}
 					}
-					ELEMENT[at0043] occurrences matches {0..1} matches {	-- Overall description
+					ELEMENT[at0043] occurrences matches {0..1} matches {	-- Overordnet beskrivelse
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Regular use commenced
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Start regelmessig bruk
 						value matches {
 							DV_DATE matches {*}
 						}
 					}
-					ELEMENT[at0080] occurrences matches {0..1} matches {	-- Daily use commenced
+					ELEMENT[at0080] occurrences matches {0..1} matches {	-- Start daglig bruk
 						value matches {
 							DV_DATE matches {*}
 						}
 					}
 					CLUSTER[at0029] occurrences matches {0..*} matches {	-- Per type
-						name matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0054, 	-- Snus
-									at0055, 	-- Snuff
-									at0093, 	-- Snuff creamy
-									at0056, 	-- Chewing tobacco
-									at0066, 	-- Dipping tobacco
-									at0078, 	-- Dissolvable tobacco
-									at0057, 	-- Gutka
-									at0092, 	-- Iqmik
-									at0062, 	-- Naswar
-									at0088, 	-- Toombak
-									at0094, 	-- Shammah
-									at0095, 	-- Nass
-									at0096, 	-- Mawa
-									at0097]	-- Gadakhu
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0098] occurrences matches {0..1} matches {	-- Type
+								value matches {
+									DV_TEXT matches {*}
 								}
 							}
-						}
-						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0052] occurrences matches {0..1} matches {	-- Status
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0061, 	-- Current user
-											at0059, 	-- Former user
-											at0091]	-- Never used
+											at0061, 	-- Nåværende bruker
+											at0059, 	-- Tidligere bruker
+											at0091]	-- Aldri brukt
 										}
 									}
 								}
 							}
-							ELEMENT[at0053] occurrences matches {0..1} matches {	-- Description
+							ELEMENT[at0053] occurrences matches {0..1} matches {	-- Beskrivelse
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
 							CLUSTER[at0064] occurrences matches {0..*} matches {	-- Per episode
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0081] occurrences matches {0..1} matches {	-- Episode label
+									ELEMENT[at0081] occurrences matches {0..1} matches {	-- Episodenavn
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|>=1|}
@@ -208,29 +194,29 @@ definition
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Episode start date
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Episodens startdato
 										value matches {
 											DV_DATE matches {*}
 										}
 									}
-									ELEMENT[at0082] occurrences matches {0..1} matches {	-- Episode end date
+									ELEMENT[at0082] occurrences matches {0..1} matches {	-- Episodens sluttdato
 										value matches {
 											DV_DATE matches {*}
 										}
 									}
-									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Pattern
+									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Mønster
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0083, 	-- Daily
-													at0084]	-- Non-daily
+													at0083, 	-- Daglig
+													at0084]	-- Ikke daglig
 												}
 											}
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Typical use (units)
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Typisk bruk (enheter)
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::382]>
@@ -245,7 +231,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0065] occurrences matches {0..1} matches {	-- Typical use (mass)
+									ELEMENT[at0065] occurrences matches {0..1} matches {	-- Typisk bruk (vekt)
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::347]>
@@ -270,64 +256,64 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Number of quit attempts
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Antall forsøk på å slutte
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|>=0|}
 											}
 										}
 									}
-									allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {	-- Episode details
+									allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {	-- Episodedetaljer
 										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.cessation_attempts(-[a-zA-Z0-9_]+)*\.v1/}
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.cessation_attempts(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.cessation_attempts(-[a-zA-Z0-9_]+)*\.v0/}
 									}
-									ELEMENT[at0087] occurrences matches {0..1} matches {	-- Episode comment
+									ELEMENT[at0087] occurrences matches {0..1} matches {	-- Kommentar til episoden
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
 								}
 							}
-							ELEMENT[at0014] occurrences matches {0..1} matches {	-- Quit date
+							ELEMENT[at0014] occurrences matches {0..1} matches {	-- Sluttdato
 								value matches {
 									DV_DATE matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0077] occurrences matches {0..*} matches {	-- Type details
+							allow_archetype CLUSTER[at0077] occurrences matches {0..*} matches {	-- Type detaljer
 								include
-									archetype_id/value matches {/openEHR-EHR-CLUSTER\.change(-[a-zA-Z0-9_]+)*\.v1/}
+									archetype_id/value matches {/.*/}
 							}
-							ELEMENT[at0017] occurrences matches {0..1} matches {	-- Pack years
+							ELEMENT[at0017] occurrences matches {0..1} matches {	-- Pakkeår
 								value matches {
 									DV_COUNT matches {
 										magnitude matches {|>=0|}
 									}
 								}
 							}
-							ELEMENT[at0069] occurrences matches {0..1} matches {	-- Comment
+							ELEMENT[at0069] occurrences matches {0..1} matches {	-- Kommentar
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
 						}
 					}
-					allow_archetype CLUSTER[at0086] occurrences matches {0..*} matches {	-- Overall details
+					allow_archetype CLUSTER[at0086] occurrences matches {0..*} matches {	-- Overordnede detaljer
 						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.change(-[a-zA-Z0-9_]+)*\.v1/}
+							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Overall quit date
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Overordnet sluttdato
 						value matches {
 							DV_DATE matches {*}
 						}
 					}
-					ELEMENT[at0074] occurrences matches {0..1} matches {	-- Overall pack years
+					ELEMENT[at0074] occurrences matches {0..1} matches {	-- Samlet pakkeår
 						value matches {
 							DV_COUNT matches {
 								magnitude matches {|>=0|}
 							}
 						}
 					}
-					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Overall comment
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Overordnet kommentar
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -338,36 +324,36 @@ definition
 		protocol matches {
 			ITEM_TREE[at0021] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0073] occurrences matches {0..*} matches {	-- Extension
+					allow_archetype CLUSTER[at0073] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
 						include
 							archetype_id/value matches {/.*/}
 					}
-					ELEMENT[at0071] occurrences matches {0..*} matches {	-- Quit date definition
+					ELEMENT[at0071] occurrences matches {0..*} matches {	-- Definisjon på Sluttdato
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0085] occurrences matches {0..1} matches {	-- Quit attempt definition
+					ELEMENT[at0085] occurrences matches {0..1} matches {	-- Definisjon på Forsøk på å slutte
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0075] occurrences matches {0..*} matches {	-- Current user definition
+					ELEMENT[at0075] occurrences matches {0..*} matches {	-- Definisjon på Nåværende bruker
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0076] occurrences matches {0..*} matches {	-- Former user definition
+					ELEMENT[at0076] occurrences matches {0..*} matches {	-- Definisjon på Tidligere bruker
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0079] occurrences matches {0..*} matches {	-- Never used definition
+					ELEMENT[at0079] occurrences matches {0..*} matches {	-- Definisjon av Aldri brukt
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0072] occurrences matches {0..1} matches {	-- Pack definiton
+					ELEMENT[at0072] occurrences matches {0..1} matches {	-- Pakkedefinisjon
 						value matches {
 							DV_COUNT matches {
 								magnitude matches {|>=0|}
@@ -387,7 +373,7 @@ definition
 							>
 						}
 					}
-					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Last updated
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Sist oppdatert
 						value matches {
 							DV_DATE_TIME matches {*}
 						}
@@ -398,14 +384,13 @@ definition
 	}
 
 
-
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"Smokeless tobacco summary">
-					description = <"Summary or persistent information about the smokeless tobacco using habit of an individual.">
+					description = <"Summary or persistent information about smokeless tobacco use by an individual.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -478,16 +463,15 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0029"] = <
 					text = <"Per type">
 					description = <"Details about use of a specified type of smokeless tobacco.">
-					comment = <"The run-time name constraint on this Cluster enables simple templates for each required type to be designed in templates, or the types to be managed exclusively at run-time. The list of names can be extended at run-time if additional types of smokeless tobacco are identified locally.">
 				>
 				["at0030"] = <
 					text = <"Pattern">
 					description = <"The typical pattern of usage for the specified type of tobacco.">
-					comment = <"The typical pattern of use can be coded with a terminology or a local value set in a template.">
+					comment = <"The typical pattern of use can be made more granular by coding the free text option with a terminology or a local value set in a template.">
 				>
 				["at0043"] = <
 					text = <"Overall description">
-					description = <"Narrative summary about the individual's overall smokeless tobacco using pattern and history.">
+					description = <"Narrative summary about the individual's overall smokeless tobacco usage pattern and history.">
 					comment = <"Use this data element to record a narrative description only where the structured data does not adequately reflect the smokeless tobacco usage for this individual or to incorporate unstructured information about smokeless tobacco use from existing or legacy clinical systems into an archetyped format.">
 				>
 				["at0052"] = <
@@ -498,22 +482,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Description">
 					description = <"Narrative summary about usage for the specified type of smokeless tobacco.">
 				>
-				["at0054"] = <
-					text = <"Snus">
-					description = <"A type tobacco that is placed under the upper lip. Comes as a loose variant or prepackaged into pouches.">
-				>
-				["at0055"] = <
-					text = <"Snuff">
-					description = <"A type of tobacco that is inhaled or \"snuffed\" into the nasal cavity.">
-				>
-				["at0056"] = <
-					text = <"Chewing tobacco">
-					description = <"A type of tobacco that is chewed. Comes in several different varieties. For example: Loose leaf, plug or twist.">
-				>
-				["at0057"] = <
-					text = <"Gutka">
-					description = <"A combination of betel leaf, areca nut, and slaked lime mixed with tobacco.">
-				>
 				["at0059"] = <
 					text = <"Former user">
 					description = <"The individual has previously used the specified smokeless tobacco, but is not a current user.">
@@ -521,10 +489,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0061"] = <
 					text = <"Current user">
 					description = <"The individual is a current user of the specified type of smokeless tobacco.">
-				>
-				["at0062"] = <
-					text = <"Naswar">
-					description = <"A combination of tobacco, slaked lime, indigo, cardamom, oil, and menthol.">
 				>
 				["at0064"] = <
 					text = <"Per episode">
@@ -534,10 +498,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Typical use (mass)">
 					description = <"Estimate of the weight of loose tobacco used.">
 					comment = <"This data element will typically be used for loose tobacco and is redundant if a value is recorded for 'Typical use (units)'.">
-				>
-				["at0066"] = <
-					text = <"Dipping tobacco">
-					description = <"A type of tobacco that is placed between the lower or upper lip and gums.">
 				>
 				["at0069"] = <
 					text = <"Comment">
@@ -550,7 +510,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0072"] = <
 					text = <"Pack definiton">
 					description = <"The definition of the size of pack used as part of the algorithm for calculating 'Pack years' data elements used in this archetype.">
-					comment = <"Definition may need to be specified per type. For example, the number of grams in a box used for snus may be different in different types of boxes; the mass of loose tobacco in a box used for loose types of smokeless tobacco.">
 				>
 				["at0073"] = <
 					text = <"Extension">
@@ -574,11 +533,7 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				>
 				["at0077"] = <
 					text = <"Type details">
-					description = <"Additional structured details about the specified type of smokeless tobacco using.">
-				>
-				["at0078"] = <
-					text = <"Dissolvable tobacco">
-					description = <"A variation on chewing tobacco that completely dissolves in the mouth.">
+					description = <"Additional structured details relating to the specified type of smokeless tobacco usage.">
 				>
 				["at0079"] = <
 					text = <"Never used definition">
@@ -592,8 +547,8 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				>
 				["at0081"] = <
 					text = <"Episode label">
-					description = <"Identification of an episode of smokeless tobacco use - either as a number in a sequence and/or a named event.">
-					comment = <"For example: '2' as the second episode within a sequence of episodes; or 'Pregnancy with twins' if describing the use of smokeless tobacco during a health event such as during a specific pregnancy.">
+					description = <"Identification of an episode of smokeless tobacco use.">
+					comment = <"The label may be represented either as a number in a sequence and/or a named event. For example: '2' as the second episode within a sequence of episodes; or 'Pregnancy with twins' if describing the use of smokeless tobacco during a health event such as during a specific pregnancy.">
 				>
 				["at0082"] = <
 					text = <"Episode end date">
@@ -621,10 +576,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Episode comment">
 					description = <"Additional narrative about the usage of the specified type of smokeless tobacco during the specified episode, not captured in other fields.">
 				>
-				["at0088"] = <
-					text = <"Toombak">
-					description = <"A combination of sodium carbonate and tobacco.">
-				>
 				["at0089"] = <
 					text = <"Overall status">
 					description = <"Statement about current usage for all types of smokeless tobacco.">
@@ -633,29 +584,10 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Never used">
 					description = <"The individual has never used the specified type of smokeless tobacco.">
 				>
-				["at0092"] = <
-					text = <"Iqmik">
-					description = <"An Alaskan tobacco product which also contains punk ash.">
-				>
-				["at0093"] = <
-					text = <"Snuff creamy">
-					description = <"A fluid tobacco mixture marketed as a dental hygiene aid, albeit used for recreation.">
-				>
-				["at0094"] = <
-					text = <"Shammah">
-					description = <"A combination of tobacco, slaked lime, and ash.">
-				>
-				["at0095"] = <
-					text = <"Nass">
-					description = <"A combination of tobacco, ash, cotton, and sesame oil.">
-				>
-				["at0096"] = <
-					text = <"Mawa">
-					description = <"A combination of areca nut, lime, and tobacco.">
-				>
-				["at0097"] = <
-					text = <"Gadakhu">
-					description = <"A combination of tobacco and molasses.">
+				["at0098"] = <
+					text = <"Type">
+					description = <"The name of the specific type or grouping of tobacco.">
+					comment = <"For example: A specific type could be 'snus' or 'gutka', while a group could be 'chewing tobacco'.">
 				>
 			>
 		>
@@ -663,7 +595,7 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 			items = <
 				["at0000"] = <
 					text = <"Røykfri tobakkanamnese">
-					description = <"Sammendrag eller detaljer om et individs tidligere og nåværende bruk av røykfri tobakk.">
+					description = <"Sammendrag eller persistent informasjon om individets bruk av røykfri tobakk.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -697,7 +629,7 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					comment = <"Kan være en deldato, for eksempel kun årstall. For eksempel kan denne datoen representere tidspunktet da individet begynte å bruke røykfri tobakk hver fredagskveld eller på fest.">
 				>
 				["at0016"] = <
-					text = <"Samlet sluttdato">
+					text = <"Overordnet sluttdato">
 					description = <"Datoen da individet sist brukte en hvilken som helst type røykfri tobakk.">
 					comment = <"Kan være en deldato, for eksempel årstall. Denne datoen kan brukes av beslutningsstøttesystemer for å beregne om individet er i faresonen for tilbakefall, for eksempel i løpet av de først 12 månedene etter å ha sluttet.">
 				>
@@ -707,7 +639,7 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					comment = <"Vanligvis gjøres vurderingen på snusbruk. Den kalkuleres ved å multiplisere antall snusbokser brukt hver dag med antall år individet har brukt. Et pakkeår tilsvarer å bruke en boks snus daglig i ett år. Definisjonen på en pakke kan registreres i protokollen av denne arketypen, ved å bruke dataelementet \"Pakkedefinisjon\".">
 				>
 				["at0019"] = <
-					text = <"Samlet kommentar">
+					text = <"Overordnet kommentar">
 					description = <"Ytterligere fritekst om all bruk av røykfri tobakk som ikke er omfattet av andre felt.">
 					comment = <"For eksempel: Sluttet å bruke snus eller reduserte mengde ved graviditet.">
 				>
@@ -735,12 +667,11 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0029"] = <
 					text = <"Per type">
 					description = <"Detaljer om bruk for en spesifikk type røykfri tobakk.">
-					comment = <"Navnebegrensningen på dette clusteret gjør det mulig å enkelt spesifisere hver type røykfri tobakk i templater, eller i en applikasjon. Listen over navn kan utvides i en applikasjon dersom flere typer røykfri tobakk finnes lokalt.">
 				>
 				["at0030"] = <
 					text = <"Mønster">
 					description = <"Typisk bruksmønster for den spesifiserte typen røykfri tobakk.">
-					comment = <"Typisk bruksmønster kan kodes med en terminologi eller med et lokalt verdisett i et templat.">
+					comment = <"Typisk bruksmønster gjøres mer finkornet ved å kode med en terminologi eller med et lokalt verdisett i et templat.">
 				>
 				["at0043"] = <
 					text = <"Overordnet beskrivelse">
@@ -755,22 +686,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Beskrivelse">
 					description = <"Fritekstsammendrag om bruk for den spesifiserte typen røykfri tobakk.">
 				>
-				["at0054"] = <
-					text = <"Snus">
-					description = <"En type tobakk som er plassert under overleppen. Kommer i en løs variant, eller pakket i små poser.">
-				>
-				["at0055"] = <
-					text = <"Snuff">
-					description = <"En type tobakk som inhaleres eller \"snuffes\" inn i nesen.">
-				>
-				["at0056"] = <
-					text = <"Tyggetobakk">
-					description = <"En type tobakk som tygges, kalles også skråtobakk og skrå. For eksempel: Løse blad, plug eller twist.">
-				>
-				["at0057"] = <
-					text = <"Gutka">
-					description = <"En kombinasjon av betelblad, arekanøtt og lesket kalk blandet med tobakk.">
-				>
 				["at0059"] = <
 					text = <"Tidligere bruker">
 					description = <"Individet har tidligere brukt den spesifikke typen røykfri tobakk, men er ikke en nåværende bruker.">
@@ -778,10 +693,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0061"] = <
 					text = <"Nåværende bruker">
 					description = <"Individet er en nåværende bruker av den spesifikke typen røykfri tobakk.">
-				>
-				["at0062"] = <
-					text = <"Naswar">
-					description = <"En kombinasjon av tobakk, lesket kalk, indigo, kardemomme, olje og mentol.">
 				>
 				["at0064"] = <
 					text = <"Per episode">
@@ -791,10 +702,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Typisk bruk (vekt)">
 					description = <"Anslått forbruk av spesifisert tobakkstype, vekt.">
 					comment = <"Dette dataelementet vil vanligvis brukes for løs tobakk. Dette dataelementet er overflødig om verdien er registrert for \"Typisk bruk (enheter)\".">
-				>
-				["at0066"] = <
-					text = <"Dyppetobakk">
-					description = <"En type tobakk som er plassert mellom nedre- eller øvre leppe og kinn.">
 				>
 				["at0069"] = <
 					text = <"Kommentar">
@@ -831,13 +738,8 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					comment = <"Definisjonen kan måtte spesifiseres per tobakkstype.">
 				>
 				["at0077"] = <
-					text = <"Detaljer om tobakkstypen">
-					description = <"Ytterligere strukturerte detaljer om den spesifiserte typen bruk av røykfri tobakk.">
-				>
-				["at0078"] = <
-					text = <"Oppløselig tobakk">
-					description = <"En variant av tyggetobakk som løser seg fullstendig opp i munnen.">
-					comment = <"*Tilleggsdetaljer kan registrereres ved å bruke Fagerstrom ****??****">
+					text = <"Type detaljer">
+					description = <"Ytterligere strukturerte detaljer om bruken av den spesifiserte typen røykfri tobakk.">
 				>
 				["at0079"] = <
 					text = <"Definisjon av Aldri brukt">
@@ -850,9 +752,9 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					comment = <"Kan være en deldato, for eksempel kun årstall.">
 				>
 				["at0081"] = <
-					text = <"Episode navn">
-					description = <"Identifisering av en episode med bruk av røykfri tobakk, enten som et nummer i en sekvens eller som en navngitt hendelse.">
-					comment = <"For eksempel: \"2\" som den andre episoden i en serie av episoder, eller \"Gravid med tvillinger\" om en beskriver snusing under en helserelatert hendelse som for eksempel under graviditet.">
+					text = <"Episodenavn">
+					description = <"Identifikasjon av en episode med bruk av røykfri tobakk.">
+					comment = <"For eksempel: \"2\" som den andre episoden i en serie av episoder, eller \"Gravid med tvillinger\" om en beskriver bruk av røykfri tobakk under en helserelatert hendelse som for eksempel et bestemt svangerskap.">
 				>
 				["at0082"] = <
 					text = <"Episodens sluttdato">
@@ -873,16 +775,12 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					comment = <"For eksempel \"sluttet å snuse i en dag eller lenger, med den hensikt å slutte\".">
 				>
 				["at0086"] = <
-					text = <"Samlede detaljer">
-					description = <"Ytterligere strukturerte detaljer om overordnet bruksadferd.">
+					text = <"Overordnede detaljer">
+					description = <"Ytterligere strukturerte detaljer om overordnet bruk av røykfri tobakk.">
 				>
 				["at0087"] = <
 					text = <"Kommentar til episoden">
 					description = <"Ytterligere fritekst om bruk av den spesifikke typen røykfri tobakk innenfor den spesifiserte episoden, som ikke er omfattet av andre felt.">
-				>
-				["at0088"] = <
-					text = <"Toombak">
-					description = <"En kombinasjon av natriumkarbonat og tobakk.">
 				>
 				["at0089"] = <
 					text = <"Overordnet status">
@@ -892,37 +790,18 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Aldri brukt">
 					description = <"Individet har aldri brukt den spesifikke typen røykfri tobakk.">
 				>
-				["at0092"] = <
-					text = <"Iqmik">
-					description = <"Et tobakksprodukt fra Alaska som også inneholder aske.">
-				>
-				["at0093"] = <
-					text = <"Kremet snuff">
-					description = <"En flytende tobakksmiks markedsført som en munnhygieneprodukt, men brukt i rekreasjonsøyemed.">
-				>
-				["at0094"] = <
-					text = <"Shammah">
-					description = <"En kombinasjon av tobakk, lesket kalk, indigo og aske.">
-				>
-				["at0095"] = <
-					text = <"Nass">
-					description = <"En kombinasjon av tobakk, aske, bomull og sesamolje.">
-				>
-				["at0096"] = <
-					text = <"Mawa">
-					description = <"En kombinasjon av arekanøtt, lesket kalk og tobakk.">
-				>
-				["at0097"] = <
-					text = <"Gadakhu">
-					description = <"En kombinasjon av tobakk og melasse.">
+				["at0098"] = <
+					text = <"Type">
+					description = <"Navnet på den spesifikke typen eller gruppen røykfri tobakk.">
+					comment = <"For eksempel: En spesifikk type kan være \"snus\" eller \"gutka\", mens en gruppe kan være \"tyggetobakk\".">
 				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Sammanfattning av snusvanor och annat bruk av rökfritt tobak">
-					description = <"Samlad information om en individs bruk av rökfri tobak, till exempel snus">
+					text = <"*Smokeless tobacco summary(en)">
+					description = <"*Summary or persistent information about smokeless tobacco use by an individual. (en)">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -994,17 +873,17 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 				["at0029"] = <
 					text = <"Per typ">
 					description = <"Detaljer om en specifik typ av rökfri tobaks användning.">
-					comment = <"Detta \"run-time name constraint\" för detta \"Cluster\" (delträd) gör det enkelt att skapa typ-specifika delar i \"templates\" (mallar), eller att låta ett IT-system dynamiskt generera specifika delar vid användning. Det är tillåtet att lägga till ytterligare typer av rökfri tobak, om det har identifierats som ett lokalt behov.">
+					comment = <"Detta \"run-time name constraint\" för detta \"Cluster\" (delträd) gör det enkelt att skapa typ-specifika delar i \"templates\" (openEHR-mallar), eller att låta ett IT-system dynamiskt generera specifika delar vid användning. Det är tillåtet att lägga till ytterligare typer av rökfri tobak, om det har identifierats som ett lokalt behov.">
 				>
 				["at0030"] = <
-					text = <"Mönster">
-					description = <"Det typiska användningsmönstret för den angivna tobakstypen.">
-					comment = <"Det typiska mönstret för användning kan kodas med en terminologi eller ett lokalt värde som anges i en mall.">
+					text = <"*Pattern(en)">
+					description = <"*The typical pattern of usage for the specified type of tobacco.(en)">
+					comment = <"*The typical pattern of use can be made more granular by coding the free text option with a terminology or a local value set in a template.(en)">
 				>
 				["at0043"] = <
-					text = <"Övergripande beskrivning">
-					description = <"Beskrivande sammanfattning av en individs användning av rökfri tobak och historik.">
-					comment = <"Använd endast det här fältet för att ge en beskrivande sammanfattning om de strukturerade fälten inte ger en adekvat bild av individens användning av rökfri tobak, eller för att införliva ostrukturerad information om användning av rökfri tobak från befintliga eller gamla vård-IT-system till arketyp-baserade system.">
+					text = <"*Overall description(en)">
+					description = <"*Narrative summary about the individual's overall smokeless tobacco usage pattern and history.(en)">
+					comment = <"*Use this data element to record a narrative description only where the structured data does not adequately reflect the smokeless tobacco usage for this individual or to incorporate unstructured information about smokeless tobacco use from existing or legacy clinical systems into an archetyped format.(en)">
 				>
 				["at0052"] = <
 					text = <"Status">
@@ -1014,24 +893,6 @@ equivalent of consuming one packet of snus daily for 1 year. The definition of a
 					text = <"Beskrivning">
 					description = <"Uttalande om nuvarande rökfri tobaksbeteende för den angivna typen rökfri tobak.">
 				>
-				["at0054"] = <
-					text = <"*Snus(en)">
-					description = <"*A type tobacco that is placed under the upper lip. Comes as a loose variant or prepackaged into pouches.(en)">
-				>
-				["at0055"] = <
-					text = <"*Snuff(en)">
-					description = <"*A type of tobacco that is inhaled or \"snuffed\" into the nasal cavity.(en)">
-				>
-				["at0056"] = <
-					text = <"Tuggtobak">
-					description = <"*En typ av tobak som tuggas. Finns i flera olika varianter. [Till exempel: Lösa blad, ...].">
-				>
-				["at0057"] = <
-					text = <"Gutka">
-					description = <"*A combination of betel leaf, areca nut, and slaked lime mixed with tobacco.(en)
-
-Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och en söt fruktjuice blandat med tobak.">
-				>
 				["at0059"] = <
 					text = <"Före detta brukare">
 					description = <"Individen har varit brukare av rökfri tobak men har slutat.">
@@ -1039,10 +900,6 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 				["at0061"] = <
 					text = <"Aktivt brukare">
 					description = <"Individen brukar rökfri tobak">
-				>
-				["at0062"] = <
-					text = <"*Naswar(en)">
-					description = <"*A combination of tobacco, slaked lime, indigo, cardamom, oil, and menthol.(en)">
 				>
 				["at0064"] = <
 					text = <"Per episod">
@@ -1052,10 +909,6 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 					text = <"Typisk användning (massa)">
 					description = <"Beräkning av vikten av lös tobak som används.">
 					comment = <"Detta dataelement används typiskt för lös tobak och är överflödig om ett värde är registrerat för \"Typisk användning (enheter)\".">
-				>
-				["at0066"] = <
-					text = <"*Dopptobak">
-					description = <"En typ av tobak som placeras mellan under- eller överläpp och tandkött.">
 				>
 				["at0069"] = <
 					text = <"Kommentar">
@@ -1091,12 +944,8 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 					comment = <"Definition kan behöva anges per typ.">
 				>
 				["at0077"] = <
-					text = <"Typ detaljer">
-					description = <"Ytterligare strukturerade detaljer om den angivna typen av rökfri tobaksbruk.">
-				>
-				["at0078"] = <
-					text = <"Upplöslig tobak">
-					description = <"En variation på tuggtobak som helt löser upp sig i munnen.">
+					text = <"*Type details(en)">
+					description = <"*Additional structured details about the specified type of smokeless tobacco usage.(en)">
 				>
 				["at0079"] = <
 					text = <"Definition av Har aldrig brukat">
@@ -1109,9 +958,9 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 					comment = <"Det kan vara del av ett datum, till exempel bara ett årtal.">
 				>
 				["at0081"] = <
-					text = <"Episod namn">
-					description = <"Identifiering av en episod av rökfri tobaksbruk - antingen som ett tal i en sekvens och / eller en namngiven händelse.">
-					comment = <"Till exempel: \"2\" som den andra episoden inom en sekvens av episoder; eller \"Graviditet med tvillingar\" om man beskriver användningen av rökfri tobak under en hälsofrämjande händelse, t.ex. under en viss graviditet.">
+					text = <"*Episode label(en)">
+					description = <"*Identification of an episode of smokeless tobacco use.(en)">
+					comment = <"*The label may be represented either as a number in a sequence and/or a named event. For example: '2' as the second episode within a sequence of episodes; or 'Pregnancy with twins' if describing the use of smokeless tobacco during a health event such as during a specific pregnancy.(en)">
 				>
 				["at0082"] = <
 					text = <"Episod slutdatum">
@@ -1139,10 +988,6 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 					text = <"Kommentar till episod">
 					description = <"Ytterligare berättelse om användningen av den angivna typen rökfri tobak under den angivna episoden, som inte tagits i andra fält.">
 				>
-				["at0088"] = <
-					text = <"*Toombak(en)">
-					description = <"*A combination of sodium carbonate and tobacco.(en)">
-				>
 				["at0089"] = <
 					text = <"Övergripande status">
 					description = <"Beskrivning av aktuellt bruk för alla typer av rökfri tobak">
@@ -1151,29 +996,10 @@ Gutka är en kombination av betelpalmnöt, akacianöt, tobak, släckt kalk och e
 					text = <"Har aldrig brukat">
 					description = <"Individen har aldrig brukat någon form av rökfri tobak.">
 				>
-				["at0092"] = <
-					text = <"*Iqmik(en)">
-					description = <"*An Alaskan tobacco product which also contains punk ash.(en)">
-				>
-				["at0093"] = <
-					text = <"*Snuff creamy(en)">
-					description = <"*A fluid tobacco mixture marketed as a dental hygiene aid, albeit used for recreation.(en)">
-				>
-				["at0094"] = <
-					text = <"*Shammah(en)">
-					description = <"*A combination of tobacco, slaked lime, and ash.(en)">
-				>
-				["at0095"] = <
-					text = <"*Nass(en)">
-					description = <"*A combination of tobacco, ash, cotton, and sesame oil.(en)">
-				>
-				["at0096"] = <
-					text = <"*Mawa(en)">
-					description = <"*A combination of areca nut, lime, and tobacco.(en)">
-				>
-				["at0097"] = <
-					text = <"*Gadakhu(en)">
-					description = <"*A combination of tobacco and molasses.(en)">
+				["at0098"] = <
+					text = <"*Type(en)">
+					description = <"*The name of the specific type or grouping of tobacco.(en)">
+					comment = <"*For example: A specific type could be 'snus' or 'gutka', while a group could be 'chewing tobacco'.(en)">
 				>
 			>
 		>
