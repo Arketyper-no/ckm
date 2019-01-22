@@ -13,6 +13,13 @@ language
 				["organisation"] = <"University of Heidelberg, Central Queensland University">
 			>
 		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Vyacheslav Mavrin">
+				["organisation"] = <"JSC Comsoft">
+			>
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
@@ -25,13 +32,6 @@ language
 			language = <[ISO_639-1::ar-sy]>
 			author = <
 				["name"] = <"Mona Saleh">
-			>
-		>
-		["ru"] = <
-			language = <[ISO_639-1::ru]>
-			author = <
-				["name"] = <"Vyacheslav Mavrin">
-				["organisation"] = <"JSC Comsoft">
 			>
 		>
 	>
@@ -49,44 +49,6 @@ description
 			use = <"Zur allgemeinen Dokumentation der Herzfrequenz, besonders der elektrischen Frequenz.">
 			keywords = <"Frequenz", "Herzfrequenz", "Rhythmus">
 			misuse = <"Zur Dokumentation der mechanischen Frequenz Puls benutzen (OSBSERVATION.heart_reate-pulse.v1).">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"To record the measurement of the pulse rate, or heart rate, and description of associated characteristics as one component of a vital signs observation.">
-			use = <"Use to record the presence or absence of a pulse rate or heart rate. 
-
-Use to record the measurement of the pulse rate, or heart rate, and observation about the associated rhythm.
-
-Use to record a simple description of characteristics that are associated with the pulse or heart beat, that might be commonly recorded as part of a vital signs obervation.
-
-Measurements such as the maximum pulse or heart rate over an interval of time can be recorded using \"Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.
-
-In practice, the terms heart rate and pulse rate are often used interchangeably. This archetype allows either term to be used when the measurement site is not specified, to suit clincian preferences.
-
-In certain situations, however, it is important to differentiate between a pulse rate observed at a peripheral artery, such as the radial artery, in contrast to the centrally observed heart rate. This archetype allows the data to be very specific and differentiate between central heart rate and the pulse rate recorded at a specified artery.">
-			keywords = <"rate", "rhythm", "beat", "pulse", "heart", "vital", "sign">
-			misuse = <"Not to be used to record the R-R rate in the context of an Electrocardiograph report - this is to be recorded using the OBSERVATION.ecg archetype.
-
-Not to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, auscultatory findings,
-
-In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  
-
-Not to be used to record fetal heart rate - this is recorded using the OBSERVATION.fetal_heart archetype.
-
-Concepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل تفاصيل حول معدل و نظم القلب.">
-			use = <"يستخدم لتسجيل الخصائص التي تم قياسها فيما يتعلق بمعدل و نظم القلب, بما في ذلك بيان بسيط حول وجود نبض و معدل ضربات القلب. و لا يتم استخدام هذه القراءات بالملاحظة المباشرة للقلب ذاته, و إنما يتنم استنباطها من مصادر بديلة تتضمن التسمع المباشر للقلب أو تخطيط كهربية القلب بما يعكس النشاط الكهربي للقلب.
-معدل و نظم القلب ( أو تخصيصهما إلى النبض) عادة ما يتم تسجيلهم على أنهم يمثلون واحدا من العلامات الحياتية – و التي تتكون من ضغط الدم, التنفس, درجة الحرارة, و قياس التأكسج. و يوجد نماذج إضافية مخصصة لكل نوع من هذه المفاهيم.">
-			keywords = <"المعدل", "معدل القلب", "النظم">
-			misuse = <"لا يستخدم لتسجيل استنتاجات حول معدل و نظم القلب الذي تم قياسهما. و ينبغي تسجيل بيانات مثل (المريض يعاني من الرجفان الأذيني) أو (يعاني من تسرع ضربات القلب) في نماذج أخرى مخصصة و متعلقة بتقييم حالة المريض.
-لا تستخدم لتسجيل معدل القلب الميكانيكي, أو النظم أو الخصائص الأخرى – و يتم تسجيل ذلك باستخدام تخصيص لهذا النموذج يسمى ملاحظة. معدل القلب – النبض.
-لا يستخدم لتسجيل تفاصيل فحص أو تقييم أكثر شمولا للجهاز القلبي الوريدي. و يمكن أن تستخدم نماذج معينة أخرى لتسجيل خصائص مثل نبض قمة القلب, النفخات, و الموجودات عند التسمع, إلى آخره.
-المفاهيم الأخرى مثل أقصى معدل للقلب, أو معدل القلب المستهدف ينبغي أن يتم تسجيلها في نماذج أخرى متعلقة بتقييم المجهود.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["ru"] = <
@@ -127,6 +89,44 @@ Skal ikke brukes til å registrere hjertefrekvensen til et foster, dette gjøres
 Hjertefrekvens som et mål for behandling registreres i egne EVALUATION-arketyper relatert til mål og vurdering av trening.">
 			copyright = <"© Nasjonal IKT HF">
 		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the measurement of the pulse rate, or heart rate, and description of associated characteristics as one component of a vital signs observation.">
+			use = <"Use to record the presence or absence of a pulse rate or heart rate. 
+
+Use to record the measurement of the pulse rate, or heart rate, and observation about the associated rhythm.
+
+Use to record a simple description of characteristics that are associated with the pulse or heart beat, that might be commonly recorded as part of a vital signs obervation.
+
+Measurements such as the maximum pulse or heart rate over an interval of time can be recorded using 'Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.
+
+In practice, the terms heart rate and pulse rate are often used interchangeably. This archetype allows either term to be used when the measurement site is not specified, to suit clincian preferences.
+
+In certain situations, however, it is important to differentiate between a pulse rate observed at a peripheral artery, such as the radial artery, in contrast to the centrally observed heart rate. This archetype allows the data to be very specific and differentiate between central heart rate and the pulse rate recorded at a specified artery.">
+			keywords = <"rate", "rhythm", "beat", "pulse", "heart", "vital", "sign">
+			misuse = <"Not to be used to record the R-R rate in the context of an Electrocardiograph report - this is to be recorded using the OBSERVATION.ecg archetype.
+
+Not to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, auscultatory findings,
+
+In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  
+
+Not to be used to record fetal heart rate - this is recorded using the OBSERVATION.fetal_heart archetype.
+
+Concepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول معدل و نظم القلب.">
+			use = <"يستخدم لتسجيل الخصائص التي تم قياسها فيما يتعلق بمعدل و نظم القلب, بما في ذلك بيان بسيط حول وجود نبض و معدل ضربات القلب. و لا يتم استخدام هذه القراءات بالملاحظة المباشرة للقلب ذاته, و إنما يتنم استنباطها من مصادر بديلة تتضمن التسمع المباشر للقلب أو تخطيط كهربية القلب بما يعكس النشاط الكهربي للقلب.
+معدل و نظم القلب ( أو تخصيصهما إلى النبض) عادة ما يتم تسجيلهم على أنهم يمثلون واحدا من العلامات الحياتية – و التي تتكون من ضغط الدم, التنفس, درجة الحرارة, و قياس التأكسج. و يوجد نماذج إضافية مخصصة لكل نوع من هذه المفاهيم.">
+			keywords = <"المعدل", "معدل القلب", "النظم">
+			misuse = <"لا يستخدم لتسجيل استنتاجات حول معدل و نظم القلب الذي تم قياسهما. و ينبغي تسجيل بيانات مثل (المريض يعاني من الرجفان الأذيني) أو (يعاني من تسرع ضربات القلب) في نماذج أخرى مخصصة و متعلقة بتقييم حالة المريض.
+لا تستخدم لتسجيل معدل القلب الميكانيكي, أو النظم أو الخصائص الأخرى – و يتم تسجيل ذلك باستخدام تخصيص لهذا النموذج يسمى ملاحظة. معدل القلب – النبض.
+لا يستخدم لتسجيل تفاصيل فحص أو تقييم أكثر شمولا للجهاز القلبي الوريدي. و يمكن أن تستخدم نماذج معينة أخرى لتسجيل خصائص مثل نبض قمة القلب, النفخات, و الموجودات عند التسمع, إلى آخره.
+المفاهيم الأخرى مثل أقصى معدل للقلب, أو معدل القلب المستهدف ينبغي أن يتم تسجيلها في نماذج أخرى متعلقة بتقييم المجهود.">
+			copyright = <"© Nasjonal IKT HF">
+		>
 	>
 	lifecycle_state = <"published">
 	other_contributors = <"Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Magnus Alvestad, Helse Bergen HF, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)", "Sandra Bertram, Ascribe, Australia", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Pål Brekke, OUS Rikshospitalet, Norway", "Einar Bugge, UNN HF, Fag- og forskningssenteret, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Angela de Zwart, Orion Health, New Zealand", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Christian Ghan, The Chris O'Brien Lifehouse at RPA, Australia", "Bjørn Grøva, Helsedirektoratet, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Sam Heard, Ocean Informatics, Australia (Editor)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Erling Are Hole, Helse Bergen, Norway", "Oliver Hosking, Remote Health NT, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Athanasios Kleontas, Ergobyte Informatics, Greece", "Shinji Kobayashi, Ehime University, Japan", "Robert Legan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Lars Ivar Mehlum, Helse Bergen HF, Norway", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Monica Merchat, Hospital Cardiac Electrophysiology, MS Health Informatics Student, former ICU nurse, former Anesthesia Technician, United States", "Arturo Romero, SESCAM, Spain", "Thomas Schopf, University Hospital of North-Norway, Norway", "Fabian Schwarz, NT Health, Australia", "Gary Sinclair, NT DoH, Australia", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Thor-Einar Stemland, Helse Bergen, FOU Seksjon for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Jan Inge Sørheim, Helse Bergen, Haukeland uniersitetssjukehus, Norway", "Micaela Thierley, Helse Bergen, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Editor)">
@@ -140,9 +140,9 @@ Pulse (renamed from Heart Rate), draft archetype, openEHR Clinical Knowledge Man
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"4A9703A1203E497139C7BFABCF0658CA">
-		["build_uid"] = <"a82afda1-814b-4a5b-b74e-44de2beb7ff6">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"08A5F3E1525CBD2128B97AF1ACCC28ED">
+		["build_uid"] = <"166280a4-e33d-4593-9e5e-2f3fa8a81a5c">
+		["revision"] = <"1.0.1">
 	>
 
 definition
@@ -283,7 +283,7 @@ definition
 									at1032, 	-- Palpasjon
 									at1033, 	-- Auskultasjon
 									at1034, 	-- Automatisk, non-invasivt
-									at1050]	-- 
+									at1050]	-- Automatisk, invasivt
 								}
 							}
 						}
@@ -320,6 +320,7 @@ definition
 			}
 		}
 	}
+
 
 
 
@@ -510,10 +511,8 @@ ontology
 					description = <"*The right brachial artery.(en)">
 				>
 				["at1050"] = <
-					text = <"*
-Automatisk, invasivt(en)">
-					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-(en)">
+					text = <"*Automatisk, invasivt(en)">
+					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.(en)">
 				>
 				["at1051"] = <
 					text = <"*Øreflipp(en)">
@@ -714,10 +713,8 @@ Automatisk, invasivt(en)">
 					description = <"*The right brachial artery.(en)">
 				>
 				["at1050"] = <
-					text = <"*
-Automatisk, invasivt(en)">
-					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-(en)">
+					text = <"*Automatisk, invasivt(en)">
+					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.(en)">
 				>
 				["at1051"] = <
 					text = <"*Øreflipp(en)">
@@ -918,10 +915,8 @@ Automatisk, invasivt(en)">
 					description = <"The right brachial artery.">
 				>
 				["at1050"] = <
-					text = <"*
-Automatisk, invasivt(en)">
-					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-(en)">
+					text = <"*Automatisk, invasivt(en)">
+					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.(en)">
 				>
 				["at1051"] = <
 					text = <"*Øreflipp(en)">
@@ -1122,10 +1117,8 @@ Automatisk, invasivt(en)">
 					description = <"*The right brachial artery.(en)">
 				>
 				["at1050"] = <
-					text = <"*
-Automatisk, invasivt(en)">
-					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.
-(en)">
+					text = <"*Automatisk, invasivt(en)">
+					description = <"*Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et et skop.(en)">
 				>
 				["at1051"] = <
 					text = <"*Øreflipp(en)">
@@ -1326,8 +1319,7 @@ Automatisk, invasivt(en)">
 					description = <"Den høyre brachialisarterien.">
 				>
 				["at1050"] = <
-					text = <"
-Automatisk, invasivt">
+					text = <"Automatisk, invasivt">
 					description = <"Funnene er observert invasivt ved hjelp av en maskin, som f.eks. et arteriekateter.">
 				>
 				["at1051"] = <
