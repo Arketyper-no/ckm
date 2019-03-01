@@ -69,9 +69,9 @@ Not to be used to record summary details about an identified contraindication - 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"40B62DB1C52097933A3963406D8D102D">
-		["build_uid"] = <"8f6c98c3-4d06-4521-b630-07c570bb2081">
-		["revision"] = <"1.1.0">
+		["MD5-CAM-1.0.1"] = <"714F9390662262342CF0C457C67D0E9C">
+		["build_uid"] = <"c8bc42de-ed6d-4acd-9bf6-09b365677151">
+		["revision"] = <"1.1.1">
 	>
 
 definition
@@ -95,7 +95,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {	-- Citation
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			ELEMENT[at0022] occurrences matches {0..*} matches {	-- Method
 				value matches {
@@ -109,7 +109,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {	-- Multimedia representation
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Comment
 				value matches {
@@ -118,6 +118,7 @@ definition
 			}
 		}
 	}
+
 
 
 
