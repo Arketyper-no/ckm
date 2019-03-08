@@ -15,12 +15,16 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en sammensatt skåring, basert på kategoriserte fysiologiske målinger og observasjoner for å støtte vurderingen av klinisk forverring hos en kvinne fra svangerskapets start til og med seks uker postpartum.">
-			use = <"Brukes for å registrere en sammensatt skåring for å støtte vurderingen av klinisk forverring hos en kvinne fra svangerskapets start til og med seks uker postpartum.">
-			keywords = <"Varsling", "triage", "ONEWS", "forverring">
-			misuse = <"Anvendes ikke for registering av hvert enkelt fysiologisk parameter eller klinisk observasjon. Bruk spesifikke OBSERVATION-arketyper for dette formål – OBSERVATION.blood_pressure, OBSERVATION.pulse, OBSERVATION.respirations, OBSERVATION.body_temperature, OBSERVATION.avpu, CLUSTER.ambient_oxygen og OBSERVATION.indirect_oximetry.
+			purpose = <"For å registrere en sammensatt skåring, basert på et sett med vitale parametre som registreres systematisk, objektivt og regelmessig for å fange opp sykdomsutvikling på et tidlig tidspunkt, samt å følge utviklingen av en sykdomstilstand over tid, hos en kvinne fra svangerskapets start til og med seks uker postpartum.
 
-Benyttes ikke for kvinner før svangerskapsstart og etter seks uker postpartum, bruk egen arketype for dette formålet (NEWS).">
+">
+			use = <"Brukes for å registrere en sammensatt skåring, basert på et sett med vitale parametre som registreres systematisk, objektivt og regelmessig for å fange opp sykdomsutvikling på et tidlig tidspunkt, samt å følge utviklingen av en sykdomstilstand over tid, hos en kvinne fra svangerskapets start til og med seks uker postpartum.">
+			keywords = <"Varsling", "triage", "ONEWS", "forverring", "graviditet", "svangerskap", "fødsel", "preeklampsi", "risikovurdering", "svangerskap", "barsel", "komplikasjon", "NEWS", "gravid", "sepsis">
+			misuse = <"Anvendes ikke for registering av hvert enkelt fysiologisk parameter eller klinisk observasjon. Bruk spesifikke OBSERVATION-arketyper for dette formål – OBSERVATION.blood_pressure (Blodtrykk), OBSERVATION.pulse (Puls/hjertefrekvens), OBSERVATION.respirations (Åndedrett), OBSERVATION.body_temperature (Kroppstemperatur), OBSERVATION.avpu-and_confusion, CLUSTER.ambient_oxygen (Innåndet oksygen) og OBSERVATION.indirect_oximetry (Pulsoksymetri).
+
+Benyttes ikke for kvinner før svangerskapsstart og etter seks uker postpartum. Bruk egen arketype for dette formålet, for eksempel OBSERVATION.news (NEWS).
+
+Benyttes ikke for kvinner som er i aktiv fødsel.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -51,8 +55,8 @@ Anaesthesia, 67: 12-18. doi:10.1111/j.1365-2044.2011.06896.x
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"27BC18306E6400DE6DFF3A01F978D314">
-		["build_uid"] = <"8eee7469-56a9-45c1-b8d1-718679663e3d">
+		["MD5-CAM-1.0.1"] = <"D2AF0A1B93F6623FDDF68FC3BB5206F7">
+		["build_uid"] = <"34f2172b-4c85-43e7-af45-963fcf47785e">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -169,15 +173,15 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"ONEWS">
-					description = <"ONEWS (Obstetric Norwegian Early Warning System) er et skåringsverktøy som benyttes for å gi en objektiv vurdering av grad av klinisk forverring hos en kvinne fra svangerskapets start til og med seks uker postpartum.">
+					description = <"ONEWS (Obstetric Norwegian Early Warning System) er et skåringsverktøy som benyttes for å fange opp sykdomsutvikling på et tidlig tidspunkt samt å følge utviklingen av en sykdomstilstand over tid på en objektiv måte, hos en kvinne fra svangerskapets start til og med seks uker postpartum.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Tidspunkt">
-					description = <"En spesifikt dato/tidspunkt som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
@@ -210,103 +214,103 @@ ontology
 				>
 				["at0042"] = <
 					text = <"Konfunderende faktorer">
-					description = <"Kommentar til og registrering av faktorer som kan ha betydning for skåren.">
+					description = <"Forhold eller omstendigheter som kan ha betydning for skåringen.">
 				>
 				["at0044"] = <
 					text = <"Respirasjon">
-					description = <"Pasientens respirasjonsfrekvens.">
+					description = <"Kvinnens respirasjonsfrekvens.">
 				>
 				["at0045"] = <
 					text = <"Oksygenmetning">
-					description = <"Pasientens oksygenmetning.">
+					description = <"Kvinnens oksygenmetning.">
 				>
 				["at0046"] = <
 					text = <"Rød: ≤10 eller ≥25">
-					description = <"Respirasjonsfrekvensen målt, mindre enn eller lik 10, eller større enn eller lik 25 pust per min; skåres som Rød.">
+					description = <"Respirasjonsfrekvens mindre enn eller lik 10, eller større enn eller lik 25 pust per min; skåres som Rød.">
 				>
 				["at0047"] = <
-					text = <"Gul: 20-24">
-					description = <"Respirasjonsfrekvensen målt fra og med 20 til og med 24 pust per min; skåres som Gul.">
+					text = <"Gul: 20 - 24">
+					description = <"Respirasjonsfrekvens fra og med 20 til og med 24 pust per min; skåres som Gul.">
 				>
 				["at0048"] = <
-					text = <"Hvit: 11-19">
-					description = <"Respirasjonsfrekvensen målt fra og med 11 til og med 19 pust per min; skåres som Hvit.">
+					text = <"Hvit: 11 - 19">
+					description = <"Respirasjonsfrekvens fra og med 11 til og med 19 pust per min; skåres som Hvit.">
 				>
 				["at0049"] = <
 					text = <"Rød: ≤95">
-					description = <"Oksygenmetning målt mindre enn eller lik 95 prosent; skåres som Rød.">
+					description = <"Oksygenmetning mindre enn eller lik 95 prosent; skåres som Rød.">
 				>
 				["at0050"] = <
 					text = <"Hvit: ≥96">
-					description = <"Oksygenmetning målt større enn eller lik 99 prosent; skåres som Hvit.">
+					description = <"Oksygenmetning større enn eller lik 99 prosent; skåres som Hvit.">
 				>
 				["at0051"] = <
 					text = <"Kroppstemperatur">
-					description = <"Pasientens kroppstemperatur.">
+					description = <"Kvinnens kroppstemperatur.">
 				>
 				["at0052"] = <
-					text = <"Rød: ≤35 eller ≥38">
-					description = <"Kroppstemperatur målt mindre enn eller lik 35,0 grader Celsius og større enn eller lik 38 grader Celcius; skåres som Rød.">
+					text = <"Rød: ≤35,0 eller ≥38,0">
+					description = <"Kroppstemperatur mindre enn eller lik 35,0 grader Celsius og større enn eller lik 38,0 grader Celcius; skåres som Rød.">
 				>
 				["at0053"] = <
-					text = <"Gul: 35,1 – 35,9 eller 37,5 – 37,9">
-					description = <"Kroppstemperatur målt fra og med 35,1 til og med 35,9 grader Celsius eller fra og med 37,5 og til og med 37,9 grader Celcius; skåres som Gul.">
+					text = <"Gul: 35,1 - 35,9 eller 37,5 - 37,9">
+					description = <"Kroppstemperatur fra og med 35,1 til og med 35,9 grader Celsius eller fra og med 37,5 og til og med 37,9 grader Celcius; skåres som Gul.">
 				>
 				["at0054"] = <
-					text = <"Hvit: 36,0 – 37,4">
-					description = <"Kroppstemperatur målt fra og med 36,0 til og med 37,4 grader Celsius; skåres som Hvit.">
+					text = <"Hvit: 36,0 - 37,4">
+					description = <"Kroppstemperatur fra og med 36,0 til og med 37,4 grader Celsius; skåres som Hvit.">
 				>
 				["at0055"] = <
 					text = <"Systolisk blodtrykk">
-					description = <"Pasientens systoliske blodtrykk.">
+					description = <"Kvinnens systoliske blodtrykk.">
 				>
 				["at0056"] = <
 					text = <"Rød: <90 eller ≥160">
-					description = <"Det systoliske blodtrykket målt som mindre enn 90 mmHg og over eller lik160 mmHg; skåres som Rød.">
+					description = <"Systolisk blodtrykk mindre enn 90 mmHg og over eller lik 160 mmHg; skåres som Rød.">
 				>
 				["at0057"] = <
 					text = <"Gul: 90 - 99 eller 140 - 159">
-					description = <"Det systoliske blodtrykket målt fra og med 90 til og med 99 mmHg eller fra og med 140 til og med 159 mmHg; skåres som Gul.">
+					description = <"Systolisk blodtrykk fra og med 90 til og med 99 mmHg eller fra og med 140 til og med 159 mmHg; skåres som Gul.">
 				>
 				["at0058"] = <
-					text = <"Hvit: 100 – 139">
-					description = <"Det systoliske blodtrykket målt fra og med 100 til og med 139mmHg; skåres som Hvit.">
+					text = <"Hvit: 100 - 139">
+					description = <"Systolisk blodtrykk fra og med 100 til og med 139 mmHg; skåres som Hvit.">
 				>
 				["at0059"] = <
 					text = <"Diastolisk blodtrykk">
-					description = <"Pasientens diastoliske blodtrykk.">
+					description = <"Kvinnens diastoliske blodtrykk.">
 				>
 				["at0060"] = <
-					text = <"Rød: <90">
-					description = <"Det diastoliske blodtrykket målt mindre enn 90 mmHg; skåres som Rød.">
+					text = <"Rød: <40 eller ≥100">
+					description = <"Diastolisk blodtrykk mindre enn 40 mmHg eller større eller lik 100 mmHg; skåres som Rød.">
 				>
 				["at0061"] = <
-					text = <"Gul: 90 – 99 eller 140 – 159">
-					description = <"Det diastoliske blodtrykket målt fra og med 90 til og med 99 mmHg eller fra og med 140 - 159mmHg; skåres som Gul.">
+					text = <"Gul: 40 - 49 eller 90 - 99">
+					description = <"Diastolisk blodtrykk fra og med 40 til og med 49 mmHg eller fra og med 90 til og med 99 mmHg; skåres som Gul.">
 				>
 				["at0062"] = <
-					text = <"Hvit: 100 - 139">
-					description = <"Det diastoliske blodtrykket målt fra og med 100 til og med 139 mmHg; skåres som Hvit.">
+					text = <"Hvit: 50 - 89">
+					description = <"Diastolisk blodtrykk fra og med 50 til og med 89 mmHg; skåres som Hvit.">
 				>
 				["at0063"] = <
-					text = <"Hjertefrekvens/puls">
-					description = <"Pasientens hjertefrekvens.">
+					text = <"Puls">
+					description = <"Kvinnens puls.">
 				>
 				["at0064"] = <
 					text = <"Rød: ≤50 eller ≥120">
-					description = <"Hjertefrekvensen målt mindre enn eller lik 50 pulsslag per min og større enn eller lik 120 pulsslag per min; skåres som Rød.">
+					description = <"Puls mindre enn eller lik 50 pulsslag per min og større enn eller lik 120 pulsslag per min; skåres som Rød.">
 				>
 				["at0065"] = <
 					text = <"Gul: 51 – 60 eller 100 – 119">
-					description = <"Hjertefrekvensen målt fra og med 51 til og med 60 pulsslag per min eller fra og med 100 til og med 119 pulsslag per min; skåres som Gul.">
+					description = <"Puls fra og med 51 til og med 60 pulsslag per min eller fra og med 100 til og med 119 pulsslag per min; skåres som Gul.">
 				>
 				["at0066"] = <
 					text = <"Hvit: 61 – 99">
-					description = <"Hjertefrekvensen målt fra og med 61 til og med 99 pulsslag per min; skåres som Hvit.">
+					description = <"Puls fra og med 61 til og med 99 pulsslag per min; skåres som Hvit.">
 				>
 				["at0067"] = <
 					text = <"Bevissthetsgrad">
-					description = <"Observert kategori for ACVPU scoring av pasientens bevissthetstilstand.">
+					description = <"Observert kategori for ACVPU scoring av kvinnens bevissthetstilstand.">
 				>
 				["at0068"] = <
 					text = <"Hvit: A">
