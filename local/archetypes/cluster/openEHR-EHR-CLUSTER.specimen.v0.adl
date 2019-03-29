@@ -13,7 +13,6 @@ language
 				["organisation"] = <"Universitetssykehuset Nord-Norge">
 				["email"] = <"kristian.berg@unn.no, gro-hilde.ulriksen@unn.no, line.silsand@unn.no">
 			>
-			accreditation = <"*">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
@@ -32,10 +31,10 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Brukes for å registrere detaljer knyttet til en laboratorieprøve. Dette CLUSTERet kan brukes i flere ulike sammenhenger, som for eksempel i en INSTRUCTION-arketype for å beskrive hvilken prøve som skal tas, eller for å beskrive prøven som er tilknyttet en laboratorierekvisisjon. CLUSTERet kan også brukes i en ACTION-arketype for eksempel for å beskrive prøver som skal tas som en del av en kirurgisk prosedyre.
+			purpose = <"Brukes for å registrere detaljer knyttet til prøvemateriale for laboratoriebruk. Dette CLUSTERet kan brukes i flere ulike sammenhenger, som for eksempel i en INSTRUCTION-arketype for å beskrive hvilken prøve som skal tas, eller for å beskrive prøven som er tilknyttet en laboratorierekvisisjon. CLUSTERet kan også brukes i en ACTION-arketype for eksempel for å beskrive prøver som skal tas som en del av en kirurgisk prosedyre.
 
-CLUSTERet vil også kunne brukes i \"Laboratoriesvar\"-arketypen for å beskrive prøven det rapporteres på.">
-			use = <"Generelt brukes denne CLUSTER-arketypen i en OBSERVATION.laboratory_test og andre laboratorierelaterte INSTRUCTION og ACTION-arketyper.">
+CLUSTERet vil også kunne brukes i \"Laboratorieresultat\"-arketypen for å beskrive prøven det rapporteres på.">
+			use = <"Generelt brukes denne CLUSTER-arketypen i en OBSERVATION.laboratory_test_result og andre laboratorierelaterte INSTRUCTION- og ACTION-arketyper.">
 			keywords = <"laboratorium", "prøve", "prøvetaking", "laboratorieprøve", "prøvemateriale", "prøveeksemplar", "preparat", "prøvesamling">
 			misuse = <"">
 		>
@@ -72,8 +71,8 @@ Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA:
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"B671A2721B8373AC67734BFA18AC5B11">
-		["build_uid"] = <"7f78038f-359d-4e31-93e1-1ee0b4875c6e">
+		["MD5-CAM-1.0.1"] = <"A2DBD8094E40BCBF03A405DAE2E14886">
+		["build_uid"] = <"d6802cdb-aaf3-4bd6-acf4-2fc14151f4c0">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -577,8 +576,8 @@ of the result.">
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Laboratorieprøve">
-					description = <"For å registrere detaljer tilknyttet en laboratorieprøve.">
+					text = <"Prøvemateriale">
+					description = <"For å registrere detaljer tilknyttet prøvemateriale for laboratoriebruk.">
 				>
 				["at0001"] = <
 					text = <"Prøveidentifikator">
@@ -638,7 +637,7 @@ Kan også brukes for å dokumentere kjente avvik fra instruksjoner tilknyttet h�
 				>
 				["at0044"] = <
 					text = <"Problemer ved håndtering i laboratoriet">
-					description = <"Problem som oppstår med håndtering eller behandling av prøven i laboratoriet.">
+					description = <"Problem som oppstår ved håndtering eller behandling av prøven i laboratoriet.">
 				>
 				["at0045"] = <
 					text = <"Kommentar">
@@ -678,7 +677,7 @@ Kan også brukes for å dokumentere kjente avvik fra instruksjoner tilknyttet h�
 				>
 				["at0059"] = <
 					text = <"Teknisk feil">
-					description = <"Prøven ble ikke analysert på grunn av tekniske årsaker.">
+					description = <"Prøven ble ikke analysert av tekniske årsaker.">
 				>
 				["at0062"] = <
 					text = <"Tilfredstillende">
@@ -693,9 +692,8 @@ Kan også brukes for å dokumentere kjente avvik fra instruksjoner tilknyttet h�
 					description = <"Prøven er utilfredsstillende og har ikke blitt behandlet.">
 				>
 				["at0067"] = <
-					text = <"Prøvetakingssituasjonen">
-					description = <"Beskrivelse av prøvetakingssituasjonen. Prøven tas ofte av helsepersonell, men kan også tas av pasienten selv eller en en annen omsorgsperson i hjemmet.
-">
+					text = <"Prøvetakingssituasjon">
+					description = <"Beskrivelse av prøvetakingssituasjonen. Prøven tas ofte av helsepersonell, men kan også tas av pasienten selv eller en en annen omsorgsperson i hjemmet.">
 					comment = <"Beskriver forhold tilknyttet prøvetakingen for å gjøre det mulig for laboratoriet å stille spørsmål om innsamling av prøven, hvis nødvendig. Prøvetakingsforholdene kan gi ytterligere informasjon som er relevant for tolkning av prøveresultatet.">
 				>
 				["at0068"] = <
@@ -704,12 +702,12 @@ Kan også brukes for å dokumentere kjente avvik fra instruksjoner tilknyttet h�
 ">
 				>
 				["at0070"] = <
-					text = <"Prøvetaker ID">
+					text = <"Prøvetakers ID">
 					description = <"Identifikator av personen eller instansen som er ansvarlig for prøvetakingen.">
 				>
 				["at0071"] = <
 					text = <"Detaljer om prøvetaker">
-					description = <"Personen eller instansen som er ansvarlig for prøvetakingen.">
+					description = <"Personen eller oranisasjonsenheten som er ansvarlig for prøvetakingen.">
 				>
 				["at0079"] = <
 					text = <"Beskrivelse av prøvetakingsmetode">
