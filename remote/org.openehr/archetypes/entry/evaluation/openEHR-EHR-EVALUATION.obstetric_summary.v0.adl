@@ -6,6 +6,14 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Marit Alice Venheim">
+				["organisation"] = <"Helse Vest IKT AS">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no">
+			>
+		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			author = <
@@ -33,6 +41,22 @@ description
 		["date"] = <"2011-02-24">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å lage et sammendrag av en kvinnes obstetriske anamnese og kan brukes får å:
+- Få et raskt overblikk over hennes tidligere svangerskap og fødsler.
+- Rapportere inn lovbestemte data.
+- Kunne gi klinisk beslutningsstøtte.">
+			use = <"Brukes for å lage et sammendrag av en kvinnes obstetriske anamnese, inkludert et sammendrag av alle graviditeter, utfall og intervensjoner.
+
+Bruk dette sammendraget som et grunnlag for å rapportere lovpålagte data til ulike registre.
+
+Noen data kan bli kalkulert ut fra eller hentet inn fra andre svangerskapsjournaler dersom disse er tilgjengelige.">
+			keywords = <"obstetrikk", "svangerskap", "parietet", "gravida", "para", "svangerskapsavbrudd", "spontanabort", "aborter", "spontan", "levende", "fødsler", "dødfødsler", "keisersnitt", "ekstrauterin graviditet", "neonatal", "død", "levende", "multippel", "missed abortion", "provosert abort">
+			misuse = <"Brukes ikke for å dokumentere informasjon om et enkelt svangerskap. Bruk EVALUATION.pregnancy_summary til det formålet.
+
+Brukes ikke for å dokumentere informasjon for det enkelte svangerskap, abort (spontan, missed abortion, provosert)/svangerskapsavbrudd eller fødsel. Denne informasjonen vil bli dokumentert ved å bruke andre spesifikke arketyper som event-based data.">
+		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			purpose = <"Para gravar uma visão geral sobre a história obstétrica de uma mulher para fins de: fornecimento de um informações de sua história obstétrica, para reportar a órgãos oficiais ou para apoio à decisão clínica.">
@@ -93,8 +117,8 @@ No es para registrar la información detallada sobre cada uno de los individuale
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5E5629536630883CC4D249A870E97041">
-		["build_uid"] = <"ad221c86-22d6-4119-9148-02e3594df431">
+		["MD5-CAM-1.0.1"] = <"841C85FC11B1FEC0747C5D95B9A88D1D">
+		["build_uid"] = <"8271dead-5e4c-4315-8da8-7f675783e08d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -471,6 +495,92 @@ Cuando se registran los Nacimientos a termino (T) y los nacimientos prematuros (
 				["at0018"] = <
 					text = <"Nacimientos Múltiples (M)">
 					description = <"Número de nacimientos en los cuales ha nacido mas de un producto vivo">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Obstetrisk sammendrag">
+					description = <"En oversikt over en kvinnes obstetriske historie, inkludert et sammendrag av alle svangerskap med assosierte utfall eller intervensjoner.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Gravida (G)">
+					description = <"Antall tidligere svangerskap, inkludert gjeldende svangerskap, dersom dette er aktuelt.">
+				>
+				["at0003"] = <
+					text = <"Para (P)">
+					description = <"Antall ganger kvinnen har født etter gestasjonsuke 20+0.">
+					comment = <"Senaborter, etter getasjonsuke 20, er ikke inkludert. Når både fødseler til termin og premature fødsler er dokumentert, skal dette tallet bli summen av de to. Obs: Para er ikke det samme antall som fødte barn, for eksempel vil en tvillingfødsel telle som en fødsel.">
+				>
+				["at0004"] = <
+					text = <"Spontanaborter">
+					description = <"Antall ganger en kvinne har spontanabortert før genstasjonsuke 22.">
+					comment = <"Inkludert missed abortion.">
+				>
+				["at0005"] = <
+					text = <"Provoserte aborter">
+					description = <"Antall ganger en kvinne har fått uført eller uført en provosert abort, uavhengig av genstasjonsuke.">
+				>
+				["at0006"] = <
+					text = <"Levende fødte">
+					description = <"Antall levende fødte barn.">
+				>
+				["at0007"] = <
+					text = <"Levende barn">
+					description = <"Antall levende barn.">
+				>
+				["at0008"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Dato oppdatert">
+					description = <"Dette sammendraget ble sist oppdatert.">
+				>
+				["at0010"] = <
+					text = <"Keisersnitt">
+					description = <"Antall keisersnitt utført.">
+				>
+				["at0011"] = <
+					text = <"Ekstrauterine graviditeter">
+					description = <"Antall ekstrauterine graviditeter.">
+				>
+				["at0012"] = <
+					text = <"Dødfødsler">
+					description = <"Antall dødfødsler">
+					comment = <"Notabene: Dødfødsel definisjonen kan eventuelt bli fanget opp i spesifikke data element i Protocol.">
+				>
+				["at0013"] = <
+					text = <"Dødfødsel definisjon">
+					description = <"Definisjon av en dødfødsel.">
+					comment = <"Kan være nyttig å dokumentere når en sammenligner data fra ulike regioner, siden definisjonene av dødfødsel kan variere. For eksempel, i Australia vil en dødfødt baby være eldre enn gestasjonsuke 20, eller om gestasjonsalder er ukjent, veie mer enn 400 gram.">
+				>
+				["at0014"] = <
+					text = <"Tidligere gravid?">
+					description = <"Har kvinnen noen gang vært gravid?">
+					comment = <"Dokumenter som SANT om kvinnen noen gang har vært gravid. Dokumenteres dersom ingen annen form for svangerskapsdokumentasjon finnes eller er tilgjengelig eller der data skal brukes i klinisk beslutningsstøtte.">
+				>
+				["at0015"] = <
+					text = <"Fødsler til termin">
+					description = <"Antall barn født ved eller etter gestasjonsuke 37.">
+				>
+				["at0016"] = <
+					text = <"Premature fødsler">
+					description = <"Antall barn født før gestasjonsuke 37.">
+				>
+				["at0017"] = <
+					text = <"Aborter">
+					description = <"Antall avbrutte svangerskap, uavhengig av årsak og gestasjonsuke, inkludert spontanaborter, provoserte aborter og ekstrauterine graviditeter.">
+					comment = <"Når alle \"Spontanaborter\", \"Provoserte aborter\" og \"Ekstrauterine graviditeter\"er dokumentert, skal summen være lik dette antallet.">
+				>
+				["at0018"] = <
+					text = <"Flerlingefødsler">
+					description = <"Antall fødsler der mer enn ett barn ble født.">
 				>
 			>
 		>
