@@ -41,8 +41,14 @@ Hvis detaljer om en bolig/boform endrer seg vesentlig, som ved endring av adress
 Arketypen er laget for å benyttes i SLOTet \"Bolig\" i arketypen EVALUATION.housing_summary (Boligsammendrag), men kan også brukes innen andre ENTRY- eller CLUSTER-arketyper der det er klinisk relevant.
 
 Det kan være tilsynelatende eller reell overlapp mellom dataelementene i denne arketypen og opplysninger om bolig/adresse i demografisk informasjon i kliniske systemer. Dataelementene i denne arketypen er laget spesifikt for å støtte kliniske formål.">
-			keywords = <"bolig", "aldersbolig", "hjem", "hjemmesituasjon", "sykehjem", "omsorgsbolig", "midlertidig", "institusjon", "leilighet", "hospits", "uten fast bopel", "bopel", "UFB", "enebolig", "oppholdssted", "bokollektiv", "hybel", "hospice", "aldershjem", "bosted", "adresse">
-			misuse = <"Brukes ikke for å registrere midlertidige endringer eller episoder innen en enkelt bolig eller boform, som å være på en kort ferie.
+			keywords = <"bolig", "aldersbolig", "hjem", "hjemmesituasjon", "sykehjem", "omsorgsbolig", "midlertidig", "institusjon", "leilighet", "hospits", "uten fast bopel", "bopel", "UFB", "enebolig", "oppholdssted", "bokollektiv", "hybel", "hospice", "aldershjem", "bosted", "adresse", "hytte", "fritidsbolig", "tilrettelagt", "bofellesskap", "støtte", "botrening", "leieforhold", "småbruk", "gård">
+			misuse = <"Brukes ikke for å registrere informasjon om en den fysiske bygningen der individet bor. Bruk arketypen CLUSTER.dwelling for dette formålet.
+
+Brukes ikke for å registrere informasjon om individets boforhold. Bruk arketypen CLUSTER.household for dette formålet.
+
+Brukes ikke for å registrere hvem et individ bor med. Bruk arketypen EVALUATION.social_network for dette formålet.
+
+Brukes ikke for å registrere midlertidige endringer eller episoder innen en enkelt bolig eller boform, som å være på en kort ferie.
 
 Brukes ikke for å beskrive helserisikoer eller eksponering for farlige substanser i boligen eller boformen. Til dette brukes henholdsvis arketypene EVALUATION.health_risk eller EVALUATION.exposure.
 
@@ -68,7 +74,13 @@ This archetype has been specifically designed to be used in the 'Housing record'
 
 There may be some apparent or real overlap between the data elements in this archetype and housing/address details that may be stored as demographic details in clinical or administrative systems. These data elements have been designed specifically to support clinical purposes.">
 			keywords = <"housing", "accommodation", "residential care", "home", "house", "apartment", "homeless", "rent", "owner", "shared", "temporary", "institution", "flat", "condo", "condominium", "hospice">
-			misuse = <"Not to be used to record temporary changes or episodes within a single housing record, such as being on holiday.
+			misuse = <"Not to be used to record information about a physical building where an individual lives. Use CLUSTER.dwelling for this purpose.
+
+Not to be used to record information about the living arrangements for an individual. Use CLUSTER.household for this purpose.
+
+Not to be used to record who an individual lives with. Use EVALUATION.social_network for this purpose.
+
+Not to be used to record temporary changes or episodes within a single housing record, such as being on holiday.
 
 Not to be used for detailed descriptions of health risks or exposure to hazardous substances in the home or residential setting. Use the archetypes EVALUATION.health_risk or EVALUATION.exposure for this purpose.
 
@@ -77,7 +89,7 @@ Not to be used to record information about the housing situation of an individua
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Ivar Berge, Oslo Universitetssykehus, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Angela Crovetti, CDC/NIOSH, United States", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Jayne Donaldson, University of Stirling, United Kingdom", "Bjørg Eli Hollund, helse-bergen, Norway", "Stig Erik Hegrestad, Helse Førde, Norway", "Samuel Frade, Marand, Portugal", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sergio Freire, State University of Rio de Janeiro, Brazil", "Carrick Gillespie, Omniq AB, Sweden", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Anne Gunn Haugland, Helse Bergen HF, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Jørn Henrik Vold, Helse Bergen, Avdeling for rusmedisin, Norway", "Anca Heyd, DIPS ASA, Norway", "Teresa Highway, Alberta Health Services, Canada", "Annette Hole Sjøborg, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Susanna Jönsson, Landstinget i Värmland, Sweden", "Tone Klund, DIPS AS, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Harmony Kosola, Alberta Health Services, Canada", "Ron Krawec, Alberta Health Services, Canada", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Pedro Leuschner, Centro Hospitalar do Porto, Portugal", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "John Meredith, NHS Wales Informatics Service, United Kingdom", "Lars Morgan Karlsen, DIPS ASA, Norway", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Andrej Orel, Marand d.o.o., Slovenia", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Martin Paulson, Sykehuset i Vestfold, Norway", "Georg Reinhardt, Helse Fonna, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Jussara Rotzsch, Hospital Alemão Oswaldo Cruz, Brazil", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Niclas Skyttberg, Karolinska Institutet, Sweden", "Andreas Sundstrom, Capio S:t Gorans Hospital, Sweden", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, Folkehelseinstittutet, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ingrid Vange, Helse Bergen, Norway", "Marit Alice Venheim, Helse Vest IKT, Norway">
+	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Ivar Berge, Oslo Universitetssykehus, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Angela Crovetti, CDC/NIOSH, United States", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Jayne Donaldson, University of Stirling, United Kingdom", "Bjørg Eli Hollund, helse-bergen, Norway", "Stig Erik Hegrestad, Helse Førde, Norway", "Samuel Frade, Marand, Portugal", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sergio Freire, State University of Rio de Janeiro, Brazil", "Carrick Gillespie, Omniq AB, Sweden", "Heather Grain, Llewelyn Grain Informatics, Australia", "Anne M Gromsrud, DIPS AS, Norway", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Anne Gunn Haugland, Helse Bergen HF, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Jørn Henrik Vold, Helse Bergen, Avdeling for rusmedisin, Norway", "Anca Heyd, DIPS ASA, Norway", "Teresa Highway, Alberta Health Services, Canada", "Annette Hole Sjøborg, DIPS ASA, Norway", "Erling Are Hole, Helse Bergen, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Susanna Jönsson, Landstinget i Värmland, Sweden", "Tone Klund, DIPS AS, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Harmony Kosola, Alberta Health Services, Canada", "Ron Krawec, Alberta Health Services, Canada", "Ronald Krawec, Alberta Health Services, Canada", "Anita Lagos, Haraldsplass Diakonale Sykehus, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Pedro Leuschner, Centro Hospitalar do Porto, Portugal", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "John Meredith, NHS Wales Informatics Service, United Kingdom", "Lars Morgan Karlsen, DIPS ASA, Norway", "Erik Nissen, Cambio Healthcare Systems AB, Sweden", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Martin Paulson, Sykehuset i Vestfold, Norway", "Georg Reinhardt, Helse Fonna, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Jussara Rotzsch, Hospital Alemão Oswaldo Cruz, Brazil", "Ragnhild Sandvold, Vestre Viken HF, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Ingrid Skard, Edproof, Norway", "Niclas Skyttberg, Karolinska Institutet, Sweden", "Andreas Sundstrom, Capio S:t Gorans Hospital, Sweden", "Nyree Taylor, Ocean Informatics, Australia", "Tesfay Teame, Folkehelseinstittutet, Norway", "Susanne Trønnes, Norway", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ingrid Vange, Helse Bergen, Norway", "Marit Alice Venheim, Helse Vest IKT, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -89,8 +101,8 @@ HWI 119. Available from: https://www.aihw.gov.au/getmedia/a90ff140-8abf-4e30-886
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"82187BE042868A619FC5C605A94A98ED">
-		["build_uid"] = <"35ba7ff1-38cf-4e8a-a116-2b0483a7abc4">
+		["MD5-CAM-1.0.1"] = <"E8D5C3F4895FC0C1273755BFC65D44CC">
+		["build_uid"] = <"810887e9-5232-40cc-a5b8-aee7173519ec">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -165,7 +177,7 @@ ontology
 				["at0005"] = <
 					text = <"Name/label">
 					description = <"A name or label associated with this home or residential setting, to allow it to be distinguished from other housing records.">
-					comment = <"For example: 'Holiday house'; <name of institution>; or 'First home' ">
+					comment = <"For example: 'Holiday house'; <name of institution>; 'First home'; or 'Homeless'.">
 				>
 				["at0007"] = <
 					text = <"Date commenced">
@@ -191,7 +203,7 @@ ontology
 				["at0018"] = <
 					text = <"Additional details">
 					description = <"Further details about the home or residential setting.">
-					comment = <"For example: details about the structure of a dwelling, including stairs, elevator, electricity or cellar; or the people who reside in the same place such as members of family and the number of children living in the apartment. ">
+					comment = <"For example: details about the structure of a dwelling, including stairs, elevator, electricity or cellar; or the people who reside in the same place such as members of family and the number of children living in the apartment.">
 				>
 			>
 		>
@@ -204,7 +216,7 @@ ontology
 				["at0001"] = <
 					text = <"Boform">
 					description = <"Kategori som beskriver stedet individet bor.">
-					comment = <"Koding av boform med en terminologi er foretrukket om mulig. Verdisettet vil sannsynligvis variere mellom myndighetsområder, det forventes at det vil defineres i en bruksspesifikk templat. For eksempel: \"Egen bolig\", \"Institusjon\", \"Hospits\", \"Fengsel\", \"Hybelhus\", \"Krisesenter\".">
+					comment = <"Koding av boform med en terminologi er foretrukket om mulig. Verdisettet vil sannsynligvis variere mellom myndighetsområder, det forventes at det vil defineres i en bruksspesifikk templat. For eksempel: \"Egen bolig\", \"Institusjon\", \"Hospits\", \"Fengsel\", \"Hybelhus\".">
 				>
 				["at0004"] = <
 					text = <"Adressedetaljer">
@@ -213,7 +225,7 @@ ontology
 				["at0005"] = <
 					text = <"Navn/merkelapp">
 					description = <"Et navn eller merkelapp (label) på denne boligen eller boformen, slik at den kan atskilles fra andre registrerte boliger.">
-					comment = <"For eksempel: \"Feriehus\", \"Primærbolig\" eller navnet på institusjonen individet bor på.">
+					comment = <"For eksempel: \"Feriehus\", \"Primærbolig\", \"Uten fast bopæl\" eller navnet på institusjonen individet bor på.">
 				>
 				["at0007"] = <
 					text = <"Dato for oppstart">
