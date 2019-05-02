@@ -1,17 +1,33 @@
-﻿archetype (adl_version=1.4)
-	openEHR-DEMOGRAPHIC-ADDRESS.address.v1
+﻿archetype (adl_version=1.4; uid=f2e042ea-1137-49a9-9205-1f96bc608d82)
+	openEHR-DEMOGRAPHIC-ADDRESS.address.v0
 
 concept
 	[at0000]	-- Endereço
 language
 	original_language = <[ISO_639-1::pt-br]>
 	translations = <
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			author = <
+				["name"] = <"Seung-Jong Yu">
+				["organisation"] = <"NOUSCO Co., Ltd.">
+				["email"] = <"seungjong.yu@gmail.com">
+			>
+			accreditation = <"Certified Board of Family Medicine in Korea">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			author = <
 				["name"] = <"Sergio Miranda Freire">
 				["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
 				["email"] = <"sergio@lampada.uerj.br">
+			>
+		>
+		["es-py"] = <
+			language = <[ISO_639-1::es-py]>
+			author = <
+				["name"] = <"Ellen Mendez">
+				["organisation"] = <"Facultad Politecnica UNA">
 			>
 		>
 	>
@@ -23,13 +39,13 @@ description
 		["date"] = <"22/05/2009">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"Representation of data about a personal/organizational address, based on ISO 22220 standard. This address represents a geographic location which can be used in several ways: residential address, postal address, etc.">
-			use = <"Used to communicate with, identify service provision requirements and trends, and to provide direct services.">
-			keywords = <"demographic service", "address", "geographic location", "residential address">
-			misuse = <"This archetype can not used for email address, IP address, computer address, telephone, fax and pager. For these items use the electronic_communication archetype.">
-			copyright = <"© 2011 openEHR Foundation">
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			purpose = <"ISO 22220 표준에 기반한 개인/기관 주소에 대한 데이터의 표현. 이 주소는 지리학적 위치를 나타나면 여러 방식으로 사용할 수 있음 : 거주지 주소, 우편 주소 등.">
+			use = <"통신과 진료서비스 제공 요구사항과 트렌드를 식별하며 직접적인 서비스를 제공하기 위하여 사용됨">
+			keywords = <"*serviço demográfico(pt-br)", "*endereço(pt-br)", "*localização geográfica(pt-br)">
+			misuse = <"이 archetype은 이메일 주소, IP 주소, 전화, 팩스 그리고 페이져를 위해 사용될 수 없다. 그러한 아이템들을 위해서는 electronic_communication archetype를 사용하라.">
+			copyright = <"© openEHR Foundation">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -37,13 +53,37 @@ description
 			use = <"Usado para comunicação, identificar requisitos para provimento de serviços e tendências, e proporcionar serviços diretos.">
 			keywords = <"serviço demográfico", "endereço", "localização geográfica">
 			misuse = <"Este arquétipo não deve ser usado para endereços de correio eletrônico, endereços IP, endereços de computador, telefone, fax e pager. Para estes itens, use o arquétipo electronic_communication.">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Representation of data about a personal/organizational address, based on ISO 22220 standard. This address represents a geographic location which can be used in several ways: residential address, postal address, etc.">
+			use = <"Used to communicate with, identify service provision requirements and trends, and to provide direct services.">
+			keywords = <"demographic service", "address", "geographic location", "residential address">
+			misuse = <"This archetype can not used for email address, IP address, computer address, telephone, fax and pager. For these items use the electronic_communication archetype.">
+			copyright = <"© openEHR Foundation">
+		>
+		["es-py"] = <
+			language = <[ISO_639-1::es-py]>
+			purpose = <"Representación de los detalles de dirección de una persona/organización en base a la norma ISO 22220. Esta dirección representa una localización geográfica que puede ser utilizada para diversos fines: dirección residencial, dirección postal, etc.">
+			use = <"Utilizado para comunicación, identificar requerimientos para provisión de servicios y tendencias, y proporciona servicios directos.">
+			keywords = <"servicio demográfico", "dirección", "localización geográfica">
+			misuse = <"Este arquetipo no debe ser usado para direcciones de correo electronico, direcciones IP, direcciones de computador, telefono, fax e pager. Para estos items, use el arquetipo electronic_communication.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Rong Chen, Cambio Healthcare Systems, Sweden", "Ricardo Correia, SBIM/FMUP, Portugal", "Rigoleta Dutra, Ministry of Defense, Brazil (Editor)", "Shahla Foozonakah, Ocean Informatics, Australia", "Heath Frankel, Ocean Informatics, Australia", "Sergio Freire, State University of Rio de Janeiro, Brazil (Editor)", "Heather Grain, Llewelyn Grain Informatics, Australia", "Grahame Grieve, Australia", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0E32B322C1C70A1B0D552408FE01C797">
+		["build_uid"] = <"20a23372-3316-4675-9889-5676803d38c4">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
@@ -200,9 +240,6 @@ definition
             }
         }
     }
-
-
-
 
 ontology
 	term_definitions = <
@@ -446,6 +483,254 @@ ontology
 				>
 			>
 		>
+		["es-py"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dirección">
+					description = <"Dirección.">
+				>
+				["at0001"] = <
+					text = <"Items de la dirección">
+					description = <"Items de la direccion.">
+				>
+				["at0002"] = <
+					text = <"Lineas de la dirección">
+					description = <"Una composición de uno o mas componentes patrones de dirección que provee una descripción geográfica/física de una localización y que, utilizada en conjunto con otros componentes de nivel mas alto de la dirección, esto es, \"Barrio/Ciudad/Localidad\",\"Codigo Postal\", \"Estado/Territorio/Provincia\", y \"Pais\", conforman una dirección geográfica/fisica completa.">
+				>
+				["at0003"] = <
+					text = <"Barrio">
+					description = <"Barrio de la calle.">
+				>
+				["at0004"] = <
+					text = <"Sector censario">
+					description = <"Código del sector censario">
+				>
+				["at0005"] = <
+					text = <"Código postal">
+					description = <"Número único atribuido a una dirección postal conforme designación del servicio postal.">
+				>
+				["at0006"] = <
+					text = <"CEP">
+					description = <"Código para un área de entrega postal, alineada con una localidad, barrio o local para la dirección, conforme definición del servicio postal.">
+				>
+				["at0007"] = <
+					text = <"Municipio">
+					description = <"El nombre completo de la localidad que contiene la dirección especifica de una persona/organización">
+				>
+				["at0008"] = <
+					text = <"Estado">
+					description = <"Identificador de la Província, Estado o Território que contiene la dirección.">
+				>
+				["at0009"] = <
+					text = <"País">
+					description = <"Código que representa el país correspondiente de la dirección.">
+				>
+				["at0010"] = <
+					text = <"*Indicador de acurácia da data de início de validade do endereço(pt-br)">
+					description = <"*Uma indicação da acurácia da data de início de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).(pt-br)">
+				>
+				["at0011"] = <
+					text = <"*Indicador de acurácia da data final de validade do endereço(pt-br)">
+					description = <"*Uma indicação da acurácia da data final de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).(pt-br)">
+				>
+				["at0021"] = <
+					text = <"Abreviatura del tipo de sub-unidad">
+					description = <"Especificación del tipo de una parte identificada separadamente en un edificio/complejo, marina, etc, para distinguirla de otras.">
+				>
+				["at0022"] = <
+					text = <"Número de la sub-unidad">
+					description = <"Especificación del número de identificador de un edificio/complejo, marina, etc, para distinguirlo de otros.">
+				>
+				["at0023"] = <
+					text = <"Nombre del Edificio / Propiedad">
+					description = <"Nombre completo utilizado para identificar la propiedad física o un edificio como parte de su localización.">
+				>
+				["at0024"] = <
+					text = <"Piso nro / Nivel">
+					description = <"Descriptor utilizado para identificar el piso o nivel de un complejo/edificio de multiples niveles.">
+				>
+				["at0025"] = <
+					text = <"Tipo de piso/nivel">
+					description = <"Descripto utilizado para clasificar el tipo de piso o nivel de un completo/edificio de multiples niveles.">
+				>
+				["at0026"] = <
+					text = <"Número de Lote">
+					description = <"Sección, Número de Loteamiento">
+				>
+				["at0027"] = <
+					text = <"Tipo de calle">
+					description = <"Código que identifica el tipo de espacio público.">
+				>
+				["at0028"] = <
+					text = <"Calle">
+					description = <"El nombre que identifica un espacio público y lo diferencia de otros en el mismo subúrbio/ciudad/localidad.">
+				>
+				["at0029"] = <
+					text = <"Número">
+					description = <"Número de referencia (numérico o cadena) de la residencia o propiedad que es único en un nombre de calle, subúrbio.">
+				>
+				["at0030"] = <
+					text = <"Sufijo de la calle">
+					description = <"Termino utilizado para calificar un nombre de calle adecuado para una referencia direccional.">
+				>
+				["at0031"] = <
+					text = <"Vizualización de la linea de la dirección">
+					description = <"Como la linea de la direccón es vizualizada por el usuario.">
+				>
+				["at0461"] = <
+					text = <"*Comercial(pt-br)">
+					description = <"*Usado para indicar um endereço que é a localização física de um escritório ou de um negócio no qual uma entidade pode ser contactada.(pt-br)">
+				>
+				["at0462"] = <
+					text = <"Correo o postal">
+					description = <"Usado para indicar una dirección que es utilizado para correspondencia yu/o cobranza">
+				>
+				["at0463"] = <
+					text = <"Ubización temporal">
+					description = <"Ubicación temporal (tal como una dirección de una persona que generalmente reside en el exterior o donde el proveedor de la dirección esta en una ubiicación temporal debido a renovación o tratamiento">
+				>
+				["at0464"] = <
+					text = <"Residencial">
+					description = <"Utilizado para indicar donde la persona este residiendo. Observa que este código no es válido para organizaciones.">
+				>
+				["at0465"] = <
+					text = <"Sin dirección fija">
+					description = <"Usado cuando la persona no posee dirección fija.">
+				>
+				["at0466"] = <
+					text = <"Desconocido/No declarado/Descripto inadecuadamente">
+					description = <"Desconocido/No declarado/Descripto inadecuadamente puede tambien ser utilizado cuando una persona no posee dirección fija o no desea tener su dirección residencial o para correspondiencia registrada.">
+				>
+			>
+		>
+		["ko"] = <
+			items = <
+				["at0000"] = <
+					text = <"주소">
+					description = <"ISO 22220 표준에 기반한 주소">
+				>
+				["at0001"] = <
+					text = <"주소 항목">
+					description = <"주소 항목">
+				>
+				["at0002"] = <
+					text = <"주소 라인">
+					description = <"다른 고수준의 주소 컴포넌트 즉, 완전한 지리적/물리적 주소를 형성하는 ‘suburb / town / locality name (시,군,구/읍,면,동)’, ‘postal code’, ‘state / territory / province(시,도)’, 그리고 ‘country(국가)’과 함께 사용되는 위치에 대한 낮은 수준의 지리적/물리적 기술을 서술하는 하나 이상의 표준 주소 컴포넌트의 조합
+
+
+
+
+
+
+
+">
+				>
+				["at0003"] = <
+					text = <"디스트릭트">
+					description = <"디스트릭트">
+				>
+				["at0004"] = <
+					text = <"센서스 지역">
+					description = <"센서스 지역">
+				>
+				["at0005"] = <
+					text = <"배달 지점 식별자">
+					description = <"우편 서비스에 의해 지정된 것으로 우편 주소로 할당된 유일한 번호">
+				>
+				["at0006"] = <
+					text = <"우편코드 (ZIP 코드)">
+					description = <"우편 서비스에 의해 정의된 것으로 주소에 대해서 지역, 마을 또는 장소에 따라 배열된 우편 배달 지역을 위한 코드">
+				>
+				["at0007"] = <
+					text = <"시군구/읍면동">
+					description = <"특정 주소를 포함하는 일반적인 지역의 완전한 명칭">
+				>
+				["at0008"] = <
+					text = <"시/도 식별자">
+					description = <"주소를 포함하는 시/도 식별자">
+				>
+				["at0009"] = <
+					text = <"국가 식별자">
+					description = <"주소에서 국가 항목을 나타내는 코드">
+				>
+				["at0010"] = <
+					text = <"주소타입 시작날짜 정확도 지표">
+					description = <"날짜에 대한 컴포넌트 레벨에서 주소 타입 시작 날짜의 정확도를 표시. 이것은 A (정확), E (추정) 또는 U (알수없음)의 값을 가지는 3자리 문자로 표현된다. 문자들은 각각 년, 월, 일에 대한 정확성을 표현한다. 이 엘리먼트는 ISO 22220과의 호환성을 위해서 소개되었으나 openEHR 참조 모델은 다른 방식으로 날짜 정확성을 나타낸다 (data types specification 참고).">
+				>
+				["at0011"] = <
+					text = <"주소타입 종료날짜 정확도 지표">
+					description = <"날짜에 대한 컴포넌트 레벨에서 주소 타입 종료 날짜의 정확도를 표시. 이것은 A (정확), E (추정) 또는 U (알수없음)의 값을 가지는 3자리 문자로 표현된다. 문자들은 각각 년, 월, 일에 대한 정확성을 표현한다. 이 엘리먼트는 ISO 22220과의 호환성을 위해서 소개되었으나 openEHR 참조 모델은 다른 방식으로 날짜 정확성을 나타낸다 (data types specification 참고).">
+				>
+				["at0021"] = <
+					text = <"빌딩/컴플렉스 서브유니트 타입 - 약자">
+					description = <"다른 것과 명확하게 구별하기 위한 빌딩/컴플렉스, 마리나 등 그 내부에 분리되어 식별가능한 부분의 타입의 명세">
+				>
+				["at0022"] = <
+					text = <"빌딩/컴플렉스 서브유니트 번호">
+					description = <"다른 것과 명확하게 구별하기 위한 빌딩/컴플렉스, 마리나 등의 식별자의 번호의 명세">
+				>
+				["at0023"] = <
+					text = <"건물 명칭">
+					description = <"위치의 부분으로 물리적 빌딩 이나 부동산을 식별하는데 사용되는 전체 이름">
+				>
+				["at0024"] = <
+					text = <"층/레벨 숫자">
+					description = <"다층 빌딩/컴플렉스의 층/레벨을 식별하는데 사용하는 기술자">
+				>
+				["at0025"] = <
+					text = <"층/레벨 타입">
+					description = <"다층 빌딩/컴플렉스의 층/레벨의 타입을 분류하는데 사용하는 기술자.">
+				>
+				["at0026"] = <
+					text = <"로트 번호">
+					description = <"섹션, 얼라트먼트 번호">
+				>
+				["at0027"] = <
+					text = <"도로 타입 코드">
+					description = <"공공도로의 타입을 식별하는 코드">
+				>
+				["at0028"] = <
+					text = <"도로명">
+					description = <"공공 도로를 식별하는 이름으로 같은 시군구/읍면동 내의 다른 도로와 구별">
+				>
+				["at0029"] = <
+					text = <"도로번호">
+					description = <"도로명 내에 유일한 주택이나 부동산의 숫자 또는 문자열 참조 번호">
+				>
+				["at0030"] = <
+					text = <"도로 접미어 코드">
+					description = <"방향 참조을 위한 적합하도록 도로명을 한정하는데 사용되는 용어">
+				>
+				["at0031"] = <
+					text = <"주소 라인 표시">
+					description = <"어떻게 주소 라인을 사용자에게 보여줄 것인가">
+				>
+				["at0461"] = <
+					text = <"직장">
+					description = <"연락할 수 있는 직장의 물리적 위치인 주소를 나타내는데 사용">
+				>
+				["at0462"] = <
+					text = <"우편물 배달주소">
+					description = <"연락이나 청구 목적을 위해서만 사용하는 주소를 나타내는데 사용">
+				>
+				["at0463"] = <
+					text = <"임시 거처">
+					description = <"임시로 거처 주소 (예. 보통 해외에서 거주하는 사람이나 집수리나 치료 때문에 임시 거처에 머무는 경우)">
+				>
+				["at0464"] = <
+					text = <"거주지 주소">
+					description = <"개인이 거주하는 장소를 나타내는데 사용. 이 코드는 기관들을 위해서는 유효하지 않음에 주의.">
+				>
+				["at0465"] = <
+					text = <"고정된 주소 없음">
+					description = <"고정된 주소가 없는 경우에 사용">
+				>
+				["at0466"] = <
+					text = <"모름/제공받지 못함/부정확한 기록">
+					description = <"모름/제공받지 못함/부정확한 기록은 고정된 주소가 없거나 거주지 또는 연락 주소가 저장되는 것을 원치않을 경우에 또한 사용될 수 있음">
+				>
+			>
+		>
 	>
 	constraint_definitions = <
 		["pt-br"] = <
@@ -493,6 +778,54 @@ ontology
 				["ac0004"] = <
 					text = <"Country codes">
 					description = <"valid codes for countries.">
+				>
+			>
+		>
+		["es-py"] = <
+			items = <
+				["ac0000"] = <
+					text = <"Código de tipos de edifício">
+					description = <"Códigos válidos para tipo de edificio.">
+				>
+				["ac0001"] = <
+					text = <"Códigos de calles">
+					description = <"Códigos válidos para tipo de calles">
+				>
+				["ac0002"] = <
+					text = <"Códigos de sufijos de calles">
+					description = <"Códigos válidos para sufijos de calles.">
+				>
+				["ac0003"] = <
+					text = <"Códigos de estados">
+					description = <"Códigos válidos para estados.">
+				>
+				["ac0004"] = <
+					text = <"Códigos de países">
+					description = <"Códigos válidos para países">
+				>
+			>
+		>
+		["ko"] = <
+			items = <
+				["ac0000"] = <
+					text = <"*Códigos de tipos de edifício(pt-br)">
+					description = <"*Códigos válidos para tipo de edifício.(pt-br)">
+				>
+				["ac0001"] = <
+					text = <"*Códigos de logradouros(pt-br)">
+					description = <"*Códigos válidos para tipo de logradouro.(pt-br)">
+				>
+				["ac0002"] = <
+					text = <"*Códigos de sufixos de logradouro(pt-br)">
+					description = <"*Códigos válidos para sufixos de logradouro.(pt-br)">
+				>
+				["ac0003"] = <
+					text = <"*Códigos de estados(pt-br)">
+					description = <"*Códigos válidos para estados.(pt-br)">
+				>
+				["ac0004"] = <
+					text = <"*Códigos de países(pt-br)">
+					description = <"*Códigos válidos para países.(pt-br)">
 				>
 			>
 		>
