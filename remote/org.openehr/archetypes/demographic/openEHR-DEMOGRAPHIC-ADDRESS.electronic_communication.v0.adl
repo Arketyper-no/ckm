@@ -1,17 +1,33 @@
-﻿archetype (adl_version=1.4)
-	openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication.v1
+﻿archetype (adl_version=1.4; uid=b6cc21f7-2e38-444f-9506-9d1944d0b10f)
+	openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication.v0
 
 concept
-	[at0000]	-- Meio de Comunicação eletrônica
+	[at0000]	-- Electronic address
 language
-	original_language = <[ISO_639-1::pt-br]>
+	original_language = <[ISO_639-1::en]>
 	translations = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			author = <
+				["name"] = <"Seung-Jong Yu">
+				["organisation"] = <"NOUSCO Co.,Ltd.">
+				["email"] = <"seungjong.yu@gmail.com">
+			>
+			accreditation = <"Certified Board of Family Medicine in South Korea">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
 			author = <
 				["name"] = <"Sergio Miranda Freire">
 				["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
 				["email"] = <"sergio@lampada.uerj.br">
+			>
+		>
+		["es-py"] = <
+			language = <[ISO_639-1::es-py]>
+			author = <
+				["name"] = <"Ellen Mendez">
+				["organisation"] = <"Facultad Politecnica - UNA">
 			>
 		>
 	>
@@ -20,16 +36,16 @@ description
 		["name"] = <"Sergio Miranda Freire & Rigoleta Dutra Mediano Dias">
 		["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
 		["email"] = <"sergio@lampada.uerj.br">
-		["date"] = <"20/05/2009">
+		["date"] = <"2009-05-20">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"For capture and storage of the electronic communication contact details of people or organisations.">
-			use = <"Used in demographic services to collect data about electronic communications.">
-			keywords = <"Demographic service", "Electronic communication">
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			purpose = <"사람 또는 기관의 전자통신 연락처 상세내용을 획득하고 저장하기 위함.">
+			use = <"인적정보 서비스에서 전자통신에 대한 데이터를 수집하는데 사용됨.">
+			keywords = <"*인적정보 서비스(ko)", "*전자통신(ko)", "*연락처(ko)">
 			misuse = <"">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -37,13 +53,37 @@ description
 			use = <"Usado em serviços de demografia para registrar os detalhes de um endereço de comunicação eletrônica.">
 			keywords = <"Serviço demográfico", "Comunicação eletrônica">
 			misuse = <"">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For capture and storage of the electronic communication contact details of people or organisations.">
+			use = <"Used in demographic services to collect data about electronic communications.">
+			keywords = <"Demographic service", "Electronic communication">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+		["es-py"] = <
+			language = <[ISO_639-1::es-py]>
+			purpose = <"Capturar y registrar detalles de contactos de personas u organizaciones por medio de comunicación electrónica">
+			use = <"Utilizado en servicios demográficos para registrar los detalles de una dirección de comunicación electrónica.">
+			keywords = <"Servicio demográfico", "Comunicación electrónica">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Sebastian Garde, Ocean Informatics, Germany (Editor)", "Omer Hotomaroglu, Turkey (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, UK (Editor)">
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"6CD87123522AB433B8C6D569B260A669">
+		["build_uid"] = <"c63d793b-cc43-4468-92c0-080e52897ad2">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
@@ -104,10 +144,6 @@ definition
             }
         }
     }
-
-
-
-
 
 ontology
 	term_definitions = <
@@ -237,11 +273,11 @@ ontology
 					text = <"Telephone">
 					description = <"The medium is a telephone (not a mobile phone).">
 				>
-				["at0021"] = <
+				["at0022"] = <
 					text = <"Mobile">
 					description = <"The medium is a mobile phone (not a landline).">
 				>
-				["at0022"] = <
+				["at0021"] = <
 					text = <"Fax">
 					description = <"The medium is a faxsimile machine.">
 				>
@@ -292,6 +328,190 @@ ontology
 				["at0044"] = <
 					text = <"Use during evening/night.">
 					description = <"The medium should be used during the evening or at night.">
+				>
+			>
+		>
+		["ko"] = <
+			items = <
+				["at0000"] = <
+					text = <"전자주소">
+					description = <"전자주소.">
+				>
+				["at0001"] = <
+					text = <"항목">
+					description = <"전자통신매체 항목.">
+				>
+				["at0003"] = <
+					text = <"사용용도">
+					description = <"사람/기관이 전자매체를 사용하는 방식를 나타내는 코드.">
+				>
+				["at0004"] = <
+					text = <"통화 선호 시간">
+					description = <"이 전자 연락처의 사용에 있어서 하루 중 선호하는 시간의 표시.">
+				>
+				["at0007"] = <
+					text = <"상세내용">
+					description = <"연락을 위해서 전자 통신 장비에 대한 입력으로 사용되는 유일한 문자들의 조합.">
+				>
+				["at0009"] = <
+					text = <"인터넷주소">
+					description = <"인터넷주소.">
+				>
+				["at0012"] = <
+					text = <"전자통신매체의 식별">
+					description = <"전화, 팩스, 페이저, 이메일 등의 식별.">
+				>
+				["at0020"] = <
+					text = <"전화">
+					description = <"(이동전화가 아닌) 전화.">
+				>
+				["at0021"] = <
+					text = <"팩스">
+					description = <"팩스.">
+				>
+				["at0022"] = <
+					text = <"이동전화">
+					description = <"이동전화.">
+				>
+				["at0023"] = <
+					text = <"페이저">
+					description = <"페이저(비퍼).">
+				>
+				["at0024"] = <
+					text = <"이메일">
+					description = <"이메일.">
+				>
+				["at0025"] = <
+					text = <"*URL(en)">
+					description = <"인터넷 주소.">
+				>
+				["at0030"] = <
+					text = <"개인">
+					description = <"개인 용도로 사용.">
+				>
+				["at0031"] = <
+					text = <"업무">
+					description = <"업무용도로 사용.">
+				>
+				["at0032"] = <
+					text = <"개인/업무">
+					description = <"개인적 업무적 모두 사용.">
+				>
+				["at0033"] = <
+					text = <"기타">
+					description = <"다른 용도로 사용, 예. 연락을 위한 전화, 진척 전화 등.">
+				>
+				["at0040"] = <
+					text = <"업무시간">
+					description = <"업무시간 동안 연락가능.">
+				>
+				["at0041"] = <
+					text = <"낮시간">
+					description = <"낮시간 동안 연락가능.">
+				>
+				["at0042"] = <
+					text = <"주말">
+					description = <"주말에 연락 가능.">
+				>
+				["at0043"] = <
+					text = <"항상">
+					description = <"언제라도 연락 가능.">
+				>
+				["at0044"] = <
+					text = <"저녁/밤">
+					description = <"저녁 또는 밤에 연락 가능.">
+				>
+			>
+		>
+		["es-py"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medio de Comunicación electrónica">
+					description = <"Medio de comunicación electrónica.">
+				>
+				["at0001"] = <
+					text = <"Componentes">
+					description = <"Componentes de un medio de comunicación electrónica">
+				>
+				["at0003"] = <
+					text = <"Forma de utilización">
+					description = <"Código que representa la forma de uso que una persona/organización realiza de este medio de comunicación.">
+				>
+				["at0004"] = <
+					text = <"Horario de utilización">
+					description = <"Indicación de las preferencias de horario de uso para este tipo de contacto.">
+				>
+				["at0007"] = <
+					text = <"Detalles">
+					description = <"Una combinación unica de caracteres utilizada en un equipo de comunicación electrónica con el propósito de establecer contacto.">
+				>
+				["at0009"] = <
+					text = <"Dirección en internet.">
+					description = <"Dirección en internet.">
+				>
+				["at0012"] = <
+					text = <"Identificación del medio de comunicación">
+					description = <"Identificación del telefono, buscarpersonas, correo electrónico, etc.">
+				>
+				["at0020"] = <
+					text = <"Teléfono">
+					description = <"Indica que se trata de un teléfono.">
+				>
+				["at0021"] = <
+					text = <"Faz">
+					description = <"Indica que se trata de un fax.">
+				>
+				["at0022"] = <
+					text = <"Celular">
+					description = <"Indica que se trata de un teléfono celular.">
+				>
+				["at0023"] = <
+					text = <"Buscapersonas">
+					description = <"Indica que se trata de un buscapersonas.">
+				>
+				["at0024"] = <
+					text = <"Correo electrónico">
+					description = <"Indica que se trata de un correo electrónico.">
+				>
+				["at0025"] = <
+					text = <"URL">
+					description = <"Indica que se trata de una dirección de internet.">
+				>
+				["at0030"] = <
+					text = <"Uso Personal">
+					description = <"Equipo de uso personal.">
+				>
+				["at0031"] = <
+					text = <"Uso en el Negocio">
+					description = <"Equipo de uso profesional/negocio.">
+				>
+				["at0032"] = <
+					text = <"Uso Personal/Negocio">
+					description = <"Equipo de uso personal y profesional/negocio.">
+				>
+				["at0033"] = <
+					text = <"Otro uso">
+					description = <"Equipo para otro tipo de uso. Por ejemplo, un teléfono para contacto, pariente, etc.">
+				>
+				["at0040"] = <
+					text = <"Horario Comercial">
+					description = <"Indica que este medio de comunicación debe ser utilizado durente el horario comercial.">
+				>
+				["at0041"] = <
+					text = <"Durante el día.">
+					description = <"Indica que este medio de comunicación debe ser utilizado durente el día.">
+				>
+				["at0042"] = <
+					text = <"Fin de semana.">
+					description = <"Indica que este medio de comunicación debe ser utilizado en los fines de semana.">
+				>
+				["at0043"] = <
+					text = <"Cualquier hora">
+					description = <"Indica que este medio de comunicación puede ser utilizado a cualquier hora.">
+				>
+				["at0044"] = <
+					text = <"Durante la noche.">
+					description = <"Indica que este medio de comunicación debe ser utilizado durante la noche.">
 				>
 			>
 		>
