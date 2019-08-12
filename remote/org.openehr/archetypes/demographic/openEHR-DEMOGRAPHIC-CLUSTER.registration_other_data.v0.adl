@@ -1,13 +1,13 @@
-﻿archetype (adl_version=1.4)
-	openEHR-DEMOGRAPHIC-CLUSTER.registration_other_data.v1
+﻿archetype (adl_version=1.4; uid=5d5e10cb-490a-4a04-a5c7-734b0734908e)
+	openEHR-DEMOGRAPHIC-CLUSTER.registration_other_data.v0
 
 concept
-	[at0000]	-- Outros detalhes do registro profissional
+	[at0000]	-- Other provider registration data
 language
-	original_language = <[ISO_639-1::pt-br]>
+	original_language = <[ISO_639-1::en]>
 	translations = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
 			author = <
 				["name"] = <"Sergio Miranda Freire">
 				["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
@@ -20,7 +20,7 @@ description
 		["name"] = <"Sergio Miranda Freire & Rigoleta Dutra Mediano Dias">
 		["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
 		["email"] = <"sergio@lampada.uerj.br">
-		["date"] = <"22/05/2009">
+		["date"] = <"2009-05-22">
 	>
 	details = <
 		["pt-br"] = <
@@ -29,7 +29,7 @@ description
 			use = <"Usado em um serviço demográfico para coletar dados adicionais do registro de um profissional de saúde">
 			keywords = <"serviço demográfico", "registro de um profissional de saúde">
 			misuse = <"">
-			copyright = <"copyright (c) 2009 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -37,11 +37,21 @@ description
 			use = <"Used in demographic services to collect additional data about a healthcare provider registration">
 			keywords = <"demographic service", "provider registration details">
 			misuse = <"">
-			copyright = <"copyright (c) 2009 openEHR Foundation">
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"AuthorDraft">
-	other_contributors = <>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Rigoleta Dutra, Ministry of Defense, Brazil (openEHR Editor)", "Sergio Freire, State University of Rio de Janeiro, Brazil (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"D19487FFABA32073CC594C1036F46AB6">
+		["build_uid"] = <"d7d7e289-e5ff-438d-8bc7-a776af2cb5a9">
+		["revision"] = <"0.0.1-alpha">
+	>
 
 definition
 	CLUSTER [at0000] matches {	-- other registration details
@@ -62,9 +72,6 @@ definition
 			}
 		}
 	}
-
-
-
 
 ontology
 	term_definitions = <
