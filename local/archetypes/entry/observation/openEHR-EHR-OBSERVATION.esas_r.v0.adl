@@ -27,9 +27,9 @@ description
 			purpose = <"For å registrere en profil av alvorlighetsgrad av symptomer på et tidspunkt.">
 			use = <"Brukes for å registrere en profil av alvorlighetsgrad av symptomer på et tidspunkt.
 
-ESAS er utviklet for å følge består av ni av de vanligste symptomer palliative pasienter kan oppleve: Smerte, slapphet, døsighet, kvalme, matlyst, tung pust, depresjon, angst og velvære. Det er også et åpent felt for pasientspesifikke symtom eller plage.
+ESAS er utviklet for å følge åtte av de vanligste symptomer palliative pasienter kan oppleve: Smerte, Slapphet, Døsighet, Kvalme, Matlyst, Tung pust, Depresjon og Angst. I tillegg Opplevelse av  velvære. Det er også et åpent felt for pasientspesifikt symptom eller plage.
 
-ESAS-r er ment for å følge pasientens perspektiver på symptomer. I noen tilfeller kan det være nødvendig å få en klinikers perspektiv. ESAS-r gir en profil av symptomers alvorlighetsgrad på et tidspunkt. Gjentagende målinger bidrar til å følge utvikling av symtomenes alvorlighetsgrad over tid.
+ESAS-r er ment for å følge pasientens perspektiver på symptomer. I noen tilfeller kan det være nødvendig å få en klinikers perspektiv. ESAS-r gir en profil av symptomers alvorlighetsgrad på et gitt tidspunkt. Gjentakende målinger bidrar til å følge utvikling av symptomenes alvorlighetsgrad over tid.
 
 Dersom det ikke er mulig å gradere et symptom, kan klinikeren bruke null flavour \"Not appliccable\" for å indikere at et symptom ikke kan vurderes.
 
@@ -67,15 +67,15 @@ Not to be used to record a single symptom only, use the CLUSTER.symptom_sign arc
 2. Bruera E, Kuehn N, Miller MJ, Selmser P, Macmillan K. The Edmonton Symptom Assessment System (ESAS): a simple method for the assessment of palliative care patients. J Palliat Care 1991; 7:6-9.
 
 Guidelines:
-http://www.palliative.org/NewPC/_pdfs/tools/3C7%20ESAS-r%20guidelines%20Aug%2022%202014.pdf
+http://hpcconnection.ca/wp-content/uploads/2018/02/esas-r-guidelines.pdf
 
 Norwegian translation:
 https://helse-bergen.no/kompetansesenter-i-lindrande-behandling/palliasjon-verktoy-for-helsepersonell/esas-symptomregistrering">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"59B89C0D5C1B6366D9828286F94EBC45">
-		["build_uid"] = <"e97124a9-6419-4447-a152-8dd859b85851">
+		["MD5-CAM-1.0.1"] = <"A87676AC4C0EAB606810CE769232C87A">
+		["build_uid"] = <"c94e2d47-6500-456a-9883-90e2d936ec95">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -257,8 +257,6 @@ definition
 	}
 
 
-
-
 ontology
 	term_definitions = <
 		["en"] = <
@@ -363,7 +361,7 @@ Well-being = how you feel overall.">
 			items = <
 				["at0000"] = <
 					text = <"Edmonton Symptom Assessment System - revidert versjon (ESAS-r)">
-					description = <"The revised Edmonton Symptom Assessment System (ESAS-r), er et selvrapporteringsskjema for ni av de vanligste symptomene palliative pasienter kan oppleve. Smerte, slapphet, døsighet, kvalme, matlyst, tung pust, depresjon, angst og velvære.">
+					description = <"The revised Edmonton Symptom Assessment System (ESAS-r), er et selvrapporteringssystem for åtte av de vanligste symptomene palliative pasienter kan oppleve: Smerte, Slapphet, Døsighet, Kvalme, Matlyst, Tung pust, Depresjon og Angst. I tillegg Opplevelse av velvære.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -379,58 +377,58 @@ Well-being = how you feel overall.">
 				>
 				["at0004"] = <
 					text = <"Smerte">
-					description = <"Graden av plager av \"Smerte\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Smerte\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen smerte\" og 10 representerer \"Verst tenkelig smerte\".">
 				>
 				["at0005"] = <
 					text = <"Slapphet">
-					description = <"Graden av plager av \"Slapphet\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Slapphet\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen slapphet\" og 10 representerer \"Verst tenkelig slapphet\".
 
-Slapphet=mangel på krefter.">
+Slapphet = mangel på krefter.">
 				>
 				["at0006"] = <
 					text = <"Døsighet">
-					description = <"Graden av plager av \"Døsighet\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Døsighet\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen døsighet\" og 10 representerer \"Verst tenkelig døsighet\".
 
-Døsighet=å føle seg søvnig.">
+Døsighet = å føle seg søvnig.">
 				>
 				["at0007"] = <
 					text = <"Kvalme">
-					description = <"Graden av plager av \"Kvalme\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Kvalme\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen kvalme\" og 10 representerer \"Verst tenkelig kvalme\".">
 				>
 				["at0008"] = <
 					text = <"Nedsatt matlyst">
-					description = <"Graden av plager av \"Nedsatt matlyst\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Nedsatt matlyst\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ikke nedsatt matlyst\" og 10 representerer \"Verst tenkelig nedsatt matlyst\".">
 				>
 				["at0009"] = <
 					text = <"Tung pust">
-					description = <"Graden av plager av \"Tung pust\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Tung pust\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen tung pust\" og 10 representerer \"Verst tenkelig tung pust\".">
 				>
 				["at0010"] = <
 					text = <"Depresjon">
-					description = <"Graden av plager av \"Depresjon\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Depresjon\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen depresjon\" og 10 representerer \"Verst tenkelig depresjon\".
 
-Depresjon=å føle seg nedstemt.">
+Depresjon = å føle seg nedstemt.">
 				>
 				["at0011"] = <
 					text = <"Angst">
-					description = <"Graden av plager av \"Angst\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Angst\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Ingen angst\" og 10 representerer \"Verst tenkelig angst\".
 
-Angst=å føle seg urolig.">
+Angst = å føle seg urolig.">
 				>
 				["at0012"] = <
 					text = <"Velvære">
-					description = <"Graden av plager av \"Velvære\" på en skala fra 0 til 10.">
+					description = <"Gradering av \"Velvære\" på en skala fra 0 til 10.">
 					comment = <"0 representerer \"Best tenkelig velvære\" og 10 representerer \"Verst tenkelig velvære\".
 
-Velvære=hvordan du har det alt tatt i betraktning.">
+Velvære = hvordan du har det, alt tatt i betraktning.">
 				>
 				["at0014"] = <
 					text = <"Annet problem">
@@ -438,12 +436,12 @@ Velvære=hvordan du har det alt tatt i betraktning.">
 				>
 				["at0016"] = <
 					text = <"Navn på problem">
-					description = <"Navn på annet problem. For eksempel forstoppelse.">
+					description = <"Navn på annet problem, for eksempel forstoppelse.">
 				>
 				["at0017"] = <
 					text = <"Symptomintensitet">
-					description = <"Graden av plager av \"Annet problem\" på en skala fra 0 til 10.">
-					comment = <"0 representerer \"Ingen annet problem\" og 10 representerer \"Verst tenkelig annet problem\".">
+					description = <"Gradering av \"Annet problem\" på en skala fra 0 til 10.">
+					comment = <"0 representerer \"Ikke <annet problem>\" og 10 representerer \"Verst tenkelig <annet problem>\".">
 				>
 				["at0018"] = <
 					text = <"ItemTree">
