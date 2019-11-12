@@ -1,10 +1,18 @@
-﻿archetype (adl_version=1.4)
-	openEHR-EHR-CLUSTER.macroscopy_colorectal_carcinoma.v1
+﻿archetype (adl_version=1.4; uid=9fb9b927-40ce-4424-b2f5-79e56cd12076)
+	openEHR-EHR-CLUSTER.macroscopy_colorectal_carcinoma.v0
 
 concept
 	[at0000]	-- Macroscopic findings - Colorectal cancer
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Dr Ian McNicoll">
@@ -20,12 +28,23 @@ description
 Use as a component archetype in the context of a suite of archetypes that make up a histopathology report ie OBSERVATION.lab_test.histopathology and CLUSTER.microscopy_colorectal_carcinoma.">
 			keywords = <"histopathology", "cancer", "laboratory", "lab", "malignancy", "pathology", "colonic", "rectal", "anal", "GI", "gastrointestinal", "bowel">
 			misuse = <"Not designed to be used within any other archetype other than OBSERVATION.lab_test.histopathology.">
-			copyright = <"copyright (c) 2010 openEHR foundation">
+			copyright = <"© openEHR Foundation">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل الموجودات التفصيلية حول سرطان القولون و المستقيم التي يتم اكتشافها عند الفحص الهيستوباثولوجي العياني">
+			use = <"لتسجيل الموجودات التفصيلية حول الفحص العياني حول النسيج المتعلق بسرطان القولون و المستقيم.
+يستخدم هذا النموذج في سياق مجموعة من النماذج التي يتكون منها تقرير الهيستوباثولوجيا, يعني (ملاحظة. اختبار معملي. الهيستوباثولوجيا) و (عنقود. الفحص المجهري- سرطانة القولون و المستقيم)">
+			keywords = <"الهيستوباثولوجيا", "السرطان", "المعمل/المختبر", "المعمل/المختبر", "الخباثة", "الباثولوجيا/المَرَضية", "متعلق بالقولون", "متعلق بالمستقيم", "متعلق بالشرج", "معديّ معويّ", "معديّ معويّ", "الأمعاء">
+			misuse = <"لم يتم تصميم هذا النموذج ليتسخدم في داخل أي نموذج غير (ملاحظة. اختبار معملي. الهيستوباثولوجيا)">
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"AuthorDraft">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Koray Atalag, University of Auckland, New Zealand", "Matt Cordell, NEHTA, Australia", "Heather Leslie,Ocean Informatics,Australia", "David McKillop, NEHTA, Australia", "Cathy Richardson, NEHTA, Australia", "David Rowed, Ocean Informatics, Australia">
 	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"College of American Pathologists. Protocol for the Examination of Specimens from Patients with Primary Carcinomas of the Colon and Rectum [Internet]. 2009 Mar ;[cited 2009 Jul 28 ]
 Available from: http://www.cap.org/apps/docs/committees/cancer/cancer_protocols/2008/colonrectum08_pw.pdf
 
@@ -43,7 +62,12 @@ Available from: http://www.rcpa.edu.au//static/File/Asset%20library/public%20doc
 
 
 ">
-		["MD5-CAM-1.0.1"] = <"4243B86239E008CE0500331D107393A5">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"731B1E8E708D666D5BA1EFE5FFDD3E98">
+		["build_uid"] = <"67c9713d-86c9-481e-95bd-df83c6a42fbf">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
@@ -176,8 +200,6 @@ definition
 		}
 	}
 
-
-
 ontology
 	term_definitions = <
 		["en"] = <
@@ -285,6 +307,117 @@ ontology
 				["at0354"] = <
 					text = <"Comment">
 					description = <"Furrher text comment on the perforation.">
+				>
+			>
+		>
+		["ar-sy"] = <
+			items = <
+				["at0000"] = <
+					text = <"الموجودات العيانية - سرطان القولون و المستقيم">
+					description = <"الموجودات الباثولوجية التشريحية العيانية المتعلقة بسرطان القولون و المستقيم">
+				>
+				["at0330"] = <
+					text = <"الحد الأقصى للامتداد خارج النسيج العضلي">
+					description = <"الحد الأقصى لامتداد الورم خارج النسيج العضلي">
+				>
+				["at0331"] = <
+					text = <"المسافة بين الورم و أقرب نهاية قاطعة">
+					description = <"المسافة بين الورم و أقرب نهاية قاطعة ( بمعنى الحافة/الهامش القاصي أو الداني.
+و هو قياس لأقرب نهاية قاطعة للعينة, و ليس الحافة/الهامش غير الصفاقيّ - يعني الحافة/الهامش الكفافي أو الشعاعي.">
+				>
+				["at0332"] = <
+					text = <"المسافة بين الورم و الحافة/الهامش الكفافي">
+					description = <"المسافة بين الورم و الحافة/الهامش الكفافي أو الشعاعي.
+و هو قياس إلى الحافة/الهامش غير الصفاقي, و ليس أقرب نهاية قاطعة (قاصية أو دانية).">
+				>
+				["at0333"] = <
+					text = <"العجائن التفاغرية التي تم تقديمها">
+					description = <"هل تم تقديم العجائن التفاغرية للتحليل">
+				>
+				["at0334"] = <
+					text = <"انثقاب الورم">
+					description = <"الموجودات المتعلقة بانثقاب الورم">
+				>
+				["at0335"] = <
+					text = <"فيما يتعلق بأورام المستقيم">
+					description = <"الموجودات المتعلقة بأورام المستقيم فقط">
+				>
+				["at0336"] = <
+					text = <"العلاقة مع الانعكاس الصفاقي الأمامي">
+					description = <"علاقة ورم المستقيم مع الانعكاس الصفاقي الأمامي">
+				>
+				["at0337"] = <
+					text = <"سلامة مسراق المستقيم">
+					description = <"تقييم لسلامة مسراق المستقيم">
+				>
+				["at0338"] = <
+					text = <"غير مكتمل">
+					description = <"مسراق المستقيم غير سالم بشكل كامل">
+				>
+				["at0339"] = <
+					text = <"مكتمل تقريبا">
+					description = <"مسراق المستقيم سالم بشكل مكتمل تقريبا">
+				>
+				["at0340"] = <
+					text = <"مكتمل">
+					description = <"مسراق المستقيم سالم بشكل مكتمل">
+				>
+				["at0341"] = <
+					text = <"أعلى بشكل كامل">
+					description = <"الورم فوق مستوى الانعكاس الصفاقي الأمامي بشكل كلي">
+				>
+				["at0342"] = <
+					text = <"على نفس المستوى">
+					description = <"الورم على نفس مستوى الانعكاس الصفاقي الأمامي">
+				>
+				["at0343"] = <
+					text = <"أسفل بشكل كامل">
+					description = <"الورم أسفل مستوى الانعكاس الصفاقي الأمامي بشكل كلي">
+				>
+				["at0344"] = <
+					text = <"موجود">
+					description = <"يوجد انثقاب للورم">
+				>
+				["at0345"] = <
+					text = <"غائب">
+					description = <"لا يوجد انثقاب للورم">
+				>
+				["at0346"] = <
+					text = <"غير محدد">
+					description = <"لم يتم تحديد وجود انثقاب للورم">
+				>
+				["at0347"] = <
+					text = <"أبعاد الورم">
+					description = <"تفاصيل الحد الأدنى لأبعاد الورم">
+				>
+				["at0348"] = <
+					text = <"غير محدد">
+					description = <"لم يتم تحديد سلامة مسراق المستقيم">
+				>
+				["at0349"] = <
+					text = <"انثقاب الورم">
+					description = <"الموجودات المتعلقة بانثقاب الورم">
+				>
+				["at0350"] = <
+					text = <"مكان الانثقاب">
+					description = <"مكان الانثقاب, إن وجد">
+				>
+				["at0351"] = <
+					text = <"مصلوي/مشيمائي">
+					description = <"الانثقاب مصلوي/مشيمائي">
+				>
+				["at0352"] = <
+					text = <"خلف/أسفل الصفاق">
+					description = <"الانثقاب يوجد خلف/أسفل الصفاق">
+				>
+				["at0353"] = <
+					text = <"المسافة بين الورم و الخط المسنن">
+					description = <"لعينات القطع البطني العجاني, المسافة بين الورم و الخط المسنن">
+				>
+				["at0354"] = <
+					text = <"تعليق">
+					description = <"تعليق نصي إضافي حول الانثقاب
+">
 				>
 			>
 		>
