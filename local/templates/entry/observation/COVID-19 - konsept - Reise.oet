@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>860ac480-f88b-4d62-b5be-90c03826d761</id>
+    <name>COVID-19 - konsept - Reise</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-25</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere informasjon om hvorvidt individet har reist i løpet av en spesifisert tidsperiode, og i så tilfelle hvor og når.</purpose>
+            <use>Brukes for å registrere informasjon om hvorvidt individet har reist i løpet av en spesifisert tidsperiode, og i så tilfelle hvor og når.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>90260245022071c2c6f2747ea83acc95</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>faf2e5b1017c5085f6bd3bd6783f6eaf</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.travel_event.v0"
+        concept_name="Reisehendelse" name="COVID-19 - konsept - Reise"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule name="Reist i løpet av tidsperioden?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]"/>
+        <Rule name="Reise" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0022]"/>
+        <Rule name="Reisemål" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0010]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0010]/items[at0016]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0010]/items[at0017]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0018]"/>
+        <Rule name="Hjemkomstdato" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0019]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/items[at0020]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.travel_event.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">DC556326F53F91A90DCFEAE905059231</digest>
+    </integrity_checks>
+</template>

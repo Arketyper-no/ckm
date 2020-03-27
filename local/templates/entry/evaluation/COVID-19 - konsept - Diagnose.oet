@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>07903903-4ae5-444d-ac98-635c30a87d35</id>
+    <name>COVID-19 - konsept - Diagnose</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-25</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere informasjon om en COVID-19 diagnose.</purpose>
+            <use>Brukes for å registrere informasjon om en COVID-19 diagnose.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".</use>
+            <misuse>Brukes ikke for å registrere utelukkelse av en COVID-19 diagnose. Bruk konseptet "COVID-19 - konsept - Diagnose utelukkelse" til dette formålet.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>6878dc5a45a678783e2a16a5a0d43b29</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>9E343B7FD95E59B5FDE19117CA8F3D62</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+        concept_name="Problem/diagnose"
+        name="COVID-19 - konsept - Diagnose"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::840539006::Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0012]"/>
+        <Rule name="Dato/tid for bedring" path="/data[at0001]/items[at0030]"/>
+        <Rule max="0" path="/data[at0001]/items[at0069]"/>
+        <Rule max="0" path="/protocol[at0032]/items[at0070]"/>
+        <Items archetype_id="openEHR-EHR-CLUSTER.problem_qualifier.v1"
+            concept_name="Problem/diagnose-kvalifikator"
+            name="Kvalifikatorer" path="/data[at0001]/items[at0046]" xsi:type="tem:CLUSTER">
+            <Rule max="0" path="/items[at0004]"/>
+            <Rule max="0" path="/items[at0060]"/>
+            <Rule max="0" path="/items[at0003]"/>
+            <Rule path="/items[at0083]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0097</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0089]"/>
+            <Rule max="0" path="/items[at0001]"/>
+            <Rule max="0" path="/items[at0077]"/>
+            <Rule max="0" path="/items[at0063]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Coded_text</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0073]"/>
+        </Items>
+        <Items archetype_id="openEHR-EHR-CLUSTER.clinical_evidence.v1"
+            path="/data[at0001]/items[at0043]" xsi:type="tem:CLUSTER">
+            <Rule path="/items[at0003]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
+                    <includedValues>NPU::NPU59144::P-SARS-CoV-2 antistoff</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0004]"/>
+            <Rule max="1" path="/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::10828004::Positive (qualifier value)</includedValues>
+                    <includedValues>SNOMED-CT::260385009::Negative (qualifier value)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0022]"/>
+            <Rule max="0" path="/items[at0001]"/>
+        </Items>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9E343B7FD95E59B5FDE19117CA8F3D62</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.problem_qualifier.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A686BB41159607FA3CC18F63F37B97DA</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.clinical_evidence.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">714F9390662262342CF0C457C67D0E9C</digest>
+    </integrity_checks>
+</template>

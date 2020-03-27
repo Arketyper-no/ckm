@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>b9898074-efa3-4459-9dbd-c8ac46b065ce</id>
+    <name>COVID-19 - konsept - Risikofaktorer for alvorlig sykdom</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-25</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere risikofaktorer for å utvikle et alvorlig sykdomsforløp med COVID-19 hos et individ.</purpose>
+            <use>Brukes for å registrere risikofaktorer for å utvikle et alvorlig sykdomsforløp med COVID-19 hos et individ.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".</use>
+            <misuse>Brukes ikke for å registrere komplikasjoner som har oppstått under selve COVID-19 sykdomsforløpet. Bruk konseptet "COVID-19 - konsept - Komplikasjoner" for dette formålet.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>e98ffb04329cf41f0bee7a02ec49a00b</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>BDD5038538AB4C56E0D328FDC317B4FB</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.health_risk.v1"
+        concept_name="Helserisiko"
+        name="COVID-19 - konsept - Risikofaktorer for alvorlig sykdom"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>COVID-19 med alvorlig forløp</includedValues>
+            </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/items[at0016]/items[at0013]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::49808004::Old-age (finding)</includedValues>
+                <includedValues>SNOMED-CT::38341003::Hypertensive disorder, systemic arterial (disorder)</includedValues>
+                <includedValues>SNOMED-CT::73211009::Diabetes mellitus (disorder)</includedValues>
+                <includedValues>SNOMED-CT::49601007::Disorder of cardiovascular system (disorder)</includedValues>
+                <includedValues>SNOMED-CT::195967001::Asthma (disorder)</includedValues>
+                <includedValues>SNOMED-CT::413839001::Chronic lung disease (disorder)</includedValues>
+                <includedValues>SNOMED-CT::363346000::Malignant neoplastic disease (disorder)</includedValues>
+                <includedValues>SNOMED-CT::235856003::Disorder of liver (disorder)</includedValues>
+                <includedValues>SNOMED-CT::90708001::Kidney disease (disorder)</includedValues>
+                <includedValues>SNOMED-CT::128283000::Chronic nervous system disorder (disorder)</includedValues>
+                <includedValues>SNOMED-CT::52448006::Dementia (disorder)</includedValues>
+                <includedValues>SNOMED-CT::77386006::Pregnant (finding)</includedValues>
+                <includedValues>SNOMED-CT::370391006::Patient immunosuppressed (finding)</includedValues>
+                <includedValues>SNOMED-CT::77176002::Smoker (finding)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0016]/items[at0014]"/>
+        <Rule max="0" path="/data[at0001]/items[at0016]/items[at0029]"/>
+        <Rule max="0" path="/data[at0001]/items[at0016]/items[at0028]"/>
+        <Rule max="0" path="/data[at0001]/items[at0016]/items[at0012]"/>
+        <Rule max="0" path="/data[at0001]/items[at0016]/items[at0030]"/>
+        <Rule max="0" path="/data[at0001]/items[at0003]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Text</includedTypes>
+                <includedTypes>Proportion</includedTypes>
+                <includedTypes>Quantity</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0020]"/>
+        <Rule max="0" path="/data[at0001]/items[at0023]"/>
+        <Rule max="0" path="/data[at0001]/items[at0004]"/>
+        <Rule max="0" path="/data[at0001]/items[at0015]"/>
+        <Rule max="0" path="/protocol[at0010]/items[at0024]"/>
+        <Rule max="0" path="/protocol[at0010]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.health_risk.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">BDD5038538AB4C56E0D328FDC317B4FB</digest>
+    </integrity_checks>
+</template>

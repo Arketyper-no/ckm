@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>cca853fb-6351-41e5-8d25-582f20c215ed</id>
+    <name>COVID-19 - konsept - Diagnose utelukkelse</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-27</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere utelukkelse av en COVID-19 diagnose.</purpose>
+            <use>Brukes for å registrere utelukkelse av en COVID-19 diagnose.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".</use>
+            <misuse>Brukes ikke for å registrere tilstedeværelse av en COVID-19 diagnose. Bruk konseptet "COVID-19 - konsept - Diagnose" til dette formålet.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>522f36ecdb3f4f01835c6050b85af352</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>24F781191AA07E37A37EB3C1AC4F3E8F</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-EVALUATION.exclusion_specific.v1"
+        concept_name="Eksklusjonsutsagn - spesifikt"
+        name="COVID-19 - konsept - Diagnose utelukkelse"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule path="/data[at0001]/items[at0002]">
+            <constraint limitToList="false" xsi:type="tem:textConstraint">
+                <includedValues>Ingen påvist infeksjon med SARS-CoV-2</includedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Problem/diagnose" path="/data[at0001]/items[at0003]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::840539006::Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)</includedValues>
+            </constraint>
+            <nameConstraint>
+                <excludedValues>local::at0008</excludedValues>
+                <excludedValues>local::at0005</excludedValues>
+                <excludedValues>local::at0006</excludedValues>
+                <excludedValues>local::at0007</excludedValues>
+            </nameConstraint>
+        </Rule>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.exclusion_specific.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">24F781191AA07E37A37EB3C1AC4F3E8F</digest>
+    </integrity_checks>
+</template>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>767864d2-c21f-48a1-8575-3e6acdfe89e5</id>
+    <name>COVID-19 - konsept - Komplikasjoner screening</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-27</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere informasjon om hvorvidt et individ har hatt noen komplikasjoner og eventuelt spesifikke komplikasjoner i løpet av COVID-19 forløpet.</purpose>
+            <use>Brukes for å registrere informasjon om hvorvidt et individ har hatt noen komplikasjoner og eventuelt spesifikke komplikasjoner i løpet av COVID-19 forløpet.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+            <misuse>Brukes ikke for å registrere detaljer om spesifikke komplikasjoner.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.condition_screening.v0"
+        concept_name="Spørreskjema for screening av tilstander"
+        name="COVID-19 - konsept - Komplikasjoner screening"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>Komplikasjoner i forbindelse med COVID-19</includedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Komplikasjoner generelt" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
+        <Rule name="Spesifikk komplikasjon" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule name="Navn på komplikasjon" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::14669001::Acute renal failure syndrome (disorder)</includedValues>
+                <includedValues>SNOMED-CT::27942005::Shock (disorder)</includedValues>
+                <includedValues>SNOMED-CT::56675007::Acute heart failure (disorder)</includedValues>
+                <includedValues>SNOMED-CT::65710008::Acute respiratory failure (disorder)</includedValues>
+                <includedValues>SNOMED-CT::3006004::Disturbance of consciousness (finding)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0029]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Duration</includedTypes>
+                <includedTypes>Coded_text</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.condition_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">BA081E8595CC48103505935DD8713373</digest>
+    </integrity_checks>
+</template>

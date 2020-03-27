@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>00bd4730-d07d-441d-9994-cabcfdd7d166</id>
+    <name>COVID-19 - konsept - Symptomoppfølging</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-24</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere oppfølgingsinformasjon om symptomer på COVID-19.</purpose>
+            <use>Brukes for å registrere oppfølgingsinformasjon om symptomer på COVID-19.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+            <misuse>Brukes ikke for å registrere spørreskjema-lignende informasjon om tilstedeværelse eller fravær av symptomer. Bruk konseptet "COVID-19 - konsept - Symptomscreening" for dette formålet.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>e0b408d7da8c758f7291d9c10410ef3b</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>CA7D830939884D77B23BDAA5CA34A7AE</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.story.v1"
+        concept_name="Anamnese"
+        name="COVID-19 - konsept - Symptomoppfølging"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule max="1" min="1"
+            name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]"/>
+        <Items archetype_id="openEHR-EHR-CLUSTER.symptom_sign.v1"
+            concept_name="Symptom/Sykdomstegn" name="Symptom"
+            path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" xsi:type="tem:CLUSTER">
+            <Rule path="/items[at0001]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::386661006::Fever (finding)</includedValues>
+                    <includedValues>SNOMED-CT::40917007::Clouded consciousness (finding)</includedValues>
+                    <includedValues>SNOMED-CT::25064002::Headache (finding)</includedValues>
+                    <includedValues>SNOMED-CT::49727002::Cough (finding)</includedValues>
+                    <includedValues>SNOMED-CT::267045008::Gastrointestinal symptom (finding)</includedValues>
+                    <includedValues>SNOMED-CT::68962001::Muscle pain (finding)</includedValues>
+                    <includedValues>SNOMED-CT::64531003::Nasal discharge (finding)</includedValues>
+                    <includedValues>SNOMED-CT::267102003::Sore throat symptom (finding)</includedValues>
+                    <includedValues>SNOMED-CT::44169009::Loss of sense of smell (finding)</includedValues>
+                    <includedValues>SNOMED-CT::36955009::Loss of taste (finding)</includedValues>
+                    <includedValues>SNOMED-CT::68235000::Nasal congestion (finding)</includedValues>
+                    <includedValues>SNOMED-CT::84229001::Fatigue (finding)</includedValues>
+                    <includedValues>SNOMED-CT::23924001::Tight chest (finding)</includedValues>
+                    <includedValues>SNOMED-CT::267036007::Dyspnea (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0035]"/>
+            <Rule max="0" path="/items[at0151]"/>
+            <Rule max="0" path="/items[at0002]"/>
+            <Rule max="0" path="/items[at0175]"/>
+            <Rule name="Debut dato" path="/items[at0152]"/>
+            <Rule max="0" path="/items[at0164]"/>
+            <Rule max="0" path="/items[at0028]"/>
+            <Rule name="Alvorlighetsgrad" path="/items[at0021]"/>
+            <Rule max="0" path="/items[at0026]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>1</unit>
+                        <maxMagnitude>10.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0189]"/>
+            <Rule max="1" path="/items[at0180]"/>
+            <Rule max="0" path="/items[at0003]"/>
+            <Rule max="0" path="/items[at0018]"/>
+            <Rule max="0" path="/items[at0018]/items[at0019]"/>
+            <Rule max="0" path="/items[at0018]/items[at0017]"/>
+            <Rule max="0" path="/items[at0018]/items[at0056]"/>
+            <Rule max="0" path="/items[at0165]"/>
+            <Rule max="0" path="/items[at0165]/items[at0170]"/>
+            <Rule max="0" path="/items[at0165]/items[at0171]"/>
+            <Rule max="0" path="/items[at0165]/items[at0185]"/>
+            <Rule max="0" path="/items[at0155]"/>
+            <Rule max="0" path="/items[at0037]"/>
+            <Rule name="Opphørt dato" path="/items[at0161]"/>
+            <Rule max="0" path="/items[at0057]"/>
+            <Rule max="0" path="/items[at0031]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0163]"/>
+        </Items>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.story.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">CA7D830939884D77B23BDAA5CA34A7AE</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-CLUSTER.symptom_sign.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">76D51536B9250823AEE5C6A5B13CC60A</digest>
+    </integrity_checks>
+</template>

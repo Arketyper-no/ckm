@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>4b0c218c-8c86-4e61-b7b6-6f47305967bd</id>
+    <name>COVID-19 - konsept - Screening av behandlings- eller sykdomshåndteringsaktiviteter</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-03-25</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere hvorvidt spesifikke behandlings- eller sykdomshåndteringsaktiviteter er iverksatt eller ikke, på et spesifikt tidspunkt eller i løpet av et spesifikt tidsintervall.</purpose>
+            <use>Brukes for å registrere hvorvidt spesifikke behandlings- eller sykdomshåndteringsaktiviteter er iverksatt eller ikke, på et spesifikt tidspunkt eller i løpet av et spesifikt tidsintervall.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+            <misuse>Brukes ikke for å registrere detaljer om behandlings- eller sykdomshåndteringsaktivitetene.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>31e372a0121089a78eb86bd4ce1d56c1</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>4AE7C3ADC11ABD061032C2FA965058BA</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
+        concept_name="Spørreskjema for screening av sykdomshåndtering/behandling"
+        name="COVID-19 - konsept - Screening av behandlings- eller sykdomshåndteringsaktiviteter"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::840544004::Suspected COVID-19</includedValues>
+            </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>Kontakt med lege eller legevakt</includedValues>
+                <includedValues>Innlagt på sykehus</includedValues>
+                <includedValues>Respiratorbehandling</includedValues>
+                <includedValues>Ventilasjonsstøtte</includedValues>
+                <includedValues>Isolering</includedValues>
+                <includedValues>Karantene</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">BDC2CC54DB629FA8B093BCD57B7ADF37</digest>
+    </integrity_checks>
+</template>

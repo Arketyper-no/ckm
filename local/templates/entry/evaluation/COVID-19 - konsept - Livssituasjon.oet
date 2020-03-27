@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>3aabb234-7975-4d1b-b342-2aad44d7cb67</id>
+    <name>COVID-19 - konsept - Livssituasjon</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-25</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere informasjon om individets livssituasjon med tanke på hvem og hvor mange andre som bor i samme bolig.</purpose>
+            <use>Brukes for å registrere informasjon om individets livssituasjon med tanke på hvem og hvor mange andre som bor i samme bolig.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>08d6c7165b7cd7ff2ba35f7b65583456</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>F26958F0ACF3628259FE9FC47790118C</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-EVALUATION.living_arrangement.v0"
+        concept_name="Livssituasjon"
+        name="COVID-19 - konsept - Livssituasjon"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule max="0" path="/data[at0001]/items[at0003]"/>
+        <Rule path="/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>Bor alene</includedValues>
+                <includedValues>Bor med andre</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0005]"/>
+        <Rule max="0" path="/data[at0001]/items[at0006]"/>
+        <Rule max="0" path="/data[at0001]/items[at0009]"/>
+        <Rule max="0" path="/data[at0001]/items[at0010]"/>
+        <Rule max="0" path="/protocol[at0002]/items[at0012]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.living_arrangement.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">F26958F0ACF3628259FE9FC47790118C</digest>
+    </integrity_checks>
+</template>
