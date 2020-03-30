@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>b9f7e1c5-8aab-4620-a890-6c95e14bddc7</id>
+    <name>Generelt - konsept - Puls/hjertefrekvens</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-30</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere puls/hjertefrekvens uten noen tilhørende kontekstdata.</purpose>
+            <use>Brukes for å registrere puls/hjertefrekvens uten noen tilhørende kontekstdata. Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.pulse.v2"
+        concept_name="Puls/Hjertefrekvens"
+        name="Generelt - konsept - Puls/hjertefrekvens"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0002]/events[at0003]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1005]"/>
+        <Rule name="Puls/hjertefrekvens" path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>/min</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at0005]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1055]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1030]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1022]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1023]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1059]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/state[at0012]/items[at0013]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/state[at0012]/items[at1018]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]"/>
+        <Rule clone="true" name="structure" path="/data[at0002]/events[at1036]/data[at0001]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1005]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>/min</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at0005]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1055]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1030]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1022]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1023]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/data[at0001]/items[at1059]"/>
+        <Rule clone="true" name="List" path="/data[at0002]/events[at1036]/state[at0012]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/state[at0012]/items[at0013]"/>
+        <Rule max="0" path="/data[at0002]/events[at1036]/state[at0012]/items[at1018]"/>
+        <Rule max="0" path="/protocol[at0010]/items[at1019]"/>
+        <Rule max="0" path="/protocol[at0010]/items[at1037]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Coded_text</includedTypes>
+                <includedTypes>Text</includedTypes>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.pulse.v2"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">B4CB0D21EEFFEE0D723C51AEBA854E8E</digest>
+    </integrity_checks>
+</template>
