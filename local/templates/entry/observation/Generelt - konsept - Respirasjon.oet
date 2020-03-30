@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>636c5cd7-7a7b-47d0-995f-104f123b3b5e</id>
+    <name>Generelt - konsept - Respirasjon</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-03-30</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere respirasjonsfrekvens uten noen tilhørende kontekstdata.</purpose>
+            <use>Brukes for å registrere respirasjonsfrekvens uten noen tilhørende kontekstdata. Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.respiration.v2"
+        concept_name="Åndedrett" name="Generelt - konsept - Respirasjon"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0062]"/>
+        <Rule name="Respirasjonsfrekvens" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>/min</unit>
+                    <maxMagnitude>200.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>true</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0016]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0024]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0009]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0070]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/state[at0022]/items[at0065]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/state[at0022]/items[at0056]"/>
+    </definition>
+    <view>
+        <constraints path="[openEHR-EHR-OBSERVATION.respiration.v2]/data">
+            <items id="VisibleInView">
+                <value>data</value>
+            </items>
+        </constraints>
+    </view>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.respiration.v2"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">42BE1C03D5BADE775574FDFF5AEF686F</digest>
+    </integrity_checks>
+</template>
