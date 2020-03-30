@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>35d5620c-7269-11ea-bc55-0242ac130003</id>
+    <name>COVID-19 - eksempel - Symptomscreening</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-24</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>Eksempel på hvordan et konkret datasett for screening av symptomer på COVID-19 kan modelleres.</purpose>
+            <use>Kun til bruk som eksempel på hvordan et konkret datasett for screening av symptomer på COVID-19 kan modelleres.</use>
+            <misuse>Brukes ikke til reelle implementasjoner.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
+        concept_name="Spørreskjema for screening av symptomer/sykdomstegn"
+        name="COVID-19 - eksempel - Symptomscreening"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule max="1" min="1" name="Tidspunkt for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::840544004::Suspected disease caused by severe acute respiratory coronavirus 2 (situation)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule min="1" name="Generelle symptomer på COVID-19" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0033</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Debut av første symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0029]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0036]"/>
+        <Rule name="Tungpustethet" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::267036007::Dyspnea (finding)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0027</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0035]"/>
+        <Rule clone="true" name="Hoste" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::49727002::Cough (finding)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0027</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0035]"/>
+        <Rule clone="true" max="1" min="1" name="Feber" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::386661006::Fever (finding)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0027</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0035]"/>
+        <Rule clone="true" name="Annet symptom (kan repeteres)" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom (kan repeteres)']/items[at0004]"/>
+        <Rule min="1"
+            name="Tilstede (underforstått at andre symptomer som legges til er tilstede)" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom (kan repeteres)']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0024</excludedValues>
+                <excludedValues>local::at0027</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom (kan repeteres)']/items[at0035]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">E056AF8C6B22D5FDE66650A0C9211EE6</digest>
+    </integrity_checks>
+</template>
