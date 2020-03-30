@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>4bc80a49-b670-479d-929f-f581d90ea173</id>
+    <name>Generelt - konsept - Blodtrykk</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-30</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere blodtrykk uten noen tilhørende kontekstdata.</purpose>
+            <use>Brukes for å registrere blodtrykk uten noen tilhørende kontekstdata.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v2"
+        concept_name="Blodtrykk" name="Generelt - konsept - Blodtrykk"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsintervall for registreringen" path="/data[at0001]/events[at0006]"/>
+        <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0006]/data[at0003]/items[at1006]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0006]/data[at0003]/items[at1007]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0006]/data[at0003]/items[at1059]"/>
+        <Rule max="0" path="/data[at0001]/events[at0006]/data[at0003]/items[at0033]"/>
+        <Rule max="0" path="/data[at0001]/events[at0006]/state[at0007]/items[at0008]"/>
+        <Rule max="0" path="/data[at0001]/events[at0006]/state[at0007]/items[at1052]"/>
+        <Rule max="0" path="/data[at0001]/events[at0006]/state[at0007]/items[at1043]"/>
+        <Rule max="0" path="/data[at0001]/events[at0006]/state[at0007]/items[at1005]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>deg</unit>
+                    <maxMagnitude>90.0</maxMagnitude>
+                    <minMagnitude>-90.0</minMagnitude>
+                    <includesMaximum>true</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at1042]"/>
+        <Rule clone="true" name="*blood pressure(en)" path="/data[at0001]/events[at1042]/data[at0003]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at0005]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at1006]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at1007]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>mm[Hg]</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at1059]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/data[at0003]/items[at0033]"/>
+        <Rule clone="true" name="*state structure(en)" path="/data[at0001]/events[at1042]/state[at0007]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/state[at0007]/items[at0008]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/state[at0007]/items[at1052]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/state[at0007]/items[at1043]"/>
+        <Rule max="0" path="/data[at0001]/events[at1042]/state[at0007]/items[at1005]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>deg</unit>
+                    <maxMagnitude>90.0</maxMagnitude>
+                    <minMagnitude>-90.0</minMagnitude>
+                    <includesMaximum>true</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/protocol[at0011]/items[at0013]"/>
+        <Rule max="0" path="/protocol[at0011]/items[at0014]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Coded_text</includedTypes>
+                <includedTypes>Text</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/protocol[at0011]/items[at1035]"/>
+        <Rule max="0" path="/protocol[at0011]/items[at1038]"/>
+        <Rule max="0" path="/protocol[at0011]/items[at1054]"/>
+        <Rule max="0" path="/protocol[at0011]/items[at1055]"/>
+        <Rule max="0" path="/protocol[at0011]/items[at1010]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v2"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">5D46FCA9BDA7F8D49E5959E9BEE6EA18</digest>
+    </integrity_checks>
+</template>
