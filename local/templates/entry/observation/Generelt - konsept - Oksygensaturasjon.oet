@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>21fe59c2-1810-496c-8044-89c500c26142</id>
+    <name>Generelt - konsept - Oksygensaturasjon</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-30</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere resultatet av en pulsoksymetrimåling på et individ, inkludert hvorvidt individet pustet ordinær romluft eller ikke på måletidspunktet.</purpose>
+            <use>Brukes for å registrere resultatet av en pulsoksymetrimåling på et individ, inkludert hvorvidt individet pustet ordinær romluft eller ikke på måletidspunktet.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.pulse_oximetry.v1"
+        concept_name="Pulsoksymetri"
+        name="Generelt - konsept - Oksygensaturasjon"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0044]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <unitMagnitude>
+                    <unit>ml/dl</unit>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0045]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0046]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0058]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0036]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/state[at0014]/items[at0016]"/>
+        <Rule max="0" path="/protocol[at0007]/items[at0009]"/>
+        <Rule max="0" path="/protocol[at0007]/items[at0061]"/>
+        <Items archetype_id="openEHR-EHR-CLUSTER.inspired_oxygen.v1"
+            path="/data[at0001]/events[at0002]/state[at0014]/items[at0015]" xsi:type="tem:CLUSTER">
+            <Rule max="0" path="/items[at0051]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>l/min</unit>
+                        <maxMagnitude>50.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>ml/min</unit>
+                        <maxMagnitude>50000.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0052]"/>
+            <Rule max="0" path="/items[at0053]"/>
+            <Rule max="0" path="/items[at0054]"/>
+        </Items>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.pulse_oximetry.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">1FC83A6FE8F0873A82C7E7DDFA956766</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.inspired_oxygen.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A6EAA72F8DB505A4D94341F42B066B49</digest>
+    </integrity_checks>
+</template>
