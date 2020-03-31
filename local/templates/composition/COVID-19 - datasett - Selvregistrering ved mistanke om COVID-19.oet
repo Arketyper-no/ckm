@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>a340af87-2cb6-4518-b89d-ad95e1cc1a50</id>
+    <name>COVID-19 - datasett - Selvregistrering ved mistanke om COVID-19</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Silje Ljosland Bakke</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>silje.ljosland.bakke@helse-vest-ikt.no</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2020-03-30</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For selvregistrering ved mistanke om COVID-19, basert på https://minhelse.helsenorge.no/skjemautfyller?Query=Questionnaire/302.</purpose>
+            <use>Brukes for selvregistrering ved mistanke om COVID-19, basert på https://minhelse.helsenorge.no/skjemautfyller?Query=Questionnaire/302.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>d411f1f243734531fc06098f9cb0dd9a</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>6562F732112B8B3F94790E178F4243A5</value>
+            </item>
+        </other_details>
+    </description>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0024]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.code</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0001]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.2, OBX.5, OBX.6, OBX.7, OBX.8</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.value[x]</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0005]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.11</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.status</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0006]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.19</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.issued</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0003]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>NTE.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.note</value>
+            </item>
+        </items>
+    </annotations>
+    <definition archetype_id="openEHR-EHR-COMPOSITION.encounter.v1"
+        concept_name="Klinisk kontakt"
+        name="COVID-19 - datasett - Selvregistrering ved mistanke om COVID-19"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:COMPOSITION">
+        <Content archetype_id="openEHR-EHR-OBSERVATION.age.v0" min="1"
+            path="/content" xsi:type="tem:OBSERVATION">
+            <Rule min="1" name="Tidspunkt for registering" path="/data[at0001]/events[at0002]"/>
+            <Rule min="1" name="Alder" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+                <constraint xsi:type="tem:durationConstraint">
+                    <pattern>PY</pattern>
+					<includesMaximum>true</includesMaximum>
+					<includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]"/>
+        </Content>
+        <Content archetype_id="openEHR-EHR-EVALUATION.gender.v1" min="1"
+            path="/content" xsi:type="tem:EVALUATION">
+            <Rule max="0" path="/data[at0002]/items[at0022]"/>
+            <Rule min="1" path="/data[at0002]/items[at0026]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::248152002::Female (finding)</includedValues>
+                    <includedValues>SNOMED-CT::248153007::Male (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" name="Kjønn ved fødsel (WHO-skjema)" path="/data[at0002]/items[at0019]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::248152002::Female (finding)</includedValues>
+                    <includedValues>SNOMED-CT::248153007::Male (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0002]/items[at0025]"/>
+            <Rule max="0" path="/data[at0002]/items[at0001]"/>
+            <Rule max="0" path="/data[at0002]/items[at0020]"/>
+            <Rule max="0" path="/data[at0002]/items[at0014]"/>
+            <Rule max="0" path="/protocol[at0003]/items[at0004]"/>
+        </Content>
+        <Content
+            archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
+            concept_name="Spørreskjema for screening av symptomer/sykdomstegn"
+            name="Symptomer" path="/content" xsi:type="tem:OBSERVATION">
+            <Rule max="1" min="1"
+                name="Siste 7 dager før registreringstidspunktet" path="/data[at0001]/events[at0002]"/>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::840544004::Suspected disease caused by severe acute respiratory coronavirus 2 (situation)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" name="Generelle symptomer på COVID-19" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0033</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule name="Hvilken dag fikk du symptomer?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0036]"/>
+            <Rule max="1" min="1" name="Hoste" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::49727002::Cough (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hoste']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Feber" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::386661006::Fever (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Feber']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Sår hals" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Sår hals']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::267102003::Sore throat symptom (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Sår hals']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Sår hals']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Sår hals']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Hodepine" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hodepine']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::25064002::Headache (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hodepine']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hodepine']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Hodepine']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1"
+                name="Tett eller rennende nese" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tett eller rennende nese']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>Tett eller rennende nese</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tett eller rennende nese']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tett eller rennende nese']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tett eller rennende nese']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Muskelsmerter" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Muskelsmerter']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::68962001::Muscle pain (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Muskelsmerter']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Muskelsmerter']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Muskelsmerter']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Tungpustethet" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::267036007::Dyspnea (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tungpustethet']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1"
+                name="Magesmerter/kvalme/diaré" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Magesmerter/kvalme/diaré']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::267045008::Gastrointestinal symptom (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Magesmerter/kvalme/diaré']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Magesmerter/kvalme/diaré']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Magesmerter/kvalme/diaré']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1"
+                name="Tap av smak- eller luktesans" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tap av smak- eller luktesans']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>Tap av smak- eller luktesans</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tap av smak- eller luktesans']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tap av smak- eller luktesans']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Tap av smak- eller luktesans']/items[at0035]"/>
+            <Rule clone="true" max="1" min="1" name="Annet symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom']/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>Andre symptomer</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom']/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom']/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Annet symptom']/items[at0035]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+        </Content>
+        <Content
+            archetype_id="openEHR-EHR-OBSERVATION.covid19_function_status.v0"
+            concept_name="COVID-19 funksjonsstatus" min="1"
+            name="Hvordan er formen din i dag?" path="/content" xsi:type="tem:OBSERVATION">
+            <Rule max="1" min="1" name="Registreringstidspunkt" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+                <constraint xsi:type="tem:ordinalConstraint">
+                    <excludedValues>5|Dead</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]"/>
+        </Content>
+        <Content archetype_id="openEHR-EHR-EVALUATION.health_risk.v1"
+            concept_name="Helserisiko" min="1"
+            name="Hak av om du får behandling for noen av disse sykdommene"
+            path="/content" xsi:type="tem:EVALUATION">
+            <Rule path="/data[at0001]/items[at0002]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>COVID-19 med alvorlig forløp</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" min="1" name="Høyt blodtrykk" path="/data[at0001]/items[at0016]"/>
+            <Rule path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0013]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::38341003::Hypertensive disorder, systemic arterial (disorder)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0017]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0026</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Høyt blodtrykk']/items[at0030]"/>
+            <Rule clone="true" max="1" min="1" name="Hjerte-kar-sykdom" path="/data[at0001]/items[at0016]"/>
+            <Rule path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0013]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::49601007::Disorder of cardiovascular system (disorder)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0017]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0026</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Hjerte-kar-sykdom']/items[at0030]"/>
+            <Rule clone="true" max="1" min="1" name="Lungesykdom" path="/data[at0001]/items[at0016]"/>
+            <Rule path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0013]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::49808004::Old-age (finding)</includedValues>
+                    <includedValues>SNOMED-CT::38341003::Hypertensive disorder, systemic arterial (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::73211009::Diabetes mellitus (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::49601007::Disorder of cardiovascular system (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::195967001::Asthma (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::413839001::Chronic lung disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::363346000::Malignant neoplastic disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::235856003::Disorder of liver (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::90708001::Kidney disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::128283000::Chronic nervous system disorder (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::52448006::Dementia (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::77386006::Pregnant (finding)</includedValues>
+                    <includedValues>SNOMED-CT::370391006::Patient immunosuppressed (finding)</includedValues>
+                    <includedValues>SNOMED-CT::77176002::Smoker (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0017]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0026</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Lungesykdom']/items[at0030]"/>
+            <Rule clone="true" max="1" min="1" name="Kreft" path="/data[at0001]/items[at0016]"/>
+            <Rule path="/data[at0001]/items[at0016, 'Kreft']/items[at0013]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::49808004::Old-age (finding)</includedValues>
+                    <includedValues>SNOMED-CT::38341003::Hypertensive disorder, systemic arterial (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::73211009::Diabetes mellitus (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::49601007::Disorder of cardiovascular system (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::195967001::Asthma (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::413839001::Chronic lung disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::363346000::Malignant neoplastic disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::235856003::Disorder of liver (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::90708001::Kidney disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::128283000::Chronic nervous system disorder (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::52448006::Dementia (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::77386006::Pregnant (finding)</includedValues>
+                    <includedValues>SNOMED-CT::370391006::Patient immunosuppressed (finding)</includedValues>
+                    <includedValues>SNOMED-CT::77176002::Smoker (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/items[at0016, 'Kreft']/items[at0017]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0026</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Kreft']/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Kreft']/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Kreft']/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Kreft']/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Kreft']/items[at0030]"/>
+            <Rule clone="true" max="1" min="1" name="Diabetes" path="/data[at0001]/items[at0016]"/>
+            <Rule path="/data[at0001]/items[at0016, 'Diabetes']/items[at0013]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::49808004::Old-age (finding)</includedValues>
+                    <includedValues>SNOMED-CT::38341003::Hypertensive disorder, systemic arterial (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::73211009::Diabetes mellitus (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::49601007::Disorder of cardiovascular system (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::195967001::Asthma (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::413839001::Chronic lung disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::363346000::Malignant neoplastic disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::235856003::Disorder of liver (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::90708001::Kidney disease (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::128283000::Chronic nervous system disorder (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::52448006::Dementia (disorder)</includedValues>
+                    <includedValues>SNOMED-CT::77386006::Pregnant (finding)</includedValues>
+                    <includedValues>SNOMED-CT::370391006::Patient immunosuppressed (finding)</includedValues>
+                    <includedValues>SNOMED-CT::77176002::Smoker (finding)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule min="1" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0017]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0026</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016, 'Diabetes']/items[at0030]"/>
+            <Rule max="0" path="/data[at0001]/items[at0003]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Text</includedTypes>
+                    <includedTypes>Proportion</includedTypes>
+                    <includedTypes>Quantity</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0020]"/>
+            <Rule max="0" path="/data[at0001]/items[at0023]"/>
+            <Rule max="0" path="/data[at0001]/items[at0004]"/>
+            <Rule max="0" path="/data[at0001]/items[at0015]"/>
+            <Rule max="0" path="/protocol[at0010]/items[at0024]"/>
+            <Rule max="0" path="/protocol[at0010]/items[at0025]"/>
+        </Content>
+        <Content
+            archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
+            concept_name="Spørreskjema for screening av sykdomshåndtering/behandling"
+            name="Behandlings- eller sykdomshåndteringsaktiviteter"
+            path="/content" xsi:type="tem:OBSERVATION">
+            <Rule max="1" min="1"
+                name="Siste 7 dager før registreringstidspunktet" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::840544004::Suspected COVID-19</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" min="1"
+                name="Har du vært i kontakt med lege eller legevakt på grunn av symptomene dine?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>Kontakt med lege eller legevakt</includedValues>
+                </constraint>
+            </Rule>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+        </Content>
+        <Content
+            archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
+            concept_name="Spørreskjema for screening av prosedyrer"
+            name="Har du blitt testet for koronavirus i løpet av denne sykdomsperioden?"
+            path="/content" xsi:type="tem:OBSERVATION">
+            <Rule max="1" min="1" name="Registreringstidspunkt" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::840544004::Suspected COVID-19</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
+            <Rule name="Test for koronavirus" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+            <Items
+                archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+                concept_name="Analyseresultat"
+                name="Hva var svaret på prøven?"
+                path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0036]" xsi:type="tem:CLUSTER">
+                <Rule max="0" path="/items[at0027]"/>
+                <Rule path="/items[at0024]">
+                    <constraint xsi:type="tem:textConstraint">
+                        <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
+                    </constraint>
+                </Rule>
+                <Rule path="/items[at0001]">
+                    <constraint xsi:type="tem:textConstraint">
+                        <includedValues>SNOMED-CT::10828004::Positive (qualifier value)</includedValues>
+                        <includedValues>SNOMED-CT::260385009::Negative (qualifier value)</includedValues>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0004]"/>
+                <Rule max="0" path="/items[at0025]"/>
+                <Rule path="/items[at0005]">
+                    <constraint xsi:type="tem:textConstraint">
+                        <includedValues>Venter på svar</includedValues>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0006]"/>
+                <Rule max="0" path="/items[at0026]">
+                    <constraint xsi:type="tem:multipleConstraint">
+                        <includedTypes>Identifier</includedTypes>
+                        <includedTypes>URI</includedTypes>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0003]"/>
+            </Items>
+        </Content>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-COMPOSITION.encounter.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">6562F732112B8B3F94790E178F4243A5</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.age.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">45882860D5E6A587813BB6BE0B586334</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.gender.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">87DE134B07D1424AFEA02108C51EB661</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">E056AF8C6B22D5FDE66650A0C9211EE6</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.covid19_function_status.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">B6D97C8F88C4EAB04A66F9A10CAA93CF</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.health_risk.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">BDD5038538AB4C56E0D328FDC317B4FB</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">BDC2CC54DB629FA8B093BCD57B7ADF37</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">79BC83C70712E5431C8F012CD399D2B4</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">D2BC56B2DEC2B7DEC35F02B0B32B02A1</digest>
+    </integrity_checks>
+</template>
