@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>a2591264-cf7a-4fa8-98dd-7979f44ba8a7</id>
+    <name>COVID-19 - konsept - Screening for prosedyrer</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-03-31</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere spørreskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode.</purpose>
+            <use>Brukes for å registrere spørreskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode, for eksempel "siste 14 dager".
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Det aktuelle tidspunktet eller -perioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>432dfcc901b957c3989359b80c9b5a06</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>79BC83C70712E5431C8F012CD399D2B4</value>
+            </item>
+        </other_details>
+    </description>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0024]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.code</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0001]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.2, OBX.5, OBX.6, OBX.7, OBX.8</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.value[x]</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0003]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>NTE.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.note</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0006]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.19</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.issued</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0005]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.11</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.status</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0024]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.code</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0001]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.2, OBX.5, OBX.6, OBX.7, OBX.8</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.value[x]</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0005]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.11</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.status</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0006]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.19</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.issued</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0003]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>NTE.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.note</value>
+            </item>
+        </items>
+    </annotations>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
+        concept_name="Spørreskjema for screening av prosedyrer"
+        name="COVID-19 - konsept - Screening for prosedyrer"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule max="1" min="1"
+            name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>SNOMED-CT::840544004::Suspected disease caused by severe acute respiratory coronavirus 2 (situation)</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
+        <Rule name="Spesifikk prosedyre" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
+            </constraint>
+        </Rule>
+        <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+        <Items
+            archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+            path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0036]" xsi:type="tem:CLUSTER">
+            <Rule max="0" path="/items[at0027]"/>
+            <Rule path="/items[at0024]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
+                </constraint>
+            </Rule>
+            <Rule path="/items[at0001]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::10828004::Positive (qualifier value)</includedValues>
+                    <includedValues>SNOMED-CT::260385009::Negative (qualifier value)</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0004]"/>
+            <Rule max="0" path="/items[at0025]"/>
+            <Rule path="/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>Venter på svar</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0006]"/>
+            <Rule max="0" path="/items[at0026]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Identifier</includedTypes>
+                    <includedTypes>URI</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0003]"/>
+        </Items>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">79BC83C70712E5431C8F012CD399D2B4</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">D2BC56B2DEC2B7DEC35F02B0B32B02A1</digest>
+    </integrity_checks>
+</template>
