@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>f39f9187-c40a-43f1-bd84-75b5754ae724</id>
+    <name>Generelt - konsept - Body mass index</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-03-31</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere kroppsmasseindeks (BMI/KMI) uten noen tilhørende kontekstdata.</purpose>
+            <use>Brukes for å registrere kroppsmasseindeks (BMI/KMI) uten noen tilhørende kontekstdata. Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>52a716f76c071272b95849b0bb11644d</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>59b5c6ed2c68e094e4602c8a510225e8</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v2"
+        concept_name="Kroppsmasseindeks"
+        name="Generelt - konsept - Body mass index"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+            <constraint xsi:type="tem:quantityConstraint">
+                <excludedUnits>[lb_av]/[in_i]2</excludedUnits>
+                <unitMagnitude>
+                    <unit>kg/m2</unit>
+                    <maxMagnitude>1000.0</maxMagnitude>
+                    <minMagnitude>0.0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </unitMagnitude>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0012]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/state[at0014]/items[at0011]"/>
+        <Rule max="0" path="/protocol[at0005]/items[at0006]"/>
+        <Rule max="0" path="/protocol[at0005]/items[at0010]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v2"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">45CE9D8573FBB2E4C42423EE2E6573D5</digest>
+    </integrity_checks>
+</template>
