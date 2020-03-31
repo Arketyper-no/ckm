@@ -22,10 +22,7 @@
             </item>
         </original_author>
         <lifecycle_state>in_development</lifecycle_state>
-        <details>
-            <purpose>For selvregistrering ved mistanke om COVID-19, basert på https://minhelse.helsenorge.no/skjemautfyller?Query=Questionnaire/302.</purpose>
-            <use>Brukes for selvregistrering ved mistanke om COVID-19, basert på https://minhelse.helsenorge.no/skjemautfyller?Query=Questionnaire/302.</use>
-        </details>
+        <details/>
         <other_details>
             <item>
                 <key>licence</key>
@@ -41,6 +38,66 @@
             </item>
         </other_details>
     </description>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0024]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.code</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0001]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.2, OBX.5, OBX.6, OBX.7, OBX.8</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.value[x]</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0003]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>NTE.3</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.note</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0006]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.19</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.issued</value>
+            </item>
+        </items>
+    </annotations>
+    <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0005]">
+        <items>
+            <item>
+                <key>hl7v2_mapping</key>
+                <value>OBX.11</value>
+            </item>
+            <item>
+                <key>fhir_mapping</key>
+                <value>Observation.status</value>
+            </item>
+        </items>
+    </annotations>
     <annotations path="[openEHR-EHR-COMPOSITION.encounter.v1]/content[openEHR-EHR-OBSERVATION.procedure_screening.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]/items[at0024]">
         <items>
             <item>
@@ -143,10 +200,10 @@
         <Content
             archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
             concept_name="Spørreskjema for screening av symptomer/sykdomstegn"
-            name="Symptomer" path="/content" xsi:type="tem:OBSERVATION">
+            min="1" name="Symptomer" path="/content" xsi:type="tem:OBSERVATION">
             <Rule max="1" min="1"
                 name="Siste 7 dager før registreringstidspunktet" path="/data[at0001]/events[at0002]"/>
-            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
                 <constraint xsi:type="tem:textConstraint">
                     <includedValues>SNOMED-CT::840544004::Suspected disease caused by severe acute respiratory coronavirus 2 (situation)</includedValues>
                 </constraint>
@@ -411,6 +468,7 @@
         <Content
             archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
             concept_name="Spørreskjema for screening av sykdomshåndtering/behandling"
+            min="1"
             name="Behandlings- eller sykdomshåndteringsaktiviteter"
             path="/content" xsi:type="tem:OBSERVATION">
             <Rule max="1" min="1"
@@ -427,7 +485,7 @@
                     <includedValues>Kontakt med lege eller legevakt</includedValues>
                 </constraint>
             </Rule>
-            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
                 <constraint xsi:type="tem:textConstraint">
                     <excludedValues>local::at0027</excludedValues>
                 </constraint>
@@ -439,6 +497,7 @@
         <Content
             archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
             concept_name="Spørreskjema for screening av prosedyrer"
+            min="1"
             name="Har du blitt testet for koronavirus i løpet av denne sykdomsperioden?"
             path="/content" xsi:type="tem:OBSERVATION">
             <Rule max="1" min="1" name="Registreringstidspunkt" path="/data[at0001]/events[at0002]"/>
@@ -448,12 +507,13 @@
                 </constraint>
             </Rule>
             <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
-            <Rule name="Test for koronavirus" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule max="1" min="1" name="Test for koronavirus" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
             <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
                 <constraint xsi:type="tem:textConstraint">
                     <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
                 </constraint>
             </Rule>
+            <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]"/>
             <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
             <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
             <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
@@ -463,12 +523,12 @@
                 name="Hva var svaret på prøven?"
                 path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0036]" xsi:type="tem:CLUSTER">
                 <Rule max="0" path="/items[at0027]"/>
-                <Rule path="/items[at0024]">
+                <Rule min="1" path="/items[at0024]">
                     <constraint xsi:type="tem:textConstraint">
                         <includedValues>NPU::NPU59097::Us-SARS-CoV-2 RNA</includedValues>
                     </constraint>
                 </Rule>
-                <Rule path="/items[at0001]">
+                <Rule max="1" path="/items[at0001]">
                     <constraint xsi:type="tem:textConstraint">
                         <includedValues>SNOMED-CT::10828004::Positive (qualifier value)</includedValues>
                         <includedValues>SNOMED-CT::260385009::Negative (qualifier value)</includedValues>
