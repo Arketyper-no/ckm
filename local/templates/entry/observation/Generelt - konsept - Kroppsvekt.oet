@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>2ef51d5e-c1d9-41d5-a783-e76f6005bd14</id>
+    <name>Generelt - konsept - Kroppsvekt</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-03-31</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere kroppsvekt uten noen tilhørende kontekstdata.</purpose>
+            <use>Brukes for å registrere kroppsvekt uten noen tilhørende kontekstdata. Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".
+</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>765053860bf7b9214aad9acd4b917f86</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>2A2CD1C7CF7603FA04DCFDF5CE07D7F9</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.body_weight.v2"
+        concept_name="Kroppsvekt" name="Generelt - konsept - Kroppsvekt"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0002]/events[at0003]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at0024]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/state[at0008]/items[at0009]"/>
+        <Rule max="0" path="/data[at0002]/events[at0003]/state[at0008]/items[at0025]"/>
+        <Rule max="0" path="/data[at0002]/events[at0026]"/>
+        <Rule clone="true" name="Simple" path="/data[at0002]/events[at0026]/data[at0001]"/>
+        <Rule max="0" path="/data[at0002]/events[at0026]/data[at0001]/items[at0024]"/>
+        <Rule clone="true" name="state structure" path="/data[at0002]/events[at0026]/state[at0008]"/>
+        <Rule max="0" path="/data[at0002]/events[at0026]/state[at0008]/items[at0009]"/>
+        <Rule max="0" path="/data[at0002]/events[at0026]/state[at0008]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.body_weight.v2"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">2A2CD1C7CF7603FA04DCFDF5CE07D7F9</digest>
+    </integrity_checks>
+</template>
