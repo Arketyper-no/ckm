@@ -6,6 +6,14 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Natalia Strauch">
+				["organisation"] = <"Medizinische Hochschule Hannover">
+				["email"] = <"Strauch.Natalia@mh-hannover.de">
+			>
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
@@ -23,10 +31,20 @@ description
 		["date"] = <"2020-03-13">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Darstellung der Antworten in einem Personen- oder Selbstbeurteilungs-Screening-Fragebogen zur Ermittlung von Zuständen, einschließlich Schwangerschaft.">
+			use = <"Verwenden Sie diesen Archetyp, um die Antworten in einem Personen- oder Selbstbeurteilungs-Screening-Fragebogen zur Ermittlung von Zuständen, einschließlich Schwangerschaft, darzustellen.
+
+Häufige Anwendungsfälle sind unter anderem:
+- Systematische Befragung bei jeder Beratung; oder
+- Spezifische Befragung im Zusammenhang mit der Überwachung von Infektionskrankheiten.">
+			misuse = <"Nicht zu verwenden, um Details zu einem bestimmten gesundheitlichen Zustand im Rahmen einer typischen klinischen Beratung darzustellen. Verwenden Sie dazu EVALUATION.problem_diagnosis.">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere responsen i et individuelt- eller selvrapportert spørreskjema, som screener for tilstander, inkludert graviditet.">
-			use = <"Brukes for å registrere responsen i et individuelt- eller selvrapportert spørreskjema, som screener for tilstander, inkludert graviditet.
+			purpose = <"For å registrere responsen i et individuelt eller selvrapportert registreringsskjema, som screener for tilstander, inkludert graviditet.">
+			use = <"Brukes for å registrere responsen i et individuelt- eller selvrapportert registreringsskjema, som screener for tilstander, inkludert graviditet.
 
 Vanlige bruksområder inkluderer, men er ikke begrenset til:
 - Systematisk spørring i enhver konsultasjon; eller
@@ -52,8 +70,8 @@ Common use cases include, but are not limited to:
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"BA081E8595CC48103505935DD8713373">
-		["build_uid"] = <"1ad5521a-348a-4a53-bcb5-e834c96b1eeb">
+		["MD5-CAM-1.0.1"] = <"AE00B5F1F25177A077D5C9449F118111">
+		["build_uid"] = <"eda1acba-2b38-40ce-ab77-793eb7160734">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -79,7 +97,7 @@ definition
 													[local::
 													at0031,    -- Present
 													at0032,    -- Absent
-													at0033]    -- Indeterminate
+													at0033]    -- Unknown
 												}
 											}
 										}
@@ -98,7 +116,7 @@ definition
 															[local::
 															at0023,    -- Present
 															at0024,    -- Absent
-															at0027]    -- Indeterminate
+															at0027]    -- Unknown
 														}
 													}
 												}
@@ -224,8 +242,8 @@ ontology
 					description = <"Additional structured details related to condition screening.">
 				>
 				["at0027"] = <
-					text = <"Indeterminate">
-					description = <"It is not possible to know if the condition is present or absent.">
+					text = <"Unknown">
+					description = <"It is unknown whether the condition is present or absent.">
 				>
 				["at0028"] = <
 					text = <"Presence of any conditions?">
@@ -245,8 +263,8 @@ ontology
 					description = <"Conditions are not present.">
 				>
 				["at0033"] = <
-					text = <"Indeterminate">
-					description = <"It is not possible to know if any conditions are present or absent.">
+					text = <"Unknown">
+					description = <"It is unknown whether any conditions are present or absent.">
 				>
 				["at0034"] = <
 					text = <"Screening purpose">
@@ -279,8 +297,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Spørreskjema for screening av tilstander">
-					description = <"Et individuelt eller selvrapportert spørreskjema for screening av tilstander, inkludert problemer, diagnoser og graviditet.">
+					text = <"Registreringsskjema for registrering av tilstander">
+					description = <"Et individuelt eller selvrapportert registreringsskjema for registrering av tilstander, inkludert problemer, diagnoser og graviditet.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -296,7 +314,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Navn på tilstand">
-					description = <"Navnet på tilstanden som blir screenet.">
+					description = <"Navnet på tilstanden som blir registrert.">
 				>
 				["at0005"] = <
 					text = <"Tilstede?">
@@ -304,7 +322,7 @@ ontology
 				>
 				["at0006"] = <
 					text = <"Debut">
-					description = <"Datoen / klokkeslettet da tilstanden først ble lagt merke til av den enkelte eller diagnostisert av en kliniker.">
+					description = <"Datoen/klokkeslettet da tilstanden først ble lagt merke til av den enkelte eller diagnostisert av en kliniker.">
 					comment = <"Delvis dato er tillatt.">
 				>
 				["at0007"] = <
@@ -318,7 +336,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"Spesifikk tilstand">
-					description = <"Gruppering av dataelementer relatert til screeningen for en enkel tilstand.">
+					description = <"Gruppering av dataelementer relatert til registreringen for en enkel tilstand.">
 				>
 				["at0023"] = <
 					text = <"Tilstede">
@@ -334,11 +352,11 @@ ontology
 				>
 				["at0026"] = <
 					text = <"Ytterligere detaljer">
-					description = <"Ytterlige strukturerte detaljer relatert til tilstands-screening.">
+					description = <"Ytterlige strukturerte detaljer relatert til tilstandsregistreringen.">
 				>
 				["at0027"] = <
-					text = <"Ubestemmelig">
-					description = <"Det er ikke mulig å vite om tilstanden er tilstede eller fraværende.">
+					text = <"Ukjent">
+					description = <"Det er ukjent om tilstanden er tilstede eller fraværende.">
 				>
 				["at0028"] = <
 					text = <"Er det noen tilstander tilstede?">
@@ -346,7 +364,7 @@ ontology
 				>
 				["at0029"] = <
 					text = <"Tidspunkt i svangerskap">
-					description = <"Dato / klokkeslett da tilstandene først ble lagt merke til.">
+					description = <"Dato/klokkeslett da tilstandene først ble lagt merke til.">
 					comment = <"Delvis dato er tillatt.">
 				>
 				["at0031"] = <
@@ -358,12 +376,12 @@ ontology
 					description = <"Tilstander er ikke tilstede.">
 				>
 				["at0033"] = <
-					text = <"Ubestemmelig">
-					description = <"Det er ikke mulig å vite om noen tilstander er tilstede eller fraværende.">
+					text = <"Ukjent">
+					description = <"Det er ukjent om noen tilstander er tilstede eller fraværende.">
 				>
 				["at0034"] = <
-					text = <"Formål med screeningen">
-					description = <"Årsaken til generell screening.">
+					text = <"Registreringsformål">
+					description = <"Årsaken til registreringen.">
 					comment = <"For eksempel: Pre-operativ screening.">
 				>
 				["at0035"] = <
@@ -389,16 +407,129 @@ ontology
 				>
 			>
 		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Screening-Fragebogen zur Ermittlung von Zuständen">
+					description = <"Ein Personen- oder Selbstbeurteilungs-Screening-Fragebogen zur Ermittlung von Zuständen, einschließlich Problemen, Diagnosen und Schwangerschaft.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Beliebiges Ereignis">
+					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Name des Zustands">
+					description = <"Name des geprüften Zustands.">
+				>
+				["at0005"] = <
+					text = <"Vorhanden?">
+					description = <"Vorhandensein des Zustands.">
+				>
+				["at0006"] = <
+					text = <"Beginn">
+					description = <"Das Datum / die Uhrzeit, wann der Zustand zum ersten Mal von der Person bemerkt oder von einem Arzt diagnostiziert wurde.">
+					comment = <"Erlaubt sind Angaben als Teildatum.">
+				>
+				["at0007"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
+					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
+				>
+				["at0022"] = <
+					text = <"Bestimmter Zustand">
+					description = <"Gruppierung von Datenelementen bezogen auf Screening auf einen einzelnen Zustand.">
+				>
+				["at0023"] = <
+					text = <"Vorhanden">
+					description = <"Der spezifische Zustand ist vorhanden.">
+				>
+				["at0024"] = <
+					text = <"Nicht vorhanden">
+					description = <"Der spezifische Zustand ist nicht vorhanden.">
+				>
+				["at0025"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Beschreibungen über die Zustände, die in anderen Bereichen nicht erfasst wurden.">
+				>
+				["at0026"] = <
+					text = <"Zusätzliche Angaben">
+					description = <"Zusätzliche strukturierte Informationen zum Screening.">
+				>
+				["at0027"] = <
+					text = <"*Unknown(en)">
+					description = <"*It is unknown whether the management activity was carried out.(en)">
+				>
+				["at0028"] = <
+					text = <"Vorhandensein von Zuständen?">
+					description = <"Vorhandensein relevanter Zustände.">
+				>
+				["at0029"] = <
+					text = <"Zeit der Schwangerschaft">
+					description = <"Das Datum / die Uhrzeit, wann der Zustand zum ersten Mal festgestellt wurde.">
+					comment = <"Erlaubt sind Angaben als Teildatum.">
+				>
+				["at0031"] = <
+					text = <"Vorhanden">
+					description = <"Zustände sind vorhanden.">
+				>
+				["at0032"] = <
+					text = <"Nicht vorhanden">
+					description = <"Keine Zustände sind vorhanden.">
+				>
+				["at0033"] = <
+					text = <"*Unknown(en)">
+					description = <"*It is unknown whether the management activity was carried out.(en)">
+				>
+				["at0034"] = <
+					text = <"Zweck des Screenings">
+					description = <"Der Grund für das gesamte Screening.">
+					comment = <"Zum Beispiel: präoperatives Screening.">
+				>
+				["at0035"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Beschreibungen des spezifischen Zustands, die nicht in anderen Bereichen dargestellt wurden.">
+				>
+				["at0036"] = <
+					text = <"Erster Trimester">
+					description = <"Zwischen dem ersten Tag der letzten Periode und dem Ende der 12. Woche.">
+				>
+				["at0037"] = <
+					text = <"Zweiter Trimester">
+					description = <"Zwischen 13. und 28. Woche.">
+				>
+				["at0038"] = <
+					text = <"Dtritter Trimester">
+					description = <"Nach der 28. Woche.">
+				>
+				["at0039"] = <
+					text = <"Zusätzliche Angaben">
+					description = <"Zusätzliche Details zum spezifischen Zustand.">
+					comment = <"Zum Beispiel: Klinische Evidenz oder eine krankheitsspezifische Bewertungsskala.">
+				>
+			>
+		>
 	>
 	term_bindings = <
 		["SNOMED-CT"] = <
 			items = <
-				["at0023"] = <[SNOMED-CT::52101004]>
-				["at0024"] = <[SNOMED-CT::2667000]>
-				["at0031"] = <[SNOMED-CT::52101004]>
-				["at0032"] = <[SNOMED-CT::2667000]>
-				["at0033"] = <[SNOMED-CT::82334004]>
-				["at0027"] = <[SNOMED-CT::82334004]>
+				["at0023"] = <[SNOMED-CT::410515003]>
+				["at0024"] = <[SNOMED-CT::410516002]>
+				["at0031"] = <[SNOMED-CT::410515003]>
+				["at0032"] = <[SNOMED-CT::410516002]>
+				["at0027"] = <[SNOMED-CT::261665006]>
+				["at0033"] = <[SNOMED-CT::261665006]>
 			>
 		>
 	>
