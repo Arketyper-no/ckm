@@ -26,7 +26,9 @@
             <purpose>For å registrere oppfølgingsinformasjon om symptomer på COVID-19.</purpose>
             <use>Brukes for å registrere oppfølgingsinformasjon om symptomer på COVID-19.
 
-Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". 
+
+Aktuelt verdisett til dette konseptet kan finnes her: https://openehr.atlassian.net/wiki/spaces/KLIM/pages/608633456/Symptomer%2Bp%2BCOVID-19.
 
 Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
             <misuse>Brukes ikke for å registrere spørreskjema-lignende informasjon om tilstedeværelse eller fravær av symptomer. Bruk konseptet "COVID-19 - konsept - Symptomscreening" for dette formålet.</misuse>
@@ -38,7 +40,7 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>e0b408d7da8c758f7291d9c10410ef3b</value>
+                <value>f4ed1e5385d443c8fbb80260143ccd6e</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
@@ -57,24 +59,6 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
         <Items archetype_id="openEHR-EHR-CLUSTER.symptom_sign.v1"
             concept_name="Symptom/Sykdomstegn" name="Symptom"
             path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" xsi:type="tem:CLUSTER">
-            <Rule path="/items[at0001]">
-                <constraint xsi:type="tem:textConstraint">
-                    <includedValues>SNOMED-CT::386661006::Fever (finding)</includedValues>
-                    <includedValues>SNOMED-CT::40917007::Clouded consciousness (finding)</includedValues>
-                    <includedValues>SNOMED-CT::25064002::Headache (finding)</includedValues>
-                    <includedValues>SNOMED-CT::49727002::Cough (finding)</includedValues>
-                    <includedValues>SNOMED-CT::267045008::Gastrointestinal symptom (finding)</includedValues>
-                    <includedValues>SNOMED-CT::68962001::Muscle pain (finding)</includedValues>
-                    <includedValues>SNOMED-CT::64531003::Nasal discharge (finding)</includedValues>
-                    <includedValues>SNOMED-CT::267102003::Sore throat symptom (finding)</includedValues>
-                    <includedValues>SNOMED-CT::44169009::Loss of sense of smell (finding)</includedValues>
-                    <includedValues>SNOMED-CT::36955009::Loss of taste (finding)</includedValues>
-                    <includedValues>SNOMED-CT::68235000::Nasal congestion (finding)</includedValues>
-                    <includedValues>SNOMED-CT::84229001::Fatigue (finding)</includedValues>
-                    <includedValues>SNOMED-CT::23924001::Tight chest (finding)</includedValues>
-                    <includedValues>SNOMED-CT::267036007::Dyspnea (finding)</includedValues>
-                </constraint>
-            </Rule>
             <Rule max="0" path="/items[at0035]"/>
             <Rule max="0" path="/items[at0151]"/>
             <Rule max="0" path="/items[at0002]"/>
@@ -82,7 +66,12 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
             <Rule name="Debut dato" path="/items[at0152]"/>
             <Rule max="0" path="/items[at0164]"/>
             <Rule max="0" path="/items[at0028]"/>
-            <Rule name="Alvorlighetsgrad" path="/items[at0021]"/>
+            <Rule name="Alvorlighetsgrad" path="/items[at0021]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Coded_text</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
             <Rule max="0" path="/items[at0026]">
                 <constraint xsi:type="tem:quantityConstraint">
                     <unitMagnitude>
