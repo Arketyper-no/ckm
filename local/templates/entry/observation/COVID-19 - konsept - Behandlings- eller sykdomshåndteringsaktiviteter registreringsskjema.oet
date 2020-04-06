@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template xmlns="openEHR/v1/Template">
     <id>4b0c218c-8c86-4e61-b7b6-6f47305967bd</id>
-    <name>COVID-19 - konsept - Screening av behandlings- eller sykdomshåndteringsaktiviteter</name>
+    <name>COVID-19 - konsept - Behandlings- eller sykdomshåndteringsaktiviteter registreringsskjema</name>
     <description>
         <original_author>
             <item>
@@ -28,6 +28,8 @@
 
 Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
 
+Aktuelt verdisett til dette konseptet kan finnes her: https://openehr.atlassian.net/wiki/spaces/KLIM/pages/627507346/Behandlings-+eller+sykdomsaktiviteter
+
 Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
             <misuse>Brukes ikke for å registrere detaljer om behandlings- eller sykdomshåndteringsaktivitetene.</misuse>
         </details>
@@ -38,18 +40,18 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>31e372a0121089a78eb86bd4ce1d56c1</value>
+                <value>8e0f638263b217eb67ec2f8e9177d7dc</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
-                <value>4AE7C3ADC11ABD061032C2FA965058BA</value>
+                <value>ABBE531593C45333A22C747FF096D2F5</value>
             </item>
         </other_details>
     </description>
     <definition
         archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
-        concept_name="Spørreskjema for screening av sykdomshåndtering/behandling"
-        name="COVID-19 - konsept - Screening av behandlings- eller sykdomshåndteringsaktiviteter"
+        concept_name="Registreringsskjema for sykdomshåndtering/behandling"
+        name="COVID-19 - konsept - Behandlings- eller sykdomshåndteringsaktiviteter registreringsskjema"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule name="Tidspunkt eller tidsperiode for registreringen" path="/data[at0001]/events[at0002]"/>
@@ -58,16 +60,7 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
                 <includedValues>SNOMED-CT::840544004::Suspected COVID-19</includedValues>
             </constraint>
         </Rule>
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
-            <constraint xsi:type="tem:textConstraint">
-                <includedValues>Kontakt med lege eller legevakt</includedValues>
-                <includedValues>Innlagt på sykehus</includedValues>
-                <includedValues>Respiratorbehandling</includedValues>
-                <includedValues>Ventilasjonsstøtte</includedValues>
-                <includedValues>Isolering</includedValues>
-                <includedValues>Karantene</includedValues>
-            </constraint>
-        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
     </definition>
@@ -75,6 +68,6 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
         archetype_id="openEHR-EHR-OBSERVATION.management_screening.v0"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">BDC2CC54DB629FA8B093BCD57B7ADF37</digest>
+        <digest id="MD5-CAM-1.0.1">ABBE531593C45333A22C747FF096D2F5</digest>
     </integrity_checks>
 </template>
