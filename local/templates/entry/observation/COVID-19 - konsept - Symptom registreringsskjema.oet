@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template xmlns="openEHR/v1/Template">
     <id>c42d2f0e-db5c-4c9d-8444-111e6f271243</id>
-    <name>COVID-19 - konsept - Symptomscreening</name>
+    <name>COVID-19 - konsept - Symptom registreringsskjema</name>
     <description>
         <original_author>
             <item>
@@ -26,7 +26,11 @@
             <purpose>For screening av symptomer på COVID-19 på et spesifikt tidspunkt eller i løpet av en spesifikk tidsperiode.</purpose>
             <use>Brukes for screening av symptomer på COVID-19 på et spesifikt tidspunkt eller i løpet av en spesifikk tidsperiode.
 
-Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". 
+
+Aktuelt verdisett til dette konseptet kan finnes her: https://openehr.atlassian.net/wiki/spaces/KLIM/pages/608633456/Symptomer%2Bp%2BCOVID-19. 
+
+For et eksempel på hvordan dette konseptet kan brukes i et ferdig datasett, se dette eksempeltemplatet: COVID-19 - eksempel - Symptomscreening https://arketyper.no/ckm/templates/1078.60.849
 
 Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
             <misuse>Brukes ikke til oppfølging av identifiserte symptomer. Bruk konseptet "COVID-19 - konsept - Symptomoppfølging" for dette formålet.</misuse>
@@ -38,18 +42,18 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>a13890d69460f7c1cb19db1bf229aee8</value>
+                <value>e359e4cd49e99e5d860e50fbb03c55fc</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
-                <value>E056AF8C6B22D5FDE66650A0C9211EE6</value>
+                <value>1B8C187EF38B82E5272FE304A4B185DB</value>
             </item>
         </other_details>
     </description>
     <definition
         archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
-        concept_name="Spørreskjema for screening av symptomer/sykdomstegn"
-        name="COVID-19 - konsept - Symptomscreening"
+        concept_name="Registreringsskjema for screening av symptomer/sykdomstegn"
+        name="COVID-19 - konsept - Symptom registreringsskjema"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule max="1" min="1"
@@ -67,29 +71,13 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
         <Rule name="Debut av første symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0029]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0036]"/>
         <Rule name="Spesifikt symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
-        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
-            <constraint xsi:type="tem:textConstraint">
-                <includedValues>SNOMED-CT::386661006::Fever (finding)</includedValues>
-                <includedValues>SNOMED-CT::40917007::Clouded consciousness (finding)</includedValues>
-                <includedValues>SNOMED-CT::25064002::Headache (finding)</includedValues>
-                <includedValues>SNOMED-CT::49727002::Cough (finding)</includedValues>
-                <includedValues>SNOMED-CT::267045008::Gastrointestinal symptom (finding)</includedValues>
-                <includedValues>SNOMED-CT::68962001::Muscle pain (finding)</includedValues>
-                <includedValues>SNOMED-CT::64531003::Nasal discharge (finding)</includedValues>
-                <includedValues>SNOMED-CT::267102003::Sore throat symptom (finding)</includedValues>
-                <includedValues>SNOMED-CT::44169009::Loss of sense of smell (finding)</includedValues>
-                <includedValues>SNOMED-CT::36955009::Loss of taste (finding)</includedValues>
-                <includedValues>SNOMED-CT::68235000::Nasal congestion (finding)</includedValues>
-                <includedValues>SNOMED-CT::84229001::Fatigue (finding)</includedValues>
-                <includedValues>SNOMED-CT::23924001::Tight chest (finding)</includedValues>
-                <includedValues>SNOMED-CT::267036007::Dyspnea (finding)</includedValues>
-            </constraint>
-        </Rule>
+        <Rule name="Symptom" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]"/>
         <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
             <constraint xsi:type="tem:textConstraint">
                 <excludedValues>local::at0027</excludedValues>
             </constraint>
         </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
     </definition>
@@ -97,6 +85,6 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
         archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">E056AF8C6B22D5FDE66650A0C9211EE6</digest>
+        <digest id="MD5-CAM-1.0.1">1B8C187EF38B82E5272FE304A4B185DB</digest>
     </integrity_checks>
 </template>
