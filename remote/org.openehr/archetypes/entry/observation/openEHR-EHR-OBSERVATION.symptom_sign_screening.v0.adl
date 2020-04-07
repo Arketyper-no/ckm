@@ -22,9 +22,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Marit Alice Venheim">
-				["organisation"] = <"Helse Vest IKT">
-				["email"] = <"marit.alice.venheim@helse-vest-ikt.no">
+				["name"] = <"Marit Alice Venheim, Silje Ljosland Bakke">
+				["organisation"] = <"Helse Vest IKT, Helse Vest IKT AS">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no, silje.ljosland.bakke@helse-vest-ikt.no">
 			>
 		>
 	>
@@ -38,13 +38,15 @@ description
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
-			purpose = <"Zur Repräsentation der Antworten auf einen Fragebogen, der von einer Person ausgefüllt wurde. Hierbei werden die Symptome und Krankheitsanzeichen ermittelt.">
-			use = <"Zur Repräsentation der Antworten auf einen Fragebogen, der von einer Person ausgefüllt wurde. Hierbei werden die Symptome und Krankheitsanzeichen ermittelt.
+			purpose = <"Zur Repräsentation der Antworten auf einen Fragebogen, der von einer Person ausgefüllt wurde. Hierbei werden die Symptome und Anzeichen abgefragt.">
+			use = <"Zur Repräsentation der Antworten auf einen Fragebogen, der von einer Person ausgefüllt wurde. Hierbei werden die Symptome und Anzeichen abgefragt.
+
+Wenn zusätzliche Informationen zu einem bestimmten Symptom dargestellt werden müssen, verwenden Sie den Archetyp CLUSTER.symptom_sign, der im SLOT \"Detaillierte Angaben zum Symptom/Anzeichen\" verschachtelt ist.
 
 Zu den häufigen Anwendungsfällen gehören u.a., aber nicht ausschließlich:
 - Systematische Befragung bei jeder Konsultation; oder
 - Spezifische Befragung im Zusammenhang mit der Überwachung von Infektionskrankheiten.">
-			misuse = <"Nicht zur Repräsentation von detaillierten Angaben zu einem bestimmten berichteten Symptom oder Krankheitsanzeichen als Teil einer normalen klinischen Beratung verwenden. Hierfür verwenden Sie den Archetyp CLUSTER.symptom_sign.">
+			misuse = <"">
 		>
 		["fi"] = <
 			language = <[ISO_639-1::fi]>
@@ -54,29 +56,30 @@ Zu den häufigen Anwendungsfällen gehören u.a., aber nicht ausschließlich:
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation; or
 - Specific questioning related to infectious disease surveillance.(en)">
-			misuse = <"*Not to be used to record details about a specific reported symptom or sign as part of a typical clinical consultation. Use CLUSTER.symptom_sign for this purpose.(en)">
+			misuse = <"">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere responsen i et individuelt- eller selvrapportert registreringsskjema som screener for symptomer og tegn.
-">
-			use = <"Brukes for å registrere responsen i et individuelt- eller selvrapportert registreringsskjema som screener for symptomer og tegn.
+			purpose = <"For å registrere responsen i et individuelt- eller selvrapportert spørreskjema om symptomer og sykdomstegn.">
+			use = <"Brukes for å registrere responsen i et individuelt- eller selvrapportert spørreskjema om symptomer og sykdomstegn.
 
 Vanlige bruksområder inkluderer, men er ikke begrenset til:
 - Systematisk spørring i enhver konsultasjon; eller
 - Spesifikk spørring relatert til overvåkning av infeksjonssykdom.
 ">
-			misuse = <"Skal ikke brukes for å registrere spesifikke detaljer om en tilstand som en del av en typisk klinisk konsultasjon. Bruk CLUSTER.symptom_sign for dette formålet.">
+			misuse = <"">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the responses to an individual- or self-reported questionnaire screening for symptoms and signs.">
 			use = <"Use to record the responses to an individual- or self-reported questionnaire screening for symptoms and signs.
 
+If additional details about a specific symptom need to be recorded, then use the CLUSTER.symptom_sign archetype nested within the 'Symptom/sign details' SLOT.
+
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation; or
 - Specific questioning related to infectious disease surveillance.">
-			misuse = <"Not to be used to record details about a specific reported symptom or sign as part of a typical clinical consultation. Use CLUSTER.symptom_sign for this purpose.">
+			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
@@ -87,8 +90,8 @@ Common use cases include, but are not limited to:
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1B8C187EF38B82E5272FE304A4B185DB">
-		["build_uid"] = <"f68e1f2f-0629-41e7-9c30-cd887f35325e">
+		["MD5-CAM-1.0.1"] = <"DB486A1103FFF766D829D463A91B1133">
+		["build_uid"] = <"143492af-f669-471e-99c6-1a1d4aa15061">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -148,10 +151,9 @@ definition
 													}
 												}
 											}
-											ELEMENT[at0006] occurrences matches {0..1} matches {    -- Onset
-												value matches {
-													DV_DATE_TIME matches {*}
-												}
+											allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Symptom/sign details
+												include
+													archetype_id/value matches {/openEHR-EHR-CLUSTER\.symptom_sign(-[a-zA-Z0-9_]+)*\.v1/}
 											}
 											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Comment
 												value matches {
@@ -160,11 +162,7 @@ definition
 											}
 										}
 									}
-									allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Additional details
-										include
-											archetype_id/value matches {/.*/}
-									}
-									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Comment
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Overall comment
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -217,11 +215,6 @@ ontology
 					text = <"Presence?">
 					description = <"Presence of the symptom or sign.">
 				>
-				["at0006"] = <
-					text = <"Onset">
-					description = <"The date/time when the symptom or sign was first noticed.">
-					comment = <"Partial dates are allowed.">
-				>
 				["at0007"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
@@ -244,20 +237,20 @@ ontology
 					description = <"The specific symptom or sign is not present.">
 				>
 				["at0025"] = <
-					text = <"Comment">
+					text = <"Overall comment">
 					description = <"Additional narrative about the symptoms and signs, not captured in other fields.">
 				>
 				["at0026"] = <
-					text = <"Additional details">
-					description = <"Additional structured details related to symptom screening.">
+					text = <"Symptom/sign details">
+					description = <"Additional structured details related to a specific symptom or sign.">
 				>
 				["at0027"] = <
 					text = <"Unknown">
-					description = <"It is unknown whether the symptom or sign is present or absent.">
+					description = <"It is not known whether the symptom or sign is present or absent.">
 				>
 				["at0028"] = <
 					text = <"Presence of any symptoms or signs?">
-					description = <"Presence of the any relevant symptoms or signs.">
+					description = <"Presence of any relevant symptoms or signs.">
 				>
 				["at0029"] = <
 					text = <"Onset of any symptoms or signs">
@@ -274,7 +267,7 @@ ontology
 				>
 				["at0033"] = <
 					text = <"Unknown">
-					description = <"It is unknown whether any symptoms or signs are present or absent.">
+					description = <"It is not known whether any symptoms or signs are present or absent.">
 				>
 				["at0034"] = <
 					text = <"Screening purpose">
@@ -317,11 +310,6 @@ ontology
 					text = <"Olemassalolo">
 					description = <"Oireen tai tuntemuksen olemassaolo">
 				>
-				["at0006"] = <
-					text = <"Toteamisen ajankohta">
-					description = <"Aika jolloin oire on ensimmäisen kerran havaittu">
-					comment = <"*Partial dates are allowed.(en)">
-				>
 				["at0007"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
@@ -344,12 +332,12 @@ ontology
 					description = <"Yksilöityä oiretta ei ole havaittavissa / olemassa">
 				>
 				["at0025"] = <
-					text = <"Kommentit">
+					text = <"*Overall comment (en)">
 					description = <"Lisätietoa tarkentamaan oireita tai tuntemuksia.">
 				>
 				["at0026"] = <
-					text = <"Lisätietoa">
-					description = <"Oireiden seulontaan liittyvät muut jäsennellyt yksityiskohdat.">
+					text = <"*Symptom/sign details (en)">
+					description = <"*Additional structured details related to a specific symptom or sign. (en)">
 				>
 				["at0027"] = <
 					text = <"Unknown">
@@ -357,7 +345,7 @@ ontology
 				>
 				["at0028"] = <
 					text = <"Oireen tai tuntemuksen olemassaolo">
-					description = <"Oireiden tai tuntemuksien vahva näyttö">
+					description = <"*Presence of any relevant symptoms or signs. (en)">
 				>
 				["at0029"] = <
 					text = <"Toteamisen ajankohta">
@@ -394,8 +382,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Registreringsskjema for screening av symptomer/sykdomstegn">
-					description = <"Et individuelt eller selvrapportert registreringsskjema for screening av symptomer og tegn.">
+					text = <"Spørreskjema for symptomer/sykdomstegn">
+					description = <"Et individuelt- eller selvrapportert spørreskjema om symptomer og sykdomstegn.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -416,11 +404,6 @@ ontology
 				["at0005"] = <
 					text = <"Tilstede?">
 					description = <"Tilstedeværelse av symptom eller tegn.">
-				>
-				["at0006"] = <
-					text = <"Debut">
-					description = <"Dato/klokkeslett for når symptomet eller tegnet ble oppdaget første gang.">
-					comment = <"Delvis dato er tillatt.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -449,7 +432,7 @@ ontology
 				>
 				["at0026"] = <
 					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer relatert til symptom registreringen.">
+					description = <"Ytterligere strukturerte detaljer relatert til et spesifikt symptom eller sykdomstegn.">
 				>
 				["at0027"] = <
 					text = <"Ukjent">
@@ -457,7 +440,7 @@ ontology
 				>
 				["at0028"] = <
 					text = <"Tilstedeværelse av noen symptomer/sykdomstegn?">
-					description = <"Tilstedeværelse av relevante symptomer/sykdomstegn.">
+					description = <"Tilstedeværelse av noen relevante symptomer eller sykdomstegn.">
 				>
 				["at0029"] = <
 					text = <"Debut av noen symptomer/sykdomstegn">
@@ -494,8 +477,8 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Screening-Fragebogen zur Symptomen/Krankheitsanzeichen">
-					description = <"Ein Personen- oder Selbstbeurteilungs-Screening-Fragebogen zur Ermittlung von Symptomen und Krankheitsanzeichen.">
+					text = <"Screening-Fragebogen zur Symptomen/Anzeichen">
+					description = <"Ein Personen- oder Selbstbeurteilungs-Screening-Fragebogen zur Ermittlung von Symptomen und Anzeichen.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -510,17 +493,12 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Bezeichnung des Symptoms oder Krankheitsanzeichens.">
-					description = <"Name des Symptoms oder Krankheitsanzeichens, das geprüft wird.">
+					text = <"Bezeichnung des Symptoms oder Anzeichens.">
+					description = <"Name des Symptoms oder Anzeichens, das geprüft wird.">
 				>
 				["at0005"] = <
 					text = <"Vorhanden?">
-					description = <"Das Symptom oder Krankheitsanzeichen ist vorhanden.">
-				>
-				["at0006"] = <
-					text = <"Beginn">
-					description = <"Datum/Uhrzeit, wann das Symptome oder Krankheitsanzeichen zum ersten Mal bemerkt wurde.">
-					comment = <"Erlaubt sind Angaben als Teildatum.">
+					description = <"Das Symptom oder Anzeichen ist vorhanden.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -532,49 +510,49 @@ ontology
 					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
 				>
 				["at0022"] = <
-					text = <"Spezifisches Symptom/Krankheitsanzeichen">
-					description = <"Gruppierung von Datenelementen bezogen auf Screening auf ein einzelnes Symptom oder Krankheitsanzeichen.">
+					text = <"Spezifisches Symptom/Anzeichen">
+					description = <"Gruppierung von Datenelementen bezogen auf Screening auf ein einzelnes Symptom oder Anzeichen.">
 				>
 				["at0023"] = <
 					text = <"Vorhanden">
-					description = <"Das spezifische Symptom oder Krankheitsanzeichen ist vorhanden.">
+					description = <"Das spezifische Symptom oder Anzeichen ist vorhanden.">
 				>
 				["at0024"] = <
 					text = <"Nicht vorhanden">
-					description = <"Das spezifische Symptom oder Krankheitsanzeichen ist nicht vorhanden.">
+					description = <"Das spezifische Symptom oder Anzeichen ist nicht vorhanden.">
 				>
 				["at0025"] = <
-					text = <"Kommentar">
-					description = <"Zusätzliche Beschreibungen über die Symptome oder Krankheitsanzeichen, die in anderen Bereichen nicht erfasst wurden.">
+					text = <"Allgemeiner Kommentar">
+					description = <"Zusätzliche Beschreibungen über die Symptome oder Anzeichen, die nicht in anderen Bereichen dargestellt wurden.">
 				>
 				["at0026"] = <
-					text = <"Zusätzliche Angaben">
-					description = <"Zusätzliche strukturierte Informationen zum Screening auf Symptome.">
+					text = <"Detaillierte Angaben zum Symptom/Anzeichen">
+					description = <"Zusätzliche strukturierte Informationen zu einem bestimmten Symptom oder Anzeichen.">
 				>
 				["at0027"] = <
-					text = <"Unknown">
-					description = <"*It is unknown whether any symptoms or signs are present or absent.(en)">
+					text = <"Unbekannt">
+					description = <"Es ist nicht bekannt, ob das Symptom oder Anzeichen vorhanden ist oder nicht.">
 				>
 				["at0028"] = <
-					text = <"Sind Symptome oder Krankheitsanzeichen vorhanden?">
-					description = <"Vorhandensein relevanter Symptome oder Krankheitsanzeichen.">
+					text = <"Sind Symptome oder Anzeichen vorhanden?">
+					description = <"Vorhandensein relevanter Symptome oder Anzeichen.">
 				>
 				["at0029"] = <
-					text = <"Auftreten von Symptomen oder Krankheitsanzeichen">
-					description = <"Datum/Uhrzeit, wann die ersten Symptome oder Krankheitsanzeichen bemerkt wurden.">
+					text = <"Auftreten von Symptomen oder Anzeichen">
+					description = <"Datum/Uhrzeit, wann die ersten Symptome oder Anzeichen bemerkt wurden.">
 					comment = <"Erlaubt sind Angaben als Teildatum.">
 				>
 				["at0031"] = <
 					text = <"Vorhanden">
-					description = <"Symptome oder Krankheitsanzeichen sind vorhanden.">
+					description = <"Symptome oder Anzeichen sind vorhanden.">
 				>
 				["at0032"] = <
 					text = <"Nicht vorhanden">
-					description = <"Keine Symptome oder Krankheitsanzeichen sind vorhanden.">
+					description = <"Keine Symptome oder Anzeichen sind vorhanden.">
 				>
 				["at0033"] = <
-					text = <"Unknown">
-					description = <"*It is unknown whether any symptoms or signs are present or absent.(en)">
+					text = <"Unbekannt">
+					description = <"Es ist nicht bekannt, ob Symptome oder Anzeichen vorhanden sind oder nicht.">
 				>
 				["at0034"] = <
 					text = <"Zweck des Screenings">
@@ -583,11 +561,11 @@ ontology
 				>
 				["at0035"] = <
 					text = <"Kommentar">
-					description = <"Zusätzliche Informationen über das spezifische Symptom oder Krankheitsanzeichen, die nicht in anderen Bereichen dargestellt wurden.">
+					description = <"Zusätzliche Informationen über das spezifische Symptom oder Anzeichen, die nicht in anderen Bereichen dargestellt wurden.">
 				>
 				["at0036"] = <
 					text = <"Beschreibung">
-					description = <"Beschreibung aller Symptome oder Krankheitsanzeichen.">
+					description = <"Beschreibung aller Symptome oder Anzeichen.">
 				>
 			>
 		>
