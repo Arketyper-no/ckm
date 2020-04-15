@@ -21,13 +21,13 @@ description
 			keywords = <"Varsling", "triage", "ONEWS", "forverring", "graviditet", "fødsel", "preeklampsi", "risikovurdering", "svangerskap", "barsel", "komplikasjon", "NEWS", "gravid", "sepsis", "skåring", "scoring", "HELLP">
 			misuse = <"Anvendes ikke for registering av hvert enkelt fysiologisk parameter eller klinisk observasjon. Bruk spesifikke OBSERVATION-arketyper for dette formål – OBSERVATION.blood_pressure (Blodtrykk), OBSERVATION.pulse (Puls/hjertefrekvens), OBSERVATION.respirations (Åndedrett), OBSERVATION.body_temperature (Kroppstemperatur), OBSERVATION.avpu-and_confusion, CLUSTER.ambient_oxygen (Innåndet oksygen) og OBSERVATION.indirect_oximetry (Pulsoksymetri).
 
-Benyttes ikke før svangerskapsstart og etter seks uker postpartum. Bruk egen arketype for dette formålet, for eksempel OBSERVATION.news (NEWS).
+Benyttes ikke før svangerskapsstart og etter seks uker postpartum. Bruk egen arketype for dette formålet, for eksempel OBSERVATION.news2 (NEWS2 Skår).
 
 Benyttes ikke i aktiv fødsel.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"published">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Einar Engtrø, DIPS AS, Norway", "Peter Fedorcsak, Oslo universitetssykehus, Norway", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Anne Hedvig Mellbye Pfeffer, OUS, Norway", "Tove Stenquist, Helseforetak, Norway", "Trine Strand, Oslo Universitetssykehus (OUS), Norway", "Chen Sun, Haukeland universitetssykehus, Norway", "Micaela Thierley, Helse Bergen/Haraldsplass sykehus, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ørjan Vermeer, Haukeland Universitetssjukehus, Kvinneklinikken, Norway", "Eva Øverland, Kvinneklinikken, Ahus, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -54,82 +54,82 @@ Anaesthesia, 67: 12-18. doi:10.1111/j.1365-2044.2011.06896.x
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"33FFD1EDB4AE56E4D00DDB0E4F2B147E">
-		["build_uid"] = <"17b707dd-fa0a-492a-bbb6-ce6fc87176f8">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"7FDC05909D2B47244C81938D26BF95B8">
+		["build_uid"] = <"5c884325-dff8-470e-b1c7-7484ae4e27e6">
+		["revision"] = <"1.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- ONEWS
+	OBSERVATION[at0000] matches {    -- ONEWS
 		data matches {
-			HISTORY[at0001] matches {	-- Event Series
+			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- Tidspunkt
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
 						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
+							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0044] occurrences matches {0..1} matches {	-- Respirasjon
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Respirasjon
 										value matches {
-											1|[local::at0046], 	-- Rød: ≤10 eller ≥25
-											2|[local::at0047], 	-- Gul: 20-24
-											3|[local::at0048]  	-- Hvit: 11- 19
+											1|[local::at0046],
+											2|[local::at0047],
+											3|[local::at0048]
 										}
 									}
-									ELEMENT[at0045] occurrences matches {0..1} matches {	-- Oksygenmetning
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Oksygenmetning
 										value matches {
-											1|[local::at0049], 	-- Rød: ≤ 95
-											3|[local::at0050]  	-- Hvit: ≥96
+											1|[local::at0049],
+											3|[local::at0050]
 										}
 									}
-									ELEMENT[at0051] occurrences matches {0..1} matches {	-- Kroppstemperatur
+									ELEMENT[at0051] occurrences matches {0..1} matches {    -- Kroppstemperatur
 										value matches {
-											1|[local::at0052], 	-- Rød: ≤35 eller ≥38
-											2|[local::at0053], 	-- Gul: 35,1 – 35,9 eller 37,5 – 37,9
-											3|[local::at0054]  	-- Hvit: 36,0 – 37,4
+											1|[local::at0052],
+											2|[local::at0053],
+											3|[local::at0054]
 										}
 									}
-									ELEMENT[at0055] occurrences matches {0..1} matches {	-- Systolisk blodtrykk
+									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Systolisk blodtrykk
 										value matches {
-											1|[local::at0056], 	-- Rød: <90 eller ≥160
-											2|[local::at0057], 	-- Gul: 90 - 99 eller 140 -159
-											3|[local::at0058]  	-- Hvit: 100 – 139
+											1|[local::at0056],
+											2|[local::at0057],
+											3|[local::at0058]
 										}
 									}
-									ELEMENT[at0059] occurrences matches {0..1} matches {	-- Diastolisk blodtrykk
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- Diastolisk blodtrykk
 										value matches {
-											1|[local::at0060], 	-- Rød: <90
-											2|[local::at0061], 	-- Gul: 90 – 99 eller 140 – 159
-											3|[local::at0062]  	-- Hvit: 100 - 139
+											1|[local::at0060],
+											2|[local::at0061],
+											3|[local::at0062]
 										}
 									}
-									ELEMENT[at0063] occurrences matches {0..1} matches {	-- Hjertefrekvens/puls
+									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Puls
 										value matches {
-											1|[local::at0064], 	-- Rød: ≤50 eller ≥120
-											2|[local::at0065], 	-- Gul: 51 – 60 eller 100 – 119
-											3|[local::at0066]  	-- Hvit: 61 – 99
+											1|[local::at0064],
+											2|[local::at0065],
+											3|[local::at0066]
 										}
 									}
-									ELEMENT[at0067] occurrences matches {0..1} matches {	-- Bevissthetsgrad
+									ELEMENT[at0067] occurrences matches {0..1} matches {    -- Bevissthetsgrad
 										value matches {
-											1|[local::at0069], 	-- Rød: C, V, P eller U
-											3|[local::at0068]  	-- Hvit: A
+											1|[local::at0069],
+											3|[local::at0068]
 										}
 									}
-									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Antall gule registreringer
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Antall gule registreringer
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..5|}
 											}
 										}
 									}
-									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Antall røde registreringer
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Antall røde registreringer
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..7|}
 											}
 										}
 									}
-									ELEMENT[at0020] occurrences matches {0..1} matches {	-- Kommentar
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Kommentar
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -138,9 +138,9 @@ definition
 							}
 						}
 						state matches {
-							ITEM_TREE[at0041] matches {	-- ItemTree
+							ITEM_TREE[at0041] matches {    -- ItemTree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0042] occurrences matches {0..1} matches {	-- Konfunderende faktorer
+									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Konfunderende faktorer
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -153,9 +153,9 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0038] matches {	-- ItemTree
+			ITEM_TREE[at0038] matches {    -- ItemTree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0040] occurrences matches {0..1} matches {	-- Tilleggsinformasjon
+					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Tilleggsinformasjon
 						value matches {
 							DV_TEXT matches {*}
 						}
