@@ -1,0 +1,95 @@
+﻿archetype (adl_version=1.4; uid=aa9fd3d4-6770-42a6-a3b1-2c68147a77ef)
+	openEHR-EHR-CLUSTER.questionnaire_details.v0
+
+concept
+	[at0000]	-- Questionnaire details
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Helse Vest IKT AS">
+		["email"] = <"silje.ljosland.bakke@helse-vest-ikt.no">
+		["date"] = <"2020-04-20">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å legge til strukturerte men forhåndsdefinerte spørsmål om detaljer om tilstander, symptomer, prosedyrer eller lignende, i en spørreskjemasammenheng.">
+			use = <"Brukes for å legge til strukturerte men forhåndsdefinerte spørsmål om detaljer om tilstander, symptomer, prosedyrer eller lignende, i en spørreskjemasammenheng.
+
+Denne arketypen er laget spesifikt for å brukes i SLOTet for spesifikke detaljer innen arketypefamilien \"Spørreskjema\".">
+			misuse = <"Skal ikke brukes for ikke-forhåndsdefinerte spørsmål i en spørreskjemakontekst.">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For adding structured but predetermined questions about the details of conditions, symptoms, procedures or similar, in a questionnaire context.">
+			use = <"Use for adding structured but predetermined questions about the details of conditions, symptoms, procedures or similar, in a questionnaire context.
+
+This archetype has been designed to be used within the specific details SLOT within the 'Screening questionnaire' family of archetypes.">
+			misuse = <"Not to be used for non predetermined questions in the context of a questionnaire.">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"0018A7F8C176F00EABFC910E44F06768">
+		["build_uid"] = <"7f0c07f5-0714-4a9d-9749-8439a3899242">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Questionnaire details
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Specific question
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Questionnaire details">
+					description = <"Predetermined questions which provides additional details about a condition, symptom, procedure or similar.">
+				>
+				["at0001"] = <
+					text = <"Specific question">
+					description = <"A specific question about the disorder, symptom, procedure or similar.">
+					comment = <"The specific question should be coded with a terminology, where possible.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Spørreskjemadetaljer">
+					description = <"Forhåndsdefinerte spørsmål som tilfører detaljer om en tilstand, symptom, prosedyre eller lignende.">
+				>
+				["at0001"] = <
+					text = <"Spesifikt spørsmål">
+					description = <"Et spesifikt spørsmål om tilstanden, symptomet, prosedyren eller lignende.">
+					comment = <"Det spesifikke spørsmålet bør kodes med en terminologi, der dette er mulig.">
+				>
+			>
+		>
+	>
