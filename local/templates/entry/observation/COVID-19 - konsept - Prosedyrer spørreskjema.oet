@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template xmlns="openEHR/v1/Template">
     <id>a2591264-cf7a-4fa8-98dd-7979f44ba8a7</id>
-    <name>COVID-19 - konsept - Prosedyrer registreringsskjema</name>
+    <name>COVID-19 - konsept - Prosedyrer spørreskjema</name>
     <description>
         <original_author>
             <item>
@@ -23,8 +23,8 @@
         </original_author>
         <lifecycle_state>in_development</lifecycle_state>
         <details>
-            <purpose>For å registrere regisstreringskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode.</purpose>
-            <use>Brukes for å registrere regisstreringskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode, for eksempel "siste 14 dager".
+            <purpose>For å registrere spørreskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode.</purpose>
+            <use>Brukes for å registrere spørreskjemainformasjon om hvorvidt spesifikke prosedyrer er utført eller ikke på et spesifikt tidspunkt eller i en spesifikk tidsperiode, for eksempel "siste 14 dager".
 
 Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ". 
 
@@ -39,7 +39,7 @@ Det aktuelle tidspunktet eller -perioden settes ved å endre "Tidspunkt eller ti
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>0b2d924b102d70b3426e430f04cb9add</value>
+                <value>1e6b65ebe0d7547c274febd0b53b5dc8</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
@@ -49,8 +49,8 @@ Det aktuelle tidspunktet eller -perioden settes ved å endre "Tidspunkt eller ti
     </description>
     <definition
         archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
-        concept_name="Registreringsskjema for prosedyrer"
-        name="COVID-19 - konsept - Prosedyrer registreringsskjema"
+        concept_name="Spørreskjema for prosedyrer"
+        name="COVID-19 - konsept - Prosedyrer spørreskjema"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule max="1" min="1"
@@ -63,13 +63,12 @@ Det aktuelle tidspunktet eller -perioden settes ved å endre "Tidspunkt eller ti
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
         <Rule name="Spesifikk prosedyre" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
         <Rule min="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]"/>
-        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
     </definition>
     <integrity_checks
         archetype_id="openEHR-EHR-OBSERVATION.procedure_screening.v0"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">B193477CB93AFB50EE1C8295BA2F97A3</digest>
+        <digest id="MD5-CAM-1.0.1">3E4B1BF3952ABE4BD8D26848DE1F1538</digest>
     </integrity_checks>
 </template>
