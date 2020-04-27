@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template xmlns="openEHR/v1/Template">
     <id>c42d2f0e-db5c-4c9d-8444-111e6f271243</id>
-    <name>COVID-19 - konsept - Symptom registreringsskjema</name>
+    <name>COVID-19 - konsept - Symptom spørreskjema</name>
     <description>
         <original_author>
             <item>
@@ -42,18 +42,22 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>e359e4cd49e99e5d860e50fbb03c55fc</value>
+                <value>a5e1acba22229c96b978bf1c432bb208</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
                 <value>1B8C187EF38B82E5272FE304A4B185DB</value>
             </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
         </other_details>
     </description>
     <definition
         archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
-        concept_name="Registreringsskjema for screening av symptomer/sykdomstegn"
-        name="COVID-19 - konsept - Symptom registreringsskjema"
+        concept_name="Spørreskjema for symptomer/sykdomstegn"
+        name="COVID-19 - konsept - Symptom spørreskjema"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule max="1" min="1"
@@ -77,7 +81,6 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
                 <excludedValues>local::at0027</excludedValues>
             </constraint>
         </Rule>
-        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0006]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
     </definition>
@@ -85,6 +88,6 @@ Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller
         archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v0"
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">1B8C187EF38B82E5272FE304A4B185DB</digest>
+        <digest id="MD5-CAM-1.0.1">269EE020BE81616AF9DC9B47EB6BFFD6</digest>
     </integrity_checks>
 </template>
