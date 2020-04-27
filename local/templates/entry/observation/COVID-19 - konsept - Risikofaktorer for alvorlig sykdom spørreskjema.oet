@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>b46a1c53-6f33-4dd0-82d8-49bf5e603575</id>
+    <name>COVID-19 - konsept - Risikofaktorer for alvorlig sykdom spørreskjema</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2020-04-27</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Marit Alice Venheim</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Helse Vest IKT AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>marit.alice.venheim@helse-vest-ikt-no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere risikofaktorer for å utvikle et alvorlig sykdomsforløp med COVID-19 hos et individ.</purpose>
+            <use>Brukes for å registrere risikofaktorer for å utvikle et alvorlig sykdomsforløp med COVID-19 hos et individ.
+
+Denne templaten er begrenset til ett konsept, og er designet for å brukes sammen med andre konseptmodeller i et datasett for et spesifikt bruksområde, for eksempel "Screening av mistenkt smittet individ".
+
+Aktuelt verdisett til dette konseptet kan finnes her: https://openehr.atlassian.net/wiki/spaces/KLIM/pages/608436756/Risikofaktorer+for+alvorlig+COVID-19+sykdomsforl+p. Det aktuelle tidspunktet eller tidsperioden settes ved å endre "Tidspunkt eller tidsperiode for registreringen".</use>
+            <misuse>Brukes ikke for å registrere komplikasjoner som har oppstått under selve COVID-19 sykdomsforløpet. Bruk konseptet "COVID-19 - konsept - Komplikasjoner" for dette formålet.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-OBSERVATION.condition_screening.v0"
+        concept_name="Spørreskjema for tilstander"
+        name="COVID-19 - konsept - Risikofaktorer for alvorlig sykdom spørreskjema"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>Risiko for alvorlig forløp av COVID-19</includedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Kjente risikofaktorer for alvorlig sykdomsforløp" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0025]"/>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-OBSERVATION.condition_screening.v0"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">B47079167DF0B0F1AFAC21B4A5F3227B</digest>
+    </integrity_checks>
+</template>
