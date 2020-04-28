@@ -9,9 +9,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Silje Ljosland Bakke og John Tore Valand">
-				["organisation"] = <"Helse Vest IKT og Helse Bergen HF">
-				["email"] = <"john.tore.valand@helse-bergen.no">
+				["name"] = <"Silje Ljosland Bakke og John Tore Valand, Liv Laugen">
+				["organisation"] = <"Helse Vest IKT og Helse Bergen HF, ​Oslo University Hospital, Norway">
+				["email"] = <"john.tore.valand@helse-bergen.no, liv.laugen@ous-hf.no">
 			>
 		>
 	>
@@ -25,12 +25,12 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere strukturerte detaljer om en kompleks anvisning for en rekvirert eller bestilt tjeneste.">
-			use = <"Brukes for å registrere strukturerte detaljer om en kompleks anvisning for en rekvirert eller bestilt tjeneste.
+			purpose = <"For å registrere en detaljert beskrivelse av en kompleks anvisning for en rekvirert eller bestilt tjeneste.">
+			use = <"Brukes for å registrere en detaljert beskrivelse av en kompleks anvisning for en rekvirert eller bestilt tjeneste.
 
 Denne arketypen er utviklet for å nøstes i SLOTet \"Kompleks timing\" i arketypen INSTRUCTION.service_request (Helsetjenesteforespørsel), men kan benyttes i andre arketyper der det er klinisk relevant. Det kan være nødvendig med flere instanser av denne arketypen for å representerer komplekse forespørsler etter tjenester, særlig tjenester som endrer frekvens eller leveringsmønstre over tid.
 
-Hver tjenesteanvisning gir en detaljert veiledning om en eller flere sekvensielle aktiviteter, der hver aktivitet inneholder en \"Mengde\" og en \"Timing innenfor en dag\", sammen med den overordnede varigheten av anvisningen og detaljer om repeterende mønstre utover en enkelt dag. Hvert aktivitetspar gjør det mulig å beskrive et komplekst mønster, for eksempel 2 timer hjemmesykepleie om morgenen og en time om kvelden.
+Hver tjenesteanvisning gir en detaljert veiledning om en eller flere sekvensielle aktiviteter, der hver aktivitet inneholder en \"Mengde\" og en \"Timing innenfor en dag\" (arketypen \"Timing - døgn\"), sammen med den overordnede varigheten av anvisningen og detaljer om repeterende mønstre utover en enkelt dag. Hvert aktivitetspar gjør det mulig å beskrive et komplekst mønster, for eksempel 2 timer hjemmesykepleie om morgenen og en time om kvelden.
 
 Hver tjenesteanvisning kan være gyldig i en begrenset tidsperiode, over et begrenset nummer hendelser beskrevet i dataelementet \"Totalmengde\".
 
@@ -43,7 +43,7 @@ For eksempel:
 - Vitale observasjoner hver time i 4 timer, deretter hver andre time i 12 timer.
 
 Arketypen kan gis nye navn i et templat eller en applikasjon for å representere en spesifikk hendelse som f.eks. \"første fire timer eller operasjon\".">
-			keywords = <"rekvirering", "rekvirere", "tjeneste", "prosedyre", "undersøkelse", "behandling", "timing", "tidsangivelse", "timedefinisjon", "tidspunkt">
+			keywords = <"rekvirering", "rekvirere", "tjeneste", "prosedyre", "undersøkelse", "behandling", "timing", "tidsangivelse", "timedefinisjon", "tidspunkt", "instruks", "bestilling", "bestille">
 			misuse = <"Skal ikke brukes for å registrere tidsangivelse om en rekvirering eller ordinering der det er behov for en doseangivelse, som legemiddel- eller transfusjonsordinasjoner. Bruk arketypen CLUSTER.therapeutic_direction (Terapeutisk anvisning) for dette formålet.">
 			copyright = <"© openEHR Foundation, Alberta Health Services (Canada)">
 		>
@@ -73,7 +73,7 @@ The CLUSTER can be renamed in template or at run-time to represent a specific se
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Øyvind Aardal, Helse Vest, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "John Bennett, NEHTA, Australia", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Sharmila Biswas, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sarah Gaunt, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Trina Gregory, cpc, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia (Editor)", "Anca Heyd, DIPS ASA, Norway", "Roar Holm, Helse Vest IKT A/S, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Gunnar Jårvik, Nasjonal IKT HF, Norway", "Mary Kelaher, NEHTA, Australia", "Robert L'egan, NEHTA, Australia", "Russell Leftwich, Russell B Leftwich MD, United States", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Colin Macfarlane, Elsevier, United Kingdom", "Marlene Mann, BN, MCE, CPHIMS-CA, Prosci Certified, Foundation Knowledge Provincial CMIO, Alberta Health Services, Canada", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Chris Mitchell, RACGP, Australia", "Lars Morgan Karlsen, DIPS ASA, Norway", "Stewart Morrison, NEHTA, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Chris Pearce, Melbourne East GP Network, Australia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Ed Schwab,RD, CPHIMS-CA, Foundational Knowledge - Provincial CMIO, Alberta Health Services, Canada", "Gro-Hilde Severinsen, Norwegian center for ehealthresearch, Norway", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Katrina Simpson-Pineda, RN, BN, Clinical Knowledge Topics - Provincial CMIO, Alberta Health Services, Canada", "Iztok Stotl, UKCLJ, Slovenia", "John Taylor, NEHTA, Australia", "Nyree Taylor, Ocean Informatics, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Ines Vaz, UFN, Portugal", "Marit Alice Venheim, Helse Vest IKT, Norway", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
+	other_contributors = <"Øyvind Aardal, Helse Vest, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Koray Atalag, University of Auckland, New Zealand", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "John Bennett, NEHTA, Australia", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Sharmila Biswas, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Sarah Gaunt, NEHTA, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Heather Grain, Llewelyn Grain Informatics, Australia", "Trina Gregory, cpc, Australia", "Robert Hausam, Hausam Consulting LLC, United States", "Sam Heard, Ocean Informatics, Australia (Editor)", "Anca Heyd, DIPS ASA, Norway", "Roar Holm, Helse Vest IKT A/S, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Gunnar Jårvik, Nasjonal IKT HF, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Mary Kelaher, NEHTA, Australia", "Robert L'egan, NEHTA, Australia", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Russell Leftwich, Russell B Leftwich MD, United States", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Colin Macfarlane, Elsevier, United Kingdom", "Marlene Mann, BN, MCE, CPHIMS-CA, Prosci Certified, Foundation Knowledge Provincial CMIO, Alberta Health Services, Canada", "Susan McIndoe, Royal District Nursing Service, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Chris Pearce, Melbourne East GP Network, Australia", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Ed Schwab,RD, CPHIMS-CA, Foundational Knowledge - Provincial CMIO, Alberta Health Services, Canada", "Gro-Hilde Severinsen, Norwegian center for ehealthresearch, Norway", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Katrina Simpson-Pineda, RN, BN, Clinical Knowledge Topics - Provincial CMIO, Alberta Health Services, Canada", "Iztok Stotl, UKCLJ, Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "John Taylor, NEHTA, Australia", "Nyree Taylor, Ocean Informatics, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)", "Ines Vaz, UFN, Portugal", "Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -81,8 +81,8 @@ The CLUSTER can be renamed in template or at run-time to represent a specific se
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D89D17E6A73BF905440A99A077D64C50">
-		["build_uid"] = <"8e85e9ba-e617-4133-b9b0-412e05055cdb">
+		["MD5-CAM-1.0.1"] = <"1D0D0A058D53AC7697949CBF465F9C13">
+		["build_uid"] = <"cfee7661-de29-4dc2-9feb-7b7fc1ce33a2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -229,7 +229,7 @@ Where multiple directions are expressed, the 'Direction sequence' makes the orde
 			items = <
 				["at0000"] = <
 					text = <"Tjenesteanvisning">
-					description = <"Strukturerte detaljer om en kompleks anvisning for en rekvirert eller bestilt tjeneste.">
+					description = <"Detaljert beskrivelse av en kompleks anvisning for en rekvirert eller bestilt tjeneste.">
 					comment = <"For eksempel: En sekvens av vitale observasjoner de første 24 timene postoperativt, eller en forespørsel om hjemmesykepleie morgen og kveld, gradvis redusert over en måned.">
 				>
 				["at0001"] = <
