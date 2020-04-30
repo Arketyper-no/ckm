@@ -5,6 +5,16 @@ concept
 	[at0000]	-- CRB-65 score
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Marit Alice Venheim, Silje Ljosland Bakke">
+				["organisation"] = <"Helse Vest IKT, Helse Vest IKT AS">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no, silje.ljosland.bakke@helse-vest-ikt.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Silje Ljosland Bakke">
@@ -13,6 +23,13 @@ description
 		["date"] = <"2020-04-29">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultatene for hvert parameter og deres totalsum for CRB-65 skår.">
+			use = <"Brukes for å registrere resultatene for hvert parameter og deres totalsum for CRB-65 skår.">
+			keywords = <"pneumonia, lungebetennelse", ...>
+			misuse = <"Brukes ikke til å registrere CURB-65 skår. Bruk arketypen OBSERVATION.curb_65 til dette formålet.">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the results for each component parameter and their total sum for the CRB-65 score.">
@@ -33,8 +50,8 @@ Lim WS, Baudouin SV, George RC, Hill AT, Jamieson C, Le Jeune I, Macfarlane JT, 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3021211654EEDF3F3413E07F8485B524">
-		["build_uid"] = <"5199748a-f346-4012-b06b-0ec31c8eb998">
+		["MD5-CAM-1.0.1"] = <"6D76CFB0652398BE11BCFC2B81450E44">
+		["build_uid"] = <"c6e6566c-226f-458f-a18b-8ec82adc30ae">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -193,6 +210,98 @@ ontology
 				["at0021"] = <
 					text = <"High severity">
 					description = <"CRB-65 score 3-4: Urgent hospital admission.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"CRB-65 skår">
+					description = <"En klinisk skår som brukes til å grovt estimere alvorlighetsgraden av samfunnservervet lungebetennelse.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Forvirring">
+					description = <"Har pasienten nyoppstått forvirring?">
+				>
+				["at0005"] = <
+					text = <"Nei">
+					description = <"Pasienten har ikke nyoppstått forvirring.">
+				>
+				["at0006"] = <
+					text = <"Ja">
+					description = <"Pasienten har nyoppstått forvirring.">
+				>
+				["at0007"] = <
+					text = <"Respirasjonsfrekvens">
+					description = <"Har pasienten en repirasjonsfrekvens høyere eller lik enn 30 /min?">
+				>
+				["at0008"] = <
+					text = <"Nei">
+					description = <"Pasienten har en respirasjonsfrekvens <30/min.">
+				>
+				["at0009"] = <
+					text = <"Ja">
+					description = <"Pasienten har en respirasjonsfrekvens ≥30 /min.">
+				>
+				["at0010"] = <
+					text = <"Blodtrykk">
+					description = <"Har pasienten systolisk blodtrykk <90 eller diastolisk blodtrykk ≤60 mmHg?">
+				>
+				["at0011"] = <
+					text = <"Nei">
+					description = <"Pasienten har systolisk blodtrykk ≥90 og diastolisk blodtrykk >60 mmHg.">
+				>
+				["at0012"] = <
+					text = <"Ja">
+					description = <"Pasienten har systolisk blodtrykk <90 eller diastolisk blodtrykk ≤60 mmHg?">
+				>
+				["at0013"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0014"] = <
+					text = <"Alder">
+					description = <"Er pasienten 65 år eller eldre?">
+				>
+				["at0015"] = <
+					text = <"Nei">
+					description = <"Pasienten er <65 år.">
+				>
+				["at0016"] = <
+					text = <"Ja">
+					description = <"Pasienten er ≥65 år.">
+				>
+				["at0017"] = <
+					text = <"Totalskår">
+					description = <"Summen av poeng på hvert enkelt parameter i CRB-65 skåren.">
+				>
+				["at0018"] = <
+					text = <"Alvorlighetsvurdering">
+					description = <"Alvorlighetsvurdering basert på CRB-65 skåren.">
+				>
+				["at0019"] = <
+					text = <"Ikke alvorlig">
+					description = <"CRB-65 skår 0: Kan vurderes å behandles ambulant.">
+				>
+				["at0020"] = <
+					text = <"Moderat alvorlig">
+					description = <"CRB-65 skår 1-2: Vurder sykehusinnleggelse.">
+				>
+				["at0021"] = <
+					text = <"Alvorlig">
+					description = <"CRB-65 skår 3-4: Innlegges på sykehus.">
 				>
 			>
 		>
