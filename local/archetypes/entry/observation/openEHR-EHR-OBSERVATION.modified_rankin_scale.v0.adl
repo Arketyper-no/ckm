@@ -29,6 +29,7 @@ description
 			use = <"Brukes for å registrere graden av funksjonshemning eller pleiebehov i dagliglivets aktiviteter hos personer som har hatt et hjerneslag.">
 			keywords = <"hjerneslag, funksjon, nevrologisk handicap, pleiebehov", ...>
 			misuse = <"Ikke ment brukt til kartlegging av funksjon eller pleiebehov i annen kontekst enn registrering av modified rankin scale.">
+			copyright = <"© Nasjonal IKT HF, openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -36,14 +37,14 @@ description
 			use = <"To be used for recording the degree of disability or nursing needs/care needs in daily activites in individuals who have suffered a stroke.">
 			keywords = <"Stroke, function, neurological disability, nursing care", ...>
 			misuse = <"Not to be used in mapping of function or nursing needs in other context than recording of Modified Rankin scale.">
-			copyright = <"Nasjonal IKT HF">
+			copyright = <"© Nasjonal IKT HF, openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"van Swieten JC, Koudstaal PJ, Visser MC, Schouten HJ, van Gijn J. Interobserver agreement for the assessment of handicap in stroke patients. Stroke. 1988 May;19(5):604-7. doi: 10.1161/01.str.19.5.604. PubMed PMID: 3363593.
 
 Banks JL, Marotta CA. Outcomes validity and reliability of the modified Rankin scale: implications for stroke clinical trials: a literature review and synthesis. Stroke. 2007 Mar;38(3):1091-6. doi: 10.1161/01.STR.0000258355.23810.c6. Epub 2007 Feb 1. Review. PubMed PMID: 17272767. https://www.ahajournals.org/doi/10.1161/01.STR.0000258355.23810.c6
@@ -53,14 +54,14 @@ H.. Pakkeforløp hjerneslag, modified rankin scale. [Internet]. Helsedirektorate
 Hjerneslagregister N. Veiledning for nasjonalt slagregister, Brukermanual 2017. [Internet]. Trondheim: Norsk Hjerneslagregister; 2017 January. Available from: https://stolav.no/Medisinskekvalitetsregistre/Norsk-hjerneslagregister/Brukermanual%20Norsk%20hjerneslagregister%202017.pdf.">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
+		["custodian_namespace"] = <"org.openEHR Foundation">
 		["MD5-CAM-1.0.1"] = <"1442EC28D508490C5328C4BD621BFF61">
-		["build_uid"] = <"381a59ea-0f73-4ace-9d90-c95c41f94423">
+		["build_uid"] = <"8122bbd6-a29b-4503-bb30-ef5fc9ddf856">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Modified Rankin Scale
+	OBSERVATION[at0000] matches {    -- Modified Rankin scale
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {0..*; unordered} matches {
@@ -68,7 +69,7 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0007] matches {    -- Modified Rankin Scale
+									ELEMENT[at0007] matches {    -- Modified Rankin scale
 										value matches {
 											0|[local::at0008],
 											1|[local::at0009],
@@ -97,6 +98,7 @@ definition
 			}
 		}
 	}
+
 
 
 ontology
