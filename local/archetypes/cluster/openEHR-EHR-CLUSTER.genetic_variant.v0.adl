@@ -1,4 +1,4 @@
-﻿archetype (adl_version=1.4; uid=7e2f045a-ebc9-4e86-8888-812f733b3ea0)
+﻿archetype (adl_version=1.4; uid=f9f2cf47-5231-4796-9f40-7c366a016ad5)
 	openEHR-EHR-CLUSTER.genetic_variant.v0
 
 concept
@@ -35,6 +35,7 @@ Ved implementering må det avgjøres fra gang til gang hvilke variantdata som sk
 Denne arketypen tillater registrering av genetiske varianter ved hjelp av både HGVS-syntaks i et \"inline parsbart\" element, og en \"atomisk, strukturert\" form ved bruk av en nøstet CLUSTER-arketype laget for spesifikke varianttyper. Hvis begge disse representasjonene brukes samtidig, må de inneholde identiske data.">
 			keywords = <"variasjon", "VCF", "variant", "gen", "genetisk", "genetikk", "genom", "sekvens", "mutasjon", "allel", "genotype", "aminosyre", "basepar", "baserekkefølge", "DNA", "DNA-sekvens", "framshift", "leseramme", "hetrozygot", "homozygoy", "kopitall", "kromosom", "lesedybde", "nukleinsyrer", "nukleotid", "proteinkjede", "proteinsekvens">
 			misuse = <"Brukes ikke for å registrere sammenlikninger av genetiske varianter fra flere prøver, bruk spesifikke arketyper for dette.">
+			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -50,26 +51,27 @@ At implementation, the decision about which variant data should be stored in dif
 This archetype allows the recording of genomic variants in both the HGVS syntax in an inline parsable element, and an atomic, structured form through the use of a nested CLUSTER archetype for specific variant types. If both of those representations are used simultaneously, they need to represent identical data.">
 			keywords = <"variation, VCF,  variant, genetic, genomic, variant calling, sequence, mutation, allele, genotype", ...>
 			misuse = <"Not to be used for recording information about the comparison of several samples. Use a specific archetype for this purpose.">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Shahla Foozonkhah, Iran ministry of health and education, Iran", "Francesca Frexia, CRS4 - Center for advanced studies, research and development in Sardinia, Italy", "Gideon Giacomelli, Charité Berlin, Germany", "Sjur Gjerald, Oslo University Hospital, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Christina Jaeger-Schmidt, Heidelberg University Hospital, Germany", "Florian Kaercher, Charité Berlin, Germany", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Cecilia Mascia, CRS4, Italy (openEHR Editor)", "Shane McKee, Belfast Health & Social Care Trust, United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Niklas Reimer, Institut für Medizinische Informatik / Universität zu Lübeck, Germany", "Simon Schumacher, HiGHmed, Germany", "Natalia Strauch, Medizinische Hochschule Hannover, Germany", "Nyree Taylor, Ocean Informatics, Australia", "Aurelie Tomczak, Uniklinikum Heidelberg, Germany (openEHR Editor)", "Paolo Uva, CRS4, Italy", "John Tore Valand, Helse Bergen, Norway", "Gianluigi Zanetti, CRS4, Italy">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
-		["references"] = <"den Dunnen JT, Dalgleish R, Maglott DR, Hart RK, Greenblatt MS, McGowan-Jordan J, Roux AF, Smith T, Antonarakis SE, Taschner PE. HGVS Recommendations for the Description of Sequence Variants: 2016 Update. Hum Mutat. 2016 Jun;37(6):564-9. doi: 10.1002/humu.22981. Epub 2016 Mar 25. PubMed PMID: 26931183. Sequence variants available from: https://varnomen.hgvs.org/.
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Avgrenet fra: Genomic variant result, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2020-06-22]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.3759
+den Dunnen JT, Dalgleish R, Maglott DR, Hart RK, Greenblatt MS, McGowan-Jordan J, Roux AF, Smith T, Antonarakis SE, Taschner PE. HGVS Recommendations for the Description of Sequence Variants: 2016 Update. Hum Mutat. 2016 Jun;37(6):564-9. doi: 10.1002/humu.22981. Epub 2016 Mar 25. PubMed PMID: 26931183. Sequence variants available from: https://varnomen.hgvs.org/.
 
 HL7 FHIR R4 [Internet]. HL7 International; 2018. Genomic Implementation Guidance; 2018 [cited 2019 05 23]. Available from: https://www.hl7.org/fhir/genomics.html.
 
 Rehm HL, Bale SJ, Bayrak-Toydemir P, Berg JS, Brown KK, Deignan JL, Friez MJ, Funke BH, Hegde MR, Lyon E. ACMG clinical laboratory standards for next-generation sequencing. Genet Med. 2013 Sep;15(9):733-47. doi: 10.1038/gim.2013.92. Epub 2013 Jul 25. PubMed PMID: 23887774; PubMed Central PMCID: PMC4098820.
 
 Richards S, Aziz N, Bale S, Bick D, Das S, Gastier-Foster J, Grody WW, Hegde M, Lyon E, Spector E, Voelkerding K, Rehm HL. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015 May;17(5):405-24. doi: 10.1038/gim.2015.30. Epub 2015 Mar 5. PubMed PMID: 25741868; PubMed Central PMCID: PMC4544753.">
-		["original_namespace"] = <"org.openehr">
-		["custodian_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"AF48F8767AACBFD6FDCF835EFD0ED886">
-		["build_uid"] = <"03c25404-938c-4170-b637-b2919f2c962c">
+		["original_namespace"] = <"no.nasjonalikt">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["MD5-CAM-1.0.1"] = <"FF40DDC050B939C29845D9D869BC24CD">
+		["build_uid"] = <"1b86e25c-50c3-4db6-97b6-19a8f4442dee">
 		["revision"] = <"0.0.1-alpha">
 	>
 
