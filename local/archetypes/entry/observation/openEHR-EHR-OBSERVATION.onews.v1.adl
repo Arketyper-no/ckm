@@ -23,7 +23,7 @@ description
 
 Benyttes ikke før svangerskapsstart og etter seks uker postpartum. Bruk egen arketype for dette formålet, for eksempel OBSERVATION.news2 (NEWS2 Skår).
 
-Benyttes ikke i aktiv fødsel.">
+Benyttes ikke i aktiv fødsel eller når obstetrisk pasient er innlagt intensiv/ overvåkingsenhet.">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
@@ -50,12 +50,14 @@ http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2044.2011.06896.x/full#fa1
 A validation study of the CEMACH recommended modified early obstetric warning system (MEOWS) Singh, S. , McGlennan, A. , England, A. and Simons, R. (2012) 
 Anaesthesia, 67: 12-18. doi:10.1111/j.1365-2044.2011.06896.x
 
-Øverland Eva A. “ONEWS Obstetric Norwegian Early Warning Score System.” Gynekologen, Medlemsblad for Norsk Gynekologisk Forening. Vol. 4 2018). 5 februar 2019. Hentet fra: https://legeforeningen.no/PageFiles/322786/Gynekologen%204-2018%20(interactive%20oppslag).pdf">
+Øverland Eva A. “ONEWS Obstetric Norwegian Early Warning Score System.” Gynekologen, Medlemsblad for Norsk Gynekologisk Forening. Vol. 4 2018). 5 februar 2019. Hentet fra: https://www.legeforeningen.no/contentassets/74fe2eab0fa64290aad0d42e6d46a246/gynekologen-4-2018-interactive-oppslag.pdf
+
+Norsk Gynekologisk forening, Veileder i fødselshjelp (2020) ONEWS: Obstetric Norwegian Early Warning Score System. Hentet fra: https://www.legeforeningen.no/foreningsledd/fagmed/norsk-gynekologisk-forening/veiledere/veileder-i-fodselshjelp-2020/onews/">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"7FDC05909D2B47244C81938D26BF95B8">
-		["build_uid"] = <"5c884325-dff8-470e-b1c7-7484ae4e27e6">
+		["MD5-CAM-1.0.1"] = <"12451EE0FE95330991D140A7C6EDAD49">
+		["build_uid"] = <"7c08da95-82c5-425b-ada1-c40892c6d88f">
 		["revision"] = <"1.0.1-alpha">
 	>
 
@@ -129,22 +131,6 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Kommentar
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
-								}
-							}
-						}
-						state matches {
-							ITEM_TREE[at0041] matches {    -- ItemTree
-								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Konfunderende faktorer
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
 								}
 							}
 						}
@@ -155,10 +141,9 @@ definition
 		protocol matches {
 			ITEM_TREE[at0038] matches {    -- ItemTree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Tilleggsinformasjon
-						value matches {
-							DV_TEXT matches {*}
-						}
+					allow_archetype CLUSTER[at0070] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -194,26 +179,9 @@ ontology
 					text = <"Antall røde registreringer">
 					description = <"Antall registreringer av Rød ONEWS-parameter.">
 				>
-				["at0020"] = <
-					text = <"Kommentar">
-					description = <"Ytterligere kommentar til ONEWS-skåringen som ikke er fanget opp i andre felt.">
-				>
 				["at0038"] = <
 					text = <"ItemTree">
 					description = <"@ internal @">
-				>
-				["at0040"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
-				>
-				["at0041"] = <
-					text = <"ItemTree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Konfunderende faktorer">
-					description = <"Forhold eller omstendigheter som kan ha betydning for skåringen.">
 				>
 				["at0044"] = <
 					text = <"Respirasjon">
@@ -318,6 +286,11 @@ ontology
 				["at0069"] = <
 					text = <"Rød: C, V, P eller U">
 					description = <"C- Er desorientert, V - Reagerer på lyd/tiltale, P - Reagerer på smerte, U - reagerer ikke; skåres som Rød.">
+				>
+				["at0070"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
