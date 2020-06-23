@@ -27,14 +27,14 @@ description
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere resultatene for hvert parameter og deres totalsum for CRB-65 skår.">
 			use = <"Brukes for å registrere resultatene for hvert parameter og deres totalsum for CRB-65 skår.">
-			keywords = <"pneumonia, CAP, samfunnservervet, lungebetennelse", ...>
+			keywords = <"pneumonia, CAP, sammfunnservervet, LRTI,", ...>
 			misuse = <"Brukes ikke til å registrere CURB-65 skår, som er ment brukt i sykehus. Bruk arketypen OBSERVATION.curb_65 til dette formålet.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the results for each component parameter and their total sum for the CRB-65 score.">
 			use = <"Use to record the results for each component parameter and their total sum for the CRB-65 score.">
-			keywords = <"pneumonia, CAP, community, acquired", ...>
+			keywords = <"pneumonia, CAP, community, acquired, LRTI, community-acquired", ...>
 			misuse = <"Not to be used to record the CURB-65 score, which is intended for use in a hospital setting. Use the OBSERVATION.curb_65 archetype for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
@@ -46,12 +46,12 @@ description
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Lim WS, van der Eerden MM, Laing R, Boersma WG, Karalus N, Town GI, Lewis SA, Macfarlane JT. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003 May;58(5):377-82. doi: 10.1136/thorax.58.5.377. PubMed PMID: 12728155; PubMed Central PMCID: PMC1746657.
 
-Lim WS, Baudouin SV, George RC, Hill AT, Jamieson C, Le Jeune I, Macfarlane JT, Read RC, Roberts HJ, Levy ML, Wani M, Woodhead MA. BTS guidelines for the management of community acquired pneumonia in adults: update 2009. Thorax. 2009 Oct;64 Suppl 3:iii1-55. doi: 10.1136/thx.2009.121434. PubMed PMID: 19783532. Available from: https://www.brit-thoracic.org.uk/quality-improvement/guidelines/pneumonia-adults/ ">
+Lim WS, Baudouin SV, George RC, Hill AT, Jamieson C, Le Jeune I, Macfarlane JT, Read RC, Roberts HJ, Levy ML, Wani M, Woodhead MA. BTS guidelines for the management of community acquired pneumonia in adults: update 2009. Thorax. 2009 Oct;64 Suppl 3:iii1-55. doi: 10.1136/thx.2009.121434. PubMed PMID: 19783532. Available from: https://www.brit-thoracic.org.uk/quality-improvement/guidelines/pneumonia-adults/.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"FE85C4E8B632C238848A367D38A5B355">
-		["build_uid"] = <"9221cf9c-d165-467c-b192-d0caf51933a0">
+		["MD5-CAM-1.0.1"] = <"90FD83265538612B8DE8AC46E99D8CE4">
+		["build_uid"] = <"e01de3de-3dee-414a-ab5e-14635b23c131">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -134,7 +134,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"CRB-65 score">
-					description = <"A assessment score used to estimate the severity of community-acquired pneumonia, in a community or primary care setting.">
+					description = <"An assessment score used within a community or primary care setting to estimate the severity of community-acquired pneumonia.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -222,8 +222,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"Extension SLOT">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms. 
-For example: local information requirements; or additional metadata to align with FHIR. ">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
 					comment = <"For example: local information requirements; or additional metadata to align with FHIR. ">
 				>
 			>
@@ -232,7 +231,7 @@ For example: local information requirements; or additional metadata to align wit
 			items = <
 				["at0000"] = <
 					text = <"CRB-65 skår">
-					description = <"En vurderingsskår som brukes til å grovt estimere alvorlighetsgraden av samfunnservervet lungebetennelse hos pasienter utenfor sykehus.">
+					description = <"En vurderingsskår som brukes utenfor sykehus til å grovt estimere alvorlighetsgraden av samfunnservervet lungebetennelse.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -252,11 +251,11 @@ For example: local information requirements; or additional metadata to align wit
 				>
 				["at0005"] = <
 					text = <"Nei">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0006"] = <
 					text = <"Ja">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0007"] = <
 					text = <"Respirasjonsfrekvens">
@@ -264,11 +263,11 @@ For example: local information requirements; or additional metadata to align wit
 				>
 				["at0008"] = <
 					text = <"Nei">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0009"] = <
 					text = <"Ja">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0010"] = <
 					text = <"Blodtrykk">
@@ -276,11 +275,11 @@ For example: local information requirements; or additional metadata to align wit
 				>
 				["at0011"] = <
 					text = <"Nei">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0012"] = <
 					text = <"Ja">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0013"] = <
 					text = <"Item tree">
@@ -292,11 +291,11 @@ For example: local information requirements; or additional metadata to align wit
 				>
 				["at0015"] = <
 					text = <"Nei">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0016"] = <
 					text = <"Ja">
-					description = <"*(en)">
+					description = <"">
 				>
 				["at0017"] = <
 					text = <"Totalskår">
@@ -307,15 +306,15 @@ For example: local information requirements; or additional metadata to align wit
 					description = <"Summen av poeng på hvert enkelt parameter i CRB-65 skåren.">
 				>
 				["at0019"] = <
-					text = <"Ikke alvorlig">
+					text = <"Lav alvorlighetsgrad">
 					description = <"CRB-65 skår 0: Lav mortalitetsrisiko.">
 				>
 				["at0020"] = <
-					text = <"Moderat alvorlig">
+					text = <"Moderat alvorlighetsgrad">
 					description = <"CRB-65 skår 1-2: Moderat mortalitetsrisiko.">
 				>
 				["at0021"] = <
-					text = <"Alvorlig">
+					text = <"Høy alvorlighetsgrad">
 					description = <"CRB-65 skår 3-4: Høy mortalitetsrisiko.">
 				>
 				["at0022"] = <
