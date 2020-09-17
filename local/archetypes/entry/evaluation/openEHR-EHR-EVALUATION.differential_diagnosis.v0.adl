@@ -2,16 +2,16 @@
 	openEHR-EHR-EVALUATION.differential_diagnosis.v0
 
 concept
-	[at0000]	-- Differential diagnoses
+	[at0000]	-- Differential diagnosis
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Marit Alice Venheim">
-				["organisation"] = <"Helse Vest IKT">
-				["email"] = <"marit.alice.venheim@helse-vest-ikt.no">
+				["name"] = <"Marit Alice Venheim, Vebjørn Arntzen">
+				["organisation"] = <"Helse Vest IKT, Oslo University Hospital">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no, varntzen@ous-hf.no">
 			>
 		>
 	>
@@ -25,80 +25,76 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en liste over en eller flere mistenkte eller sannsynlige tilstander eller diagnoser som kan være ansvarlig for den kliniske presentasjonen, undersøkelsesfunnene og testresultatene inntil en enkelt, arbeidsdiagnose er bestemt.">
-			use = <"Brukes for å registrere en liste over en eller flere mistenkte eller sannsynlige tilstander eller diagnoser som kan være ansvarlig for den kliniske presentasjonen, undersøkelsesfunnene og testresultatene inntil en enkelt, arbeidsdiagnose er bestemt.
+			purpose = <"For å registrere detaljer om en enkelt tilstand, problem eller diagnose som kan være ansvarlig for den kliniske presentasjonen, undersøkelsefunnene og/eller testresultatene inntil én arbeidsdiagnose eller foreløpig diagnose er bestemt.">
+			use = <"Brukes for å registrere detaljer om en enkelt tilstand, problem eller diagnose som kan være ansvarlig for den kliniske presentasjonen, undersøkelsefunnene og/eller testresultatene inntil én arbeidsdiagnose eller foreløpig diagnose er bestemt.
 
-I praksis er intensjonen at når ytterligere evidens er samlet, vil forskjellige diagnoser bli eliminert én etter én til en diagnose blir mest sannsynlig.">
-			keywords = <"differensial", "diagnose">
-			misuse = <"Brukes ikke til å registrere detaljert informasjon om et kjent problem eller formell diagnose - bruk EVALUATION.problem_diagnosis til dette formålet.">
-			copyright = <"© Nasjonal IKT HF">
+Denne arketypen er strategisk designet for å sikre at hver uformell, ubekreftet eller mulig diagnose blir registrert ved hjelp av en unik midlertidig modell, og er bare passende i de tidligste fasene av diagnoseprosessen. En varig diagnose vil bli registrert ved hjelp av EVALUATION.problem_diagnosis arketypen.
+
+I et klinisk system vil det forventes at hver differensialdiagnose vil bli registrert ved hjelp av en separat forekomst av denne arketypen. Etter hvert som ytterligere funn er samlet inn fra testresultater, undersøkelser eller henvisninger, vil statusen til hver differensialdiagnose bli oppdatert til hver enkelt av dem er ekskludert, eller én arbeidsdiagnose eller foreløpig diagnose er identifisert. Det forventes at denne arketypen kan brukes i sammenheng med en klinisk kontakt eller i en problemliste.">
+			keywords = <"differensial, diagnose", ...>
+			misuse = <"Brukes ikke til å registrere detaljert informasjon om et vedvarende problem eller formell diagnose - bruk EVALUATION.problem_diagnosis for dette formålet.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record a list of one or more suspected or likely conditions or diagnoses that may be responsible for the clinical presentation, examination findings and test results until a single, working diagnosis is determined.">
-			use = <"To record a list of one or more suspected or likely conditions or diagnoses that may be responsible for the clinical presentation, examination findings and test results until a single, working diagnosis is determined.
+			purpose = <"To record details about a single condition, problem or diagnosis that may be responsible for the clinical presentation, examination findings and/or test results until a single, working diagnosis is determined.">
+			use = <"To record details about a single condition, problem or diagnosis that may be responsible for the clinical presentation, examination findings and/or test results, until a working, provisional or preliminary diagnosis is determined.
 
-In practice, the intent is that as further evidence is gathered differential diagnoses will be eliminated one by one until one diagnosis becomes most likely.">
+This archetype has been strategically designed to ensure that each informal, unconfirmed or possible diagnosis is recorded using a unique model that is temporary and only appropriate in the earliest phases of the diagnostic process. A diagnosis that is intended for persistence will be recorded using the EVALUATION.problem_diagnosis archetype.
+
+In a clinical system, it would be expected that each differential diagnosis would be recorded using a separate instance of this archetype. As further evidence is gathered from test results, investigations or referrals, the status of each differential diagnoses will be updated until each one is excluded or a single working or preliminary diagnosis is identified. It is anticipated that this archetype may be used within the context of an encounter, or a Problem list.">
 			keywords = <"differential", "diagnosis">
-			misuse = <"Not to be used to record detailed information about a known problem or formal diagnosis - use the EVALUATION.problem_diagnosis for this purpose.">
-			copyright = <"© Nasjonal IKT HF">
+			misuse = <"Not to be used to record detailed information about a persistent problem or formal diagnosis - use the EVALUATION.problem_diagnosis for this purpose.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Dipak Kalra, United Kingdom", "Heather Leslie, Atomica Informatics, Australia">
+	other_contributors = <"Andreas Abildgaard, OUS, Norway", "sanyaolu ameye, imhtech, Nigeria", "Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Astrid Askeland, Dips ASA, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "Terje Bektesevic Holmlund, UiT Norges arktiske universitet, Norway", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Fatemeh Chalabianloo, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Vegar Dagenborg, OUS, Norway", "Einar Engtrø, DIPS AS, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Anne Grimstvedt Kvalvik, Haraldsplass Diakonale sykehus, Norway", "Mikkel Gaup Grønmo, Helse-Nord, FSE, Norway (openEHR Editor)", "Joost Holslag, Nedap, Netherlands", "Evelyn Hovenga, EJSH Consulting, Australia", "Dipak Kalra, United Kingdom", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Heather Leslie, Atomica Informatics, Australia", "Domingo Liotta, University of Morón, Argentina", "Mark Luciani, Bath and North East Somerset, Swindon and Wiltshire Clinical Commisioning Group, United Kingdom", "Per Meinich, Helse Sør-Øst RHF, Norway", "Svenne Naumann, Finnmarkssykehuset, Norway", "Benjamin Senst, Germany", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Micaela Thierley, Helse Vest IKT, Norway", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "Jeremy Tong, NHS, United Kingdom", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)", "Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)">
 	other_details = <
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Differential diagnoses, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2020-07-29]. Available from: https://openehr.org/ckm/archetypes/1013.1.1670">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"">
 		["current_contact"] = <"Heather Leslie, Atomica Informatics, Australia<heather.leslie@atomicainformatics.com>">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"82DAA0FFF2969FBC01A47309E48AFCE6">
-		["build_uid"] = <"89c93e11-8278-41a0-a2bf-74487169a7b9">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"6A1F6378924A8B287E13FA3AA980D0FE">
+		["build_uid"] = <"7a8884f8-1640-410a-9731-60bdb76063b2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	EVALUATION[at0000] matches {    -- Differential diagnoses
+	EVALUATION[at0000] matches {    -- Differential diagnosis
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at0003] occurrences matches {1..*} matches {    -- Differential diagnosis
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0007] matches {    -- Diagnosis
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Likelihood
-								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0015,    -- Suspected
-											at0017]    -- Likely
-										}
-									}
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0006] occurrences matches {0..1} matches {    -- Rationale
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {    -- Clinical evidence
-								include
-									archetype_id/value matches {/openEHR-EHR-CLUSTER\.clinical_evidence\.v1/}
-							}
-							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Comment
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
+					ELEMENT[at0002] matches {    -- Diagnosis name
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Overall comment
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Status
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004,    -- Confirmed
+									at0005,    -- Unconfirmed
+									at0006]    -- Refuted
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Rationale
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Clinical evidence
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.clinical_evidence\.v1/}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -107,73 +103,81 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0018] matches {    -- Item tree
+			ITEM_TREE[at0010] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Extension
+					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Extension
 						include
 							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Last updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
 					}
 				}
 			}
 		}
 	}
 
+
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Differential diagnoses">
-					description = <"A list of one or more possible conditions or diagnoses that may be responsible for the clinical presentation, examination findings and test results.">
+					text = <"Differential diagnosis">
+					description = <"A single condition, problem or diagnosis that may be responsible for the clinical presentation, examination findings and/or test results.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0003"] = <
-					text = <"Differential diagnosis">
-					description = <"Details about a single differential diagnosis.">
-				>
-				["at0004"] = <
-					text = <"Likelihood">
-					description = <"Likelihood of this diagnosis being present.">
-				>
-				["at0005"] = <
-					text = <"Comment">
-					description = <"Additional narrative about all differential diagnoses, not captured in other fields.">
-				>
-				["at0006"] = <
-					text = <"Rationale">
-					description = <"Narrative description about the rationale for this diagnosis being included as a differential.">
+					text = <"Status">
+					description = <"Status of the differential diagnosis.">
 				>
 				["at0007"] = <
-					text = <"Diagnosis">
-					description = <"Name of the differential diagnosis.">
+					text = <"Rationale">
+					description = <"Narrative description about the rationale for this diagnosis being included or excluded as a differential.">
 				>
-				["at0015"] = <
-					text = <"Suspected">
-					description = <"Possibly the diagnosis, but without a weight of supportive evidence.">
+				["at0002"] = <
+					text = <"Diagnosis name">
+					description = <"Identification of the differential diagnosis, by name.">
+					comment = <"Coding of the name of the differential diagnosis with a terminology is preferred, where possible.">
 				>
-				["at0017"] = <
-					text = <"Likely">
-					description = <"Likely to be the working diagnosis, with good supportive evidence.">
+				["at0004"] = <
+					text = <"Confirmed">
+					description = <"The differential diagnosis has been confirmed as present.">
 				>
-				["at0018"] = <
+				["at0005"] = <
+					text = <"Unconfirmed">
+					description = <"The differential diagnosis has not been confirmed as present.">
+				>
+				["at0010"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0019"] = <
+				["at0011"] = <
 					text = <"Extension">
 					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
 					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
 				>
-				["at0020"] = <
+				["at0008"] = <
 					text = <"Clinical evidence">
-					description = <"Details about clinical evidence supporting a differential  diagnosis.">
+					description = <"Structured details about clinical evidence supporting or excluding the differential diagnosis.">
 				>
-				["at0021"] = <
-					text = <"Overall comment">
+				["at0009"] = <
+					text = <"Comment">
 					description = <"Additional narrative about a single differential diagnosis, not captured in other fields.">
+				>
+				["at0006"] = <
+					text = <"Refuted">
+					description = <"The differential diagnosis has been excluded.">
+				>
+				["at0012"] = <
+					text = <"Last updated">
+					description = <"The date/time this differential diagnosis was last updated.">
 				>
 			>
 		>
@@ -181,56 +185,57 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Differensialdiagnose">
-					description = <"En liste over en eller flere mulige tilstander eller diagnoser som kan være ansvarlig for den kliniske presentasjonen, undersøkelsesfunn og testresultater.">
+					description = <"En enkelt tilstand, problem eller diagnose som kan være ansvarlig for den kliniske presentasjonen, undersøkelsesfunn og / eller testresultater.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
+				["at0002"] = <
+					text = <"Diagnosenavn">
+					description = <"Identifisering av differensialdiagnosen ved navn.">
+					comment = <"Koding av navnet på differensialdiagnosen med en terminologi foretrekkes der det er mulig.">
+				>
 				["at0003"] = <
-					text = <"Differensialdiagnose">
-					description = <"Detaljer om en enkelt differensialdiagnose.">
+					text = <"Status">
+					description = <"Statusen til differensialdiagnosen.">
 				>
 				["at0004"] = <
-					text = <"Sannsynlighet">
-					description = <"Sannsynligheten for at denne diagnosen er tilstede.">
+					text = <"Bekreftet">
+					description = <"Differensialdiagnosen er bekreftet som til stede.">
 				>
 				["at0005"] = <
-					text = <"Kommentar">
-					description = <"Ytterligere kommentar til differensialdiagnosen som ikke er fanget opp i andre felt.">
+					text = <"Ubekreftet">
+					description = <"Differensialdiagnosen er ikke bekreftet som til stede.">
 				>
 				["at0006"] = <
-					text = <"Begrunnelse">
-					description = <"Fritekst beskrivelse om begrunnelsen for at denne diagnosen er inkludert som en differensialdiagnose.">
+					text = <"Avkreftet">
+					description = <"Differensialdiagnosen er blitt ekskludert.">
 				>
 				["at0007"] = <
-					text = <"Diagnose">
-					description = <"Navnet på differensialdiagnosen.">
+					text = <"Begrunnelse">
+					description = <"Fritekstbeskrivelse om begrunnelsen for at denne diagnosen er inkludert eller avkreftet som en differensialdiagnose.">
 				>
-				["at0015"] = <
-					text = <"Mulig">
-					description = <"Mulig diagnose, men uten støttende evidens.">
+				["at0008"] = <
+					text = <"Klinisk evidens">
+					description = <"Strukturerte detaljer om klinisk evidens som støtter eller ekskluderer differensialdiagnosen.">
 				>
-				["at0017"] = <
-					text = <"Sannsynlig">
-					description = <"Sannsynlig arbeidsdiagnose, med støttende evidens.">
+				["at0009"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til en enkelt differensialdiagnose som ikke er fanget opp i andre felt.">
 				>
-				["at0018"] = <
+				["at0010"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0019"] = <
+				["at0011"] = <
 					text = <"Tilleggsinformasjon">
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
-				["at0020"] = <
-					text = <"Klinisk evidens">
-					description = <"Detaljer om klinisk evidens som støtter en differensialdiagnose.">
-				>
-				["at0021"] = <
-					text = <"Kommentar">
-					description = <"Ytterligere kommentar til en enkelt differensialdiagnose som ikke er fanget opp i andre felt.">
+				["at0012"] = <
+					text = <"Sist oppdatert">
+					description = <"Datoen da denne differensialdiagnosen sist ble oppdatert.">
 				>
 			>
 		>
