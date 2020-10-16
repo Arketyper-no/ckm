@@ -10,7 +10,7 @@ language
 			language = <[ISO_639-1::nb]>
 			author = <
 				["name"] = <"John Tore Valand, Vebjørn Arntzen">
-				["organisation"] = <"Helse Bergen HF, Oslo universitetssykehus HF, Oslo University Hospital">
+				["organisation"] = <"Helse Bergen HF, Oslo universitetssykehus HF, Oslo University Hospital, Haukeland Universitetssjukehus">
 				["email"] = <"john.tore.valand@helse-bergen.no; varntzen@ous-hf.no">
 			>
 		>
@@ -30,7 +30,7 @@ description
 
 Tverrsnittsarealet kan registreres og følges over tid, for eksempel å følge utvikling av et barns vekst, eller for å gi innblikk i formen og proporsjonene av et individs kropp i en klinisk, antropometrisk eller ergonomisk vurdering.
 
-De vanligste parametrene som blir målt mellom to definerte punkter er lagt til DV_CODED_TEXT-datatype i elementet \"Kroppsdel\". Når behovet for flere målinger blir identifisert kan disse etter hvert bli lagt til listen.">
+De vanligste parametrene som blir målt mellom to definerte punkter er lagt til DV_CODED_TEXT-datatype i elementet \"Navn på kroppsdel\". Når behovet for flere målinger blir identifisert kan disse etter hvert bli lagt til listen.">
 			keywords = <"antropometri", "måling", "lengde", "høyde", "bredde", "areal", "tverrsnitt">
 			misuse = <"Skal ikke brukes for å registrere måling eller beregning av en persons kroppsoverflate. Bruk OBSERVATION.body_surface_area (Kroppsoverflate) for dette formålet.
 
@@ -73,7 +73,7 @@ Not to be used to record the area of an internal body organ or a lesion.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Randi Brendberg, Helse Nord RHF, Norway", "Angela Crovetti, CDC/NIOSH, United States", "Arild Faxvaag, NTNU, Norway", "Anne M Gromsrud, DIPS AS, Norway", "Mikkel Johan Gaup Grønmo, Forvaltningssenter EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Tomi Laptoš, Marand, Slovenia", "Liv Laugen, Oslo universitetssykehus, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Priscila Maranhão, MEDCIDS-FMUP, Portugal", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Lars Ivar Mehlum, Nasjonal IKT HF, Norway", "Svenne Naumann, Finnmarkssykehuset, Norway", "Bjørn Næss, DIPS ASA, Norway", "Jayashree Panickar, Karolinska Institute, Sweden", "Line Silsand, university hospital of northern norway, Norway", "Trine Strand, Oslo Universitetssykehus (OUS), Norway", "Johannes Michael Strehle, Helse-Nord, Norway", "Micaela Thierley, Helse Bergen, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Randi Brendberg, Helse Nord RHF, Norway", "Angela Crovetti, CDC/NIOSH, United States", "Arild Faxvaag, NTNU, Norway", "Anne M Gromsrud, DIPS AS, Norway", "Mikkel Johan Gaup Grønmo, Forvaltningssenter EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Heidi Koikkalainen, United Kingdom (openEHR Editor)", "Tomi Laptoš, Marand, Slovenia", "Liv Laugen, Oslo universitetssykehus, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Priscila Maranhão, MEDCIDS-FMUP, Portugal", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Lars Ivar Mehlum, Nasjonal IKT HF, Norway", "Svenne Naumann, Finnmarkssykehuset, Norway", "Bjørn Næss, DIPS ASA, Norway", "Jayashree Panickar, Karolinska Institute, Sweden", "Line Silsand, univertsity hospital of northern norway, Norway", "Trine Strand, Oslo Universitetssykehus (OUS), Norway", "Johannes Michael Strehle, Helse-Nord, Norway", "Micaela Thierley, Helse Bergen, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -89,8 +89,8 @@ National health and nutrition examination survey III: Body Measurements (Anthrop
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"792D7F76483971FCAA7606AE1481C04A">
-		["build_uid"] = <"e0a95135-812c-4627-8821-5a97b7b72d92">
+		["MD5-CAM-1.0.1"] = <"8D71F4E0A7188B85436D0885EF701F0C">
+		["build_uid"] = <"9644e8ec-cc9b-49e1-927a-68aa36e147ac">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -213,6 +213,8 @@ definition
 			}
 		}
 	}
+
+
 
 
 
@@ -390,7 +392,7 @@ ontology
 				>
 				["at0017"] = <
 					text = <"Areal av overarmsmuskel">
-					description = <"Utregning av arealet av overarmsmuskel, vanligvis utledet fra måling av overarmsomkrets.">
+					description = <"Utregning av tverrsnittsarealet av overarmsmuskel, vanligvis utledet fra måling av overarmsomkrets.">
 				>
 				["at0027"] = <
 					text = <"Målemetode">
