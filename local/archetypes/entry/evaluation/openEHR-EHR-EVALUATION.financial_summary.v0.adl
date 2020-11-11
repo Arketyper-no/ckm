@@ -2,16 +2,16 @@
 	openEHR-EHR-EVALUATION.financial_summary.v0
 
 concept
-	[at0000]	-- Income summary
+	[at0000]	-- Financial summary
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Silje Ljosland Bakke">
-				["organisation"] = <"Nasjonal IKT HF">
-				["email"] = <"silje.ljosland.bakke@nasjonalikt.no">
+				["name"] = <"Silje Ljosland Bakke, Vebjørn Arntzen, John Tore Valand">
+				["organisation"] = <"Nasjonal IKT HF, Oslo University Hospital, Helse Bergen">
+				["email"] = <"silje.ljosland.bakke@nasjonalikt.no, varntzen@ous-hf.no, john.tore.valand@helse-bergen.no">
 			>
 		>
 	>
@@ -25,114 +25,81 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere øyeblikksinformasjon om total inntekt, og fritekstinformasjon om inntektshistorikken til et individ.">
-			use = <"Brukes for å registrere øyeblikksinformasjon om total inntekt, og fritekstinformasjon om inntektshistorikken til et individ.">
-			misuse = <"Skal ikke brukes til å registrere informasjon om individets arbeidsforhold. Bruk arketypene EVALUATION.occupation_summary eller CLUSTER.occupation_episode for dette formålet.">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			purpose = <"For å registrere et sammendrag om den økonomiske situasjonen til et individ, spesielt faktorer som kan ha betydning for helsen, helsedeterminanter.">
+			use = <"Brukes for å registrere et sammendrag om den økonomiske situasjonen for et individ, spesielt faktorer som kan ha betydning for helsen, helsedeterminanter.
+
+Ved å nøste flere instanser av arketypen CLUSTER.financial_record (Økonomi) inn i utbyggingssporet \"Økonomi\", kan man få med seg aggregert informasjon om både tidligere og nåværende finansiell situasjon.
+
+Dataelementet \"Sist oppdatert\" brukes for å registrere når \"Økonomisammendrag\" sist ble oppdatert, inkludert opplysninger som er registrert i SLOTet \"Økonomi\".
+
+Dataelementet \"Beskrivelse\" brukes til å overføre fritekstbeskrivelser fra eksisterende eller tidligere kliniske systemer til arketypeformat.">
+			misuse = <"Skal ikke brukes for å registrere informasjon om individets arbeidsforhold. Bruk arketypen \"Arbeidssammendrag\" (EVALUATION.occupation_summary) eller \"Arbeidsforhold/Rolle\" (CLUSTER.occupation_record) til dette.">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record information about the current overall income and narrative information about the income history of an individual.">
-			use = <"Use to record information about the current overall income and narrative information about the income history of an individual.">
-			misuse = <"Not to be used to record information about the occupation(s) of the individual. Use the EVALUATION.occupation_summary or CLUSTER.occupation_episode archetypes for this purpose.">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			purpose = <"To record summary information about the financial situation of an individual, particularly the impact on social determinants of health.">
+			use = <"Use to record summary information about the financial situation of an individual, particularly the impact on social determinants of health.
+
+Multiple instances of the CLUSTER.financial_record used within the Financial record SLOT will allow aggregation of a history of both past and present finances.
+
+The 'Last updated' data element will record the last time that the Financial summary as a whole, including individual financial records, was updated.
+
+Use to incorporate the narrative descriptions of financial history within existing or legacy clinical systems into an archetyped format, using the 'Description' data element.">
+			misuse = <"Not to be used to record information about the occupation(s) of the individual. Use the EVALUATION.occupation_summary or CLUSTER.occupation_record archetypes for this purpose.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Heather Leslie, Ocean Health Systems, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Heidi Koikkalainen, United Kingdom (openEHR Editor)", "pirkko kortekangas, UNA oy, Finland", "Ronald Krawec, Alberta Health Services, Canada", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Neranga Liyanaarachchi, Ministry of Health, Postgraduate Institute of Medicine, Sri Lanka", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)", "Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Income summary, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2020-01-23]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.2989">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"F2E7062E0C340275F5BE3C5C575B80DB">
-		["build_uid"] = <"5a51f9c0-2f69-4f1d-9bcf-664a26961d1d">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"248A2777FAC2AE95F069D0BEA45C3DAE">
+		["build_uid"] = <"42a5b607-b6b6-4d65-b5bd-1fd3be28095b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Income summary
+	EVALUATION[at0000] matches {    -- Financial summary
 		data matches {
-			ITEM_TREE[at0007] matches {
+			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0001] occurrences matches {0..1} matches {	-- Primary source of income
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Description
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Personal income
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Financial security status
 						value matches {
-							C_DV_QUANTITY <
-								property = <[openehr::382]>
-								list = <
-									["1"] = <
-										units = <"/h">
-										magnitude = <|>=0.0|>
-									>
-									["2"] = <
-										units = <"/d">
-										magnitude = <|>=0.0|>
-									>
-									["3"] = <
-										units = <"/wk">
-										magnitude = <|>=0.0|>
-									>
-									["4"] = <
-										units = <"/mo">
-										magnitude = <|>=0.0|>
-									>
-									["5"] = <
-										units = <"/a">
-										magnitude = <|>=0.0|>
-									>
-								>
-							>
-							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004,    -- Secure
+									at0005,    -- Changeable
+									at0006]    -- Insecure
+								}
+							}
 						}
 					}
-					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Household income
-						value matches {
-							C_DV_QUANTITY <
-								property = <[openehr::382]>
-								list = <
-									["1"] = <
-										units = <"/h">
-										magnitude = <|>=0.0|>
-									>
-									["2"] = <
-										units = <"/d">
-										magnitude = <|>=0.0|>
-									>
-									["3"] = <
-										units = <"/wk">
-										magnitude = <|>=0.0|>
-									>
-									["4"] = <
-										units = <"/mo">
-										magnitude = <|>=0.0|>
-									>
-									["5"] = <
-										units = <"/a">
-										magnitude = <|>=0.0|>
-									>
-								>
-							>
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Income currency
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Financial security description
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Description
+					ELEMENT[at0007] occurrences matches {0..*} matches {    -- Source of income
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Comment
+					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Financial record
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.financial_record\.v0/}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -140,88 +107,150 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0010] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Last updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
 	}
 
+
+
 ontology
-	terminologies_available = <"en", ...>
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Income summary">
-					description = <"Summary information providing an overview of the primary income of an individual.">
+					text = <"Financial summary">
+					description = <"Summary information about the financial situation of an individual.">
 				>
-				["at0007"] = <
+				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0001"] = <
-					text = <"Primary source of income">
-					description = <"The current primary source of income for the individual.">
-					comment = <"For example: Paid employment, family support, student loan, pension, sickness benefit, maternity benefit, unemployment benefit, etc. Coding with a terminology is desirable, where possible. If an individual has multiple sources of income, the intent for this data element is to identify the primary source of income. Detail about each source of income can be recorded within the CLUSTER.income archetype.">
+				["at0007"] = <
+					text = <"Source of income">
+					description = <"The current type income source for the individual.">
+					comment = <"For example: Paid employment; family support; student loan; and pension. Coding with a terminology is desirable, where possible. This data element allows multiple occurrences to enable more than one type of income source to be recorded.">
 				>
 				["at0002"] = <
-					text = <"Personal income">
-					description = <"The current total income value of the individual.">
-					comment = <"For example \"100 000\" or \"Between 100 000 and 200 000\". The Text data type is intended to be used to record income brackets.">
+					text = <"Description">
+					description = <"Narrative description about the financial situation of the individual.">
+				>
+				["at0009"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the Financial summary not captured in other fields.">
+				>
+				["at0008"] = <
+					text = <"Financial record">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Last updated">
+					description = <"The date this Financial summary was last updated.">
+				>
+				["at0012"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
 				>
 				["at0003"] = <
-					text = <"Description">
-					description = <"Narrative description of the income history of the individual.">
+					text = <"Financial security status">
+					description = <"Category describing the individual's perception about their income being adequate to cover their expenses.">
+					comment = <"This data element is intended to screen for situations of possible financial stress which may impact the health of the individual.">
 				>
 				["at0004"] = <
-					text = <"Income currency">
-					description = <"The currency unit for the Personal income and Household income elements.">
-					comment = <"Coding with a terminology such as ISO 4217 is strongly recommended.">
+					text = <"Secure">
+					description = <"The individual has a sense of certainty and peace of mind about their financial situation - their income is stable and/or adequate to cover their expenses.">
 				>
 				["at0005"] = <
-					text = <"Household income">
-					description = <"The current total income value of the individual's household.">
-					comment = <"For example \"200 000\" or \"Between 200 000 and 400 000\". The Text data type is intended to be used to record income brackets.">
+					text = <"Changeable">
+					description = <"The individual has a sense of uncertainty about their financial situation - their income may vary and/or sometimes may not be adequate to cover their expenses.">
 				>
 				["at0006"] = <
-					text = <"Comment">
-					description = <"Additional narrative about the income summary not captured in other fields.">
+					text = <"Insecure">
+					description = <"The individual has a sense of worry and concern about their financial situation - their income is not stable and/or not adequate to cover their expenses.">
+				>
+				["at0013"] = <
+					text = <"Financial security description">
+					description = <"Narrative description about the financial security status of the individual.">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Inntektssammendrag">
-					description = <"Sammendragsinformasjon som gir en oversikt over hoveninntekten til et individ.">
+					text = <"Økonomisammendrag">
+					description = <"Sammendrag eller varig (persistent) informasjon om et individs økonomiske situasjon.">
 				>
-				["at0007"] = <
+				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0001"] = <
-					text = <"Hovedinntektskilde">
-					description = <"Individets hovedinntektskilde på registreringstidspunktet.">
-					comment = <"For eksempel lønnet arbeid, familiestøtte, studielån, pensjon, sykepenger, fødselspenger, arbeidsledighetstrygd. Koding med en terminologi er ønskelig der det er mulig. Dersom et individ har flere inntektskilder er det meningen at dette elementet skal inneholde hovedinntektskilden.">
-				>
 				["at0002"] = <
-					text = <"Personlig inntekt">
-					description = <"Individets inntekt ved registreringstidspunktet.">
-					comment = <"For eksempel \"400 000\" eller \"Mellom 400 000 og 800 000\". Tekst-datatypen er ment for å registrere inntektsgrupper.">
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse om den økonomiske situasjonen til individet.">
 				>
 				["at0003"] = <
-					text = <"Beskrivelse">
-					description = <"Fritekstbeskrivelse av individets inntektshistorikk.">
+					text = <"Økonomisk trygghet">
+					description = <"Kategori som beskriver individets egen oppfatning om inntekten er nok til å dekke utgiftene.">
+					comment = <"Dette dataelementet er ment for å finne ut om mulig økonomisk utrygghet kan påvirke helsen til individet.">
 				>
 				["at0004"] = <
-					text = <"Valuta">
-					description = <"Valutaenheten for elementene Personlig inntekt og Husholdningsinntekt">
-					comment = <"Koding med en terminologi som ISO 4217 er sterkt anbefalt.">
+					text = <"Sikker">
+					description = <"Individet har en opplevelse av økonomisk sikkerhet og er avslappet med hensyn til egen økonomi - inntekten er stabil og/eller nok til å dekke utgifter.">
 				>
 				["at0005"] = <
-					text = <"Husholdningsinntekt">
-					description = <"Individets husholdnings totale inntekt ved registreringstidspunktet.">
-					comment = <"For eksempel \"800 000\" eller \"Mellom 800 000 og 1 600 000\". Tekst-datatypen er ment for å registrere inntektsgrupper.">
+					text = <"Varierende">
+					description = <"Individet har en opplevelse av økonomisk usikkerhet - inntekten kan variere og/eller noen ganger ikke være nok til å dekke utgifter.">
 				>
 				["at0006"] = <
+					text = <"Usikker">
+					description = <"Individet har en opplevelse av økonomisk bekymring - inntekten er ikke stabil og/eller er ikke nok til å dekke utgifter.">
+				>
+				["at0007"] = <
+					text = <"Inntekstkilde">
+					description = <"Individets nåværende inntektskilde.">
+					comment = <"For eksempel lønnet arbeid, forsørges av familie, studentlån eller trygd. Koding av inntekstkilde med en terminologi er foretrukket, dersom mulig. Dette dataelementet kan gjentas, slik at man kan registrere flere inntektskilder.">
+				>
+				["at0008"] = <
+					text = <"Økonomi">
+					description = <"Strukturerte detaljer om tidligere og nåværende finansiell situasjon.">
+				>
+				["at0009"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekstregistreringer om inntektssammendraget som ikke er dekket av andre felt.">
+				>
+				["at0010"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Sist oppdatert">
+					description = <"Dato det økomomiske sammendraget ble oppdatert.">
+				>
+				["at0012"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0013"] = <
+					text = <"Beskrivelse av økonomisk trygghet">
+					description = <"Friteksbeskrivelse om individets økonomiske trygghet.">
 				>
 			>
 		>
