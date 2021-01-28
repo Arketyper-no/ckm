@@ -54,7 +54,7 @@
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>0236f52c6d1732648b29ace5a29140f6</value>
+                <value>d7741962dcbe428656509b1f4b2596fc</value>
             </item>
             <item>
                 <key>original_language</key>
@@ -196,14 +196,15 @@
                 name="Sykehistorie" path="/items" xsi:type="tem:SECTION">
                 <Item archetype_id="openEHR-EHR-OBSERVATION.story.v1"
                     max="1" path="/items" xsi:type="tem:OBSERVATION">
-                    <Rule max="0" path="/data[at0001]/events[at0002]"/>
                     <Rule name="Sykehistorie" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]"/>
                     <Items
                         archetype_id="openEHR-EHR-CLUSTER.symptom_sign.v1"
                         concept_name="Symptom/Sykdomstegn" max="1"
-                        name="Symptom"
+                        name="Symptomer"
                         path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" xsi:type="tem:CLUSTER">
                         <Rule name="Navn på symptom" path="/items[at0001]"/>
+                        <Rule
+                            name="Hvor på kroppen ble prosedyren utført?" path="/items[at0151]"/>
                         <Rule name="Klinisk beskrivelse" path="/items[at0002]"/>
                         <Rule max="0" path="/items[at0175]"/>
                         <Rule max="0" path="/items[at0186]"/>
@@ -613,7 +614,8 @@
                     name="Puls" path="/items" xsi:type="tem:SECTION">
                     <Item
                         archetype_id="openEHR-EHR-OBSERVATION.pulse.v2"
-                        max="1" path="/items" xsi:type="tem:OBSERVATION">
+                        concept_name="Puls/Hjertefrekvens" max="1"
+                        name="Pulsfrekvens" path="/items" xsi:type="tem:OBSERVATION">
                         <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1005]"/>
                         <Rule name="Pulsfrekvens" path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
                             <constraint xsi:type="tem:quantityConstraint">
@@ -747,7 +749,8 @@
                     name="Høyde" path="/items" xsi:type="tem:SECTION">
                     <Item
                         archetype_id="openEHR-EHR-OBSERVATION.height.v2"
-                        max="1" path="/items" xsi:type="tem:OBSERVATION">
+                        concept_name="Høyde/Lengde" max="1" name="Høyde"
+                        path="/items" xsi:type="tem:OBSERVATION">
                         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0018]"/>
                         <Rule path="/data[at0001]/events[at0002]/state[at0013]/items[at0014]">
                             <constraint xsi:type="tem:textConstraint">
@@ -840,7 +843,26 @@
                 path="/items" xsi:type="tem:SECTION">
                 <Item
                     archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v2"
-                    max="1" path="/items" xsi:type="tem:OBSERVATION">
+                    concept_name="Kroppsmasseindeks" max="1"
+                    name="BMI/Kroppsmasseindeks" path="/items" xsi:type="tem:OBSERVATION">
+                    <Rule name="BMI/Kroppsmasseindeks" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+                        <constraint xsi:type="tem:quantityConstraint">
+                            <unitMagnitude>
+                                <unit>[lb_av]/[in_i]2</unit>
+                                <maxMagnitude>1000.0</maxMagnitude>
+                                <minMagnitude>0.0</minMagnitude>
+                                <includesMaximum>false</includesMaximum>
+                                <includesMinimum>true</includesMinimum>
+                            </unitMagnitude>
+                            <unitMagnitude>
+                                <unit>kg/m2</unit>
+                                <maxMagnitude>1000.0</maxMagnitude>
+                                <minMagnitude>0.0</minMagnitude>
+                                <includesMaximum>false</includesMaximum>
+                                <includesMinimum>true</includesMinimum>
+                            </unitMagnitude>
+                        </constraint>
+                    </Rule>
                     <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0013]"/>
                     <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0012]"/>
                     <Rule max="0" path="/data[at0001]/events[at0002]/state[at0014]/items[at0011]"/>
