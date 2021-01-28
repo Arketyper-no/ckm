@@ -575,8 +575,8 @@
                         <Rule max="0" path="/protocol[at0011]/items[at0013]"/>
                         <Rule path="/protocol[at0011]/items[at0014]">
                             <constraint xsi:type="tem:textConstraint">
-                                <includedValues>SNOMED-CT::368208006::Left upper arm</includedValues>
-                                <includedValues>SNOMED-CT::368209003::Right upper arm</includedValues>
+                                <includedValues>SNOMED-CT::368208006::Venstre overarm</includedValues>
+                                <includedValues>SNOMED-CT::368209003::Høyre overarm</includedValues>
                             </constraint>
                         </Rule>
                         <Rule max="0" path="/protocol[at0011]/items[at1035]"/>
@@ -614,8 +614,7 @@
                     name="Puls" path="/items" xsi:type="tem:SECTION">
                     <Item
                         archetype_id="openEHR-EHR-OBSERVATION.pulse.v2"
-                        concept_name="Puls/Hjertefrekvens" max="1"
-                        name="Pulsfrekvens" path="/items" xsi:type="tem:OBSERVATION">
+                        max="1" path="/items" xsi:type="tem:OBSERVATION">
                         <Rule max="0" path="/data[at0002]/events[at0003]/data[at0001]/items[at1005]"/>
                         <Rule name="Pulsfrekvens" path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
                             <constraint xsi:type="tem:quantityConstraint">
@@ -666,7 +665,7 @@
                                 <excludedValues>local::at1050</excludedValues>
                             </constraint>
                         </Rule>
-                        <Rule max="0" path="/protocol[at0010]/items[at1037]">
+                        <Rule path="/protocol[at0010]/items[at1037]">
                             <constraint xsi:type="tem:textConstraint">
                                 <excludedValues>local::at1040</excludedValues>
                                 <excludedValues>local::at1043</excludedValues>
@@ -678,37 +677,6 @@
                                 <excludedValues>local::at1051</excludedValues>
                             </constraint>
                         </Rule>
-                        <Items
-                            archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1"
-                            max="1"
-                            path="/protocol[at0010]/items[at1056]" xsi:type="tem:CLUSTER">
-                            <Rule name="Målested" path="/items[at0001]">
-                                <constraint xsi:type="tem:textConstraint">
-                                    <includedValues>Radialisarterien</includedValues>
-                                    <includedValues>Carotisarterien</includedValues>
-                                </constraint>
-                            </Rule>
-                            <Rule max="0" path="/items[at0065]">
-                                <constraint xsi:type="tem:textConstraint">
-                                    <includedValues>Radius</includedValues>
-                                    <includedValues>Karotid</includedValues>
-                                </constraint>
-                            </Rule>
-                            <Rule max="0" path="/items[at0002]"/>
-                            <Rule max="0" path="/items[at0064]">
-                                <constraint xsi:type="tem:multipleConstraint">
-                                    <includedTypes>Coded_text</includedTypes>
-                                    <includedTypes>Text</includedTypes>
-                                </constraint>
-                            </Rule>
-                            <Rule max="0" path="/items[at0055]">
-                                <constraint xsi:type="tem:multipleConstraint">
-                                    <includedTypes>Coded_text</includedTypes>
-                                    <includedTypes>Text</includedTypes>
-                                </constraint>
-                            </Rule>
-                            <Rule max="0" path="/items[at0023]"/>
-                        </Items>
                     </Item>
                 </Item>
                 <Item archetype_id="openEHR-EHR-SECTION.adhoc.v1"
@@ -1023,12 +991,6 @@
         xmlns:tem="openEHR/v1/Template"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
         <digest id="MD5-CAM-1.0.1">2A395DB69BFC39A2C4FEE4E101800EF0</digest>
-    </integrity_checks>
-    <integrity_checks
-        archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1"
-        xmlns:tem="openEHR/v1/Template"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">12CEE2FA9FD1CD14585E03BD0418C2BA</digest>
     </integrity_checks>
     <integrity_checks
         archetype_id="openEHR-EHR-OBSERVATION.body_temperature.v2"
