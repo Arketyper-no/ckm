@@ -1,0 +1,177 @@
+﻿archetype (adl_version=1.4; uid=4d60a696-f091-41ef-afdf-d5fe2cba6be3)
+	openEHR-EHR-CLUSTER.sysvak_vaksinedetaljer.v0
+
+concept
+	[at0000]	-- SYSVAK vaksinedetaljer
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Astrid Askeland">
+		["organisation"] = <"Dips AS">
+		["email"] = <"ask@dips.no">
+		["date"] = <"2021-02-08">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Arketypen skal benyttes for bruk av registrering av vaksiner. 
+">
+			use = <"Arketypen skal brukes for å registere vaksinetype, om det er mangel av vaksine og vaksinasjonsdokumentasjon dersom det er etterregistrering.
+
+Når vaksinand ikke har et fødselsnummer eller d-nummer tilgjengelig, skal det i denne arketypen registreres personopplysninger om vaksinanden, og ev. omsorgsperson.">
+			keywords = <"sysvak", "vaksine", "vaksinering", "vaksinasjon">
+			misuse = <"Arketypen skal ikke brukes for å registrere personopplysninger eller registrering av medisiner (preparatnavn og kode) utenfor området som omhandler vaksinering.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Astrid Askeland", "Runar Kristiansen", "Anca Heyd">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"B0DA1E3C2745F4FBA768BC2505AD2A3F">
+		["build_uid"] = <"3edb83d9-9671-4e86-835e-5aedd8b77758">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- SYSVAK vaksinedetaljer
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..1} matches {	-- Personopplysninger
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {	-- Vaksinand
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {	-- Alternativ vaksinandtype
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Alternativ vaksinandid
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0005] occurrences matches {0..1} matches {	-- Omsorgsperson
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0006] occurrences matches {0..1} matches {	-- Omsorgspersontype
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {	-- Omsorgspersonid
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0008] occurrences matches {0..1} matches {	-- Vaksinedata
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Vaksinetype
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Vaksine gitt
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Varighet
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Vaksine satt på stedet
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Dokumentasjon
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"SYSVAK vaksinedetaljer">
+					description = <"Inneholder data rundt vaksinering som skal sendes til SYSVAK.">
+				>
+				["at0001"] = <
+					text = <"Personopplysninger">
+					description = <"Personopplysninger som angis dersom vaksinand ikke har en unik identifikator.">
+				>
+				["at0002"] = <
+					text = <"Vaksinand">
+					description = <"Personen vaksinen registreres på.">
+				>
+				["at0003"] = <
+					text = <"Alternativ vaksinandtype">
+					description = <"Type identifikasjon til vaksinand.  Skal oppgis sammen med selve identifikasjonen. (OID=9032)">
+				>
+				["at0004"] = <
+					text = <"Alternativ vaksinandid">
+					description = <"Identifikasjon av vaksinand som feks. utenlandsk fødselsnummer når vaksinand ikke har en unik identifikator for å bekrefte sin identitet.">
+				>
+				["at0005"] = <
+					text = <"Omsorgsperson">
+					description = <"Omsorgsperson for vaksinand.">
+				>
+				["at0006"] = <
+					text = <"Omsorgspersontype">
+					description = <"Type identifikasjon til omsorgsperson. Skal oppgis sammen med selve identifikasjonen. (OID=8327)">
+				>
+				["at0007"] = <
+					text = <"Omsorgspersonid">
+					description = <"Identifikasjon til omsorgsperson for vaksinanden.">
+				>
+				["at0008"] = <
+					text = <"Vaksinedata">
+					description = <"Vaksinedetaljer.">
+				>
+				["at0009"] = <
+					text = <"Vaksinetype">
+					description = <"SYSVAK vaksinetype. (OID=9501)">
+				>
+				["at0010"] = <
+					text = <"Vaksine gitt">
+					description = <"Angivelse om vaksine er gitt eller ikke. Manglende vaksinasjon indikerer at en person skulle ha fått vaksinen iht. vaksinasjonsprogrammet, 
+men at den ikke ble gitt av ulike årsaker.">
+				>
+				["at0011"] = <
+					text = <"Varighet">
+					description = <"Varighet på den manglende vaksinasjonen som feks. kortvarig, varig. (OID=9552)">
+				>
+				["at0012"] = <
+					text = <"Vaksine satt på stedet">
+					description = <"Angivelse om vaksinasjon er utført av registrerende helseenhet eller ikke. Ved etterregistrering er vaksinasjonen ofte ikke satt på stedet, men ved
+ annen helseenhet.">
+				>
+				["at0013"] = <
+					text = <"Dokumentasjon">
+					description = <"Type dokumentasjon når vaksinasjon ikke er satt på stedet, typisk ved etterregistrering, som feks. fiktiv dato, vaksinekort er framvist. (OID=9555)">
+				>
+			>
+		>
+	>
