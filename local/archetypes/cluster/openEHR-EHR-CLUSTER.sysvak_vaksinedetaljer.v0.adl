@@ -33,8 +33,8 @@ Når vaksinand ikke har et fødselsnummer eller d-nummer tilgjengelig, skal det 
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"B0DA1E3C2745F4FBA768BC2505AD2A3F">
-		["build_uid"] = <"3edb83d9-9671-4e86-835e-5aedd8b77758">
+		["MD5-CAM-1.0.1"] = <"A62A4E5731E827CCBD835D77BE7121F4">
+		["build_uid"] = <"8b1e25f1-f8bd-4ab2-838f-9797cb95c012">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -42,44 +42,31 @@ definition
 	CLUSTER[at0000] matches {	-- SYSVAK vaksinedetaljer
 		items cardinality matches {1..*; unordered} matches {
 			CLUSTER[at0001] occurrences matches {0..1} matches {	-- Personopplysninger
-				items cardinality matches {1..*; unordered} matches {
-					CLUSTER[at0002] occurrences matches {0..1} matches {	-- Vaksinand
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0003] occurrences matches {0..1} matches {	-- Alternativ vaksinandtype
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Alternativ vaksinandid
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
+				items cardinality matches {2..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Alternativ vaksinandtype
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
-					CLUSTER[at0005] occurrences matches {0..1} matches {	-- Omsorgsperson
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0006] occurrences matches {0..1} matches {	-- Omsorgspersontype
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0007] occurrences matches {0..1} matches {	-- Omsorgspersonid
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Alternativ vaksinandid
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Omsorgspersontype
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Omsorgspersonid
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 				}
 			}
 			CLUSTER[at0008] occurrences matches {0..1} matches {	-- Vaksinedata
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Vaksinetype
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
 					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Vaksine gitt
 						value matches {
 							DV_BOOLEAN matches {
@@ -120,39 +107,31 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Personopplysninger">
-					description = <"Personopplysninger som angis dersom vaksinand ikke har en unik identifikator.">
-				>
-				["at0002"] = <
-					text = <"Vaksinand">
-					description = <"Personen vaksinen registreres på.">
+					description = <"Personopplysninger som angis dersom vaksinand (personen som vaksineres) ikke har fødselsnummer eller d-nummer. Omsorgsperson registreres kun når vaksinand er under 16 år.">
 				>
 				["at0003"] = <
 					text = <"Alternativ vaksinandtype">
-					description = <"Type identifikasjon til vaksinand.  Skal oppgis sammen med selve identifikasjonen. (OID=9032)">
+					description = <"Alternativ type identifikasjon til vaksinand når vaksinand ikke har fødselsnummer eller d-nummer.  Skal oppgis sammen med selve identifikasjonen.">
+					comment = <"Feks. passnummer, svensk personnummer.
+Volven OID=9032.">
 				>
 				["at0004"] = <
 					text = <"Alternativ vaksinandid">
-					description = <"Identifikasjon av vaksinand som feks. utenlandsk fødselsnummer når vaksinand ikke har en unik identifikator for å bekrefte sin identitet.">
-				>
-				["at0005"] = <
-					text = <"Omsorgsperson">
-					description = <"Omsorgsperson for vaksinand.">
+					description = <"Alternativ identifikasjon av vaksinand når vaksinand ikke har fødselsnummer eller d-nummer.">
+					comment = <"Feks. passnummer, svensk personnummer.">
 				>
 				["at0006"] = <
 					text = <"Omsorgspersontype">
-					description = <"Type identifikasjon til omsorgsperson. Skal oppgis sammen med selve identifikasjonen. (OID=8327)">
+					description = <"Type identifikasjon (fødselsnummer eller d-nummer) til omsorgsperson. Skal oppgis sammen med selve identifikasjonen. ">
+					comment = <"Fødselsnummer og d-nummer fra Volven OID=8327.">
 				>
 				["at0007"] = <
 					text = <"Omsorgspersonid">
-					description = <"Identifikasjon til omsorgsperson for vaksinanden.">
+					description = <"Fødselsnummer eller d-nummer til omsorgsperson for vaksinanden.">
 				>
 				["at0008"] = <
 					text = <"Vaksinedata">
-					description = <"Vaksinedetaljer.">
-				>
-				["at0009"] = <
-					text = <"Vaksinetype">
-					description = <"SYSVAK vaksinetype. (OID=9501)">
+					description = <"Vaksinasjonsdetaljer.">
 				>
 				["at0010"] = <
 					text = <"Vaksine gitt">
@@ -161,7 +140,9 @@ men at den ikke ble gitt av ulike årsaker.">
 				>
 				["at0011"] = <
 					text = <"Varighet">
-					description = <"Varighet på den manglende vaksinasjonen som feks. kortvarig, varig. (OID=9552)">
+					description = <"Varighet på den manglende vaksinasjonen.">
+					comment = <"Feks. kortvarig, varig.
+Volven OID=9552.">
 				>
 				["at0012"] = <
 					text = <"Vaksine satt på stedet">
@@ -170,7 +151,9 @@ men at den ikke ble gitt av ulike årsaker.">
 				>
 				["at0013"] = <
 					text = <"Dokumentasjon">
-					description = <"Type dokumentasjon når vaksinasjon ikke er satt på stedet, typisk ved etterregistrering, som feks. fiktiv dato, vaksinekort er framvist. (OID=9555)">
+					description = <"Type dokumentasjon når vaksinasjon ikke er satt på stedet, typisk ved etterregistrering.">
+					comment = <"Feks. fiktiv dato, vaksinekort er framvist.
+Volven OID=9555.">
 				>
 			>
 		>
