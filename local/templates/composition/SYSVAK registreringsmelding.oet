@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>3e7b7eb0-640a-4e09-998e-ebb17d36a461</id>
+    <name>SYSVAK registreringsmelding</name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Astrid Askeland</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>DIPS AS</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>ask@dips.no</value>
+            </item>
+        </original_author>
+        <other_contributors>
+            <item>Vebjørn Arntzen, Oslo universitetssykehus HF, Norway</item>
+            <item>Astrid Askeland, Dips ASA, Norway</item>
+            <item>Anca Heyd, DIPS ASA, Norway</item>
+            <item>Runar Kristiansen, DIPS AS, Norway</item>
+            <item>Silje Ljosland Bakke, Helse Vest IKT, Norway</item>
+            <item>Marit Alice Venheim, Helse Vest IKT, Norway</item>
+            <item>Mikkel Grønmo, Helse Nord RHF, Norway</item>
+            <item>Liv Laugen, Oslo universitetssykehus HF, Norway</item>
+            <item>John Tore Valand, Helse Bergen HF, Norway</item>
+        </other_contributors>
+        <lifecycle_state>Initial</lifecycle_state>
+        <details>
+            <purpose>Dette templatet representerer det kliniske delinnholdet av en SYSVAK HendelseRequest-melding.</purpose>
+            <keywords>
+                <item>vaksinering, sysvak, vaksine, immunisering</item>
+            </keywords>
+            <use>Brukes til å registrere det kliniske delinnholdet av en SYSVAK HendelseRequest-melding.</use>
+            <misuse>Skal ikke brukes til andre formål enn å registrere det kliniske delinnholdet av en SYSVAK HendelseRequest-melding.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>742761cb3eefd264538075c6d905c41d</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>6562F732112B8B3F94790E178F4243A5</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>e59c1fb2-ac65-4f4c-982a-175777b73439</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>0.1.0</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-COMPOSITION.encounter.v1"
+        concept_name="Klinisk kontakt" name="SYSVAK"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:COMPOSITION">
+        <Content archetype_id="openEHR-EHR-ACTION.medication.v1"
+            concept_name="Legemiddelhåndtering" max="1"
+            name="Vaksineregistrering" path="/content" xsi:type="tem:ACTION">
+            <Rule max="0" min="0" path="/ism_transition[at0109]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0145]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0013]"/>
+            <Rule name="Vaksine ikke gitt" path="/ism_transition[at0012]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0150]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0016]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0153]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0002]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0003]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0106]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0010]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0148]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0004]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0041]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0005]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0006]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0018]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0044]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0008]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0009]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0011]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0015]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0039]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0151]"/>
+            <Rule name="Vaksine gitt" path="/ism_transition[at0007]"/>
+            <Rule max="0" min="0" path="/ism_transition[at0152]"/>
+            <Rule name="Vaksine" path="/description[at0017]/items[at0020]"/>
+            <Rule max="0" path="/description[at0017]/items[at0132]"/>
+            <Rule max="0" path="/description[at0017]/items[at0133]"/>
+            <Rule max="0" path="/description[at0017]/items[at0043]"/>
+            <Rule max="0" path="/description[at0017]/items[at0154]"/>
+            <Rule max="0" path="/description[at0017]/items[at0155]"/>
+            <Rule max="0" path="/description[at0017]/items[at0140]"/>
+            <Rule max="0" path="/description[at0017]/items[at0033]"/>
+            <Rule max="0" path="/description[at0017]/items[at0149]"/>
+            <Rule max="0" path="/description[at0017]/items[at0024]"/>
+            <Items archetype_id="openEHR-EHR-CLUSTER.medication.v1"
+                max="1" path="/description[at0017]/items[at0104]" xsi:type="tem:CLUSTER">
+                <Rule max="0" path="/items[at0132]"/>
+                <Rule max="0" path="/items[at0071]"/>
+                <Rule max="0" path="/items[at0142]">
+                    <constraint xsi:type="tem:multipleConstraint">
+                        <includedTypes>Coded_text</includedTypes>
+                        <includedTypes>Text</includedTypes>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0152]"/>
+                <Rule max="0" path="/items[at0158]"/>
+                <Rule max="0" path="/items[at0115]">
+                    <constraint xsi:type="tem:quantityConstraint"/>
+                </Rule>
+                <Rule max="0" path="/items[at0151]"/>
+                <Rule max="0" path="/items[at0003]"/>
+                <Rule max="0" path="/items[at0139]">
+                    <constraint xsi:type="tem:quantityConstraint">
+                        <unitMagnitude>
+                            <unit>1</unit>
+                            <minMagnitude>0.0</minMagnitude>
+                            <includesMaximum>false</includesMaximum>
+                            <includesMinimum>true</includesMinimum>
+                        </unitMagnitude>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0008]"/>
+                <Rule max="0" path="/items[at0148]">
+                    <constraint xsi:type="tem:quantityConstraint">
+                        <unitMagnitude>
+                            <unit>1</unit>
+                            <minMagnitude>0.0</minMagnitude>
+                            <includesMaximum>false</includesMaximum>
+                            <includesMinimum>true</includesMinimum>
+                        </unitMagnitude>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0007]"/>
+                <Rule max="0" path="/items[at0127]">
+                    <constraint xsi:type="tem:multipleConstraint">
+                        <includedTypes>Coded_text</includedTypes>
+                        <includedTypes>Text</includedTypes>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0133]"/>
+            </Items>
+            <Items
+                archetype_id="openEHR-EHR-CLUSTER.sysvak_vaksinedetaljer.v1"
+                path="/description[at0017]/items[at0053]" xsi:type="tem:CLUSTER">
+                <Rule path="/items[at0005]/items[at0006]">
+                    <constraint xsi:type="tem:textConstraint">
+                        <includedValues>SYSVAK_8327::FNR::Fødselsnummer</includedValues>
+                        <includedValues>SYSVAK_8327::DNR::D-nummer</includedValues>
+                    </constraint>
+                </Rule>
+                <Rule max="0" path="/items[at0009]"/>
+            </Items>
+        </Content>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-COMPOSITION.encounter.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">6562F732112B8B3F94790E178F4243A5</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-ACTION.medication.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">236F4461799071002A81BCCF458AE3BB</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-CLUSTER.medication.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">352F2278611E4AFDE9B1E0603BD3D64C</digest>
+    </integrity_checks>
+    <integrity_checks
+        archetype_id="openEHR-EHR-CLUSTER.sysvak_vaksinedetaljer.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9778A819A9CD64E3ACE6DFB33DE3E03E</digest>
+    </integrity_checks>
+</template>
