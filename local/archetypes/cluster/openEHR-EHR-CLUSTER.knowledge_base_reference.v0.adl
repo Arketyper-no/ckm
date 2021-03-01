@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=27420a13-59df-4961-b390-a5848dd5eb92)
-	openEHR-EHR-CLUSTER.knowledge_base_reference.v1
+﻿archetype (adl_version=1.4; uid=f2af0ca7-36ad-42d6-8821-fcb5a1537017)
+	openEHR-EHR-CLUSTER.knowledge_base_reference.v0
 
 concept
 	[at0000]	-- Knowledge base reference
@@ -37,6 +37,7 @@ description
 			use = <"Verwenden Sie diesen Archetyp, um einen Verweis auf eine Wissensdatenbank und / oder auf in der Wissensdatenbank enthaltene Elemente in Bezug auf bestimmte Informationen zu Gesundheitsakten aufzuzeichnen, die diese Wissensdatenbank verwenden.">
 			keywords = <"Pipeline, Datenbank, Analysetool, Software, Wissensdatenbank, Bibliothek", ...>
 			misuse = <"Darf nicht verwendet werden, um tatsächliche Informationen zu replizieren, die in einer Wissensdatenbank enthalten sind.">
+			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -46,6 +47,7 @@ description
 Denne arketypen er ment å være nøstet i andre ENTRY- eller CLUSTER-arketyper hvor det er klinisk hensiktsmessig. For eksempel kan den brukes i CLUSTER.genomic_variant_result arketypen flere steder - for eksempel: for å registrere detaljer om arbeidsflyten for 'Bioinformatisk pipeline (Bioinformatics analysis workflow); 'Predikert betydning (Predicted impact analysis)'; og 'Populasjonsallelfrekvens detaljer (Population allele frequency details)'">
 			keywords = <"kunndkapsbase", "pipeline", "database", "analyse verktøy", "software", "programvare", "arbeidsflytverktøy", "bioinformatikk", "knowledgebase">
 			misuse = <"Skal ikke brukes til å replikere faktisk informasjon i en kunnskapsbase.">
+			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -55,20 +57,21 @@ Denne arketypen er ment å være nøstet i andre ENTRY- eller CLUSTER-arketyper 
 This archetype is intended to be nested within other ENTRY or CLUSTER archetypes, as clinically appropriate. For example, it may be used within the CLUSTER.genomic_variant_result archetype in one of three places - to record details about the 'Bioinformatics analysis workflow'; 'Predicted impact analysis'; and 'Population allele frequency'.">
 			keywords = <"pipeline, database, analysis tool, software, knowledgebase, library", ...>
 			misuse = <"Not to be used to replicate actual information contained within a knowledge base.">
-			copyright = <"© openEHR Foundation">
+			copyright = <"© Nasjonal IKT HF">
 		>
 	>
-	lifecycle_state = <"published">
+	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "SB Bhattacharyya, Sudisa Consultancy Services, India", "Francesca Frexia, CRS4 - Center for advanced studies, research and development in Sardinia, Italy", "Gideon Giacomelli, Charité Berlin, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Christina Jaeger-Schmidt, Heidelberg University Hospital, Germany", "Florian Kaercher, Charité Berlin, Germany", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Cecilia Mascia, CRS4, Italy (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia", "Simon Schumacher, HiGHmed, Germany", "Natalia Strauch, Medizinische Hochschule Hannover, Germany", "Nyree Taylor, Ocean Informatics, Australia", "Aurelie Tomczak, Uniklinikum Heidelberg, Germany (openEHR Editor)", "Paolo Uva, CRS4, Italy", "Gianluigi Zanetti, CRS4, Italy">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A9C688D50345BD84C29794EFECD2B6FF">
-		["build_uid"] = <"cdb93d9e-3c60-4113-8e63-3e70090002cf">
-		["revision"] = <"1.0.0">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Avgrenet fra: https://arketyper.no/ckm/archetypes/1078.36.2206">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"4F7CDDAEAA05F952812392EF9AA53D7B">
+		["build_uid"] = <"4bf3407d-d63c-421e-8bbf-c38e3158fb4a">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
