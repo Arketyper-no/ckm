@@ -1,0 +1,1262 @@
+﻿archetype (adl_version=1.4; uid=547dbd6b-0116-419b-b7b5-532be9a5831b)
+	openEHR-EHR-OBSERVATION.mmse_nr3_no.v0
+
+concept
+	[at0000]	-- Mini mental status evaluering (MMSE-NR3)
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"John Tore Valand">
+		["organisation"] = <"Helse Vest IKT">
+		["date"] = <"2021-03-23">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultatene for hvert parameter og deres totale poengskår for MMSE-NR3.">
+			use = <"Brukes for å registrere resultatene for hvert parameter og deres totale poengskår for MMSE-NR3.
+
+Arketypen inneholder dataelementer som trengs for å representere MMSE-NR3. Arketypen inneholder ikke ledetekster og hjelp til spørsmålstillinger man finner i papirskjemaet. Dette må eventuelt legges til ved bygging av skjema/funksjonalitet.">
+			keywords = <"Demens, mms", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Marit Alice Venheim, Helse Vest IKT", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Strobel, C. & Engedal, K. (2008). MMSE-NR. Norsk Revidert Mini Mental Status Evaluering. Revidert og utvidet manual. Oslo. Nasjonal kompetansetjeneste for aldring og helse. Hentet fra https://www.aldringoghelse.no/skalaer-og-tester/#mmse-nr3-norsk-revidert-mini-mental-status-evaluering.
+
+Folstein, M.F., Folstein, S.E. & McHugh, P.R. (1975). “Mini-Mental State”: A practical method for grading the cognitive state of patients for the clinician. Journal of Psychiatric Research, 12, 189-198.
+
+Engedal, K., Haugen, PK., Gilje, K. & Laake, P. (1988). Efficacy of short mental tests in the detection of mental impairment in old age. Compr Gerontol A, 2, 87-93.">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"270F205254F05940800CCCCC0B722479">
+		["build_uid"] = <"98434738-14d4-4916-ba99-2ae9ee870508">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Mini mental status evaluering (MMSE-NR3)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {0..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunktshendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Språk/tolk
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Skolegang/utdanning/antall år
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Yrke
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Hørsel/høreapparat
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Syn/briller
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Geriatrisk leseprøve
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Testleder (TL)
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Teststed
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Er pasienten testet med MMSE-NR før?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0014,    -- Ja
+													at0015]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Når/hvor/oppgavesett nr./skåre
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Synes du hukommelsen din er blitt dårligere enn den var tidligere?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0018,    -- Ja
+													at0019,    -- Nei
+													at0020]    -- Usikker
+												}
+											}
+										}
+									}
+									ELEMENT[at0147] occurrences matches {0..1} matches {    -- Ordsett og starttall brukt i dag
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0148,    -- 1
+													at0149,    -- 2
+													at0150,    -- 3
+													at0151,    -- 4
+													at0152]    -- 5
+												}
+											}
+										}
+									}
+									CLUSTER[at0171] occurrences matches {0..1} matches {    -- Orientering
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- 1. Hva er din fødselsdato?
+												value matches {
+													0|[local::at0022],
+													1|[local::at0023]
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- 2. Hvor gammel er du?
+												value matches {
+													0|[local::at0025],
+													1|[local::at0026]
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- 3. Hvilket årstall har vi nå?
+												value matches {
+													0|[local::at0028],
+													1|[local::at0029]
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {    -- 4. Hvilken årstid har vi nå?
+												value matches {
+													0|[local::at0031],
+													1|[local::at0032]
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {    -- 5. Hvilken måned har vi nå?
+												value matches {
+													0|[local::at0034],
+													1|[local::at0035]
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {    -- 6. Hvilken dag har vi i dag?
+												value matches {
+													0|[local::at0037],
+													1|[local::at0038]
+												}
+											}
+											ELEMENT[at0039] occurrences matches {0..1} matches {    -- 7. Hvilken dato har vi i dag?
+												value matches {
+													0|[local::at0040],
+													1|[local::at0041]
+												}
+											}
+											CLUSTER[at0199] occurrences matches {0..1} matches {    -- Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0200] occurrences matches {0..1} matches {    -- Stedsalternativ
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0201,    -- By
+																	at0202,    -- Kommune
+																	at0203]    -- Bygd
+																}
+															}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {    -- 8. Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
+														value matches {
+															0|[local::at0043],
+															1|[local::at0044]
+														}
+													}
+												}
+											}
+											CLUSTER[at0204] occurrences matches {0..1} matches {    -- Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0205] occurrences matches {0..1} matches {    -- Stedsalternativ
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0206,    -- Stedet
+																	at0207,    -- Sykehus
+																	at0208,    -- Sykehjem
+																	at0209]    -- Legekontor
+																}
+															}
+														}
+													}
+													ELEMENT[at0045] occurrences matches {0..1} matches {    -- Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)
+														value matches {
+															0|[local::at0046],
+															1|[local::at0047]
+														}
+													}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- 10. I hvilken etasje er vi nå?
+												value matches {
+													0|[local::at0049],
+													1|[local::at0050]
+												}
+											}
+											ELEMENT[at0210] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0174] occurrences matches {0..1} matches {    -- 11. Umiddelbar gjenkalling
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Antall presentasjoner
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..3|}
+													}
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Skår ord 1
+												value matches {
+													0|[local::at0062],
+													1|[local::at0063]
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Skår ord 2
+												value matches {
+													0|[local::at0065],
+													1|[local::at0066]
+												}
+											}
+											ELEMENT[at0067] occurrences matches {0..1} matches {    -- Skår ord 3
+												value matches {
+													0|[local::at0068],
+													1|[local::at0069]
+												}
+											}
+											ELEMENT[at0211] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0178] occurrences matches {0..1} matches {    -- 12. Hoderegning
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Tallsvar 1
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0077] occurrences matches {0..1} matches {    -- Tallsvar 2
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0078] occurrences matches {0..1} matches {    -- Tallsvar 3
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0079] occurrences matches {0..1} matches {    -- Tallsvar 4
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0080] occurrences matches {0..1} matches {    -- Tallsvar 5
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0086] occurrences matches {0..1} matches {    -- Skår tall 1
+												value matches {
+													0|[local::at0087],
+													1|[local::at0088]
+												}
+											}
+											ELEMENT[at0089] occurrences matches {0..1} matches {    -- Skår tall 2
+												value matches {
+													0|[local::at0090],
+													1|[local::at0091]
+												}
+											}
+											ELEMENT[at0092] occurrences matches {0..1} matches {    -- Skår tall 3
+												value matches {
+													0|[local::at0093],
+													1|[local::at0094]
+												}
+											}
+											ELEMENT[at0095] occurrences matches {0..1} matches {    -- Skår tall 4
+												value matches {
+													0|[local::at0096],
+													1|[local::at0097]
+												}
+											}
+											ELEMENT[at0098] occurrences matches {0..1} matches {    -- Skår tall 5
+												value matches {
+													0|[local::at0099],
+													1|[local::at0100]
+												}
+											}
+											ELEMENT[at0212] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0179] occurrences matches {0..1} matches {    -- 13. Utsatt gjenkalling
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0181] occurrences matches {0..1} matches {    -- Skår ord 1
+												value matches {
+													0|[local::at0182],
+													1|[local::at0183]
+												}
+											}
+											ELEMENT[at0184] occurrences matches {0..1} matches {    -- Skår ord 2
+												value matches {
+													0|[local::at0185],
+													1|[local::at0186]
+												}
+											}
+											ELEMENT[at0187] occurrences matches {0..1} matches {    -- Skår ord 3
+												value matches {
+													0|[local::at0188],
+													1|[local::at0189]
+												}
+											}
+											ELEMENT[at0213] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0214] occurrences matches {0..1} matches {    -- Språk og praksis
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0190] occurrences matches {0..1} matches {    -- Benevning
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0117] occurrences matches {0..1} matches {    -- 14. Hva heter dette?
+														value matches {
+															0|[local::at0118],
+															1|[local::at0119]
+														}
+													}
+													ELEMENT[at0120] occurrences matches {0..1} matches {    -- 15. Hva heter dette?
+														value matches {
+															0|[local::at0121],
+															1|[local::at0122]
+														}
+													}
+												}
+											}
+											CLUSTER[at0191] occurrences matches {0..1} matches {    -- Fraserepetisjon
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0123] occurrences matches {0..1} matches {    -- 16. Gjenta ordrett denne frasen nå: «Aldri annet enn om og men».
+														value matches {
+															0|[local::at0124],
+															1|[local::at0125]
+														}
+													}
+													ELEMENT[at0126] occurrences matches {0..1} matches {    -- Antall presentasjoner
+														value matches {
+															DV_COUNT matches {
+																magnitude matches {|0..3|}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0192] occurrences matches {0..1} matches {    -- 3-leddet kommando
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0127] occurrences matches {0..1} matches {    -- 17. Tar arket med kun én hånd
+														value matches {
+															0|[local::at0128],
+															1|[local::at0129]
+														}
+													}
+													ELEMENT[at0130] occurrences matches {0..1} matches {    -- 17. Bretter arket på midten kun én gang
+														value matches {
+															0|[local::at0131],
+															1|[local::at0132]
+														}
+													}
+													ELEMENT[at0133] occurrences matches {0..1} matches {    -- 17. Gir arket til TL
+														value matches {
+															0|[local::at0134],
+															1|[local::at0135]
+														}
+													}
+												}
+											}
+											CLUSTER[at0193] occurrences matches {0..1} matches {    -- Lesning
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0137] occurrences matches {0..1} matches {    -- 18. Pek på ansiktet ditt
+														value matches {
+															0|[local::at0138],
+															1|[local::at0139]
+														}
+													}
+													ELEMENT[at0136] occurrences matches {0..1} matches {    -- Antall presentasjoner
+														value matches {
+															DV_COUNT matches {
+																magnitude matches {|0..3|}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0195] occurrences matches {0..1} matches {    -- Setningsgenerering
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0140] occurrences matches {0..1} matches {    -- 19. Skriv en meningsfull setning* her.
+														value matches {
+															0|[local::at0141],
+															1|[local::at0142]
+														}
+													}
+												}
+											}
+											ELEMENT[at0215] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0196] occurrences matches {0..1} matches {    -- Figurkopiering
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0143] occurrences matches {0..1} matches {    -- 20. Kopier figuren så nøyaktig du kan her.
+												value matches {
+													0|[local::at0144],
+													1|[local::at0145]
+												}
+											}
+											ELEMENT[at0216] occurrences matches {0..1} matches {    -- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0153] occurrences matches {0..1} matches {    -- Orientering (oppgave 1–10)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..10|}
+											}
+										}
+									}
+									ELEMENT[at0154] occurrences matches {0..1} matches {    -- Umiddelbar gjenkalling (oppgave 11)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..3|}
+											}
+										}
+									}
+									ELEMENT[at0155] occurrences matches {0..1} matches {    -- Hoderegning (oppgave 12)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..5|}
+											}
+										}
+									}
+									ELEMENT[at0156] occurrences matches {0..1} matches {    -- Utsatt gjenkalling (oppgave 13)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..3|}
+											}
+										}
+									}
+									ELEMENT[at0157] occurrences matches {0..1} matches {    -- Språk og praksis (oppgave 14-19)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..8|}
+											}
+										}
+									}
+									ELEMENT[at0158] occurrences matches {0..1} matches {    -- Figurkopiering (oppgave 20)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0159] occurrences matches {0..1} matches {    -- Total poengskåre
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..30|}
+											}
+										}
+									}
+									ELEMENT[at0161] occurrences matches {0..1} matches {    -- Vurderer du som TL at samarbeid/motivasjon/testinnsats var uten anmerkning?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0162,    -- Ja
+													at0163,    -- Nei
+													at0164]    -- Usikker
+												}
+											}
+										}
+									}
+									ELEMENT[at0165] occurrences matches {0..1} matches {    -- Vurderer du som TL at oppmerksomhet/bevissthetsnivå/våkenhet var uten anmerkning?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0166,    -- Ja
+													at0167,    -- Nei
+													at0168]    -- Usikker
+												}
+											}
+										}
+									}
+									ELEMENT[at0169] occurrences matches {0..1} matches {    -- Vurderes ikke resultat som valid/gyldig, angi årsak(er):
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0170] occurrences matches {0..1} matches {    -- Merknader (atferd, bruk av pekeark, legemidler [inkl. dårlig legemiddeletterlevelse] som kan påvirke kognitiv funksjon, glemt briller/høreapparat e.l.):
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0197] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0198] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mini mental status evaluering (MMSE-NR3)">
+					description = <"Screeningtesten \"Norsk revidert mini mental status evaluering (MMSE–NR3)\" brukes til kognitiv utredning og forløpskontroll ved demens, hjerneslag og andre sykdommer som påvirker kognitiv funksjon.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunktshendelse">
+					description = <"Standard, uspesifisert tidspunkt som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Språk/tolk">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Skolegang/utdanning/antall år">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Yrke">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Hørsel/høreapparat">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Syn/briller">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Geriatrisk leseprøve">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Testleder (TL)">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Teststed">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Er pasienten testet med MMSE-NR før?">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Når/hvor/oppgavesett nr./skåre">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Synes du hukommelsen din er blitt dårligere enn den var tidligere?">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"1. Hva er din fødselsdato?">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"2. Hvor gammel er du?">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"3. Hvilket årstall har vi nå?">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"4. Hvilken årstid har vi nå?">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"5. Hvilken måned har vi nå?">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"6. Hvilken dag har vi i dag?">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"7. Hvilken dato har vi i dag?">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"8. Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"10. I hvilken etasje er vi nå?">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Antall presentasjoner">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Skår ord 1">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Skår ord 2">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Skår ord 3">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Tallsvar 1">
+					description = <"Pasienten sitt tallsvar.">
+				>
+				["at0077"] = <
+					text = <"Tallsvar 2">
+					description = <"Pasienten sitt tallsvar.">
+				>
+				["at0078"] = <
+					text = <"Tallsvar 3">
+					description = <"Pasienten sitt tallsvar.">
+				>
+				["at0079"] = <
+					text = <"Tallsvar 4">
+					description = <"Pasienten sitt tallsvar.">
+				>
+				["at0080"] = <
+					text = <"Tallsvar 5">
+					description = <"Pasienten sitt tallsvar.">
+				>
+				["at0086"] = <
+					text = <"Skår tall 1">
+					description = <"">
+				>
+				["at0087"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Skår tall 2">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Skår tall 3">
+					description = <"">
+				>
+				["at0093"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Skår tall 4">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Skår tall 5">
+					description = <"">
+				>
+				["at0099"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0100"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"14. Hva heter dette?">
+					description = <"Benevning av skje fra stimulusark.">
+				>
+				["at0118"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0119"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"15. Hva heter dette?">
+					description = <"Benevning av hammer fra stimulusark.">
+				>
+				["at0121"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"16. Gjenta ordrett denne frasen nå: «Aldri annet enn om og men».">
+					description = <"">
+				>
+				["at0124"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0126"] = <
+					text = <"Antall presentasjoner">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"17. Tar arket med kun én hånd">
+					description = <"">
+				>
+				["at0128"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"17. Bretter arket på midten kun én gang">
+					description = <"">
+				>
+				["at0131"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"17. Gir arket til TL">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0135"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0136"] = <
+					text = <"Antall presentasjoner">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"18. Pek på ansiktet ditt">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"19. Skriv en meningsfull setning* her.">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0142"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0143"] = <
+					text = <"20. Kopier figuren så nøyaktig du kan her.">
+					description = <"">
+				>
+				["at0144"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0145"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0147"] = <
+					text = <"Ordsett og starttall brukt i dag">
+					description = <"">
+				>
+				["at0148"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"2">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"3">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"4">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"5">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Orientering (oppgave 1–10)">
+					description = <"Samlet skår for oppgaveleddet \"Orientering\".">
+				>
+				["at0154"] = <
+					text = <"Umiddelbar gjenkalling (oppgave 11)">
+					description = <"Samlet skår for oppgaveleddet \"Umiddelbar gjenkalling\".">
+				>
+				["at0155"] = <
+					text = <"Hoderegning (oppgave 12)">
+					description = <"Samlet skår for oppgaveleddet \"Hoderegning\".">
+				>
+				["at0156"] = <
+					text = <"Utsatt gjenkalling (oppgave 13)">
+					description = <"Samlet skår for oppgaveleddet \"Utsatt gjenkalling\".">
+				>
+				["at0157"] = <
+					text = <"Språk og praksis (oppgave 14-19)">
+					description = <"Samlet skår for oppgaveleddet \"Språk og praksis\".">
+				>
+				["at0158"] = <
+					text = <"Figurkopiering (oppgave 20)">
+					description = <"Samlet skår for oppgaveleddet \"Figurkopiering\".">
+				>
+				["at0159"] = <
+					text = <"Total poengskåre">
+					description = <"Total poengskår for alle oppgavesettene.">
+				>
+				["at0161"] = <
+					text = <"Vurderer du som TL at samarbeid/motivasjon/testinnsats var uten anmerkning?">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Vurderer du som TL at oppmerksomhet/bevissthetsnivå/våkenhet var uten anmerkning?">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0167"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Vurderes ikke resultat som valid/gyldig, angi årsak(er):">
+					description = <"">
+				>
+				["at0170"] = <
+					text = <"Merknader (atferd, bruk av pekeark, legemidler [inkl. dårlig legemiddeletterlevelse] som kan påvirke kognitiv funksjon, glemt briller/høreapparat e.l.):">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Orientering">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"11. Umiddelbar gjenkalling">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"12. Hoderegning">
+					description = <"">
+				>
+				["at0179"] = <
+					text = <"13. Utsatt gjenkalling">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Skår ord 1">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0183"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0184"] = <
+					text = <"Skår ord 2">
+					description = <"">
+				>
+				["at0185"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0186"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0187"] = <
+					text = <"Skår ord 3">
+					description = <"">
+				>
+				["at0188"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0189"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0190"] = <
+					text = <"Benevning">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Fraserepetisjon">
+					description = <"">
+				>
+				["at0192"] = <
+					text = <"3-leddet kommando">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Lesning">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Setningsgenerering">
+					description = <"">
+				>
+				["at0196"] = <
+					text = <"Figurkopiering">
+					description = <"">
+				>
+				["at0197"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0198"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0199"] = <
+					text = <"Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Stedsalternativ">
+					description = <"Presisering av stedsalternativ.">
+				>
+				["at0201"] = <
+					text = <"By">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Kommune">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Bygd">
+					description = <"">
+				>
+				["at0204"] = <
+					text = <"Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Stedsalternativ">
+					description = <"Presisering av stedsalternativ.">
+				>
+				["at0206"] = <
+					text = <"Stedet">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Sykehus">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Sykehjem">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Legekontor">
+					description = <"">
+				>
+				["at0210"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Orientering\".">
+				>
+				["at0211"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Umiddelbar gjenkalling\".">
+				>
+				["at0212"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Hoderegning\".">
+				>
+				["at0213"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Utsatt gjenkalling\".">
+				>
+				["at0214"] = <
+					text = <"Språk og praksis">
+					description = <"">
+				>
+				["at0215"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Språk og praksis\".">
+				>
+				["at0216"] = <
+					text = <"Kommentar">
+					description = <"Kommentarer til oppgaveleddet \"Figurkopiering\".">
+				>
+			>
+		>
+	>
