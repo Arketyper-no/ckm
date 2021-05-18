@@ -6,95 +6,133 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["de"] = <
-			language = <[ISO_639-1::de]>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Hans Demski">
-				["organisation"] = <"Helmholtz Zentrum München">
-				["email"] = <"demski@helmholtz-muenchen.de">
+				["name"] = <"Liv Laugen, John Tore Valand">
+				["organisation"] = <"​Oslo University Hospital, Norway, Helse Bergen">
+				["email"] = <"liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no">
 			>
 		>
 	>
 description
 	original_author = <
-		["name"] = <"Ian McNicoll">
-		["organisation"] = <"Ocean Informatics">
-		["email"] = <"ian.mcnicoll@oceaninformatics.com">
-		["date"] = <"12/11/2007">
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Atomica Informatics">
+		["email"] = <"heather.leslie@atomicainformatics.com">
+		["date"] = <"2021-04-14">
 	>
 	details = <
-		["de"] = <
-			language = <[ISO_639-1::de]>
-			purpose = <"Zur Dokumentation von Angaben zu einer Einrichtung, z.B. einem Pflegeheim.">
-			use = <"Zur Bezeichnung einer Einrichtung die nicht über einen Verweis in der elektronischen Krankenakte identifiziert werden kann.">
-			keywords = <"Einrichtung", "Institution">
-			misuse = <"Nicht zur Bezeichnung der betreuenden Einrichtung zu verwenden, die die Akte pflegt und normalerweise über einen systeminternen Verweis zu den Einrichtungsdaten verfügt.
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere detaljer om en organisasjon i en pasientjournal.">
+			use = <"Brukes for å registrere detaljer om en organisasjon i en pasientjournal. 
 
+For eksempel:
+- navn og kontaktdetaljer for en organisasjon som har en kopi av et fremtidige behandlingsvalg.
+- navn på hjemmetjenesteorganisasjon eller en annen helsetjenesteyter.
+- navn, rolle og kontaktdetaljer til et medlem av et omsorgsteam.
 
-Nicht zur Identifikation von Einrichtungen zu benutzen, die eindeutig Registern mit demografischen Daten zugeordnet werden können (z.B. einer elektronischen Krankenakte, einem Master Patient Index, etc.).">
-			copyright = <"© Nasjonal IKT HF">
+I denne konteksten kan registreringen av en organisasjons kontaktdetaljer, eller person i organisasjonen, være uformell og fleksibel så lenge det tjener formålet. 
+For eksempel:
+- et sykehus
+- en spesialavdeling i et sykehus eller et tilknyttet hjemmesykehus eller hjemmetjeneste. 
+
+Denne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om et individ på toppen av vurderingsskjema.">
+			keywords = <"organisasjon, helsetjenestetilbyder, omsorgsperson", ...>
+			misuse = <"Brukes ikke til å representere eller erstatte de formelle demografiske detaljene for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk formelle pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record details of an organisation, for example, a third party such as a care agency">
-			use = <"Use to identify an organisation that is not able to be identified by a reference within the electronic health record">
-			keywords = <"organisation", "agency">
-			misuse = <"Not to be used to identify the active care organisation which maintains the record and which would normally have a system reference to the organisation details.
+			purpose = <"To record details about an organisation that needs to be represented within the health record.">
+			use = <"Use to record details about an organisation that needs to be represented within the health record. Examples include:
+- the name and contact details for an organisation that holds a physical copy of an advanced care record;
+- the name and contact details of a visiting home care organisation in a practice-to-practice transfer of medical record; or
+- the name, role and contact details of a member of a care team.
 
-Not to be used to identify organisations who can be uniquely referenced from registers of demographic details eg within the electronic health record, master indexes etc.">
-			copyright = <"© Nasjonal IKT HF">
+In this context of recording an organisation's contact details or people within the organisation, the scope of an 'organisation' can be informal and flexible, as long as it serves the purpose. For example:
+- a hospital; or
+- a 'sub organisation' of a hospital, such as an operationally separate or specialised satellite clinic of a hospital or an associated home care service.
+
+This archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.">
+			keywords = <"organisation, provider, carer", ...>
+			misuse = <"Not to be used to represent or replace the formal demographic details for formal identification management or for the purposes of maintaining a demographic register or index. Use a formal Healthcare Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.html">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"0197E2B39E5C111C487226B1644BAEB4">
-		["build_uid"] = <"d92b4390-630e-4f03-9cc6-6b3855a6e16f">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"AS 4846-2006 Health Care Provider Identification. Standards Australia.
+
+HL7 FHIR Resource - Organization v4.0.1: R4 [Internet]. Health Level Seven International; [accessed 2021 05 04]. Available from: http://hl7.org/fhir/2021May/organization.html">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"64A7313D8530EF9F99E088CCE06DB552">
+		["build_uid"] = <"dd90ac67-fe83-4e36-86a4-4d977903efd7">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Organisation
+	CLUSTER[at0000] matches {    -- Organisation
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] matches {	-- Name of Organisation
+			ELEMENT[at0001] matches {    -- Name line
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Identifier
+			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Identifier
+				value matches {
+					DV_IDENTIFIER matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..*} matches {    -- Role
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0008] occurrences matches {0..1} matches {	-- Address details
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Address
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.address\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.address\.v0/}
 			}
-			allow_archetype CLUSTER[at0009] occurrences matches {0..1} matches {	-- Telecom details
+			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- Contact person
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.telecom_details\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.person\.v0/}
 			}
-			CLUSTER[at0005] occurrences matches {0..*} matches {	-- Contact Person Details
+			CLUSTER[at0006] occurrences matches {0..*} matches {    -- Electronic communication
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {	-- Contact person's name
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.person_name\.v1/}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Medium
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008,    -- Mobile (cellular) telephone
+									at0009,    -- Telephone (excluding mobile telephone)
+									at0010,    -- Email
+									at0011]    -- Pager
+								}
+							}
+							DV_TEXT matches {*}
+						}
 					}
-					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Role in organisation
+					ELEMENT[at0016] matches {    -- Value
 						value matches {
 							DV_TEXT matches {*}
+							DV_URI matches {*}
 						}
 					}
 				}
 			}
+			allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {    -- Additional details
+				include
+					archetype_id/value matches {/.*/}
+			}
 		}
 	}
+
 
 
 ontology
@@ -103,71 +141,123 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Organisation">
-					description = <"Details of an organisation ">
+					description = <"A company, an institution, or an association that needs to be represented within the health record.">
 				>
 				["at0001"] = <
-					text = <"Name of Organisation">
-					description = <"Name of the organisation">
+					text = <"Name line">
+					description = <"The name by which an organisation is known.">
+				>
+				["at0002"] = <
+					text = <"Contact person">
+					description = <"Details about a contact person, or people, within the organisation.">
+				>
+				["at0003"] = <
+					text = <"Identifier">
+					description = <"Identifier associated with the identified organisation.">
+				>
+				["at0004"] = <
+					text = <"Role">
+					description = <"The role or capacity in which the organisation contributes to the health or social care of the subject of care.">
 				>
 				["at0005"] = <
-					text = <"Contact Person Details">
-					description = <"Details about contact person within organisation">
+					text = <"Address">
+					description = <"Details about a specific address for the organisation.">
+				>
+				["at0006"] = <
+					text = <"Electronic communication">
+					description = <"Details about a specific type of electronic communication for the organisation.">
 				>
 				["at0007"] = <
-					text = <"Role in organisation">
-					description = <"Contact's role in organisation">
+					text = <"Medium">
+					description = <"The type of electronic communication or channel.">
+					comment = <"The scope of electronic communication medium includes, but is not limited to use of : a telephone, cellular phone, computer, or pager.">
 				>
 				["at0008"] = <
-					text = <"Address details">
-					description = <"Details about Address">
+					text = <"Mobile (cellular) telephone">
+					description = <"">
 				>
 				["at0009"] = <
-					text = <"Telecom details">
-					description = <"Details about telecommunications">
+					text = <"Telephone (excluding mobile telephone)">
+					description = <"">
 				>
 				["at0010"] = <
-					text = <"Contact person's name">
-					description = <"*">
+					text = <"Email">
+					description = <"">
 				>
 				["at0011"] = <
-					text = <"Identifier">
-					description = <"Identifier of organisation">
+					text = <"Pager">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Value">
+					description = <"The unique combination of alphanumeric characters, meaningful for the identified medium, for contacting the organisation.">
+					comment = <"For example: area code + landline phone/pager number; country code + mobile phone number; email address; or skype contact name.">
+				>
+				["at0017"] = <
+					text = <"Additional details">
+					description = <"Additional details about the organisation.">
 				>
 			>
 		>
-		["de"] = <
+		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Einrichtung">
-					description = <"Angaben zu einer Einrichtung">
+					text = <"Organisasjon">
+					description = <"Et selskap, en organisasjon eller en forening som trengs å bli representert i en pasientjournal.">
 				>
 				["at0001"] = <
-					text = <"Einrichtungsname">
-					description = <"Name der Einrichtung">
+					text = <"Navn">
+					description = <"Organisasjonens navn.">
+				>
+				["at0002"] = <
+					text = <"Kontaktperson">
+					description = <"Detaljer om en kontaktperson, eller gruppe personer, i en organisasjon.">
+				>
+				["at0003"] = <
+					text = <"ID">
+					description = <"Identifikasjon knyttet til en organisasjon.">
+				>
+				["at0004"] = <
+					text = <"Rolle">
+					description = <"Organisasjonens rolle i bidraget til helse eller omsorg for pasienten.">
 				>
 				["at0005"] = <
-					text = <"Kontaktperson">
-					description = <"Angaben zur Kontaktperson innerhalb der Einrichtung">
+					text = <"Adresse">
+					description = <"Detaljer om organisasjonens adresse.">
+				>
+				["at0006"] = <
+					text = <"Elektronisk kommunikasjon">
+					description = <"Detaljer om type elektronisk kommunikasjon.">
 				>
 				["at0007"] = <
-					text = <"Rolle der Kontaktperson">
-					description = <"Angaben zur Rolle der Kontaktperson innerhalb der Einrichtung">
+					text = <"Medie">
+					description = <"Type elektronisk kommunikasjon eller kommunikasjonskanal.">
+					comment = <"For eksempel: telefon, datamaskin eller personsøker.">
 				>
 				["at0008"] = <
-					text = <"Adressangaben">
-					description = <"Angaben zur Adresse">
+					text = <"Mobiltelefon">
+					description = <"">
 				>
 				["at0009"] = <
-					text = <"Kontaktdetails">
-					description = <"Angaben zu den Kontaktdaten">
+					text = <"Telefon (ikke mobiltelefon)">
+					description = <"">
 				>
 				["at0010"] = <
-					text = <"Name der Kontaktperson">
-					description = <"*">
+					text = <"E-post">
+					description = <"">
 				>
 				["at0011"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
+					text = <"Personsøker">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Verdi">
+					description = <"En kombinasjon av alfanumeriske tegn som utgjør en unik adresse for å kontakte personen i det valgte mediet.">
+					comment = <"For eksempel fasttelefonnummer, landskode og mobiltelefonnummer, e-postadresse eller skype kontaktnavn.">
+				>
+				["at0017"] = <
+					text = <"Ytterligere detaljer">
+					description = <"Ytterligere strukturerte detaljer om organisasjonen.">
 				>
 			>
 		>
