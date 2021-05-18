@@ -6,173 +6,163 @@ concept
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["de"] = <
-			language = <[ISO_639-1::de]>
-			author = <
-				["name"] = <"Hans Demski">
-				["organisation"] = <"Helmholtz Zentrum München">
-				["email"] = <"demski@helmholtz-muenchen.de">
-			>
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Jon Tysdahl">
-			>
-		>
-		["el"] = <
-			language = <[ISO_639-1::el]>
-			author = <
-				["name"] = <"Spiros Denaxas">
-				["organisation"] = <"University College London, Institute of Health Informatics">
-				["email"] = <"s.denaxas@ucl.ac.uk">
-			>
-			accreditation = <"Royal College of Online Gaming">
-		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			author = <
-				["name"] = <"Alan March">
-				["organisation"] = <"Hospital Universitario Austral, Pilar, Buenos Aires, Argentina">
-			>
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			author = <
-				["name"] = <"Mona Saleh">
+				["name"] = <"Liv Laugen, John Tore Valand">
+				["organisation"] = <"​Oslo University Hospital, Norway, Helse Bergen">
+				["email"] = <"liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no">
 			>
 		>
 	>
 description
 	original_author = <
-		["name"] = <"Ian McNicoll">
-		["organisation"] = <"Ocean Informatics">
-		["date"] = <"2007-11-11">
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Atomica Informatics">
+		["email"] = <"heather.leslie@atomicainformatics.com">
+		["date"] = <"2021-04-14">
 	>
 	details = <
-		["de"] = <
-			language = <[ISO_639-1::de]>
-			purpose = <"Zur Dokumentation einer oder mehrerer Adressen einer Person oder Einrichtung.">
-			use = <"">
-			keywords = <"Adresse", ...>
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Registrar los detalles de uno o mas domicilios personales de un individuo.">
-			use = <"">
-			keywords = <"domicilio", "dirección">
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل تفاصيل عنوان شخصي أو أكثر الخاص بشخص ما">
-			use = <"">
-			keywords = <"العنوان", ...>
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere detaljer om en fysisk adresse eller postadresse i en pasientjournal.">
+			use = <"Brukes for å registrere detaljer om en fysisk adresse eller postadresse i en pasientjournal.
+
+For eksempel:
+- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.
+- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg.
+- Adressen til hendelsestedet til en ulykke eller et fall.
+
+Denne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om et individ på toppen av vurderingsskjema.
+
+Hver \"Adresse\" kan gis nytt navn i et templat ved å benytte navnebegrensningene \"Adresse 1\", \"Adresse 2\" osv.
+
+I tilfeller der arketypen CLUSTER.structured_name er lagt i SLOTet \"Strukturert navn\", kan noen eller alle de strukturerte navnelementene kobles sammen og vises i dataelementet \"Navn\".">
+			keywords = <"adresse", "postadresse">
+			misuse = <"Brukes ikke til å representere eller erstatte de formelle demografiske detaljene for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk formelle pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record details of one or more personal addresses for an individual.">
-			use = <"">
+			purpose = <"To record details about a physical or postal address for use within a health record.">
+			use = <"Use to record details about a physical or postal address required as part of clinical recording within a health record. Examples include:
+- the address of an attending home care organisation in a referral to another healthcare provider; or
+- the address of a person or organisation that holds a physical copy of an advance care directive; or
+- the address of a location of a fall or accident.
+
+This CLUSTER.address could also be used as a proxy for formal demographic address data when reviewing a template with clinicians - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.
+
+This archetype has been designed so that one or more 'Address line' elements can be used to record a simple address as lines of free text. 
+
+Each 'Address line' element can be renamed in a template using the run-time name constraints eg 'Address line 1', 'Address line 2' etc.
+
+If the CLUSTER.structured_address is nested within the 'Structured address' SLOT, any or all of the structured address elements can be concatenated and represented in one or more 'Address line' elements, as required.">
 			keywords = <"address", ...>
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["el"] = <
-			language = <[ISO_639-1::el]>
-			purpose = <"Γιά την καταγραφή λεπτομερειών μίας ή περισσoτέρων προσωπικών διευθύνσεων για ένα άτομο.">
-			use = <"">
-			keywords = <"διεύθυνση", ...>
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
-		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere personadressedetaljer for et individ.">
-			use = <"">
-			keywords = <"adresse", ...>
-			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			misuse = <"Not to be used to record an address for the purposes of maintaining a demographic register or index. Use a formal Master Patient Index or Healthcare Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.htm originally based on: Postal address of person.  ENV 13606 - 4:2000 7.11.13">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"29EACB438950F89C473DB09B37F480CA">
-		["build_uid"] = <"41fed83e-14ca-400f-bf7e-e6e262c7bf20">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"AS 4846-2006 Health Care Provider Identification. Standards Australia.
+
+AS 5017-2006 Health Care Client Identification. Standards Australia.
+
+HL7 FHIR Resource - Organization v4.0.1: R4 [Internet]. Health Level Seven International; [accessed 2021 05 04]. Available from: http://hl7.org/fhir/2021May/organization.html
+
+HL7 FHIR Resource - Person v4.0.1: R4 [Internet]. Health Level Seven International; [accessed 2021 05 04]. Available from: http://hl7.org/fhir/2021May/person.html
+
+ISO/TS 22220:2007 Health informatics — Identification of subjects of health care. International Organization for Standardization.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"A4D8D10F477B9A13C677D62DA10B911D">
+		["build_uid"] = <"fd273b7a-1973-4d24-9184-e57d5e027bb6">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Address
+	CLUSTER[at0000] matches {    -- Address
 		items cardinality matches {1..*; unordered} matches {
-			CLUSTER[at0001] occurrences matches {0..*} matches {	-- Address
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0006] matches {	-- Address Type
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0011, 	-- Residential
-									at0012, 	-- Correspondence
-									at0013, 	-- Business
-									at0014]	-- Temporary
-								}
-							}
-						}
-					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Unstructured address
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					CLUSTER[at0003] occurrences matches {0..1} matches {	-- Structured address
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Property number
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-							ELEMENT[at0009] occurrences matches {0..4} matches {	-- Address line
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
-						}
-					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Post code
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					CLUSTER[at0015] occurrences matches {0..1} matches {	-- AddressValid Period
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0007] occurrences matches {0..1} matches {	-- Valid from
-								value matches {
-									DV_DATE_TIME matches {*}
-								}
-							}
-							ELEMENT[at0008] occurrences matches {0..1} matches {	-- Valid to
-								value matches {
-									DV_DATE_TIME matches {*}
-								}
-							}
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Type
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- Physical
+							at0003,    -- Postal
+							at0004]    -- Both
 						}
 					}
 				}
 			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Use
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0006,    -- Business
+							at0007,    -- Residential
+							at0008]    -- Temporary accomodation
+						}
+					}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..*} matches {    -- Address line
+				value matches {
+					DV_TEXT matches {*}
+				}
+				name matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0010,    -- Address line 1
+							at0011,    -- Address line 2
+							at0012,    -- Address line 3
+							at0013]    -- Address line 4
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {    -- Structured address line
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.structured_address\.v0/}
+			}
+			ELEMENT[at0015] occurrences matches {0..*} matches {    -- Suburb/Town/City/Locality
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0016] occurrences matches {0..*} matches {    -- District/County
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- State/Territory/Province
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0018] occurrences matches {0..1} matches {    -- Postcode
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0019] occurrences matches {0..1} matches {    -- Country
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0020] occurrences matches {0..1} matches {    -- Postal delivery point
+				value matches {
+					DV_IDENTIFIER matches {*}
+				}
+			}
 		}
 	}
+
+
 
 
 ontology
@@ -181,322 +171,99 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Address">
-					description = <"To record details of one or more personal addresses.">
+					description = <"A physical or postal address for use within a health record.">
 				>
 				["at0001"] = <
-					text = <"Address">
-					description = <"One or more adresses for an individual.">
+					text = <"Type">
+					description = <"The type of address.">
+					comment = <"For example: physical or postal.">
 				>
 				["at0002"] = <
-					text = <"Unstructured address">
-					description = <"A postal address expressed in an unstructured format. ENV 13606 - 4:2000 7.11.15.">
+					text = <"Physical">
+					description = <"Address of the physical location.">
 				>
 				["at0003"] = <
-					text = <"Structured address">
-					description = <"The structure of a postal address representing the residence of a patient or the physical location of an organisation.  ENV 13606-4:2000 7.11.1.">
+					text = <"Postal">
+					description = <"Address for sending correspondence.">
 				>
 				["at0004"] = <
-					text = <"Post code">
-					description = <"Post code.">
+					text = <"Both">
+					description = <"Address of a physical location and for sending correspondence.">
 				>
 				["at0005"] = <
-					text = <"Property number">
-					description = <"The number of the property.">
+					text = <"Use">
+					description = <"The primary purpose or use for the address.">
 				>
 				["at0006"] = <
-					text = <"Address Type">
-					description = <"The type of address.">
+					text = <"Business">
+					description = <"Address of the physical location of a business or office.">
 				>
 				["at0007"] = <
-					text = <"Valid from">
-					description = <"The start of the period for which this address is valid.">
+					text = <"Residential">
+					description = <"Address of where a person is living on a regular basis.">
 				>
 				["at0008"] = <
-					text = <"Valid to">
-					description = <"Date from which the Address is no longer valid.">
+					text = <"Temporary accomodation">
+					description = <"Address of where a person is living on a temporary basis.">
 				>
 				["at0009"] = <
 					text = <"Address line">
-					description = <"A series of address lines.">
+					description = <"A text composite of one or more structured address components that represent a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. ‘Suburb/Town/Locality’, ‘Postcode’, and ‘State/Territory/Province’, forms a complete geographical/physical address.">
+					comment = <"Run-time name constraints allow for multiple named 'Address lines', as required. For example: 
+Apartment 7A,
+52 Davis Street,
+Carlton North,
+Victoria, AUSTRALIA 3042.">
+				>
+				["at0010"] = <
+					text = <"Address line 1">
+					description = <"">
 				>
 				["at0011"] = <
-					text = <"Residential">
-					description = <"Address of place of residence.">
+					text = <"Address line 2">
+					description = <"">
 				>
 				["at0012"] = <
-					text = <"Correspondence">
-					description = <"Address for correspondence.">
+					text = <"Address line 3">
+					description = <"">
 				>
 				["at0013"] = <
-					text = <"Business">
-					description = <"Address of place of business.">
+					text = <"Address line 4">
+					description = <"">
 				>
 				["at0014"] = <
-					text = <"Temporary">
-					description = <"Temporary address.">
+					text = <"Structured address line">
+					description = <"Additional structured low level geographical/physical details about a location that can be concatenated to form one or more 'Address line' entries.">
 				>
 				["at0015"] = <
-					text = <"AddressValid Period">
-					description = <"The period during which the associated address is applicable to the person / organisation.  ENV 13606 - 4:2000 7.11.11.  This describes the actual period.">
+					text = <"Suburb/Town/City/Locality">
+					description = <"The name of the general locality containing the address.">
+					comment = <"Coding with an external terminology is preferred, where possible. For example: Fitzroy, Calgary.">
 				>
-			>
-		>
-		["de"] = <
-			items = <
-				["at0000"] = <
-					text = <"Adresse">
-					description = <"Zur Dokumentation einer oder mehrerer Postadressen einer Person oder Einrichtung">
+				["at0016"] = <
+					text = <"District/County">
+					description = <"The name of an internal political or geographic district or area within a state, territory or province containing the address.">
+					comment = <"Coding with an external terminology is preferred, where possible.">
 				>
-				["at0001"] = <
-					text = <"Adresse">
-					description = <"Eine oder mehrere Adressen einer Person oder Einrichtung">
+				["at0017"] = <
+					text = <"State/Territory/Province">
+					description = <"The name of an internal political or geographic division of a country containing the address.">
+					comment = <"Coding with an external terminology is preferred, where possible. For example: Victoria; Alberta.">
 				>
-				["at0002"] = <
-					text = <"Unstrukturierte Adresse">
-					description = <"Eine Postadresse in unstrukturiertem Format. ENV 13606 - 4:2000 7.11.15">
+				["at0018"] = <
+					text = <"Postcode">
+					description = <"The code for a postal delivery area containing the address, aligned with locality, suburb or place for an address, as defined by the relevant postal delivery service.">
+					comment = <"Also known as ZIP code.
+">
 				>
-				["at0003"] = <
-					text = <"Strukturierte Adresse">
-					description = <"Struktur zur Aufnahme der Postadresse einer Person oder Einrichtung.  ENV 13606-4:2000 7.11.1">
+				["at0019"] = <
+					text = <"Country">
+					description = <"The name of the country containing the address.">
+					comment = <"Coding with an external terminology is preferred, where possible. For example: Australia; Canada">
 				>
-				["at0004"] = <
-					text = <"Postleitzahl">
-					description = <"Postleitzahl">
-				>
-				["at0005"] = <
-					text = <"Hausnummer">
-					description = <"Hausnummer">
-				>
-				["at0006"] = <
-					text = <"Art">
-					description = <"Art der Adresse">
-				>
-				["at0007"] = <
-					text = <"Gültig seit">
-					description = <"Das Datum seit dem die Adresse gültig ist">
-				>
-				["at0008"] = <
-					text = <"Gültig bis">
-					description = <"Das Datum an dem die Adresse ungültig wurde">
-				>
-				["at0009"] = <
-					text = <"Adresse">
-					description = <"Eine Reihe von Adresszeilen">
-				>
-				["at0011"] = <
-					text = <"Privat">
-					description = <"*">
-				>
-				["at0012"] = <
-					text = <"Schriftverkehr">
-					description = <"*">
-				>
-				["at0013"] = <
-					text = <"Geschäftlich">
-					description = <"*">
-				>
-				["at0014"] = <
-					text = <"Vorläufig">
-					description = <"*">
-				>
-				["at0015"] = <
-					text = <"Gültigkeitszeitraum">
-					description = <"Der Zeitraum in dem die Adresse gültig ist.  ENV 13606 - 4:2000 7.11.11.">
-				>
-			>
-		>
-		["es-ar"] = <
-			items = <
-				["at0000"] = <
-					text = <"domicilio">
-					description = <"Registrar los detalles de uno o mas domicilios personales de un individuo.">
-				>
-				["at0001"] = <
-					text = <"domicilio">
-					description = <"Uno o mas domicilios personales de un individuo.">
-				>
-				["at0002"] = <
-					text = <"Domicilio no estructurado">
-					description = <"Un domicilio postal expresado en formato no estructurado. ENV 13606 - 4:2000 7.11.15.">
-				>
-				["at0003"] = <
-					text = <"Domicilio estructurado">
-					description = <"La estructura de un domicilio postal que representa la residencia de un paciente o la localización física de una organización. ENV 13606-4:2000 7.11.1.">
-				>
-				["at0004"] = <
-					text = <"Código postal">
-					description = <"Código postal.">
-				>
-				["at0005"] = <
-					text = <"Número de la propiedad">
-					description = <"El número de la propiedad.">
-				>
-				["at0006"] = <
-					text = <"Tipo de domicilio">
-					description = <"El tipo de domicilio.">
-				>
-				["at0007"] = <
-					text = <"Valido desde">
-					description = <"El comienzo del período durante el cual el domicilio es válido.">
-				>
-				["at0008"] = <
-					text = <"Valido hasta">
-					description = <"La fecha a partir de la cual el domicilio deja de ser válido.">
-				>
-				["at0009"] = <
-					text = <"Linea de domicilio.">
-					description = <"Una serie de lineas de domicilio.">
-				>
-				["at0011"] = <
-					text = <"Residencial">
-					description = <"Domicilio del lugar de residencia.">
-				>
-				["at0012"] = <
-					text = <"Correspondencia">
-					description = <"Domicilio para correspondencia.">
-				>
-				["at0013"] = <
-					text = <"Laboral">
-					description = <"Domicilio laboral.">
-				>
-				["at0014"] = <
-					text = <"Temporario">
-					description = <"Domicilio temporario.">
-				>
-				["at0015"] = <
-					text = <"Período de validez del domicilio">
-					description = <"El período durante el cual el domicilio asociado es aplicable a una persona / organización. ENV 13606 - 4:2000 7.11.11.  Esto describe el período actual.">
-				>
-			>
-		>
-		["ar-sy"] = <
-			items = <
-				["at0000"] = <
-					text = <"العنوان">
-					description = <"لتسجيل تفاصيل عنوان شخصي واحد أو أكثر">
-				>
-				["at0001"] = <
-					text = <"العنوان">
-					description = <"عنوان واحد أو أكثر بالنسبة لفرد ما">
-				>
-				["at0002"] = <
-					text = <"عنوان غير مركب">
-					description = <"عنوان بريدي يتم التعبير عنه بتصميم غير مركب. 
-مثلا: ENV 13606 - 4:2000 7.11.15.">
-				>
-				["at0003"] = <
-					text = <"العنوان المركب">
-					description = <"تركيب العنوان البريدي الذي يمثل مكان إقامة المريض أو المكان الفيزيائي لمؤسسة ما.  ENV 13606-4:2000 7.11.1.">
-				>
-				["at0004"] = <
-					text = <"الرمز البريدي">
-					description = <"الرمز البريدي">
-				>
-				["at0005"] = <
-					text = <"رقم العقار">
-					description = <"رقم العقار">
-				>
-				["at0006"] = <
-					text = <"نوع العنوان">
-					description = <"نوع العنوان">
-				>
-				["at0007"] = <
-					text = <"صالح من">
-					description = <"نقطة بداية الفترة التي يكون فيها العنوان صالحا">
-				>
-				["at0008"] = <
-					text = <"صالح حتى">
-					description = <"التاريخ الذي يكون فيه العنوان غير صالح">
-				>
-				["at0009"] = <
-					text = <"خط العنوان">
-					description = <"سلسلة من خطوط العنوان">
-				>
-				["at0011"] = <
-					text = <"مكان الإقامة">
-					description = <"عنوان مكان الإقامة">
-				>
-				["at0012"] = <
-					text = <"عنوان المراسلة">
-					description = <"عنوان المراسلة">
-				>
-				["at0013"] = <
-					text = <"العمل">
-					description = <"عنوان مكان العمل">
-				>
-				["at0014"] = <
-					text = <"مؤقت">
-					description = <"العنوان المؤقت">
-				>
-				["at0015"] = <
-					text = <"فترة صلاحية العنوان">
-					description = <"الفترة التي يكون فيها العنوان المصاحب قابلا للتطبيق. 
-ENV 13606 - 4:2000 7.11.11. 
-و هذا يصف الفترة الحقيقية.">
-				>
-			>
-		>
-		["el"] = <
-			items = <
-				["at0000"] = <
-					text = <"Διεύθυνση">
-					description = <"Γιά την καταγραφή λεπτομερειών μίας ή περισσότερων προσωπικών διευθύνσεων.">
-				>
-				["at0001"] = <
-					text = <"Διεύθυνση">
-					description = <"Μία ή περισσότερες προσωπικές διευθύνσεις για ένα άτομο.">
-				>
-				["at0002"] = <
-					text = <"Μη-δομημένη διεύθυνση">
-					description = <"Ταχυδρομική διέυθυνση σε μη-δομημένη μορφή ENV 13606 - 4:2000 7.11.15.">
-				>
-				["at0003"] = <
-					text = <"Δομημένη διεύθυνση">
-					description = <"Η δομή μιας ταχυδρομικής διεύθυνσης της οικιας ενός ασθενή ή ενός οργανισμου ENV 13606-4:2000 7.11.1">
-				>
-				["at0004"] = <
-					text = <"Tαχυδρομικός κώδικας">
-					description = <"Tαχυδρομικός κώδικας">
-				>
-				["at0005"] = <
-					text = <"Νούμερο σπιτιού">
-					description = <"Αριθμός σπιτιού">
-				>
-				["at0006"] = <
-					text = <"Τύπος διεύθυνσης">
-					description = <"Τύπος διεύθυνσης">
-				>
-				["at0007"] = <
-					text = <"Έγκυρη απο">
-					description = <"Ημερομηνία από την οποία η διέυθυνση είναι έγκυρη">
-				>
-				["at0008"] = <
-					text = <"Έγκυρη μέχρι">
-					description = <"Ημερομηνία μετά την οποία η διέυθυνση δεν είναι έγκυρη">
-				>
-				["at0009"] = <
-					text = <"Γραμμή διεύθυνσης">
-					description = <"Γραμμές διεύθυνσης">
-				>
-				["at0011"] = <
-					text = <"Οικίας">
-					description = <"Διεύθυνση οικίας">
-				>
-				["at0012"] = <
-					text = <"Αλληλογραφίας">
-					description = <"Διεύθυνση αλληλογραφίας">
-				>
-				["at0013"] = <
-					text = <"Εργασίας">
-					description = <"Διεύθυνση εργασίας">
-				>
-				["at0014"] = <
-					text = <"Προσωρινή">
-					description = <"Προσωρινή διεύθυνση">
-				>
-				["at0015"] = <
-					text = <"Περίοδος εγκυρότητας">
-					description = <"Η περίοδος για την οποία η διέυθυνση είναι έγκυρη για το άτομο ή τον οργανισμό ENV 13606 - 4:2000 7.11.11. Το πεδίο περιγράφει την περίοδο.">
+				["at0020"] = <
+					text = <"Postal delivery point">
+					description = <"A unique number assigned to a postal delivery point, as defined by the relevant postal delivery service.">
 				>
 			>
 		>
@@ -504,63 +271,108 @@ ENV 13606 - 4:2000 7.11.11.
 			items = <
 				["at0000"] = <
 					text = <"Adresse">
-					description = <"For å registrere informasjon om en eller flere personlige adresser.">
+					description = <"En fysisk adresse eller postadresse som trengs å bli representert i en pasientjournal.">
 				>
 				["at0001"] = <
-					text = <"Adresse">
-					description = <"En eller flere adresser.">
+					text = <"Type">
+					description = <"Adressetypen.">
+					comment = <"For eksempel: Fysisk adresse eller postadresse.">
 				>
 				["at0002"] = <
-					text = <"Ustrukturert adresse">
-					description = <"En postadresse på ustrukturert form. ENV 13606 - 4:2000 7.11.15.">
+					text = <"Fysisk">
+					description = <"Adressen til en fysisk lokalisering.">
 				>
 				["at0003"] = <
-					text = <"Strukturert adresse">
-					description = <"Strukturert postadresse i henhold til ENV 13606-4:2000 7.11.1.">
+					text = <"Postadresse">
+					description = <"Adresse for korrespondanse.">
 				>
 				["at0004"] = <
-					text = <"Postnummer">
-					description = <"Postnummer.">
+					text = <"Begge">
+					description = <"Både fysisk adresse og korrespondanse.">
 				>
 				["at0005"] = <
-					text = <"Gatenummer">
-					description = <"Gatenummer, herunder eventuell bokstav.">
+					text = <"Bruk">
+					description = <"Primærformål for bruk av adressen.">
 				>
 				["at0006"] = <
-					text = <"Adressetype">
-					description = <"Type adresse.">
+					text = <"Virksomhet">
+					description = <"Adressen til den fysiske plasseringen av en bedrift eller et kontor.">
 				>
 				["at0007"] = <
-					text = <"Gyldig fra">
-					description = <"Start gyldighetsperiode.">
+					text = <"Bosted">
+					description = <"Adressen hvor en person bor.">
 				>
 				["at0008"] = <
-					text = <"Gyldig til">
-					description = <"Siste gyldige dato.">
+					text = <"Midlertidig bosted">
+					description = <"Adressen hvor en person bor på midlertidig basis.">
 				>
 				["at0009"] = <
-					text = <"Adresselinje">
-					description = <"En serie med adresselinjer.">
+					text = <"Adresse">
+					description = <"En sammenstilling av en eller flere nivåer fra strukturerte adresser, for eksempel \"By\", \"Postnummer\" og \"Kommune\", som sammen gir en komplett geografisk/fysisk adresse.">
+					comment = <"Navnbegrensingen tillater registrering av flere adresselinjer. For eksempel: 
+Apartment 7A, 
+52 Davis Street, 
+Carlton North, 
+Victoria, 
+AUSTRALIA 3042.
+
+Helsedirektoratet, 
+Trondheim, 
+Postboks 6173, 
+Torgarden, 
+7435 Trondheim
+Norge">
+				>
+				["at0010"] = <
+					text = <"Adresse 1">
+					description = <"">
 				>
 				["at0011"] = <
-					text = <"Bostedsadresse">
-					description = <"Hjemmeadresse - faktisk bosted.">
+					text = <"Adresse 2">
+					description = <"">
 				>
 				["at0012"] = <
-					text = <"Postadresse">
-					description = <"Adresse for mottak av post.">
+					text = <"Adresse 3">
+					description = <"">
 				>
 				["at0013"] = <
-					text = <"Arbeidssted">
-					description = <"Jobbadresse.">
+					text = <"Adresse 4">
+					description = <"">
 				>
 				["at0014"] = <
-					text = <"Midlertidig adresse">
-					description = <"Adresse for en avgrenset tidsperiode.">
+					text = <"Strukturert adresse">
+					description = <"Ytterligere strukturerte detaljer på et lavere nivå, om geografiske / fysiske detaljer, som kan kobles sammen for å danne en \"Adresse\" oppføring.">
 				>
 				["at0015"] = <
-					text = <"Gyldighetsperiode for adressen">
-					description = <"Tidsperioden hvor adressen er gyldig eller i bruk. ENV 13606 - 4:2000 7.11.11.">
+					text = <"Forsted/By/lokalisering">
+					description = <"Navnet på forstedet, byen eller stedsnavnet som en del av adressen.">
+					comment = <"Koding med ekstern terminologi er foretrukket om mulig. For eksempel: Fitzroy, Calgary, Vikane, Øyer.
+
+">
+				>
+				["at0016"] = <
+					text = <"Distrikt/fylke">
+					description = <"Navnet på et politisk eller geografisk distrikt, eller område i en stat, territorium eller fylke, som en del av adressen.">
+					comment = <"Koding med ekstern terminologi er foretrukket om mulig.">
+				>
+				["at0017"] = <
+					text = <"Stat/territorie/provins">
+					description = <"Navnet på en politisk eller geografisk inndeling av et land som en del av adressen.">
+					comment = <"Koding med ekstern terminologi er foretrukket om mulig. For eksempel: Victoria, Alberta.">
+				>
+				["at0018"] = <
+					text = <"Postnummer">
+					description = <"Koden for et postleveringsområde som er en del av adressen, og som er definert av den relevante postleveringstjenesten.">
+					comment = <"I andre land kalles dette også ZIP kode.">
+				>
+				["at0019"] = <
+					text = <"Land">
+					description = <"Navnet på landet som en del av adressen.">
+					comment = <"Koding med ekstern terminologi er foretrukket om mulig. For eksempel: Australia, Kanada.">
+				>
+				["at0020"] = <
+					text = <"Postutleveringssted">
+					description = <"Et unikt nummer tildelt et postutleveringssted utstedt av den aktuelle postleveringstjenesten.">
 				>
 			>
 		>
