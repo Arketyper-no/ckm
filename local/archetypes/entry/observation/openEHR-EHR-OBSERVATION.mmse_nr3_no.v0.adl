@@ -18,13 +18,13 @@ description
 			use = <"Brukes for å registrere resultatene for hvert parameter og deres totale poengskår for MMSE-NR3.
 
 Arketypen inneholder dataelementer som trengs for å representere MMSE-NR3. Arketypen inneholder ikke ledetekster og hjelp til spørsmålstillinger man finner i papirskjemaet. Dette må eventuelt legges til ved bygging av skjema/funksjonalitet.">
-			keywords = <"Demens, mms", ...>
+			keywords = <"Demens, MMS, MMSE, kognisjon, kognitiv, måleverktøy, vurderingsskjema, mental status, kognitiv funksjon, mini mental status, kognitiv screening", ...>
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Marit Alice Venheim, Helse Vest IKT", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Astrid Askeland, Dips ASA, Norway", "Jannike Baggetun, Helse Bergen, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Forvaltningssenter EPJ, Helse Nord RHF, Norway (Nasjonal IKT redaktør)", "Gunnar Jårvik, Helse Vest IKT AS, Norway", "Marcus Kessner, Helse Bergen, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Bjørn Næss, DIPS ASA, Norway", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Olav Thorsen, Stavanger University Hospital, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
@@ -36,8 +36,8 @@ Engedal, K., Haugen, PK., Gilje, K. & Laake, P. (1988). Efficacy of short mental
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"270F205254F05940800CCCCC0B722479">
-		["build_uid"] = <"98434738-14d4-4916-ba99-2ae9ee870508">
+		["MD5-CAM-1.0.1"] = <"98DC90A8C2199989E0EE8359F8B3BD49">
+		["build_uid"] = <"9ee74ae5-3b3f-45d5-a713-343f743d6a04">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -80,11 +80,6 @@ definition
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Testleder (TL)
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
 									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Teststed
 										value matches {
 											DV_TEXT matches {*}
@@ -101,7 +96,7 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Når/hvor/oppgavesett nr./skåre
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Når/hvor/oppgavesett nr./skår
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -134,43 +129,43 @@ definition
 									}
 									CLUSTER[at0171] occurrences matches {0..1} matches {    -- Orientering
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0021] occurrences matches {0..1} matches {    -- 1. Hva er din fødselsdato?
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Hva er din fødselsdato?
 												value matches {
 													0|[local::at0022],
 													1|[local::at0023]
 												}
 											}
-											ELEMENT[at0024] occurrences matches {0..1} matches {    -- 2. Hvor gammel er du?
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Hvor gammel er du?
 												value matches {
 													0|[local::at0025],
 													1|[local::at0026]
 												}
 											}
-											ELEMENT[at0027] occurrences matches {0..1} matches {    -- 3. Hvilket årstall har vi nå?
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Hvilket årstall har vi nå?
 												value matches {
 													0|[local::at0028],
 													1|[local::at0029]
 												}
 											}
-											ELEMENT[at0030] occurrences matches {0..1} matches {    -- 4. Hvilken årstid har vi nå?
+											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Hvilken årstid har vi nå?
 												value matches {
 													0|[local::at0031],
 													1|[local::at0032]
 												}
 											}
-											ELEMENT[at0033] occurrences matches {0..1} matches {    -- 5. Hvilken måned har vi nå?
+											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Hvilken måned har vi nå?
 												value matches {
 													0|[local::at0034],
 													1|[local::at0035]
 												}
 											}
-											ELEMENT[at0036] occurrences matches {0..1} matches {    -- 6. Hvilken dag har vi i dag?
+											ELEMENT[at0036] occurrences matches {0..1} matches {    -- Hvilken dag har vi i dag?
 												value matches {
 													0|[local::at0037],
 													1|[local::at0038]
 												}
 											}
-											ELEMENT[at0039] occurrences matches {0..1} matches {    -- 7. Hvilken dato har vi i dag?
+											ELEMENT[at0039] occurrences matches {0..1} matches {    -- Hvilken dato har vi i dag?
 												value matches {
 													0|[local::at0040],
 													1|[local::at0041]
@@ -190,7 +185,7 @@ definition
 															}
 														}
 													}
-													ELEMENT[at0042] occurrences matches {0..1} matches {    -- 8. Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
+													ELEMENT[at0042] occurrences matches {0..1} matches {    -- Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
 														value matches {
 															0|[local::at0043],
 															1|[local::at0044]
@@ -221,7 +216,7 @@ definition
 													}
 												}
 											}
-											ELEMENT[at0048] occurrences matches {0..1} matches {    -- 10. I hvilken etasje er vi nå?
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- I hvilken etasje er vi nå?
 												value matches {
 													0|[local::at0049],
 													1|[local::at0050]
@@ -234,12 +229,12 @@ definition
 											}
 										}
 									}
-									CLUSTER[at0174] occurrences matches {0..1} matches {    -- 11. Umiddelbar gjenkalling
+									CLUSTER[at0174] occurrences matches {0..1} matches {    -- Umiddelbar gjenkalling
 										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Antall presentasjoner
 												value matches {
 													DV_COUNT matches {
-														magnitude matches {|0..3|}
+														magnitude matches {|1..3|}
 													}
 												}
 											}
@@ -268,7 +263,7 @@ definition
 											}
 										}
 									}
-									CLUSTER[at0178] occurrences matches {0..1} matches {    -- 12. Hoderegning
+									CLUSTER[at0178] occurrences matches {0..1} matches {    -- Hoderegning
 										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Tallsvar 1
 												value matches {
@@ -291,6 +286,31 @@ definition
 												}
 											}
 											ELEMENT[at0080] occurrences matches {0..1} matches {    -- Tallsvar 5
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0217] occurrences matches {0..1} matches {    -- Trakk fra/la til 1
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0218] occurrences matches {0..1} matches {    -- Trakk fra/la til 2
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0219] occurrences matches {0..1} matches {    -- Trakk fra/la til 3
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0220] occurrences matches {0..1} matches {    -- Trakk fra/la til 4
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0221] occurrences matches {0..1} matches {    -- Trakk fra/la til 5
 												value matches {
 													DV_COUNT matches {*}
 												}
@@ -332,7 +352,7 @@ definition
 											}
 										}
 									}
-									CLUSTER[at0179] occurrences matches {0..1} matches {    -- 13. Utsatt gjenkalling
+									CLUSTER[at0179] occurrences matches {0..1} matches {    -- Utsatt gjenkalling
 										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0181] occurrences matches {0..1} matches {    -- Skår ord 1
 												value matches {
@@ -363,13 +383,13 @@ definition
 										items cardinality matches {1..*; unordered} matches {
 											CLUSTER[at0190] occurrences matches {0..1} matches {    -- Benevning
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0117] occurrences matches {0..1} matches {    -- 14. Hva heter dette?
+													ELEMENT[at0117] occurrences matches {0..1} matches {    -- Hva heter dette (skje)?
 														value matches {
 															0|[local::at0118],
 															1|[local::at0119]
 														}
 													}
-													ELEMENT[at0120] occurrences matches {0..1} matches {    -- 15. Hva heter dette?
+													ELEMENT[at0120] occurrences matches {0..1} matches {    -- Hva heter dette (hammer)?
 														value matches {
 															0|[local::at0121],
 															1|[local::at0122]
@@ -379,7 +399,7 @@ definition
 											}
 											CLUSTER[at0191] occurrences matches {0..1} matches {    -- Fraserepetisjon
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0123] occurrences matches {0..1} matches {    -- 16. Gjenta ordrett denne frasen nå: «Aldri annet enn om og men».
+													ELEMENT[at0123] occurrences matches {0..1} matches {    -- Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»
 														value matches {
 															0|[local::at0124],
 															1|[local::at0125]
@@ -388,7 +408,7 @@ definition
 													ELEMENT[at0126] occurrences matches {0..1} matches {    -- Antall presentasjoner
 														value matches {
 															DV_COUNT matches {
-																magnitude matches {|0..3|}
+																magnitude matches {|1..3|}
 															}
 														}
 													}
@@ -396,19 +416,19 @@ definition
 											}
 											CLUSTER[at0192] occurrences matches {0..1} matches {    -- 3-leddet kommando
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0127] occurrences matches {0..1} matches {    -- 17. Tar arket med kun én hånd
+													ELEMENT[at0127] occurrences matches {0..1} matches {    -- Tar arket med kun én hånd
 														value matches {
 															0|[local::at0128],
 															1|[local::at0129]
 														}
 													}
-													ELEMENT[at0130] occurrences matches {0..1} matches {    -- 17. Bretter arket på midten kun én gang
+													ELEMENT[at0130] occurrences matches {0..1} matches {    -- Bretter arket på midten kun én gang
 														value matches {
 															0|[local::at0131],
 															1|[local::at0132]
 														}
 													}
-													ELEMENT[at0133] occurrences matches {0..1} matches {    -- 17. Gir arket til TL
+													ELEMENT[at0133] occurrences matches {0..1} matches {    -- Gir arket til TL
 														value matches {
 															0|[local::at0134],
 															1|[local::at0135]
@@ -418,7 +438,7 @@ definition
 											}
 											CLUSTER[at0193] occurrences matches {0..1} matches {    -- Lesning
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0137] occurrences matches {0..1} matches {    -- 18. Pek på ansiktet ditt
+													ELEMENT[at0137] occurrences matches {0..1} matches {    -- Pek på ansiktet ditt
 														value matches {
 															0|[local::at0138],
 															1|[local::at0139]
@@ -427,7 +447,7 @@ definition
 													ELEMENT[at0136] occurrences matches {0..1} matches {    -- Antall presentasjoner
 														value matches {
 															DV_COUNT matches {
-																magnitude matches {|0..3|}
+																magnitude matches {|1..3|}
 															}
 														}
 													}
@@ -435,7 +455,7 @@ definition
 											}
 											CLUSTER[at0195] occurrences matches {0..1} matches {    -- Setningsgenerering
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0140] occurrences matches {0..1} matches {    -- 19. Skriv en meningsfull setning* her.
+													ELEMENT[at0140] occurrences matches {0..1} matches {    -- Skriv en meningsfull setning* her
 														value matches {
 															0|[local::at0141],
 															1|[local::at0142]
@@ -452,7 +472,7 @@ definition
 									}
 									CLUSTER[at0196] occurrences matches {0..1} matches {    -- Figurkopiering
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0143] occurrences matches {0..1} matches {    -- 20. Kopier figuren så nøyaktig du kan her.
+											ELEMENT[at0143] occurrences matches {0..1} matches {    -- Kopier figuren så nøyaktig du kan her
 												value matches {
 													0|[local::at0144],
 													1|[local::at0145]
@@ -612,10 +632,6 @@ ontology
 					text = <"Geriatrisk leseprøve">
 					description = <"">
 				>
-				["at0010"] = <
-					text = <"Testleder (TL)">
-					description = <"">
-				>
 				["at0011"] = <
 					text = <"Teststed">
 					description = <"">
@@ -633,7 +649,7 @@ ontology
 					description = <"">
 				>
 				["at0016"] = <
-					text = <"Når/hvor/oppgavesett nr./skåre">
+					text = <"Når/hvor/oppgavesett nr./skår">
 					description = <"">
 				>
 				["at0017"] = <
@@ -653,7 +669,7 @@ ontology
 					description = <"">
 				>
 				["at0021"] = <
-					text = <"1. Hva er din fødselsdato?">
+					text = <"Hva er din fødselsdato?">
 					description = <"">
 				>
 				["at0022"] = <
@@ -665,7 +681,7 @@ ontology
 					description = <"">
 				>
 				["at0024"] = <
-					text = <"2. Hvor gammel er du?">
+					text = <"Hvor gammel er du?">
 					description = <"">
 				>
 				["at0025"] = <
@@ -677,7 +693,7 @@ ontology
 					description = <"">
 				>
 				["at0027"] = <
-					text = <"3. Hvilket årstall har vi nå?">
+					text = <"Hvilket årstall har vi nå?">
 					description = <"">
 				>
 				["at0028"] = <
@@ -689,7 +705,7 @@ ontology
 					description = <"">
 				>
 				["at0030"] = <
-					text = <"4. Hvilken årstid har vi nå?">
+					text = <"Hvilken årstid har vi nå?">
 					description = <"">
 				>
 				["at0031"] = <
@@ -701,7 +717,7 @@ ontology
 					description = <"">
 				>
 				["at0033"] = <
-					text = <"5. Hvilken måned har vi nå?">
+					text = <"Hvilken måned har vi nå?">
 					description = <"">
 				>
 				["at0034"] = <
@@ -713,7 +729,7 @@ ontology
 					description = <"">
 				>
 				["at0036"] = <
-					text = <"6. Hvilken dag har vi i dag?">
+					text = <"Hvilken dag har vi i dag?">
 					description = <"">
 				>
 				["at0037"] = <
@@ -725,7 +741,7 @@ ontology
 					description = <"">
 				>
 				["at0039"] = <
-					text = <"7. Hvilken dato har vi i dag?">
+					text = <"Hvilken dato har vi i dag?">
 					description = <"">
 				>
 				["at0040"] = <
@@ -737,7 +753,7 @@ ontology
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"8. Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
+					text = <"Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
 					description = <"">
 				>
 				["at0043"] = <
@@ -761,7 +777,7 @@ ontology
 					description = <"">
 				>
 				["at0048"] = <
-					text = <"10. I hvilken etasje er vi nå?">
+					text = <"I hvilken etasje er vi nå?">
 					description = <"">
 				>
 				["at0049"] = <
@@ -893,7 +909,7 @@ ontology
 					description = <"">
 				>
 				["at0117"] = <
-					text = <"14. Hva heter dette?">
+					text = <"Hva heter dette (skje)?">
 					description = <"Benevning av skje fra stimulusark.">
 				>
 				["at0118"] = <
@@ -905,7 +921,7 @@ ontology
 					description = <"">
 				>
 				["at0120"] = <
-					text = <"15. Hva heter dette?">
+					text = <"Hva heter dette (hammer)?">
 					description = <"Benevning av hammer fra stimulusark.">
 				>
 				["at0121"] = <
@@ -917,7 +933,7 @@ ontology
 					description = <"">
 				>
 				["at0123"] = <
-					text = <"16. Gjenta ordrett denne frasen nå: «Aldri annet enn om og men».">
+					text = <"Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»">
 					description = <"">
 				>
 				["at0124"] = <
@@ -933,7 +949,7 @@ ontology
 					description = <"">
 				>
 				["at0127"] = <
-					text = <"17. Tar arket med kun én hånd">
+					text = <"Tar arket med kun én hånd">
 					description = <"">
 				>
 				["at0128"] = <
@@ -945,7 +961,7 @@ ontology
 					description = <"">
 				>
 				["at0130"] = <
-					text = <"17. Bretter arket på midten kun én gang">
+					text = <"Bretter arket på midten kun én gang">
 					description = <"">
 				>
 				["at0131"] = <
@@ -957,7 +973,7 @@ ontology
 					description = <"">
 				>
 				["at0133"] = <
-					text = <"17. Gir arket til TL">
+					text = <"Gir arket til TL">
 					description = <"">
 				>
 				["at0134"] = <
@@ -973,7 +989,7 @@ ontology
 					description = <"">
 				>
 				["at0137"] = <
-					text = <"18. Pek på ansiktet ditt">
+					text = <"Pek på ansiktet ditt">
 					description = <"">
 				>
 				["at0138"] = <
@@ -985,7 +1001,7 @@ ontology
 					description = <"">
 				>
 				["at0140"] = <
-					text = <"19. Skriv en meningsfull setning* her.">
+					text = <"Skriv en meningsfull setning* her">
 					description = <"">
 				>
 				["at0141"] = <
@@ -997,7 +1013,7 @@ ontology
 					description = <"">
 				>
 				["at0143"] = <
-					text = <"20. Kopier figuren så nøyaktig du kan her.">
+					text = <"Kopier figuren så nøyaktig du kan her">
 					description = <"">
 				>
 				["at0144"] = <
@@ -1105,15 +1121,15 @@ ontology
 					description = <"">
 				>
 				["at0174"] = <
-					text = <"11. Umiddelbar gjenkalling">
+					text = <"Umiddelbar gjenkalling">
 					description = <"">
 				>
 				["at0178"] = <
-					text = <"12. Hoderegning">
+					text = <"Hoderegning">
 					description = <"">
 				>
 				["at0179"] = <
-					text = <"13. Utsatt gjenkalling">
+					text = <"Utsatt gjenkalling">
 					description = <"">
 				>
 				["at0181"] = <
@@ -1256,6 +1272,26 @@ ontology
 				["at0216"] = <
 					text = <"Kommentar">
 					description = <"Kommentarer til oppgaveleddet \"Figurkopiering\".">
+				>
+				["at0217"] = <
+					text = <"Trakk fra/la til 1">
+					description = <"Tallet pasienten trakk fra eller la til starttallet for å komme fram til Tallsvar 1.">
+				>
+				["at0218"] = <
+					text = <"Trakk fra/la til 2">
+					description = <"Tallet pasienten trakk fra eller la til Tallsvar 1 for å komme fram til Tallsvar 2.">
+				>
+				["at0219"] = <
+					text = <"Trakk fra/la til 3">
+					description = <"Tallet pasienten trakk fra eller la til Tallsvar 2 for å komme fram til Tallsvar 3.">
+				>
+				["at0220"] = <
+					text = <"Trakk fra/la til 4">
+					description = <"Tallet pasienten trakk fra eller la til Tallsvar 3 for å komme fram til Tallsvar 4.">
+				>
+				["at0221"] = <
+					text = <"Trakk fra/la til 5">
+					description = <"Tallet pasienten trakk fra eller la til Tallsvar 4 for å komme fram til Tallsvar 5.">
 				>
 			>
 		>
