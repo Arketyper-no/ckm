@@ -1,0 +1,299 @@
+﻿archetype (adl_version=1.4; uid=c46822b6-c45b-4816-b07a-ee49180637e8)
+	openEHR-EHR-CLUSTER.edar_tillegg.v0
+
+concept
+	[at0000]	-- eDår tillegg
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Mikkel Johan Gaup Grønmo">
+		["organisation"] = <"Helse Nord RHF">
+		["email"] = <"mikkel.johan.gaup.gronmo@helse-nord.no">
+		["date"] = <"2020-09-11">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere detaljer i dødsårsakregisteret.">
+			use = <"Brukt for å registrere detaljer rundt dødsårsakregisteret.">
+			keywords = <"dødsårsakregister", "edår", "obduksjon", "skadetype">
+			misuse = <"Ikke ment brukt til annet enn utvidelse av EVALUATION.cause_of_death arketypen for detaljer i Dødsårsak og Dødsmelding.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Morten Marthinussen, FHI", ...>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"eDÅR Kodeverk, internt dokument. Datert 01/08-2020.">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"39C74DD7ED5FAF2DF95FEEC6A5171915">
+		["build_uid"] = <"899f9570-f1fc-4ca2-a299-8b67d61468e4">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- eDår tillegg
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0073] occurrences matches {0..1} matches {    -- Kontaktinformasjon
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0072] matches {    -- Virksomhet
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0074] matches {    -- Avdeling
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0075] matches {    -- Telefonnummer
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0076] occurrences matches {0..1} matches {    -- E-post
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0032] occurrences matches {0..1} matches {    -- Diverse
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0064] occurrences matches {0..1} matches {    -- Kjønn
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0069] occurrences matches {0..1} matches {    -- Meldingstype
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0030] occurrences matches {0..1} matches {    -- Sted
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Dødskommune
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0041] occurrences matches {0..1} matches {    -- Dødssted
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0027] occurrences matches {0..1} matches {    -- Tilleggsopplysninger om skade
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0047] occurrences matches {0..1} matches {    -- Skade/forgiftning
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0050] occurrences matches {0..1} matches {    -- Skadetidspunkt
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0051] occurrences matches {0..1} matches {    -- Omstendighet
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0052] occurrences matches {0..1} matches {    -- Sted for skade
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Aktivitet ved dødsfall
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0033] occurrences matches {0..1} matches {    -- Meldeplikt ved unaturlig dødsfall
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0029] occurrences matches {0..1} matches {    -- Operasjon
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0037] occurrences matches {0..1} matches {    -- Gjennomgått operasjon
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0038] occurrences matches {0..1} matches {    -- Operasjonsdato
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0039] occurrences matches {0..1} matches {    -- Årsak til operasjon og funn
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0031] occurrences matches {0..1} matches {    -- Klassifisering av dødsfall
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Klassifisering av dødsfall
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Obduksjon
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Revurdere dødsårsak
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"eDår tillegg">
+					description = <"Tilleggsdetaljer brukt i kontekst av dødsårsakregistrering, EVALUATION.cause_of_death.">
+				>
+				["at0001"] = <
+					text = <"Aktivitet ved dødsfall">
+					description = <"Hva slags aktivitet holdt avdøde på med?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0007"] = <
+					text = <"Obduksjon">
+					description = <"Blir det utført obduksjon?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0015"] = <
+					text = <"Revurdere dødsårsak">
+					description = <"Vil den oppgitte dødsårsaken senere bli revurdert?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0019"] = <
+					text = <"Klassifisering av dødsfall">
+					description = <"Hvordan ville du ha klassifisert dødsfallet?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0027"] = <
+					text = <"Tilleggsopplysninger om skade">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Operasjon">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Sted">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Klassifisering av dødsfall">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Diverse">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Meldeplikt ved unaturlig dødsfall">
+					description = <"Kan dødsfallet anses som unaturlig?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0037"] = <
+					text = <"Gjennomgått operasjon">
+					description = <"Har avdøde gjennomgått en operasjon av betydning for dødsfallet?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0038"] = <
+					text = <"Operasjonsdato">
+					description = <"Når ble avdøde operert (ca.)?">
+				>
+				["at0039"] = <
+					text = <"Årsak til operasjon og funn">
+					description = <"Hva var årsaken til operasjonen og viktigste funn?">
+					comment = <"Fritekst, maks 220 tegn.">
+				>
+				["at0040"] = <
+					text = <"Dødskommune">
+					description = <"Navn på kommunen hvor dødsfallet skjedde.">
+					comment = <"Via NHN REST API">
+				>
+				["at0041"] = <
+					text = <"Dødssted">
+					description = <"Type sted.">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\".">
+				>
+				["at0047"] = <
+					text = <"Skade/forgiftning">
+					description = <"Er noen av dødsårsakene forårsaket av skade eller forgiftning?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\".">
+				>
+				["at0050"] = <
+					text = <"Skadetidspunkt">
+					description = <"Når skjedde skaden?">
+				>
+				["at0051"] = <
+					text = <"Omstendighet">
+					description = <"Beskriv kort omstendighetene rundt skade.">
+					comment = <"Fritekst, 220 tegn maks.">
+				>
+				["at0052"] = <
+					text = <"Sted for skade">
+					description = <"På hvilket sted skjedde skaden?">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0064"] = <
+					text = <"Kjønn">
+					description = <"">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0069"] = <
+					text = <"Meldingstype">
+					description = <"">
+					comment = <"Egnet kode fra \"eDÅR Kodeverk\"">
+				>
+				["at0072"] = <
+					text = <"Virksomhet">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Kontaktinformasjon">
+					description = <"Klinikers kontaktinformasjon.">
+					comment = <"Må prioriteres å få registrert rett kontaktinformasjon hvis behov for rekontakt.">
+				>
+				["at0074"] = <
+					text = <"Avdeling">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"Telefonnummer">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"E-post">
+					description = <"">
+				>
+			>
+		>
+	>

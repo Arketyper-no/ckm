@@ -1,0 +1,299 @@
+﻿archetype (adl_version=1.4; uid=341b89ad-adb7-4cfa-bc0f-85dd76d1bea4)
+	openEHR-EHR-EVALUATION.cause_of_death.v0
+
+concept
+	[at0000]	-- Cause of death
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Mikkel Johan Gaup Grønmo">
+				["organisation"] = <"Forvaltningssenter EPJ, Helse Nord RHF">
+				["email"] = <"mikkel.johan.gaup.gronmo@helse-nord.no">
+			>
+			accreditation = <"Nasjonal IKT HF">
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Mikkel Johan Gaup Grønmo">
+		["organisation"] = <"Forvaltningssenter EPJ, Helse-Nord RHF">
+		["email"] = <"mikkel.johan.gaup.gronmo@helse-nord.no">
+		["date"] = <"2020-08-03">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Registrere detaljer om hoved- og medvirkende dødsårsak og annen relevant informasjon om omstendighetene rundt dødsfallet.">
+			use = <"Brukes for å registrere detaljer om hoved- og medvirkende dødsårsak og annen relevant informasjon om omstendighetene rundt dødsfallet.">
+			keywords = <"årsak til død", "evaluering av dødsfall", "ulykke", "traume", "dårlig prognose">
+			misuse = <"Ikke ment brukt for å registrere andre diagnoser som ikke har relasjon til død.">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about primary or secondary causes of death and other pertinent information about the circumstances leading to death.">
+			use = <"Use to record details about primary or secondary causes of death and other pertinent information about the circumstances leading to death.">
+			keywords = <"reason for death", "evaluation of death", "accident", "trauma", "poor prognosis">
+			misuse = <"Not to be used to record other diagnoses not directly correlated to death.">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Forvaltningssenter EPJ, Helse Nord RHF, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"NVSS - U.S Standard Certificate of Death. november 2003,[Internet] Available from: https://www.cdc.gov/nchs/data/dvs/DEATH11-03final-ACC.pdf.
+
+Hanzlick, Randy, og Randy Hanzlick. Cause of death and the death certificate: important information for physicians, coroners, medical examiners, and the public. College of American Pathologists,  2006. Available from: https://www.health.state.mn.us/people/vitalrecords/physician-me/docs/capcodbook.pdf.
+
+«Slik skal dødsmeldingen fylles ut». Folkehelseinstituttet, https://www.fhi.no/hn/helseregistre-og-registre/dodsarsaksregisteret/slik-skal-elektronisk-dodsmelding-fylles-ut/#2-registrere-doedsaarsak. Opened 3. august 2020.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"AF6F2B1EA883741BBD2D5541BA3B417C">
+		["build_uid"] = <"6a6c35f0-6a2d-487e-a14a-a1856bed284c">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Cause of death
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Main cause of death
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0003] occurrences matches {0..*} matches {    -- Chain of causation
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] matches {    -- Contributory cause
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0005] matches {    -- Causation order
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0006,    -- Contributory cause B
+											at0007,    -- Contributory cause C
+											at0008]    -- Contributory cause D
+										}
+									}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Duration of cause
+								value matches {
+									DV_TEXT matches {*}
+									DV_INTERVAL<DV_DURATION> matches {
+										lower matches {
+											DV_DURATION matches {
+												value matches {|>=PT0S|}
+											}
+										}
+									}
+									DV_DURATION matches {
+										value matches {|>=PT0S|}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Comorbidity
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Death details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.death_details\.v0/}
+					}
+					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- Additional details
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0014] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Last updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cause of death">
+					description = <"The details about causes or events that led to or have a relation to the individuals death.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0014"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Main cause of death">
+					description = <"Cause leading to death.">
+				>
+				["at0003"] = <
+					text = <"Chain of causation">
+					description = <"Causes and/or events including onset date, order and cause diagnosis that led to the individual ultimately dying.">
+				>
+				["at0004"] = <
+					text = <"Contributory cause">
+					description = <"Structural detail about cause or event leading to death.">
+				>
+				["at0005"] = <
+					text = <"Causation order">
+					description = <"Intended order in a due-to chain of causes or events leading to death.">
+					comment = <"Decending order Z-A, where A is Main cause of death.">
+				>
+				["at0006"] = <
+					text = <"Contributory cause B">
+					description = <"Due to or as a consequence of.">
+				>
+				["at0007"] = <
+					text = <"Contributory cause C">
+					description = <"Due to or as a consequence of.">
+				>
+				["at0008"] = <
+					text = <"Contributory cause D">
+					description = <"Due to or as a consequence of.">
+				>
+				["at0009"] = <
+					text = <"Duration of cause">
+					description = <"Approximate time from contributory cause to death.">
+				>
+				["at0010"] = <
+					text = <"Comorbidity">
+					description = <"Other comorbidities not directly linked to cause of death.">
+				>
+				["at0015"] = <
+					text = <"Last updated">
+					description = <"The date cause of death was last updated.">
+				>
+				["at0013"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the cause of death not captured in other fields.">
+				>
+				["at0012"] = <
+					text = <"Additional details">
+					description = <"Additional circumstancial details about the individuals death.">
+				>
+				["at0016"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+				["at0011"] = <
+					text = <"Death details">
+					description = <"Structured details about the death.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dødsårsak">
+					description = <"Detaljer om årsak og hendelser som førte til eller har relasjon til individets død.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0014"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Dødsårsak">
+					description = <"Årsak som førte til død.">
+				>
+				["at0003"] = <
+					text = <"Hendelsesrekkefølge">
+					description = <"Årsak og / eller hendelser inklusiv dato for sykdom eller hendelse, rekkefølge og årsak som førte til død.">
+				>
+				["at0004"] = <
+					text = <"Medvirkende årsak">
+					description = <"Strukturert informasjon om dødsårsak eller hendelse som førte til død.">
+				>
+				["at0005"] = <
+					text = <"Årsaksrekkefølge">
+					description = <"Dødsårsakrekkefølge representert i en som \"følge av\" registrering.">
+					comment = <"Synkende rekkefølge Z-A, hvor A er dødsårsak.">
+				>
+				["at0006"] = <
+					text = <"Medvirkende årsak B">
+					description = <"På grunn av eller som følge av.">
+				>
+				["at0007"] = <
+					text = <"Medvirkende årsak C">
+					description = <"På grunn av eller som følge av.">
+				>
+				["at0008"] = <
+					text = <"Medvirkende årsak D">
+					description = <"På grunn av eller som følge av.">
+				>
+				["at0009"] = <
+					text = <"Varighet årsak">
+					description = <"Tid fra diagnose til død.">
+				>
+				["at0010"] = <
+					text = <"Komorbiditet">
+					description = <"Annen komorbiditet som ikke er direkte knyttet til dødsårsak.">
+				>
+				["at0015"] = <
+					text = <"Sist oppdatert">
+					description = <"Dato når dødsårsak sist ble oppdatert.">
+				>
+				["at0013"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om dødsårsak som ikke er fanget opp i andre felt.">
+				>
+				["at0012"] = <
+					text = <"Ytterligere detaljer">
+					description = <"Ytterligere strukturerte detaljer om dødsårsak.">
+				>
+				["at0016"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0011"] = <
+					text = <"Dødsdetaljer">
+					description = <"Strukturerte detaljer om død.">
+				>
+			>
+		>
+	>

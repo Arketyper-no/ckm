@@ -1,0 +1,74 @@
+﻿archetype (adl_version=1.4; uid=22bed45b-b8b7-44b6-8783-e263745b3a61)
+	openEHR-EHR-COMPOSITION.certificate.v0
+
+concept
+	[at0000]	-- Certificate
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Mikkel Johan Gaup Grønmo">
+		["organisation"] = <"Forvaltningssenter EPJ, Helse-Nord RHF">
+		["email"] = <"mikkel.johan.gaup.gronmo@helse-nord.no">
+		["date"] = <"2020-07-28">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about certificates that relate to the patient.">
+			use = <"Intended to be used to carry deathcertificates, birthcertificates, certificates stating clinician diagnosis or statement.">
+			keywords = <"Deathcertificate, medical certificate, statement of health", ...>
+			misuse = <"Not to be used for code signing certificates, not to be used to certify ownership.">
+			copyright = <"© Nasjonal IKT HF, openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Heather Leslie, Ocean Informatics", "Marit Alice Venheim, Helse Vest IKT HF">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"«Vital Records Ordering and Tracking». Hawaii State Department of Health, http://vitalrecords.ehawaii.gov. Åpnet 3. august 2020.
+«General Register Office Certificate Application Forms». GOV.UK, https://www.gov.uk/government/publications/general-register-office-gro-certificate-application-forms. Åpnet 3. august 2020.
+«Attester». Skatteetaten, /person/folkeregister/attester-og-opplysninger/attester/. Åpnet 3. august 2020.">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"BE221FCD110E575BAA27EF4960E0BBE2">
+		["build_uid"] = <"d48e0476-5346-41f8-b189-09537a7a4f34">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Certificate
+		category matches {
+			DV_CODED_TEXT[at0001] matches {    -- Coded text
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT[at0002] matches {*}    -- Event Context
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Certificate">
+					description = <"An official document attesting the truth of the facts stated.">
+				>
+				["at0001"] = <
+					text = <"Coded text">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Event Context">
+					description = <"">
+				>
+			>
+		>
+	>
