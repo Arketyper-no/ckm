@@ -1,5 +1,5 @@
-﻿archetype (adl_version=1.4; uid=493f3255-3365-44ca-aff4-129da225e063)
-	openEHR-EHR-OBSERVATION.social_screening.v0
+﻿archetype (adl_version=1.4; uid=6cb85c39-a9cd-4bed-beff-cc9989c76d0a)
+	openEHR-EHR-OBSERVATION.social_context_screening.v0
 
 concept
 	[at0000]	-- Social context screening questionnaire
@@ -14,6 +14,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
+				["name"] = <"Marit Alice Venheim, John Tore Valand">
+				["organisation"] = <"Helse Vest IKT AS, Helse Bergen">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no">
 			>
 		>
 		["it"] = <
@@ -32,46 +35,66 @@ description
 	details = <
 		["fi"] = <
 			language = <[ISO_639-1::fi]>
-			purpose = <"*To record the responses to an individual- or self-reported questionnaire screening for social issues. (en)">
-			use = <"*Use to record the responses to an individual- or self-reported questionnaire screening for social issues.
+			purpose = <"*To record the responses to an individual- or self-reported questionnaire screening about social issues. (en)">
+			use = <"*Use to record the responses to an individual- or self-reported questionnaire screening about social issues.
 
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation; or
-- Specific questioning related to social determinants of health (en)">
-			misuse = <"*Not to be used to record details about a specific social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose. (en)">
+- Specific questioning related to screening for social determinants of health, including housing and homelessness, social isolation, employment, education, social supports, gambling, safety and exposure to violence.
+
+In order to record the response at a specific point in time or within an interval of time, use the EVENT RM attribute.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening process identifies a social issue and it is intended that the details are to be recorded and persisted as part of an ongoing health record, any further specific details about the social issue should be recorded using archetypes specific for the clinical purpose. (en)">
+			keywords = <"*homelessness (en)", "*housing (en)", "*gambling (en)", "*employment (en)", "*safety (en)", "*violence (en)">
+			misuse = <"*Not to be used to record persisent details about a social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose. (en)">
 			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"*To record the responses to an individual- or self-reported questionnaire screening for social issues. (en)">
-			use = <"*Use to record the responses to an individual- or self-reported questionnaire screening for social issues.
+			purpose = <"For å registrere responsen i et spørreskjema om sosiale problemer.">
+			use = <"Brukes for å registrere responsen i et spørreskjema om sosiale problemer.
 
-Common use cases include, but are not limited to:
-- Systematic questioning in any consultation; or
-- Specific questioning related to social determinants of health (en)">
-			misuse = <"*Not to be used to record details about a specific social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose. (en)">
+Vanlige bruksområder inkluderer, men er ikke begrenset til:
+- Systematisk spørring i enhver konsultasjon; eller
+- Spesifikk spørring relatert til overvåkning av infeksjonssykdom.
+
+For å registrere responsen på et spesifikt tidspunkt, eller i et tidsintervall bruk referansemodellens EVENT RM attributt.
+
+Denne arketypen er laget for bruk som et screeningverktøy for å registrere enkle data i et spørreskjema, for eksempel til et sykdomsregister. Oppdager man i screeningprosessen at et sosialt problem er tilstede, bør detaljer om problemet lagres som en del av den løpende journalen. Bruk da en en relevant klinisk arketype for dette formålet.">
+			keywords = <"hjemløs", "bolig", "gambling", "ansettelse", "yrkesstatus", "sikkerhet", "vold">
+			misuse = <"Skal ikke brukes til å registrere detaljer om spesifikke sosiale kontekstrelaterte konsepter. For eksempel: bolig, utdanning, yrke, sosial støtte og sosialt nettverk. Bruk spesifikke arketyper for dette formålet.">
 			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the responses to an individual- or self-reported questionnaire screening for social issues.">
-			use = <"Use to record the responses to an individual- or self-reported questionnaire screening for social issues.
+			purpose = <"To record the responses to an individual- or self-reported questionnaire screening about social issues.">
+			use = <"Use to record the responses to an individual- or self-reported questionnaire screening about social issues.
 
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation; or
-- Specific questioning related to social determinants of health">
-			misuse = <"Not to be used to record details about a specific social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose.">
+- Specific questioning related to screening for social determinants of health, including housing and homelessness, social isolation, employment, education, social supports, gambling, safety and exposure to violence.
+
+In order to record the response at a specific point in time or within an interval of time, use the EVENT RM attribute.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening process identifies a social issue and it is intended that the details are to be recorded and persisted as part of an ongoing health record, any further specific details about the social issue should be recorded using archetypes specific for the clinical purpose.">
+			keywords = <"homelessness", "housing", "gambling", "employment", "safety", "violence">
+			misuse = <"Not to be used to record persisent details about a social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
-			purpose = <"*To record the responses to an individual- or self-reported questionnaire screening for social issues. (en)">
-			use = <"*Use to record the responses to an individual- or self-reported questionnaire screening for social issues.
+			purpose = <"*To record the responses to an individual- or self-reported questionnaire screening about social issues. (en)">
+			use = <"*Use to record the responses to an individual- or self-reported questionnaire screening about social issues.
 
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation; or
-- Specific questioning related to social determinants of health (en)">
-			misuse = <"*Not to be used to record details about a specific social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose. (en)">
+- Specific questioning related to screening for social determinants of health, including housing and homelessness, social isolation, employment, education, social supports, gambling, safety and exposure to violence.
+
+In order to record the response at a specific point in time or within an interval of time, use the EVENT RM attribute.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening process identifies a social issue and it is intended that the details are to be recorded and persisted as part of an ongoing health record, any further specific details about the social issue should be recorded using archetypes specific for the clinical purpose. (en)">
+			keywords = <"*homelessness (en)", "*housing (en)", "*gambling (en)", "*employment (en)", "*safety (en)", "*violence (en)">
+			misuse = <"*Not to be used to record persisent details about a social context-related concepts. For example: housing, education, occupation, social supports and social network. Use specific archetypes for this purpose. (en)">
 			copyright = <"© openEHR Foundation">
 		>
 	>
@@ -83,8 +106,8 @@ Common use cases include, but are not limited to:
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0C16495B150D274E5A9586FD73BF17B7">
-		["build_uid"] = <"7ba6e9e8-3d26-4d56-9bf2-651a9941c7af">
+		["MD5-CAM-1.0.1"] = <"7FC295B6DED10CF22224DFBF1D0059A0">
+		["build_uid"] = <"538bfb5f-68c3-42cc-b0b3-a71cee15dadd">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -102,7 +125,7 @@ definition
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Presence of any social issues?
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Any presence?
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
@@ -112,6 +135,7 @@ definition
 													at0033]    -- Indeterminate
 												}
 											}
+											DV_TEXT matches {*}
 										}
 									}
 									CLUSTER[at0022] occurrences matches {0..*} matches {    -- Specific social issue
@@ -131,17 +155,18 @@ definition
 															at0027]    -- Indeterminate
 														}
 													}
+													DV_TEXT matches {*}
 												}
 											}
-										}
-									}
-									allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Additional details
-										include
-											archetype_id/value matches {/.*/}
-									}
-									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Comment
-										value matches {
-											DV_TEXT matches {*}
+											allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Screening details
+												include
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Comment
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
 										}
 									}
 								}
@@ -185,11 +210,12 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Social issue name">
-					description = <"Name of the symptom or sign being screened.">
+					description = <"Name of the social issue being screened.">
+					comment = <"For example: ">
 				>
 				["at0005"] = <
 					text = <"Presence?">
-					description = <"Presence of the symptom or sign.">
+					description = <"Presence of the social issue.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -202,7 +228,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"Specific social issue">
-					description = <"Grouping of data elements related to screening for a single symptom or sign.">
+					description = <"Screening details about a specifed social issue.">
 				>
 				["at0023"] = <
 					text = <"Present">
@@ -214,19 +240,19 @@ ontology
 				>
 				["at0025"] = <
 					text = <"Comment">
-					description = <"Additional narrative about the symptoms and signs, not captured in other fields.">
+					description = <"Additional narrative about the specified social issue, not captured in other fields.">
 				>
 				["at0026"] = <
-					text = <"Additional details">
-					description = <"Additional structured details related to social issue screening.">
+					text = <"Screening details">
+					description = <"Additional details or questions about a specific social issue.">
 				>
 				["at0027"] = <
 					text = <"Indeterminate">
 					description = <"It is not possible to know if the symptom or sign is present or absent.">
 				>
 				["at0028"] = <
-					text = <"Presence of any social issues?">
-					description = <"Presence of the any relevant symptoms or signs.">
+					text = <"Any presence?">
+					description = <"Presence of any social issues.">
 				>
 				["at0031"] = <
 					text = <"Present">
@@ -267,11 +293,12 @@ ontology
 				>
 				["at0004"] = <
 					text = <"*Social issue name (en)">
-					description = <"Oireen tai tuntemuksen nimi jota arvioidaan">
+					description = <"*Name of the social issue being screened. (en)">
+					comment = <"*For example:  (en)">
 				>
 				["at0005"] = <
 					text = <"Olemassalolo">
-					description = <"Oireen tai tuntemuksen olemassaolo">
+					description = <"Oireen tai tuntemuksen olemassaolo.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -284,7 +311,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"*Specific social issue (en)">
-					description = <"*Grouping of data elements related to screening for a single symptom or sign.(en)">
+					description = <"*Screening details about a specifed social issue. (en)">
 				>
 				["at0023"] = <
 					text = <"*Present(en)">
@@ -296,18 +323,18 @@ ontology
 				>
 				["at0025"] = <
 					text = <"Kommentit">
-					description = <"Lisätietoa tarkentamaan oireita tai tuntemuksia.">
+					description = <"*Additional narrative about the specified social issue, not captured in other fields. (en)">
 				>
 				["at0026"] = <
-					text = <"Lisätietoa">
-					description = <"*Additional structured details related to social issue screening. (en)">
+					text = <"*Screening details (en)">
+					description = <"*Additional details or questions about a specific social issue. (en)">
 				>
 				["at0027"] = <
 					text = <"Määrittelemätön">
 					description = <"Ei ole mahdollista varmistaa, onko oire tai tuntemus olemassa vaiko ei.">
 				>
 				["at0028"] = <
-					text = <"*Presence of any social issues? (en)">
+					text = <"*Any presence? (en)">
 					description = <"Oireiden tai tuntemuksien vahva näyttö">
 				>
 				["at0031"] = <
@@ -332,8 +359,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Social context screening questionnaire (en)">
-					description = <"*An individual- or self-reported questionnaire screening for social issues. (en)">
+					text = <"Spørreskjema om sosiale problemer">
+					description = <"Et spørreskjema for sosiale problemer.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -341,19 +368,20 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Uspesifikk hendelse">
-					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"*Social issue name (en)">
-					description = <"*Name of the symptom or sign being screened.(en)">
+					text = <"Navnet på det sosiale problemet">
+					description = <"Navnet til det sosiale problemet.">
+					comment = <"For eksempel:">
 				>
 				["at0005"] = <
 					text = <"Tilstede?">
-					description = <"*Presence of the symptom or sign.(en)">
+					description = <"Tilstedeværelse av et sosialt problem.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -361,53 +389,53 @@ ontology
 				>
 				["at0021"] = <
 					text = <"Tilleggsinformasjon">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 				["at0022"] = <
-					text = <"*Specific social issue (en)">
-					description = <"*Grouping of data elements related to screening for a single symptom or sign.(en)">
+					text = <"Spesifikt sosialt problem">
+					description = <"Detaljer om et spesifikt sosialt problem.">
 				>
 				["at0023"] = <
 					text = <"Tilstede">
-					description = <"*The specific symptom or sign is present.(en)">
+					description = <"Det sosiale problemet er tilstede.">
 				>
 				["at0024"] = <
 					text = <"Fraværende">
-					description = <"*The specific symptom or sign is not present.(en)">
+					description = <"Det sosiale problemet er ikke tilstede.">
 				>
 				["at0025"] = <
 					text = <"Kommentar">
-					description = <"*Additional narrative about the symptoms and signs, not captured in other fields.(en)">
+					description = <"Ytterligere fritekst om det sosiale problemet som ikke er omfattet av andre felt.">
 				>
 				["at0026"] = <
-					text = <"Ytterligere detaljer">
-					description = <"*Additional structured details related to social issue screening. (en)">
+					text = <"Screening detaljer">
+					description = <"Ytterligere detaljer eller spørsmål om det sosiale problemet.">
 				>
 				["at0027"] = <
 					text = <"Ubestemmelig">
-					description = <"*It is not possible to know if the symptom or sign is present or absent.(en)">
+					description = <"Det er ikke mulig å vite om det sosiale problemet er tilstede eller ikke.">
 				>
 				["at0028"] = <
-					text = <"*Presence of any social issues? (en)">
-					description = <"*Presence of the any relevant symptoms or signs.(en)">
+					text = <"Tilstedeværelse?">
+					description = <"Tilstedeværelse av relevante sosiale problemer.">
 				>
 				["at0031"] = <
 					text = <"Tilstede">
-					description = <"*Symptoms or signs are present.(en)">
+					description = <"Sosiale problemer er tilstede.">
 				>
 				["at0032"] = <
 					text = <"Fraværende">
-					description = <"*Symptoms or signs are not present.(en)">
+					description = <"Sosiale problemer er ikke tilstede.">
 				>
 				["at0033"] = <
 					text = <"Ubestemmelig">
-					description = <"*It is not possible to know if any symptoms or signs are present or absent.(en)">
+					description = <"Det er ikke mulig å vite om sosiale problemer er tilstede eller ikke.">
 				>
 				["at0034"] = <
 					text = <"Formål med screeningen">
-					description = <"*The reason for overall screening.(en)">
-					comment = <"*For example: screening for an infectious disease, such as SARS-COV-2.(en)">
+					description = <"Årsaken til registreringen.">
+					comment = <"For eksempel: Screening for en infeksjonssykdom, som SARS-COV-2.">
 				>
 			>
 		>
@@ -431,11 +459,12 @@ ontology
 				>
 				["at0004"] = <
 					text = <"*Social issue name (en)">
-					description = <"Nome del sintomo o del segno sottoposto a screening.">
+					description = <"*Name of the social issue being screened. (en)">
+					comment = <"*For example:  (en)">
 				>
 				["at0005"] = <
 					text = <"Presenza?">
-					description = <"Presenza del sintomo o del segno">
+					description = <"Presenza del sintomo o del segno.">
 				>
 				["at0007"] = <
 					text = <"Item tree">
@@ -448,7 +477,7 @@ ontology
 				>
 				["at0022"] = <
 					text = <"*Specific social issue (en)">
-					description = <"Raggruppamento di elementi di dati relativi allo screening per un singolo sintomo o segno.">
+					description = <"*Screening details about a specifed social issue. (en)">
 				>
 				["at0023"] = <
 					text = <"Presenza">
@@ -460,18 +489,18 @@ ontology
 				>
 				["at0025"] = <
 					text = <"Commento">
-					description = <"Descrizione aggiuntiva dei sintomi e dei segni, non rilevata in altri campi.">
+					description = <"*Additional narrative about the specified social issue, not captured in other fields. (en)">
 				>
 				["at0026"] = <
-					text = <"Dettagli aggiuntivi">
-					description = <"*Additional structured details related to social issue screening. (en)">
+					text = <"*Screening details (en)">
+					description = <"*Additional details or questions about a specific social issue. (en)">
 				>
 				["at0027"] = <
 					text = <"Indeterminato">
 					description = <"Non è possibile sapere se il sintomo o il segno è presente o assente.">
 				>
 				["at0028"] = <
-					text = <"*Presence of any social issues? (en)">
+					text = <"*Any presence? (en)">
 					description = <"Presenza di sintomi o segni rilevanti. ">
 				>
 				["at0031"] = <
