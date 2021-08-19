@@ -36,8 +36,8 @@ Engedal, K., Haugen, PK., Gilje, K. & Laake, P. (1988). Efficacy of short mental
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"98DC90A8C2199989E0EE8359F8B3BD49">
-		["build_uid"] = <"9ee74ae5-3b3f-45d5-a713-343f743d6a04">
+		["MD5-CAM-1.0.1"] = <"5FD4062A8DDFDEA7FDB427933EC3EEB0">
+		["build_uid"] = <"60f0b21c-d37c-4a0c-bb6e-20cc6f36672b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -55,9 +55,16 @@ definition
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Skolegang/utdanning/antall år
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Skolegang/utdanning
 										value matches {
 											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0222] occurrences matches {0..1} matches {    -- Antall år utdanning
+										value matches {
+											DV_DURATION matches {
+												value matches {PY/|>=P0Y|}
+											}
 										}
 									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Yrke
@@ -129,43 +136,78 @@ definition
 									}
 									CLUSTER[at0171] occurrences matches {0..1} matches {    -- Orientering
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Hva er din fødselsdato?
+											ELEMENT[at0223] occurrences matches {0..1} matches {    -- Hva er din fødselsdato?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Poeng fødselsdato
 												value matches {
 													0|[local::at0022],
 													1|[local::at0023]
 												}
 											}
-											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Hvor gammel er du?
+											ELEMENT[at0224] occurrences matches {0..1} matches {    -- Hvor gammel er du?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Poeng alder
 												value matches {
 													0|[local::at0025],
 													1|[local::at0026]
 												}
 											}
-											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Hvilket årstall har vi nå?
+											ELEMENT[at0225] occurrences matches {0..1} matches {    -- Hvilket årstall har vi nå?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Poeng årstall
 												value matches {
 													0|[local::at0028],
 													1|[local::at0029]
 												}
 											}
-											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Hvilken årstid har vi nå?
+											ELEMENT[at0226] occurrences matches {0..1} matches {    -- Hvilken årstid har vi nå?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Poeng årstid
 												value matches {
 													0|[local::at0031],
 													1|[local::at0032]
 												}
 											}
-											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Hvilken måned har vi nå?
+											ELEMENT[at0227] occurrences matches {0..1} matches {    -- Hvilken måned har vi nå?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Poeng måned
 												value matches {
 													0|[local::at0034],
 													1|[local::at0035]
 												}
 											}
-											ELEMENT[at0036] occurrences matches {0..1} matches {    -- Hvilken dag har vi i dag?
+											ELEMENT[at0228] occurrences matches {0..1} matches {    -- Hvilken dag har vi i dag?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {    -- Poeng dag
 												value matches {
 													0|[local::at0037],
 													1|[local::at0038]
 												}
 											}
-											ELEMENT[at0039] occurrences matches {0..1} matches {    -- Hvilken dato har vi i dag?
+											ELEMENT[at0229] occurrences matches {0..1} matches {    -- Hvilken dato har vi i dag?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0039] occurrences matches {0..1} matches {    -- Poeng dato
 												value matches {
 													0|[local::at0040],
 													1|[local::at0041]
@@ -185,7 +227,12 @@ definition
 															}
 														}
 													}
-													ELEMENT[at0042] occurrences matches {0..1} matches {    -- Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
+													ELEMENT[at0230] occurrences matches {0..1} matches {    -- Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {    -- Poeng by/kommune/bygd
 														value matches {
 															0|[local::at0043],
 															1|[local::at0044]
@@ -208,7 +255,12 @@ definition
 															}
 														}
 													}
-													ELEMENT[at0045] occurrences matches {0..1} matches {    -- Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)
+													ELEMENT[at0231] occurrences matches {0..1} matches {    -- Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0045] occurrences matches {0..1} matches {    -- Poeng sted/sykehus/sykehjem/legekontor
 														value matches {
 															0|[local::at0046],
 															1|[local::at0047]
@@ -216,7 +268,12 @@ definition
 													}
 												}
 											}
-											ELEMENT[at0048] occurrences matches {0..1} matches {    -- I hvilken etasje er vi nå?
+											ELEMENT[at0232] occurrences matches {0..1} matches {    -- I hvilken etasje er vi nå?
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- Poeng etasje
 												value matches {
 													0|[local::at0049],
 													1|[local::at0050]
@@ -238,16 +295,31 @@ definition
 													}
 												}
 											}
+											ELEMENT[at0233] occurrences matches {0..1} matches {    -- Ord 1
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
 											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Skår ord 1
 												value matches {
 													0|[local::at0062],
 													1|[local::at0063]
 												}
 											}
+											ELEMENT[at0234] occurrences matches {0..1} matches {    -- Ord 2
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
 											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Skår ord 2
 												value matches {
 													0|[local::at0065],
 													1|[local::at0066]
+												}
+											}
+											ELEMENT[at0235] occurrences matches {0..1} matches {    -- Ord 3
+												value matches {
+													DV_TEXT matches {*}
 												}
 											}
 											ELEMENT[at0067] occurrences matches {0..1} matches {    -- Skår ord 3
@@ -354,16 +426,31 @@ definition
 									}
 									CLUSTER[at0179] occurrences matches {0..1} matches {    -- Utsatt gjenkalling
 										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0236] occurrences matches {0..1} matches {    -- Ord 1
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
 											ELEMENT[at0181] occurrences matches {0..1} matches {    -- Skår ord 1
 												value matches {
 													0|[local::at0182],
 													1|[local::at0183]
 												}
 											}
+											ELEMENT[at0237] occurrences matches {0..1} matches {    -- Ord 2
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
 											ELEMENT[at0184] occurrences matches {0..1} matches {    -- Skår ord 2
 												value matches {
 													0|[local::at0185],
 													1|[local::at0186]
+												}
+											}
+											ELEMENT[at0238] occurrences matches {0..1} matches {    -- Ord 3
+												value matches {
+													DV_TEXT matches {*}
 												}
 											}
 											ELEMENT[at0187] occurrences matches {0..1} matches {    -- Skår ord 3
@@ -383,13 +470,23 @@ definition
 										items cardinality matches {1..*; unordered} matches {
 											CLUSTER[at0190] occurrences matches {0..1} matches {    -- Benevning
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0117] occurrences matches {0..1} matches {    -- Hva heter dette (skje)?
+													ELEMENT[at0239] occurrences matches {0..1} matches {    -- Hva heter dette (skje)?
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0117] occurrences matches {0..1} matches {    -- Poeng skje
 														value matches {
 															0|[local::at0118],
 															1|[local::at0119]
 														}
 													}
-													ELEMENT[at0120] occurrences matches {0..1} matches {    -- Hva heter dette (hammer)?
+													ELEMENT[at0240] occurrences matches {0..1} matches {    -- Hva heter dette (hammer)?
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0120] occurrences matches {0..1} matches {    -- Poeng hammer
 														value matches {
 															0|[local::at0121],
 															1|[local::at0122]
@@ -399,7 +496,12 @@ definition
 											}
 											CLUSTER[at0191] occurrences matches {0..1} matches {    -- Fraserepetisjon
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0123] occurrences matches {0..1} matches {    -- Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»
+													ELEMENT[at0241] occurrences matches {0..1} matches {    -- Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0123] occurrences matches {0..1} matches {    -- Poeng fraserepetisjon
 														value matches {
 															0|[local::at0124],
 															1|[local::at0125]
@@ -455,7 +557,12 @@ definition
 											}
 											CLUSTER[at0195] occurrences matches {0..1} matches {    -- Setningsgenerering
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0140] occurrences matches {0..1} matches {    -- Skriv en meningsfull setning* her
+													ELEMENT[at0242] occurrences matches {0..1} matches {    -- Skriv en meningsfull setning* her
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0140] occurrences matches {0..1} matches {    -- Poeng setningsgenerering
 														value matches {
 															0|[local::at0141],
 															1|[local::at0142]
@@ -613,7 +720,7 @@ ontology
 					description = <"">
 				>
 				["at0005"] = <
-					text = <"Skolegang/utdanning/antall år">
+					text = <"Skolegang/utdanning">
 					description = <"">
 				>
 				["at0006"] = <
@@ -669,7 +776,7 @@ ontology
 					description = <"">
 				>
 				["at0021"] = <
-					text = <"Hva er din fødselsdato?">
+					text = <"Poeng fødselsdato">
 					description = <"">
 				>
 				["at0022"] = <
@@ -681,7 +788,7 @@ ontology
 					description = <"">
 				>
 				["at0024"] = <
-					text = <"Hvor gammel er du?">
+					text = <"Poeng alder">
 					description = <"">
 				>
 				["at0025"] = <
@@ -693,7 +800,7 @@ ontology
 					description = <"">
 				>
 				["at0027"] = <
-					text = <"Hvilket årstall har vi nå?">
+					text = <"Poeng årstall">
 					description = <"">
 				>
 				["at0028"] = <
@@ -705,7 +812,7 @@ ontology
 					description = <"">
 				>
 				["at0030"] = <
-					text = <"Hvilken årstid har vi nå?">
+					text = <"Poeng årstid">
 					description = <"">
 				>
 				["at0031"] = <
@@ -717,7 +824,7 @@ ontology
 					description = <"">
 				>
 				["at0033"] = <
-					text = <"Hvilken måned har vi nå?">
+					text = <"Poeng måned">
 					description = <"">
 				>
 				["at0034"] = <
@@ -729,7 +836,7 @@ ontology
 					description = <"">
 				>
 				["at0036"] = <
-					text = <"Hvilken dag har vi i dag?">
+					text = <"Poeng dag">
 					description = <"">
 				>
 				["at0037"] = <
@@ -741,7 +848,7 @@ ontology
 					description = <"">
 				>
 				["at0039"] = <
-					text = <"Hvilken dato har vi i dag?">
+					text = <"Poeng dato">
 					description = <"">
 				>
 				["at0040"] = <
@@ -753,7 +860,7 @@ ontology
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
+					text = <"Poeng by/kommune/bygd">
 					description = <"">
 				>
 				["at0043"] = <
@@ -765,7 +872,7 @@ ontology
 					description = <"">
 				>
 				["at0045"] = <
-					text = <"Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)">
+					text = <"Poeng sted/sykehus/sykehjem/legekontor">
 					description = <"">
 				>
 				["at0046"] = <
@@ -777,7 +884,7 @@ ontology
 					description = <"">
 				>
 				["at0048"] = <
-					text = <"I hvilken etasje er vi nå?">
+					text = <"Poeng etasje">
 					description = <"">
 				>
 				["at0049"] = <
@@ -909,7 +1016,7 @@ ontology
 					description = <"">
 				>
 				["at0117"] = <
-					text = <"Hva heter dette (skje)?">
+					text = <"Poeng skje">
 					description = <"Benevning av skje fra stimulusark.">
 				>
 				["at0118"] = <
@@ -921,7 +1028,7 @@ ontology
 					description = <"">
 				>
 				["at0120"] = <
-					text = <"Hva heter dette (hammer)?">
+					text = <"Poeng hammer">
 					description = <"Benevning av hammer fra stimulusark.">
 				>
 				["at0121"] = <
@@ -933,7 +1040,7 @@ ontology
 					description = <"">
 				>
 				["at0123"] = <
-					text = <"Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»">
+					text = <"Poeng fraserepetisjon">
 					description = <"">
 				>
 				["at0124"] = <
@@ -1001,7 +1108,7 @@ ontology
 					description = <"">
 				>
 				["at0140"] = <
-					text = <"Skriv en meningsfull setning* her">
+					text = <"Poeng setningsgenerering">
 					description = <"">
 				>
 				["at0141"] = <
@@ -1292,6 +1399,90 @@ ontology
 				["at0221"] = <
 					text = <"Trakk fra/la til 5">
 					description = <"Tallet pasienten trakk fra eller la til Tallsvar 4 for å komme fram til Tallsvar 5.">
+				>
+				["at0222"] = <
+					text = <"Antall år utdanning">
+					description = <"">
+				>
+				["at0223"] = <
+					text = <"Hva er din fødselsdato?">
+					description = <"">
+				>
+				["at0224"] = <
+					text = <"Hvor gammel er du?">
+					description = <"">
+				>
+				["at0225"] = <
+					text = <"Hvilket årstall har vi nå?">
+					description = <"">
+				>
+				["at0226"] = <
+					text = <"Hvilken årstid har vi nå?">
+					description = <"">
+				>
+				["at0227"] = <
+					text = <"Hvilken måned har vi nå?">
+					description = <"">
+				>
+				["at0228"] = <
+					text = <"Hvilken dag har vi i dag?">
+					description = <"">
+				>
+				["at0229"] = <
+					text = <"Hvilken dato har vi i dag?">
+					description = <"">
+				>
+				["at0230"] = <
+					text = <"Hvilken by/kommune/bygd (e.l.) er vi i (eller: er vi like i nærheten av) nå?">
+					description = <"">
+				>
+				["at0231"] = <
+					text = <"Hva heter dette stedet/sykehuset/sykehjemmet/legekontoret (e.l.)? (eller: Hvor er vi nå?)">
+					description = <"">
+				>
+				["at0232"] = <
+					text = <"I hvilken etasje er vi nå?">
+					description = <"">
+				>
+				["at0233"] = <
+					text = <"Ord 1">
+					description = <"">
+				>
+				["at0234"] = <
+					text = <"Ord 2">
+					description = <"">
+				>
+				["at0235"] = <
+					text = <"Ord 3">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Ord 1">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Ord 2">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Ord 3">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Hva heter dette (skje)?">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"Hva heter dette (hammer)?">
+					description = <"">
+				>
+				["at0241"] = <
+					text = <"Gjenta ordrett denne frasen nå: «Aldri annet enn om og men»">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Skriv en meningsfull setning* her">
+					description = <"">
 				>
 			>
 		>
