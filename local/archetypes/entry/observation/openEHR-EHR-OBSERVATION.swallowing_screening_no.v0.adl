@@ -1,0 +1,631 @@
+﻿archetype (adl_version=1.4; uid=9f6c7bb6-841e-4416-86f0-ee8737898fee)
+	openEHR-EHR-OBSERVATION.swallowing_screening_no.v0
+
+concept
+	[at0000]	-- Svelgtest
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"John Tore Valand">
+		["organisation"] = <"Helse Vest IKT AS">
+		["date"] = <"2021-06-30">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultatene for hvert parameter i svelgtesten.">
+			use = <"Brukes for å registrere resultatene for hvert parameter i svelgtesten.">
+			keywords = <"hjerneslag, muskelsykdommer, demens, kreft, kirurgisk inngrep, hjernesvulst, nervesystem", ...>
+			misuse = <"Brukes ikke for å registrere en fysisk undersøkelse av svelg. Bruk arketypen CLUSTER.exam eller en relevant spesialisering av denne arketypen for dette formålet.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Silje Ljosland Bakke, Helse Vest IKT AS, Norway", "Marit Alice Venheim, Helse Vest IKT, Norway">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Hjerneslag – ernæring i akuttfasen - Helsebiblioteket.no 
+https://www.helsebiblioteket.no/fagprosedyrer/ferdige/hjerneslag-ernaering-i-akuttfasen
+
+Perry L. Screening swallowing function of patients with acute stroke. Part two: Detailed evaluation of the tool used by nurses. J Clin Nurs. 2001 Jul;10(4):474-81. doi: 10.1046/j.1365-2702.2001.00502.x. PMID: 11822495.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"B4B4A5907C97FBDEB37295A96230B71C">
+		["build_uid"] = <"ce7e7b08-9118-4122-9eab-a6281e7a3b10">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Svelgtest
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Er pasienten våken og responderer på tiltale?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Kan pasienten sitte oppreist med en viss hodekontroll, ev. sitte oppreist med støtte?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Kan pasienten rekke tunge?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Kan pasienten slikke seg rundt munnen?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Kan pasienten svelge spyttet sitt?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Kan pasienten hoste/kremte på oppfordring?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Ja
+													at0006]    -- Nei
+												}
+											}
+										}
+									}
+									CLUSTER[at0012] occurrences matches {0..1} matches {    -- Vanntest
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0013] occurrences matches {0..1} matches {    -- Test med teskje
+												items cardinality matches {1..*; unordered} matches {
+													CLUSTER[at0014] occurrences matches {0..1} matches {    -- Uten fortykning
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0015] occurrences matches {0..1} matches {    -- Tydelig, fullstendig løfting/senking av strupehodet
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0016] occurrences matches {0..1} matches {    -- Forsinket, forlenget svelgeigangsetting >3 sekunder
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0017] occurrences matches {0..1} matches {    -- Ufullstendig, gjentatte svelginger på samme munnfull
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0018] occurrences matches {0..1} matches {    -- Usikker
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0019] occurrences matches {0..1} matches {    -- Ingen svelging
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0020] occurrences matches {0..1} matches {    -- Hoster pasienter etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0021] occurrences matches {0..1} matches {    -- Er stemmen surklete etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0022] occurrences matches {0..1} matches {    -- Er pustemønsteret forandret etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0023] occurrences matches {0..1} matches {    -- Med fortykning
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0015] occurrences matches {0..1} matches {    -- Tydelig, fullstendig løfting/senking av strupehodet
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0016] occurrences matches {0..1} matches {    -- Forsinket, forlenget svelgeigangsetting >3 sekunder
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0017] occurrences matches {0..1} matches {    -- Ufullstendig, gjentatte svelginger på samme munnfull
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0018] occurrences matches {0..1} matches {    -- Usikker
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0019] occurrences matches {0..1} matches {    -- Ingen svelging
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0020] occurrences matches {0..1} matches {    -- Hoster pasienter etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0021] occurrences matches {0..1} matches {    -- Er stemmen surklete etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0022] occurrences matches {0..1} matches {    -- Er pustemønsteret forandret etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0024] occurrences matches {0..1} matches {    -- Test med glass
+												items cardinality matches {1..*; unordered} matches {
+													CLUSTER[at0014] occurrences matches {0..1} matches {    -- Uten fortykning
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0015] occurrences matches {0..1} matches {    -- Tydelig, fullstendig løfting/senking av strupehodet
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0016] occurrences matches {0..1} matches {    -- Forsinket, forlenget svelgeigangsetting >3 sekunder
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0017] occurrences matches {0..1} matches {    -- Ufullstendig, gjentatte svelginger på samme munnfull
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0018] occurrences matches {0..1} matches {    -- Usikker
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0019] occurrences matches {0..1} matches {    -- Ingen svelging
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0020] occurrences matches {0..1} matches {    -- Hoster pasienter etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0021] occurrences matches {0..1} matches {    -- Er stemmen surklete etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0022] occurrences matches {0..1} matches {    -- Er pustemønsteret forandret etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0023] occurrences matches {0..1} matches {    -- Med fortykning
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0015] occurrences matches {0..1} matches {    -- Tydelig, fullstendig løfting/senking av strupehodet
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0016] occurrences matches {0..1} matches {    -- Forsinket, forlenget svelgeigangsetting >3 sekunder
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0017] occurrences matches {0..1} matches {    -- Ufullstendig, gjentatte svelginger på samme munnfull
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0018] occurrences matches {0..1} matches {    -- Usikker
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0019] occurrences matches {0..1} matches {    -- Ingen svelging
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0020] occurrences matches {0..1} matches {    -- Hoster pasienter etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0021] occurrences matches {0..1} matches {    -- Er stemmen surklete etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+															ELEMENT[at0022] occurrences matches {0..1} matches {    -- Er pustemønsteret forandret etter svelgingen?
+																value matches {
+																	DV_CODED_TEXT matches {
+																		defining_code matches {
+																			[local::
+																			at0005,    -- Ja
+																			at0006]    -- Nei
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0025] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Svelgtest">
+					description = <"Sjekkliste for kartlegging av svelgefunksjon, gjengitt fra svelgtest publisert under fagområdet \"Hjerneslag – ernæring i akuttfasen\" på helsebiblioteket.no.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Er pasienten våken og responderer på tiltale?">
+					description = <"GCS ≥ 13">
+				>
+				["at0005"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Kan pasienten sitte oppreist med en viss hodekontroll, ev. sitte oppreist med støtte?">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Kan pasienten rekke tunge?">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Kan pasienten slikke seg rundt munnen?">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Kan pasienten svelge spyttet sitt?">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Kan pasienten hoste/kremte på oppfordring?">
+					description = <"Observert at pasienten har hostet?">
+				>
+				["at0012"] = <
+					text = <"Vanntest">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Test med teskje">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Uten fortykning">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Er svelgebevegelsen tydelig, fullstendig løfting/senking av strupehodet?">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Er svelgebevegelsen forsinket, forlenget svelgeigangsetting >3 sekunder?">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Er svelgebevegelsen ufullstendig, gjentatte svelginger på samme munnfull?">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Er svelgebevegelsen usikker?">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Ingen svelging">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Hoster pasienter etter svelgingen?">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Er stemmen surklete etter svelgingen?">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Er pustemønsteret forandret etter svelgingen?">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Med fortykning">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Test med glass">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0026"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+			>
+		>
+	>
