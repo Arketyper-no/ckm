@@ -1,0 +1,596 @@
+﻿archetype (adl_version=1.4; uid=a5cfb796-5b3a-4c46-bc3d-d3d3eff82f29)
+	openEHR-EHR-OBSERVATION.short_physical_performance_battery_no.v0
+
+concept
+	[at0000]	-- Short Physical Performance Battery (SPPB)
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"John Tore Valand">
+		["organisation"] = <"Helse Vest IKT AS">
+		["email"] = <"john.tore.valand@helse-vest-ikt.no">
+		["date"] = <"2021-09-06">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultatene for hvert parameter og deres totale poengskår for Short Physical Performance Battery (SPPB).">
+			use = <"Brukes for å registrere resultatene for hvert parameter og deres totale poengskår for Short Physical Performance Battery (SPPB).
+
+Arketypen inneholder dataelementer som trengs for å representere Short Physical Performance Battery (SPPB). Arketypen inneholder ikke ledetekster og hjelp til spørsmålstillinger man finner i papirskjemaet. Dette må legges til ved bygging av skjema/funksjonalitet.
+
+Testen er oversatt fra engelsk til norsk i tråd med gjeldende retningslinjer og den norske versjon er gratis og fritt tilgjengelig for bruk.">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Abellan van Kan, G., et al., Gait speed at usual pace as a predictor of adverse outcomes in community-dwelling older people an International Academy on Nutrition and Aging (IANA) Task Force. J Nutr Health Aging, 2009. 13(10): p. 881-9.
+
+Studenski, S., Bradypedia: is gait speed ready for clinical use? J Nutr Health Aging, 2009. 13(10): p. 878-80. 
+Fritz, S. and M. Lusardi, White paper: \"walking speed: the sixth vital sign\". J Geriatr Phys Ther, 2009. 32(2): p. 46-9. 
+
+Perera, S., et al., Meaningful change and responsiveness in common physical performance measures in older adults. J Am Geriatr Soc, 2006. 54(5): p. 743-9. 
+
+Oversatt til norsk april 2013. Sverre Bergh, Alderspsykiatrisk forskningssenter, Sykehuset Innlandet, Heidi Lyshol, Folkehelseinstituttet, Geir Selbæk, Alderspsykiatrisk forskningssenter, Sykehuset Innlandet, Bjørn Heine Strand, Folkehelseinstituttet, Kristin Taraldsen,  Forsknings gruppe for geriatri, St. Olavs hospital og NTNU, Pernille Thingstad,  Forsknings gruppe for geriatri, St. Olavs hospital og NTNU. https://www.legeforeningen.no/contentassets/870420284b7d4cb98100191ff93e7983/sppb.pdf. Retrieved 14.09.21.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"975D6971D221999AB1C134B9E3057984">
+		["build_uid"] = <"f9f0b4b1-2ead-40e0-ad12-af76c94945b0">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Short Physical Performance Battery (SPPB)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0008] occurrences matches {0..1} matches {    -- 1. Statisk balanse
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {    -- Balansetest samlede føtter  10 sekunder
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {    -- Score samlede føtter
+												value matches {
+													1|[local::at0019],
+													0|[local::at0020]
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {    -- Balansetest semi-tandem 10 sekunder
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Score semi-tandem
+												value matches {
+													1|[local::at0022],
+													0|[local::at0023]
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {    -- Balansetest tandem 10 sekunder
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Score tandem
+												value matches {
+													2|[local::at0025],
+													1|[local::at0026],
+													0|[local::at0069]
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {    -- Årsak
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0012,    -- Forsøkte, men ikke i stand til.
+															at0013,    -- Deltageren kunne ikke holde stillingen uten hjelp.
+															at0014,    -- Ikke forsøkt, tester følte det utrygg.
+															at0015,    -- Ikke forsøkt, deltager følte seg utrygg.
+															at0016,    -- Deltager tar ikke instruksjon.
+															at0017]    -- Deltager nektet.
+														}
+													}
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {    -- Annet
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Score statisk balanse
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..4|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0028] occurrences matches {0..1} matches {    -- 2. 4m gangtest
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0029] occurrences matches {0..1} matches {    -- Ganghjelpemidler ved test
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0030,    -- Uten
+															at0031,    -- Krykk/stokk (er)
+															at0032]    -- Rollator
+														}
+													}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Annet ganghjelpemiddel ved test
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Tid test 1
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Tid test 2
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {    -- Score 4m gangtest
+												value matches {
+													0|[local::at0045],
+													1|[local::at0046],
+													2|[local::at0047],
+													3|[local::at0048],
+													4|[local::at0049]
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {    -- Annet
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {    -- Årsak
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0037,    -- Forsøkte, men ikke i stand til.
+															at0038,    -- Deltageren kunne ikke holde stillingen uten hjelp.
+															at0039,    -- Ikke forsøkt, tester følte det utrygg.
+															at0040,    -- Ikke forsøkt, deltager følte seg utrygg.
+															at0041,    -- Deltager tar ikke instruksjon.
+															at0042]    -- Deltager nektet.
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {    -- 3. Reise/sette seg x5
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {    -- Setehøyde
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|>=0.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Reise/ sette seg x5
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {    -- Årsak
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0054,    -- Forsøkte, men ikke i stand til.
+															at0055,    -- Deltageren kunne ikke holde stillingen uten hjelp.
+															at0056,    -- Ikke forsøkt, tester følte det utrygg.
+															at0057,    -- Ikke forsøkt, deltager følte seg utrygg.
+															at0058,    -- Deltager tar ikke instruksjon.
+															at0059]    -- Deltager nektet.
+														}
+													}
+												}
+											}
+											ELEMENT[at0060] occurrences matches {0..1} matches {    -- Annet
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Score reise/sette seg
+												value matches {
+													0|[local::at0062],
+													1|[local::at0063],
+													2|[local::at0064],
+													3|[local::at0065],
+													4|[local::at0066]
+												}
+											}
+										}
+									}
+									ELEMENT[at0068] occurrences matches {0..1} matches {    -- Totalsskår
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0010] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0067] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Short Physical Performance Battery (SPPB)">
+					description = <"Short Physical Performance Battery er en test for screening av fysisk funksjon hos eldre.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Balansetest samlede føtter 10 sekunder">
+					description = <"Stående stilling, samlede føtter.">
+				>
+				["at0006"] = <
+					text = <"Balansetest semi-tandem 10 sekunder">
+					description = <"Stående stilling, semi‐tandem.">
+				>
+				["at0007"] = <
+					text = <"Balansetest tandem 10 sekunder">
+					description = <"Stående stilling, tandem.">
+				>
+				["at0008"] = <
+					text = <"1. Statisk balanse">
+					description = <"Observasjon av statisk balanse.">
+				>
+				["at0009"] = <
+					text = <"Årsak">
+					description = <"Årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0010"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Annet">
+					description = <"Spesifiser annen årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0012"] = <
+					text = <"Forsøkte, men ikke i stand til.">
+					description = <"0 poeng.">
+				>
+				["at0013"] = <
+					text = <"Deltageren kunne ikke holde stillingen uten hjelp.">
+					description = <"0 poeng.">
+				>
+				["at0014"] = <
+					text = <"Ikke forsøkt, tester følte det utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0015"] = <
+					text = <"Ikke forsøkt, deltager følte seg utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0016"] = <
+					text = <"Deltager tar ikke instruksjon.">
+					description = <"Missing.">
+				>
+				["at0017"] = <
+					text = <"Deltager nektet.">
+					description = <"Missing.">
+				>
+				["at0018"] = <
+					text = <"Score samlede føtter">
+					description = <"Score av \"Balansetest samlede føtter 10 sekunder\".">
+				>
+				["at0019"] = <
+					text = <"= 10 sek">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"< 10 sek">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Score semi-tandem">
+					description = <"Score av \"Balansetest semi-tandem 10 sekunder\".">
+				>
+				["at0022"] = <
+					text = <"= 10 sek">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"< 10 sek">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Score tandem">
+					description = <"Score av \"Balansetest tandem 10 sekunder\".">
+				>
+				["at0025"] = <
+					text = <"= 10 sek">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"3 - 9.99 sek">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Score statisk balanse">
+					description = <"Sum av elementene \"Score samlede føtter\", \"Score semi-tandem\" og \"Score tandem\".">
+				>
+				["at0028"] = <
+					text = <"2. 4m gangtest">
+					description = <"Observasjon av gangfunksjon.">
+				>
+				["at0029"] = <
+					text = <"Ganghjelpemidler ved test">
+					description = <"Ganghjelpemidler benyttet under testen.">
+				>
+				["at0030"] = <
+					text = <"Uten">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Krykk/stokk (er)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Rollator">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Annet ganghjelpemiddel ved test">
+					description = <"Spesifiser annet ganghjelpemiddel ved test.">
+				>
+				["at0034"] = <
+					text = <"Tid test 1">
+					description = <"Første test av ganghastighet 4m.">
+				>
+				["at0035"] = <
+					text = <"Tid test 2">
+					description = <"Andre test av ganghastighet 4m.">
+				>
+				["at0036"] = <
+					text = <"Årsak">
+					description = <"Årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0037"] = <
+					text = <"Forsøkte, men ikke i stand til.">
+					description = <"0 poeng.">
+				>
+				["at0038"] = <
+					text = <"Deltageren kunne ikke holde stillingen uten hjelp.">
+					description = <"0 poeng.">
+				>
+				["at0039"] = <
+					text = <"Ikke forsøkt, tester følte det utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0040"] = <
+					text = <"Ikke forsøkt, deltager følte seg utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0041"] = <
+					text = <"Deltager tar ikke instruksjon.">
+					description = <"Missing.">
+				>
+				["at0042"] = <
+					text = <"Deltager nektet.">
+					description = <"Missing.">
+				>
+				["at0043"] = <
+					text = <"Annet">
+					description = <"Spesifiser annen årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0044"] = <
+					text = <"Score 4m gangtest">
+					description = <"Score beste resultat av de to forsøkene \"Tid test 1\" og \"Tid test 2\".">
+				>
+				["at0045"] = <
+					text = <"Deltager var ikke i stand til">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Hvis tiden var > 8.7">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Hvis tiden var 6.21 - 8.70">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Hvis tiden var 4.82 - 6.20">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Hvis tiden var < 4.82">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"3. Reise/sette seg x5">
+					description = <"Observasjon av evne til å reise seg fra stol.">
+				>
+				["at0051"] = <
+					text = <"Setehøyde">
+					description = <"Setehøyde på stolen deltaker skal reise seg fra.">
+				>
+				["at0052"] = <
+					text = <"Reise/ sette seg x5">
+					description = <"Tid 5 repetisjoner uten armbruk.">
+				>
+				["at0053"] = <
+					text = <"Årsak">
+					description = <"Årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0054"] = <
+					text = <"Forsøkte, men ikke i stand til.">
+					description = <"0 poeng.">
+				>
+				["at0055"] = <
+					text = <"Deltageren kunne ikke holde stillingen uten hjelp.">
+					description = <"0 poeng.">
+				>
+				["at0056"] = <
+					text = <"Ikke forsøkt, tester følte det utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0057"] = <
+					text = <"Ikke forsøkt, deltager følte seg utrygg.">
+					description = <"0 poeng.">
+				>
+				["at0058"] = <
+					text = <"Deltager tar ikke instruksjon.">
+					description = <"Missing.">
+				>
+				["at0059"] = <
+					text = <"Deltager nektet.">
+					description = <"Missing.">
+				>
+				["at0060"] = <
+					text = <"Annet">
+					description = <"Spesifiser annen årsak til at deltaker ikke har forsøkt eller mislykkes.">
+				>
+				["at0061"] = <
+					text = <"Score reise/sette seg">
+					description = <"Score av reise/ sette seg x5.">
+				>
+				["at0062"] = <
+					text = <"Deltager var ikke istand til/brukte >60 sek.">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"Hvis tiden var ≥16.7 sek.">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Hvis tiden var 13.7 – 16.69 sek.">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Hvis tiden var 11.20 – 13.69 sek.">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Hvis tiden var ≤ 11.19 sek.">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0068"] = <
+					text = <"Totalscore">
+					description = <"Sum av \"Score statisk balanse\", \"Score 4m gangtest\" og \"Score reise/ sette seg\".">
+				>
+				["at0069"] = <
+					text = <"< 10 sek">
+					description = <"">
+				>
+			>
+		>
+	>
