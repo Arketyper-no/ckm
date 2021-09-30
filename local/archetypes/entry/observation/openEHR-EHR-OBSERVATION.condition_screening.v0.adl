@@ -44,7 +44,6 @@ In order to record the response at a specific point in time or within an interva
 
 This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening process identifies the presence of a health condition and it is intended that the details are to be recorded and persisted as part of an ongoing health record, any further specific details about the condition (such as the date of clinical recognition) should be recorded using the EVALUATION.problem_diagnosis archetype. (en)">
 			misuse = <"Nicht zu verwenden, um Details zu einem bestimmten gesundheitlichen Zustand im Rahmen einer typischen klinischen Beratung darzustellen. Verwenden Sie dazu EVALUATION.problem_diagnosis.">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -61,7 +60,6 @@ Denne arketypen er laget for bruk som et screeningverktøy for å registrere enk
 
 ">
 			misuse = <"Skal ikke brukes for å registrere spesifikke detaljer om en helsetilstand som en del av en typisk klinisk konsultasjon. Bruk arketypen EVALUATION.problem_diagnosis (Problem/ diagnose) for dette formålet.">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -76,20 +74,18 @@ In order to record the response at a specific point in time or within an interva
 
 This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening process identifies the presence of a health condition and it is intended that the details are to be recorded and persisted as part of an ongoing health record, any further specific details about the condition (such as the date of clinical recognition) should be recorded using the EVALUATION.problem_diagnosis archetype.">
 			misuse = <"Not to be used to record details about a specific condition as part of a typical clinical consultation. Use EVALUATION.problem_diagnosis for this purpose.">
-			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, UK", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Condition screening questionnaire, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2021-09-28]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.4442">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"D27712650D0A01B8D73F529F607C383F">
-		["build_uid"] = <"94098b54-ef26-4644-8a4a-fcf6d62310ec">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"4DA77AC10726DD43A13E3868A3443A3B">
+		["build_uid"] = <"b38e2436-cf01-4dc1-91fb-9d957e70e4ed">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -113,8 +109,8 @@ definition
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0031,    -- Present
-													at0032,    -- Absent
+													at0031,    -- Yes
+													at0032,    -- No
 													at0033]    -- Unknown
 												}
 											}
@@ -133,8 +129,8 @@ definition
 													DV_CODED_TEXT matches {
 														defining_code matches {
 															[local::
-															at0023,    -- Present
-															at0024,    -- Absent
+															at0023,    -- Yes
+															at0024,    -- No
 															at0027]    -- Unknown
 														}
 													}
@@ -182,6 +178,7 @@ definition
 		}
 	}
 
+
 ontology
 	terminologies_available = <"SNOMED-CT", ...>
 	term_definitions = <
@@ -225,11 +222,11 @@ ontology
 					description = <"Screening details about a specified condition or grouping of conditions.">
 				>
 				["at0023"] = <
-					text = <"Present">
+					text = <"Yes">
 					description = <"The specific condition is present.">
 				>
 				["at0024"] = <
-					text = <"Absent">
+					text = <"No">
 					description = <"The specific condition is not present.">
 				>
 				["at0025"] = <
@@ -245,11 +242,11 @@ ontology
 					description = <"Presence of any relevant conditions.">
 				>
 				["at0031"] = <
-					text = <"Present">
+					text = <"Yes">
 					description = <"Conditions are present.">
 				>
 				["at0032"] = <
-					text = <"Absent">
+					text = <"No">
 					description = <"Conditions are not present.">
 				>
 				["at0033"] = <
@@ -316,11 +313,11 @@ ontology
 					description = <"Detaljer om en spesifikk helsetilstand eller en gruppe av helsetilstander.">
 				>
 				["at0023"] = <
-					text = <"Tilstede">
+					text = <"Ja">
 					description = <"Den spesifikke tilstanden er tilstede.">
 				>
 				["at0024"] = <
-					text = <"Fraværende">
+					text = <"Nei">
 					description = <"Den spesifikke tilstanden er fraværende.">
 				>
 				["at0025"] = <
@@ -336,11 +333,11 @@ ontology
 					description = <"Tilstedeværelse av relevante tilstander.">
 				>
 				["at0031"] = <
-					text = <"Tilstede">
+					text = <"Ja">
 					description = <"Tilstander er tilstede.">
 				>
 				["at0032"] = <
-					text = <"Fraværende">
+					text = <"Nei">
 					description = <"Tilstander er ikke tilstede.">
 				>
 				["at0033"] = <
@@ -407,11 +404,11 @@ ontology
 					description = <"*Screening details about a specified condition or grouping of conditions. (en)">
 				>
 				["at0023"] = <
-					text = <"Vorhanden">
+					text = <"*Yes (en)">
 					description = <"Der spezifische Zustand ist vorhanden.">
 				>
 				["at0024"] = <
-					text = <"Nicht vorhanden">
+					text = <"*No (en)">
 					description = <"Der spezifische Zustand ist nicht vorhanden.">
 				>
 				["at0025"] = <
@@ -427,11 +424,11 @@ ontology
 					description = <"Vorhandensein relevanter Zustände.">
 				>
 				["at0031"] = <
-					text = <"Vorhanden">
+					text = <"*Yes (en)">
 					description = <"Zustände sind vorhanden.">
 				>
 				["at0032"] = <
-					text = <"Nicht vorhanden">
+					text = <"*No (en)">
 					description = <"Keine Zustände sind vorhanden.">
 				>
 				["at0033"] = <
@@ -462,10 +459,10 @@ ontology
 	term_bindings = <
 		["SNOMED-CT"] = <
 			items = <
-				["at0023"] = <[SNOMED-CT::410515003]>
-				["at0024"] = <[SNOMED-CT::410516002]>
-				["at0031"] = <[SNOMED-CT::410515003]>
-				["at0032"] = <[SNOMED-CT::410516002]>
+				["at0023"] = <[SNOMED-CT::373066001]>
+				["at0024"] = <[SNOMED-CT::373067005]>
+				["at0031"] = <[SNOMED-CT::373066001]>
+				["at0032"] = <[SNOMED-CT::373067005]>
 				["at0027"] = <[SNOMED-CT::261665006]>
 				["at0033"] = <[SNOMED-CT::261665006]>
 			>
