@@ -28,36 +28,34 @@ description
 			purpose = <"For å registrere strukturerte observasjoner av et humant embryo i tidlige delingsstadier ved assistert befruktning.">
 			use = <"Brukes til å registrere morfologiske observasjoner som passer for tidlige delingsstadier av embryoutviklingen ved assistert befruktning.
 
-Arketypen er laget spesifikt for å brukes i \"Undersøkelsesdetaljer\" SLOT i arketypen 'OBSERVASJON.embryo' eller 'ACTION.prosedyre', men kan også brukes innen andre ENTRY- og CLUSTER-arketyper der det er klinisk passende.">
+Arketypen er laget spesifikt for å brukes i \"Undersøkelsesdetaljer\" SLOT i arketypen 'OBSERVATION.embryo_assessment' eller 'ACTION.procedure', men kan også brukes innen andre ENTRY- og CLUSTER-arketyper der det er klinisk passende.">
 			keywords = <"in vitro, befruktning, IVF, reproduksjon, zygote, fertilisert, befruktet, egg, eggcelle, oocytt, embryo, blastocyst, assistert", ...>
 			misuse = <"Skal ikke brukes til å registrere morfologiske observasjoner av oocytter, zygoter og blastocyster - bruk spesifikke CLUSTER arketyper.">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record structured observations of the human cleavage stage embryo during assisted reproduction treatment.">
 			use = <"Use to record morphological observations appropriate for the cleavage stage of human embryo development during assisted reproduction treatment. 
 
-This archetype has been specifically designed to be used in the 'Observations detail' SLOT within the 'OBSERVATION.embryo' or 'ACTION.procedure' archetype, but can also be used within other ENTRY or CLUSTER archetypes, where clinically appropriate.">
+This archetype has been specifically designed to be used in the 'Observations detail' SLOT within the 'OBSERVATION.embryo_assessment' or 'ACTION.procedure' archetype, but can also be used within other ENTRY or CLUSTER archetypes, where clinically appropriate.">
 			keywords = <"in vitro, fertilization, IVF, reproductive medicine, zygote, fertilised, fertilized, oocyte, egg, fertilisation, embryo, reproduction, ART, blastocyst", ...>
 			misuse = <"Not to be used for recording observations on oocytes, zygotes and blastocysts - use specific CLUSTER archetypes for this purpose.">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Peter Fedorcsak, University of Oslo, Norway (openEHR Editor)", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Trine Skuland, Oslo University Hospital", "Gareth Greggains, Oslo University Hospital">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Examination of a cleavage-stage embryo, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2021-11-25]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.5828
-Alpha Scientists in Reproductive, M. and E.S.I.G.o. Embryology, The Istanbul consensus workshop on embryo assessment: proceedings of an expert meeting. Human Reproduction, 2011. 26(6): p. 1270-1283.
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Alpha Scientists in Reproductive, M. and E.S.I.G.o. Embryology, The Istanbul consensus workshop on embryo assessment: proceedings of an expert meeting. Human Reproduction, 2011. 26(6): p. 1270-1283.
 
 Prados, F.J., et al., The cleavage stage embryo. Human Reproduction, 2012. 27(suppl_1): p. i50-i71.">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"596C729653188CA6E494EE99FF5A4CF3">
-		["build_uid"] = <"ffe312c9-b674-4763-8a54-5bbec3149ec8">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"BB404B2DF8682D1D2D0EA022AAF7AE73">
+		["build_uid"] = <"aafdd2ee-85ac-47f7-a779-958ce5cd5d6d">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -143,8 +141,15 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
+			ELEMENT[at0055] occurrences matches {0..1} matches {    -- Embryo morphology score
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
 		}
 	}
+
+
 
 ontology
 	term_definitions = <
@@ -256,6 +261,11 @@ ontology
 					text = <"Non-stage specific">
 					description = <"Non-stage specific cells size.">
 				>
+				["at0055"] = <
+					text = <"Embryo morphology score">
+					description = <"Overall grading or score based on recorded morphological features the cleavage-stage embryo.">
+					comment = <"Use of an established morphology assessment classification is preferred.">
+				>
 			>
 		>
 		["nb"] = <
@@ -365,6 +375,11 @@ ontology
 				["at0054"] = <
 					text = <"Ikke stadium-spesifikk">
 					description = <"Ikke stadium-spesifikk cellestørrelse.">
+				>
+				["at0055"] = <
+					text = <"Embryo morfologisk skår">
+					description = <"Overordnet gradering eller skår basert på embryoets registrerte, morfologiske egenskaper.">
+					comment = <"Bruk av en etablert skala for vurdering av embryoets morfologi anbefales.">
 				>
 			>
 		>
