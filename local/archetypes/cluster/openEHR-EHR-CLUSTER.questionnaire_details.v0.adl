@@ -47,19 +47,15 @@ This archetype has been designed to be used within the specific details SLOT wit
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"0018A7F8C176F00EABFC910E44F06768">
-		["build_uid"] = <"7f0c07f5-0714-4a9d-9749-8439a3899242">
+		["MD5-CAM-1.0.1"] = <"59E94735AEED244EC1254164679FF462">
+		["build_uid"] = <"77207349-8e14-418e-8be0-3d28aa22cfdc">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
 	CLUSTER[at0000] matches {    -- Questionnaire details
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Specific question
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
+			ELEMENT[at0001] occurrences matches {0..*} matches {*}    -- ANY
 		}
 	}
 
@@ -73,7 +69,7 @@ ontology
 					description = <"Predetermined questions which provides additional details about a condition, symptom, procedure or similar.">
 				>
 				["at0001"] = <
-					text = <"Specific question">
+					text = <"ANY">
 					description = <"A specific question about the disorder, symptom, procedure or similar.">
 					comment = <"The specific question should be coded with a terminology, where possible.">
 				>
