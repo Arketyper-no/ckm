@@ -27,7 +27,7 @@ description
 			language = <[ISO_639-1::nb]>
 			purpose = <"Strukturerer hendelsesregistrering i et pasientforløp.">
 			use = <"Benyttes for å registrere hendelser i et gitt pasientforløp">
-			keywords = <"forløp", "behandlingslinje", "behandlingsplan", "protokoll">
+			keywords = <"forløp", "behandlingslinje", "behandlingsplan", "protokoll", "pasientforløp", "pakkeforløp">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -48,132 +48,164 @@ description
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"6169B7F8642961050F2B75F82DF9C190">
-		["build_uid"] = <"a9c2ed98-f457-48d7-9635-5f585b258ad2">
+		["MD5-CAM-1.0.1"] = <"71C664D87C6CF897CC4738F45DBDA7B2">
+		["build_uid"] = <"e55db78e-da41-47b7-89cb-3acfefe5588b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	ACTION[at0000] matches {	-- Oppfølging av forløp
+	ACTION[at0000] matches {    -- Trajectory follow up
 		ism_transition matches {
-			ISM_TRANSITION[at0009] matches {	-- Initier forløp
+			ISM_TRANSITION[at0009] matches {    -- Trajectory initiated
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::526]}
+						defining_code matches {
+							[openehr::526]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0009]}		-- Initier forløp
+						defining_code matches {
+							[local::at0009]    -- Trajectory initiated
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0017] matches {	-- Utsett
+			ISM_TRANSITION[at0017] matches {    -- Postpone
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::527]}
+						defining_code matches {
+							[openehr::527]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0017]}		-- Utsett
+						defining_code matches {
+							[local::at0017]    -- Postpone
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0006] matches {	-- Kanseller
+			ISM_TRANSITION[at0006] matches {    -- Cancel
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::528]}
+						defining_code matches {
+							[openehr::528]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0006]}		-- Kanseller
+						defining_code matches {
+							[local::at0006]    -- Cancel
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0008] matches {	-- Sett opp første fremmøte
+			ISM_TRANSITION[at0008] matches {    -- Scheduled first appointment
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::529]}
+						defining_code matches {
+							[openehr::529]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0008]}		-- Sett opp første fremmøte
+						defining_code matches {
+							[local::at0008]    -- Scheduled first appointment
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0003] matches {	-- Aktiv hendelse
+			ISM_TRANSITION[at0003] matches {    -- Active event
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::245]}
+						defining_code matches {
+							[openehr::245]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0003]}		-- Aktiv hendelse
+						defining_code matches {
+							[local::at0003]    -- Active event
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0016] matches {	-- Sett på vent
+			ISM_TRANSITION[at0016] matches {    -- Suspend
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::530]}
+						defining_code matches {
+							[openehr::530]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0016]}		-- Sett på vent
+						defining_code matches {
+							[local::at0016]    -- Suspend
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0005] matches {	-- Avbryt
+			ISM_TRANSITION[at0005] matches {    -- Abort
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::531]}
+						defining_code matches {
+							[openehr::531]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0005]}		-- Avbryt
+						defining_code matches {
+							[local::at0005]    -- Abort
+						}
 					}
 				}
 			}
-			ISM_TRANSITION[at0007] matches {	-- Ferdig
+			ISM_TRANSITION[at0007] matches {    -- Complete
 				current_state matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[openehr::532]}
+						defining_code matches {
+							[openehr::532]
+						}
 					}
 				}
 				careflow_step matches {
 					DV_CODED_TEXT matches {
-						defining_code matches {[local::at0007]}		-- Ferdig
+						defining_code matches {
+							[local::at0007]    -- Complete
+						}
 					}
 				}
 			}
 		}
 		description matches {
-			ITEM_TREE[at0001] matches {	-- Tre
+			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Hendelse
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Event
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Beskrivelse
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Description
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Ekstern hendelse?
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- External event
 						value matches {
 							DV_BOOLEAN matches {
-								value matches {True}
+								value matches {true}
 							}
 						}
 					}
-					allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {	-- Detaljer
+					allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {    -- Details
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -181,14 +213,14 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0011] matches {	-- Tre
+			ITEM_TREE[at0011] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Ansvarlig
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Responsible
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Detaljer om ansvarlig 
+					allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Responsible details
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -223,7 +255,7 @@ ontology
 					description = <"Abort the ongoing trajectory">
 				>
 				["at0006"] = <
-					text = <"Cancel ">
+					text = <"Cancel">
 					description = <"Cancel the planned trajectory">
 				>
 				["at0007"] = <
@@ -276,7 +308,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Oppfølging av forløp">
-					description = <"Registrer hendelser i et pasienforløp">
+					description = <"Registrer hendelser i et pasienforløp.">
 				>
 				["at0001"] = <
 					text = <"Tre">
@@ -323,7 +355,7 @@ ontology
 					description = <"Lokal identifikator av den som var ansvarlig for denne hendelsen. ">
 				>
 				["at0013"] = <
-					text = <"Detaljer om ansvarlig ">
+					text = <"Detaljer om ansvarlig">
 					description = <"Detaljer om helsetjenestetilbyder eller organisasjon som utførte hendelsen. ">
 				>
 				["at0014"] = <
