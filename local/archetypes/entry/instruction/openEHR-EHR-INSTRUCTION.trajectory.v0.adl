@@ -26,7 +26,10 @@ description
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"Brukes for å initiere et spesifikt klinisk forløp for pasienten. ">
-			use = <"Benytt denne når pasienten skal inn i et spesifikt forløp. Med forløp menes her behandlingslinje, behandlingsprotokoll, etc.">
+			use = <"Benytt denne når pasienten skal inn i et spesifikt forløp. Med forløp menes her behandlingslinje, behandlingsprotokoll, etc.
+
+*This Instruction should be used to initiate plans that should facilitate a specific pathway for the patient. The purpose of the Instruction is to give enough information for the healthcare provider to follow up the treament as a trajectory.(en)">
+			keywords = <"pasientforløp", "pakkeforløp">
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -43,57 +46,52 @@ description
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Why trajectory? 
-Trajectory is the path followed by a projectile flying or an object moving under the action of given forces.
-
-This Instruction should be used to initiate plans that should facilitate a specific pathway for the patient. The purpose of the Instruction is to give enough information for the healthcare provider to follow up the treament as a trajectory. ">
+		["references"] = <"">
 		["current_contact"] = <"Bjørn Næss, DIPS ASA<bna@dips.no>">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"FCF8098367997713D0CEBB353CCCCC5D">
-		["build_uid"] = <"98615071-0f74-4d3f-a39c-b1be55943872">
+		["MD5-CAM-1.0.1"] = <"0AD2D523A7EA870C09F2601CB38BB9FB">
+		["build_uid"] = <"d482169d-80a1-4604-a0a4-05de20076c74">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	INSTRUCTION[at0000] matches {	-- Forløp
+	INSTRUCTION[at0000] matches {    -- Trajectory
 		activities cardinality matches {0..*; unordered} matches {
-			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Nåværende aktivitet
+			ACTIVITY[at0001] occurrences matches {0..1} matches {    -- Current Activity
 				action_archetype_id matches {/openEHR-EHR-ACTION\.trajectory_follow_up\.v1/}
 				description matches {
-					ITEM_TREE[at0002] matches {	-- Tre
+					ITEM_TREE[at0002] matches {    -- Tree
 						items cardinality matches {0..*; unordered} matches {
-							ELEMENT[at0003] occurrences matches {0..1} matches {	-- Forløp
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- Trajectory
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0012] occurrences matches {0..1} matches {	-- Spesifikt forløp
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Specific trajectory
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Start
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Start date/time
 								value matches {
-									DV_DATE matches {
-										value matches {yyyy-mm-dd}
-									}
+									DV_DATE matches {*}
 								}
 							}
-							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Beskrivelse
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Description
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Ekstern start
+							ELEMENT[at0011] occurrences matches {0..1} matches {    -- External start?
 								value matches {
 									DV_BOOLEAN matches {
-										value matches {True}
+										value matches {true}
 									}
 								}
 							}
-							allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {	-- Detaljer
+							allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Details
 								include
 									archetype_id/value matches {/.*/}
 							}
@@ -103,18 +101,18 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0007] matches {	-- Tre
+			ITEM_TREE[at0007] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Ansvarlig
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Responsible
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0009] occurrences matches {0..*} matches {	-- Detaljer om ansvarlig
+					allow_archetype CLUSTER[at0009] occurrences matches {0..*} matches {    -- Responsible details
 						include
 							archetype_id/value matches {/.*/}
 					}
-					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {	-- Utvidelse
+					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- Extension
 						include
 							archetype_id/value matches {/.*/}
 					}
@@ -145,7 +143,7 @@ ontology
 					description = <"Defines the current trajectory ">
 				>
 				["at0004"] = <
-					text = <"Start">
+					text = <"Start date/time">
 					description = <"Defines when this activity was actually started. Some trajectories may have started before and outside of the current healthcare provider. Other trajectories is started within the context of the current healthcare provider.">
 				>
 				["at0005"] = <
@@ -186,7 +184,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Forløp">
-					description = <"Basis instruksjon for å starte et klinisk forløp">
+					description = <"Basisinstruksjon for å starte et klinisk forløp">
 				>
 				["at0001"] = <
 					text = <"Nåværende aktivitet">
@@ -201,7 +199,7 @@ ontology
 					description = <"Angir hvilket forløp som igangsettes">
 				>
 				["at0004"] = <
-					text = <"Start">
+					text = <"Dato/tid for start">
 					description = <"Definerer når dette forløpet faktisk startet - siden noen forløp har startet før bestilling registreres">
 				>
 				["at0005"] = <
