@@ -1,0 +1,739 @@
+﻿archetype (adl_version=1.4; uid=ed4c7b8d-6325-4a9e-83f6-7e18e0efbb24)
+	openEHR-EHR-OBSERVATION.abc_no.v0
+
+concept
+	[at0000]	-- ABC Sjekkliste
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kanika Kuwelker">
+		["organisation"] = <"Helse Vest IKT">
+		["email"] = <"kanika.kuwelker@helse-vest-ikt.no">
+		["date"] = <"2022-03-07">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"ABC er ment å kartlegge kompleksiteten hos den enkelte pasient på en slik måte at vi kan sette inn riktige faggrupper og velge riktig nivå for videre rehabiliteringstiltak, og bidra til å identifisere pasienter som vil ha nytte av videre tverrfaglige rehabiliteringsinnsatser, allerede fra akutt sykdom og skade.">
+			use = <"ABC kan fylles ut ved hjelp av informasjon i journalsystemet, ved samtale med personell og pårørende og krever ikke våken pasient.
+Del A og B er innledende screening. Dersom ingen kryss i innledende screening, gjennomfør hovedscreening i del C. 
+Del C består av \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\". Under sumskår legger en sammen alle poengene. 
+Hver enkeltskår gir en indikasjon for anbefalt rehabiliteringsnivå mens sumsskår angir rehabiliteringsprosessens kompleksitet.">
+			keywords = <"ABC, rehabilitering, tverrfaglig, funksjon, ICF", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"B7A2E2AAFDFD4F51BE02FE15A80391EC">
+		["build_uid"] = <"36d963b0-83ce-4dc4-8e87-d2eba42f9589">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- ABC Sjekkliste
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0007] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0134] occurrences matches {0..1} matches {    -- A: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet sykdom og symptomer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0140] occurrences matches {0..1} matches {    -- Alvorlig sykdom som krever opphold på spesialavdeling eks. respiratortrengende, ustabil hjerte-/ lungefunksjon, ustabile frakturer, psykose.
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0142] occurrences matches {0..1} matches {    -- Ikke kontaktbar
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0141] occurrences matches {0..1} matches {    -- Samtidig alvorlig sykdom med dårlig prognose (eks cancer, forventet overlevelse < 6 mnd.)
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0135] occurrences matches {0..1} matches {    -- B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og  symptomer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0136] occurrences matches {0..1} matches {    -- Ingen nye symptomer eller utfall (hjerte/lunge, dysfagi, vannlating, synsvansker, språk, kognitive vansker, lammelser, spastisitet, smerte, sår)
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0138] occurrences matches {0..1} matches {    -- Er i stand til å utføre alle sine vanlige aktiviteter
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0139] occurrences matches {0..1} matches {    -- Ingen behov for oppfølging av lege utover primærlege og evt. poliklinisk kontroll på sykehuset
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {    -- C: Vurdering av kompleksitet og rehabiliteringsnivå
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0035] occurrences matches {0..1} matches {    -- Medisinsk oppfølgning
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0036] occurrences matches {0..1} matches {    -- 1. Kompleks medisinsk tilstand eks. CNS skade/sykdom, hjerte-/ lungelidelse, multiorgansvikt, sår, akutt/kronisk inflammasjon/infeksjon, psykiatri, rus, komorbiditet. Behov oppfølging av lege:
+														value matches {
+															2|[local::at0037],
+															1|[local::at0038],
+															0|[local::at0039]
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {    -- 2. Daglig eller flere ganger ukentlig behov for sykehusspesialister
+														value matches {
+															3|[local::at0041],
+															0|[local::at0042]
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {    -- 3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet eks dialyse, billeddiagnostikk, kartleggingsutstyr, omfattende laboratorieundersøkelser
+														value matches {
+															3|[local::at0044],
+															0|[local::at0045]
+														}
+													}
+													ELEMENT[at0049] occurrences matches {0..1} matches {    -- 4. Angst/depresjon/stressreaksjon/selvmordstanker
+														value matches {
+															1|[local::at0050],
+															0|[local::at0051]
+														}
+													}
+													ELEMENT[at0052] occurrences matches {0..1} matches {    -- 5. Påvist smitte (Covid, ESBL, MRSA, VRE, Hepatitt, HIV, etc) som krever spesiell håndtering
+														value matches {
+															1|[local::at0053],
+															0|[local::at0054]
+														}
+													}
+												}
+											}
+											ELEMENT[at0055] occurrences matches {0..1} matches {    -- Forvirring/PTA med manglende orientering tid-sted-situasjon
+												value matches {
+													3|[local::at0056],
+													1|[local::at0057],
+													0|[local::at0058]
+												}
+											}
+											CLUSTER[at0060] occurrences matches {0..1} matches {    -- Kroppsfunksjoner
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0061] occurrences matches {0..1} matches {    -- 1. Problematikk lunge-/hjertefunksjon
+														value matches {
+															2|[local::at0062],
+															1|[local::at0063],
+															0|[local::at0064]
+														}
+													}
+													ELEMENT[at0065] occurrences matches {0..1} matches {    -- 2. Dysfagi, ernærings-/hydreringsproblematikk
+														value matches {
+															2|[local::at0066],
+															1|[local::at0067],
+															0|[local::at0068]
+														}
+													}
+													ELEMENT[at0069] occurrences matches {0..1} matches {    -- 3. Vannlating/eliminasjonsproblematikk
+														value matches {
+															2|[local::at0070],
+															1|[local::at0071],
+															0|[local::at0072]
+														}
+													}
+													ELEMENT[at0073] occurrences matches {0..1} matches {    -- 4. Synsvansker (eks. dobbeltsyn, anopsi, redusert syn)
+														value matches {
+															2|[local::at0074],
+															1|[local::at0075],
+															0|[local::at0076]
+														}
+													}
+													ELEMENT[at0077] occurrences matches {0..1} matches {    -- 5. Språk-/kommunikasjonproblematikk
+														value matches {
+															2|[local::at0078],
+															1|[local::at0079],
+															0|[local::at0080]
+														}
+													}
+													ELEMENT[at0081] occurrences matches {0..1} matches {    -- 6. Kognitive vansker (eks. oppmerksomhet, hukommelse, neglekt, apraxi, perseverasjon, agnosi, emosjonell labilitet)
+														value matches {
+															2|[local::at0082],
+															1|[local::at0083],
+															0|[local::at0084]
+														}
+													}
+													ELEMENT[at0085] occurrences matches {0..1} matches {    -- 7. Lammelse, koordinasjonsforstyrrelse, sensoriske utfall, fallfare
+														value matches {
+															2|[local::at0086],
+															1|[local::at0087],
+															0|[local::at0088]
+														}
+													}
+													ELEMENT[at0089] occurrences matches {0..1} matches {    -- 8. Spastisitet/feilstillinger
+														value matches {
+															2|[local::at0090],
+															1|[local::at0091],
+															0|[local::at0092]
+														}
+													}
+													ELEMENT[at0093] occurrences matches {0..1} matches {    -- 9. Smerter
+														value matches {
+															2|[local::at0094],
+															1|[local::at0095],
+															0|[local::at0096]
+														}
+													}
+													ELEMENT[at0097] occurrences matches {0..1} matches {    -- 10. Sår
+														value matches {
+															2|[local::at0098],
+															1|[local::at0099],
+															0|[local::at0100]
+														}
+													}
+												}
+											}
+											CLUSTER[at0101] occurrences matches {0..1} matches {    -- Omgivelser/nettverk/deltagelse/individuelle forhold
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0102] occurrences matches {0..1} matches {    -- 1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov
+														value matches {
+															1|[local::at0103],
+															0|[local::at0104]
+														}
+													}
+													ELEMENT[at0105] occurrences matches {0..1} matches {    -- 1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov
+														value matches {
+															1|[local::at0106],
+															0|[local::at0107]
+														}
+													}
+													ELEMENT[at0108] occurrences matches {0..1} matches {    -- 2. Evne til å ivareta seg selv i egen bolig?
+														value matches {
+															1|[local::at0109],
+															0|[local::at0110]
+														}
+													}
+													ELEMENT[at0111] occurrences matches {0..1} matches {    -- 3. Yrkesaktiv alder eller i jobb?
+														value matches {
+															1|[local::at0112],
+															0|[local::at0113]
+														}
+													}
+													ELEMENT[at0114] occurrences matches {0..1} matches {    -- 4. Behov for å kartlegge verge/medbestemmelsesevne?
+														value matches {
+															1|[local::at0115],
+															0|[local::at0116]
+														}
+													}
+													ELEMENT[at0117] occurrences matches {0..1} matches {    -- 5. Behov for å kartlegge evne til å kjøre bil/ håndtere skytevåpen?
+														value matches {
+															1|[local::at0118],
+															0|[local::at0119]
+														}
+													}
+													ELEMENT[at0120] occurrences matches {0..1} matches {    -- 6. Behov for kartlegging/omfattende tilrettelegging av bolig?
+														value matches {
+															1|[local::at0121],
+															0|[local::at0122]
+														}
+													}
+													ELEMENT[at0123] occurrences matches {0..1} matches {    -- 7. Behov for å utarbeide IP (Individuell Plan)?
+														value matches {
+															1|[local::at0124],
+															0|[local::at0125]
+														}
+													}
+												}
+											}
+											ELEMENT[at0148] occurrences matches {0..1} matches {    -- Sumskår:
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..40|}
+													}
+												}
+											}
+											ELEMENT[at0149] occurrences matches {0..1} matches {    -- Antall 1'ere
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..21|}
+													}
+												}
+											}
+											ELEMENT[at0150] occurrences matches {0..1} matches {    -- Antall 2'ere
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..11|}
+													}
+												}
+											}
+											ELEMENT[at0151] occurrences matches {0..1} matches {    -- Antall 3'ere
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..3|}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0012] matches {*}    -- Item tree
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"ABC Sjekkliste">
+					description = <"ABC sjekkliste for vurdering kompleksitet og nivå av tverrfaglig rehabilitering etter akutt skade og sykdom. ">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0012"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0030"] = <
+					text = <"C: Vurdering av kompleksitet og rehabiliteringsnivå">
+					description = <"Pasienten skåres med poeng i overskriftene \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\". Hver enkeltskår gir en indikasjon for anbefalt rehabiliteringsnivå mens sumsskår angir rehabiliteringsprosessens kompleksitet.
+
+Vurdering nivå rehabilitering: 
+- Ved en eller flere 3-ere: Indikasjon for tverrfaglige rehabiliteringstiltak i akuttsykehus
+- Ved en eller flere 2-ere: Indikasjon for at tverrfaglige rehabiliteringstiltak bør iverksettes på akuttsykehus eller institusjon for spesialisert rehabilitering
+- Ved en eller flere 1-ere: Indikasjon på at rehabiliteringstiltak bør iverksettes i kommunehelsetjenesten
+
+Vurdering kompleksitet rehabilitering:
+Maksimal sumskår = 40 poeng. En høy sumskår indikerer at det er mange samtidige problemstillinger som trenger oppfølging. 
+
+ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i vurderingen av hvilke rehabiliteringstiltak og hvilket nivå for rehabilitering som er aktuell. Behandlingsnivå vil også handle om kvalitet på tilgjengelig kommunal oppfølging som varierer mye fra sted til sted.
+
+">
+				>
+				["at0035"] = <
+					text = <"Medisinsk oppfølgning">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"1. Kompleks medisinsk tilstand eks. CNS skade/sykdom, hjerte-/ lungelidelse, multiorgansvikt, sår, akutt/kronisk inflammasjon/infeksjon, psykiatri, rus, komorbiditet. Behov oppfølging av lege:">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"3-7x per uke">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"1-2x per uke">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Sjeldnere/nei">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"2. Daglig eller flere ganger ukentlig behov for sykehusspesialister">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet eks dialyse, billeddiagnostikk, kartleggingsutstyr, omfattende laboratorieundersøkelser">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"4. Angst/depresjon/stressreaksjon/selvmordstanker">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"5. Påvist smitte (Covid, ESBL, MRSA, VRE, Hepatitt, HIV, etc) som krever spesiell håndtering">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Forvirring/PTA med manglende orientering tid-sted-situasjon">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Uavklart og behov for skjerming og oppfølging 1 til 1">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"Behov skjerming og oppfølging, og kan kreve ekstraordinær bemanning">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Kroppsfunksjoner">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"1. Problematikk lunge-/hjertefunksjon">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"2. Dysfagi, ernærings-/hydreringsproblematikk">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"3. Vannlating/eliminasjonsproblematikk">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"4. Synsvansker (eks. dobbeltsyn, anopsi, redusert syn)">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"5. Språk-/kommunikasjonproblematikk">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"6. Kognitive vansker (eks. oppmerksomhet, hukommelse, neglekt, apraxi, perseverasjon, agnosi, emosjonell labilitet)">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"7. Lammelse, koordinasjonsforstyrrelse, sensoriske utfall, fallfare">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0087"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"8. Spastisitet/feilstillinger">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0093"] = <
+					text = <"9. Smerter">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"10. Sår">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Mangelfull kartlegging/behandling">
+					description = <"">
+				>
+				["at0099"] = <
+					text = <"Tiltak igangsatt">
+					description = <"">
+				>
+				["at0100"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0101"] = <
+					text = <"Omgivelser/nettverk/deltagelse/individuelle forhold">
+					description = <"">
+				>
+				["at0102"] = <
+					text = <"1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0104"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov">
+					description = <"">
+				>
+				["at0106"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0107"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0108"] = <
+					text = <"2. Evne til å ivareta seg selv i egen bolig?">
+					description = <"">
+				>
+				["at0109"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"3. Yrkesaktiv alder eller i jobb?">
+					description = <"">
+				>
+				["at0112"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0114"] = <
+					text = <"4. Behov for å kartlegge verge/medbestemmelsesevne?">
+					description = <"">
+				>
+				["at0115"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0116"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"5. Behov for å kartlegge evne til å kjøre bil/ håndtere skytevåpen?">
+					description = <"">
+				>
+				["at0118"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0119"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"6. Behov for kartlegging/omfattende tilrettelegging av bolig?">
+					description = <"">
+				>
+				["at0121"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"7. Behov for å utarbeide IP (Individuell Plan)?">
+					description = <"">
+				>
+				["at0124"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"A: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet sykdom og symptomer">
+					description = <"Hvis kryss på noen av punktene under: Vurder utvidet tverrfaglig kartlegging, revurdering/kontroll eller innsetting av enkelttiltak fra rehabiliteringsavdelingen. Oppfølging sykehusavdeling, sykehjem eller primærlege er aktuelle hovedtiltak.">
+				>
+				["at0135"] = <
+					text = <"B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og  symptomer">
+					description = <"Hvis kryss på noen av punktene under: Vurder utvidet tverrfaglig kartlegging, ambulant vurdering, revurdering/ kontroll eller innsetting av enkelttiltak fra rehabiliteringsavdelingen. Oppfølging hos primærlege er aktuelt hovedtiltak.">
+				>
+				["at0136"] = <
+					text = <"Ingen nye symptomer eller utfall (hjerte/lunge, dysfagi, vannlating, synsvansker, språk, kognitive vansker, lammelser, spastisitet, smerte, sår)">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Er i stand til å utføre alle sine vanlige aktiviteter">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Ingen behov for oppfølging av lege utover primærlege og evt. poliklinisk kontroll på sykehuset">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Alvorlig sykdom som krever opphold på spesialavdeling eks. respiratortrengende, ustabil hjerte-/ lungefunksjon, ustabile frakturer, psykose.">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"Samtidig alvorlig sykdom med dårlig prognose (eks cancer, forventet overlevelse < 6 mnd.)">
+					description = <"">
+				>
+				["at0142"] = <
+					text = <"Ikke kontaktbar">
+					description = <"">
+				>
+				["at0148"] = <
+					text = <"Sumskår:">
+					description = <"Summen av score fra \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\".">
+				>
+				["at0149"] = <
+					text = <"Antall 1'ere">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Antall 2'ere">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Antall 3'ere">
+					description = <"">
+				>
+			>
+		>
+	>
