@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.abc_no.v0
 
 concept
-	[at0000]	-- ABC Sjekkliste
+	[at0000]	-- ABC sjekkliste
 language
 	original_language = <[ISO_639-1::nb]>
 description
@@ -15,30 +15,28 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"ABC er ment å kartlegge kompleksiteten hos den enkelte pasient på en slik måte at vi kan sette inn riktige faggrupper og velge riktig nivå for videre rehabiliteringstiltak, og bidra til å identifisere pasienter som vil ha nytte av videre tverrfaglige rehabiliteringsinnsatser, allerede fra akutt sykdom og skade.">
-			use = <"ABC kan fylles ut ved hjelp av informasjon i journalsystemet, ved samtale med personell og pårørende og krever ikke våken pasient.
-Del A og B er innledende screening. Dersom ingen kryss i innledende screening, gjennomfør hovedscreening i del C. 
-Del C består av \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\". Under sumskår legger en sammen alle poengene. 
-Hver enkeltskår gir en indikasjon for anbefalt rehabiliteringsnivå mens sumsskår angir rehabiliteringsprosessens kompleksitet.">
+			purpose = <"For vurdering av kompleksitet og nivå av tverrfaglig rehabiliteringtiltak etter akutt sykdom og skade.">
+			use = <"Brukes for å registrere vurdering av kompleksitet og nivå av tverrfaglig rehabiliteringtiltak etter akutt sykdom og skade i henhold til ABC sjekklisten.">
 			keywords = <"ABC, rehabilitering, tverrfaglig, funksjon, ICF", ...>
 			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Tverrfaglige rehabliteringstiltak - ABC- sjekkliste [Internet]. Sykehuset Telemark [cited: 2022 Mar. 28]. Tilgjengelig fra https://www.sthf.no/helsefaglig/tverrfaglige-rehabiliteringstiltak-abc-sjekkliste.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0EC46F3AA13D3E49ED8D781E7BB89755">
-		["build_uid"] = <"aea7f69f-5e95-4b94-bc56-f1714fdcece9">
+		["MD5-CAM-1.0.1"] = <"9EC0A6538AEDCF6D945CCA90DD3F5582">
+		["build_uid"] = <"082b0bcf-9ae2-492d-94ba-5d911938a720">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- ABC Sjekkliste
+	OBSERVATION[at0000] matches {    -- ABC sjekkliste
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -48,7 +46,7 @@ definition
 								items cardinality matches {0..*; unordered} matches {
 									CLUSTER[at0134] occurrences matches {0..1} matches {    -- A: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet sykdom og symptomer
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0140] occurrences matches {0..1} matches {    -- Alvorlig sykdom som krever opphold på spesialavdeling eks. respiratortrengende, ustabil hjerte-/ lungefunksjon, ustabile frakturer, psykose.
+											ELEMENT[at0140] occurrences matches {0..1} matches {    -- Alvorlig sykdom som krever opphold på spesialavdeling
 												value matches {
 													DV_BOOLEAN matches {*}
 												}
@@ -58,16 +56,16 @@ definition
 													DV_BOOLEAN matches {*}
 												}
 											}
-											ELEMENT[at0141] occurrences matches {0..1} matches {    -- Samtidig alvorlig sykdom med dårlig prognose (eks cancer, forventet overlevelse < 6 mnd.)
+											ELEMENT[at0141] occurrences matches {0..1} matches {    -- Samtidig alvorlig sykdom med dårlig prognose
 												value matches {
 													DV_BOOLEAN matches {*}
 												}
 											}
 										}
 									}
-									CLUSTER[at0135] occurrences matches {0..1} matches {    -- B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og  symptomer
+									CLUSTER[at0135] occurrences matches {0..1} matches {    -- B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og symptomer
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0136] occurrences matches {0..1} matches {    -- Ingen nye symptomer eller utfall (hjerte/lunge, dysfagi, vannlating, synsvansker, språk, kognitive vansker, lammelser, spastisitet, smerte, sår)
+											ELEMENT[at0136] occurrences matches {0..1} matches {    -- Ingen nye symptomer eller utfall
 												value matches {
 													DV_BOOLEAN matches {*}
 												}
@@ -88,7 +86,7 @@ definition
 										items cardinality matches {1..*; unordered} matches {
 											CLUSTER[at0035] occurrences matches {0..1} matches {    -- Medisinsk oppfølgning
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0036] occurrences matches {0..1} matches {    -- 1. Kompleks medisinsk tilstand eks. CNS skade/sykdom, hjerte-/ lungelidelse, multiorgansvikt, sår, akutt/kronisk inflammasjon/infeksjon, psykiatri, rus, komorbiditet. Behov oppfølging av lege:
+													ELEMENT[at0036] occurrences matches {0..1} matches {    -- 1. Kompleks medisinsk tilstand, behov oppfølging av lege
 														value matches {
 															2|[local::at0037],
 															1|[local::at0038],
@@ -101,7 +99,7 @@ definition
 															0|[local::at0042]
 														}
 													}
-													ELEMENT[at0043] occurrences matches {0..1} matches {    -- 3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet eks dialyse, billeddiagnostikk, kartleggingsutstyr, omfattende laboratorieundersøkelser
+													ELEMENT[at0043] occurrences matches {0..1} matches {    -- 3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet
 														value matches {
 															3|[local::at0044],
 															0|[local::at0045]
@@ -113,7 +111,7 @@ definition
 															0|[local::at0051]
 														}
 													}
-													ELEMENT[at0052] occurrences matches {0..1} matches {    -- 5. Påvist smitte (Covid, ESBL, MRSA, VRE, Hepatitt, HIV, etc) som krever spesiell håndtering
+													ELEMENT[at0052] occurrences matches {0..1} matches {    -- 5. Påvist smitte som krever spesiell håndtering
 														value matches {
 															1|[local::at0053],
 															0|[local::at0054]
@@ -151,7 +149,7 @@ definition
 															0|[local::at0072]
 														}
 													}
-													ELEMENT[at0073] occurrences matches {0..1} matches {    -- 4. Synsvansker (eks. dobbeltsyn, anopsi, redusert syn)
+													ELEMENT[at0073] occurrences matches {0..1} matches {    -- 4. Synsvansker
 														value matches {
 															2|[local::at0074],
 															1|[local::at0075],
@@ -165,7 +163,7 @@ definition
 															0|[local::at0080]
 														}
 													}
-													ELEMENT[at0081] occurrences matches {0..1} matches {    -- 6. Kognitive vansker (eks. oppmerksomhet, hukommelse, neglekt, apraxi, perseverasjon, agnosi, emosjonell labilitet)
+													ELEMENT[at0081] occurrences matches {0..1} matches {    -- 6. Kognitive vansker
 														value matches {
 															2|[local::at0082],
 															1|[local::at0083],
@@ -204,7 +202,7 @@ definition
 											}
 											CLUSTER[at0101] occurrences matches {0..1} matches {    -- Omgivelser/nettverk/deltagelse/individuelle forhold
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0102] occurrences matches {0..1} matches {    -- 1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov
+													ELEMENT[at0102] occurrences matches {0..1} matches {    -- 1. Mindreårige barn? Ektefelle eller barn med sykdom/pleiebehov?
 														value matches {
 															1|[local::at0103],
 															0|[local::at0104]
@@ -228,7 +226,7 @@ definition
 															0|[local::at0116]
 														}
 													}
-													ELEMENT[at0117] occurrences matches {0..1} matches {    -- 5. Behov for å kartlegge evne til å kjøre bil/ håndtere skytevåpen?
+													ELEMENT[at0117] occurrences matches {0..1} matches {    -- 5. Behov for å kartlegge evne til å kjøre bil/håndtere skytevåpen?
 														value matches {
 															1|[local::at0118],
 															0|[local::at0119]
@@ -248,7 +246,7 @@ definition
 													}
 												}
 											}
-											ELEMENT[at0148] occurrences matches {0..1} matches {    -- Sumskår:
+											ELEMENT[at0148] occurrences matches {0..1} matches {    -- Sumskår
 												value matches {
 													DV_COUNT matches {
 														magnitude matches {|0..40|}
@@ -286,7 +284,14 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0012] matches {*}    -- Item tree
+			ITEM_TREE[at0012] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0152] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
 		}
 	}
 
@@ -296,8 +301,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"ABC Sjekkliste">
-					description = <"ABC sjekkliste for vurdering kompleksitet og nivå av tverrfaglig rehabilitering etter akutt skade og sykdom. ">
+					text = <"ABC sjekkliste">
+					description = <"En sjekkliste for vurdering av kompleksitet og nivå av tverrfaglig rehabilitering etter akutt skade og sykdom.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -317,27 +322,15 @@ ontology
 				>
 				["at0030"] = <
 					text = <"C: Vurdering av kompleksitet og rehabiliteringsnivå">
-					description = <"Pasienten skåres med poeng i overskriftene \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\". Hver enkeltskår gir en indikasjon for anbefalt rehabiliteringsnivå mens sumsskår angir rehabiliteringsprosessens kompleksitet.
-
-Vurdering nivå rehabilitering: 
-- Ved en eller flere 3-ere: Indikasjon for tverrfaglige rehabiliteringstiltak i akuttsykehus
-- Ved en eller flere 2-ere: Indikasjon for at tverrfaglige rehabiliteringstiltak bør iverksettes på akuttsykehus eller institusjon for spesialisert rehabilitering
-- Ved en eller flere 1-ere: Indikasjon på at rehabiliteringstiltak bør iverksettes i kommunehelsetjenesten
-
-Vurdering kompleksitet rehabilitering:
-Maksimal sumskår = 40 poeng. En høy sumskår indikerer at det er mange samtidige problemstillinger som trenger oppfølging. 
-
-ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i vurderingen av hvilke rehabiliteringstiltak og hvilket nivå for rehabilitering som er aktuell. Behandlingsnivå vil også handle om kvalitet på tilgjengelig kommunal oppfølging som varierer mye fra sted til sted.
-
-">
+					description = <"">
 				>
 				["at0035"] = <
 					text = <"Medisinsk oppfølgning">
 					description = <"">
 				>
 				["at0036"] = <
-					text = <"1. Kompleks medisinsk tilstand eks. CNS skade/sykdom, hjerte-/ lungelidelse, multiorgansvikt, sår, akutt/kronisk inflammasjon/infeksjon, psykiatri, rus, komorbiditet. Behov oppfølging av lege:">
-					description = <"">
+					text = <"1. Kompleks medisinsk tilstand, behov oppfølging av lege">
+					description = <"For eksempel: CNS skade/sykdom, hjerte-/ lungelidelse, multiorgansvikt, sår, akutt/kronisk inflammasjon/infeksjon, psykiatri, rus, komorbiditet.">
 				>
 				["at0037"] = <
 					text = <"3-7x per uke">
@@ -364,8 +357,8 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0043"] = <
-					text = <"3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet eks dialyse, billeddiagnostikk, kartleggingsutstyr, omfattende laboratorieundersøkelser">
-					description = <"">
+					text = <"3. Behov for døgn-/ akuttberedskap, intensivfunksjoner/monitorering, annet">
+					description = <"For eksempel: dialyse, billeddiagnostikk, kartleggingsutstyr, omfattende laboratorieundersøkelser.">
 				>
 				["at0044"] = <
 					text = <"Ja">
@@ -388,8 +381,8 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0052"] = <
-					text = <"5. Påvist smitte (Covid, ESBL, MRSA, VRE, Hepatitt, HIV, etc) som krever spesiell håndtering">
-					description = <"">
+					text = <"5. Påvist smitte som krever spesiell håndtering">
+					description = <"For eksempel: Covid, ESBL, MRSA, VRE, Hepatitt, HIV, etc.">
 				>
 				["at0053"] = <
 					text = <"Ja">
@@ -468,8 +461,8 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0073"] = <
-					text = <"4. Synsvansker (eks. dobbeltsyn, anopsi, redusert syn)">
-					description = <"">
+					text = <"4. Synsvansker">
+					description = <"For eksempel: dobbeltsyn, anopsi, redusert syn.">
 				>
 				["at0074"] = <
 					text = <"Mangelfull kartlegging/behandling">
@@ -500,8 +493,8 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0081"] = <
-					text = <"6. Kognitive vansker (eks. oppmerksomhet, hukommelse, neglekt, apraxi, perseverasjon, agnosi, emosjonell labilitet)">
-					description = <"">
+					text = <"6. Kognitive vansker">
+					description = <"For eksempel: oppmerksomhet, hukommelse, neglekt, apraxi, perseverasjon, agnosi, emosjonell labilitet.">
 				>
 				["at0082"] = <
 					text = <"Mangelfull kartlegging/behandling">
@@ -584,7 +577,7 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0102"] = <
-					text = <"1. Mindreårige barn. Ektefelle eller barn med sykdom/pleiebehov">
+					text = <"1. Mindreårige barn? Ektefelle eller barn med sykdom/pleiebehov?">
 					description = <"">
 				>
 				["at0103"] = <
@@ -632,7 +625,7 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0117"] = <
-					text = <"5. Behov for å kartlegge evne til å kjøre bil/ håndtere skytevåpen?">
+					text = <"5. Behov for å kartlegge evne til å kjøre bil/håndtere skytevåpen?">
 					description = <"">
 				>
 				["at0118"] = <
@@ -669,15 +662,15 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 				>
 				["at0134"] = <
 					text = <"A: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet sykdom og symptomer">
-					description = <"Hvis kryss på noen av punktene under: Vurder utvidet tverrfaglig kartlegging, revurdering/kontroll eller innsetting av enkelttiltak fra rehabiliteringsavdelingen. Oppfølging sykehusavdeling, sykehjem eller primærlege er aktuelle hovedtiltak.">
+					description = <"">
 				>
 				["at0135"] = <
-					text = <"B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og  symptomer">
-					description = <"Hvis kryss på noen av punktene under: Vurder utvidet tverrfaglig kartlegging, ambulant vurdering, revurdering/ kontroll eller innsetting av enkelttiltak fra rehabiliteringsavdelingen. Oppfølging hos primærlege er aktuelt hovedtiltak.">
+					text = <"B: Indikasjon for IKKE å anbefale rehabiliteringstiltak grunnet FRAVÆR av sykdom og symptomer">
+					description = <"">
 				>
 				["at0136"] = <
-					text = <"Ingen nye symptomer eller utfall (hjerte/lunge, dysfagi, vannlating, synsvansker, språk, kognitive vansker, lammelser, spastisitet, smerte, sår)">
-					description = <"">
+					text = <"Ingen nye symptomer eller utfall">
+					description = <"For eksempel: hjerte/lunge, dysfagi, vannlating, synsvansker, språk, kognitive vansker, lammelser, spastisitet, smerte, sår.">
 				>
 				["at0138"] = <
 					text = <"Er i stand til å utføre alle sine vanlige aktiviteter">
@@ -688,20 +681,20 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 					description = <"">
 				>
 				["at0140"] = <
-					text = <"Alvorlig sykdom som krever opphold på spesialavdeling eks. respiratortrengende, ustabil hjerte-/ lungefunksjon, ustabile frakturer, psykose.">
-					description = <"">
+					text = <"Alvorlig sykdom som krever opphold på spesialavdeling">
+					description = <"For eksempel: respiratortrengende, ustabil hjerte-/ lungefunksjon, ustabile frakturer, psykose.">
 				>
 				["at0141"] = <
-					text = <"Samtidig alvorlig sykdom med dårlig prognose (eks cancer, forventet overlevelse < 6 mnd.)">
-					description = <"">
+					text = <"Samtidig alvorlig sykdom med dårlig prognose">
+					description = <"For eksempel: cancer, forventet overlevelse < 6 mnd.">
 				>
 				["at0142"] = <
 					text = <"Ikke kontaktbar">
 					description = <"">
 				>
 				["at0148"] = <
-					text = <"Sumskår:">
-					description = <"Summen av score fra \"Medisinsk oppfølging\", \"Forvirringstilstand\", \"Kroppsfunksjoner\" og \"Omgivelser/deltagelse\".">
+					text = <"Sumskår">
+					description = <"">
 				>
 				["at0149"] = <
 					text = <"Antall 1'ere">
@@ -714,6 +707,11 @@ ABC sjekkliste er brukt sammen med eks. Barthel 100 som også tillegges vekt i v
 				["at0151"] = <
 					text = <"Antall 3'ere">
 					description = <"">
+				>
+				["at0152"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 			>
 		>
