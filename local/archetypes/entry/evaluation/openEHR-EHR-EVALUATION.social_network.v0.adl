@@ -9,9 +9,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Vebjørn Arntzen">
-				["organisation"] = <"Oslo University Hospital">
-				["email"] = <"varntzen@ous-hf.no">
+				["name"] = <"Vebjørn Arntzen, John Tore Valand">
+				["organisation"] = <"Oslo University Hospital, Helse Vest IKT AS">
+				["email"] = <"varntzen@ous-hf.no, john.tore.valand@helse-vest-ikt.no">
 			>
 		>
 		["fr"] = <
@@ -34,10 +34,9 @@ description
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere informasjon om mennesker som hører sammen med individet gjennom sosial interaksjon og personlige forbindelser.">
-			use = <"Bruk for å registrere informasjon om mennesker som hører sammen med individet gjennom sosial interaksjon og personlige forbindelser.">
+			use = <"Brukes for å registrere informasjon om mennesker som hører sammen med individet gjennom sosial interaksjon og personlige forbindelser.">
 			keywords = <"partner", "forbindelse", "slektskap", "familie", "støtte", "ekteskap", "ekteskaplig", "gift", "enslig", "singel", "enke", "enkemann", "skilt", "ugift", "venn", "nabo", "samboer">
-			misuse = <"Skal ikke brukes for å registrere detaljer om leverandører av helsetjenester eller omsorgsteam.">
-			copyright = <"© Nasjonal IKT HF">
+			misuse = <"Brukes ikke brukes for å registrere detaljer om leverandører av helsetjenester eller omsorgsteam.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -45,7 +44,7 @@ description
 			use = <"Use to record information about the people who are connected to the individual through social interactions and personal relationships.">
 			keywords = <"partner, partnership, relationship, family, support, marital, married, defacto, marriage, single, widowed, widow, widower, divorced, unmarried, friend, neighbour", ...>
 			misuse = <"Not to be used to record details about health care providers or care teams.">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
@@ -53,21 +52,19 @@ description
 			use = <"*Use to record information about the people who are connected to the individual through social interactions and personal relationships. (en)">
 			keywords = <"*partner, partnership, relationship, family, support, marital, married, defacto, marriage, single, widowed, widow, widower, divorced, unmarried, friend, neighbour (en)", ...>
 			misuse = <"*Not to be used to record details about health care providers or care teams. (en)">
-			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"John Tore Valand, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Social network, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2022-03-28]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.3288">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["current_contact"] = <"Heather Leslie, Atomica Informatics<heather.leslie@atomicainformatics.com>">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"CC9BB4AA011FEBBB1F273C0516E03B64">
-		["build_uid"] = <"34376e0a-fa0e-48a2-aba8-fd2b27453187">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"A12EB45834690DB7514363410E33D26C">
+		["build_uid"] = <"39d0b18e-7be5-469f-ae7d-c9f8a6ed3ffe">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -109,6 +106,9 @@ definition
 			}
 		}
 	}
+
+
+
 
 ontology
 	term_definitions = <
@@ -202,7 +202,7 @@ her reference models or formalisms. (en)">
 				>
 				["at0002"] = <
 					text = <"Sivilstand">
-					description = <"Enkelord eller frase som beskriver et individs forhold til en livspartner.">
+					description = <"Enkelt ord eller frase som beskriver et individs forhold til en livspartner.">
 					comment = <"Det anbefales å kode sivilstatus med en terminologi dersom mulig. For eksempel Ugift, Gift, Registrert partner, Samboer, Skilt, Enke, Enkemann, Enslig.">
 				>
 				["at0010"] = <
@@ -211,7 +211,7 @@ her reference models or formalisms. (en)">
 				>
 				["at0011"] = <
 					text = <"Sist oppdatert">
-					description = <"Dato når Sosialt nettverk var oppdatert.">
+					description = <"Datoen da \"Sosialt nettverk\" sist ble oppdatert.">
 				>
 				["at0012"] = <
 					text = <"Tilleggsinformasjon">
@@ -220,7 +220,7 @@ her reference models or formalisms. (en)">
 				>
 				["at0015"] = <
 					text = <"Beskrivelse">
-					description = <"Fritekstlig beskrivelse om det sosiale nettverket og tilknytninger for individet.">
+					description = <"Fritekstbeskrivelse om det sosiale nettverket og tilknytninger for individet.">
 				>
 				["at0016"] = <
 					text = <"Nettverk">
