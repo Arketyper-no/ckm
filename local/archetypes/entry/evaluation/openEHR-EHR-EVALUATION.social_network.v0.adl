@@ -63,8 +63,8 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A12EB45834690DB7514363410E33D26C">
-		["build_uid"] = <"39d0b18e-7be5-469f-ae7d-c9f8a6ed3ffe">
+		["MD5-CAM-1.0.1"] = <"018B659CC0BFF537177C76A899070554">
+		["build_uid"] = <"4bd18eca-dc72-49e5-9697-a4b07078aefe">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -87,6 +87,10 @@ definition
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1/}
 					}
+					allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {    -- Additional details
+						include
+							archetype_id/value matches {/.*/}
+					}
 				}
 			}
 		}
@@ -106,6 +110,7 @@ definition
 			}
 		}
 	}
+
 
 
 
@@ -149,6 +154,10 @@ her reference models or formalisms.">
 					text = <"Network">
 					description = <"Structured details about people or community organisations who are connected to the individual.">
 				>
+				["at0017"] = <
+					text = <"Additional details">
+					description = <"Additional structured details about the social network.">
+				>
 			>
 		>
 		["fr"] = <
@@ -188,6 +197,10 @@ her reference models or formalisms. (en)">
 					text = <"*Network (en)">
 					description = <"*Structured details about people or community organisations who are connected to the individual. (en)">
 				>
+				["at0017"] = <
+					text = <"*Additional details (en)">
+					description = <"*Additional structured details about the social network. (en)">
+				>
 			>
 		>
 		["nb"] = <
@@ -225,6 +238,10 @@ her reference models or formalisms. (en)">
 				["at0016"] = <
 					text = <"Nettverk">
 					description = <"Strukturerte detaljer om mennesker eller organisasjoner som har en forbindelse med individet.">
+				>
+				["at0017"] = <
+					text = <"Ytterligere detaljer">
+					description = <"Ytterligere strukturerte detaljer om det sosiale nettverket.">
 				>
 			>
 		>
