@@ -9,8 +9,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"John Tore Valand og Silje Ljosland Bakke">
-				["organisation"] = <"Helse Bergen HF, Nasjonal IKT HF">
+				["name"] = <"Vebjørn Arntzen">
+				["organisation"] = <"Oslo University Hospital">
+				["email"] = <"varntzen@ous-hf.no">
 			>
 		>
 	>
@@ -22,6 +23,29 @@ description
 		["date"] = <"14-11-2012">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en kontraindikasjon for en klinisk intervensjon (for eksempel - men ikke begrenset til, en behandling, en prøve eller prosedyre) som ikke må utføres på pasienten på grunn av sannsynlighet eller mulighet for at individet kan påføres skade.">
+			use = <"Brukes for å registrere en kontraindikasjon for en klinisk intervensjon i journalen på grunn av sannsynlighet eller mulighet for at individet kan påføres skade om intervensjonen utføres.
+
+Denne arketypen kan også brukes å opprette en kontraindikasjon for en klinisk intervensjon i journalen til en pasient også i tilfeller hvor den uønskede kliniske effekten kan påføre andre skade og ikke direkte pasienten selv. For eksempel: Administrasjon av levende vaksiner bør registreres som en kontraindikasjon hos et individ som har familiemedlemmer som er immunosupprimert eller som er i en aktiv immunosupprimerende behandling fordi dette familiemedlemmet kan ha en stor risiko for å få en infeksjonssykdom.
+
+Denne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.
+
+Kontraindikasjonen kan angis på en rekke måter, for eksempel:
+- Tidligere erfaring med en utført prosedyre og med påfølgende klinisk vurdering om at dette ikke skal gjentas.
+- Implantasjon av metallimplantater som utelukker noen bildediagnostiske undersøkelser.
+- Resultat av genundersøkelser som indikerer at en uønsket hendelse kan forekomme om en behandling utføres eller et legemiddel administreres.
+- Ugunstig effekt av liknende behandling, legemiddel eller prosedyre hos familiemedlemmer.
+
+I tilfeller som omhandler legemidler eller vaksiner vil denne arketypen supplere arketypen EVALUATION.adverse_reaction_risk (Risiko for overfølsomhetsreaksjon) ved å angi andre årsaker til at et legemiddel eller en vaksine ikke bør administreres, utover overfølsomhetsreaksjoner. I lys av dette bør klinisk beslutningsstøtte for ordinering inneholde en referanse til denne arketypen samt arketypen EVALUATION.adverse_reaction_risk som en del av en trygg ordineringsprosess.">
+			keywords = <"forebygge", "unngå", "uønsket hendelse", "forebygge", "forsiktighet", "advarsel">
+			misuse = <"Brukes ikke for å registrere forekomst av en overfølsomhetsreaksjon knyttet til en substans eller agens. EVALUATION.adverse_reaction_risk (Risiko for overfølsomhetsreaksjon) er en veldig spesifikk type kontraindikasjon, og på grunn av dens allestedsnærværende bruk i journalsystemer er modellert som en egen arketype. 
+
+Brukes ikke for å registrere en tilstand hos et individ som er klinisk signifikant og unikt for dette individet og som er vurdert som viktig informasjon for å gjøre valg om behandling. Bruk arketypen EVALUATION.precaution (Forholdsregel) for dette.
+
+Brukes ikke til å registrere individets personlige preferanser. Bruk spesifikke arketyper for dette formålet.">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record a contraindication for a clinical intervention (including, but not limited to, a treatment, test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual.">
@@ -38,36 +62,17 @@ This contraindication may be identified in a number of ways including, but not l
 - adverse experience by a family member to a similar treatment, medication or procedure.
 
 In the case of medications or vaccines, this archetype complements the EVALUATION.adverse_reaction_risk archetype by identifying other reasons why a medication or vaccine should not be administered, other than an adverse reaction. In view of this, clinical decision support for prescribing should include reference to this archetype plus the EVALUATION.adverse_reaction_risk as part of a safe prescribing process.">
-			keywords = <"contraindication", "prevent", "avoid", "adverse event">
-			misuse = <"Not to be used to record the occurrence of an adverse reaction to a substance or agent - use EVALUATION.adverse_reaction_risk for this purpose.
+			keywords = <"contraindication", "prevent", "avoid", "adverse event", "caution", "alert", "warning">
+			misuse = <"Not to be used to record the occurrence of an adverse reaction to a substance or agent. Adverse reaction risk is a very specific type of contradiction and because of its ubiquity has been modelled separately as EVALUATION.adverse_reaction_risk for this purpose.
+
+Not to be used to record a condition or state of the individual that is clinically significant and unique or idiosyncratic for this individual, and is considered vital information when making treatment decisions. Use EVALUATION.precaution for this purpose.
 
 Not to be used to record personal preferences of the individual. Use specific archetypes for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en kontraindikasjon for en klinisk intervensjon (for eksempel en behandling, en prøve eller prosedyre) som ikke må utføres på pasienten på grunn av sannsynlighet eller mulighet for at individet kan påføres skade.">
-			use = <"Brukes for å registrere en kontraindikasjon for en klinisk intervensjon i journalen på grunn av sannsynlighet eller mulighet for at individet kan påføres skade om intervensjonen utføres.
-
-Denne arketypen kan også brukes å opprette en kontraindikasjon for en klinisk intervensjon i journalen til en pasient også i tilfeller hvor den uønskede kliniske effekten kan påføre andre skade og ikke direkte pasienten selv. For eksempel: Adminstrasjon av levende vaksiner bør registreres som en kontraindikasjon hos et individ som har familiemedlemmer som er immunosupprimerte eller som er i en aktiv immunosupprimerende behandling da dette familiemedlemmet kan ha en stor risiko for å få en infeksjonssykdom.
-
-Denne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.
-
-Kontraindikasjonen kan angis på en rekke måter, for eksempel:
--Tidligere erfaring med en utført prosedyre og med påfølgende klinisk vurdering om at dette ikke skal gjentas.
--Implantasjon av metallimplantater som utelukker noen bildediagnostiske undersøkelser.
--Resultater av genundersøkelser som indikerer at en uønsket hendelse kan forekomme om en behandling utføres eller et legemiddel administreres.
--Negativ erfaring med liknende behandling, legemiddel eller prosedyre hos familiemedlemmer.
-
-I tilfeller som omhandler legemidler eller vaksiner vil denne arketypen supplere arketypen EVALUATION.adverse_reaction_risk (Risiko for overfølsomhetsreaksjon) ved å angi andre årsaker til at et legemiddel eller en vaksine ikke bør administreres, utover overfølsomhetsreaksjoner. I lys av dette bør klinisk beslutningsstøtte for ordinering inneholde en referanse til denne arketypen samt arketypen EVALUATION.adverse_reaction_risk som en del av en trygg ordineringsprosess.">
-			keywords = <"kontraindikasjon", "forebygge", "unngå", "uønsket hendelse">
-			misuse = <"Brukes ikke for å registrere forekomst av en overfølsomhetsreaksjon knyttet til en substans eller agens - bruk EVALUATION.adverse_reaction_risk for dette formålet.
-
-Brukes ikke til å registrere individets personlige preferanser. Bruk spesifikke arketyper for dette formålet.">
-		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Fatima Almeida, Critical SW, Portugal", "Tomas Alme, DIPS, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Fatima Almeida, Critical SW, Portugal", "Tomas Alme, DIPS, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Sam Heard, Ocean Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Lars Karlsen, DIPS ASA, Norway", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Lars Morgan Karlsen, DIPS ASA, Norway", "Bjørn Næss, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -75,8 +80,8 @@ Brukes ikke til å registrere individets personlige preferanser. Bruk spesifikke
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6F4D6087ACF673059E83EDBC26EE7370">
-		["build_uid"] = <"8f7a8797-dffa-4ef4-9051-182c6a8eac0b">
+		["MD5-CAM-1.0.1"] = <"5520E343BCE5593DEF4662482FEC8586">
+		["build_uid"] = <"1b35bf46-d9a7-4350-b03e-147748692ab2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -117,7 +122,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Indication
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Clinical indication
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -259,14 +264,14 @@ ontology
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 				["at0021"] = <
-					text = <"Indication">
+					text = <"Clinical indication">
 					description = <"Identification of the clinical reason why the identified 'Contraindicated intervention' should not be used or performed.">
-					comment = <"In the context of this contraindication archetype, this 'Indication' data element represents the clinical reason why the identified Intervention should not be used or performed. Coding of the 'Indication' with a terminology is desirable, where possible. Please note: an optional URI link to evidence within the health record is also permitted using Reference Model attributes. Example: 'Pacemaker inserted' as indication to avoid performing an MRI Intervention.">
+					comment = <"In the context of this contraindication archetype, this 'Indication' data element represents the clinical reason why the identified Intervention should not be used or performed. Example: 'Pacemaker inserted' as indication to avoid performing an MRI Intervention. Coding of the 'Indication' with a terminology is desirable, where possible. Please note: an optional URI link to evidence within the health record is also permitted using Reference Model attributes. As this URI link may not be accessible from a message or by receiving clinical system it is desirable that a narrative description of the rationale should be explicitly recorded.">
 				>
 				["at0022"] = <
 					text = <"Valid period start">
-					description = <"Date/time when the Contraindication becomes active.">
-					comment = <"This data element is intended for use when a contraindication is identified to start at some time in the future. For example, the contraindication for MRI would only be relevant after the date of the procedure for insertion of the pacemaker.">
+					description = <"Date/time when the contraindication becomes active.">
+					comment = <"This data element is intended for use when a contraindication is identified to start at some time in the future. For example: the contraindication for MRI would only be relevant after the date of the procedure for insertion of the pacemaker.">
 				>
 			>
 		>
@@ -274,7 +279,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Kontraindikasjon">
-					description = <"En klinisk intervensjon (for eksempel: en behandling, en prøve eller prosedyre) som ikke må utføres på pasienten på grunn av sannsynlighet eller mulighet for at individet kan påføres skade.">
+					description = <"En klinisk intervensjon (for eksempel - men ikke begrenset til, en behandling, en prøve eller prosedyre) som ikke må utføres på pasienten på grunn av sannsynlighet eller mulighet for at individet kan påføres skade.">
 				>
 				["at0001"] = <
 					text = <"Tree">
@@ -282,16 +287,16 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Kontraindisert intervensjon">
-					description = <"Navnet på den kliniske intervensjonen eller type intervensjon, for eksempel: en behandling, en prøve eller prosedyre.">
-					comment = <"Koding av \"Kontraindisert intervensjon\" med en terminologi er ønskelig der det er mulig.">
+					description = <"Navnet på den kliniske intervensjonen eller type intervensjon, for eksempel - men ikke begrenset til, en behandling, en prøve eller prosedyre som ikke bør utføres.">
+					comment = <"Det er ønskelig at \"Kontraindisert intervensjon\" kodes med en terminologi dersom mulig.">
 				>
 				["at0003"] = <
 					text = <"Rasjonale">
-					description = <"Fritekstbeskrivelse som forklarer forholdet mellom \"Indikasjon\" og \"Kontraindisert intervensjon\".">
+					description = <"Fritekstbeskrivelse som forklarer forholdet mellom \"Klinisk indikasjon\" og \"Kontraindisert intervensjon\".">
 				>
 				["at0004"] = <
 					text = <"Sist oppdatert">
-					description = <"Datoen da kontraindikasjonen sist ble oppdatert.">
+					description = <"Dato da kontraindikasjonen sist ble oppdatert.">
 				>
 				["at0006"] = <
 					text = <"Tree">
@@ -303,12 +308,12 @@ ontology
 				>
 				["at0008"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere informasjon om kontraindikasjonen, som ikke kan registreres i andre felt.">
+					description = <"Ytterligere informasjon om kontraindikasjonen, som ikke er fanget i andre felt.">
 				>
 				["at0009"] = <
-					text = <"Evalueringsdato">
+					text = <"Dato for evaluering">
 					description = <"Dato for neste kliniske evaluering.">
-					comment = <"Ved omstendigheter der en kontraindikasjon ikke er på ubestemt tid eller livslange, kan dette dataelementet brukes til å registrere når kontraindikasjonen bør evalueres. For eksempel: Planlegg en evalueringsdato når det er forventet at familiemedlemmet ikke lenger vil ta immunhemmende behandling, kontraindikasjonen er da opphørt og levende vaksiner kan administreres til individet igjen.">
+					comment = <"Ved tilfeller en kontraindikasjon ikke er på ubestemt tid eller livslang, kan dette dataelementet brukes til å registrere når kontraindikasjonen bør evalueres. For eksempel: Planlegg en evalueringsdato når det er forventet at familiemedlemmet ikke lenger vil ta immunhemmende behandling, kontraindikasjonen er da opphørt og levende vaksiner kan administreres til individet igjen.">
 				>
 				["at0010"] = <
 					text = <"Lav">
@@ -325,24 +330,24 @@ ontology
 				["at0013"] = <
 					text = <"Kategori">
 					description = <"Kategorisering av \"Kontraindisert intervensjon\".">
-					comment = <"Dette dataelementet er inkludert fordi det registreres i flere eksisterende kliniske systemer. Informasjonen kan avledes fra \"Kontraindisert intervensjon\" dersom hierarkiske kodesystemer er brukt, og vil i slike tilfeller være redundant.">
+					comment = <"Dette dataelementet er inkludert fordi det brukes i flere eksisterende kliniske systemer. Informasjonen kan avledes fra \"Kontraindisert intervensjon\" dersom hierarkiske kodesystemer er brukt, og vil i slike tilfeller være redundant.">
 				>
 				["at0014"] = <
 					text = <"Status">
 					description = <"Påstand om hvor sikkert det er at individet har en framtidig skaderisiko på grunn \"Kontraindisert intervensjon\".">
-					comment = <"Beslutningsstøtte vil typisk utløse advarsler for \"Mistenkt\", \"Sannsynlig\", \"Bekreftet\", og ignorere \"Avkreftet\". Kliniske systemer kan velge å ikke vise registreringer av en kontraindikasjon med status \"Avkreftet\" i en liste over kontraindikasjoner. Likevel kan \"Avkreftet\" være nyttig for sammenstilling av ulike lister over kontraindikasjoner eller ved kommunikasjon mellom systemer. Noen systemer kan velge å gjøre dette elementet obligatorisk. \"Opphørt\" kan brukes ulikt i ulike systemer avhengig av klinisk bruk og kontekst. Fritekst-datatypen tillater lokal variasjon ved å gjøre det mulig å bruke andre verdisett for dette dataelementet i en templat. Det er i denne situasjonen anbefalt å kode verdiene med en terminologi.">
+					comment = <"Beslutningsstøtte vil typisk utløse advarsler for \"Mistenkt\", \"Sannsynlig\", \"Bekreftet\", og ignorere \"Avkreftet\". Kliniske systemer kan velge å ikke vise registreringer av en kontraindikasjon med status \"Avkreftet\" i en liste over kontraindikasjoner. Likevel kan \"Avkreftet\" være nyttig for sammenstilling av ulike lister over kontraindikasjoner eller ved kommunikasjon mellom systemer. Noen systemer kan velge å gjøre dette elementet obligatorisk. \"Opphørt\" kan brukes ulikt i ulike systemer avhengig av klinisk bruk og kontekst. Fritekst-datatypen tillater lokal variasjon ved å gjøre det mulig å bruke andre verdisett for dette dataelementet i et templat. Det er i denne situasjonen anbefalt å kode verdiene med en terminologi.">
 				>
 				["at0015"] = <
 					text = <"Mistenkt">
-					description = <"En lav grad av sikkerhet om utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
+					description = <"En lav grad av klinisk sikkerhet om utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
 				>
 				["at0016"] = <
 					text = <"Sannsynlig">
-					description = <"En rimelig grad av sikkerhet at utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
+					description = <"En rimelig grad av klinisk sikkerhet at utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
 				>
 				["at0017"] = <
 					text = <"Bekreftet">
-					description = <"En stor grad av sikkerhet at utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
+					description = <"En stor grad av klinisk sikkerhet at utførelse av \"Kontraindisert intervensjon\" vil påføre individet eller familiemedlemmet skade.">
 				>
 				["at0018"] = <
 					text = <"Opphørt">
@@ -355,17 +360,17 @@ ontology
 				["at0020"] = <
 					text = <"Tilleggsinformasjon">
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 				["at0021"] = <
-					text = <"Indikasjon">
+					text = <"Klinisk indikasjon">
 					description = <"Den kliniske årsaken til at den identifiserte \"Kontraindisert intervensjon\" ikke skal benyttes eller utføres.">
-					comment = <"I denne arketypen vil dataelementet \"Indikasjon\" representere den kliniske årsaken til at den identifiserte intervensjonen ikke skal utføres. Koding av \"Indikasjon\" med en terminologi er ønskelig, der det er mulig. Merk: en valgfri URI lenke til dokumentasjon i pasientjournalen er også tillatt ved å benytte attributter fra referansemodellen. For eksempel vil en implantert pacemaker være en indikasjon på at en MR undersøkelse ikke bør utføres.">
+					comment = <"I denne arketypen vil dataelementet \"Klinisk indikasjon\" representere den kliniske årsaken til at den identifiserte intervensjonen ikke skal utføres. For eksempel \"Imlantert pacemaker\" som indikasjon for å hindre undersøkelse med MR. Koding av \"Indikasjon\" med en terminologi er ønskelig, der det er mulig. Merk: en valgfri URI lenke til dokumentasjon i pasientjournalen er også tillatt ved å benytte attributter fra referansemodellen. Siden denne URI-lenken kan være utilgjengelig i en melding eller av mottakende system, bør en beskrivelse i fritekst med rasjonale være registrert.">
 				>
 				["at0022"] = <
 					text = <"Start av gyldighetsperiode">
-					description = <"Dato/tid når kontraindikasjonen blir aktiv.">
-					comment = <"Dette dataelementet er ment for å brukes når et forsiktighetshensyn er ment å starte på et tidspunkt i fremtiden. For eksempel: kontraindikasjonen for MR undersøkelse vil bare være relevant etter at en pacemaker er implantert.">
+					description = <"Dato/Tid når kontraindikasjonen blir aktiv.">
+					comment = <"Dette dataelementet er ment for å brukes når en kontraindikasjon er ment å starte på et tidspunkt i fremtiden. For eksempel: kontraindikasjonen for MR undersøkelse vil bare være relevant etter at en pacemaker er implantert.">
 				>
 			>
 		>
