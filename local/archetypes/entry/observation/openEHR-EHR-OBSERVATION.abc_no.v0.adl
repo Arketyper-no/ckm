@@ -15,23 +15,23 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For vurdering av kompleksitet og nivå av tverrfaglig rehabiliteringtiltak etter akutt sykdom og skade.">
-			use = <"Brukes for å registrere vurdering av kompleksitet og nivå av tverrfaglig rehabiliteringtiltak etter akutt sykdom og skade i henhold til ABC sjekklisten.">
-			keywords = <"ABC, rehabilitering, tverrfaglig, funksjon, ICF", ...>
+			purpose = <"For vurdering av kompleksitet og nivå av tverrfaglig rehabiliteringtiltak etter akutt sykdom og skade i henhold til ABC sjekklisten.">
+			use = <"Brukes for å registrere vurdering av kompleksitet for mer riktig henvisning til kommunal eller spesialisthelsetjeneste rehabiliteringstiltak etter behandling i sykehus. Arketypen er basert på revidert versjon fra 15.04.2021.">
+			keywords = <"ABC, rehabilitering, tverrfaglig, funksjon, ICF, behovskartlegging", ...>
 			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Kåre Flø, DIPS ASA, Norway", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Unni Syre, Helse Stavanger, Norway", "My Torkildsen, Stavanger universitetssjukehus, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Ina Wille, Helse-Vest RHF, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
-		["references"] = <"Tverrfaglige rehabliteringstiltak - ABC- sjekkliste [Internet]. Sykehuset Telemark [cited: 2022 Mar. 28]. Tilgjengelig fra https://www.sthf.no/helsefaglig/tverrfaglige-rehabiliteringstiltak-abc-sjekkliste.">
+		["references"] = <"Tverrfaglige rehabliteringstiltak - ABC- sjekkliste, versjon 15.04.2021. [Internet]. Sykehuset Telemark [cited: 2022 Mar. 28]. Tilgjengelig fra https://www.sthf.no/helsefaglig/tverrfaglige-rehabiliteringstiltak-abc-sjekkliste.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9EC0A6538AEDCF6D945CCA90DD3F5582">
-		["build_uid"] = <"082b0bcf-9ae2-492d-94ba-5d911938a720">
+		["MD5-CAM-1.0.1"] = <"CA9DA72508B02AB6C9D48A5AFF5A7E76">
+		["build_uid"] = <"353df491-301f-498b-92d7-ee4df903df8f">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -51,12 +51,12 @@ definition
 													DV_BOOLEAN matches {*}
 												}
 											}
-											ELEMENT[at0142] occurrences matches {0..1} matches {    -- Ikke kontaktbar
+											ELEMENT[at0141] occurrences matches {0..1} matches {    -- Samtidig alvorlig sykdom med dårlig prognose
 												value matches {
 													DV_BOOLEAN matches {*}
 												}
 											}
-											ELEMENT[at0141] occurrences matches {0..1} matches {    -- Samtidig alvorlig sykdom med dårlig prognose
+											ELEMENT[at0142] occurrences matches {0..1} matches {    -- Ikke kontaktbar
 												value matches {
 													DV_BOOLEAN matches {*}
 												}
@@ -397,7 +397,7 @@ ontology
 					description = <"">
 				>
 				["at0056"] = <
-					text = <"Uavklart og behov for skjerming og oppfølging 1 til 1">
+					text = <"Uavklart og behov for skjerming og oppfølging én-til-én">
 					description = <"">
 				>
 				["at0057"] = <
@@ -593,11 +593,11 @@ ontology
 					description = <"">
 				>
 				["at0109"] = <
-					text = <"Ja">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0110"] = <
-					text = <"Nei">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0111"] = <
