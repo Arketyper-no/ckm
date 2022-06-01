@@ -1,13 +1,21 @@
 ﻿archetype (adl_version=1.4; uid=699e95a0-eee5-41e4-a7d3-4d99a1a6d677)
 	openEHR-EHR-CLUSTER.imaging_exam-abnormality.v0
 specialise
-	openEHR-EHR-CLUSTER.imaging_exam.v0
+	openEHR-EHR-CLUSTER.imaging_exam.v1
 
 concept
 	[at0000.1]	-- Imaging examination of an abnormality
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Natalia Strauch">
+				["organisation"] = <"Medizinische Hochschule Hannover">
+				["email"] = <"Strauch.Natalia@mh-hannover.de">
+			>
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
@@ -25,10 +33,23 @@ description
 		["date"] = <"2021-11-24">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Darstellung der Befunde einer radiologischen Untersuchung einer bestimmten Körperstruktur oder -region und deren Interpretation.">
+			use = <"Der Archetyp wird verwendet, um eine Beschreibung, strukturierte Angaben und einen klinischen Eindruck der Befunde einer morphologischen Anomalie darzustellen, die bei einer bildgebenden Untersuchung beobachtet wurde, die auf eine bestimmte Körperstruktur oder -region abzielt.
+
+Dieser Archetyp wurde für die Verwendung im SLOT „Zusätzliche Angaben“ innerhalb eines Archetyps CLUSTER.imaging_exam entwickelt, der die Struktur identifiziert, die die morphologische Anomalie enthält, kann aber auch innerhalb anderer ENTRY- oder CLUSTER-Archetypen verwendet werden, sofern klinisch angemessen.
+
+Wird verwendet, um einen Rahmen bereitzustellen, in dem CLUSTER-Archetypen im SLOT „Zusätzliche Angaben“ innerhalb dieses Archetyps verschachtelt werden können, um zusätzliche verschachtelte Ebenen strukturierter Bildgebungsbefunde für verwandte Körpersubstrukturen oder ortsspezifische Befunde darzustellen.">
+			keywords = <"Befund, Ergebnis, Bildgebung, Körper, Organ, System, Struktur, Region, Beobachtung, Diagnostik, Radiologie, Bild, Anomalie", ...>
+			misuse = <"Nicht zur Darstellung von Befunden verwenden, die außerhalb der identifizierten Körperstruktur oder -region beobachtet wurden. Verwenden Sie zu diesem Zweck eine separate Instanz eines oder mehrerer Archetypen aus der Familie CLUSTER.imaging_exam.
+
+Darf nicht verwendet werden, um Details in Bezug auf die Gesamtbefunde, den Kontext oder technische Details in Bezug auf ein vollständiges Testergebnis einer bildgebenden Untersuchung darzustellen. Verwenden Sie zu diesem Zweck das OBSERVATION.imaging_exam_result. Zum Beispiel Kommentare zur Studienqualität, zu Differentialdiagnosen und zum Gesamteindruck.">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en fritekstbeskrivelse, strukturerte detaljer og klinisk tolkning av observerte funn ved bildeundersøkelse av et morfologisk avvik.">
-			use = <"Brukes til å registrere fritekstbeskrivelse, strukturerte detaljer og klinisk tolkning av funn ved bildeundersøkelse av et morfologisk avvik. 
+			purpose = <"For å registrere en fritekstbeskrivelse, strukturerte detaljer og klinisk tolkning av funn eller observasjoner ved bildediagnostisk undersøkelse av et morfologisk avvik og som er rettet mot en spesifikk kroppsstruktur eller region.">
+			use = <"Brukes for å registrere en fritekstbeskrivelse, strukturerte detaljer og klinisk tolkning av funn eller observasjoner ved bildediagnostisk undersøkelse av et morfologisk avvik og som er rettet mot en spesifikk kroppsstruktur eller region.
 
 Denne arketypen ble utviklet til bruk i SLOT'et \"Strukturerte funn\" i arketypen OBSERVATION.imaging_exam_result (Bildediagnostisk svar), men kan også brukes innen andre ENTRY- og CLUSTER-arketyper der det er klinisk passende.
 
@@ -42,7 +63,7 @@ Skal ikke brukes til å registrere overordnede undersøkelsesfunn, kontekst elle
 			purpose = <"To record a narrative description, structured details and clinical impression of the findings of a morphological abnormality observed in an imaging examination targeting a specified body structure or region.">
 			use = <"Use to record a narrative description, structured details and clinical impression of the findings of a morphological abnormality observed in an imaging examination targeting a specified body structure or region.
 
-This archetype has been designed to be used in the 'Structured imaging findings' SLOT within a CLUSTER.imaging_exam archetype which will identify the structure containing the morphological abnormality, but can also be used within other ENTRY or CLUSTER archetypes, where clinically appropriate. 
+This archetype has been designed to be used in the 'Structured imaging findings' SLOT within OBSERVATION.imaging_exam_result, which will identify the structure containing the morphological abnormality, but can also be used within other ENTRY or CLUSTER archetypes, where clinically appropriate. 
 
 Use to provide a framework in which CLUSTER archetypes can be nested in the 'Additional details' SLOT within this archetype to record additional nested levels of structured imaging findings for related body substructures or site-specific findings.">
 			misuse = <"Not to be used to record findings for a specified body structure or region. Use other archetypes from the CLUSTER.imaging_exam family for this purpose.
@@ -59,8 +80,8 @@ Not to be used to record details related to the overall findings, context or tec
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"97B0A99E981D29E87A74104951A54446">
-		["build_uid"] = <"87a4dd9d-f3c2-4921-bbc6-7492f44346f0">
+		["MD5-CAM-1.0.1"] = <"BBAFF7CD2A1EF38B8FEE8F9E2F369620">
+		["build_uid"] = <"c27dff10-a568-4d75-babf-230aa6917dfa">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -77,12 +98,12 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Anatomical location
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Body site
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Structured anatomical location
+			allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Structured body site
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v2|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1/}
 			}
@@ -93,9 +114,9 @@ definition
 			}
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Additional details
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.imaging_finding(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.imaging_exam-lymph_node(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.imaging_exam-lymph_node_group(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.imaging_exam-abnormality(-[a-zA-Z0-9_]+)*\.v0/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.imaging_exam-lymph_node(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.imaging_exam-lymph_node_group(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.imaging_exam-abnormality(-[a-zA-Z0-9_]+)*\.v0/}
 			}
-			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Impression
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Impression
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -289,17 +310,33 @@ ontology
 					text = <"Shape">
 					description = <"The shape of the abnormality.">
 				>
+				["at0000"] = <
+					text = <"Imaging examination of a body structure">
+					description = <"Findings on radiological examination of a specified body structure or region.">
+				>
 				["at0000.1"] = <
 					text = <"Imaging examination of an abnormality">
 					description = <"Findings of a morphological abnormality observed in an imaging examination targeting a specified structure or region, using radiographic techniques.">
+				>
+				["at0001"] = <
+					text = <"Body structure">
+					description = <"Identification of the body structure or region examined.">
+					comment = <"For example: 'Liver', 'Right ankle' or 'Lymph node group'. Coding of the body structure with an appropriate terminology, such as SNOMED CT, is recommended.">
 				>
 				["at0001.1"] = <
 					text = <"Body structure">
 					description = <"Identification of the body structure or region examined.">
 				>
-				["at0000"] = <
-					text = <"Imaging examination">
-					description = <"Findings observed in an imaging examination targeting a specified structure or region, using radiographic techniques.">
+				["at0002"] = <
+					text = <"Body site">
+					description = <"Identification of the area of the body under examination.">
+					comment = <"For example: a lymph node group (body structure) which found in the 'Right axilla'. Coding of 'Body site' with a terminology, such as SNOMED CT, is desirable. If the body site has been fully identified in the 'Body structure' data element, this data element becomes redundant.">
+				>
+				["at0003"] = <
+					text = <"Structured body site">
+					description = <"Structured details about the area of the body under examination.">
+					comment = <"For example: details about a relative anatomical location, such as '2cm distal to the appendix'. If the body site has been fully identified in the 'Body structure' or 'Body site' data elements, then this SLOT becomes redundant.
+">
 				>
 				["at0004"] = <
 					text = <"Imaging findings">
@@ -307,30 +344,16 @@ ontology
 				>
 				["at0005"] = <
 					text = <"Additional details">
-					description = <"Additional structured details about imaging findings for the identified body structure or region, or findings for related substructures.">
-				>
-				["at0007"] = <
-					text = <"Comment">
-					description = <"Additional narrative about the imaging findings, not captured in other fields.">
-				>
-				["at0001"] = <
-					text = <"Body structure">
-					description = <"Identification of the body structure or region examined.">
-				>
-				["at0003"] = <
-					text = <"Structured anatomical location">
-					description = <"Structured details about the anatomical location of the identified body structure.">
-					comment = <"If the anatomical location of the identified body structure is known or it has been identified in the 'Anatomical location' data element, this data element is redundant.">
+					description = <"Additional structured details about imaging findings for the identified body structure or region, or findings of related structures.">
 				>
 				["at0006"] = <
 					text = <"Impression">
-					description = <"Narrative concise, clinically relevant impression of all imaging findings for the identified body structure.">
-					comment = <"Also referred to as 'Opinion'. May include a comparison with previous studies of the identified body structure, where appropriate.">
+					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of all imaging findings for the identified body structure.">
+					comment = <"Also referred to as 'Interpretation' or 'Opinion'. For example: 'No abnormality detected' or 'Free fluid present'. Coding of the 'Impression' with a terminology is permitted, if useful. Multiple occurrences allow for more than one coded impression. A narrative description may include a comparison with previous studies of the identified body structure, if appropriate.">
 				>
-				["at0002"] = <
-					text = <"Anatomical location">
-					description = <"Simple body site for the identified structure.">
-					comment = <"If the anatomical location of the identified body structure is known, this data element is redundant.">
+				["at0007"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the imaging findings of the body structure, not captured in other fields.">
 				>
 			>
 		>
@@ -421,48 +444,182 @@ ontology
 					text = <"Form">
 					description = <"Avvikets form.">
 				>
+				["at0000"] = <
+					text = <"Bildediagnostisk undersøkelse - kroppsstruktur">
+					description = <"Funn eller observasjoner ved radiologisk undersøkelse av et definert organ eller en kroppsdel.">
+				>
 				["at0000.1"] = <
-					text = <"Bildeundersøkelse av et avvik">
-					description = <"Funn ved bildeundersøkelse av et morfologisk avvik med bruk av radiologiske metoder rettet mot en spesifisert struktur eller område.">
+					text = <"Bildediagnostisk undersøkelse - avvik">
+					description = <"Funn eller observasjoner ved bildediagnostisk undersøkelse av et morfologisk avvik med bruk av radiologiske metoder rettet mot en spesifisert struktur eller område.">
+				>
+				["at0001"] = <
+					text = <"Kroppsstruktur">
+					description = <"Identifisering av organet eller kroppsdelen som svaret gjelder.">
+					comment = <"For eksempel \"Lever\", \"Høyre ankel\" eller \"Lymfeknutegruppe\". Det er anbefalt å kode kroppsstruktur med en passende terminologi, som SNOMED CT.">
 				>
 				["at0001.1"] = <
 					text = <"Struktur">
-					description = <"Navn av undersøkt struktur eller område på eller i kroppen.">
-				>
-				["at0000"] = <
-					text = <"Bildeundersøkelse">
-					description = <"Funn ved bildeundersøkelse rettet mot en spesifikk struktur eller region med bruk av radiologiske metoder.">
-				>
-				["at0001"] = <
-					text = <"Struktur">
-					description = <"Identifisering av strukturen i kroppen eller regionen som er undersøkt.">
+					description = <"Navn av undersøkt struktur eller område i kroppen.">
 				>
 				["at0002"] = <
 					text = <"Anatomisk lokalisasjon">
-					description = <"Enkel beskrivelse av den anatomiske lokaliseringen av strukturen i kroppen eller regionen.">
-					comment = <"Dersom den anatomiske lokaliseringen av den identifiserte strukturen i kroppen er kjent, er dette dataelementet overflødig.">
+					description = <"Identifisering av organ eller kroppsdel.">
+					comment = <"For eksempel en lymfeknutegruppe (Kroppsstruktur) som er funnet i \"Høyre aksille\" (Anatomisk lokalisasjon). Det er ønskelig å kode \"Anatomisk lokalisasjon\" med en terminologi, som SNOMED CT. Dersom den anatomiske lokalisasjonen er fullt ut angitt i elementet \"Kroppsstruktur\" er det ikke nødvendig å bruke \"Anatomisk lokalisasjon\".">
 				>
 				["at0003"] = <
 					text = <"Strukturert anatomisk lokalisasjon">
-					description = <"Strukturerte detaljer om den anatomiske lokaliseringen av strukturen i kroppen eller regionen.">
-					comment = <"Dersom den anatomiske lokaliseringen av den identifiserte strukturen i kroppen er kjent, eller er identifisert av dataelementet \"Anatomisk lokalisasjon\" er dette dataelementet overflødig.">
+					description = <"Strukturerte detaljer om organ eller kroppsdel.">
+					comment = <"For eksempel detaljert om en relativ anatomisk lokalisasjon, som \"2 cm distalt for appendix\". Dersom den nøyaktige eller relative anatomiske lokalisasjonen er fullt ut angitt i elementet \"Kroppsstruktur\" er det ikke nødvendig å bruke \"Strukturert anatomisk lokalisasjon\".">
 				>
 				["at0004"] = <
 					text = <"Funn">
-					description = <"Fritekstlig beskrivelse av funnene på bilder tatt under denne undersøkelsen.">
+					description = <"Fritekstlig beskrivelse av funn eller observasjoner på bilder tatt under denne undersøkelsen.">
 				>
 				["at0005"] = <
-					text = <"Strukturerte detaljer">
-					description = <"Ytterligere strukturerte detaljer om funn på bilder for den identifiserte strukturen i kroppen eller regionen, eller som er knyttet til delstrukturer av disse.">
+					text = <"Ytterligere detaljer">
+					description = <"Ytterligere strukturerte detaljer om funn eller observasjoner på bilder for det definerte organet eller kroppsdelen, eller om funn eller observasjoner hos tilhørende kroppsstrukturer.">
 				>
 				["at0006"] = <
-					text = <"Svar">
-					description = <"Fritekstlig konsist, klinisk relevant inntrykk av alle radiologiske bildefunn for den identifiserte strukturen i kroppen.">
-					comment = <"Kan inkludere en sammenligning med tidligere undersøkelser av den identifiserte strukturen i kroppen, dersom det er hensiktsmessig.">
+					text = <"Resymé">
+					description = <"Enkeltord, frase eller kortfattet beskrivelse som uttrykker den kliniske betydningen av alle funn og observasjoner for den definerte kroppsstrukturen.">
+					comment = <"Kan også kalles \"Tolkning\" eller \"Inntrykk\". For eksempel \"Uten anmerkning\" eller \"Fri væske\". Dersom det er nyttig, er det åpent for å kode \"Resymé\" med en terminologi. Flere svar kan kodes ved at elementet er åpent for å være gjentakende. En beskrivelse i fritektst kan også brukes og kan inneholde en sammenligning med tidligere undersøkelser av samme kroppsstruktur.">
 				>
 				["at0007"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekstlig kommentar om funn ved radiologiske metoder og som ikke er fanget i andre felter.">
+					description = <"Ytterligere fritekst om funn eller observasjoner på bilder av kroppsstrukturen og som ikke er fanget i andre felt.">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0.1"] = <
+					text = <"Morphologische Anomalie">
+					description = <"Eine morphologische Anomalie, die untersucht wurde.">
+				>
+				["at0.10"] = <
+					text = <"Beschaffenheit">
+					description = <"Beschaffenheit der Anomalie.">
+				>
+				["at0.11"] = <
+					text = <"Definition">
+					description = <"Die Definition der Anomalie.">
+				>
+				["at0.12"] = <
+					text = <"Gut definiert">
+					description = <"Die Anomalie ist gut definiert.">
+				>
+				["at0.13"] = <
+					text = <"Schlecht definiert">
+					description = <"Die Anomalie ist schlecht definiert.">
+				>
+				["at0.14"] = <
+					text = <"Kontur">
+					description = <"Die Kontur der Anomalie.">
+				>
+				["at0.15"] = <
+					text = <"Rand">
+					description = <"Der Rand der Anomalie.">
+				>
+				["at0.16"] = <
+					text = <"Kalzifizierung">
+					description = <"Vorhandensein von Verkalkung in der Anomalie.">
+				>
+				["at0.17"] = <
+					text = <"Vorhanden">
+					description = <"Kalzifizierung wird beobachtet.">
+				>
+				["at0.18"] = <
+					text = <"Nicht vorhanden">
+					description = <"Kalzifizierung wird nicht beobachtet.">
+				>
+				["at0.19"] = <
+					text = <"Wirkung">
+					description = <"Beschreibung über die Wirkung der Anomalie auf umliegende Strukturen.">
+					comment = <"Zum Beispiel: „Drücken auf ein Blutgefäß“.">
+				>
+				["at0.2"] = <
+					text = <"Label">
+					description = <"Bezeichnung der Anomalie.">
+					comment = <"Wird verwendet, um eine Anomalie von einer anderen zu unterscheiden, wenn mehr als eine Anomalie an derselben Stelle vorhanden ist.">
+				>
+				["at0.20"] = <
+					text = <"Vaskularisierung">
+					description = <"Beurteilung des Blutflusses zur Anomalie.">
+					comment = <"Oft bestimmt durch Farbdoppler oder Ähnliches.">
+				>
+				["at0.21"] = <
+					text = <"Keine">
+					description = <"Es ist kein Blutfluss feststellbar.">
+				>
+				["at0.22"] = <
+					text = <"Leicht">
+					description = <"Ein minimaler Blutfluss kann festgestellt werden.">
+				>
+				["at0.23"] = <
+					text = <"Mäßig">
+					description = <"Ein mäßiger Blutfluss kann festgestellt werden.">
+				>
+				["at0.24"] = <
+					text = <"Deutlich">
+					description = <"Eine deutliche Durchblutung kann festgestellt werden.">
+				>
+				["at0.3"] = <
+					text = <"Art">
+					description = <"Art der Anomalie.">
+					comment = <"Die Codierung des morphologischen Arts mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Zum Beispiel eine Zyste oder ein Knötchen aus dem SNOMED 4147007 | Masse (morphologische Anomalie) | Hierarchie.">
+				>
+				["at0.4"] = <
+					text = <"Durchmesser">
+					description = <"Ein gemessener Durchmesser der Anomalie.">
+					comment = <"Dieses Datenelement hat drei Vorkommen, um drei Messungen in verschiedenen Achsen zu ermöglichen.">
+				>
+				["at0.9"] = <
+					text = <"Form">
+					description = <"Die Form der Anomalie.">
+				>
+				["at0000"] = <
+					text = <"Bildgebende Untersuchung einer Körperstruktur">
+					description = <"Befunde zur radiologischen Untersuchung einer bestimmten Körperstruktur oder -region.">
+				>
+				["at0000.1"] = <
+					text = <"Bildgebende Untersuchung einer Anomalie">
+					description = <"Befunde einer morphologischen Anomalie, die bei einer bildgebenden Untersuchung beobachtet werden, die auf eine bestimmte Körperstruktur oder -region abzielt, wobei radiologische technische Verfahren verwendet werden.">
+				>
+				["at0001"] = <
+					text = <"Körperstruktur">
+					description = <"Identifizierung der untersuchten Körperstruktur oder Region.">
+					comment = <"Zum Beispiel: „Leber“, „Rechtes Fußgelenk“ oder „Lymphknotengruppe“. Es wird empfohlen, die Körperstruktur mit einer geeigneten Terminologie, wie z. B. SNOMED CT, zu codieren.">
+				>
+				["at0001.1"] = <
+					text = <"Körperstruktur">
+					description = <"Identifizierung der untersuchten Körperstruktur oder -region.">
+				>
+				["at0002"] = <
+					text = <"Körperstelle">
+					description = <"Identifizierung des zu untersuchenden Bereichs des Körpers.">
+					comment = <"Zum Beispiel: eine Lymphknotengruppe (Körperstruktur), die sich in der „rechten Achselhöhle“ befindet. Eine Kodierung von „Körperstelle“ mit einer Terminologie, wie z. B. SNOMED CT, ist wünschenswert. Wenn die Körperstelle im Datenelement „Körperstruktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
+				>
+				["at0003"] = <
+					text = <"Körperstelle strukturiert">
+					description = <"Strukturierte Angaben zum untersuchten Körperbereich.">
+					comment = <"Zum Beispiel: Angaben zu einer relativen anatomischen Lokalisation, wie z. B. „2 cm distal zum Blinddarm“. Wenn die Körperstelle in den Datenelementen „Körperstruktur“ oder „Körperstelle“ vollständig identifiziert wurde, wird dieser SLOT überflüssig.">
+				>
+				["at0004"] = <
+					text = <"Bildgebende Befunde">
+					description = <"Beschreibung der bei dieser Untersuchung beobachteten bildgebenden Befunde.">
+				>
+				["at0005"] = <
+					text = <"Zusätzliche Angaben">
+					description = <"Zusätzliche strukturierte Angaben zu bildgebenden Befunden für die identifizierte Körperstruktur oder -region oder befundbezogene Strukturen.">
+				>
+				["at0006"] = <
+					text = <"Interpretation">
+					description = <"Einzelnes Wort, Satz oder kurze Beschreibung, die die klinische Bedeutung und Signifikanz aller bildgebenden Befunde für die identifizierte Körperstruktur darstellt.">
+					comment = <"Auch als „Eindruck“ oder „Meinung“ bezeichnet. Zum Beispiel: „Keine Anomalie erkannt“ oder „Freie Flüssigkeit vorhanden“. Eine Kodierung des „Interpretation“ mit einer Terminologie ist zulässig, sofern sinnvoll. Mehrere Vorkommen ermöglichen mehr als eine codierte Interpretation. Eine einfache Beschreibung kann gegebenenfalls einen Vergleich mit früheren Studien der identifizierten Körperstruktur beinhalten.">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Zusätzlicher Text über die bildgebenden Befunde der Körperstruktur, der in anderen Bereichen nicht erfasst wurde.">
 				>
 			>
 		>
