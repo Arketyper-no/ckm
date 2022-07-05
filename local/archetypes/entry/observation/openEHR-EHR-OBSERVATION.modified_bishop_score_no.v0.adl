@@ -1,0 +1,233 @@
+﻿archetype (adl_version=1.4; uid=a9ef136e-5b86-4c6a-accd-eea465823af8)
+	openEHR-EHR-OBSERVATION.modified_bishop_score_no.v0
+
+concept
+	[at0000]	-- Bishop skår (norsk modifikasjon)
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["date"] = <"2022-07-05">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere Bishop skår.">
+			use = <"Brukes for å registrere Bishop skår. Arketypen er basert på norsk modifisert variant av Bishop skår, som publisert av Norsk gynekologisk forening.">
+			keywords = <"Livmorhals", "mormunn", "induksjon", "fødsel", "igangsette", "igangsetting", "modenhet">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Oppegaard KS, Heimstad R, Lippert T, Salvadores-Hansen T. Cervixmodning/induksjon av fødsel. [revised 2017 November]. [Internet]. Norsk gynekologisk forening; 2014. Available from: https://www.legeforeningen.no/foreningsledd/fagmed/norsk-gynekologisk-forening/veiledere/arkiv-utgatte-veiledere/veileder-i-fodselshjelp-2014/33.-cervixmodninginduksjon-av-fodsel/.
+
+BISHOP EH. PELVIC SCORING FOR ELECTIVE INDUCTION. Obstet Gynecol. 1964 Aug;24:266-8. PubMed PMID: 14199536.
+
+Calder AA, Embrey MP, Hillier K. Extra-amniotic prostaglandin E2 for the induction of labour at term. J Obstet Gynaecol Br Commonw. 1974 Jan;81(1):39-46. doi: 10.1111/j.1471-0528.1974.tb00362.x. PubMed PMID: 4818315.">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"88908E3B9CCB5BB3FB9022F10CA61145">
+		["build_uid"] = <"b109823a-0831-4e46-b061-a6e79882faf7">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Bishop skår (norsk modifikasjon)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Ledende del
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006],
+											2|[local::at0007],
+											3|[local::at0008]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Mormunn
+										value matches {
+											0|[local::at0010],
+											1|[local::at0011],
+											2|[local::at0012],
+											3|[local::at0013]
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Mormunnslengde
+										value matches {
+											0|[local::at0015],
+											1|[local::at0016],
+											2|[local::at0017],
+											3|[local::at0018]
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Konsistens
+										value matches {
+											0|[local::at0020],
+											1|[local::at0021],
+											2|[local::at0022]
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Posisjon
+										value matches {
+											0|[local::at0024],
+											1|[local::at0025],
+											2|[local::at0026]
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Totalskår (5 variabler)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..13|}
+											}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Totalskår (3 variabler)
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..9|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Bishop skår (norsk modifikasjon)">
+					description = <"En skår for vurdering av livmorhalsmodning i forkant av induksjon av fødsel. ">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Standard, uspesifisert tidspunkt som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Ledende del">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Bekkeninngang">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Over spina">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Ved spina">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Under spina">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Mormunn">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Lukket">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"1-2 cm">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"3-4 cm">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <">4 cm">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Mormunnslengde">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"3 cm">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"2 cm">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"1 cm">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"<1 cm">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Konsistens">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Fast">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Middels">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Bløt">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Posisjon">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Baktil">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Midtstilt">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Fortil">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Totalskår (5 variabler)">
+					description = <"Totalskår når alle 5 variabler er lagt sammen.">
+				>
+				["at0028"] = <
+					text = <"Totalskår (3 variabler)">
+					description = <"Totalskår når kun 3 variabler (ledende del, mormunn og mormunnslengde) er lagt sammen.">
+				>
+			>
+		>
+	>
