@@ -42,9 +42,8 @@ Zu den Anwendungsfällen gehören:
 - gefrorenes Sperma, Eizellen und Embryonen im Rahmen der Behandlung der assistierten Reproduktion;
 - Muttermilch zur Spende und
 - biologische Proben und Biomaterial für Forschungszwecke.">
-			keywords = <"*storage (en)", "*biorepository (en)", "*Biological database (en)">
+			keywords = <"Lagerung", "Biobank", "Biologische Datenbank">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -59,7 +58,6 @@ Brukstilfeller inkluderer:
 - biologiske prøver og biologisk prøvemateriale til forskning.">
 			keywords = <"biolager", "biorepository", "biologisk database", "depot">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -74,20 +72,19 @@ Use cases include:
 - biological samples and biomaterial for research.">
 			keywords = <"storage", "biorepository", "Biological database">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital", "Liv Laugen, Oslo University Hospital", "Peter Fedorcsak, Oslo University Hospital">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.5885">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"8CE5C3FB2DA46592B7C577DB94C5EE7E">
-		["build_uid"] = <"31820f33-8412-47b1-a341-b2ae5307fb8e">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0E5063AEA1CECD03FA4F6D346653D0C2">
+		["build_uid"] = <"0a27ec25-dd64-4c1c-bf9e-b2754311b807">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -113,9 +110,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Contents
 				include
-					archetype_id/value matches {/.*/}
-				exclude
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.specimen_container(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.specimen_container\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.specimen_container\.v1/}
 			}
 			ELEMENT[at0005] occurrences matches {0..*} matches {    -- Donor ID
 				value matches {
@@ -125,7 +120,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Biobank details
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.address(-[a-zA-Z0-9_]+)*\.v0/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.address(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Additional details
 				include
@@ -138,6 +133,7 @@ definition
 			}
 		}
 	}
+
 
 
 ontology
@@ -237,38 +233,38 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Biobank-Name">
-					description = <"*Name of the specimen, biospecimen or tissue repository. (en)">
+					description = <"Name der Probe-, Bioprobe- oder des Gewebelagers.">
 				>
 				["at0002"] = <
-					text = <"Biobank ID">
-					description = <"*Identifier of the biobank/storage or tissue establishment. (en)">
+					text = <"Biobank-ID">
+					description = <"Kennung der Biobank/Lagerung- oder Gewebeeinrichtung.">
 					comment = <"Die Verwendung einer etablierten Biobank-Klassifikation wird bevorzugt, z. das \"EU Tissue Establishment Compendium\".">
 				>
 				["at0003"] = <
 					text = <"Proben-ID">
-					description = <"*Identifier of the specimen, biospecimen or tissue stored in the biobank/storage. (en)">
+					description = <"Identifikation der Probe, Bioprobe oder des Gewebes, die in der Biobank/Lagerung aufbewahrt werden.">
 				>
 				["at0004"] = <
 					text = <"Angaben zur Biobank">
-					description = <"*Details about the organisation or location of the biobank/storage. (en)">
+					description = <"Angaben zur Organisation oder zum Standort der Biobank/Lagerung.">
 				>
 				["at0005"] = <
 					text = <"Spender-ID">
-					description = <"*Identifier of the human source of the specimen, biospecimen or tissue sample. (en)">
-					comment = <"*For example: the tissue donor ID, or the donor ID for both the egg donor and the sperm donor to an embryo. (en)">
+					description = <"Identifikation der menschlichen Quelle der Probe, Bioprobe oder Gewebeprobe.">
+					comment = <"Zum Beispiel: die Gewebespender-ID oder die Spender-ID sowohl für die Eizellspenderin als auch für den Samenspender eines Embryos.">
 				>
 				["at0006"] = <
 					text = <"Kommentar">
 					description = <"Zusätzliche Beschreibung über die Biobank, die in anderen Bereichen nicht erfasst ist.">
 				>
 				["at0007"] = <
-					text = <"*Additional details (en)">
-					description = <"*Additional structured details related to the biobank storage. (en)">
+					text = <"Zusätzliche Angaben">
+					description = <"Zusätzliche strukturierte Angaben in Bezug auf die Biobanklagerung.">
 				>
 				["at0008"] = <
-					text = <"*Contents (en)">
-					description = <"*The contents of this biobank/storage. (en)">
-					comment = <"*For example: specimen or a specimen container. (en)">
+					text = <"Inhalt">
+					description = <"Die Inhalte dieser Biobank/Lagerung.">
+					comment = <"Zum Beispiel: Probe oder ein Probenbehälter.">
 				>
 			>
 		>
