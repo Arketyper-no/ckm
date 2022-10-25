@@ -1,0 +1,465 @@
+﻿archetype (adl_version=1.4; uid=fa94faf1-ee4e-4930-9a5b-d939e9850245)
+	openEHR-EHR-OBSERVATION.st_marks_score.v0
+
+concept
+	[at0000]	-- St. Mark's Incontinence Score
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Kanika Kuwelker">
+		["organisation"] = <"Helse Vest IKT">
+		["email"] = <"kanika.kuwelker@helse-vest-ikt.no">
+		["date"] = <"2022-10-05">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultatene for hvert parameter og deres totalsum for St. Marks inkontinens skår.">
+			use = <"Brukes for å registrere resultatene for hvert parameter og deres totalsum for St. Marks inkontinens skår.">
+			keywords = <"anal inkontinens, enkoprese", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.
+">
+			use = <"Use to record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.
+">
+			keywords = <"fecal incontinence, anal incontinence, bowel incontinence, incontinence, encopresis", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Vaizey CJ, Carapeti E, Cahill JA, Kamm MA. Prospective comparison of faecal incontinence grading systems. Gut. 1999 Jan;44(1):77-80. doi: 10.1136/gut.44.1.77. PubMed PMID: 9862829; PubMed Central PMCID: PMC1760067.
+
+Maeda Y, Parés D, Norton C, Vaizey CJ, Kamm MA. Does the St. Mark's incontinence score reflect patients' perceptions? A review of 390 patients. Dis Colon Rectum. 2008 Apr;51(4):436-42. doi: 10.1007/s10350-007-9157-4. Epub 2008 Jan 25. PubMed PMID: 18219532.
+
+Dehli T, Martinussen M, Mevik K, Stordahl A, Sahlin Y, Lindsetmo RO, Vonen B. Translation and validation of the Norwegian version of the fecal incontinence quality-of-life scale. Scand J Surg. 2011;100(3):190-5. doi: 10.1177/145749691110000310. PubMed PMID: 22108748.">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"356D13304E4B10C1B972A2B6E82DDABC">
+		["build_uid"] = <"11905de7-d100-4291-a4f1-71c867c262e1">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- St. Mark's Incontinence Score
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Incontinence for solid stool
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006],
+											2|[local::at0007],
+											3|[local::at0008],
+											4|[local::at0009]
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Incontinence for solid stool
+										value matches {
+											0|[local::at0040],
+											1|[local::at0041],
+											2|[local::at0042],
+											3|[local::at0043],
+											4|[local::at0044]
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Incontinence for solid stool
+										value matches {
+											0|[local::at0046],
+											1|[local::at0047],
+											2|[local::at0048],
+											3|[local::at0049],
+											4|[local::at0050]
+										}
+									}
+									ELEMENT[at0051] occurrences matches {0..1} matches {    -- Incontinence for solid stool
+										value matches {
+											0|[local::at0052],
+											1|[local::at0053],
+											2|[local::at0054],
+											3|[local::at0055],
+											4|[local::at0056]
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Need to wear a pad or plug
+										value matches {
+											0|[local::at0029],
+											2|[local::at0030]
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Taking constipating medicines
+										value matches {
+											0|[local::at0032],
+											2|[local::at0033]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Lack of ability to defer defecation for 15 minutes
+										value matches {
+											0|[local::at0035],
+											4|[local::at0036]
+										}
+									}
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..24|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0057] matches {*}    -- Item tree
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"St. Mark's Incontinence Score">
+					description = <"A tool for assessing the severity of fecal incontinence.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any point in time event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Incontinence for solid stool">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Never">
+					description = <"No episodes in the past four weeks.">
+				>
+				["at0006"] = <
+					text = <"Rarely">
+					description = <"1 episode in the past four weeks.">
+				>
+				["at0007"] = <
+					text = <"Sometimes">
+					description = <">1 episode in the past four weeks but <1 a week.">
+				>
+				["at0008"] = <
+					text = <"Weekly">
+					description = <"1 or more episodes a week but <1 a day.">
+				>
+				["at0009"] = <
+					text = <"Daily">
+					description = <"1 or more episodes a day.">
+				>
+				["at0028"] = <
+					text = <"Need to wear a pad or plug">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Taking constipating medicines">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Lack of ability to defer defecation for 15 minutes">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Total score">
+					description = <"Minimum score = 0 = perfect continence; maximum score = 24 = totally incontinent.">
+				>
+				["at0039"] = <
+					text = <"Incontinence for solid stool">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Never">
+					description = <"No episodes in the past four weeks.">
+				>
+				["at0041"] = <
+					text = <"Rarely">
+					description = <"1 episode in the past four weeks.">
+				>
+				["at0042"] = <
+					text = <"Sometimes">
+					description = <">1 episode in the past four weeks but <1 a week.">
+				>
+				["at0043"] = <
+					text = <"Weekly">
+					description = <"1 or more episodes a week but <1 a day.">
+				>
+				["at0044"] = <
+					text = <"Daily">
+					description = <"1 or more episodes a day.">
+				>
+				["at0045"] = <
+					text = <"Incontinence for solid stool">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Never">
+					description = <"No episodes in the past four weeks.">
+				>
+				["at0047"] = <
+					text = <"Rarely">
+					description = <"1 episode in the past four weeks.">
+				>
+				["at0048"] = <
+					text = <"Sometimes">
+					description = <">1 episode in the past four weeks but <1 a week.">
+				>
+				["at0049"] = <
+					text = <"Weekly">
+					description = <"1 or more episodes a week but <1 a day.">
+				>
+				["at0050"] = <
+					text = <"Daily">
+					description = <"1 or more episodes a day.">
+				>
+				["at0051"] = <
+					text = <"Incontinence for solid stool">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Never">
+					description = <"No episodes in the past four weeks.">
+				>
+				["at0053"] = <
+					text = <"Rarely">
+					description = <"1 episode in the past four weeks.">
+				>
+				["at0054"] = <
+					text = <"Sometimes">
+					description = <">1 episode in the past four weeks but <1 a week.">
+				>
+				["at0055"] = <
+					text = <"Weekly">
+					description = <"1 or more episodes a week but <1 a day.">
+				>
+				["at0056"] = <
+					text = <"Daily">
+					description = <"1 or more episodes a day.">
+				>
+				["at0057"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"St. Marks inkontinens skår">
+					description = <"En klinisk skår for å vurdere alvorlighetsgrad av anal inkontinens.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Lekkasje av fast avføring">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Aldri">
+					description = <"Ingen episoder de siste 4 uker.">
+				>
+				["at0006"] = <
+					text = <"Sjelden">
+					description = <"1 episode siste 4 uker.">
+				>
+				["at0007"] = <
+					text = <"Av og til">
+					description = <">1 episode siste 4 uker men mindre enn 1x/uke.">
+				>
+				["at0008"] = <
+					text = <"Ukentlig">
+					description = <"1 eller flere episoder i uken men <1x/dag.">
+				>
+				["at0009"] = <
+					text = <"Daglig">
+					description = <"1 eller flere episoder daglig.">
+				>
+				["at0028"] = <
+					text = <"Må bruke bleie/bind eller plugg mot avføringslekkasje">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Bruker forstoppende medisin">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Kan ikke utsette avføring i 15 minutter etter første følelse av trang">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Total skår">
+					description = <"Minimumssum = 0 = perfekt kontinens, maksimumssum = 24 = helt inkontinent.">
+				>
+				["at0039"] = <
+					text = <"Lekkasje av flytende avføring">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Aldri">
+					description = <"Ingen episoder de siste 4 uker.">
+				>
+				["at0041"] = <
+					text = <"Sjelden">
+					description = <"1 episode siste 4 uker.">
+				>
+				["at0042"] = <
+					text = <"Av og til">
+					description = <">1 episode siste 4 uker men mindre enn 1x/uke.">
+				>
+				["at0043"] = <
+					text = <"Ukentlig">
+					description = <"1 eller flere episoder i uken men <1x/dag.">
+				>
+				["at0044"] = <
+					text = <"Daglig">
+					description = <"1 eller flere episoder daglig.">
+				>
+				["at0045"] = <
+					text = <"Lekkasje av gass">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Aldri">
+					description = <"Ingen episoder de siste 4 uker.">
+				>
+				["at0047"] = <
+					text = <"Sjelden">
+					description = <"1 episode siste 4 uker.">
+				>
+				["at0048"] = <
+					text = <"Av og til">
+					description = <">1 episode siste 4 uker men mindre enn 1x/uke.">
+				>
+				["at0049"] = <
+					text = <"Ukentlig">
+					description = <"1 eller flere episoder i uken men <1x/dag.">
+				>
+				["at0050"] = <
+					text = <"Daglig">
+					description = <"1 eller flere episoder daglig.">
+				>
+				["at0051"] = <
+					text = <"Endring av livsstil">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Aldri">
+					description = <"Ingen episoder de siste 4 uker.">
+				>
+				["at0053"] = <
+					text = <"Sjelden">
+					description = <"1 episode siste 4 uker.">
+				>
+				["at0054"] = <
+					text = <"Av og til">
+					description = <">1 episode siste 4 uker men mindre enn 1x/uke.">
+				>
+				["at0055"] = <
+					text = <"Ukentlig">
+					description = <"1 eller flere episoder i uken men <1x/dag.">
+				>
+				["at0056"] = <
+					text = <"Daglig">
+					description = <"1 eller flere episoder daglig.">
+				>
+				["at0057"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>
