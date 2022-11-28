@@ -2,49 +2,49 @@
 	openEHR-EHR-OBSERVATION.short_physical_performance_battery_no.v0
 
 concept
-	[at0000]	-- Short Physical Performance Battery (SPPB)
+	[at0000]	-- Short Physical Performance Battery
 language
 	original_language = <[ISO_639-1::nb]>
 description
 	original_author = <
-		["name"] = <"John Tore Valand">
+		["name"] = <"Kanika Kuwelker">
 		["organisation"] = <"Helse Vest IKT AS">
-		["email"] = <"john.tore.valand@helse-vest-ikt.no">
+		["email"] = <"kanika.kuwelker@helse-vest-ikt.no">
 		["date"] = <"2021-09-06">
 	>
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere resultatene for hvert parameter og deres totale poengskår for Short Physical Performance Battery (SPPB).">
-			use = <"Brukes for å registrere resultatene for hvert parameter og deres totale poengskår for den norske versjonen av Short Physical Performance Battery (SPPB). Arketypen inneholder dataelementer som trengs for å representere Short Physical Performance Battery (SPPB). Arketypen inneholder ikke ledetekster og hjelp til spørsmålstillinger man finner i papirskjemaet. Dette må legges til ved bygging av skjema/funksjonalitet. 
+			use = <"Brukes for å registrere resultatene for hvert parameter og deres totale poengskår for den norske versjonen av Short Physical Performance Battery (SPPB). Arketypen inneholder de dataelementene som trengs for å representere Short Physical Performance Battery (SPPB), den inneholder derimot ikke ledetekster og hjelp til spørsmålstillinger som man finner i papirskjemaet, dette må legges til ved bygging av skjema/funksjonalitet.
 
-Arketypen er basert på en norsk modifikasjon av SPPB, og er ikke sammenliknbar med den originale SPPB (Guralnik et al. 1994).">
+Arketypen er basert på en norsk modifikasjon av SPPB, og er oversatt fra engelsk til norsk i tråd med gjeldende retningslinjer. Den norske versjon er gratis og fritt tilgjengelig for bruk.">
 			keywords = <"SPPB, fysisk funksjon, mobilitet, geriatri", ...>
 			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Marcus Kessner, Helse Bergen, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Bjørn Næss, DIPS ASA, Norway", "Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Anneli Rønstad, Helse Fonna, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Ina Wille, Helse-Vest RHF, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Guralnik, J.M., et al., A short physical performance battery assessing lower extremity function: association with self-reported disability and prediction of mortality and nursing home admission. J Gerontol, 1994. 49(2): p. M85-94.
 
-Abellan van Kan, G., et al., Gait speed at usual pace as a predictor of adverse outcomes in community-dwelling older people an International Academy on Nutrition and Aging (IANA) Task Force. J Nutr Health Aging, 2009. 13(10): p. 881-9.
-
 Fritz, S. and M. Lusardi, White paper: \"walking speed: the sixth vital sign\". J Geriatr Phys Ther, 2009. 32(2): p. 46-9.
+
+Perera, S., et al., Meaningful change and responsiveness in common physical performance measures in older adults. J Am Geriatr Soc, 2006. 54(5): p. 743-9.
 
 Oversatt til norsk april 2013. Sverre Bergh, Alderspsykiatrisk forskningssenter, Sykehuset Innlandet, Heidi Lyshol, Folkehelseinstituttet, Geir Selbæk, Alderspsykiatrisk forskningssenter, Sykehuset Innlandet, Bjørn Heine Strand, Folkehelseinstituttet, Kristin Taraldsen,  Forsknings gruppe for geriatri, St. Olavs hospital og NTNU, Pernille Thingstad,  Forsknings gruppe for geriatri, St. Olavs hospital og NTNU. https://www.legeforeningen.no/contentassets/870420284b7d4cb98100191ff93e7983/sppb.pdf. Retrieved 14.09.21.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"134747DAC050979CD409B32F4FBED66F">
-		["build_uid"] = <"5769a84e-c4d8-43b5-8777-caa83a08bfb0">
+		["MD5-CAM-1.0.1"] = <"53157D796EF42712FCFA60EA430A0DEC">
+		["build_uid"] = <"551acba5-3317-47ad-8394-4adce7736b27">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Short Physical Performance Battery (SPPB)
+	OBSERVATION[at0000] matches {    -- Short Physical Performance Battery
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -61,7 +61,7 @@ definition
 														list = <
 															["1"] = <
 																units = <"s">
-																magnitude = <|0.0..10.0|>
+																magnitude = <|>=0.0|>
 																precision = <|2|>
 															>
 														>
@@ -81,7 +81,7 @@ definition
 														list = <
 															["1"] = <
 																units = <"s">
-																magnitude = <|0.0..10.0|>
+																magnitude = <|>=0.0|>
 																precision = <|2|>
 															>
 														>
@@ -101,7 +101,7 @@ definition
 														list = <
 															["1"] = <
 																units = <"s">
-																magnitude = <|0.0..10.0|>
+																magnitude = <|>=0.0|>
 																precision = <|2|>
 															>
 														>
@@ -235,7 +235,7 @@ definition
 																defining_code matches {
 																	[local::
 																	at0123,    -- Uten
-																	at0124,    -- Krykk/stokk (er)
+																	at0124,    -- Krykke/stokk (er)
 																	at0125,    -- Rullator
 																	at0166]    -- Annet
 																}
@@ -532,8 +532,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Short Physical Performance Battery (SPPB)">
-					description = <"Short Physical Performance Battery (SPPB) er en test for screening av fysisk funksjon hos eldre. Arketypen er basert på en norsk modifikasjon av SPPB, og er ikke sammenliknbar med den originale SPPB (Guralnik et al. 1994).">
+					text = <"Short Physical Performance Battery">
+					description = <"Short Physical Performance Battery (SPPB) er en test for screening av fysisk funksjon hos eldre. Arketypen er basert på en norsk modifikasjon av SPPB.">
 				>
 				["at0001"] = <
 					text = <"History">
