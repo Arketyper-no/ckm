@@ -1,0 +1,2727 @@
+﻿archetype (adl_version=1.4; uid=489e407b-004f-4b07-87cc-35bf60a9a9f3)
+	openEHR-EHR-OBSERVATION.rop_screen.v0
+
+concept
+	[at0000]	-- ROP-screen
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Astrid Askeland">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"ask@dips.no">
+		["date"] = <"2022-09-23">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å kartlegge om personer med rusmiddelproblemer også samtidig kan ha en psykisk lidelse.
+
+">
+			use = <"Brukes for å kartlegge om personer med rusmiddelproblemer også samtidig kan ha en psykisk lidelse som depresjon (alvorlig depressiv episode, vedvarende depressiv lidelse), mani, psykose, ADHD, PTSD, sosial angst, panikkangst, agorafobi og spesifikk fobi.
+
+ROP-screen er formet som et intervju som utføres av helsepersonell som kartlegger psykisk helse, for eksempel sykepleier, lege, psykolog og sosionom.
+
+Obs! Det mangler spørsmål 13 og 51 i spørsmålsrekka. Dette er fordi det er spesifisert sånn fra Nasjonal kompetansetjeneste for samtidig rusmisbruk og psykisk lidelse (ROP), og det stammer fra opprinnelig digital versjon hvor disse tallene ble brukt teknisk i bakgrunnen i forbindelse med opptelling av svar.
+
+">
+			keywords = <"ROP", "rus", "psykiatri", "rusmiddel", "psykisk lidelse", "depresjon", "mani", "psykose", "ADHD", "PTSD", "angst", "agorafobi", "panikk", "fobi">
+			misuse = <"ROP-screen kan ikke brukes alene for å sette en diagnose. Det er et kun et verktøy som kan indikere behov for videre utredning av primær psykisk lidelse. PRISM-5 er et eksempel på verktøy som kan brukes i videre utredning.">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"MAR Institute of Medical Research Foundation (IMIM, Barcelona, Spania).
+
+Nasjonal kompetansetjeneste for samtidig rusmisbruk og psykisk lidelse (ROP).
+Tilgjengelig fra: https://rop.no/ropscreen">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"68D70813C25A48EACCBB9FEF30D1D203">
+		["build_uid"] = <"7537b871-1973-4377-81f3-cae7297c55c8">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- ROP-screen
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Panikkangst
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- 1. Anfall av panikk eller angst
+												value matches {
+													1|[local::at0019], 	-- Ja
+													2|[local::at0018], 	-- Nei
+													8|[local::at0020], 	-- Vet ikke
+													9|[local::at0021], 	-- Ønsker ikke å svare
+													10|[local::at0491]  	-- Hopp over spørsmål om panikkangst
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- 2. Kraftigste anfall
+												value matches {
+													1|[local::at0022], 	-- Ja
+													2|[local::at0023], 	-- Nei
+													8|[local::at0024], 	-- Vet ikke
+													9|[local::at0025]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- 3. Redd for nytt anfall
+												value matches {
+													1|[local::at0026], 	-- Ja
+													2|[local::at0027], 	-- Nei
+													8|[local::at0028], 	-- Vet ikke
+													9|[local::at0029]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- 3b. Frykt i en måned
+												value matches {
+													1|[local::at0030], 	-- Siste måned
+													2|[local::at0031], 	-- Siste år
+													3|[local::at0032], 	-- Alder, spesifiser:
+													8|[local::at0033], 	-- Vet ikke
+													9|[local::at0469]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0055] occurrences matches {0..1} matches {	-- Alder frykt i en måned
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0450] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0012] occurrences matches {0..1} matches {	-- Generalisert angstlidelse
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- 4. Mye mer bekymret enn andre
+												value matches {
+													1|[local::at0038], 	-- Ja
+													2|[local::at0039], 	-- Nei
+													8|[local::at0040], 	-- Vet ikke
+													9|[local::at0041], 	-- Ønsker ikke å svare
+													10|[local::at0492]  	-- Hopp over spørsmål om generalisert angstlidelse
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- 5. Veldig engstelig mer enn 6 måneder
+												value matches {
+													1|[local::at0042], 	-- Ja
+													2|[local::at0043], 	-- Nei
+													8|[local::at0044], 	-- Vet ikke
+													9|[local::at0045]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- 6. Samtidige plager
+												value matches {
+													1|[local::at0046], 	-- Ja
+													2|[local::at0047], 	-- Nei
+													8|[local::at0048], 	-- Vet ikke
+													9|[local::at0049]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- 6b. Sist gang en slik periode
+												value matches {
+													1|[local::at0017], 	-- Siste måned
+													2|[local::at0050], 	-- Siste år
+													3|[local::at0051], 	-- Alder, spesifiser:
+													8|[local::at0052], 	-- Vet ikke
+													9|[local::at0470]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0054] occurrences matches {0..1} matches {	-- Alder sist gang en slik periode
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0451] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0056] occurrences matches {0..1} matches {	-- Spesifikk fobi
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0057] occurrences matches {0..1} matches {	-- 7. Redd for insekt eller dyr
+												value matches {
+													1|[local::at0067], 	-- Ja
+													2|[local::at0068], 	-- Nei
+													8|[local::at0069], 	-- Vet ikke
+													9|[local::at0070], 	-- Ønsker ikke å svare
+													10|[local::at0493]  	-- Hopp over spørsmål om spesifikk fobi
+												}
+											}
+											ELEMENT[at0058] occurrences matches {0..1} matches {	-- 8. Redd for vann eller torden
+												value matches {
+													1|[local::at0071], 	-- Ja
+													2|[local::at0072], 	-- Nei
+													8|[local::at0073], 	-- Vet ikke
+													9|[local::at0074]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0059] occurrences matches {0..1} matches {	-- 9. Redd for lege eller blod
+												value matches {
+													1|[local::at0075], 	-- Ja
+													2|[local::at0076], 	-- Nei
+													8|[local::at0077], 	-- Vet ikke
+													9|[local::at0078]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0060] occurrences matches {0..1} matches {	-- 10. Redd for lukket rom
+												value matches {
+													1|[local::at0079], 	-- Ja
+													2|[local::at0080], 	-- Nei
+													8|[local::at0081], 	-- Vet ikke
+													9|[local::at0082]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {	-- 11. Redd for høyder
+												value matches {
+													1|[local::at0083], 	-- Ja
+													2|[local::at0084], 	-- Nei
+													8|[local::at0085], 	-- Vet ikke
+													9|[local::at0086]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- 12. Redd for å fly
+												value matches {
+													1|[local::at0087], 	-- Ja
+													2|[local::at0088], 	-- Nei
+													8|[local::at0089], 	-- Vet ikke
+													9|[local::at0090]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0100] occurrences matches {0..1} matches {	-- 14. Latt være å gjøre ting pga frykt og fått alvorlige problemer
+												value matches {
+													1|[local::at0101], 	-- Ja
+													2|[local::at0102], 	-- Nei
+													8|[local::at0103], 	-- Vet ikke
+													9|[local::at0104]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- 14b. Sist gang slik frykt
+												value matches {
+													1|[local::at0095], 	-- Siste måned
+													2|[local::at0096], 	-- Siste år
+													3|[local::at0097], 	-- Alder, spesifiser:
+													8|[local::at0098], 	-- Vet ikke
+													9|[local::at0471]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0099] occurrences matches {0..1} matches {	-- Alder sist gang slik frykt
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0452] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0115] occurrences matches {0..1} matches {	-- Sosial angst
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0127] occurrences matches {0..1} matches {	-- 15. Redd for å treffe nye mennesker osv
+												value matches {
+													1|[local::at0130], 	-- Ja
+													2|[local::at0131], 	-- Nei
+													8|[local::at0132], 	-- Vet ikke
+													9|[local::at0133], 	-- Ønsker ikke å svare
+													10|[local::at0494]  	-- Hopp over spørsmål om sosial angst
+												}
+											}
+											ELEMENT[at0128] occurrences matches {0..1} matches {	-- 16. Latt være å gjøre ting pga frykt og fått alvorlige problemer
+												value matches {
+													1|[local::at0134], 	-- Ja
+													2|[local::at0135], 	-- Nei
+													8|[local::at0136], 	-- Vet ikke
+													9|[local::at0137]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0129] occurrences matches {0..1} matches {	-- 16b. Sist gang slik frykt
+												value matches {
+													1|[local::at0138], 	-- Siste måned
+													2|[local::at0139], 	-- Siste år
+													3|[local::at0140], 	-- Alder, spesifiser:
+													8|[local::at0141], 	-- Vet ikke
+													9|[local::at0472]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0142] occurrences matches {0..1} matches {	-- Alder sist gang slik frykt
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0453] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0116] occurrences matches {0..1} matches {	-- Agorafobi
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0143] occurrences matches {0..1} matches {	-- 17. Redd for å være i en folkemengde osv
+												value matches {
+													1|[local::at0209], 	-- Ja
+													2|[local::at0210], 	-- Nei
+													8|[local::at0211], 	-- Vet ikke
+													9|[local::at0212], 	-- Ønsker ikke å svare
+													10|[local::at0495]  	-- Hopp over spørsmål om agorafobi
+												}
+											}
+											ELEMENT[at0144] occurrences matches {0..1} matches {	-- 18. Latt være å gjøre ting pga frykt og fått alvorlige problemer
+												value matches {
+													1|[local::at0213], 	-- Ja
+													2|[local::at0214], 	-- Nei
+													8|[local::at0215], 	-- Vet ikke
+													9|[local::at0216]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0146] occurrences matches {0..1} matches {	-- 18b. Sist gang slik frykt
+												value matches {
+													1|[local::at0221], 	-- Siste måned
+													2|[local::at0222], 	-- Siste år
+													3|[local::at0223], 	-- Alder, spesifiser:
+													8|[local::at0224], 	-- Vet ikke
+													9|[local::at0473]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0148] occurrences matches {0..1} matches {	-- Alder sist gang slik frykt
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0454] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0117] occurrences matches {0..1} matches {	-- Depresjon
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0149] occurrences matches {0..1} matches {	-- 19. Trist og tom og deprimert to uker eller mer
+												value matches {
+													1|[local::at0225], 	-- Ja
+													2|[local::at0226], 	-- Nei
+													8|[local::at0227], 	-- Vet ikke
+													9|[local::at0228], 	-- Ønsker ikke å svare
+													10|[local::at0496]  	-- Hopp over spørsmål om depresjon
+												}
+											}
+											ELEMENT[at0150] occurrences matches {0..1} matches {	-- 20. Varte minimum to år
+												value matches {
+													1|[local::at0229], 	-- Ja
+													2|[local::at0230], 	-- Nei
+													8|[local::at0231], 	-- Vet ikke
+													9|[local::at0232]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0151] occurrences matches {0..1} matches {	-- 21. Veldig skuffet eller motløs i to uker eller mer
+												value matches {
+													1|[local::at0233], 	-- Ja
+													2|[local::at0234], 	-- Nei
+													8|[local::at0235], 	-- Vet ikke
+													9|[local::at0236]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0152] occurrences matches {0..1} matches {	-- 22. Varte to år eller mer
+												value matches {
+													1|[local::at0237], 	-- Ja
+													2|[local::at0238], 	-- Nei
+													8|[local::at0239], 	-- Vet ikke
+													9|[local::at0240]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0153] occurrences matches {0..1} matches {	-- 23. Mistet interessen i to uker eller mer
+												value matches {
+													1|[local::at0241], 	-- Ja
+													2|[local::at0242], 	-- Nei
+													8|[local::at0243], 	-- Vet ikke
+													9|[local::at0244]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0154] occurrences matches {0..1} matches {	-- 24. Sliten og uten krefter nesten hver dag
+												value matches {
+													1|[local::at0245], 	-- Ja
+													2|[local::at0246], 	-- Nei
+													8|[local::at0247], 	-- Vet ikke
+													9|[local::at0248]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0155] occurrences matches {0..1} matches {	-- 25. Vanskeligere enn vanlig å konsentrere seg
+												value matches {
+													1|[local::at0249], 	-- Ja
+													2|[local::at0250], 	-- Nei
+													8|[local::at0251], 	-- Vet ikke
+													9|[local::at0252]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0156] occurrences matches {0..1} matches {	-- 26. Mistet selvtilliten osv
+												value matches {
+													1|[local::at0253], 	-- Ja
+													2|[local::at0254], 	-- Nei
+													8|[local::at0255], 	-- Vet ikke
+													9|[local::at0256]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0157] occurrences matches {0..1} matches {	-- 27. Tenkte mye på døden
+												value matches {
+													1|[local::at0257], 	-- Ja
+													2|[local::at0258], 	-- Nei
+													8|[local::at0259], 	-- Vet ikke
+													9|[local::at0260]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0158] occurrences matches {0..1} matches {	-- 27b. Sist gang slike symptomer på depresjon
+												value matches {
+													1|[local::at0261], 	-- Siste måned
+													2|[local::at0262], 	-- Siste år
+													3|[local::at0263], 	-- Alder, spesifiser:
+													8|[local::at0264], 	-- Vet ikke
+													9|[local::at0474]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0159] occurrences matches {0..1} matches {	-- Alder sist gang slike symptomer på depresjon
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0455] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0118] occurrences matches {0..1} matches {	-- Mani
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0160] occurrences matches {0..1} matches {	-- 28. Oppstemt eller i godt humør som ga problemer
+												value matches {
+													1|[local::at0265], 	-- Ja
+													2|[local::at0266], 	-- Nei
+													8|[local::at0267], 	-- Vet ikke
+													9|[local::at0268], 	-- Ønsker ikke å svare
+													10|[local::at0497]  	-- Hopp over spørsmål om mani
+												}
+											}
+											ELEMENT[at0161] occurrences matches {0..1} matches {	-- 29. Oppstemthet i minst en uke og trengte medisiner
+												value matches {
+													1|[local::at0269], 	-- Ja
+													2|[local::at0270], 	-- Nei
+													8|[local::at0271], 	-- Vet ikke
+													9|[local::at0272]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0162] occurrences matches {0..1} matches {	-- 29b. Sist gang slike plager
+												value matches {
+													1|[local::at0273], 	-- Siste måned
+													2|[local::at0274], 	-- Siste år
+													3|[local::at0275], 	-- Alder, spesifiser:
+													8|[local::at0276], 	-- Vet ikke
+													9|[local::at0475]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0165] occurrences matches {0..1} matches {	-- Alder sist gang slike plager
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0163] occurrences matches {0..1} matches {	-- 30. Veldig irritabel og gretten flere dager
+												value matches {
+													1|[local::at0277], 	-- Ja
+													2|[local::at0278], 	-- Nei
+													8|[local::at0279], 	-- Vet ikke
+													9|[local::at0280]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0164] occurrences matches {0..1} matches {	-- 31. Så irritert at du ropte eller skrek eller slo
+												value matches {
+													1|[local::at0281], 	-- Ja
+													2|[local::at0282], 	-- Nei
+													8|[local::at0283], 	-- Vet ikke
+													9|[local::at0284]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0166] occurrences matches {0..1} matches {	-- 32. Irritasjon i minst en uke og trengte medisiner
+												value matches {
+													1|[local::at0285], 	-- Ja
+													2|[local::at0286], 	-- Nei
+													8|[local::at0287], 	-- Vet ikke
+													9|[local::at0288]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0167] occurrences matches {0..1} matches {	-- 32b. Sist gang slike plager
+												value matches {
+													1|[local::at0289], 	-- Siste måned
+													2|[local::at0290], 	-- Siste år
+													3|[local::at0291], 	-- Alder, spesifiser:
+													8|[local::at0292], 	-- Vet ikke
+													9|[local::at0476]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0168] occurrences matches {0..1} matches {	-- Alder sist gang slike plager
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0456] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0122] occurrences matches {0..1} matches {	-- Psykose
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0169] occurrences matches {0..1} matches {	-- 33. Sett noe som andre ikke kunne se
+												value matches {
+													1|[local::at0293], 	-- Ja
+													2|[local::at0294], 	-- Nei
+													8|[local::at0295], 	-- Vet ikke
+													9|[local::at0296], 	-- Ønsker ikke å svare
+													10|[local::at0498]  	-- Hopp over spørsmål om psykose
+												}
+											}
+											ELEMENT[at0170] occurrences matches {0..1} matches {	-- 34. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0297], 	-- Ja, hver gang
+													2|[local::at0299], 	-- Nei
+													3|[local::at0298], 	-- Ja, noen ganger
+													8|[local::at0300], 	-- Vet ikke
+													9|[local::at0305]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0171] occurrences matches {0..1} matches {	-- 35. Fortsatte å se dette når rusmidlene var borte
+												value matches {
+													1|[local::at0301], 	-- Ja
+													2|[local::at0302], 	-- Nei
+													8|[local::at0303], 	-- Vet ikke
+													9|[local::at0304]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0457] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0172] occurrences matches {0..1} matches {	-- 36. Hørt stemmer som andre ikke hørte
+												value matches {
+													1|[local::at0306], 	-- Ja
+													2|[local::at0307], 	-- Nei
+													8|[local::at0308], 	-- Vet ikke
+													9|[local::at0309]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0173] occurrences matches {0..1} matches {	-- 37. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0310], 	-- Ja, hver gang
+													2|[local::at0312], 	-- Nei
+													3|[local::at0311], 	-- Ja, noen ganger
+													8|[local::at0313], 	-- Vet ikke
+													9|[local::at0314]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0174] occurrences matches {0..1} matches {	-- 38. Fortsatte å høre stemmer når rusmidlene var borte
+												value matches {
+													1|[local::at0315], 	-- Ja
+													2|[local::at0316], 	-- Nei
+													8|[local::at0317], 	-- Vet ikke
+													9|[local::at0318]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0458] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0175] occurrences matches {0..1} matches {	-- 39. Noen har tatt kontroll over tankene
+												value matches {
+													1|[local::at0319], 	-- Ja
+													2|[local::at0320], 	-- Nei
+													8|[local::at0321], 	-- Vet ikke
+													9|[local::at0322]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0176] occurrences matches {0..1} matches {	-- 40. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0323], 	-- Ja, hver gang
+													2|[local::at0325], 	-- Nei
+													3|[local::at0324], 	-- Ja, noen ganger
+													8|[local::at0326], 	-- Vet ikke
+													9|[local::at0327]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0177] occurrences matches {0..1} matches {	-- 41. Fremdeles tankene kontrollert når rusmidlene var borte
+												value matches {
+													1|[local::at0328], 	-- Ja
+													2|[local::at0329], 	-- Nei
+													8|[local::at0330], 	-- Vet ikke
+													9|[local::at0331]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0459] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0178] occurrences matches {0..1} matches {	-- 42. Kontrollert av fremmede krefter
+												value matches {
+													1|[local::at0332], 	-- Ja
+													2|[local::at0333], 	-- Nei
+													8|[local::at0334], 	-- Vet ikke
+													9|[local::at0335]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0179] occurrences matches {0..1} matches {	-- 43. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0336], 	-- Ja, hver gang
+													2|[local::at0338], 	-- Nei
+													3|[local::at0337], 	-- Ja, noen ganger
+													8|[local::at0339], 	-- Vet ikke
+													9|[local::at0340]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0180] occurrences matches {0..1} matches {	-- 44. Fremdeles kontrollert av fremmede krefter når rusmidlene var borte
+												value matches {
+													1|[local::at0341], 	-- Ja
+													2|[local::at0342], 	-- Nei
+													8|[local::at0343], 	-- Vet ikke
+													9|[local::at0344]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0460] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0181] occurrences matches {0..1} matches {	-- 45. Ytre krefter som kommuniserer med deg
+												value matches {
+													1|[local::at0345], 	-- Ja
+													2|[local::at0346], 	-- Nei
+													8|[local::at0347], 	-- Vet ikke
+													9|[local::at0348]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0182] occurrences matches {0..1} matches {	-- 46. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0349], 	-- Ja, hver gang
+													2|[local::at0351], 	-- Nei
+													3|[local::at0350], 	-- Ja, noen ganger
+													8|[local::at0352], 	-- Vet ikke
+													9|[local::at0353]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0183] occurrences matches {0..1} matches {	-- 47. Fremdeles ytre krefter kommuniserte med deg når rusmidlene var borte
+												value matches {
+													1|[local::at0354], 	-- Ja
+													2|[local::at0355], 	-- Nei
+													8|[local::at0356], 	-- Vet ikke
+													9|[local::at0357]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0461] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0184] occurrences matches {0..1} matches {	-- 48. Sammensvergelse for å plage eller skade deg
+												value matches {
+													1|[local::at0358], 	-- Ja
+													2|[local::at0359], 	-- Nei
+													8|[local::at0360], 	-- Vet ikke
+													9|[local::at0361]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0185] occurrences matches {0..1} matches {	-- 49. Påvirket av alkohol eller andre rusmidler
+												value matches {
+													1|[local::at0362], 	-- Ja, hver gang
+													2|[local::at0364], 	-- Nei
+													3|[local::at0363], 	-- Ja, noen ganger
+													8|[local::at0365], 	-- Vet ikke
+													9|[local::at0366]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0186] occurrences matches {0..1} matches {	-- 50. Fremdeles sammensvergelse for å skade deg når rusmidlene var borte
+												value matches {
+													1|[local::at0367], 	-- Ja
+													2|[local::at0368], 	-- Nei
+													8|[local::at0369], 	-- Vet ikke
+													9|[local::at0370]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0462] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0517] occurrences matches {0..1} matches {	-- 52. Alder første gang slike opplevelser
+												value matches {
+													3|[local::at0521], 	-- Alder, spesifiser:
+													8|[local::at0518], 	-- Vet ikke
+													9|[local::at0519]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0189] occurrences matches {0..1} matches {	-- Alder første gang slike opplevelser
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0188] occurrences matches {0..1} matches {	-- 53. Sist gang slike opplevelser
+												value matches {
+													1|[local::at0373], 	-- Siste måned
+													2|[local::at0374], 	-- Siste år
+													3|[local::at0375], 	-- Alder, spesifiser:
+													8|[local::at0376], 	-- Vet ikke
+													9|[local::at0478]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0193] occurrences matches {0..1} matches {	-- Alder sist gang slike opplevelser
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0190] occurrences matches {0..1} matches {	-- 54. Bedt om hjelp fra lege eller psykisk helsearbeider
+												value matches {
+													1|[local::at0377], 	-- Ja
+													2|[local::at0378], 	-- Nei
+													8|[local::at0379], 	-- Vet ikke
+													9|[local::at0380]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0499] occurrences matches {0..6} matches {	-- 55. Hva legen sa var årsaken til opplevelsene
+												value matches {
+													1|[local::at0500], 	-- Schizofreni / psykose
+													2|[local::at0501], 	-- Manisk depressiv lidelse / bipolar lidelse / mani
+													3|[local::at0502], 	-- Følelsesmessige problemer / nervøsitet / problemer med psykisk helse
+													4|[local::at0503], 	-- Fysisk sykdom/ fysisk årsaker / skade
+													5|[local::at0504], 	-- Medikamenter/ alkohol / andre rusmidler
+													6|[local::at0505]  	-- Annet
+												}
+											}
+											ELEMENT[at0388] occurrences matches {0..1} matches {	-- 55b. Spesifiser annet
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0192] occurrences matches {0..1} matches {	-- 56. Innlagt i sykehus pga slike opplevelser
+												value matches {
+													1|[local::at0389], 	-- Ja
+													2|[local::at0390], 	-- Nei
+													8|[local::at0391], 	-- Vet ikke
+													9|[local::at0392]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0194] occurrences matches {0..1} matches {	-- 57. Legemidler for å behandle slike opplevelser
+												value matches {
+													1|[local::at0393], 	-- Ja
+													2|[local::at0394], 	-- Nei
+													8|[local::at0395], 	-- Vet ikke
+													9|[local::at0396]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0463] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0123] occurrences matches {0..1} matches {	-- ADHD
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0195] occurrences matches {0..1} matches {	-- 58. Problemer med å gjøre ferdig ting
+												value matches {
+													1|[local::at0397], 	-- Ja
+													2|[local::at0398], 	-- Nei
+													8|[local::at0399], 	-- Vet ikke
+													9|[local::at0400], 	-- Ønsker ikke å svare
+													10|[local::at0506]  	-- Hopp over spørsmål om ADHD
+												}
+											}
+											ELEMENT[at0196] occurrences matches {0..1} matches {	-- 59. Vanskelig å organisere seg ved forberedelser
+												value matches {
+													1|[local::at0401], 	-- Ja
+													2|[local::at0402], 	-- Nei
+													8|[local::at0403], 	-- Vet ikke
+													9|[local::at0404]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0197] occurrences matches {0..1} matches {	-- 60. Glemmer lett avtaler og plikter
+												value matches {
+													1|[local::at0405], 	-- Ja
+													2|[local::at0406], 	-- Nei
+													8|[local::at0407], 	-- Vet ikke
+													9|[local::at0408]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0198] occurrences matches {0..1} matches {	-- 61. Prøver å unngå konsentrasjonsting
+												value matches {
+													1|[local::at0409], 	-- Ja
+													2|[local::at0410], 	-- Nei
+													8|[local::at0411], 	-- Vet ikke
+													9|[local::at0412]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0199] occurrences matches {0..1} matches {	-- 62. Klarer ikke å sitte stille
+												value matches {
+													1|[local::at0413], 	-- Ja
+													2|[local::at0414], 	-- Nei
+													8|[local::at0415], 	-- Vet ikke
+													9|[local::at0416]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0200] occurrences matches {0..1} matches {	-- 63. Som å ha en motor innvendig
+												value matches {
+													1|[local::at0417], 	-- Ja
+													2|[local::at0418], 	-- Nei
+													8|[local::at0419], 	-- Vet ikke
+													9|[local::at0420]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0201] occurrences matches {0..1} matches {	-- 63b. Sist gang slike problemer
+												value matches {
+													1|[local::at0421], 	-- Siste måned
+													2|[local::at0422], 	-- Siste år
+													3|[local::at0423], 	-- Alder, spesifiser:
+													8|[local::at0424], 	-- Vet ikke
+													9|[local::at0479]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0203] occurrences matches {0..1} matches {	-- Alder sist gang slike problemer
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0464] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0124] occurrences matches {0..1} matches {	-- PTSD
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0204] occurrences matches {0..1} matches {	-- 64. Vitne til eller opplevd alvorlig hendelse
+												value matches {
+													1|[local::at0425], 	-- Ja
+													2|[local::at0426], 	-- Nei
+													8|[local::at0427], 	-- Vet ikke
+													9|[local::at0428], 	-- Ønsker ikke å svare
+													10|[local::at0507]  	-- Hopp over spørsmål om PTSD
+												}
+											}
+											ELEMENT[at0206] occurrences matches {0..1} matches {	-- 64a. Spesifiser traumatiske hendelser
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0205] occurrences matches {0..1} matches {	-- 65. Gjenopplevd hendelsen på en plagsom måte
+												value matches {
+													1|[local::at0429], 	-- Ja
+													2|[local::at0430], 	-- Nei
+													8|[local::at0431], 	-- Vet ikke
+													9|[local::at0432]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0207] occurrences matches {0..1} matches {	-- 65b. Sist gang angst når tenkte på opplevelsen
+												value matches {
+													1|[local::at0433], 	-- Siste måned
+													2|[local::at0434], 	-- Siste år
+													3|[local::at0435], 	-- Alder, spesifiser:
+													8|[local::at0436], 	-- Vet ikke
+													9|[local::at0480]  	-- Ønsker ikke å svare
+												}
+											}
+											ELEMENT[at0520] occurrences matches {0..1} matches {	-- Alder sist gang angst når tenkte på opplevelsen
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..90|}
+													}
+												}
+											}
+											ELEMENT[at0465] occurrences matches {0..1} matches {	-- Kommentar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0481] occurrences matches {0..1} matches {	-- Observasjoner
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0508] occurrences matches {0..1} matches {	-- 66. Respondent påvirket av rusmidler
+												value matches {
+													1|[local::at0511], 	-- Ja
+													2|[local::at0512]  	-- Nei
+												}
+											}
+											ELEMENT[at0509] occurrences matches {0..1} matches {	-- 67. Respondent desorientert eller forvirret
+												value matches {
+													1|[local::at0513], 	-- Ja
+													2|[local::at0514]  	-- Nei
+												}
+											}
+											ELEMENT[at0510] occurrences matches {0..1} matches {	-- 68. Respondent samarbeidsvillig
+												value matches {
+													1|[local::at0515], 	-- Ja
+													2|[local::at0516]  	-- Nei
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0468] occurrences matches {0..*} matches {	-- Tilleggsinformasjon
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"ROP-screen">
+					description = <"ROP-screen er et spørreskjema som kartlegger (screener) om personer med rusmiddelproblemer også samtidig kan ha en psykisk lidelse.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Panikkangst">
+					description = <"Seksjonen panikkangst.">
+				>
+				["at0006"] = <
+					text = <"1. Anfall av panikk eller angst">
+					description = <"Har du opplevd å få anfall av angst eller panikk og plutselig være veldig redd, engstelig eller urolig uten å vite hvorfor?">
+				>
+				["at0007"] = <
+					text = <"2. Kraftigste anfall">
+					description = <"Med tanke på det kraftigste anfallet du har hatt, om fikk du sterkt ubehag, skjelving, kvalme, hjertebank, og følelse av å miste kontrollen, dø eller bli gal?">
+				>
+				["at0008"] = <
+					text = <"3. Redd for nytt anfall">
+					description = <"Har du vært redd for å få et slikt anfall nesten hver dag i en måned?">
+				>
+				["at0009"] = <
+					text = <"3b. Frykt i en måned">
+					description = <"Når var siste gangen du opplevde en slik frykt i en hel måned?">
+				>
+				["at0012"] = <
+					text = <"Generalisert angstlidelse">
+					description = <"Seksjonen generalisert angstlidelse.">
+				>
+				["at0013"] = <
+					text = <"4. Mye mer bekymret enn andre">
+					description = <"Har du noen gang i livet vært mye mer bekymret enn andre mennesker som har problemer som ligner på dine?">
+				>
+				["at0014"] = <
+					text = <"5. Veldig engstelig mer enn 6 måneder">
+					description = <"Har du hatt en periode på mer enn seks måneder du har vært veldig engstelig eller bekymret mesteparten av dagen nesten hver dag?">
+				>
+				["at0015"] = <
+					text = <"6. Samtidige plager">
+					description = <"Samtidig med engstelsen eller bekymringen som varte i minst seks måneder, var du plaget med tretthet, irritabilitet, konsentrasjonsproblemer, anspenthet og søvnproblemer nesten hver dag?">
+				>
+				["at0016"] = <
+					text = <"6b. Sist gang en slik periode">
+					description = <"Når var den siste gangen du hadde en periode på minst seks måneder da du var veldig engstelig eller bekymret mesteparten av dagen nesten hver dag?">
+				>
+				["at0017"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Alder sist gang en slik periode">
+					description = <"Alder siste gangen du hadde en periode på minst seks måneder da du var veldig engstelig eller bekymret mesteparten av dagen nesten hver dag.">
+				>
+				["at0055"] = <
+					text = <"Alder frykt i en måned">
+					description = <"Alder siste gangen du opplevde en slik frykt i en hel måned.">
+				>
+				["at0056"] = <
+					text = <"Spesifikk fobi">
+					description = <"Seksjonen spesifikk fobi.">
+				>
+				["at0057"] = <
+					text = <"7. Redd for insekt eller dyr">
+					description = <"Har det noen gang vært en periode da du var veldig redd for noen insekter eller dyr?">
+					comment = <"Eksempel slanger, hunder og edderkopper.">
+				>
+				["at0058"] = <
+					text = <"8. Redd for vann eller torden">
+					description = <"Har du hatt en periode du var veldig redd for å være i rolig vann, som et svømmebasseng eller en innsjø, eller veldig redd for dårlig vær, som storm, torden eller lyn?">
+				>
+				["at0059"] = <
+					text = <"9. Redd for lege eller blod">
+					description = <"Har du hatt en periode du var veldig redd for å gå til tannlege eller lege, få injeksjon, se blod eller et åpent sår, være på sykehus eller legebesøk?">
+				>
+				["at0060"] = <
+					text = <"10. Redd for lukket rom">
+					description = <"Har du hatt en periode du var veldig redd for å være i et lukket rom som i en tunell, heis eller garderobe?">
+				>
+				["at0061"] = <
+					text = <"11. Redd for høyder">
+					description = <"Har du hatt en periode du var veldig redd for høyder?">
+					comment = <"Eksempel: å være på en balkong eller terasse, bro, høy trapp og stige.">
+				>
+				["at0062"] = <
+					text = <"12. Redd for å fly">
+					description = <"Har har du hatt en periode du var veldig redd for å fly?">
+				>
+				["at0065"] = <
+					text = <"14b. Sist gang slik frykt">
+					description = <"Når var den siste gangen du opplevde en slik frykt?">
+				>
+				["at0067"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0098"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0099"] = <
+					text = <"Alder sist gang slik frykt">
+					description = <"Alder siste gangen du opplevde en slik frykt.">
+				>
+				["at0100"] = <
+					text = <"14. Latt være å gjøre ting pga frykt og fått alvorlige problemer">
+					description = <"Har du latt være å gjøre noe som var viktig for deg på grunn av frykten for noen av disse tingene, og fått alvorlige problemer på grunn av frykten?">
+					comment = <"Eksempel: mistet venner og jobb.">
+				>
+				["at0101"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0115"] = <
+					text = <"Sosial angst">
+					description = <"Seksjonen sosial angst.">
+				>
+				["at0116"] = <
+					text = <"Agorafobi">
+					description = <"Seksjonen agorafobi.">
+				>
+				["at0117"] = <
+					text = <"Depresjon">
+					description = <"Seksjonen depresjon.">
+				>
+				["at0118"] = <
+					text = <"Mani">
+					description = <"Seksjonen mani.">
+				>
+				["at0122"] = <
+					text = <"Psykose">
+					description = <"Seksjonen psykose">
+				>
+				["at0123"] = <
+					text = <"ADHD">
+					description = <"Seksjonen ADHD.">
+				>
+				["at0124"] = <
+					text = <"PTSD">
+					description = <"Seksjonen PTSD.">
+				>
+				["at0127"] = <
+					text = <"15. Redd for å treffe nye mennesker osv">
+					description = <"Har du hatt en periode du var veldig redd for å snakke i offentlighet, treffe nye mennesker, gå i sosiale sammenkomster, redd før en avtale med noen eller redd for å bruke offentlige toaletter?">
+				>
+				["at0128"] = <
+					text = <"16. Latt være å gjøre ting pga frykt og fått alvorlige problemer">
+					description = <"Har du latt være å gjøre noe som var viktig for deg på grunn av frykten for noen av disse tingene, og fått alvorlige problemer på grunn av frykten?">
+				>
+				["at0129"] = <
+					text = <"16b. Sist gang slik frykt">
+					description = <"Når var siste gangen du opplevde en slik frykt?">
+				>
+				["at0130"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0131"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0132"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0133"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0134"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0135"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0136"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0137"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0138"] = <
+					text = <"Siste måned">
+					description = <"Nei">
+				>
+				["at0139"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0140"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0141"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0142"] = <
+					text = <"Alder sist gang slik frykt">
+					description = <"Alder siste gangen du opplevde en slik frykt.">
+				>
+				["at0143"] = <
+					text = <"17. Redd for å være i en folkemengde osv">
+					description = <"Har du hatt en periode du var veldig redd for å være i en folkemengde eller være borte hjemmefra alene?">
+				>
+				["at0144"] = <
+					text = <"18. Latt være å gjøre ting pga frykt og fått alvorlige problemer">
+					description = <"Har du latt være å gjøre noe som var viktig for deg på grunn av frykten for noen av disse tingene, og fått alvorlige problemer på grunn av frykten?">
+				>
+				["at0146"] = <
+					text = <"18b. Sist gang slik frykt">
+					description = <"Når var siste gangen du opplevde en slik frykt?">
+				>
+				["at0148"] = <
+					text = <"Alder sist gang slik frykt">
+					description = <"Alder siste gangen du opplevde en slik frykt.">
+				>
+				["at0149"] = <
+					text = <"19. Trist og tom og deprimert to uker eller mer">
+					description = <"Har du hatt en periode på to uker eller mer da du har følt deg trist, tom eller deprimert mesteparten av dagen nesten hver dag?">
+				>
+				["at0150"] = <
+					text = <"20. Varte minimum to år">
+					description = <"Varte denne perioden da du følte deg trist, tom eller deprimert i minimum to år?">
+				>
+				["at0151"] = <
+					text = <"21. Veldig skuffet eller motløs i to uker eller mer">
+					description = <"Har du noen gang følt deg veldig skuffet eller motløs over hvordan livet ditt hadde utviklet seg, mesteparten av dagen, nesten hver dag i to uker eller mer?">
+				>
+				["at0152"] = <
+					text = <"22. Varte to år eller mer">
+					description = <"Varte denne perioden da du følte deg skuffet eller motløs over hvordan livet ditt hadde utviklet seg i to år eller mer?">
+				>
+				["at0153"] = <
+					text = <"23. Mistet interessen i to uker eller mer">
+					description = <"Har du hatt en periode på to uker eller mer da du mistet interessen for det meste du likte før, som arbeid, hobbyer, forhold til andre mennesker og familie, mesteparten av dagen, nesten hver dag i to uker eller mer?">
+				>
+				["at0154"] = <
+					text = <"24. Sliten og uten krefter nesten hver dag">
+					description = <"I løpet av den verste perioden du kan huske, da du følte deg deprimert, motløs, skuffet eller uinteressert i ting du vanligvis liker, følte du deg sliten og uten krefter nesten hver dag selv om du ikke hadde gjort noe som kunne forklare det?">
+				>
+				["at0155"] = <
+					text = <"25. Vanskeligere enn vanlig å konsentrere seg">
+					description = <"I denne verste perioden, var det vanskeligere enn vanlig å konsentrere seg nesten hver dag?">
+				>
+				["at0156"] = <
+					text = <"26. Mistet selvtilliten osv">
+					description = <"I denne verste perioden, hadde du mistet selvtilliten, følte du deg ubrukelig eller hadde du overdreven skyldfølelse nesten hver dag?">
+				>
+				["at0157"] = <
+					text = <"27. Tenkte mye på døden">
+					description = <"I denne verste perioden, tenkte du mye på døden? Din egen død, andres død eller døden i sin alminnelighet nesten hver dag?">
+				>
+				["at0158"] = <
+					text = <"27b. Sist gang slike symptomer på depresjon">
+					description = <"Når var den siste gangen du hadde slike symptomer på depresjon?">
+				>
+				["at0159"] = <
+					text = <"Alder sist gang slike symptomer på depresjon">
+					description = <"Alder siste gangen du hadde slike symptomer på depresjon.">
+				>
+				["at0160"] = <
+					text = <"28. Oppstemt eller i godt humør som ga problemer">
+					description = <"Har du hatt en periode på flere dager, at du var så oppstemt eller i godt humør at du fikk problemer, at andre ble bekymret for deg eller at en lege fortalte deg at du var manisk?">
+				>
+				["at0161"] = <
+					text = <"29. Oppstemthet i minst en uke og trengte medisiner">
+					description = <"Denne perioden med oppstemthet, varte den i minst én uke? Trengte du behandling med medisiner eller ble du innlagt?">
+				>
+				["at0162"] = <
+					text = <"29b. Sist gang slike plager">
+					description = <"Når var den siste gangen du hadde slike plager?">
+				>
+				["at0163"] = <
+					text = <"30. Veldig irritabel og gretten flere dager">
+					description = <"Har du hatt en periode på flere dager eller mer der du var veldig irritabel, gretten, kranglete eller hadde «kort lunte» mesteparten av tiden?">
+				>
+				["at0164"] = <
+					text = <"31. Så irritert at du ropte eller skrek eller slo">
+					description = <"Var du da så irritert at du argumenterte med folk hele tiden, ropte eller skrek mye eller til og med slo til noen?">
+				>
+				["at0165"] = <
+					text = <"Alder sist gang slike plager">
+					description = <"Alder siste gangen du hadde slike plager.">
+				>
+				["at0166"] = <
+					text = <"32. Irritasjon i minst en uke og trengte medisiner">
+					description = <"Denne perioden med irritasjon, varte den i minst en uke? Trengte du behandling med medisiner eller ble du innlagt i sykehus?">
+				>
+				["at0167"] = <
+					text = <"32b. Sist gang slike plager">
+					description = <"Når var siste gangen du hadde slike plager?">
+				>
+				["at0168"] = <
+					text = <"Alder sist gang slike plager">
+					description = <"Alder siste gangen du hadde slike plager.">
+				>
+				["at0169"] = <
+					text = <"33. Sett noe som andre ikke kunne se">
+					description = <"Har du noen gang sett noe som andre mennesker ikke kunne se?">
+				>
+				["at0170"] = <
+					text = <"34. Påvirket av alkohol eller andre rusmidler">
+					description = <"Var du påvirket av alkohol eller andre rusmidler da du så noe som andre ikke kunne se?">
+				>
+				["at0171"] = <
+					text = <"35. Fortsatte å se dette når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller andre rusmidler var borte, fortsatte du å se dette?">
+				>
+				["at0172"] = <
+					text = <"36. Hørt stemmer som andre ikke hørte">
+					description = <"Har du noen gang opplevd å høre stemmer som andre mennesker ikke kan høre?">
+					comment = <"Kommentar: Det handler ikke om du har god hørsel eller ikke, men å høre stemmer som andre mennesker sier ikke finnes.
+Eksempel: Stemmer inni hodet som forteller deg ting, kommenterer deg eller befaler deg å gjøre ting, eller stemmer som kommer utenfra selv om det ikke er noen andre der.">
+				>
+				["at0173"] = <
+					text = <"37. Påvirket av alkohol eller andre rusmidler">
+					description = <"Var du noen gang påvirket av alkohol eller andre rusmidler da du hørte disse stemmene?">
+				>
+				["at0174"] = <
+					text = <"38. Fortsatte å høre stemmer når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller andre rusmidler var borte, hørte du fremdeles stemmer?">
+				>
+				["at0175"] = <
+					text = <"39. Noen har tatt kontroll over tankene">
+					description = <"Har du opplevd noen gang at noen har kontroll over tankene dine?">
+					comment = <" Eksempel: At du trodde på en mystisk kraft, at noe eller noen satte uvanlige eller merkelige tanker inn i hodet ditt som ikke var dine egne eller at du opplevde at noen stjal tankene dine.">
+				>
+				["at0176"] = <
+					text = <"40. Påvirket av alkohol eller andre rusmidler">
+					description = <"*">
+					comment = <"Var du noen gang under påvirkning av alkohol eller andre rusmidler de gangene du opplevde at tankene dine ble kontrollert?">
+				>
+				["at0177"] = <
+					text = <"41. Fremdeles tankene kontrollert når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller andre rusmidler var borte, opplevde du fremdeles at tankene dine ble kontrollert?">
+				>
+				["at0178"] = <
+					text = <"42. Kontrollert av fremmede krefter">
+					description = <"Har du noen gang opplevd at du har vært kontrollert av fremmede krefter?">
+					comment = <"Eksempel: At fremmede krefter, noe eller noen, fullstendig kontrollerte tankene, følelsene eller handlingene dine og/eller som tvang deg til å gjøre ting som du ikke ønsket.">
+				>
+				["at0179"] = <
+					text = <"43. Påvirket av alkohol eller andre rusmidler">
+					description = <"Var du under påvirkning av alkohol eller andre rusmidler de gangene du opplevde at du ble kontrollert av fremmede krefter? ">
+				>
+				["at0180"] = <
+					text = <"44. Fremdeles kontrollert av fremmede krefter når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller andre rusmidler var borte, opplevde du fremdeles at du ble kontrollert av fremmede krefter?">
+				>
+				["at0181"] = <
+					text = <"45. Ytre krefter som kommuniserer med deg">
+					description = <"Har du noen gang opplevd at ytre krefter, noe eller noen, har prøvd å kommunisere med deg gjennom spesielle signaler, skjulte betydninger eller tegn som bare du forstår?">
+					comment = <"Kommentar: Noen ganger kan disse signalene komme fra radio eller TV. ">
+				>
+				["at0182"] = <
+					text = <"46. Påvirket av alkohol eller andre rusmidler">
+					description = <"Var du på noe tidspunkt under påvirkning av alkohol eller andre rusmidler når disse fremmede kreftene prøvde å kommunisere med deg?">
+				>
+				["at0183"] = <
+					text = <"47. Fremdeles ytre krefter kommuniserte med deg når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller andre rusmidler var borte, opplevde du fremdeles at de fremmede kreftene forsøkte å kommunisere med deg?">
+				>
+				["at0184"] = <
+					text = <"48. Sammensvergelse for å plage eller skade deg">
+					description = <"Har du noen gang tenkt at det fantes en sammensvergelse for å plage eller skade deg eller at du ble forfulgt? Og familie og venner ikke trodde at den fantes?">
+				>
+				["at0185"] = <
+					text = <"49. Påvirket av alkohol eller andre rusmidler">
+					description = <"Var du på noe tidspunkt under påvirkning av alkohol eller andre rusmidler da du opplevde at det var en sammensvergelse for å skade deg?">
+				>
+				["at0186"] = <
+					text = <"50. Fremdeles sammensvergelse for å skade deg når rusmidlene var borte">
+					description = <"Når virkningen av alkohol eller de andre rusmidlene var borte, opplevde du fremdeles at det fantes en sammensvergelse for å skade deg?">
+				>
+				["at0188"] = <
+					text = <"53. Sist gang slike opplevelser">
+					description = <"Når var den siste gangen du hadde slike opplevelser?">
+				>
+				["at0189"] = <
+					text = <"Alder første gang slike opplevelser">
+					description = <"Alder første gang du hadde slike opplevelser.">
+				>
+				["at0190"] = <
+					text = <"54. Bedt om hjelp fra lege eller psykisk helsearbeider">
+					description = <"Har du noen gang bedt om hjelp fra en lege eller en psykolog for disse opplevelsene?">
+				>
+				["at0192"] = <
+					text = <"56. Innlagt i sykehus pga slike opplevelser">
+					description = <"Har du noen gang vært innlagt i sykehus på grunn av slike opplevelser?">
+				>
+				["at0193"] = <
+					text = <"Alder sist gang slike opplevelser">
+					description = <"Alder siste gangen du hadde slike opplevelser.">
+				>
+				["at0194"] = <
+					text = <"57. Legemidler for å behandle slike opplevelser">
+					description = <"Har du noen gang tatt legemidler/medikamenter for å behandle slike opplevelser?">
+				>
+				["at0195"] = <
+					text = <"58. Problemer med å gjøre ferdig ting">
+					description = <"Jeg har problemer med å gjøre ferdig ting jeg har begynt med.">
+				>
+				["at0196"] = <
+					text = <"59. Vanskelig å organisere seg ved forberedelser">
+					description = <"Det er vanskelig å organisere seg når jeg må forberede meg på noe.">
+				>
+				["at0197"] = <
+					text = <"60. Glemmer lett avtaler og plikter">
+					description = <"Jeg glemmer lett avtaler og plikter.">
+				>
+				["at0198"] = <
+					text = <"61. Prøver å unngå konsentrasjonsting">
+					description = <"Jeg prøver å unngå å gjøre ting som krever at jeg må konsentrere meg.">
+				>
+				["at0199"] = <
+					text = <"62. Klarer ikke å sitte stille">
+					description = <"Jeg klarer ikke å sitte stille uten å bevege hender og føtter.">
+				>
+				["at0200"] = <
+					text = <"63. Som å ha en motor innvendig">
+					description = <"Det er som om jeg har en motor inni meg og jeg kan ikke holde meg i ro.">
+				>
+				["at0201"] = <
+					text = <"63b. Sist gang slike problemer">
+					description = <"Når var den siste gangen du hadde slike problemer?">
+				>
+				["at0203"] = <
+					text = <"Alder sist gang slike problemer">
+					description = <"Alder siste gangen du hadde slike problemer.">
+				>
+				["at0204"] = <
+					text = <"64. Vitne til eller opplevd alvorlig hendelse">
+					description = <"Har du noen gang opplevd eller vært vitne til en alvorlig ulykke, brann, ran, uønsket seksuell kontakt, terrorangrep, kidnapping, oppdagelse av et lik, plutselig død blandt en som sto deg nær, katastrofe eller krig?">
+				>
+				["at0205"] = <
+					text = <"65. Gjenopplevd hendelsen på en plagsom måte">
+					description = <"Har du noen gang gjenopplevd denne hendelsen på en plagsom måte?">
+					comment = <"Eksempel: Drømt om opplevelsen, sett den levende for deg, reagert fysisk eller har sterke minner om den.">
+				>
+				["at0206"] = <
+					text = <"64a. Spesifiser traumatiske hendelser">
+					description = <"Noter hvilke traumatiske hendelser som ble bekreftet.">
+				>
+				["at0207"] = <
+					text = <"65b. Sist gang angst når tenkte på opplevelsen">
+					description = <"Når var siste gang du fikk angst når du tenkte på det du har opplevd?">
+				>
+				["at0209"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0210"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0211"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0212"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0213"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0214"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0215"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0216"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0221"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0222"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0223"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0224"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0225"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0226"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0227"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0228"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0229"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0230"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0231"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0232"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0233"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0234"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0235"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0236"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0237"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0238"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0239"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0240"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0241"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0242"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0243"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0244"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0245"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0246"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0247"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0248"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0249"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0250"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0251"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0252"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0253"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0254"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0255"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0256"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0257"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0258"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0259"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0260"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0261"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0262"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0263"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0264"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0265"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0266"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0267"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0268"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0269"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0270"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0271"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0272"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0273"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0274"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0275"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0276"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0277"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0278"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0279"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0280"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0281"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0282"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0283"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0284"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0285"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0286"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0287"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0288"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0289"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0290"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0291"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0292"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0293"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0294"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0295"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0296"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0297"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0298"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0299"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0300"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0301"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0302"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0303"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0304"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0305"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0306"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0307"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0308"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0309"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0310"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0311"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0312"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0313"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0314"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0315"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0316"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0317"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0318"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0319"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0320"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0321"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0322"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0323"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0324"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0325"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0326"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0327"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0328"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0329"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0330"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0331"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0332"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0333"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0334"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0335"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0336"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0337"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0338"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0339"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0340"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0341"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0342"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0343"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0344"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0345"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0346"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0347"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0348"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0349"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0350"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0351"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0352"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0353"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0354"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0355"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0356"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0357"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0358"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0359"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0360"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0361"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0362"] = <
+					text = <"Ja, hver gang">
+					description = <"*">
+				>
+				["at0363"] = <
+					text = <"Ja, noen ganger">
+					description = <"*">
+				>
+				["at0364"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0365"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0366"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0367"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0368"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0369"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0370"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0373"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0374"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0375"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0376"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0377"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0378"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0379"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0380"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0388"] = <
+					text = <"55b. Spesifiser annet">
+					description = <"Spesifiser hva legen eller psykologen sa var årsaken til disse opplevelsene.">
+				>
+				["at0389"] = <
+					text = <"Ja">
+					description = <" ">
+				>
+				["at0390"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0391"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0392"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0393"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0394"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0395"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0396"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0397"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0398"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0399"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0400"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0401"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0402"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0403"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0404"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0405"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0406"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0407"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0408"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0409"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0410"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0411"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0412"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0413"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0414"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0415"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0416"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0417"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0418"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0419"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0420"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0421"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0422"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0423"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0424"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0425"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0426"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0427"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0428"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0429"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0430"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0431"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0432"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0433"] = <
+					text = <"Siste måned">
+					description = <"*">
+				>
+				["at0434"] = <
+					text = <"Siste år">
+					description = <"*">
+				>
+				["at0435"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+				["at0436"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0450"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen panikkangst som ikke er fanget opp i andre felt.">
+				>
+				["at0451"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen generalisert angstlidelse som ikke er fanget opp i andre felt.">
+				>
+				["at0452"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen spesifikk fobi som ikke er fanget opp i andre felt.">
+				>
+				["at0453"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen sosial angst som ikke er fanget opp i andre felt.">
+				>
+				["at0454"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen agorafobi som ikke er fanget opp i andre felt.">
+				>
+				["at0455"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen depresjon som ikke er fanget opp i andre felt.">
+				>
+				["at0456"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen mani som ikke er fanget opp i andre felt.">
+				>
+				["at0457"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 1 under seksjonen psykose.">
+				>
+				["at0458"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 2 under seksjonen psykose.">
+				>
+				["at0459"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 3 under seksjonen psykose.">
+				>
+				["at0460"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 4 under seksjonen psykose.">
+				>
+				["at0461"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 5 under seksjonen psykose.">
+				>
+				["at0462"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til opplevelse 6 under seksjonen psykose.">
+				>
+				["at0463"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen psykose som ikke er fanget opp i andre felt.">
+				>
+				["at0464"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen ADHD som ikke er fanget opp i andre felt.">
+				>
+				["at0465"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere kommentar til seksjonen PTSD som ikke er fanget opp i andre felt.">
+				>
+				["at0468"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Tilleggsinformasjon til ROP-screen">
+				>
+				["at0469"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0470"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0471"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0472"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0473"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0474"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0475"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0476"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0478"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0479"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0480"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0481"] = <
+					text = <"Observasjoner">
+					description = <"Observasjoner gjort av intervjuer.">
+				>
+				["at0491"] = <
+					text = <"Hopp over spørsmål om panikkangst">
+					description = <"*">
+				>
+				["at0492"] = <
+					text = <"Hopp over spørsmål om generalisert angstlidelse">
+					description = <"*">
+				>
+				["at0493"] = <
+					text = <"Hopp over spørsmål om spesifikk fobi">
+					description = <"*">
+				>
+				["at0494"] = <
+					text = <"Hopp over spørsmål om sosial angst">
+					description = <"*">
+				>
+				["at0495"] = <
+					text = <"Hopp over spørsmål om agorafobi">
+					description = <"*">
+				>
+				["at0496"] = <
+					text = <"Hopp over spørsmål om depresjon">
+					description = <"*">
+				>
+				["at0497"] = <
+					text = <"Hopp over spørsmål om mani">
+					description = <"*">
+				>
+				["at0498"] = <
+					text = <"Hopp over spørsmål om psykose">
+					description = <"*">
+				>
+				["at0499"] = <
+					text = <"55. Hva legen sa var årsaken til opplevelsene">
+					description = <"Hva sa legen eller psykologen var årsaken til disse opplevelsene?">
+				>
+				["at0500"] = <
+					text = <"Schizofreni / psykose">
+					description = <"*">
+				>
+				["at0501"] = <
+					text = <"Manisk depressiv lidelse / bipolar lidelse / mani">
+					description = <"*">
+				>
+				["at0502"] = <
+					text = <"Følelsesmessige problemer / nervøsitet / problemer med psykisk helse">
+					description = <"*">
+				>
+				["at0503"] = <
+					text = <"Fysisk sykdom/ fysisk årsaker / skade">
+					description = <"*">
+				>
+				["at0504"] = <
+					text = <"Medikamenter/ alkohol / andre rusmidler">
+					description = <"*">
+				>
+				["at0505"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+				["at0506"] = <
+					text = <"Hopp over spørsmål om ADHD">
+					description = <"*">
+				>
+				["at0507"] = <
+					text = <"Hopp over spørsmål om PTSD">
+					description = <"*">
+				>
+				["at0508"] = <
+					text = <"66. Respondent påvirket av rusmidler">
+					description = <"Så respondenten ut til å være påvirket av alkohol, andre rusmidler eller psykofarmaka under intervjuet?">
+				>
+				["at0509"] = <
+					text = <"67. Respondent desorientert eller forvirret">
+					description = <"Så respondenten desorientert eller forvirret ut på noe tidspunkt under intervjuet?">
+				>
+				["at0510"] = <
+					text = <"68. Respondent samarbeidsvillig">
+					description = <"Var respondenten samarbeidsvillig?">
+				>
+				["at0511"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0512"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0513"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0514"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0515"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0516"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0517"] = <
+					text = <"52. Alder første gang slike opplevelser">
+					description = <"Hvor gammel var du første gang du hadde slike opplevelser?">
+				>
+				["at0518"] = <
+					text = <"Vet ikke">
+					description = <"*">
+				>
+				["at0519"] = <
+					text = <"Ønsker ikke å svare">
+					description = <"*">
+				>
+				["at0520"] = <
+					text = <"Alder sist gang angst når tenkte på opplevelsen">
+					description = <"Alder siste gang du fikk angst når du tenkte på det du har opplevd.">
+				>
+				["at0521"] = <
+					text = <"Alder, spesifiser:">
+					description = <"*">
+				>
+			>
+		>
+	>
