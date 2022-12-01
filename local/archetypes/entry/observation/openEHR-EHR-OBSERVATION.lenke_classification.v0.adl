@@ -31,7 +31,6 @@ description
 Per dags dato finnes det ingen validert norsk oversettelse av verktøyet. Man har derfor i arketypen valgt å beholde orginalspråk for alle dataelementene. Om det på et tidspunkt etableres en validert norsk oversettelse, vil arketypen oppdateres med denne.">
 			keywords = <"skoliose, ortopedi", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -39,24 +38,22 @@ Per dags dato finnes det ingen validert norsk oversettelse av verktøyet. Man ha
 			use = <"Use to record the results for each component parameter and the classification for the Lenke classification system.">
 			keywords = <"scoliosis, orthopedics", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Randi Brendberg, Helse Nord RHF, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Evelyn Hovenga, EJSH Consulting, Australia", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Thomas Natvik, Helse Bergen, Norway", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Terje Sagmyr, Helse Vest IKT, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Lenke classification system, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2022-11-04]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.6527
-
-Lenke LG, Betz RR, Harms J, Bridwell KH, Clements DH, Lowe TG, Blanke K. Adolescent idiopathic scoliosis: a new classification to determine extent of spinal arthrodesis. J Bone Joint Surg Am. 2001;83:1169–1181.
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Lenke LG, Betz RR, Harms J, Bridwell KH, Clements DH, Lowe TG, Blanke K. Adolescent idiopathic scoliosis: a new classification to determine extent of spinal arthrodesis. J Bone Joint Surg Am. 2001;83:1169–1181.
 
 AO Surgery reference, Lenke classification. 20.09.22. Available at: https://surgeryreference.aofoundation.org/spine/deformities/adolescent-idiopathic-scoliosis/further-reading/lenke-classification#determination-of-sagittal-modifiers.">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"417338D9D8C14A29E19C0A99D6B58ADD">
-		["build_uid"] = <"cdd53f67-9f49-42c9-a637-08c4f02d7004">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"B8396A14B98D2EDEB9EBE53E109FF93B">
+		["build_uid"] = <"fae87e89-2dee-4242-8d41-ff25268b932d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -132,6 +129,8 @@ definition
 		}
 	}
 
+
+
 ontology
 	term_definitions = <
 		["en"] = <
@@ -190,15 +189,13 @@ ontology
 				>
 				["at0019"] = <
 					text = <"Classification">
-					description = <"Curve type (1-6) + Lumbar Spine Modifier (A, B, C) + Thoracic saggital profile (-, N,+).">
-					comment = <"For example: 1B+
-
-The Classification may be automatically derived as a concatenation of the three response data elements and, if so, should be validated by the clinical information system against the individual scores entered by the clinician to ensure there is no conflict or inconsistency.">
+					description = <"Concatenation of the three discrete components.">
+					comment = <"For example: 1B+.">
 				>
 				["at0020"] = <
 					text = <"Extension">
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"e.g. Local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR equivalents.">
 				>
 				["at0021"] = <
 					text = <"Item tree">
@@ -234,7 +231,7 @@ The Classification may be automatically derived as a concatenation of the three 
 			items = <
 				["at0000"] = <
 					text = <"Lenke classification system">
-					description = <"Et system for å klassifisere adolescent idiopatisk skoliose.">
+					description = <"Et system for å klassifisere idiopatisk skoliose hos ungdom.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -286,10 +283,8 @@ The Classification may be automatically derived as a concatenation of the three 
 				>
 				["at0019"] = <
 					text = <"Classification">
-					description = <"Curve type (1-6) + Lumbar Spine Modifier (A, B, C) + Thoracic saggital profile (-, N,+).">
-					comment = <"For example: 1B+
-
-The Classification may be automatically derived as a concatenation of the three response data elements and, if so, should be validated by the clinical information system against the individual scores entered by the clinician to ensure there is no conflict or inconsistency.">
+					description = <"Concatenation of the three discrete components.">
+					comment = <"For example: 1B+.">
 				>
 				["at0020"] = <
 					text = <"Tilleggsinformasjon">
