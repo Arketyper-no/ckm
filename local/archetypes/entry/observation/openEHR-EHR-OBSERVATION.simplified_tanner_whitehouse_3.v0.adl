@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.simplified_tanner_whitehouse_3.v0
 
 concept
-	[at0000]	-- Simplified Tanner-Whitehouse III skeletal maturity assessment
+	[at0000]	-- Simplified Tanner-Whitehouse III assessment
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -29,34 +29,30 @@ description
 			use = <"Brukes for å registrere Simplified Tanner-Whitehouse-III Skeletal Maturity Assessment.
 
 Per dags dato finnes det ingen validert norsk oversettelse av verktøyet. Man har derfor i arketypen valgt å beholde orginalspråk for alle dataelementene. Om det på et tidspunkt etableres en validert norsk oversettelse, vil arketypen oppdateres med denne.">
-			keywords = <"sanders, modenhet, skoliose", ...>
+			keywords = <"sanders, modenhet, skoliose, skjelettalder, skjelettalderbestemmelse, skjelett, bein", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the simplified Tanner-Whitehouse III skeletal maturity assessment.">
 			use = <"Use to record the simplified Tanner-Whitehouse III skeletal maturity assessment.">
-			keywords = <"sanders, maturity, scoliosis", ...>
+			keywords = <"sanders, maturity, scoliosis, skeletal, age, bone", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Randi Brendberg, Helse Nord RHF, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Evelyn Hovenga, EJSH Consulting, Australia", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Thomas Natvik, Helse Bergen, Norway", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Terje Sagmyr, Helse Vest IKT, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Simplified Tanner-Whitehouse III skeletal maturity assessment, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2022-11-04]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.6526
-
-Sanders JO, Khoury JG, Kishan S, et al. Predicting scoliosis progression from skeletal maturity: a simplified classification during adolescence. J Bone Joint Surg Am 2008;90(3):541 (Table 1).
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Sanders JO, Khoury JG, Kishan S, et al. Predicting scoliosis progression from skeletal maturity: a simplified classification during adolescence. J Bone Joint Surg Am 2008;90(3):541 (Table 1).
 
 Muscoloskeletal Key, The Simplified Tanner-Whitehouse-III Skeletal Maturity Assessment table 1.2. Accessed: 29.09.22. Available from: https://musculoskeletalkey.com/anatomy-and-normal-development-in-children/.">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"C843CABD293922F7357BDF38F305E9B2">
-		["build_uid"] = <"f2368187-408d-459f-a81c-439ec0a5aabf">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"DBD00C06A9C22DBCAD17419F0ECAE697">
+		["build_uid"] = <"c3abc25a-46cc-45d3-8e7f-68a405de3695">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -100,13 +96,15 @@ definition
 		}
 	}
 
+
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Simplified Tanner-Whitehouse III skeletal maturity assessment">
-					description = <"An assessment scale used to predict scoliosis progression from skeletal maturity.">
+					text = <"Simplified Tanner-Whitehouse III assessment">
+					description = <"A classification for the skeletal maturity stage in children, based on radiological assessment of the hand and wrist.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -121,7 +119,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Simplified Tanner-Whitehouse III stage">
+					text = <"Stage">
 					description = <"Assessed skeletal maturity.">
 				>
 				["at0005"] = <
@@ -170,8 +168,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Simplified Tanner-Whitehouse III skeletal maturity assessment">
-					description = <"En vurderingsskala som brukes til å forutsi progresjon av skoliose fra skjelettmodenhet.">
+					text = <"Simplified Tanner-Whitehouse III assessment">
+					description = <"En klassifisering for grad av skjelettmodenhet hos barn, basert på radiologisk undersøkelse av hånd og håndledd.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -186,7 +184,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Simplified Tanner-Whitehouse III stage">
+					text = <"Stage">
 					description = <"Vurdert skjelettmodenhet.">
 				>
 				["at0005"] = <
