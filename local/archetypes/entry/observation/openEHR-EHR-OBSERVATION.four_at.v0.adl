@@ -1,0 +1,232 @@
+﻿archetype (adl_version=1.4; uid=9feb743d-209f-4d81-8d6d-b54b0870d57f)
+	openEHR-EHR-OBSERVATION.four_at.v0
+
+concept
+	[at0000]	-- 4AT - Assessment test for delirium and  cognitive impairment
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"John Tore Valand">
+		["organisation"] = <"Helse Bergen HF">
+		["date"] = <"2019-02-18">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To detect delirium at first contact with the patient, and at other times when delirium is suspected.">
+			use = <"Use to detect delirium at first contact with the patient, and at other times when delirium is suspected. It is a short and practical tool designed for use in busy areas where assessment for delirium is needed.
+
+Note that the 4AT is not designed for repeated daily monitoring for new onset delirium (because of practice effects with the Months Backwards task). Altered level of arousal (Item 1), and change or fluctuation (Item 4) can readily be used daily or even more frequently, along with general clinical judgement and/or use of tools specifically designed for ongoing monitoring of delirium.">
+			keywords = <"delirium", ...>
+			misuse = <"Not to be used for repeated daily monitoring for new onset delirium (because of practice effects with the Months Backwards task). ">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"https://www.the4at.com/">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"084172CFB65E24FC993650D77D0B576F">
+		["build_uid"] = <"246b5d5e-3412-4072-afbc-71308eca4ac3">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- 4AT - Assessment test for delirium and  cognitive impairment
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {0..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- ItemTree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- [1] ALERTNESS
+										value matches {
+											0|[local::at0005],
+											4|[local::at0006]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- [2] AMT4
+										value matches {
+											0|[local::at0008],
+											1|[local::at0009],
+											2|[local::at0010]
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- [3] ATTENTION
+										value matches {
+											0|[local::at0012],
+											1|[local::at0013],
+											2|[local::at0014]
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- [4] ACUTE CHANGE OR FLUCTUATING COURSE
+										value matches {
+											0|[local::at0016],
+											4|[local::at0017]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- 4AT score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..14|}
+											}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Comment
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::at0025]    -- dfsgdgfs
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0023] matches {    -- ItemTree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Confounding factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0019] matches {    -- ItemTree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"4AT - Assessment test for delirium and  cognitive impairment">
+					description = <"The 4AT is a rapid clinical instrument for delirium detection.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Any point in time event">
+					description = <"Unspecified point in time event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"[1] ALERTNESS">
+					description = <"This includes patients who may be markedly drowsy (eg. difficult to rouse and/or obviously sleepy 
+during assessment) or agitated/hyperactive. Observe the patient. If asleep, attempt to wake with speech or gentle touch on shoulder. Ask the patient to state their name and address to assist rating.">
+				>
+				["at0005"] = <
+					text = <"Normal (fully alert, but not agitated, throughout assessment) or Mild sleepiness for <10 seconds after waking, then normal">
+					description = <"​">
+				>
+				["at0006"] = <
+					text = <"Clearly abnormal">
+					description = <"​">
+				>
+				["at0007"] = <
+					text = <"[2] AMT4">
+					description = <"Age, date of birth, place (name of the hospital or building), current year.">
+				>
+				["at0008"] = <
+					text = <"No mistakes">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"1 mistake">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"2 or more mistakes/untestable">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"[3] ATTENTION">
+					description = <"Months of the year backwards.">
+					comment = <"Ask the patient: “Please tell me the months of the year in backwards order, starting at December.” 
+To assist initial understanding one prompt of “what is the month before December?” is permitted.">
+				>
+				["at0012"] = <
+					text = <"Achieves 7 months or more correctly">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Starts but scores <7 months / refuses to start">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Untestable (cannot start because unwell, drowsy, inattentive)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"[4] ACUTE CHANGE OR FLUCTUATING COURSE">
+					description = <"Evidence of significant change or fluctuation in: alertness, cognition, other mental function.">
+					comment = <"eg. paranoia, hallucinations) arising over the last 2 weeks and still evident in last 24hrs.">
+				>
+				["at0016"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the overall 4st test captured in other fields.">
+				>
+				["at0019"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+				["at0020"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0022"] = <
+					text = <"4AT score">
+					description = <"The sum of the 4 ordinal scores for each component parameter.">
+				>
+				["at0023"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+				["at0024"] = <
+					text = <"Confounding factors">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"dfsgdgfs">
+					description = <"*">
+				>
+			>
+		>
+	>
