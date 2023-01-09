@@ -2,27 +2,29 @@
 	openEHR-EHR-OBSERVATION.nccns_v2_no.v0
 
 concept
-	[at0000]	-- NCCN Distress Thermometer and Problem List
+	[at0000]	-- Termometer for grad av påkjenning - NCCN
 language
-	original_language = <[ISO_639-1::en]>
+	original_language = <[ISO_639-1::nb]>
 description
 	original_author = <
-		["date"] = <"2022-03-31">
+		["name"] = <"Kanika Kuwelker">
+		["organisation"] = <"Helse Vest IKT AS">
+		["date"] = <"2022-04-01">
 	>
 	details = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"For assessing distress in patients with cancer.">
-			use = <"To assess distress in cancer patients.
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å kartlegge grad av påkjenning hos pasienter med kreft.">
+			use = <"Brukes for å kartlegge grad av påkjenning hos pasienter med kreft.
 
-While openEHR archetypes are all freely available under an open license, the specific content of this archetype is copyright protected. Any use of this archetype within implementations must be in compliance with the terms established by the copyright owners.
-Copyright statement: Version 1.2022, 12/06/2021 © 2021 National Comprehensive Cancer Network® (NCCN®), All rights reserved. NCCN Guidelines® and this illustration may not be reproduced in any form without the express written permission of NCCN.">
-			keywords = <"Distress, cancer, oncology", ...>
+openEHR-arketyper er fritt tilgjengelige under en åpen lisens, men det spesifikke innholdet i denne Termometer for grad av påkjenning - NCCN-arketypen er opphavsrettslig beskyttet. All bruk av denne arketypen i implementasjoner må gjøres i henhold til vilkår gitt av innehaverne av opphavsretten.
+Erklæring om opphavsrett: Version 2.2017, 09/07/17 © National Comprehensive Cancer Network, Inc. 2017, All rights reserved. The NCCN Guidelines® and this illustration may not be reproduced in any form without the express written permission of NCCN®.">
+			keywords = <"Påkjenning, kreft, onkologi", ...>
 			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Marit Alice Venheim, Helse Vest IKT AS", ...>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -30,17 +32,17 @@ Copyright statement: Version 1.2022, 12/06/2021 © 2021 National Comprehensive C
 
 Ownby K. K. (2019). Use of the Distress Thermometer in Clinical Practice. Journal of the advanced practitioner in oncology, 10(2), 175–179.
 
-Liu, F., Huang, J., Zhang, L. et al (2018). Screening for distress in patients with primary brain tumor using distress thermometer: a systematic review and meta-analysis. BMC Cancer, 18, 124 (2018).">
+Liu, F., Huang, J., Zhang, L. et al (2018). Screening for distress in patients with primary brain tumor using distress thermometer: a systematic review and meta-analysis. BMC Cancer, 18, 124.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"291C75169A235A2CE2E0BAABABC03E17">
-		["build_uid"] = <"04f0817f-123f-4d51-9cf0-2e3c3b5f3f72">
+		["MD5-CAM-1.0.1"] = <"DEDF3B38FB2097F81AB434ADB3233BDA">
+		["build_uid"] = <"0ceb8fcb-91a1-456a-bf69-8017311b0644">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- NCCN Distress Thermometer and Problem List
+	OBSERVATION[at0000] matches {    -- Termometer for grad av påkjenning - NCCN
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -48,484 +50,469 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Distress Thermometer
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Termometer for grad av påkjenning
 										value matches {
 											10|[local::at0006],
-											9|[local::at0008],
-											8|[local::at0009],
-											7|[local::at0010],
-											6|[local::at0011],
-											5|[local::at0012],
-											4|[local::at0013],
-											3|[local::at0014],
-											2|[local::at0015],
-											1|[local::at0016],
-											0|[local::at0017]
+											9|[local::at0007],
+											8|[local::at0008],
+											7|[local::at0009],
+											6|[local::at0010],
+											5|[local::at0011],
+											4|[local::at0012],
+											3|[local::at0013],
+											2|[local::at0014],
+											1|[local::at0015],
+											0|[local::at0016]
 										}
 									}
-									CLUSTER[at0018] occurrences matches {0..1} matches {    -- Problem List
+									CLUSTER[at0018] occurrences matches {0..1} matches {    -- Praktiske problemer
 										items cardinality matches {1..*; unordered} matches {
-											CLUSTER[at0030] occurrences matches {0..1} matches {    -- Practical Problems
-												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0023] occurrences matches {0..1} matches {    -- Child Care
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0024,    -- Yes
-																	at0025]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0027] occurrences matches {0..1} matches {    -- Food
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0028,    -- Yes
-																	at0029]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0038] occurrences matches {0..1} matches {    -- Housing
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0039,    -- Yes
-																	at0040]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0041] occurrences matches {0..1} matches {    -- Insurance/financial
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0042,    -- Yes
-																	at0043]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0044] occurrences matches {0..1} matches {    -- Transportation
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0045,    -- Yes
-																	at0046]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0047] occurrences matches {0..1} matches {    -- Work/school
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0048,    -- Yes
-																	at0049]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0051] occurrences matches {0..1} matches {    -- Treatment decisions
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0052,    -- Yes
-																	at0053]    -- No
-																}
-															}
-														}
-													}
-												}
-											}
-											CLUSTER[at0031] occurrences matches {0..1} matches {    -- Family Problems
-												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0054] occurrences matches {0..1} matches {    -- Dealing with children
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0055,    -- Yes
-																	at0056]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0057] occurrences matches {0..1} matches {    -- Dealing with partner
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0058,    -- Yes
-																	at0059]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0060] occurrences matches {0..1} matches {    -- Ability to have children
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0061,    -- Yes
-																	at0062]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0063] occurrences matches {0..1} matches {    -- Family health issues
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0064,    -- Yes
-																	at0065]    -- No
-																}
-															}
-														}
-													}
-												}
-											}
-											CLUSTER[at0032] occurrences matches {0..1} matches {    -- Emotional Problems
-												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0066] occurrences matches {0..1} matches {    -- Depression
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0067,    -- Yes
-																	at0068]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0069] occurrences matches {0..1} matches {    -- Fears
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0070,    -- Yes
-																	at0071]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0072] occurrences matches {0..1} matches {    -- Nervousness
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0073,    -- Yes
-																	at0074]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0075] occurrences matches {0..1} matches {    -- Sadness
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0076,    -- Yes
-																	at0077]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0078] occurrences matches {0..1} matches {    -- Worry
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0079,    -- Yes
-																	at0080]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0081] occurrences matches {0..1} matches {    -- Loss of interest in usual activities
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0082,    -- Yes
-																	at0083]    -- No
-																}
-															}
-														}
-													}
-												}
-											}
-											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Spiritual/religious concerns
+											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Omsorg barn
 												value matches {
 													DV_CODED_TEXT matches {
 														defining_code matches {
 															[local::
-															at0035,    -- Yes
-															at0036]    -- No
+															at0026,    -- Ja
+															at0027]    -- Nei
 														}
 													}
 												}
 											}
-											CLUSTER[at0084] occurrences matches {0..1} matches {    -- Physical Problems
-												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0085] occurrences matches {0..1} matches {    -- Appearance
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0086,    -- Yes
-																	at0087]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0088] occurrences matches {0..1} matches {    -- Breathing/dressing
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0089,    -- Yes
-																	at0090]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0091] occurrences matches {0..1} matches {    -- Breathing
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0092,    -- Yes
-																	at0093]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0094] occurrences matches {0..1} matches {    -- Changes in urination
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0095,    -- Yes
-																	at0096]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0097] occurrences matches {0..1} matches {    -- Constipation
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0098,    -- Yes
-																	at0099]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0100] occurrences matches {0..1} matches {    -- Diarrhea
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0101,    -- Yes
-																	at0102]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0103] occurrences matches {0..1} matches {    -- Eating
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0104,    -- Yes
-																	at0105]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0106] occurrences matches {0..1} matches {    -- Fatigue
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0107,    -- Yes
-																	at0108]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0109] occurrences matches {0..1} matches {    -- Feeling swollen
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0110,    -- Yes
-																	at0111]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0112] occurrences matches {0..1} matches {    -- Fevers
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0113,    -- Yes
-																	at0114]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0115] occurrences matches {0..1} matches {    -- Getting around
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0116,    -- Yes
-																	at0117]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0118] occurrences matches {0..1} matches {    -- Indigestion
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0119,    -- Yes
-																	at0120]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0121] occurrences matches {0..1} matches {    -- Memory/concentration
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0122,    -- Yes
-																	at0123]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0124] occurrences matches {0..1} matches {    -- Mouth sores
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0125,    -- Yes
-																	at0126]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0127] occurrences matches {0..1} matches {    -- Nausea
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0128,    -- Yes
-																	at0129]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0130] occurrences matches {0..1} matches {    -- Nose dry/congested
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0131,    -- Yes
-																	at0132]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0133] occurrences matches {0..1} matches {    -- Pain
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0134,    -- Yes
-																	at0135]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0136] occurrences matches {0..1} matches {    -- Sexual
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0137,    -- Yes
-																	at0138]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0139] occurrences matches {0..1} matches {    -- Skin dry/itchy
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0140,    -- Yes
-																	at0141]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0142] occurrences matches {0..1} matches {    -- Sleep
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0143,    -- Yes
-																	at0144]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0145] occurrences matches {0..1} matches {    -- Substance use
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0146,    -- Yes
-																	at0147]    -- No
-																}
-															}
-														}
-													}
-													ELEMENT[at0148] occurrences matches {0..1} matches {    -- Tingeling in hands/feet
-														value matches {
-															DV_CODED_TEXT matches {
-																defining_code matches {
-																	[local::
-																	at0149,    -- Yes
-																	at0150]    -- No
-																}
-															}
-														}
-													}
-												}
-											}
-											ELEMENT[at0151] occurrences matches {0..1} matches {    -- Other Problems
+											ELEMENT[at0028] occurrences matches {0..1} matches {    -- Bolig
 												value matches {
-													DV_TEXT matches {*}
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0029,    -- Ja
+															at0030]    -- Nei
+														}
+													}
 												}
 											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {    -- Økonomi/Forsikring
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0032,    -- Ja
+															at0033]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Transport
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0035,    -- Ja
+															at0036]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0037] occurrences matches {0..1} matches {    -- Jobb/skole/utdanning
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0038,    -- Ja
+															at0039]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0040] occurrences matches {0..1} matches {    -- Beslutninger om behandling
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0041,    -- Ja
+															at0042]    -- Nei
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0019] occurrences matches {0..1} matches {    -- Familiære problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0043] occurrences matches {0..1} matches {    -- Forhold til barn
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0044,    -- Ja
+															at0045]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {    -- Forhold til partner
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0047,    -- Ja
+															at0048]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Mulighet til å få barn
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0050,    -- Ja
+															at0051]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Helseproblemer i familien
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0053,    -- Ja
+															at0054]    -- Nei
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {    -- Emosjonelle problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Depresjon
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0062,    -- Ja
+															at0063]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Frykt
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0065,    -- Ja
+															at0066]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0067] occurrences matches {0..1} matches {    -- Nervøsitet
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0068,    -- Ja
+															at0069]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0070] occurrences matches {0..1} matches {    -- Nedstemthet
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0071,    -- Ja
+															at0072]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {    -- Bekymringer
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0074,    -- Ja
+															at0075]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Tap av interesse for vanlige aktiviteter
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0077,    -- Ja
+															at0078]    -- Nei
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0079] occurrences matches {0..1} matches {    -- Åndelige/religiøse bekymringer
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0080,    -- Ja
+													at0081]    -- Nei
+												}
+											}
+										}
+									}
+									CLUSTER[at0024] occurrences matches {0..1} matches {    -- Fysiske problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0082] occurrences matches {0..1} matches {    -- Utseende
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0083,    -- Ja
+															at0084]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0085] occurrences matches {0..1} matches {    -- Hygiene/påkledning
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0086,    -- Ja
+															at0087]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0088] occurrences matches {0..1} matches {    -- Pusten
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0089,    -- Ja
+															at0090]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0091] occurrences matches {0..1} matches {    -- Endringer i vannlatning
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0092,    -- Ja
+															at0093]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0094] occurrences matches {0..1} matches {    -- Forstoppelse
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0095,    -- Ja
+															at0096]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0097] occurrences matches {0..1} matches {    -- Diaré
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0098,    -- Ja
+															at0099]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0100] occurrences matches {0..1} matches {    -- Spising
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0101,    -- Ja
+															at0102]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0103] occurrences matches {0..1} matches {    -- Tretthet
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0104,    -- Ja
+															at0105]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0106] occurrences matches {0..1} matches {    -- Føle seg oppblåst
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0107,    -- Ja
+															at0108]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0109] occurrences matches {0..1} matches {    -- Feber
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0110,    -- Ja
+															at0111]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0112] occurrences matches {0..1} matches {    -- Mobilitet (ta seg frem)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0113,    -- Ja
+															at0114]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0115] occurrences matches {0..1} matches {    -- Fordøyelse
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0116,    -- Ja
+															at0117]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0118] occurrences matches {0..1} matches {    -- Hukommelse/konsentrasjon
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0119,    -- Ja
+															at0120]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0121] occurrences matches {0..1} matches {    -- Sår i munnen
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0122,    -- Ja
+															at0123]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0124] occurrences matches {0..1} matches {    -- Kvalme
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0125,    -- Ja
+															at0126]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0127] occurrences matches {0..1} matches {    -- Tørr/tett nese
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0128,    -- Ja
+															at0129]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0130] occurrences matches {0..1} matches {    -- Smerter
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0131,    -- Ja
+															at0132]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0133] occurrences matches {0..1} matches {    -- Seksualitet
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0134,    -- Ja
+															at0135]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0136] occurrences matches {0..1} matches {    -- Tørr/kløende hud
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0137,    -- Ja
+															at0138]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0139] occurrences matches {0..1} matches {    -- Søvn
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0140,    -- Ja
+															at0141]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0142] occurrences matches {0..1} matches {    -- Rusmisbruk
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0143,    -- Ja
+															at0144]    -- Nei
+														}
+													}
+												}
+											}
+											ELEMENT[at0145] occurrences matches {0..1} matches {    -- Prikking i hender/føtter
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0146,    -- Ja
+															at0147]    -- Nei
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0148] occurrences matches {0..1} matches {    -- Andre problemer
+										value matches {
+											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -536,18 +523,18 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0019] matches {*}    -- Item tree
+			ITEM_TREE[at0004] matches {*}    -- Item tree
 		}
 	}
 
 
 ontology
 	term_definitions = <
-		["en"] = <
+		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"NCCN Distress Thermometer and Problem List">
-					description = <"A screening tool for assessing distress in cancer patients.">
+					text = <"Termometer for grad av påkjenning - NCCN">
+					description = <"Kartleggingsverktøy for å vurdere grad av påkjenning hos pasienter med kreft.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -555,566 +542,550 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Any event">
-					description = <"">
+					description = <"Standard, uspesifisert tidspunkt som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
+				["at0004"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
 				["at0005"] = <
-					text = <"Distress Thermometer">
+					text = <"Termometer for grad av påkjenning">
 					description = <"">
 				>
 				["at0006"] = <
 					text = <"10">
-					description = <"Extreme distress.">
+					description = <"Ekstrem påkjenning.">
 				>
-				["at0008"] = <
+				["at0007"] = <
 					text = <"9">
 					description = <"">
 				>
-				["at0009"] = <
+				["at0008"] = <
 					text = <"8">
 					description = <"">
 				>
-				["at0010"] = <
+				["at0009"] = <
 					text = <"7">
 					description = <"">
 				>
-				["at0011"] = <
+				["at0010"] = <
 					text = <"6">
 					description = <"">
 				>
-				["at0012"] = <
+				["at0011"] = <
 					text = <"5">
 					description = <"">
 				>
-				["at0013"] = <
+				["at0012"] = <
 					text = <"4">
 					description = <"">
 				>
-				["at0014"] = <
+				["at0013"] = <
 					text = <"3">
 					description = <"">
 				>
-				["at0015"] = <
+				["at0014"] = <
 					text = <"2">
 					description = <"">
 				>
-				["at0016"] = <
+				["at0015"] = <
 					text = <"1">
 					description = <"">
 				>
-				["at0017"] = <
+				["at0016"] = <
 					text = <"0">
-					description = <"No distress.">
+					description = <"Ingen påkjenning.">
 				>
 				["at0018"] = <
-					text = <"Problem List">
+					text = <"Praktiske problemer">
 					description = <"">
 				>
 				["at0019"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
+					text = <"Familiære problemer">
+					description = <"">
 				>
-				["at0023"] = <
-					text = <"Child Care">
+				["at0020"] = <
+					text = <"Emosjonelle problemer">
 					description = <"">
 				>
 				["at0024"] = <
-					text = <"Yes">
+					text = <"Fysiske problemer">
 					description = <"">
 				>
 				["at0025"] = <
-					text = <"No">
+					text = <"Omsorg barn">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Ja">
 					description = <"">
 				>
 				["at0027"] = <
-					text = <"Food">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0028"] = <
-					text = <"Yes">
+					text = <"Bolig">
 					description = <"">
 				>
 				["at0029"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0030"] = <
-					text = <"Practical Problems">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0031"] = <
-					text = <"Family Problems">
+					text = <"Økonomi/Forsikring">
 					description = <"">
 				>
 				["at0032"] = <
-					text = <"Emotional Problems">
+					text = <"Ja">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Nei">
 					description = <"">
 				>
 				["at0034"] = <
-					text = <"Spiritual/religious concerns">
+					text = <"Transport">
 					description = <"">
 				>
 				["at0035"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0036"] = <
-					text = <"No">
+					text = <"Nei">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Jobb/skole/utdanning">
 					description = <"">
 				>
 				["at0038"] = <
-					text = <"Housing">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0039"] = <
-					text = <"Yes">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0040"] = <
-					text = <"No">
+					text = <"Beslutninger om behandling">
 					description = <"">
 				>
 				["at0041"] = <
-					text = <"Insurance/financial">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"Yes">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0043"] = <
-					text = <"No">
+					text = <"Forhold til barn">
 					description = <"">
 				>
 				["at0044"] = <
-					text = <"Transportation">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0045"] = <
-					text = <"Yes">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0046"] = <
-					text = <"No">
+					text = <"Forhold til partner">
 					description = <"">
 				>
 				["at0047"] = <
-					text = <"Work/school">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0048"] = <
-					text = <"Yes">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0049"] = <
-					text = <"No">
+					text = <"Mulighet til å få barn">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Ja">
 					description = <"">
 				>
 				["at0051"] = <
-					text = <"Treatment decisions">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0052"] = <
-					text = <"Yes">
+					text = <"Helseproblemer i familien">
 					description = <"">
 				>
 				["at0053"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0054"] = <
-					text = <"Dealing with children">
-					description = <"">
-				>
-				["at0055"] = <
-					text = <"Yes">
-					description = <"">
-				>
-				["at0056"] = <
-					text = <"No">
-					description = <"">
-				>
-				["at0057"] = <
-					text = <"Dealing with partner">
-					description = <"">
-				>
-				["at0058"] = <
-					text = <"Yes">
-					description = <"">
-				>
-				["at0059"] = <
-					text = <"No">
-					description = <"">
-				>
-				["at0060"] = <
-					text = <"Ability to have children">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0061"] = <
-					text = <"Yes">
+					text = <"Depresjon">
 					description = <"">
 				>
 				["at0062"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0063"] = <
-					text = <"Family health issues">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0064"] = <
-					text = <"Yes">
+					text = <"Frykt">
 					description = <"">
 				>
 				["at0065"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0066"] = <
-					text = <"Depression">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0067"] = <
-					text = <"Yes">
+					text = <"Nervøsitet">
 					description = <"">
 				>
 				["at0068"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0069"] = <
-					text = <"Fears">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0070"] = <
-					text = <"Yes">
+					text = <"Nedstemthet">
 					description = <"">
 				>
 				["at0071"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0072"] = <
-					text = <"Nervousness">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0073"] = <
-					text = <"Yes">
+					text = <"Bekymringer">
 					description = <"">
 				>
 				["at0074"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0075"] = <
-					text = <"Sadness">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0076"] = <
-					text = <"Yes">
+					text = <"Tap av interesse for vanlige aktiviteter">
 					description = <"">
 				>
 				["at0077"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0078"] = <
-					text = <"Worry">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0079"] = <
-					text = <"Yes">
+					text = <"Åndelige/religiøse bekymringer">
 					description = <"">
 				>
 				["at0080"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0081"] = <
-					text = <"Loss of interest in usual activities">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0082"] = <
-					text = <"Yes">
+					text = <"Utseende">
 					description = <"">
 				>
 				["at0083"] = <
-					text = <"No">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0084"] = <
-					text = <"Physical Problems">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0085"] = <
-					text = <"Appearance">
+					text = <"Hygiene/påkledning">
 					description = <"">
 				>
 				["at0086"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0087"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0088"] = <
-					text = <"Breathing/dressing">
+					text = <"Pusten">
 					description = <"">
 				>
 				["at0089"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0090"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0091"] = <
-					text = <"Breathing">
+					text = <"Endringer i vannlatning">
 					description = <"">
 				>
 				["at0092"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0093"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0094"] = <
-					text = <"Changes in urination">
+					text = <"Forstoppelse">
 					description = <"">
 				>
 				["at0095"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0096"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0097"] = <
-					text = <"Constipation">
+					text = <"Diaré">
 					description = <"">
 				>
 				["at0098"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0099"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0100"] = <
-					text = <"Diarrhea">
+					text = <"Spising">
 					description = <"">
 				>
 				["at0101"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0102"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0103"] = <
-					text = <"Eating">
+					text = <"Tretthet">
 					description = <"">
 				>
 				["at0104"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0105"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0106"] = <
-					text = <"Fatigue">
+					text = <"Føle seg oppblåst">
 					description = <"">
 				>
 				["at0107"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0108"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0109"] = <
-					text = <"Feeling swollen">
+					text = <"Feber">
 					description = <"">
 				>
 				["at0110"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0111"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0112"] = <
-					text = <"Fevers">
+					text = <"Mobilitet (ta seg frem)">
 					description = <"">
 				>
 				["at0113"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0114"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0115"] = <
-					text = <"Getting around">
+					text = <"Fordøyelse">
 					description = <"">
 				>
 				["at0116"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0117"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0118"] = <
-					text = <"Indigestion">
+					text = <"Hukommelse/konsentrasjon">
 					description = <"">
 				>
 				["at0119"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0120"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0121"] = <
-					text = <"Memory/concentration">
+					text = <"Sår i munnen">
 					description = <"">
 				>
 				["at0122"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0123"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0124"] = <
-					text = <"Mouth sores">
+					text = <"Kvalme">
 					description = <"">
 				>
 				["at0125"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0126"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0127"] = <
-					text = <"Nausea">
+					text = <"Tørr/tett nese">
 					description = <"">
 				>
 				["at0128"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0129"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0130"] = <
-					text = <"Nose dry/congested">
+					text = <"Smerter">
 					description = <"">
 				>
 				["at0131"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0132"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0133"] = <
-					text = <"Pain">
+					text = <"Seksualitet">
 					description = <"">
 				>
 				["at0134"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0135"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0136"] = <
-					text = <"Sexual">
+					text = <"Tørr/kløende hud">
 					description = <"">
 				>
 				["at0137"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0138"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0139"] = <
-					text = <"Skin dry/itchy">
+					text = <"Søvn">
 					description = <"">
 				>
 				["at0140"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0141"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0142"] = <
-					text = <"Sleep">
+					text = <"Rusmisbruk">
 					description = <"">
 				>
 				["at0143"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0144"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0145"] = <
-					text = <"Substance use">
+					text = <"Prikking i hender/føtter">
 					description = <"">
 				>
 				["at0146"] = <
-					text = <"Yes">
+					text = <"Ja">
 					description = <"">
 				>
 				["at0147"] = <
-					text = <"No">
+					text = <"Nei">
 					description = <"">
 				>
 				["at0148"] = <
-					text = <"Tingeling in hands/feet">
-					description = <"">
-				>
-				["at0149"] = <
-					text = <"Yes">
-					description = <"">
-				>
-				["at0150"] = <
-					text = <"No">
-					description = <"">
-				>
-				["at0151"] = <
-					text = <"Other Problems">
+					text = <"Andre problemer">
 					description = <"">
 				>
 			>
