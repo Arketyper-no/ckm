@@ -1,0 +1,585 @@
+﻿archetype (adl_version=1.4; uid=29eff9bb-6388-411f-954b-85f215dc5556)
+	openEHR-EHR-OBSERVATION.nccns_2022_v2.v0
+
+concept
+	[at0000]	-- Termometer for grad av påkjenning - NCCN_ 2022
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Kanika Kuwelker">
+		["organisation"] = <"Helse Vest IKT AS">
+		["date"] = <"2022-04-01">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å kartlegge grad av påkjenning hos pasienter med kreft.">
+			use = <"Brukes for å kartlegge grad av påkjenning hos pasienter med kreft.
+
+openEHR-arketyper er fritt tilgjengelige under en åpen lisens, men det spesifikke innholdet i denne Termometer for grad av påkjenning - NCCN-arketypen er opphavsrettslig beskyttet. All bruk av denne arketypen i implementasjoner må gjøres i henhold til vilkår gitt av innehaverne av opphavsretten.
+Erklæring om opphavsrett: Version 2.2022, 27/01/22 © 2022 National Comprehensive Cancer Network, Inc. 2017, All rights reserved. The NCCN Guidelines® and this illustration may not be reproduced in any form without the express written permission of NCCN®.">
+			keywords = <"Påkjenning, kreft, onkologi", ...>
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Marit Alice Venheim, Helse Vest IKT AS", ...>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Donovan, K. A., et al (2022). NCCN Distress Thermometer Problem List Update. Official Journal of the National Comprehensive Cancer Network, 20(1).
+
+Ownby K. K. (2019). Use of the Distress Thermometer in Clinical Practice. Journal of the advanced practitioner in oncology, 10(2), 175–179.
+
+Liu, F., Huang, J., Zhang, L. et al (2018). Screening for distress in patients with primary brain tumor using distress thermometer: a systematic review and meta-analysis. BMC Cancer, 18, 124.
+
+Norwegian translation version 2, 2022: https://www.helsedirektoratet.no/nasjonale-forlop/hjem-for-pasienter-med-kreft/gjenbrukstekster/temaomrader-og-kartleggingsverktoy/Termometer%20for%20grad%20av%20p%C3%A5kjenning%20-%20NCCN.pdf">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"96AC1151E18B7D0DBDCF02A21425E971">
+		["build_uid"] = <"a809066c-dc79-400e-92ad-4e6fb48cf3fa">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Termometer for grad av påkjenning - NCCN_ 2022
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Termometer for grad av påkjenning
+										value matches {
+											10|[local::at0006],
+											9|[local::at0007],
+											8|[local::at0008],
+											7|[local::at0009],
+											6|[local::at0010],
+											5|[local::at0011],
+											4|[local::at0012],
+											3|[local::at0013],
+											2|[local::at0014],
+											1|[local::at0015],
+											0|[local::at0016]
+										}
+									}
+									CLUSTER[at0024] occurrences matches {0..1} matches {    -- Fysiske problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0130] occurrences matches {0..1} matches {    -- Smerter
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0139] occurrences matches {0..1} matches {    -- Søvn
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0103] occurrences matches {0..1} matches {    -- Tretthet
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0088] occurrences matches {0..1} matches {    -- Tobakkbruk
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0142] occurrences matches {0..1} matches {    -- Rusmisbruk
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0118] occurrences matches {0..1} matches {    -- Hukommelse/konsentrasjon
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0133] occurrences matches {0..1} matches {    -- Seksuell helse
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0100] occurrences matches {0..1} matches {    -- Endringer i matinntaket
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0112] occurrences matches {0..1} matches {    -- Tap av,  eller endring i fysiske ferdigheter
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {    -- Emosjonelle problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0073] occurrences matches {0..1} matches {    -- Bekymring eller angst
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Nedstemthet eller depresjon
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Manglende interesse eller glede
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0150] occurrences matches {0..1} matches {    -- Sorg eller tap
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0067] occurrences matches {0..1} matches {    -- Engstelse
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0070] occurrences matches {0..1} matches {    -- Ensomhet
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Sinne
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0082] occurrences matches {0..1} matches {    -- Endret utseende
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0149] occurrences matches {0..1} matches {    -- Følelse av å være mindre verd eller en byrde
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0019] occurrences matches {0..1} matches {    -- Sosiale problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0046] occurrences matches {0..1} matches {    -- Forholdet til ektefelle eller partner
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {    -- Forholdet til barna
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Forholdet til familiemedlemmer
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0151] occurrences matches {0..1} matches {    -- Forholdet til venner og kolleger
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0152] occurrences matches {0..1} matches {    -- Kommunikasjon med helsetjeneste-teamet
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Mulighet til å få barn
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0018] occurrences matches {0..1} matches {    -- Praktiske problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0157] occurrences matches {0..1} matches {    -- Ta vare på meg selv
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0158] occurrences matches {0..1} matches {    -- Ta vare på andre
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0037] occurrences matches {0..1} matches {    -- Jobb
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0153] occurrences matches {0..1} matches {    -- Skole
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {    -- Bolig
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {    -- Økonomi
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0154] occurrences matches {0..1} matches {    -- Forsikring
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Transport
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Omsorg barn
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0155] occurrences matches {0..1} matches {    -- Få nok mat
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0156] occurrences matches {0..1} matches {    -- Tilgang til medisiner
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0040] occurrences matches {0..1} matches {    -- Beslutning om behandling
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0159] occurrences matches {0..1} matches {    -- Åndelige eller religiøse problemer
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0079] occurrences matches {0..1} matches {    -- Følelse av mening eller hensikt
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0160] occurrences matches {0..1} matches {    -- Endringer i tro eller overbevisning
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0161] occurrences matches {0..1} matches {    -- Døden, det å dø, eller liv etter døden
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0162] occurrences matches {0..1} matches {    -- Konflikt mellom overbevisning og behandling av kreft
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0163] occurrences matches {0..1} matches {    -- Forhold til det hellige
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0164] occurrences matches {0..1} matches {    -- Rituelle behov eller diettmessige krav
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0148] occurrences matches {0..1} matches {    -- Andre problemer
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0004] matches {*}    -- Item tree
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Termometer for grad av påkjenning - NCCN_ 2022">
+					description = <"Kartleggingsverktøy for å vurdere grad av påkjenning hos pasienter med kreft.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Standard, uspesifisert tidspunkt som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Termometer for grad av påkjenning">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"10">
+					description = <"Ekstrem påkjenning.">
+				>
+				["at0007"] = <
+					text = <"9">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"8">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"7">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"6">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"5">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"4">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"3">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"2">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"0">
+					description = <"Ingen påkjenning.">
+				>
+				["at0018"] = <
+					text = <"Praktiske problemer">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Sosiale problemer">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Emosjonelle problemer">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Fysiske problemer">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Omsorg barn">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Bolig">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Økonomi">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Transport">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Jobb">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Beslutning om behandling">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Forholdet til barna">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Forholdet til ektefelle eller partner">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Mulighet til å få barn">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Forholdet til familiemedlemmer">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Nedstemthet eller depresjon">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Sinne">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Engstelse">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Ensomhet">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Bekymring eller angst">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Manglende interesse eller glede">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Følelse av mening eller hensikt">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Endret utseende">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"Tobakkbruk">
+					description = <"">
+				>
+				["at0100"] = <
+					text = <"Endringer i matinntaket">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"Tretthet">
+					description = <"">
+				>
+				["at0112"] = <
+					text = <"Tap av,  eller endring i fysiske ferdigheter">
+					description = <"">
+				>
+				["at0118"] = <
+					text = <"Hukommelse/konsentrasjon">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"Smerter">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"Seksuell helse">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Søvn">
+					description = <"">
+				>
+				["at0142"] = <
+					text = <"Rusmisbruk">
+					description = <"">
+				>
+				["at0148"] = <
+					text = <"Andre problemer">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Følelse av å være mindre verd eller en byrde">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Sorg eller tap">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Forholdet til venner og kolleger">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Kommunikasjon med helsetjeneste-teamet">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Skole">
+					description = <"">
+				>
+				["at0154"] = <
+					text = <"Forsikring">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Få nok mat">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Tilgang til medisiner">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Ta vare på meg selv">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Ta vare på andre">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Åndelige eller religiøse problemer">
+					description = <"">
+				>
+				["at0160"] = <
+					text = <"Endringer i tro eller overbevisning">
+					description = <"">
+				>
+				["at0161"] = <
+					text = <"Døden, det å dø, eller liv etter døden">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Konflikt mellom overbevisning og behandling av kreft">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Forhold til det hellige">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Rituelle behov eller diettmessige krav">
+					description = <"">
+				>
+			>
+		>
+	>
