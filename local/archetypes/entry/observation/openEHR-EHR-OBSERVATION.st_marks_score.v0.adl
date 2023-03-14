@@ -2,13 +2,16 @@
 	openEHR-EHR-OBSERVATION.st_marks_score.v0
 
 concept
-	[at0000]	-- St. Mark's Incontinence Score
+	[at0000]	-- St. Mark's incontinence score
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
+				["name"] = <"Kanika Kuwelker">
+				["organisation"] = <"Helse Vest IKT">
+				["email"] = <"kanika.kuwelker@helse-vest-ikt.no">
 			>
 		>
 	>
@@ -26,43 +29,42 @@ description
 			use = <"Brukes for å registrere resultatene for hvert parameter og deres totalsum for St. Marks inkontinens skår.">
 			keywords = <"anal inkontinens, enkoprese", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.
-">
-			use = <"Use to record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.
-">
+			purpose = <"To record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.">
+			use = <"Use to record the results for each component parameter and their total sum for the St. Mark's Incontinence Score.">
 			keywords = <"fecal incontinence, anal incontinence, bowel incontinence, incontinence, encopresis", ...>
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Hanne Marte Bårholm, Helse Vest IKT, Norway", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Jens-Christian Knapp, Helse Stavanger HF, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Bjørn Næss, DIPS ASA, Norway", "Terje Sagmyr, Helse Vest IKT, Norway", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Ina Wille, Helse-Vest RHF, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Vaizey CJ, Carapeti E, Cahill JA, Kamm MA. Prospective comparison of faecal incontinence grading systems. Gut. 1999 Jan;44(1):77-80. doi: 10.1136/gut.44.1.77. PubMed PMID: 9862829; PubMed Central PMCID: PMC1760067.
 
 Maeda Y, Parés D, Norton C, Vaizey CJ, Kamm MA. Does the St. Mark's incontinence score reflect patients' perceptions? A review of 390 patients. Dis Colon Rectum. 2008 Apr;51(4):436-42. doi: 10.1007/s10350-007-9157-4. Epub 2008 Jan 25. PubMed PMID: 18219532.
 
-Dehli T, Martinussen M, Mevik K, Stordahl A, Sahlin Y, Lindsetmo RO, Vonen B. Translation and validation of the Norwegian version of the fecal incontinence quality-of-life scale. Scand J Surg. 2011;100(3):190-5. doi: 10.1177/145749691110000310. PubMed PMID: 22108748.">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"356D13304E4B10C1B972A2B6E82DDABC">
-		["build_uid"] = <"11905de7-d100-4291-a4f1-71c867c262e1">
+Dehli T, Martinussen M, Mevik K, Stordahl A, Sahlin Y, Lindsetmo RO, Vonen B. Translation and validation of the Norwegian version of the fecal incontinence quality-of-life scale. Scand J Surg. 2011;100(3):190-5. doi: 10.1177/145749691110000310. PubMed PMID: 22108748.
+
+Nasjonal kompetansetjeneste for inkontinens og bekkenbunnsykdom. St. Marks inkontinens score. [Internet]. Universitetssykehuset Nord-Norge; 2022. Available from: https://nekib.helsekompetanse.no/for-helsepersonell/scoringsverktoy/.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"F59702A439ECF316D334E0CE07FEB25E">
+		["build_uid"] = <"863eb3ef-199c-46d8-860d-a8064d93a283">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- St. Mark's Incontinence Score
+	OBSERVATION[at0000] matches {    -- St. Mark's incontinence score
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time event
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -131,11 +133,35 @@ definition
 							}
 						}
 					}
+					INTERVAL_EVENT[at0059] occurrences matches {0..1} matches {    -- Last four weeks
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[openehr::640]
+								}
+							}
+						}
+						width matches {
+							DV_DURATION occurrences matches {0..1} matches {
+								value matches {|P4W|}
+							}
+						}
+					}
 				}
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0057] matches {*}    -- Item tree
+			ITEM_TREE[at0057] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0058] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
 		}
 	}
 
@@ -145,7 +171,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"St. Mark's Incontinence Score">
+					text = <"St. Mark's incontinence score">
 					description = <"A tool for assessing the severity of fecal incontinence.">
 				>
 				["at0001"] = <
@@ -153,7 +179,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Any point in time event">
+					text = <"Any event">
 					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
@@ -300,12 +326,21 @@ ontology
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
+				["at0058"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+				["at0059"] = <
+					text = <"Last four weeks">
+					description = <"Interval of time for the last four weeks.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"St. Marks inkontinens skår">
+					text = <"St. Mark's inkontinensskår">
 					description = <"En klinisk skår for å vurdere alvorlighetsgrad av anal inkontinens.">
 				>
 				["at0001"] = <
@@ -313,8 +348,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uspesifisert tidspunkthendelse">
-					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+					text = <"Uspesifisert hendelse">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
@@ -382,7 +417,7 @@ ontology
 				>
 				["at0038"] = <
 					text = <"Total skår">
-					description = <"Minimumssum = 0 = perfekt kontinens, maksimumssum = 24 = helt inkontinent.">
+					description = <"Summen av poeng på hvert enkelt parameter i St Marks inkontinensskår.">
 				>
 				["at0039"] = <
 					text = <"Lekkasje av flytende avføring">
@@ -459,6 +494,15 @@ ontology
 				["at0057"] = <
 					text = <"*Item tree (en)">
 					description = <"@ internal @">
+				>
+				["at0058"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0059"] = <
+					text = <"Siste fire uker">
+					description = <"Tidsintervall for siste fire uker.">
 				>
 			>
 		>
