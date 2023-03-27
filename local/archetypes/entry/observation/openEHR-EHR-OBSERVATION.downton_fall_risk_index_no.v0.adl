@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.downton_fall_risk_index_no.v0
 
 concept
-	[at0000]	-- Downton fall risk index (norsk modifikasjon)
+	[at0000]	-- Downton fall risk index
 language
 	original_language = <[ISO_639-1::nb]>
 description
@@ -15,34 +15,34 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere resultatet av DFRI risikovurderingen.">
-			use = <"Brukes for å registrere resultatet av DFRI risikovurderingen. Arketypen er basert på norsk modifisert variant av Downton fall risk index, publisert på https://www.itryggehender24-7.no/.">
-			keywords = <"Downton Fall Risk Index", "DFRI", "eldre", "fall", "risiko", "senior alert", "modifisert">
+			purpose = <"For å registrere resultat av Downton fall risk index risikovurdering.">
+			use = <"Brukes for å registrere resultat av Downton fall risk index risikovurderingen. Arketypen er basert på norsk modifisert variant av Downton fall risk index, publisert på https://www.itryggehender24-7.no/.">
+			keywords = <"Downton Fall Risk Index", "DFRI", "eldre", "fall", "risiko", "senior alert", "modifisert", "fallrisiko">
 			misuse = <"">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Bjørn Næss, DIPS AS, Norway">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Ivar Berge, Oslo Universitetssykehus, Norway", "Gunn Elin Blakkisrud, DIPS ASA, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marte Rime Bø, Direktoratet for e-helse, Norway", "Kåre Flø, DIPS ASA, Norway", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Nina Hauge, Helse Fonna, Norway", "Lise Kristin Knutsen, Oslo universitetssykehus, Norway", "Liv Laugen, Oslo universitetssykehus, Norway", "Bjørn Næss, DIPS AS, Norway", "Vilde Richardsen, Universitetssykehuset Nord-Norge, Norway", "Terje Sagmyr, Helse Vest IKT, Norway", "John Tore Valand, Helse Vest IKT, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
 		["references"] = <"Downton JH, Andrews K. Prevalence, characteristics and factors associated with falls among the elderly living at home. Aging (Milano). 1991 Sep;3(3):219-28. doi: 10.1007/BF03324009. PMID: 1764490.
 Rosendahl E, Lundin-Olsson L, Kallin K, Jensen J, Gustafson Y, Nyberg L. Prediction of falls among older people in residential care facilities by the Downton index. Aging Clin Exp Res. 2003 Apr;15(2):142-7. doi: 10.1007/BF03324492. PMID: 12889846. Available from: https://www.researchgate.net/publication/6432597_Prediction_of_falls_among_older_people_in_residential_care_facilities_by_the_Downton_index.
-Downton fall risk index [Internett], l.c. 07.12.2022, Tilgjengelig på: https://www.itryggehender24-7.no/reduser-pasientskader/fallskader/#verkt%C3%B8y/.">
+Downton fall risk index [Internett], l.c. 27.03.2022, Tilgjengelig på: https://www.itryggehender24-7.no/reduser-pasientskader/fallskader/_/attachment/download/086b4c7c-532f-454f-b3f3-57e770f2b2a3:af896ea71016c887ded040bfe3e8bbd30f76035e/downton-fall-risk-index-norsk2022.docx.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"2032789C996247526E95A11A5B39E60F">
-		["build_uid"] = <"e435d223-ce1c-4fa1-84fb-6015a024d03d">
+		["MD5-CAM-1.0.1"] = <"DABA6DDF6BCF561497C2B627252248C4">
+		["build_uid"] = <"ac85614c-d255-4a56-acf5-9a909792ded7">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Downton fall risk index (norsk modifikasjon)
+	OBSERVATION[at0000] matches {    -- Downton fall risk index
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {    -- Uspesifisert hendelse
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert tidspunkthendelse
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -52,7 +52,7 @@ definition
 											1|[local::at0006]
 										}
 									}
-									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Bruk av legemidler
+									ELEMENT[at0007] occurrences matches {0..6} matches {    -- Bruk av legemidler
 										value matches {
 											0|[local::at0008],
 											1|[local::at0009],
@@ -63,9 +63,9 @@ definition
 											0|[local::at0014]
 										}
 									}
-									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Sensorisk funksjon
+									ELEMENT[at0015] occurrences matches {0..3} matches {    -- Sensorisk funksjon
 										value matches {
-											1|[local::at0016],
+											0|[local::at0016],
 											1|[local::at0017],
 											1|[local::at0018],
 											1|[local::at0019]
@@ -87,7 +87,7 @@ definition
 									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Sum risikofatorer
 										value matches {
 											DV_COUNT matches {
-												magnitude matches {|0..5|}
+												magnitude matches {|0..11|}
 											}
 										}
 									}
@@ -98,6 +98,9 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0028] matches {*}    -- Item tree
+		}
 	}
 
 
@@ -106,16 +109,16 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Downton fall risk index (norsk modifikasjon)">
-					description = <"Et validert vurderingsverktøy som brukes til å identifisere risikofaktorer for fall.">
+					text = <"Downton fall risk index">
+					description = <"Et validert verktøy som kan brukes for å identifisere fallrisiko.">
 				>
 				["at0001"] = <
 					text = <"History">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uspesifisert hendelse">
-					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Standard uspesifisert tidspunkthendelse som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
@@ -170,7 +173,7 @@ ontology
 					description = <"">
 				>
 				["at0016"] = <
-					text = <"Ingen endsatt funksjon">
+					text = <"Ingen nedsatt funksjon">
 					description = <"">
 				>
 				["at0017"] = <
@@ -216,6 +219,10 @@ ontology
 				["at0027"] = <
 					text = <"Sum risikofatorer">
 					description = <"Totalsummen av hver parameterkomponent for DFRI.">
+				>
+				["at0028"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
 				>
 			>
 		>
