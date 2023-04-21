@@ -35,6 +35,14 @@ language
 				["email"] = <"marit.alice.venheim@helse-vest-ikt.no, varntzen@ous-hf.no">
 			>
 		>
+		["pt"] = <
+			language = <[ISO_639-1::pt]>
+			author = <
+				["name"] = <"Vanessa Pereira">
+				["organisation"] = <"Luxembourg Institute of Health (LIH)">
+				["email"] = <"vanessapereira@protonmail.com">
+			>
+		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
 			author = <
@@ -124,6 +132,29 @@ The main Sections/Content component has been deliberately left unconstrained. Th
 			keywords = <"*questionnaire, self-report, form, survey, PROM, PREM, PRO, diary, journal (en)", ...>
 			misuse = <"Ska inte användas för att representera information genererad av hälso- och sjukvårdspersonal.">
 		>
+		["pt"] = <
+			language = <[ISO_639-1::pt]>
+			purpose = <"Um contentor para informações fornecidas por um indivíduo, para apoiar uma separação clara dos pacientes gerados a partir de dados de saúde gerados pelo médico.">
+			use = <"Utilização como contentor genérico para registar informações fornecidas por um indivíduo, para apoiar uma separação clara entre os dados de saúde gerados pelo paciente e os dados de saúde gerados pelo médico.
+
+O âmbito do conteúdo deste arquétipo pode ser muito amplo e incluir muitos contextos. O âmbito de conteúdo previsto inclui, mas não se limita a:
+- respostas auto-geradas a questionários, incluindo PREMs ou PROMs
+- diário da dor ou do humor
+- diário de tabagismo
+- resumo de saúde auto-gerada para partilha com outros
+- auto-controlo das medições e observações
+
+O uso antecipado deste arquétipo inclui, mas não está limitado a
+- apresentação de um questionário autodeclarado a um clínico antes de um contacto planeado
+- apresentação de um formulário de pedido de contacto
+- medições diárias dentro de um Registo de Saúde Pessoal
+- dados centrados no paciente num portal clínico partilhado
+- registos de informação gerados pelo paciente a partir de dispositivos pessoais ou médicos
+
+A componente principal das Secções/Conteúdo foi deliberadamente deixada sem constrangimentos. Isto permitirá que seja preenchida com qualquer arquétipo de SECÇÃO ou ENTRADA apropriado para o propósito clínico dentro de um modelo.">
+			keywords = <"questionário", "auto-relatório", "formulário", "inquérito", "PROM", "PREM", "PRO", "diário">
+			misuse = <"Não deve ser utilizado para representar registos gerados por clínicos.">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"En container for informasjon gitt av et individ, for å kunne skille mellom data generert av pasienten og data generert av kliniker.">
@@ -204,22 +235,22 @@ Les sections/contenus principaux sont volontairement sans contraintes. Cela perm
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A63812FE7AE52B5F433DF53EFD8972C9">
-		["build_uid"] = <"ab52af88-77cf-499b-911b-b4647cf48798">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"BBA2C8A4A40921B9CD67FB733F13FBBF">
+		["build_uid"] = <"3c25aa9c-6d3f-46d2-9b04-d2d9fab2afc9">
+		["revision"] = <"1.1.0">
 	>
 
 definition
 	COMPOSITION[at0000] matches {    -- Self-reported data
 		category matches {
-			DV_CODED_TEXT[at0001] matches {    -- Coded text
+			DV_CODED_TEXT matches {    -- Coded text
 				defining_code matches {
 					[openehr::433]
 				}
 			}
 		}
 		context matches {
-			EVENT_CONTEXT[at0002] matches {    -- Event Context
+			EVENT_CONTEXT matches {    -- Event Context
 				other_context matches {
 					ITEM_TREE[at0003] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
@@ -286,14 +317,6 @@ ontology
 					text = <"Selvrapporterte data">
 					description = <"Generisk container for informasjon gitt av et individ.">
 				>
-				["at0001"] = <
-					text = <"Coded text">
-					description = <"">
-				>
-				["at0002"] = <
-					text = <"Event Context">
-					description = <"">
-				>
 				["at0003"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
@@ -354,14 +377,6 @@ ontology
 					text = <"Egenrapporterad data">
 					description = <"Generell behållare för information som tillhandahålls av en individ.">
 				>
-				["at0001"] = <
-					text = <"Coded text">
-					description = <"">
-				>
-				["at0002"] = <
-					text = <"Event Context">
-					description = <"">
-				>
 				["at0003"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
@@ -387,14 +402,6 @@ ontology
 				["at0000"] = <
 					text = <"Selbstberichtete Daten">
 					description = <"Generischer Container für Informationen, die von einer Person bereitgestellt werden.">
-				>
-				["at0001"] = <
-					text = <"Codierter Text">
-					description = <"">
-				>
-				["at0002"] = <
-					text = <"Ereigniskontext">
-					description = <"">
 				>
 				["at0003"] = <
 					text = <"Item tree">
@@ -422,14 +429,6 @@ ontology
 					text = <"Données auto-déclarées">
 					description = <"Conteneur générique pour des informations fournies par un individu.">
 				>
-				["at0001"] = <
-					text = <"Texte codifié">
-					description = <"">
-				>
-				["at0002"] = <
-					text = <"Contexte de l'évènement">
-					description = <"">
-				>
 				["at0003"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
@@ -447,6 +446,32 @@ ontology
 					text = <"Source de l'information">
 					description = <"A propos d'un ou plusieurs types de sources pour les informations contenues dans le rapport.">
 					comment = <"Ces éléments de données peuvent être utilisées lorsque la source d'information est différente de l'auteur ou du rédacteur. Par exemple: 'parent' ou 'soignant'.">
+				>
+			>
+		>
+		["pt"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dados auto-relatados">
+					description = <"Contentor genérico para informação fornecida por um indivíduo.">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Extensão">
+					description = <"Informação adicional necessária para captar conteúdos locais ou para alinhar com outros modelos/formalismos de referência.">
+					comment = <"Por exemplo: requisitos de informação local ou metadados adicionais para alinhar com FHIR.">
+				>
+				["at0005"] = <
+					text = <"Dispositivo">
+					description = <"Para capturar o dispositivo utilizado para reportar dados.">
+				>
+				["at0006"] = <
+					text = <"Fonte de informação">
+					description = <"Sobre um ou mais tipos de fontes para a informação contida no relatório.">
+					comment = <"Este elemento de dados pode ser utilizado quando a fonte de informação é diferente da do autor ou compositor. Por exemplo: 'progenitor'; ou 'cuidador'.">
 				>
 			>
 		>
