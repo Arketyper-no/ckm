@@ -60,16 +60,16 @@ Not to be used to represent or replace formal identification management or for t
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Keisha Barwise, MOHW/IDB HSSP Project, Jamaica", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Randi Brendberg, Helse Nord RHF, Norway", "Candice de Lisser, Ministry of Health and Wellness, Jamaica", "Ludvig Eek Hofmann, Cambio Healthcare Systems AB, Sweden", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Regional forvaltning EPJ, Helse Nord, Norway (Nasjonal IKT redaktør)", "Rebecka Hansson, Cambio Healthcare Systems AB, Sweden", "Evelyn Hovenga, EJSH Consulting, Australia", "Gunnar Jårvik, Helse Vest IKT AS, Norway", "Gunn-Lisbeth Kleiven, Oslo universitetssykehus HF, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Norwegian Review Summary, Norwegian Public Hospitals, Norway", "Natalia Strauch, Medizinische Hochschule Hannover, Germany", "Anders Thurin, VGR, Sweden", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Keisha Barwise, MOHW/IDB HSSP Project, Jamaica", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Randi Brendberg, Helse Nord RHF, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Candice de Lisser, Ministry of Health and Wellness, Jamaica", "Ludvig Eek Hofmann, Cambio Healthcare Systems AB, Sweden", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (Nasjonal IKT redaktør)", "Rebecka Hansson, Cambio Healthcare Systems AB, Sweden", "Evelyn Hovenga, EJSH Consulting, Australia", "Gunnar Jårvik, Helse Vest IKT AS, Norway", "Gunn-Lisbeth Kleiven, Oslo universitetssykehus HF, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Norwegian Review Summary, Norwegian Public Hospitals, Norway", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Natalia Strauch, Medizinische Hochschule Hannover, Germany", "Anders Thurin, VGR, Sweden", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"70B0982AF5F93C6E6350C2631E990C2B">
-		["build_uid"] = <"58f3dbe3-12e3-4ae6-9018-8ab924618621">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"1EBF3CFEF84E2934234BB8422C6E33B4">
+		["build_uid"] = <"20b9bf04-d896-44af-9958-f550caf55483">
+		["revision"] = <"1.0.1">
 	>
 
 definition
@@ -109,14 +109,14 @@ definition
 					}
 				}
 			}
+			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Additional details
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.language(-[a-zA-Z0-9_]+)*\.v1/}
+			}
 			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Comment
 				value matches {
 					DV_TEXT matches {*}
 				}
-			}
-			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.language(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 		}
 	}
