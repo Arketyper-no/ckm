@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.news_uk_rcp.v1
 
 concept
-	[at0000]	-- NEWS (UK RCP)
+	[at0000]	-- National Early Warning Score (NEWS)
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -14,6 +14,14 @@ language
 				["email"] = <"jarl.sandberg@tieto.com, asa.skagerhult@regionostergotland.se">
 			>
 			accreditation = <"Contributors/Reviewers: Sanna Åberg, Andreas Sundström, Erik Sundvall, Niclas Skyttberg, Harriet Haglund, Kirsi Poikela, Anette Larsson">
+		>
+		["fi"] = <
+			language = <[ISO_639-1::fi]>
+			author = <
+				["name"] = <"Vesa Peltola">
+				["organisation"] = <"Tieto Finland Oy">
+				["email"] = <"vesa.peltola@tieto.com">
+			>
 		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
@@ -28,6 +36,7 @@ language
 			author = <
 				["name"] = <"John Tore Valand">
 				["organisation"] = <"Helse Bergen HF">
+				["email"] = <"john.tore.valand@helse-vest-ikt.no">
 			>
 		>
 		["pt-br"] = <
@@ -56,6 +65,15 @@ description
 enskilda mätvärden såsom: OBSERVATION.blood_pressure, OBSERVATION.pulse, OBSERVATION.respirations, OBSERVATION.body_temperature, OBSERVATION.avpu, CLUSTER.ambient_oxygen eller OBSERVATION.indirect_oximetry.
 
 Ska inte användas för barn och ungdomar under 16 år eller under graviditet.">
+		>
+		["fi"] = <
+			language = <[ISO_639-1::fi]>
+			purpose = <"Fysiologisten lukemien ja havaintojen luokitteluun perustuva yksinkertainen menetelmä, jolla tuetaan objektiivista arviointia kliinisen heikkenemisen asteesta yli 16-vuotiailla huonovointisilla potilailla.">
+			use = <"Käytetään tallentamaan pisteytys, jolla voidaan arvioida kliininen heikkenemisen aste yli 16-vuotiaille huonovointisille potilaille.">
+			keywords = <"varoitus, AVPU, RR, HR, BP, lämpötila, SBP, triage, NEWS, Sats, MEWS, EWS, happi, saturaatio", ...>
+			misuse = <"Ei saa käyttää fysiologisten mittausten tai kliinisten havaintojen kirjaamiseen. Käytä tätä tarkoitusta varten OBSERVATION-arkkityyppejä - OBSERVATION.blood_pressure, OBSERVATION.pulse, OBSERVATION.respirations, OBSERVATION.body_temperature, OBSERVATION.avpu, CLUSTER.ambient_oxygen tai OBSERVATION.indirect_oximetry.
+
+Ei saa käyttää alle 16-vuotiaille tai raskaana oleville lapsille / teini-ikäisille.">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -98,7 +116,7 @@ Not to be used for children/teens under the age of 16 years or in pregnancy.">
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "Mauricio Botero, Universidad de Caldas, Colombia", "Bjørn Christensen, Helse Bergen HF, Norway", "Rui Coutinho, Centro Hospitalar do Porto, Portugal", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Cecilie Graver, Oslo universitetssykehus HF, Norway", "Kristian Heldal, Telemark Hospital Trust, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Karl Trygve Kalleberg, Oslo Universitetssykehus, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Vincent McCauley, Medical Software Industry Association, Australia", "James McClay, University of Nebraska Medical Center, United States", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Martin Paulson, Sykehuset i Vestfold, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Navin Ramachandran, NHS, United Kingdom", "Norwegian Review Summary, National ICT Norway, Norway", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Lisbeth Sommervoll, Akershus Universitetssykehus, Norway", "Iztok Stotl, UKCLJ, Slovenia", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "Mauricio Botero, Universidad de Caldas, Colombia", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Bjørn Christensen, Helse Bergen HF, Norway", "Rui Coutinho, Centro Hospitalar do Porto, Portugal", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Cecilie Graver, Oslo universitetssykehus HF, Norway", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (Nasjonal IKT redaktør)", "Kristian Heldal, Telemark Hospital Trust, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Karl Trygve Kalleberg, Oslo Universitetssykehus, Norway", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Hallvard Lærum, Oslo Universitetssykehus HF, Norway", "Vincent McCauley, Medical Software Industry Association, Australia", "James McClay, University of Nebraska Medical Center, United States", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Martin Paulson, Sykehuset i Vestfold, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Vladimir Pizzo, Hospital Sírio Libanês, Brazil", "Navin Ramachandran, NHS, United Kingdom", "Norwegian Review Summary, National ICT Norway, Norway", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Anoop Shah, University College London, United Kingdom", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Lisbeth Sommervoll, Akershus Universitetssykehus, Norway", "Iztok Stotl, UKCLJ, Slovenia", "Rowan Thomas, St. Vincent's Hospital Melbourne, Australia", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
@@ -113,9 +131,9 @@ Modified Early Warning Score (NT RMP), draft archetype, NEHTA Clinical Knowledge
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"259DFDFA72B9C25AD6DBE42BEA9E9468">
-		["build_uid"] = <"9dc95ca0-8dd8-4f42-95a0-451ba2fdd20c">
-		["revision"] = <"1.1.0">
+		["MD5-CAM-1.0.1"] = <"C30BD4B58C9B1B59DB82765542E4662D">
+		["build_uid"] = <"f0a86310-39a5-4ca2-8f30-88182bc00f8e">
+		["revision"] = <"1.2.0">
 	>
 
 definition
@@ -186,6 +204,19 @@ definition
 											}
 										}
 									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {	-- Clinical risk category
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0048, 	-- Low
+													at0049, 	-- Low-medium
+													at0050, 	-- Medium
+													at0051]	-- High
+												}
+											}
+										}
+									}
 									ELEMENT[at0044] occurrences matches {0..1} matches {	-- Comment
 										value matches {
 											DV_TEXT matches {*}
@@ -228,7 +259,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"NEWS (UK RCP)">
+					text = <"National Early Warning Score (NEWS)">
 					description = <"NEWS (National Early Warning Score) is a simple score used to provide an objective indication of a patient's degree of clinical deterioration. This version follows guidance issued by the UK Royal College of Physicians.">
 				>
 				["at0001"] = <
@@ -325,7 +356,7 @@ ontology
 				>
 				["at0025"] = <
 					text = <"V, P or U">
-					description = <"The patient responds only to verbal, pain or stimulus; scored as 3 points.">
+					description = <"The patient responds only to voice or pain, or is unresponsive; scored as 3 points.">
 				>
 				["at0028"] = <
 					text = <"Total score">
@@ -394,12 +425,32 @@ ontology
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"e.g. Local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
+				["at0047"] = <
+					text = <"Clinical risk category">
+					description = <"Overall category representing the urgency and scale of the clinical response required in response to the physiological parameters.">
+				>
+				["at0048"] = <
+					text = <"Low">
+					description = <"Ward-based response.">
+				>
+				["at0049"] = <
+					text = <"Low-medium">
+					description = <"Urgent ward-based response.">
+				>
+				["at0050"] = <
+					text = <"Medium">
+					description = <"Key threshold for urgent response.">
+				>
+				["at0051"] = <
+					text = <"High">
+					description = <"Urgent or emergency response.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"NEWS">
+					text = <"National Early Warning Score (NEWS)">
 					description = <"NEWS (National Early Warning Score) er et skåringsverktøy som benyttes for å gi en objektiv vurdering av grad av klinisk forverring hos en pasient. Denne versjonen følger retningslinjer utgitt av the UK Royal College of Physicians.">
 				>
 				["at0001"] = <
@@ -496,7 +547,7 @@ ontology
 				>
 				["at0025"] = <
 					text = <"V, P eller U">
-					description = <"V - Reagerer på lyd/ tiltale, P - Reagerer på smerte, U - Reagerer ikke; skåres som 3 poeng.">
+					description = <"Pasienten reagerer kun på tiltale (V) eller smerte (P), eller reagerer ikke på tiltale (U), skåres som 3 poeng.">
 				>
 				["at0028"] = <
 					text = <"Totalskår">
@@ -564,6 +615,26 @@ ontology
 					text = <"Tilleggsinformasjon">
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+				["at0047"] = <
+					text = <"Klinisk risiko">
+					description = <"Overordnet kategori som representerer hastegrad og omfang for klinisk respons, basert på skåringen av de fysiologiske variablene.">
+				>
+				["at0048"] = <
+					text = <"Lav">
+					description = <"Oppfølging på sengepost.">
+				>
+				["at0049"] = <
+					text = <"Lav-middels">
+					description = <"Hasteoppfølging på sengepost.">
+				>
+				["at0050"] = <
+					text = <"Middels">
+					description = <"Rask respons.">
+				>
+				["at0051"] = <
+					text = <"Høy">
+					description = <"Øyeblikkelig respons.">
 				>
 			>
 		>
@@ -666,8 +737,8 @@ ontology
 					description = <"El paciente se encuentra alerta o despierto; recibe puntaje de 0.">
 				>
 				["at0025"] = <
-					text = <"V, P o U">
-					description = <"El paciente solo responde a estímulos verbales o dolorosos; recibe puntaje de 3.">
+					text = <"*V, P or U(en)">
+					description = <"*The patient responds only to voice or pain, or is unresponsive; scored as 3 points.(en)">
 				>
 				["at0028"] = <
 					text = <"Puntaje total">
@@ -735,6 +806,26 @@ ontology
 					text = <"Extensión">
 					description = <"Información adicional requerida para contemplar contenidos locales o para alinear con otros modelos o formalismos de referencia">
 					comment = <"ejemplo: requerimientos locales de información o metadatos adicionales necesarios para el alineamiento con FHIR o equivalentes de CIMI.">
+				>
+				["at0047"] = <
+					text = <"*Clinical risk category(en)">
+					description = <"*Overall category representing the urgency and scale of the clinical response required in response to the physiological parameters.(en)">
+				>
+				["at0048"] = <
+					text = <"*Low(en)">
+					description = <"*Ward-based response.(en)">
+				>
+				["at0049"] = <
+					text = <"*Low-medium(en)">
+					description = <"*Urgent ward-based response.(en)">
+				>
+				["at0050"] = <
+					text = <"*Medium(en)">
+					description = <"*Key threshold for urgent response.(en)">
+				>
+				["at0051"] = <
+					text = <"*High(en)">
+					description = <"*Urgent or emergency response.(en)">
 				>
 			>
 		>
@@ -837,8 +928,8 @@ ontology
 					description = <"O paciente está alerta ou acordado. Marcar como 0 ponto.">
 				>
 				["at0025"] = <
-					text = <"V,P ou U">
-					description = <"O paciente responde verbalmente, a dor ou estímulo. Marcar como 3 pontos.">
+					text = <"*V, P or U(en)">
+					description = <"*The patient responds only to voice or pain, or is unresponsive; scored as 3 points.(en)">
 				>
 				["at0028"] = <
 					text = <"Score Total">
@@ -906,6 +997,26 @@ ontology
 					text = <"Extensão">
 					description = <"Informações adicionais necessárias para capturar conteúdo local ou alinhar com outros modelos/formalismos de referência.">
 					comment = <"ex.: Requisitos de informação local ou metadados adicionais para alinhar com equivalentes FHIR ou CIMI.">
+				>
+				["at0047"] = <
+					text = <"*Clinical risk category(en)">
+					description = <"*Overall category representing the urgency and scale of the clinical response required in response to the physiological parameters.(en)">
+				>
+				["at0048"] = <
+					text = <"*Low(en)">
+					description = <"*Ward-based response.(en)">
+				>
+				["at0049"] = <
+					text = <"*Low-medium(en)">
+					description = <"*Urgent ward-based response.(en)">
+				>
+				["at0050"] = <
+					text = <"*Medium(en)">
+					description = <"*Key threshold for urgent response.(en)">
+				>
+				["at0051"] = <
+					text = <"*High(en)">
+					description = <"*Urgent or emergency response.(en)">
 				>
 			>
 		>
@@ -1010,7 +1121,7 @@ ontology
 				>
 				["at0025"] = <
 					text = <"V, P eller U">
-					description = <"Medvetandesänkt. Patienten regerar endast på tilltal eller kraftiga tillrop, på smärta eller inte alls. Sätts till 3 poäng.">
+					description = <"Patienten reagerar endast på tilltal eller smärta, eller reagerar ej. Sätts till 3 poäng.">
 				>
 				["at0028"] = <
 					text = <"Totalpoäng (NEWS)">
@@ -1079,6 +1190,217 @@ ontology
 					text = <"Tilläggsinformation">
 					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
 					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.">
+				>
+				["at0047"] = <
+					text = <"Klinisk riskkategori">
+					description = <"Riskkategorisering baserad på de fysiologiska parametrarna samt beskrivning av lämplig responsnivå för avdelningen.">
+				>
+				["at0048"] = <
+					text = <"Låg">
+					description = <"Avdelningsbaserade åtgärder.">
+				>
+				["at0049"] = <
+					text = <"Låg/medium">
+					description = <"Brådskande avdelningsbaserade åtgärder.">
+				>
+				["at0050"] = <
+					text = <"Medium">
+					description = <"Brådskande åtgärder.">
+				>
+				["at0051"] = <
+					text = <"Hög">
+					description = <"Akuta åtgärder.">
+				>
+			>
+		>
+		["fi"] = <
+			items = <
+				["at0000"] = <
+					text = <"NEWS (UK RCP)">
+					description = <"NEWS (National Early Warning Score) on yksinkertainen pisteytysjärjestelmä, jolla saadaan objektiivista tietoa potilaan tilan kliinisestä heikkenemisestä. Tämä versio noudattaa UK Royal College of Physicians -järjestön ohjeita.">
+				>
+				["at0001"] = <
+					text = <"Tapahtumasarja">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Ajankohta">
+					description = <"Tietty päivämäärä ja/tai kellonaika, joka voi olla määritetty tarkasti jossakin mallissa tai suorituksen aikana.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Systolinen verenpaine">
+					description = <"Arvoalueluokka potilaan systolisen verenpaineen (SVP) mittausta varten.">
+				>
+				["at0005"] = <
+					text = <"Syke">
+					description = <"Arvoalueluokka potilaan sykkeen mittausta varten.">
+				>
+				["at0006"] = <
+					text = <"Hengitystaajuus">
+					description = <"Arvoalueluokka potilaan hengitystaajuuden (HT) mittausta varten.">
+				>
+				["at0007"] = <
+					text = <"Ruumiinlämpö">
+					description = <"Arvoalueluokka potilaan ruumiinlämmön (lämpö) mittausta varten.">
+				>
+				["at0008"] = <
+					text = <"Tajunnantaso">
+					description = <"Potilaan tajunnantason pisteet AVPU-asteikolla.">
+				>
+				["at0010"] = <
+					text = <"<= 40 tai >= 131">
+					description = <"Mitattu syke on pienempi tai yhtä suuri kuin 40 lyöntiä minuutissa tai suurempi tai yhtä suuri kuin 131 lyöntiä minuutissa; annetaan 3 pistettä.">
+				>
+				["at0011"] = <
+					text = <"111-130">
+					description = <"Mitattu syke on 111–130 lyöntiä minuutissa; annetaan 2 pistettä.">
+				>
+				["at0012"] = <
+					text = <"41–50 tai 91–110">
+					description = <"Mitattu syke on 41–50 lyöntiä minuutissa tai 91–110 lyöntiä minuutissa; annetaan 1 piste.">
+				>
+				["at0013"] = <
+					text = <"51-90">
+					description = <"Mitattu syke on 51–90 lyöntiä minuutissa; annetaan 0 pistettä.">
+				>
+				["at0014"] = <
+					text = <"111-219">
+					description = <"Mitattu systolinen verenpaine on 111–219 mmHg; annetaan 0 pistettä.">
+				>
+				["at0015"] = <
+					text = <"101-110">
+					description = <"Mitattu systolinen verenpaine on 101–110 mmHg; annetaan 1 piste.">
+				>
+				["at0016"] = <
+					text = <"91-100">
+					description = <"Mitattu systolinen verenpaine on 91–100 mmHg; annetaan 2 pistettä.">
+				>
+				["at0017"] = <
+					text = <"<= 90 tai >= 220">
+					description = <"Mitattu systolinen verenpaine on pienempi tai yhtä suuri kuin 90 mmHg tai suurempi tai yhtä suuri kuin 220 mmHg; annetaan 3 pistettä.">
+				>
+				["at0018"] = <
+					text = <"12-20">
+					description = <"Mitattu hengitystaajuus on 12–20 hengitystä minuutissa; annetaan 0 pistettä.">
+				>
+				["at0019"] = <
+					text = <"9-11">
+					description = <"Mitattu hengitystaajuus on 9–11 hengitystä minuutissa; annetaan 1 pistettä.">
+				>
+				["at0020"] = <
+					text = <"21-24">
+					description = <"Mitattu hengitystaajuus on 21–24 hengitystä minuutissa; annetaan 2 pistettä.">
+				>
+				["at0021"] = <
+					text = <"<= 8 tai >= 25">
+					description = <"Mitattu hengitystaajuus on pienempi tai yhtä suuri kuin 8 hengitystä minuutissa tai suurempi tai yhtä suuri kuin 25 hengitystä minuutissa; annetaan 3 pistettä.">
+				>
+				["at0022"] = <
+					text = <"36,1-38,0">
+					description = <"Mitattu ruumiinlämpö on 36,1–38,0 celsiusastetta; annetaan 0 pistettä.">
+				>
+				["at0023"] = <
+					text = <"35,1–36,0 tai 38,1–39,0">
+					description = <"Mitattu ruumiinlämpö on 35,1–36,0 celsiusastetta tai 38,1–39,0 celsiusastetta; annetaan 1 piste.">
+				>
+				["at0024"] = <
+					text = <"A">
+					description = <"Potilas on valppaana tai hereillä; annetaan 0 pistettä.">
+				>
+				["at0025"] = <
+					text = <"V, P tai U">
+					description = <"Potilas reagoi vain puhutteluun, kipuun tai ärsykkeeseen; annetaan 3 pistettä.">
+				>
+				["at0028"] = <
+					text = <"Kokonaispisteet">
+					description = <"NEWS-parametrin osa-alueiden pisteiden summa.">
+					comment = <"Kokonaispisteet voidaan luoda suorituksen aikana.">
+				>
+				["at0029"] = <
+					text = <"Happisaturaatio">
+					description = <"Arvoalueluokka potilaan happisaturaation mittausta varten.">
+				>
+				["at0030"] = <
+					text = <">= 96">
+					description = <"Happisaturaatiotaso on suurempi tai yhtä suuri kuin 96%; annetaan 0 pistettä.">
+				>
+				["at0031"] = <
+					text = <"94-95">
+					description = <"Happisaturaatiotaso on 94–95 %; annetaan 1 piste.">
+				>
+				["at0032"] = <
+					text = <"92-93">
+					description = <"Happisaturaatiotaso on 92–93 %; annetaan 2 pistettä.">
+				>
+				["at0033"] = <
+					text = <"<=91">
+					description = <"Happisaturaatiotaso on pienempi tai yhtä suuri kuin 91 %; annetaan 3 pistettä.">
+				>
+				["at0034"] = <
+					text = <"Lisähappi">
+					description = <"Arvoalueluokka sen mukaan, saako potilas lisähappea.">
+				>
+				["at0036"] = <
+					text = <"Ei">
+					description = <"Potilas ei saa lisähappea; annetaan 0 pistettä.">
+				>
+				["at0037"] = <
+					text = <"Kyllä">
+					description = <"Potilas saa lisähappea; annetaan 2 pistettä.">
+				>
+				["at0038"] = <
+					text = <">=39,1">
+					description = <"Ruumiinlämpö on suurempi kuin/yhtä suuri kuin 39,1 celsiusastetta; annetaan 2 pistettä.">
+				>
+				["at0039"] = <
+					text = <"<=35,0">
+					description = <"Ruumiinlämpö on pienempi kuin/yhtä suuri kuin 35 celsiusastetta; annetaan 3 pistettä.">
+				>
+				["at0041"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0043"] = <
+					text = <"Sekoittavat tekijät">
+					description = <"Kuvaus mahdollisista satunnaisista tekijöistä, jotka ovat saattaneet vaikuttaa pistemäärään.">
+					comment = <"Esimerkki: Potilaalla on keuhkoahtaumatauti.">
+				>
+				["at0044"] = <
+					text = <"Kommentti">
+					description = <"NEWS-kokonaispisteiden kertomusmuodossa olevat lisätiedot, joita ei voida ilmoittaa muissa kentissä.">
+				>
+				["at0045"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0046"] = <
+					text = <"Laajennus">
+					description = <"Lisätiedot, joita tarvitaan paikallisen asiayhteyden kirjaamiseksi tai yhtenäistämiseksi muiden viitemallien tai formalismien kanssa.">
+					comment = <"Esimerkiksi paikalliset tietovaatimukset tai muu metadata, joilla saadaan aikaan vastaavuus vastaavien FHIR- tai CIMI-tietojen kanssa.">
+				>
+				["at0047"] = <
+					text = <"Riskiluokka">
+					description = <"Luokitus, joka kuvaa fysiologisiin parametreihin tarvittavan kliinisen vasteen kiireellisyyttä ja laajuutta. ">
+				>
+				["at0048"] = <
+					text = <"Matala">
+					description = <"Matala riski">
+				>
+				["at0049"] = <
+					text = <"Matala-kohtalainen">
+					description = <"Matala/kohtalainen riski">
+				>
+				["at0050"] = <
+					text = <"Kohtalainen">
+					description = <"Kohtalainen riski">
+				>
+				["at0051"] = <
+					text = <"Korkea">
+					description = <"Korkea riski">
 				>
 			>
 		>
