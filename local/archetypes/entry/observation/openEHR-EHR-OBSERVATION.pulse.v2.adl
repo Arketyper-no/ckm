@@ -67,6 +67,15 @@ language
 				["email"] = <"pablo.pazos@cabolabs.com">
 			>
 		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			author = <
+				["name"] = <"Joost Holslag">
+				["organisation"] = <"Nedap">
+				["email"] = <"joost.holslag@nedap.com">
+			>
+			accreditation = <"MD">
+		>
 		["es-co"] = <
 			language = <[ISO_639-1::es-co]>
 			author = <
@@ -138,9 +147,7 @@ I vissa fall är det dock viktigt att skilja pulsmätning i en perifer artär, e
 
 I utvecklingen av denna arketyp har det varit en viss spänning kring presentationen av pulsens eller hjärtslagets regelbundenhet. Denna arketyp presenterar de relevanta datapunkterna separat: Först fastställda \"Regelbunden\" och \"Oregelbunden\" och sedan ytterligare alternativ om \"Oregelbunden\" väljs dvs. \"regelbundet oregelbunden\" och \"oregelbundet oregelbunden\".
 
-I praktiken skulle de kliniska systemen kunna erbjuda användarna en kombination av värdena från den \"regelbundna\" och \"oregelbundna typen\"- exempelvis \"regelbunden\", \"regelbundet oregelbunden\" och \"oregelbundet oregelbunden\" som hämtas från dessa två fält. Data kan registreras mot båda fälten med antagandet att om en av de oregelbundna typerna väljs, så är det \"oregelbundna\" värdet i dataelementet \"regelbunden\" också automatiskt markerat.
-
-">
+I praktiken skulle de kliniska systemen kunna erbjuda användarna en kombination av värdena från den \"regelbundna\" och \"oregelbundna typen\"- exempelvis \"regelbunden\", \"regelbundet oregelbunden\" och \"oregelbundet oregelbunden\" som hämtas från dessa två fält. Data kan registreras mot båda fälten med antagandet att om en av de oregelbundna typerna väljs, så är det \"oregelbundna\" värdet i dataelementet \"regelbunden\" också automatiskt markerat.">
 			keywords = <"frekvens", "rytm", "slag", "puls", "hjärta", "vitaltecken">
 			misuse = <"Ska inte användas för att registrera andningsfrekvens i samband med EKG-rapporter. Till detta ska arketypen OBSERVATION.ecg användas.
 
@@ -265,11 +272,11 @@ In development of this archetype, there has been some tension around representat
 
 In certain situations it is important to be very specific so that a rate observed at a peripheral body site, such as the radial artery, can be differentiated from the rate of the heart. To record a pulse deficit, record the measurements of the mechanical heart rate and a peripheral pulse rate in two instances of this archetype - the difference between these measurments is the pulse deficit. The actual pulse deficit will be recorded in a separate OBSERVATION archetype.">
 			keywords = <"rate", "rhythm", "beat", "pulse", "heart", "vital", "sign">
-			misuse = <"Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetypefor this purpose.
+			misuse = <"Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetype for this purpose.
 
 Not to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, or auscultatory findings.
 
-In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  
+In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse. A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses. 
 
 Not to be used to record fetal heart rate - use the OBSERVATION.fetal_heart archetype for this purpose.
 
@@ -317,6 +324,33 @@ No debe ser utilizado para registrar la frecuencia cardiaca fetal, esto se regis
 
 Conceptos como la frecuencia cardiaca objetivo deben ser registrados en arquetipos EVALUATION relacionados a objetivos sobre signos vitales y ejercicio.">
 		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			purpose = <"Voor het vastleggen van de frequentie en andere eigenschappen van de pols of de hartslag.">
+			use = <"Gebruik voor het vastleggen van de aanwezigheid of afwezigheid van een pols of hartslag.
+
+In de praktijk worden de termen hart frequentie and polsfrequentie vaak door elkaar gebruikt, hoewel ze op andere locaties op het lichaam gemeten kunnen worden. Dit archetype is bedoeld om gebruikt te worden voor beide termen en het element meetlocatie wordt gebruikt om ze te onderscheiden.
+
+Gebruik voor het vastleggen van een meting van de polsfrequentie of de hartfrequentie, observaties over het bijbehorende patroon, karakter en de klinische interpretatie van de bevindingen.
+
+Metingen zoals de maximale pols- of hartfrequentie gedurende een interval kunnen worden vastgelegd met behulp van 'maximum' gebeurtenis. Andere momenten of interval gebeurtenissen kunnen gespecificieerd worden in een template of terwijl de applicatie loopt.
+
+Tijdens de ontwikkeling van dit archetype is er spanning geweest rond het vastleggen van de regulariteit van de pols- of hartfreqeuntie. Dit archetype legt de relevante data apart vast: ten eerste door het vastleggen van 'regulair' of 'irregulair' en vervolgens, indien 'irregulair', de extra opties 'regelmatig irregulair' en 'onregelmatig irregulair'. In d praktijk kunnen klinische systemen een combinatie tonen aan de gebruiker van de waardes van de 'regulariteit' en 'irregulair type' - bijvoorbeeld, 'regulair', 'regemlatig irregulair' en 'onregelmatig irregulair' gekozen uit deze twee data elementen. Data kan vastgelegd worden in beide elementen onder de aanname dat wanneer een van de irregulaire types gekozen wordt, dat automatisch de waarde 'irregulair' wordt gekozen in het data element 'regulariteit'.
+
+In bepaalde situaties is het belangrijk om heel specifiek te zijn zodat de frequentie, geobserveerd aan een perifeer lichaamslocatie, zoals de arteria radialis, onderscheiden kan worden van de hartfrequentie. Om een polsdeficit vast te leggen, dient de meting van de mechanische hartfrequentie en een perifere hartfrequentie in twee aparte versies van dit archetype vastgelegd te worden - het verschil tussen deze metingen is het polsdeficit. Het daadwerkelijke polsdeficit wordt in een apart OBSERVATION archetype vastgelegd.">
+			keywords = <"frequentie", "ritme", "slag", "pols", "hart", "vitaal", "teken">
+			misuse = <"Niet te gebruiken voor het vastleggen van de R-R frequentie in de context van een electrocardiogram verslag - gebruik voor dat doel het OBSERVATION.ecg archetype.
+
+Niet te gebruiken voor het vastleggen van andere details van een volledig cardiovasculair onderzoek of beoordeling. Andere specifieke CLUSTER archetypes worden gebruikt voor het vastleggen van eigenschappen als apexhartslag, geruizen en bevindingen bij auscultatie. 
+
+In het bijzonder, is dit archetype niet bedoeld voor het vastleggen van een beoordeling van perifere vaculaire ziekte, die verslaglegging vereisen van de aanwezigheid of kracht van elke individuele perifere pols. Een specifiek CLUSTER archetype wordt gebruikt voor het vastleggen van bevindingen bij onderzoek van de perifere hartslag.
+
+Niet te gebruiken voor het vastleggen van foetale hartfrequentie - gebruik voor dat doel het OBSERVATION.fetal_heart archetype.
+
+Niet te gebruiken voor het vastleggen van het polsdeficit - gebruik voor dat doel een specifiek OBSERVATION archetype.
+
+Concepten zoals streef hart frequentie dienen vastgelegd te worden in een apart EVALUATION archetype gerelateerd aan doelen en inspannings beoordeling.">
+		>
 		["es-co"] = <
 			language = <[ISO_639-1::es-co]>
 			purpose = <"Registrar la medida de la frecuencia de pulso, la frecuencia cardiaca, y la descripción de las características asociadas como uno de los componentes de las observación de signos vitales">
@@ -344,18 +378,20 @@ Concepts such as Target Heart Rate should be recorded in separate EVALUATION arc
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, Norway", "Magnus Alvestad, Helse Bergen HF, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Diego Bosca, IBIME group, Spain", "Pål Brekke, OUS Rikshospitalet, Norway", "Einar Bugge, UNN HF, Fag- og forskningssenteret, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Angela de Zwart, Orion Health, New Zealand", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "John George, HSCIC, United Kingdom", "Soon Ghee Yap, Singapore General Hospital, Singapore", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Erling Are Hole, Helse Bergen, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Karlsen, DIPS ASA, Norway", "Athanasios Kleontas, Ergobyte Informatics, Greece", "Shinji Kobayashi, Kyoto University, Japan", "Robert Legan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Lars Ivar Mehlum, Nasjonal IKT HF, Norway", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Monica Merchat, Hospital Cardiac Electrophysiology, MS Health Informatics Student, former ICU nurse, former Anesthesia Technician, United States", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Arturo Romero, SESCAM, Spain", "Jussara Rotzsch, UNB, Brazil", "Thomas Schopf, University Hospital of North-Norway, Norway", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Thor-Einar Stemland, Helse Bergen, FOU Seksjon for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Jan Inge Sørheim, Helse Bergen, Haukeland uniersitetssjukehus, Norway", "Micaela Thierley, Helse Bergen/Haraldsplass sykehus, Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <"Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, Norway", "Magnus Alvestad, Helse Bergen HF, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Erling Are Hole, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Diego Bosca, IBIME group, Spain", "Pål Brekke, OUS Rikshospitalet, Norway", "Einar Bugge, UNN HF, Fag- og forskningssenteret, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Angela de Zwart, Orion Health, New Zealand", "Graham Denyer, Australian Antarctic Division, Australia", "Paul Donaldson, Nursing Informatics Australia, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)", "John George, HSCIC, United Kingdom", "Soon Ghee Yap, Singapore General Hospital, Singapore", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (Nasjonal IKT redaktør)", "Bjørn Grøva, Diretoratet for e-helse, Norway", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Jan Inge Sørheim, Helse Bergen, Haukeland uniersitetssjukehus, Norway", "Lars Ivar Mehlum, Nasjonal IKT HF, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Karlsen, DIPS ASA, Norway", "Athanasios Kleontas, Ergobyte Informatics, Greece", "Shinji Kobayashi, Kyoto University, Japan", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Robert Legan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Monica Merchat, Hospital Cardiac Electrophysiology, MS Health Informatics Student, former ICU nurse, former Anesthesia Technician, United States", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Arturo Romero, SESCAM, Spain", "Jussara Rotzsch, UNB, Brazil", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Thomas Schopf, University Hospital of North-Norway, Norway", "Thor-Einar Stemland, Helse Bergen, FOU Seksjon for e-helse, Norway", "Micaela Thierley, Helse Bergen/Haraldsplass sykehus, Norway", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
-		["references"] = <"Direct communication with clinicians.">
+		["references"] = <"Direct communication with clinicians.
+
+Avgrenet fra: Pulse/Heart beat, Published archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2023-07-11]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.4295">
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"2A395DB69BFC39A2C4FEE4E101800EF0">
-		["build_uid"] = <"07d84aa5-013e-4aeb-8df0-e4150b1d5a83">
-		["revision"] = <"2.0.1">
+		["MD5-CAM-1.0.1"] = <"571281563B4792B8BEC58F66D9756AC8">
+		["build_uid"] = <"567563cb-5e9b-4de9-abc1-e7a497b60ea4">
+		["revision"] = <"2.0.2">
 	>
 
 definition
@@ -545,8 +581,6 @@ definition
 			}
 		}
 	}
-
-
 
 
 ontology
@@ -1059,7 +1093,7 @@ ontology
 				["at1019"] = <
 					text = <"Method">
 					description = <"Method used to observe the pulse or heart beat.">
-					comment = <"For example, auscultation or electronic monitoring. ">
+					comment = <"For example, auscultation or electronic monitoring.">
 				>
 				["at1022"] = <
 					text = <"Clinical description">
@@ -1068,7 +1102,7 @@ ontology
 				["at1023"] = <
 					text = <"Clinical interpretation">
 					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the pulse or heart beat findings, including the rhythm.">
-					comment = <"Coding with a terminology is preferred, where possible. For example: Bradycardia, Extrasystoles or Sinus rhythm. Multiple statements are allowed. ">
+					comment = <"Coding with a terminology is preferred, where possible. For example: Bradycardia, Extrasystoles or Sinus rhythm. Multiple statements are allowed.">
 				>
 				["at1024"] = <
 					text = <"Present">
@@ -1820,7 +1854,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Puls/Hjärtfrekvens">
-					description = <"*The rate and associated attributes for a pulse or heart beat. (en)">
+					description = <"Hjärtslagens eller pulsens frekvens och tillhörande attribut.">
 				>
 				["at0001"] = <
 					text = <"structure">
@@ -1836,7 +1870,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Frekvens">
-					description = <"*The rate of the pulse or heart beat, measured in beats per minute. (en)">
+					description = <"Puls eller hjärtfrekvens, mätt i slag per minut.">
 				>
 				["at0005"] = <
 					text = <"Regelbunden">
@@ -1885,7 +1919,7 @@ ontology
 				["at1005"] = <
 					text = <"Närvaro">
 					description = <"Närvaro av puls eller hjärtslag.">
-					comment = <"*It can be implied that the pulse or heart beat is present if Rate >0 /min. (en)">
+					comment = <"Puls eller hjärt">
 				>
 				["at1013"] = <
 					text = <"Utrustning">
@@ -1912,7 +1946,7 @@ ontology
 				["at1023"] = <
 					text = <"Klinisk tolkning">
 					description = <"Enstaka ord, fras eller kort beskrivning om den kliniska innebörden och betydelsen av fynd från puls eller hjärtslag, inklusive rytm.">
-					comment = <"Kodning med en terminologi är att föredra, om det är tillämpligt. Exempelvis: bradykardi, prematura slag eller sinusrytm. Flera utlåtanden är tillåtna.">
+					comment = <"Kodning med en terminologi är att föredra, om det är tillämpligt. Exempelvis bradykardi, prematura slag eller sinusrytm. Flera utlåtanden är tillåtna.">
 				>
 				["at1024"] = <
 					text = <"Närvaro">
@@ -1929,7 +1963,7 @@ ontology
 				["at1030"] = <
 					text = <"Karaktär">
 					description = <"Beskrivning av pulsens eller hjärtslagets karaktär.">
-					comment = <"Kodning med en terminologi är önskvärd, om det är tillämpligt. Exempelvis: *full, thready, bounding, slow rising, or collapsing.* Flera termer kan registreras.">
+					comment = <"Kodning med en terminologi är önskvärd, om det är tillämpligt. Exempelvis *full, trådfin, kraftig, långsamt stigande eller Corrigans puls.">
 				>
 				["at1032"] = <
 					text = <"Palpation">
@@ -2658,6 +2692,218 @@ ontology
 				["at1059"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om målingen som ikke er dekket av andre felt.">
+				>
+			>
+		>
+		["nl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pols/Hartfrequentie">
+					description = <"De frequentie en bijbehorende eigenschappen van de pols- of hartfrequentie.">
+				>
+				["at0001"] = <
+					text = <"structure">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"history">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Elke gebeurtenis">
+					description = <"Standaard, ongespecificeerd punt in de tijd, of een interval dat gespecifieerd kan worden in een template of tijdens het lopen van de applicatie.">
+				>
+				["at0004"] = <
+					text = <"Frequentie">
+					description = <"De frequentie van pols- of hartslag, gemeten in slagen per minuut.">
+				>
+				["at0005"] = <
+					text = <"Regulariteit.">
+					description = <"Regulariteit van de pols- of hartslag.">
+				>
+				["at0006"] = <
+					text = <"Regulair.">
+					description = <"Het patroon is regulair.">
+				>
+				["at0007"] = <
+					text = <"Regelmatig irregulair">
+					description = <"Het patroon is onregelmatig in een regulair patroon. Bijvoorbeeld, een gemiste slag elke 'n' slagen.">
+				>
+				["at0008"] = <
+					text = <"Onregelmatig irregulair.">
+					description = <"Het patroon is onregelmatig op een chaotisch en onvoorspelbare manier. Bijvoorbeeld atrium fibrilleren.">
+				>
+				["at0010"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"List">
+					description = <"@ internal @">
+				>
+				["at0013"] = <
+					text = <"Houding">
+					description = <"De lichaamshouding van de onderzochte tijdens de observatie.">
+				>
+				["at1000"] = <
+					text = <"Liggend">
+					description = <"De onderzochte lag plat.">
+				>
+				["at1001"] = <
+					text = <"Zittend">
+					description = <"De onderzochte zat (bijvoorbeeld op bed of in een stoel).">
+				>
+				["at1002"] = <
+					text = <"Achteroverhellend">
+					description = <"De onderzochte helde achterover in een hoek van ongeveer 45 graden, met de benen omhoog op het niveau van het bekken. Bijvoorbeeld in een bed of ligstoel.">
+				>
+				["at1003"] = <
+					text = <"Staand/rechtop">
+					description = <"De onderzochte stond, liep of was aan het rennen.">
+				>
+				["at1005"] = <
+					text = <"Aanwezigheid">
+					description = <"Aanwezigheid van een pols- of hartslag.">
+					comment = <"Er mag afgeleid worden dat een pols- of hartslag aanwezig is bij frequentie van >0/min.">
+				>
+				["at1013"] = <
+					text = <"Apparaat">
+					description = <"Details over het apparaat dat gebruikt is om de pols- of hartslag te meten.">
+				>
+				["at1017"] = <
+					text = <"Inspanning">
+					description = <"Details over de fysieke inspanning ondernomen tijdens het onderzoek.">
+				>
+				["at1018"] = <
+					text = <"Beïnvloedende factoren">
+					description = <"Verhalende beschrijving van incidentele factoren die de interpretatie van de bevindingen kan beïnvloeden.">
+					comment = <"Bijvoorbeeld: aanwezigheid van een pacemaker, angst, pijn of koorts etc.">
+				>
+				["at1019"] = <
+					text = <"Methode">
+					description = <"De gebruikte methode voor het observeren van de pols- of hartslag.">
+					comment = <"Bijvoorbeeld: auscultatie of elektronische monitoring.">
+				>
+				["at1022"] = <
+					text = <"Klinische beschrijving">
+					description = <"Verhalende beschrijving van de pols- of hartslag.">
+				>
+				["at1023"] = <
+					text = <"Klinische interpretatie.">
+					description = <"Een enkel woord, een uitdruking of een korte beschrijving die de klinische betekenis weergeeft van de gevonden pols- of hartslag, inclusief het ritme.">
+					comment = <"Coderen met een terminologie verdient de voorkeur, waar mogelijk, Bijvoorbeeld: bradycard, extrasystolen of sinus ritme. Meerdere uitspraken toegestaan.">
+				>
+				["at1024"] = <
+					text = <"Aanwezig">
+					description = <"Een pols- of hartslag kan worden waargenomen.">
+				>
+				["at1025"] = <
+					text = <"Niet waargenomen">
+					description = <"Een pols- of hartslag kan niet worden waargenomen.">
+				>
+				["at1028"] = <
+					text = <"Irregulair.">
+					description = <"Het patroon is irregulair.">
+				>
+				["at1030"] = <
+					text = <"Karakter">
+					description = <"Beschrijving van het karakter van een pols- of hartslag.">
+					comment = <"Coderen met een terminologie is gewenst, waar mogelijk. Bijvoorbeeld: vol, zwak, collaberend, 	
+traag stijgend of instortend. Er kunnen meerdere termen worden vastgelegd.">
+				>
+				["at1032"] = <
+					text = <"Palpatie">
+					description = <"De bevindingen werden geobserveerd middels fysieke aanraking door de onderzoeker van de onderzochte.">
+				>
+				["at1033"] = <
+					text = <"Auscultatie">
+					description = <"De bevindingen werden geobserveerd via een apparaat zoals een stethoscoop.">
+				>
+				["at1034"] = <
+					text = <"Automatisch, noninvasief">
+					description = <"De bevindingen zijn noninvasief geobserveerd met een apparaat zoals een pulsoximeter of een stethoscoop.">
+				>
+				["at1036"] = <
+					text = <"Maximum">
+					description = <"Maximum pols- of hartslag geobserveerd tijdens een periode van inspanning">
+				>
+				["at1037"] = <
+					text = <"Lichaamslocatie">
+					description = <"De lichaamslocatie waar de pols- of hartslag geobserveerd werden.">
+				>
+				["at1038"] = <
+					text = <"Arteria radialis sinistra">
+					description = <"De linker arteria radialis.">
+				>
+				["at1039"] = <
+					text = <"Ateria radialis dextra">
+					description = <"De rechter arteria radialis.">
+				>
+				["at1040"] = <
+					text = <"Hart">
+					description = <"De regio van het hart.">
+				>
+				["at1041"] = <
+					text = <"Arteria carotis sinistra">
+					description = <"De linker arteria carotis.">
+				>
+				["at1042"] = <
+					text = <"Arteria carotis dextra">
+					description = <"De rechter arteria carotis.">
+				>
+				["at1043"] = <
+					text = <"Arteria femoralis sinistra">
+					description = <"De linker arteria femoralis.">
+				>
+				["at1044"] = <
+					text = <"Arteria femoralis dextra">
+					description = <"De rechter arteria femoralis.">
+				>
+				["at1047"] = <
+					text = <"Vinger">
+					description = <"Een niet nader omschreven vinger.">
+				>
+				["at1048"] = <
+					text = <"Arteria brachialis sinistra">
+					description = <"De linker arteria brachialis.">
+				>
+				["at1049"] = <
+					text = <"Arteria brachialis dextra">
+					description = <"De rechter arteria brachialis.">
+				>
+				["at1050"] = <
+					text = <"Automatisch, invasief">
+					description = <"De bevindingen zijn invasief geobserveerd met een apparaat zoals een arteriele catheter.">
+				>
+				["at1051"] = <
+					text = <"Oorlel">
+					description = <"Het lelletje van een ongespecificeerd oor.">
+				>
+				["at1054"] = <
+					text = <"Teen">
+					description = <"Een niet nader omschreven vinger.">
+				>
+				["at1055"] = <
+					text = <"Irregulair type.">
+					description = <"Specifieker patroon van een irregulaire pols- of hartslag.">
+					comment = <"Selectie van een waarde van deze codelijst is alleen valide indien 'irregulair' gekozen is bij het 'regulariteit' element.">
+				>
+				["at1056"] = <
+					text = <"Uitbreiding">
+					description = <"Extra informatie benodigd voor het vastleggen van lokale content of voor het verbinden met andere referentie modellen.">
+					comment = <"Bijvoobeeld lokale informatiebehoefte of extra metadata om te verbinden met FHIR of CIMI.">
+				>
+				["at1057"] = <
+					text = <"Klinische interpretatie">
+					description = <"Algemeen label om uitspraken over de pols- of hartslag toe te staan.">
+				>
+				["at1058"] = <
+					text = <"Ritme">
+					description = <"Specifieke conclusies over het ritme van de pols- of hartslag, getrokken uit een combinatie van hartfrequentie, patroon en andere eigenschappen waargenomen bij onderzoek.">
+				>
+				["at1059"] = <
+					text = <"Opmerking">
+					description = <"Extra beschrijving van pols- of hartfrequentie bevindingen die niet passen binnen andere velden.">
 				>
 			>
 		>
