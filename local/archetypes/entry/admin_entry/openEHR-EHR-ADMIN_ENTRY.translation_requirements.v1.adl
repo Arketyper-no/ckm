@@ -9,9 +9,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"John Tore Valand and Vebjørn Arntzen">
-				["organisation"] = <"Helse Bergen HF and Oslo University Hospital">
-				["email"] = <"john.tore.valand@helse-bergen.no and varntzen@ous-hf.no">
+				["name"] = <"John Tore Valand and Vebjørn Arntzen, Marit Alice Venheim">
+				["organisation"] = <"Helse Bergen HF and Oslo University Hospital, Helse Vest IKT">
+				["email"] = <"john.tore.valand@helse-bergen.no and varntzen@ous-hf.no, marit.alice.venheim@helse-vest-ikt.no">
 			>
 		>
 	>
@@ -58,35 +58,42 @@ Not to be used to record details about an interpretation that was performed - us
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Erling Are Hole, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Birgitte Bjerkely, Senter for sjeldne diagnoser, OUS, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Valborg Ellingsen, Haraldsplass Diakonale sykehus, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Liv Laugen, Oslo universitetssykehus, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Andrej Orel, Marand d.o.o., Slovenia", "Gro-Hilde Severinsen, Norwegian center for ehealthresearch, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Susanne Trønnes, Norway", "John Tore Valand, Helse Bergen, Norway (openEHR Editor)">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Heidi Aursand, Oslo universitetssykehus, Norway", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Birgitte Bjerkely, Senter for sjeldne diagnoser, OUS, Norway", "Anita Bjørnnes, Helse Bergen, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Bjørn Christensen, Helse Bergen HF, Norway", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Valborg Ellingsen, Haraldsplass Diakonale sykehus, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (Nasjonal IKT redaktør)", "Erling Are Hole, Helse Bergen, Norway", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Siv Marie Lien, DIPS ASA, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Andrej Orel, Marand d.o.o., Slovenia", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Gro-Hilde Severinsen, Norwegian center for ehealthresearch, Norway", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Susanne Trønnes, Bergen kommune, Norway", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Avgrenet fra: Translation requirement, Published archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2023-07-11]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.3539">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0BE4E5907D64A602B543086B1F445347">
-		["build_uid"] = <"70c43914-ae80-4b8f-9e3c-ab3072ff5395">
-		["revision"] = <"1.0.0">
+		["MD5-CAM-1.0.1"] = <"3A3CAE927D02237B5EEE7DC762CDBE7A">
+		["build_uid"] = <"9b4793e5-0ec0-472a-b7b5-5461e62ecc6c">
+		["revision"] = <"1.1.0">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {	-- Translation requirement
+	ADMIN_ENTRY[at0000] matches {    -- Translation requirement
 		data matches {
-			ITEM_TREE[at0001] matches {	-- Tree
+			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype CLUSTER[at0002] matches {	-- Administrative language
+					allow_archetype CLUSTER[at0002] matches {    -- Administrative language
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.language(-[a-zA-Z0-9_]+)*\.v1/}
 					}
-					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Translation required?
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Translation required?
 						value matches {
-							DV_BOOLEAN matches {
-								value matches {True, False}
+							DV_BOOLEAN matches {*}
+							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0005,    -- Interpreter not needed
+									at0006]    -- Interpreter needed
+								}
 							}
 						}
 					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Comment
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -95,7 +102,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
@@ -123,6 +129,14 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the administrative language not captured in other fields.">
 				>
+				["at0005"] = <
+					text = <"Interpreter not needed">
+					description = <"The individual does not normally need an interpreter.">
+				>
+				["at0006"] = <
+					text = <"Interpreter needed">
+					description = <"The individual normally needs an interpreter.">
+				>
 			>
 		>
 		["nb"] = <
@@ -147,6 +161,14 @@ ontology
 				["at0004"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekstbeskrivelse om administrasjonsspråket som ikke er registrert i andre felt.">
+				>
+				["at0005"] = <
+					text = <"Ikke behov for tolk">
+					description = <"Individet trenger normalt ikke tolk.">
+				>
+				["at0006"] = <
+					text = <"Behov for tolk">
+					description = <"Individet trenger normalt tolk.">
 				>
 			>
 		>
