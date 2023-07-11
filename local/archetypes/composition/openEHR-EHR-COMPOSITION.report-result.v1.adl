@@ -4,16 +4,16 @@ specialise
 	openEHR-EHR-COMPOSITION.report.v1
 
 concept
-	[at0000.1]	-- Result Report
+	[at0000.1]	-- Result report
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
+		["de"] = <
+			language = <[ISO_639-1::de]>
 			author = <
-				["name"] = <"Kristian Berg, Line Silsand">
-				["organisation"] = <"Universitetssykehuset Nord-Norge">
-				["email"] = <"kristian.berg@unn.no, line.silsand@unn.no">
+				["name"] = <"Antje Wulff/Sarah Ballout">
+				["organisation"] = <"Peter L. Reichertz Institute for Medical Informatics of TU BS and Hannover Medical School">
+				["email"] = <"antje.wulff@plri.de/ballout.sarah@mh-hannover.de">
 			>
 		>
 		["es-ar"] = <
@@ -24,6 +24,32 @@ language
 				["email"] = <"alandmarch@gmail.com">
 			>
 			accreditation = <"physician">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Kristian Berg, Line Silsand">
+				["organisation"] = <"Universitetssykehuset Nord-Norge">
+				["email"] = <"kristian.berg@unn.no, line.silsand@unn.no">
+			>
+		>
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			author = <
+				["name"] = <"Seung-Jong Yu">
+				["organisation"] = <"InfoClinic Co.,Ltd.">
+				["email"] = <"seungjong.yu@gmail.com">
+			>
+			accreditation = <"Certified Board of Family Medicine in South Korea">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Adriana Kitajima, Débora Farage, Fernanda Maia, Laíse Figueiredo, Marivan Abrahão">
+				["organisation"] = <"Core Consulting">
+				["email"] = <"contato@coreconsulting.com.br">
+			>
+			accreditation = <"Hospital Alemão Oswaldo Cruz (HAOC)">
 		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
@@ -46,6 +72,26 @@ description
 		["date"] = <"2012-12-11">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Ein generischer Container-Archetyp, um Informationen über das Ergebnis eines Tests oder einer Bewertung zu erhalten.">
+			use = <"Wird als generischer Archetype verwednet, um Informationen über das Ergebnis eines eigenständigen Tests, einer unabhängigen Bewertung oder einer Gruppe von zugehörigen Ergebnissen zu erhalten.
+
+Es wird erwartet, dass jeder COMPOSITION.Ergebnisbericht-Archetyp mindestens einen OBSERVATION-Archetyp enthält, der die Testergebnisse beinhaltet. Um den kompletten klinischen Kontext abzudecken, könnten je nach Komplexität des Tests oder der Bewertung andere Archetypen mit intigriert werden.
+
+Häufige Anwendungsfälle sind:
+- eine oder mehrere Probenbezogene Pathologie- / Labortestergebnisse;
+- ein oder mehrere zeitbezogene bildgebende Untersuchungsergebnisse;
+- ein EKG-Ergebnis; oder
+- eine Audiogramm-Hörbewertung.
+
+Um die Wiederverwendung dieses Archetyps zu maximieren, wurde die Komponente Sections bewusst nicht eingeschränkt.">
+			keywords = <"Bericht", "Test", "Ergebnis", "Diagnostik">
+			misuse = <"Nicht für Berichte zu verwenden, die nicht mit einem Ergebnis für eine Prüfung oder Bewertung zusammenhängen. Verwenden Sie gegebenenfalls den generischen COMPOSITION.Bericht oder zweckspezifische COMPOSITIONs.
+
+
+Nicht für Test- oder Bewertungsergebnisse zu verwenden, die im Rahmen einer Beratungsnotiz aufgezeichnet werden, z.B. Glasgow Koma-Skala im Rahmen einer Notfallberatung - verwenden Sie dazu den Archetyp OBSERVATION.glasgow_coma_scale als eine Komponente innerhalb des COMPOSITION.encouter.">
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			purpose = <"Arquetipo contenedor genérico para la portación de información que necesita ser compartida con otros.">
@@ -54,8 +100,10 @@ El componente de Contexto contiene un slot innominado que puede ser utilizado pa
 -agregar contenido opcional durante la confección de una plantilla para apoyar requerimientos específicos del caso de uso;
 -agregar arquetipos del modelo demográfico de openEHR que representen a las partes participantes. En tanto que esto puede no ser deseable durante una implementación, puede ser útil para demostrar como los datos demográficos pueden ser utilizados en una implementación (ejemplo: como apoyo a los requerimientos de recolección de contenido clínico o revisión de una plantilla). El componente de Secciones ha sido dejado libre de restricciones a fin de maximizar el uso de este arquetipo.">
 			keywords = <"informe", ...>
-			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			misuse = <"*Not to be used for reports that are not related to a result for a test or assessment. Use the generic COMPOSITION.report or purpose specific COMPOSITIONs as appropriate.
+
+Not to be used for test or assessment results that are recorded as part of a consultation note, for example Glasgow coma scale in the context of an emergency consultation - use the OBSERVATION.glasgow_coma_scale archetype as one component within the COMPOSITION.encouter for this purpose.(en)">
+			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -77,6 +125,44 @@ Innholdskomponenten er bevisst latt være ubegrenset. Dette tillater bruk av enh
 
 Skal ikke brukes til prøve- eller undersøkelsessvar som er registrert som en del av et konsultasjonsnotat, for eksempel Glasgow Coma Scale i forbindelse med en akutt konsultasjon. For dette eksempelet bruk OBSERVATION.glasgow_coma_scale arketypen som en komponent i arketypen COMPOSITION.encounter for dette formålet.">
 		>
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			purpose = <"테스트나 평가의 결과에 대한 정보를 운반하기 위한 일반적인 컨테이너 아키타입">
+			use = <"단독적 테스트나 평가 또는 결과와 관련된 그룹의 결과에 대한 정보를 운반하기 위한 일반적인 컨테이너 아키타입로 사용.
+
+각각의 COMPOSITION.report-result 아키타입은 적어도 테스트 결과를 포함하는 하나의 OBSERVATION 아키타입을 포함할 것으로 기대함. 그러나 테스트나 평가의 복잡도에 따라 완전한 임상 컨텍스트를 제공하는 다른 아키타입 또한 포함될 수도 있음.
+
+일반적인 유즈케이스는:
+- 하나 이상의 표본과 관련된 병리학/진단검사 테스트 결과; 또는
+- 하나 이상의 시간과 관련된 이미징 검사 테스트 결과;
+- 하나의 ECG 결과;
+- 하나의 오디오그램 청력 평가.
+
+Sections 컴포넌트는 의도적으로 이 아키타입의 재사용을 최대화하기위해 제한을 하지 않은 상태로 남겨둠.">
+			keywords = <"*report(en)", "*test(en)", "*result(en)", "*diagnostic(en)", "리포트", "테스트", "결과", "진단">
+			misuse = <"테스트나 평가의 결과과 관련되지 않은 리포트를 위해 사용하면 안됨. 일반적인 COMPOSITION.report 또는 목적에 부합하는 특정 COMPOSITIONs를 사용.
+
+협진 노트의 부분으로 기록된 테스트나 평가 결과를 위해 사용하면 안됨. 예를 들어, 응급협진의 컨텍스트에서 Grasgow coma scale은 이 목적을 위해 OMPOSITION.encouter에 있는 하나의 컴포넌트로 OBSERVATION.glasgow_coma_scale 아키타입을 사용.">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Arquétipo de conteúdo genérico para carregar informação sobre o resultado de um teste ou avaliação.">
+			use = <"Utilizado como um arquétipo genérico para carregar informação sobre o resultado de um teste individual ou avaliação, ou um grupo de resultados relacionados. 
+
+Antecipa-se que cada arquétipo COMPOSITION.report-result conterá pelo menos um arquétipo OBSERVATION que conterá os resultados dos testes, mas dependendo da complexidade do teste ou avaliação outros arquétipos podem ser incluídos para fornecer o contexto clínico completo. 
+
+Casos de uso comuns são:
+- um ou mais resultados em patologia ou laboratório;
+- um ou mais resultados de exames de imagem;
+- um resultado de ECG; ou
+- um avaliação de audição por audiograma.
+
+Os componentes de seções foram deliberadamente deixados irrestritos para maximizar a reutilização deste arquétipo.">
+			keywords = <"relatório", "teste", "resultado", "diagnóstico">
+			misuse = <"Não deve ser utilizado para relatórios não relacionados ao resultado de um teste ou avaliação. Use os genéricos COMPOSITION.report ou COMPOSITIONs específicos ao propósito, como apropriado. 
+
+Não deve ser utilizado para resultados de testes ou avaliações que são gravadas como parte de uma anotação de consulta, por exemplo a escala de coma de Glasgow no contexto de uma consulta de emergência - use o arquétipo OBSERVATION.glasgow_coma_scale como um componente dentro de COMPOSITION.encounter para este propósito.">
+		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			purpose = <"نموذج جنيس (غير محدود الملكية) يحتوي على معلومات من أجل مشاركتها مع الجميع.">
@@ -87,7 +173,7 @@ Skal ikke brukes til prøve- eller undersøkelsessvar som er registrert som en d
 و قد تم تعمد جعل مُكَوِّن المقاطع غير مقيد للوصول إلى الحد الأقصى لإعادة استخدام هذا النموذج.">
 			keywords = <"تقرير", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
@@ -99,7 +185,7 @@ The Context component contains an optional unnamed slot that can be used to:
 The Sections component has been deliberately left unconstrained to maximise re-use of this archetype.(en)">
 			keywords = <"*report(en)", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -119,22 +205,21 @@ The Sections component has been deliberately left unconstrained to maximise re-u
 			misuse = <"Not to be used for reports that are not related to a result for a test or assessment. Use the generic COMPOSITION.report or purpose specific COMPOSITIONs as appropriate.
 
 Not to be used for test or assessment results that are recorded as part of a consultation note, for example Glasgow coma scale in the context of an emergency consultation - use the OBSERVATION.glasgow_coma_scale archetype as one component within the COMPOSITION.encouter for this purpose.">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heath Frankel, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia">
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Heath Frankel, Ocean Informatics, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Shinji Kobayashi, Kyoto University, Japan", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Bjoern Naess, DIPS ASA, Norway", "Andrej Orel, Marand d.o.o., Slovenia">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Result Report, Published Archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-02-16]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1324">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"8E1A26AA799684FD79844E6D493345A1">
-		["build_uid"] = <"d1377cf4-bbf5-4f57-a616-4d827ab8a056">
-		["revision"] = <"1.0.0">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"67CFF4F8A014771C3F45924F427501E9">
+		["build_uid"] = <"d3805842-ed23-451e-8d62-38d7daaedd39">
+		["revision"] = <"1.0.1">
 	>
 
 definition
@@ -239,7 +324,7 @@ ontology
 					description = <"Document to communicate information to others, commonly in response to a request from another party.">
 				>
 				["at0000.1"] = <
-					text = <"Result Report">
+					text = <"Result report">
 					description = <"Document to communicate information to others about the result of a test or assessment.">
 				>
 				["at0001"] = <
@@ -286,7 +371,7 @@ ontology
 				["at0006"] = <
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
-					comment = <"* e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
+					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
 			>
 		>
@@ -317,6 +402,93 @@ ontology
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.
 ">
+				>
+			>
+		>
+		["pt-br"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Report(en)">
+					description = <"*Document to communicate information to others, commonly in response to a request from another party.(en)">
+				>
+				["at0000.1"] = <
+					text = <"Relatório de resultado">
+					description = <"Documento para comunicar informações sobre o resultado de um teste ou avaliação.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Identificador do relatório">
+					description = <"Informação de identificação do relatório.">
+				>
+				["at0005"] = <
+					text = <"Estado">
+					description = <"O estado do relatório completo. Nota: este não é o estado dos componentes de relatório.">
+				>
+				["at0006"] = <
+					text = <"Extensão">
+					description = <"Informação adicional requerida para capturar contextos locais ou para alinhar a outros modelos de referência/formalismos.">
+					comment = <"Por exemplo: requisitos de informações locais ou metadados adicionais para alinhar a equivalentes do FHIR ou CIMI.">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Bericht">
+					description = <"Das Dokument wird verwendet, um Informationen über das Ergebnis eines Tests oder einer Bewertung an andere zu übermitteln.">
+				>
+				["at0000.1"] = <
+					text = <"Ergebnisbericht">
+					description = <"Das Dokument wird verwendet, um Informationen über das Ergebnis eines Tests oder einer Bewertung zu übermitteln.">
+				>
+				["at0001"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Bericht-ID">
+					description = <"Eindeutige Identifikation des Berichts.">
+				>
+				["at0005"] = <
+					text = <"Status">
+					description = <"Status des gesamten Ergebnisberichts. Hinweis: Dies ist nicht der Status einzelner Berichtskomponenten.">
+				>
+				["at0006"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
+					comment = <"Zum Beispiel: lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
+				>
+			>
+		>
+		["ko"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Report(en)">
+					description = <"일반적으로 다른 상대의 요청에 대한 응답으로, 다른 사람들과 정보를 통신하는 문서.">
+				>
+				["at0000.1"] = <
+					text = <"*Result Report(en)">
+					description = <"테스트나 평가의 결과에 대해 다른 사람들과 정보를 통신하는 문서.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Report ID(en)">
+					description = <"리포트에 대한 식별 정보.">
+				>
+				["at0005"] = <
+					text = <"*Status(en)">
+					description = <"전체 리포트의 상태. 주의: 이것은 리포트 컴포넌트들 중 어떤 부분의 상태가 아님.">
+				>
+				["at0006"] = <
+					text = <"*Extension(en)">
+					description = <"로컬 컨텍스트를 획득하는데 필요하거나 다른 참조 모델/표현과 조정에 필요한 추가 정보">
+					comment = <"예: 로컬 정보 요구사항 또는 FHIR나 CIMI의 동등한 것들과 조정하는 추가 메타데이터">
 				>
 			>
 		>
