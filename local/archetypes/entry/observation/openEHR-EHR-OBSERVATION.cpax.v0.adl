@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.cpax.v0
 
 concept
-	[at0000]	-- Chelsea Critical Care Physical Assessment tool (CPAx)
+	[at0000]	-- Chelsea Critical Care Physical Assessment Tool (CPAx)
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -25,37 +25,36 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere resultatene for hver enkelt parameter og deres totale sum/skår for Chelsea Critical Care Physical Assessment tool (CPAx).">
-			use = <"Brukes for å registrere resultatene for hver enkelt parameter og deres totale sum/skår for Chelsea Critical Care Physical Assessment tool (CPAx).">
+			purpose = <"For å registrere resultatene for hver enkel delfunksjon og deres totale sumskår for Chelsea Critical Care Physical Assessment Tool (CPAx).">
+			use = <"Brukes for å registrere resultatene for hver enkel delfunksjon og deres totale sumskår for Chelsea Critical Care Physical Assessment Tool (CPAx).">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the results for each component parameter for the Chelsea Critical Care Physical Assessment tool (CPAx).">
-			use = <"Use to record the results for each component parameter for the Chelsea Critical Care Physical Assessment tool (CPAx).">
+			purpose = <"To record the results for each component parameter for the Chelsea Critical Care Physical Assessment Tool (CPAx).">
+			use = <"Use to record the results for each component parameter for the Chelsea Critical Care Physical Assessment Tool (CPAx).">
 			misuse = <"">
-			copyright = <"© Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo Univsersity Hospital, varntzen@ous-hf.no", ...>
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "Maria Beate Nupen-Stieng, Oslo Universitetssykehus, Norway", "Ivar Berge, Oslo University Hospital, Norway", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Kristina Fjone, Oslo universitetssykehus, Norway", "Marit Follsund Viravong, OUS, Norway", "Brita Fosser Olsen, Sykehuset Østfold, Norway", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (openEHR Editor)", "Evelyn Hovenga, EJSH Consulting, Australia", "Anne Kristine Brekka, SSHF, Norway", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Michael Lutz, BITsoft, Germany", "Charlotte Marie Schanke, Oslo Universitetssykehus, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Bjoern Naess, DIPS ASA, Norway", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Benjamin Senst, Germany", "John Tore Valand, Helse Vest IKT, Norway (openEHR Editor)", "Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"Avgrenet fra: Chelsea Critical Care Physical Assessment tool (CPAx), Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2023-08-18]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.6782
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Corner EJ, Wood H, Englebretsen C, Thomas A, Grant RL, Nikoletou D, Soni N. The Chelsea critical care physical assessment tool (CPAx): validation of an innovative new tool to measure physical morbidity in the general adult critical care population; an observational proof-of-concept pilot study. Physiotherapy. 2013 Mar;99(1):33-41. doi: 10.1016/j.physio.2012.01.003. Epub 2012 Mar 30. PubMed PMID: 23219649.
 
-Corner EJ, Wood H, Englebretsen C, Thomas A, Grant RL, Nikoletou D, Soni N. The Chelsea critical care physical assessment tool (CPAx): validation of an innovative new tool to measure physical morbidity in the general adult critical care population; an observational proof-of-concept pilot study. Physiotherapy. 2013 Mar;99(1):33-41. doi: 10.1016/j.physio.2012.01.003. Epub 2012 Mar 30. PubMed PMID: 23219649.">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"B70110898F0BEB07B44A6C311362E4C1">
-		["build_uid"] = <"796e74f6-1c39-42bf-8257-4e7047d7e47e">
+Norwegian Version of the Chelsea Critical Care Physical Assessment Tool (CPAx-NOR): Translation, Face Validity, Cross-Cultural Adaptation and Inter-Rater Reliability - PubMed (nih.gov). https://pubmed.ncbi.nlm.nih.gov/37568435/">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5DA22DA4A30A88067FABE4472B064CBA">
+		["build_uid"] = <"425e1580-d101-4633-8d88-51cdb186373e">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Chelsea Critical Care Physical Assessment tool (CPAx)
+	OBSERVATION[at0000] matches {    -- Chelsea Critical Care Physical Assessment Tool (CPAx)
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -179,12 +178,14 @@ definition
 		}
 	}
 
+
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Chelsea Critical Care Physical Assessment tool (CPAx)">
+					text = <"Chelsea Critical Care Physical Assessment Tool (CPAx)">
 					description = <"A scoring system to measure physical morbidity in critical care.">
 				>
 				["at0001"] = <
@@ -481,15 +482,15 @@ ontology
 				>
 				["at0076"] = <
 					text = <"Total score">
-					description = <"The total sum of each component variable for the Chelsea Critical Care Physical tool.">
+					description = <"The total sum of each component variable for the Chelsea Critical Care Physical Assessment Tool.">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Chelsea Critical Care Physical Assessment tool (CPAx)">
-					description = <"Kartleggingsverktøy for fysisk og respiratorisk funksjon hos alvorlig syke (voksne).">
+					text = <"Chelsea Critical Care Physical Assessment Tool (CPAx)">
+					description = <"Kartleggingsverktøy for fysisk og respiratorisk funksjon hos kritisk og alvorlig syke voksne.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -784,8 +785,8 @@ ontology
 					description = <"">
 				>
 				["at0076"] = <
-					text = <"Total skår">
-					description = <"Summen av poeng for hver enkelt parameter i Chelsea Critical Care Physical Assessment tool.">
+					text = <"Sumskår">
+					description = <"Summen av poeng for hver enkelt delfunksjon i Chelsea Critical Care Physical Assessment Tool.">
 				>
 			>
 		>
