@@ -97,8 +97,8 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4E32D8B6873FA47820D11695C483D189">
-		["build_uid"] = <"b76850e4-1203-4c65-bad8-c1a42912f91e">
+		["MD5-CAM-1.0.1"] = <"126FD66295F20B9BFEC513FC6D9EF737">
+		["build_uid"] = <"308ac201-9d66-4c2d-a26c-7e1fdf4bd605">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -182,7 +182,7 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0005] matches {    -- Dose amount description
+			ITEM_TREE[at0005] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
 					ELEMENT[at0004] occurrences matches {0..*} matches {    -- Order identifier
 						value matches {
@@ -197,6 +197,7 @@ definition
 			}
 		}
 	}
+
 
 
 
@@ -222,8 +223,8 @@ ontology
 					comment = <"This data element allows for multiple occurrences to be defined more explicitly at run-time, if required.">
 				>
 				["at0005"] = <
-					text = <"Dose amount description">
-					description = <"The amount and units of the medication, vaccine or other therapeutic good to be used or administered at one time.">
+					text = <"Tree">
+					description = <"@ internal @">
 				>
 				["at0008"] = <
 					text = <"Extension">
@@ -317,8 +318,8 @@ Coding of the body site with a terminology is preferred, where possible.">
 					comment = <"Dette dataelementet tillater flere forekomster, som ved behov kan defineres mer spesifikt i applikasjonen.">
 				>
 				["at0005"] = <
-					text = <"*Dose amount description(en)">
-					description = <"*The amount and units of the medication, vaccine or other therapeutic good to be used or administered at one time.(en)">
+					text = <"Tree">
+					description = <"@ internal @">
 				>
 				["at0008"] = <
 					text = <"Tilleggsinformasjon">
