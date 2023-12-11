@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Alcohol Use
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Marit Alice Venheim">
+				["organisation"] = <"Helse Vest IKT">
+				["email"] = <"marit.alice.venheim@helse-vest-ikt.no">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Heather Leslie">
@@ -13,6 +23,22 @@ description
 		["date"] = <"2011-07-15">
 	>
 	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"*To record details about the actual consumption of alcohol and related behaviour.(en)">
+			use = <"*Use to record details of the use of all forms of alcohol, including actual consumption and behaviour at a specific point in time and average consumption over intervals of time. 
+
+An alcohol consumption diary could be built up over time by recording the consumption of alcohol on multiple, sequential days - recording actual consumptions using the 'Specified Day' event for each daily entry.
+
+A record of typical alcohol use during a period can be recorded by recording the amount of alcohol consumed using the 'Average use' event - the mean use over a specified period of time.
+
+Data that might be used to assess the risk of alcohol abuse or dependence will be recorded using two archetypes: this OBSERVATION archetype (recording the repeatable observations/measurements)  and in the EVALUATION.alcohol_use_summary archetype (recording the summary and persisting data).
+
+Binge drinking is not directly referred to in this archetype, yet this archetype will be a key resource used to support the identification of binge drinking through the accurate recording of the amount and frequency of drinking, triggers and social/cultureal context of consumption. The assessment of 'binge drinking' may be recorded as part of a 'Problem List'.(en)">
+			misuse = <"*Not to be used for recording persistent, summary details about alcohol consumption - this should be captured using the EVALUATION.alcohol_use_summary archetype.
+
+Not to be used to record information about consumption of other substances other than alcohol.(en)">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details about the actual consumption of alcohol and related behaviour.">
@@ -41,8 +67,8 @@ Not to be used to record information about consumption of other substances other
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"4C9BF890EAF30ABE72264F6694CB8C0A">
-		["build_uid"] = <"d4babd4e-5f63-40c0-b9ce-c8347ee75a35">
+		["MD5-CAM-1.0.1"] = <"70E453AB5B872474A19B5CA24E43CE03">
+		["build_uid"] = <"76ebecaa-2699-4327-b9cd-bc3c45a93997">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -275,6 +301,86 @@ ontology
 				["at0027"] = <
 					text = <"Readiness for Change">
 					description = <"Details about readiness to change use or consumption of alcohol.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Alkohol bruk">
+					description = <"*Details about use of all forms of alcohol at a specified point in time or over a specified period of time.(en)">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"*An unspecified event.(en)">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"*Consumption Details(en)">
+					description = <"*Details about the consumption of specific forms of alcohol.(en)">
+				>
+				["at0006"] = <
+					text = <"*Form(en)">
+					description = <"*Form of alcohol consumed.(en)">
+				>
+				["at0014"] = <
+					text = <"*Standard Drinks(en)">
+					description = <"*Number of standard drinks of alcohol consumed.(en)">
+				>
+				["at0015"] = <
+					text = <"*Amount(en)">
+					description = <"*Amount of alcohol consumed.(en)">
+				>
+				["at0016"] = <
+					text = <"*Grams Consumed(en)">
+					description = <"*Grams of alcohol consumed.(en)">
+				>
+				["at0017"] = <
+					text = <"*Triggers(en)">
+					description = <"*Identified triggers which stimulate or cause consumption of this form of alcohol.(en)">
+				>
+				["at0018"] = <
+					text = <"*Context(en)">
+					description = <"*Description about the social or cultural context that contributed to the consumption of this form of alcohol.(en)">
+				>
+				["at0019"] = <
+					text = <"*Behavioural Issues(en)">
+					description = <"*Narrative description of any behavioural issues that may indicate alcohol abuse or dependence.(en)">
+				>
+				["at0021"] = <
+					text = <"*Comment(en)">
+					description = <"*Additional narrative about the alcohol consumption not captured in other fields.(en)">
+				>
+				["at0022"] = <
+					text = <"*Average Consumption Interval(en)">
+					description = <"*Average, or typical, consumption over a specified time interval. For example, allows recording of average number of standard drinks consumed per week for the previous 10 years.(en)">
+				>
+				["at0023"] = <
+					text = <"*Specified Day(en)">
+					description = <"*Actual alcohol consumption on a specified day. Supports recording consumption in a Alcohol Diary.(en)">
+				>
+				["at0024"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0025"] = <
+					text = <"*Standard Drink Definition(en)">
+					description = <"*Amount of alcohol defining a standard drink.(en)">
+				>
+				["at0026"] = <
+					text = <"*Average Use Frequency(en)">
+					description = <"*Frequency of 'Average Use' per time interval.(en)">
+				>
+				["at0027"] = <
+					text = <"*Readiness for Change(en)">
+					description = <"*Details about readiness to change use or consumption of alcohol.(en)">
 				>
 			>
 		>
