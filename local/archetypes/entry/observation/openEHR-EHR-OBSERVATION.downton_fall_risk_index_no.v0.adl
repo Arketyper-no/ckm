@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.downton_fall_risk_index_no.v0
 
 concept
-	[at0000]	-- Downton fall risk index
+	[at0000]	-- Downton fall risk index no
 language
 	original_language = <[ISO_639-1::nb]>
 description
@@ -15,8 +15,8 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere resultat av Downton fall risk index.">
-			use = <"Brukes for å registrere resultat av Downton fall risk index. Arketypen er basert på norsk modifisert variant av Downton fall risk index, publisert på https://www.itryggehender24-7.no/.">
+			purpose = <"For å registrere resultat av Downton fall risk index. Denne arketypen er laget spesifikt for den norske modifikasjonen av Downton fall risk index.">
+			use = <"Brukes for å registrere resultat av Downton fall risk index.">
 			keywords = <"Downton Fall Risk Index", "DFRI", "eldre", "fall", "risiko", "senior alert", "modifisert", "fallrisiko">
 			misuse = <"">
 		>
@@ -36,13 +36,13 @@ Fall Risk Assessment Predicts Fall-Related Injury, Hip Fracture, and Head Injury
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"BFB16F4B66EC9B84BF573170CD29A4C9">
-		["build_uid"] = <"ead85109-3b87-482b-8143-686d013bab32">
+		["MD5-CAM-1.0.1"] = <"717A72E8D75425335BA7265BFC0FD890">
+		["build_uid"] = <"71fd549e-68ef-4792-98c6-9716f81b179a">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Downton fall risk index
+	OBSERVATION[at0000] matches {    -- Downton fall risk index no
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -113,7 +113,7 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Downton fall risk index">
+					text = <"Downton fall risk index no">
 					description = <"Et verktøy som brukes for å kartlegge fallrisiko.">
 				>
 				["at0001"] = <
