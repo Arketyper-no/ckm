@@ -1,0 +1,690 @@
+﻿archetype (adl_version=1.4; uid=a896b2ed-442a-40fc-82da-5f508d3b376c)
+	openEHR-EHR-OBSERVATION.tinnitus_handicap_inventory.v0
+
+concept
+	[at0000]	-- Tinnitus Handicap Inventory
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Marius Emilson Holmesland">
+		["organisation"] = <"Sykehuspartner">
+		["email"] = <"hmariu@sykehuspartner.no">
+		["date"] = <"2024-01-19">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter for the Tinnitus Handicap Inventory (THI).">
+			use = <"To determine perceived tinnitus handicap severity.
+">
+			misuse = <"">
+			copyright = <"© Nasjonal IKT HF">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Cecilie Ljosland, Øystein Mattias Flatebø, Mona Hovde Skjørsæter", ...>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"https://novopsych.com.au/assessments/diagnosis/tinnitus-handicap-inventory-thi/">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"5D0B403AA9CA6B2A59506A4F3B3755E8">
+		["build_uid"] = <"6360cd86-514d-4336-bf77-7e391bb24bcc">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Tinnitus Handicap Inventory
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Question 1
+										value matches {
+											4|[local::at0011],
+											2|[local::at0012],
+											0|[local::at0013]
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Question 2
+										value matches {
+											4|[local::at0038],
+											2|[local::at0039],
+											0|[local::at0040]
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Question 3
+										value matches {
+											4|[local::at0041],
+											2|[local::at0042],
+											0|[local::at0043]
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Question 4
+										value matches {
+											4|[local::at0044],
+											2|[local::at0045],
+											0|[local::at0046]
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Question 5
+										value matches {
+											4|[local::at0047],
+											2|[local::at0048],
+											0|[local::at0049]
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Question 6
+										value matches {
+											4|[local::at0050],
+											2|[local::at0051],
+											0|[local::at0052]
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Question 7
+										value matches {
+											4|[local::at0053],
+											2|[local::at0054],
+											0|[local::at0055]
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Question 8
+										value matches {
+											4|[local::at0056],
+											2|[local::at0057],
+											0|[local::at0058]
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Question 9
+										value matches {
+											4|[local::at0059],
+											2|[local::at0060],
+											0|[local::at0061]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Question 10
+										value matches {
+											4|[local::at0062],
+											2|[local::at0063],
+											0|[local::at0064]
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Question 11
+										value matches {
+											4|[local::at0065],
+											2|[local::at0066],
+											0|[local::at0067]
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Question 12
+										value matches {
+											4|[local::at0068],
+											2|[local::at0069],
+											0|[local::at0070]
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Question 13
+										value matches {
+											4|[local::at0071],
+											2|[local::at0072],
+											0|[local::at0073]
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Question 14
+										value matches {
+											4|[local::at0074],
+											2|[local::at0075],
+											0|[local::at0076]
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Question 15
+										value matches {
+											4|[local::at0077],
+											2|[local::at0078],
+											0|[local::at0079]
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Question 16
+										value matches {
+											4|[local::at0080],
+											2|[local::at0081],
+											0|[local::at0082]
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Question 17
+										value matches {
+											4|[local::at0083],
+											2|[local::at0084],
+											0|[local::at0085]
+										}
+									}
+									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Question 18
+										value matches {
+											4|[local::at0086],
+											2|[local::at0087],
+											0|[local::at0088]
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Question 19
+										value matches {
+											4|[local::at0089],
+											2|[local::at0090],
+											0|[local::at0091]
+										}
+									}
+									ELEMENT[at0032] occurrences matches {0..1} matches {    -- Question 20
+										value matches {
+											4|[local::at0092],
+											2|[local::at0093],
+											0|[local::at0094]
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Question 21
+										value matches {
+											4|[local::at0095],
+											2|[local::at0096],
+											0|[local::at0097]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Question 22
+										value matches {
+											4|[local::at0098],
+											2|[local::at0099],
+											0|[local::at0100]
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {    -- Question 23
+										value matches {
+											4|[local::at0101],
+											2|[local::at0102],
+											0|[local::at0103]
+										}
+									}
+									ELEMENT[at0036] occurrences matches {0..1} matches {    -- Question 24
+										value matches {
+											4|[local::at0104],
+											2|[local::at0105],
+											0|[local::at0106]
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {    -- Question 25
+										value matches {
+											4|[local::at0107],
+											2|[local::at0108],
+											0|[local::at0109]
+										}
+									}
+									ELEMENT[at0110] occurrences matches {0..1} matches {    -- Total Score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..90|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tinnitus Handicap Inventory">
+					description = <"THI is a 25-item self-report measure to determine perceived tinnitus handicap severity.
+
+
+
+
+
+">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Question 1">
+					description = <"Because of your tinnitus, is it difficult for you to
+concentrate?">
+				>
+				["at0011"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Question 2">
+					description = <"Does the loudness of your tinnitus make it difficult for
+you to hear people?">
+				>
+				["at0015"] = <
+					text = <"Question 3">
+					description = <"Does your tinnitus make you angry?">
+				>
+				["at0016"] = <
+					text = <"Question 4">
+					description = <"Does your tinnitus make you feel confused?">
+				>
+				["at0017"] = <
+					text = <"Question 5">
+					description = <"Because of your tinnitus, do you feel desperate?">
+				>
+				["at0018"] = <
+					text = <"Question 6">
+					description = <" Do you complain a great deal about your tinnitus? ">
+				>
+				["at0019"] = <
+					text = <"Question 7">
+					description = <"Because of your tinnitus, do you have trouble falling
+to sleep at night? ">
+				>
+				["at0020"] = <
+					text = <"Question 8">
+					description = <"Do you feel as though you cannot escape your
+tinnitus? ">
+				>
+				["at0021"] = <
+					text = <"Question 9">
+					description = <"Does your tinnitus interfere with your ability to enjoy your social activities (such as going out to dinner, to the movies)? ">
+				>
+				["at0022"] = <
+					text = <"Question 10">
+					description = <" Because of your tinnitus, do you feel frustrated?">
+				>
+				["at0023"] = <
+					text = <"Question 11">
+					description = <"Because of your tinnitus, do you feel that you have a
+terrible disease?">
+				>
+				["at0024"] = <
+					text = <"Question 12">
+					description = <"Does your tinnitus make it difficult for you to enjoy
+life? ">
+				>
+				["at0025"] = <
+					text = <"Question 13">
+					description = <"Does your tinnitus interfere with your job or
+household responsibilities?">
+				>
+				["at0026"] = <
+					text = <"Question 14">
+					description = <"Because of your tinnitus, do you find that you are
+often irritable?">
+				>
+				["at0027"] = <
+					text = <"Question 15">
+					description = <" Because of your tinnitus, is it difficult for you to read?">
+				>
+				["at0028"] = <
+					text = <"Question 16">
+					description = <"Does your tinnitus make you upset?">
+				>
+				["at0029"] = <
+					text = <"Question 17">
+					description = <"Do you feel that your tinnitus problem has placed stress on your relationships with members of your family and
+friends?">
+				>
+				["at0030"] = <
+					text = <"Question 18">
+					description = <"Do you find it difficult to focus your attention away
+from your tinnitus and on other things?">
+				>
+				["at0031"] = <
+					text = <"Question 19">
+					description = <"Do you feel that you have no control over your
+tinnitus?">
+				>
+				["at0032"] = <
+					text = <"Question 20">
+					description = <" Because of your tinnitus, do you often feel tired?">
+				>
+				["at0033"] = <
+					text = <"Question 21">
+					description = <"Because of your tinnitus, do you feel depressed? ">
+				>
+				["at0034"] = <
+					text = <"Question 22">
+					description = <"Does your tinnitus make you feel anxious? ">
+				>
+				["at0035"] = <
+					text = <"Question 23">
+					description = <"Do you feel that you can no longer cope with your
+tinnitus? ">
+				>
+				["at0036"] = <
+					text = <"Question 24">
+					description = <"Does your tinnitus get worse when you are under
+stress? ">
+				>
+				["at0037"] = <
+					text = <"Question 25">
+					description = <"Does your tinnitus make you feel insecure?">
+				>
+				["at0038"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0084"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0085"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0087"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0088"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0089"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0092"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0093"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0094"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0095"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0098"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0099"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0100"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0101"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0102"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0103"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0104"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0106"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0107"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0108"] = <
+					text = <"Sometimes">
+					description = <"">
+				>
+				["at0109"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Total Score">
+					description = <"The total sum of each component variable for the Tinnitus Handicap Inventory.">
+					comment = <"- Very mild (score 0–16)
+- Mild (score 18–36)
+- Moderate (score 38–56)
+- Severe (score 58–76)
+- Catastrophic (78–90)">
+				>
+			>
+		>
+	>
