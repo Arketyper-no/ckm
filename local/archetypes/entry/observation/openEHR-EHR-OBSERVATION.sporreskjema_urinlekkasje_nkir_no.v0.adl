@@ -1,0 +1,958 @@
+﻿archetype (adl_version=1.4; uid=d5b2f8ac-e4fd-41f7-b368-50e00a550af6)
+	openEHR-EHR-OBSERVATION.sporreskjema_urinlekkasje_nkir_no.v0
+
+concept
+	[at0000]	-- Spørreskjema for urinlekkasje NKIR
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"Mona Didriksen Leland">
+		["organisation"] = <"Helse Vest IKT">
+		["email"] = <"mona.didriksen.leland@helse-vest-ikt.no">
+		["date"] = <"2024-04-05">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere datasett til Norsk kvinnelig inkontinensregister, basert på selvrapportert vurdering av inkontinens.">
+			use = <"Brukes for å registrere datasett til Norsk kvinnelig inkontinensregister, basert på selvrapportert vurdering av inkontinens. 
+
+Ordinalen \"-1\" i alle dataelementer representerer et svaralternativ uten en verdi.">
+			misuse = <"Skal ikke brukes for registering av inkontinens utenfor kontekst av registrering til Norsk kvinnelig inkontinensregister. Bruk en passende arketype for dette formålet.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Norsk kvinnelig inkontinensregister. Spørreskjema for urinlekkasje, 01.07.24. Oslo (Norway): Nasjonalt servicemiljø for medisinske kvalitetsregistre. Hentet fra https://arketyper.no/ckm/documents/1078.51.137 
+
+Norsk kvinnelig inkontinensregister. Kodeveileder til spørreskjema for urinlekkasje, 01.07.24. Oslo (Norway): Nasjonalt servicemiljø for medisinske kvalitetsregistre. Hentet fra
+https://arketyper.no/ckm/documents/1078.51.138">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"A3904598AEC237063942F2484C96E91B">
+		["build_uid"] = <"a5af4bb1-abc8-436d-a6ff-f5bdd1676f0d">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Spørreskjema for urinlekkasje NKIR
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {    -- Uspesifisert tidspunkthendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0127] occurrences matches {0..1} matches {    -- 1. Lekker du urin?
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0159] occurrences matches {0..1} matches {    -- Når du hoster?
+												value matches {
+													1|[local::at0237],
+													0|[local::at0238],
+													-1|[local::at0242]
+												}
+											}
+											ELEMENT[at0160] occurrences matches {0..1} matches {    -- Når du nyser?
+												value matches {
+													1|[local::at0239],
+													0|[local::at0240],
+													-1|[local::at0241]
+												}
+											}
+											ELEMENT[at0161] occurrences matches {0..1} matches {    -- Når du ler?
+												value matches {
+													1|[local::at0243],
+													0|[local::at0244],
+													-1|[local::at0245]
+												}
+											}
+											ELEMENT[at0162] occurrences matches {0..1} matches {    -- Når du går i trapper?
+												value matches {
+													1|[local::at0246],
+													0|[local::at0247],
+													-1|[local::at0248]
+												}
+											}
+											ELEMENT[at0174] occurrences matches {0..1} matches {    -- Når du står opp av sengen?
+												value matches {
+													1|[local::at0249],
+													0|[local::at0250],
+													-1|[local::at0251]
+												}
+											}
+											ELEMENT[at0178] occurrences matches {0..1} matches {    -- Når du løfter tungt (tunge bæreposer)?
+												value matches {
+													1|[local::at0252],
+													0|[local::at0253],
+													9|[local::at0255],
+													-1|[local::at0254]
+												}
+											}
+											ELEMENT[at0182] occurrences matches {0..1} matches {    -- Ved fysisk aktivitet (løpe for å nå bussen)?
+												value matches {
+													1|[local::at0256],
+													0|[local::at0257],
+													9|[local::at0259],
+													-1|[local::at0258]
+												}
+											}
+											ELEMENT[at0186] occurrences matches {0..1} matches {    -- Ved sportsaktiviteter?
+												value matches {
+													1|[local::at0260],
+													0|[local::at0261],
+													9|[local::at0263],
+													-1|[local::at0262]
+												}
+											}
+											ELEMENT[at0171] occurrences matches {0..1} matches {    -- Ved samleie?
+												value matches {
+													1|[local::at0264],
+													0|[local::at0265],
+													9|[local::at0267],
+													-1|[local::at0266]
+												}
+											}
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {    -- 2. Hvor ofte lekker du urin i forbindelse med fysisk aktivitet, når du ler, hoster eller nyser?
+										value matches {
+											0|[local::at0268],
+											1|[local::at0269],
+											2|[local::at0356],
+											3|[local::at0270],
+											4|[local::at0271],
+											-1|[local::at0272]
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- 3. Hvor stor mengde urin lekker du vanligvis ved fysisk aktivitet, når du ler, hoster eller nyser?
+										value matches {
+											0|[local::at0273],
+											1|[local::at0274],
+											2|[local::at0275],
+											3|[local::at0276],
+											4|[local::at0277],
+											-1|[local::at0278]
+										}
+									}
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- 4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker før du når frem til toalettet?
+										value matches {
+											0|[local::at0279],
+											1|[local::at0280],
+											2|[local::at0281],
+											3|[local::at0282],
+											4|[local::at0283],
+											-1|[local::at0284]
+										}
+									}
+									ELEMENT[at0070] occurrences matches {0..1} matches {    -- 5. Hvor stor mengde urin lekker du vanligvis når du har trang til å late vannet og lekker urin før du når frem til toalettet?
+										value matches {
+											0|[local::at0285],
+											1|[local::at0286],
+											2|[local::at0287],
+											3|[local::at0288],
+											4|[local::at0289],
+											-1|[local::at0290]
+										}
+									}
+									ELEMENT[at0080] occurrences matches {0..1} matches {    -- 6. Dersom du har symptomer både som i spørsmål 2 og spørsmål 4, hva er du mest plaget av?
+										value matches {
+											1|[local::at0291],
+											2|[local::at0292],
+											3|[local::at0293],
+											4|[local::at0294],
+											-1|[local::at0295]
+										}
+									}
+									ELEMENT[at0090] occurrences matches {0..1} matches {    -- 7. Hvor mange inkontinensbind/truseinnlegg/bleier bruker du?
+										value matches {
+											0|[local::at0296],
+											1|[local::at0297],
+											2|[local::at0298],
+											3|[local::at0299],
+											4|[local::at0300],
+											-1|[local::at0301]
+										}
+									}
+									ELEMENT[at0100] occurrences matches {0..1} matches {    -- 8. Hvor mange ganger har du fått behandling for blærekatarr de siste 6 måneder?
+										value matches {
+											0|[local::at0302],
+											1|[local::at0303],
+											2|[local::at0304],
+											3|[local::at0305],
+											4|[local::at0306],
+											-1|[local::at0307]
+										}
+									}
+									ELEMENT[at0111] occurrences matches {0..1} matches {    -- 9. Hvor ofte unnlater du aktiviteter (f.eks. en hobby, fysisk trening, eller gå ut) fordi du er redd for å lekke urin?
+										value matches {
+											0|[local::at0308],
+											1|[local::at0309],
+											2|[local::at0310],
+											3|[local::at0311],
+											4|[local::at0312],
+											-1|[local::at0313]
+										}
+									}
+									ELEMENT[at0117] occurrences matches {0..1} matches {    -- 10. Unngår du steder og situasjoner hvor du vet at toalett ikke er lett tilgjengelig?
+										value matches {
+											0|[local::at0314],
+											1|[local::at0315],
+											2|[local::at0316],
+											3|[local::at0317],
+											4|[local::at0318],
+											-1|[local::at0319]
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {    -- 11. Er ditt seksualliv blitt påvirket av ditt lekkasjeproblem?
+										value matches {
+											2|[local::at0320],
+											3|[local::at0321],
+											4|[local::at0322],
+											9|[local::at0323],
+											-1|[local::at0324]
+										}
+									}
+									CLUSTER[at0190] occurrences matches {0..1} matches {    -- 12. Påvirker din urinlekkasje
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0195] occurrences matches {0..1} matches {    -- Dine ferier?
+												value matches {
+													0|[local::at0329],
+													1|[local::at0330],
+													3|[local::at0331],
+													-1|[local::at0332]
+												}
+											}
+											ELEMENT[at0191] occurrences matches {0..1} matches {    -- Ditt familieliv?
+												value matches {
+													0|[local::at0325],
+													1|[local::at0326],
+													3|[local::at0327],
+													-1|[local::at0328]
+												}
+											}
+											ELEMENT[at0199] occurrences matches {0..1} matches {    -- Ditt sosiale liv (å gå ut, å treffe venner)?
+												value matches {
+													0|[local::at0333],
+													1|[local::at0334],
+													3|[local::at0335],
+													-1|[local::at0336]
+												}
+											}
+											ELEMENT[at0203] occurrences matches {0..1} matches {    -- Din nattesøvn?
+												value matches {
+													0|[local::at0337],
+													1|[local::at0338],
+													-1|[local::at0339]
+												}
+											}
+										}
+									}
+									ELEMENT[at0214] occurrences matches {0..1} matches {    -- 13. Er ditt seksualliv blitt endret etter behandling av ditt lekkasjeproblem?
+										value matches {
+											9|[local::at0345],
+											0|[local::at0340],
+											1|[local::at0341],
+											2|[local::at0342],
+											3|[local::at0343],
+											4|[local::at0344],
+											-1|[local::at0346]
+										}
+									}
+									ELEMENT[at0207] occurrences matches {0..1} matches {    -- 14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?
+										value matches {
+											0|[local::at0347],
+											1|[local::at0348],
+											2|[local::at0349],
+											3|[local::at0350],
+											4|[local::at0351],
+											-1|[local::at0352]
+										}
+									}
+									CLUSTER[at0362] occurrences matches {0..1} matches {    -- 15. Har du hatt langvarige smerter relatert til operasjonen?
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0363] occurrences matches {0..1} matches {    -- Nei eller smerte mindre enn 3 mnd
+												value matches {
+													DV_ORDINAL matches {*}
+												}
+											}
+											ELEMENT[at0364] occurrences matches {0..1} matches {    -- Smerte lengre enn eller start etter 3 mnd
+												value matches {
+													DV_ORDINAL matches {*}
+												}
+											}
+											ELEMENT[at0365] occurrences matches {0..1} matches {    -- Smertefri nå
+												value matches {
+													DV_ORDINAL matches {*}
+												}
+											}
+											ELEMENT[at0366] occurrences matches {0..1} matches {    -- Fortsatt smerte
+												value matches {
+													DV_ORDINAL matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0361] occurrences matches {0..1} matches {    -- 15. Dato smerten startet
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0359] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0360] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Spørreskjema for urinlekkasje NKIR">
+					description = <"Spørreskjema for urinlekkasje utviklet av Norsk kvinnelig inkontinensregister (NKIR).">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert tidspunkthendelse">
+					description = <"Uspesifisert tidspunkt som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"3. Hvor stor mengde urin lekker du vanligvis ved fysisk aktivitet, når du ler, hoster eller nyser?">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"11. Er ditt seksualliv blitt påvirket av ditt lekkasjeproblem?">
+					description = <"">
+					comment = <"Skal besvares før behandling.">
+				>
+				["at0053"] = <
+					text = <"2. Hvor ofte lekker du urin i forbindelse med fysisk aktivitet, når du ler, hoster eller nyser?">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker før du når frem til toalettet?">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"5. Hvor stor mengde urin lekker du vanligvis når du har trang til å late vannet og lekker urin før du når frem til toalettet?">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"6. Dersom du har symptomer både som i spørsmål 2 og spørsmål 4, hva er du mest plaget av?">
+					description = <"">
+				>
+				["at0090"] = <
+					text = <"7. Hvor mange inkontinensbind/truseinnlegg/bleier bruker du?">
+					description = <"">
+				>
+				["at0100"] = <
+					text = <"8. Hvor mange ganger har du fått behandling for blærekatarr de siste 6 måneder?">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"9. Hvor ofte unnlater du aktiviteter (f.eks. en hobby, fysisk trening, eller gå ut) fordi du er redd for å lekke urin?">
+					description = <"">
+				>
+				["at0117"] = <
+					text = <"10. Unngår du steder og situasjoner hvor du vet at toalett ikke er lett tilgjengelig?">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"1. Lekker du urin?">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Når du hoster?">
+					description = <"">
+				>
+				["at0160"] = <
+					text = <"Når du nyser?">
+					description = <"">
+				>
+				["at0161"] = <
+					text = <"Når du ler?">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Når du går i trapper?">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Ved samleie?">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Når du står opp av sengen?">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Når du løfter tungt (tunge bæreposer)?">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Ved fysisk aktivitet (løpe for å nå bussen)?">
+					description = <"">
+				>
+				["at0186"] = <
+					text = <"Ved sportsaktiviteter?">
+					description = <"">
+				>
+				["at0190"] = <
+					text = <"12. Påvirker din urinlekkasje">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Ditt familieliv?">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Dine ferier?">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Ditt sosiale liv (å gå ut, å treffe venner)?">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Din nattesøvn?">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?">
+					description = <"">
+				>
+				["at0214"] = <
+					text = <"13. Er ditt seksualliv blitt endret etter behandling av ditt lekkasjeproblem?">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0241"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0243"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0245"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0246"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0247"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0248"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0249"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0250"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0251"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0252"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0253"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0255"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0257"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0259"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0262"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0263"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0264"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0265"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0268"] = <
+					text = <"Aldri">
+					description = <"">
+				>
+				["at0269"] = <
+					text = <"1 til 4 ganger per måned">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"En gang daglig">
+					description = <"">
+				>
+				["at0271"] = <
+					text = <"Mer enn 1 gang daglig">
+					description = <"">
+				>
+				["at0272"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0273"] = <
+					text = <"Ingen">
+					description = <"">
+				>
+				["at0274"] = <
+					text = <"Dråper/fuktig undertøy">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Drypper/vått undertøy">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"Renner/går gjennom ytterklær">
+					description = <"">
+				>
+				["at0277"] = <
+					text = <"Renner nedover bena eller ned på gulvet">
+					description = <"">
+				>
+				["at0278"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0279"] = <
+					text = <"Aldri">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"1-4 ganger per måned">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"1-6 ganger per uke">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"En gang daglig">
+					description = <"">
+				>
+				["at0283"] = <
+					text = <"Mer enn 1 gang daglig">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Ingen">
+					description = <"">
+				>
+				["at0286"] = <
+					text = <"Dråper/fuktig undertøy">
+					description = <"">
+				>
+				["at0287"] = <
+					text = <"Drypper/vått undertøy">
+					description = <"">
+				>
+				["at0288"] = <
+					text = <"Renner/går gjennom ytterklær">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"Renner nedover bena eller ned på gulvet">
+					description = <"">
+				>
+				["at0290"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0291"] = <
+					text = <"Lekkasje ved fysisk aktivitet mer enn lekkasje ved trang">
+					description = <"">
+				>
+				["at0292"] = <
+					text = <"Lekkasje ved trang mer enn lekkasje ved fysisk aktivitet">
+					description = <"">
+				>
+				["at0293"] = <
+					text = <"Like mye plaget av lekkasje ved trang som ved fysisk aktivitet">
+					description = <"">
+				>
+				["at0294"] = <
+					text = <"Har ikke lekkasje verken som ved spørsmål 2 eller 4">
+					description = <"">
+				>
+				["at0295"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Ingen">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"1-3 per uke">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"4-6 per uke">
+					description = <"">
+				>
+				["at0299"] = <
+					text = <"1-4 daglig">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"Mer enn 4 daglig">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"Ingen">
+					description = <"">
+				>
+				["at0303"] = <
+					text = <"1 gang">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"2-3 ganger">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"4 ganger">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"Mer enn 4 ganger">
+					description = <"">
+				>
+				["at0307"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"Aldri">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"Sjelden">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"Av og til">
+					description = <"">
+				>
+				["at0311"] = <
+					text = <"Ofte">
+					description = <"">
+				>
+				["at0312"] = <
+					text = <"Alltid">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"Aldri">
+					description = <"">
+				>
+				["at0315"] = <
+					text = <"Sjelden">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Av og til">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Ofte">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Alltid">
+					description = <"">
+				>
+				["at0319"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Upåvirket">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Blitt litt verre">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"Blitt mye verre">
+					description = <"">
+				>
+				["at0323"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0327"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0331"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0332"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0333"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0340"] = <
+					text = <"Blitt mye bedre">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"Blitt litt bedre">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"Uforandret">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"Blitt litt verre">
+					description = <"">
+				>
+				["at0344"] = <
+					text = <"Blitt mye verre">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Ikke aktuelt">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Veldig fornøyd">
+					description = <"">
+				>
+				["at0348"] = <
+					text = <"Litt fornøyd">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"Verken fornøyd eller misfornøyd">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"Litt misfornøyd">
+					description = <"">
+				>
+				["at0351"] = <
+					text = <"Veldig misfornøyd">
+					description = <"">
+				>
+				["at0352"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0356"] = <
+					text = <"1-6 ganger per uke">
+					description = <"">
+				>
+				["at0359"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0360"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0361"] = <
+					text = <"15. Dato smerten startet">
+					description = <"">
+				>
+				["at0362"] = <
+					text = <"15. Har du hatt langvarige smerter relatert til operasjonen?">
+					description = <"">
+					comment = <"Ved fortsatte smerter bør du kontakte lege.">
+				>
+				["at0363"] = <
+					text = <"Nei eller smerte mindre enn 3 mnd">
+					description = <"">
+				>
+				["at0364"] = <
+					text = <"Smerte lengre enn eller start etter 3 mnd">
+					description = <"">
+				>
+				["at0365"] = <
+					text = <"Smertefri nå">
+					description = <"">
+				>
+				["at0366"] = <
+					text = <"Fortsatt smerte">
+					description = <"">
+				>
+			>
+		>
+	>
