@@ -2,7 +2,7 @@
 	openEHR-EHR-CLUSTER.pi_rads_2_1.v0
 
 concept
-	[at0000]	-- pi_rads_2_1
+	[at0000]	-- PI-RADS v2.1
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -25,25 +25,25 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere PI-RADS vurderingskategori fra resultatet av mpMRI (multi-parametrisk magnetisk resonans avbildning) skanninger av prostata.">
+			purpose = <"For å registrere PI-RADS-vurderingskategorien basert på resultatene fra mpMRI (multi-parametrisk magnetisk resonans avbildning) skanning av prostata.">
 			use = <"Brukes for å registrere PI-RADS vurderingskategori fra resultatet av mpMRI (multi-parametrisk magnetisk resonans avbildning) skanninger av prostata.
 
-Denne arketypen er utformet for å bli nøstet i \"Strukturerte funn\" i OBSERVATION.imaging_exam_result for å registrere en overordnet PI-RADS. Den kan også brukes i CLUSTER.imaging_exam-prostate eller CLUSTER.imaging_exam, med ‘Anatomisk lokalisasjon’ satt til for eksempel \"venstre halvdel av prostata\", for å registrere PI-RADS for en spesifikk del av prostata. Til slutt kan den brukes i CLUSTER.imaging_exam_anomaly, for å registrere PI-RADS for en spesifikk lesjon. Den kan også brukes innen andre ENTRY- eller CLUSTER-arketyper der det er klinisk passende.
+Denne arketypen er utformet for å bli nøstet i \"Strukturerte funn\" i OBSERVATION.imaging_exam_result (Bildediagnostisk svar) for å registrere en overordnet PI-RADS. Den kan også brukes i CLUSTER.imaging_exam (Bildediagnostisk undersøkelse - kroppsstruktur), med ‘Anatomisk lokalisasjon’ satt til for eksempel \"venstre halvdel av prostata\", for å registrere PI-RADS for en spesifikk del av prostata. Til slutt kan den brukes i CLUSTER.imaging_exam_anomaly (Bildediagnostisk undersøkelse - anomali), for å registrere PI-RADS for en spesifikk lesjon. I disse tilfellene kan hele strukturen for de spesifikke områdene eller lesjonene i prostata gjentas for hvert relevant område eller hver relevant lesjon, og på den måten kan man registrere flere forskjellige PI-RADS. Den kan også brukes innen andre ENTRY- eller CLUSTER-arketyper der det er klinisk passende.
 
-Arketypen er ment å brukes til å registrere PI-RADS (versjon 2.1) vurderingskategorien til et individ. Per dags dato finnes det ingen validert norsk oversettelse av PI-RADS. Man har derfor i arketypen valgt å beholde originalspråk for alle dataelementene. Om det på et tidspunkt etableres en validert norsk oversettelse, vil arketypen oppdateres med denne.">
-			keywords = <"PI-RADS, prostatakreft, bilde-rapportering, mpMRI, standardisert, vurderingskategorier, lesjoner, klinisk signifikant, radiolog, urolog", ...>
+Arketypen er ment å brukes til å registrere PI-RADS (versjon 2.1) vurderingskategorier. Per dags dato finnes det ingen validert norsk oversettelse av PI-RADS, derfor er det valgt å beholde originalspråk for alle dataelementene. Hvis det kommer en godkjent norsk oversettelse i fremtiden, vil arketyper bli oppdatert i henhold til dette.">
+			keywords = <"PI-RADS, prostatakreft, bilde-rapportering, mpMRI, standardisert, vurderingskategorier, lesjoner, klinisk signifikant, radiolog, urolog, MR prostata", ...>
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the PI-RADS assessment category from the result of mpMRI (multiparametric magnetic resonance imaging) scans on the prostate.">
+			purpose = <"To record the PI-RADS assessment category based on the results of mpMRI (multi-parametric magnetic resonance imaging) scanning of the prostate.">
 			use = <"Use to record the PI-RADS assessment category from the result of mpMRI (multiparametric magnetic resonance imaging) scans on the prostate.
 
-This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.imaging_exam_result to record the overall PI-RADS. It can also be used within CLUSTER.imaging_exam-prostate or CLUSTER.imaging_exam, with a specific `Body site’ such as “left hemisphere of prostate”, to record the PI-RADS specifically for an identified part of the prostate. Finally, it can be used within the CLUSTER.imaging_exam_anomaly, to record the PI-RADS of a specific lesion. It can also be used within other ENTRY or CLUSTER archetypes, where clinically appropriate.
+This archetype has been specifically designed to be used in the 'Examination detail' SLOT within the OBSERVATION.imaging_exam_result to record the overall PI-RADS. It can also be used within CLUSTER.imaging_exam, with a specific `Body site’ such as “left hemisphere of prostate”, to record the PI-RADS specifically for an identified part of the prostate. In these cases, the entire structure for specific areas or lesions in the prostate can be repeated for each relevant area or lesion, thereby allowing for the recording of multiple different PI-RADS. It can also be used within other ENTRY or CLUSTER archetypes where clinically appropriate.
 
-The archetype is intended to be used for recording the PI-RADS (version 2.1) category of an individual.">
-			keywords = <"PI-RADS, prostate cancer, imaging-reporting, mpMRI, standarized, assessment categories, lesions, clinically significant, radiologists, urologists", ...>
+The archetype is intended to be used for recording the PI-RADS (version 2.1) category.">
+			keywords = <"PI-RADS, prostate cancer, imaging-reporting, mpMRI, standarized, assessment categories, lesions, clinically significant, radiologists, urologists, MR prostate", ...>
 			misuse = <"">
 			copyright = <"© Nasjonal IKT HF">
 		>
@@ -53,20 +53,20 @@ The archetype is intended to be used for recording the PI-RADS (version 2.1) cat
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"American College of Radiology. Hentet fra: https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/PI-RADS.
+		["references"] = <"American College of Radiology. PI-RADS. Retrieved from https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/PI-RADS.
 
 Turkbey, B., Rosenkrantz, A. B., Haider, M. A., Padhani, A. R., Villeirs, G., Macura, K. J., Tempany, C. M., Choyke, P. L., Cornud, F., Margolis, D. J., Thoeny, H. C., Verma, S., Barentsz, J., & Weinreb, J. C. (2019). Prostate Imaging Reporting and Data System Version 2.1: 2019 Update of Prostate Imaging Reporting and Data System Version 2. European Urology, 76(3), 340-351. https://doi.org/https://doi.org/10.1016/j.eururo.2019.02.033">
 		["current_contact"] = <"June Marie Knappskog, june.marie.nepstad.knappskog@hnikt.no">
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"0DF166BF3C8231140E751230DC23C539">
-		["build_uid"] = <"44399047-8330-43ef-a4b3-d3c1cad7ccfb">
+		["MD5-CAM-1.0.1"] = <"050B976EB9676DB68946C4E69CF090C0">
+		["build_uid"] = <"7fca115d-781c-4138-b3b3-ed5c76522297">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- pi_rads_2_1
+	CLUSTER[at0000] matches {    -- PI-RADS v2.1
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] occurrences matches {0..1} matches {    -- PI-RADS
 				value matches {
@@ -86,8 +86,10 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"pi_rads_2_1">
-					description = <"En skala for å registrere en vurdering av sannsynligheten for klinisk signifikant kreft i et mistenkelig område i prostatakjertelen.">
+					text = <"PI-RADS v2.1">
+					description = <"En skala for å registrere en vurdering av sannsynligheten for klinisk signifikant kreft i et område med signalavvik i prostatakjertelen basert på mpMRI.
+">
+					comment = <"PI-RADS - Prostate Imaging Reporting and Data System.">
 				>
 				["at0001"] = <
 					text = <"PI-RADS">
@@ -99,7 +101,7 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Low">
-					description = <"Clinically significant canceris unlikely to be present.">
+					description = <"Clinically significant cancer is unlikely to be present.">
 				>
 				["at0004"] = <
 					text = <"Intermediate">
@@ -118,8 +120,9 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"pi_rads_2_1">
-					description = <"A scale used to record an assessment of the likelihood of clinically significant cancer in a suspicious area in the prostate gland.">
+					text = <"PI-RADS v2.1">
+					description = <"A scale to record an assessment of the likelihood of clinically significant cancer in an area with signal abnormalities in the prostate gland based on mpMRI.">
+					comment = <"PI-RADS - Prostate Imaging Reporting and Data System.">
 				>
 				["at0001"] = <
 					text = <"PI-RADS">
@@ -131,7 +134,7 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Low">
-					description = <"Clinically significant canceris unlikely to be present.">
+					description = <"Clinically significant cancer is unlikely to be present.">
 				>
 				["at0004"] = <
 					text = <"Intermediate">
