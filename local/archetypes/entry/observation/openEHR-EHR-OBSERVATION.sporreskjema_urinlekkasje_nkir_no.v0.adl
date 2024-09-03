@@ -34,8 +34,8 @@ https://arketyper.no/ckm/documents/1078.51.138">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A3904598AEC237063942F2484C96E91B">
-		["build_uid"] = <"a5af4bb1-abc8-436d-a6ff-f5bdd1676f0d">
+		["MD5-CAM-1.0.1"] = <"8BD25B54C59176CB320D698149542510">
+		["build_uid"] = <"3096405e-75d4-42dc-b65f-e2768159c65a">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -139,7 +139,7 @@ definition
 											-1|[local::at0278]
 										}
 									}
-									ELEMENT[at0059] occurrences matches {0..1} matches {    -- 4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker før du når frem til toalettet?
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- 4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker urin før du når frem til toalettet?
 										value matches {
 											0|[local::at0279],
 											1|[local::at0280],
@@ -263,38 +263,23 @@ definition
 											-1|[local::at0346]
 										}
 									}
-									ELEMENT[at0207] occurrences matches {0..1} matches {    -- 14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?
+									ELEMENT[at0367] occurrences matches {0..1} matches {    -- 14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?
 										value matches {
-											0|[local::at0347],
-											1|[local::at0348],
-											2|[local::at0349],
-											3|[local::at0350],
-											4|[local::at0351],
-											-1|[local::at0352]
+											0|[local::at0369],
+											1|[local::at0370],
+											2|[local::at0371],
+											3|[local::at0372],
+											4|[local::at0373],
+											-1|[local::at0374]
 										}
 									}
-									CLUSTER[at0362] occurrences matches {0..1} matches {    -- 15. Har du hatt langvarige smerter relatert til operasjonen?
-										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0363] occurrences matches {0..1} matches {    -- Nei eller smerte mindre enn 3 mnd
-												value matches {
-													DV_ORDINAL matches {*}
-												}
-											}
-											ELEMENT[at0364] occurrences matches {0..1} matches {    -- Smerte lengre enn eller start etter 3 mnd
-												value matches {
-													DV_ORDINAL matches {*}
-												}
-											}
-											ELEMENT[at0365] occurrences matches {0..1} matches {    -- Smertefri nå
-												value matches {
-													DV_ORDINAL matches {*}
-												}
-											}
-											ELEMENT[at0366] occurrences matches {0..1} matches {    -- Fortsatt smerte
-												value matches {
-													DV_ORDINAL matches {*}
-												}
-											}
+									ELEMENT[at0368] occurrences matches {0..1} matches {    -- 15. Har du hatt langvarige smerter relatert til operasjonen?
+										value matches {
+											0|[local::at0375],
+											3|[local::at0376],
+											1|[local::at0377],
+											2|[local::at0378],
+											-1|[local::at0379]
 										}
 									}
 									ELEMENT[at0361] occurrences matches {0..1} matches {    -- 15. Dato smerten startet
@@ -356,7 +341,7 @@ ontology
 					description = <"">
 				>
 				["at0059"] = <
-					text = <"4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker før du når frem til toalettet?">
+					text = <"4. Hvor ofte opplever du plutselig sterk trang til å late vannet og lekker urin før du når frem til toalettet?">
 					description = <"">
 				>
 				["at0070"] = <
@@ -441,10 +426,6 @@ ontology
 				>
 				["at0203"] = <
 					text = <"Din nattesøvn?">
-					description = <"">
-				>
-				["at0207"] = <
-					text = <"14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?">
 					description = <"">
 				>
 				["at0214"] = <
@@ -891,30 +872,6 @@ ontology
 					text = <"Mangelfullt utfylt">
 					description = <"">
 				>
-				["at0347"] = <
-					text = <"Veldig fornøyd">
-					description = <"">
-				>
-				["at0348"] = <
-					text = <"Litt fornøyd">
-					description = <"">
-				>
-				["at0349"] = <
-					text = <"Verken fornøyd eller misfornøyd">
-					description = <"">
-				>
-				["at0350"] = <
-					text = <"Litt misfornøyd">
-					description = <"">
-				>
-				["at0351"] = <
-					text = <"Veldig misfornøyd">
-					description = <"">
-				>
-				["at0352"] = <
-					text = <"Mangelfullt utfylt">
-					description = <"">
-				>
 				["at0356"] = <
 					text = <"1-6 ganger per uke">
 					description = <"">
@@ -932,25 +889,57 @@ ontology
 					text = <"15. Dato smerten startet">
 					description = <"">
 				>
-				["at0362"] = <
+				["at0367"] = <
+					text = <"14. Er du fornøyd med resultatet av din behandling for lekkasje ved aktivitet eller hoste?">
+					description = <"">
+				>
+				["at0368"] = <
 					text = <"15. Har du hatt langvarige smerter relatert til operasjonen?">
 					description = <"">
 					comment = <"Ved fortsatte smerter bør du kontakte lege.">
 				>
-				["at0363"] = <
+				["at0369"] = <
+					text = <"Veldig fornøyd">
+					description = <"">
+				>
+				["at0370"] = <
+					text = <"Litt fornøyd">
+					description = <"">
+				>
+				["at0371"] = <
+					text = <"Hverken fornøyd eller misfornøyd">
+					description = <"">
+				>
+				["at0372"] = <
+					text = <"Litt misfornøyd">
+					description = <"">
+				>
+				["at0373"] = <
+					text = <"Veldig misfornøyd">
+					description = <"">
+				>
+				["at0374"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0375"] = <
 					text = <"Nei eller smerte mindre enn 3 mnd">
 					description = <"">
 				>
-				["at0364"] = <
+				["at0376"] = <
 					text = <"Smerte lengre enn eller start etter 3 mnd">
 					description = <"">
 				>
-				["at0365"] = <
+				["at0377"] = <
 					text = <"Smertefri nå">
 					description = <"">
 				>
-				["at0366"] = <
+				["at0378"] = <
 					text = <"Fortsatt smerte">
+					description = <"">
+				>
+				["at0379"] = <
+					text = <"Mangelfullt utfylt">
 					description = <"">
 				>
 			>
