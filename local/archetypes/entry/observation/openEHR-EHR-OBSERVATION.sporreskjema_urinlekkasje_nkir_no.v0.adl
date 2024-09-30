@@ -34,8 +34,8 @@ https://arketyper.no/ckm/documents/1078.51.138">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8BD25B54C59176CB320D698149542510">
-		["build_uid"] = <"3096405e-75d4-42dc-b65f-e2768159c65a">
+		["MD5-CAM-1.0.1"] = <"C772C58168E67EEDDAB29F11C289ACD3">
+		["build_uid"] = <"818cd6ad-696f-41ec-ad78-794488f5054d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -275,16 +275,21 @@ definition
 									}
 									ELEMENT[at0368] occurrences matches {0..1} matches {    -- 15. Har du hatt langvarige smerter relatert til operasjonen?
 										value matches {
-											0|[local::at0375],
-											3|[local::at0376],
-											1|[local::at0377],
-											2|[local::at0378],
-											-1|[local::at0379]
+											0|[local::at0385],
+											3|[local::at0386],
+											-1|[local::at0387]
 										}
 									}
 									ELEMENT[at0361] occurrences matches {0..1} matches {    -- 15. Dato smerten startet
 										value matches {
 											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0389] occurrences matches {0..1} matches {    -- 15. Har du fortsatt smerte?
+										value matches {
+											1|[local::at0390],
+											2|[local::at0391],
+											-1|[local::at0392]
 										}
 									}
 								}
@@ -922,23 +927,31 @@ ontology
 					text = <"Mangelfullt utfylt">
 					description = <"">
 				>
-				["at0375"] = <
+				["at0385"] = <
 					text = <"Nei eller smerte mindre enn 3 mnd">
 					description = <"">
 				>
-				["at0376"] = <
+				["at0386"] = <
 					text = <"Smerte lengre enn eller start etter 3 mnd">
 					description = <"">
 				>
-				["at0377"] = <
+				["at0387"] = <
+					text = <"Mangelfullt utfylt">
+					description = <"">
+				>
+				["at0389"] = <
+					text = <"15. Har du fortsatt smerte?">
+					description = <"">
+				>
+				["at0390"] = <
 					text = <"Smertefri nå">
 					description = <"">
 				>
-				["at0378"] = <
+				["at0391"] = <
 					text = <"Fortsatt smerte">
 					description = <"">
 				>
-				["at0379"] = <
+				["at0392"] = <
 					text = <"Mangelfullt utfylt">
 					description = <"">
 				>
