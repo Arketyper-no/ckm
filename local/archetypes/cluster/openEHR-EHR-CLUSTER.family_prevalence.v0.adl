@@ -105,8 +105,8 @@ This archetype has specifically been designed to be used in the 'Detail' SLOT wi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0580AE18285D941B16AD953105144F8B">
-		["build_uid"] = <"51b9bd1c-b879-431e-9429-9bad269bf8dd">
+		["MD5-CAM-1.0.1"] = <"8C719DFDF22BB8FA14D6CF24BF244A98">
+		["build_uid"] = <"786a8e7c-cddd-49ec-bca4-70bf120557e6">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -200,7 +200,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Family prevalence">
-					description = <"Summary information about the prevalence of a risk factor, problem or diagnosis in all family members.">
+					description = <"Summary information about the prevalence of a risk factor, problem or diagnosis in family members.">
 				>
 				["at0030"] = <
 					text = <"Description">
@@ -222,7 +222,7 @@ ontology
 				["at0034"] = <
 					text = <"Number affected">
 					description = <"The number of family members known to be affected.">
-					comment = <"This is the number of family members who are affected AND who also fit selected relationship, family line and sex criteria. Effectively this number is the numerator for calculation of an 'Affected ratio'.">
+					comment = <"This is the number of family members who are affected AND who also fit selected relationship degree, relationship group, family line and sex criteria. Effectively this number is the numerator for calculation of an 'Affected ratio'.">
 				>
 				["at0037"] = <
 					text = <"First degree relative">
@@ -272,7 +272,7 @@ ontology
 				["at0054"] = <
 					text = <"Number eligible">
 					description = <"The number of eligible family members.">
-					comment = <"This is the number of family members who potentially could be affected AND who also fit selected relationship, family line and sex criteria. Effectively this number is the denominator for calculation of an 'Affected ratio'.">
+					comment = <"This is the number of family members who potentially could be affected AND who also fit selected relationship degree, relationship group, family line and sex criteria. Effectively this number is the denominator for calculation of an 'Affected ratio'.">
 				>
 				["at0055"] = <
 					text = <"Genetic predisposition?">
@@ -294,8 +294,8 @@ ontology
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"family_prevalence">
-					description = <"Resumo das informações sobre a prevalência de um fator de risco, o problema ou o diagnóstico em todos os membros da família.">
+					text = <"Prevalência Familiar">
+					description = <"*Summary information about the prevalence of a risk factor, problem or diagnosis in family members. (en)">
 				>
 				["at0030"] = <
 					text = <"Descrição">
@@ -304,11 +304,11 @@ ontology
 				["at0031"] = <
 					text = <"Familiares afetados">
 					description = <"Detalhes sobre o número de membros da família afetados">
-					comment = <"Este cluster será repetido para cada relação, linha de família, valor do sexo ou combinação dos três. Por exemplo, o cluster será repetido para qualquer um ou todos de primeiro grau relativo (sem sexo especificado), primeiro grau relativo de linha materna; primeiro grau de parente masculino ou primeiro grau de parente feminino; ou todos os homens, ou todas as mulheres.">
+					comment = <"*This cluster will be repeated for each relationship degree, relationship group, family line, sex value or combination of all four. For example, the cluster will be repeated for any or all of first degree relative (without sex specified), first degree relative from maternal line; parents; grandparents; first degree male relative or first degree female relative; or all males, all females. (en)">
 				>
 				["at0032"] = <
 					text = <"*Relationship degree (en)">
-					description = <"O grau de relacionamento entre o sujeito do cuidado e o grupo selecionado dos membros da família.">
+					description = <"*The degree of relationship between the subject of care and a selected group of family members. (en)">
 				>
 				["at0033"] = <
 					text = <"Sexo Biológico">
@@ -317,7 +317,7 @@ ontology
 				["at0034"] = <
 					text = <"Número de afetados">
 					description = <"O número de membros da família conhecido por serem afetados">
-					comment = <"Este é o número de membros da família que são afetados e que também se encaixam na relação selecionada, linhagem familiar e critérios de sexo. Efetivamente, este número é o numerador para o cálculo de uma proporção de afetados.">
+					comment = <"*This is the number of family members who are affected AND who also fit selected relationship category, relationship group, family line and sex criteria. Effectively this number is the numerator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0037"] = <
 					text = <"Relação de Primeiro Grau">
@@ -367,7 +367,7 @@ ontology
 				["at0054"] = <
 					text = <"Números de elegíveis">
 					description = <"O número de membros elegíveis da família.">
-					comment = <"Este é o número de membros da família que potencialmente poderiam ser afetados, e que também se encaixam a relação selecionada, linhagem familiar e critérios de sexo. Este número é, efetivamente, o denominador para cálculo da proporção de afetados.">
+					comment = <"*This is the number of family members who potentially could be affected AND who also fit selected relationship degree, relationship group, family line and sex criteria. Effectively this number is the denominator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0055"] = <
 					text = <"Predisposição genética?">
@@ -389,8 +389,8 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"family_prevalence">
-					description = <"Zusammenfassung von information über die Prävalenz eines Risikofaktors, eines Problems oder einer Diagnose bei allen Familienmitgliedern.">
+					text = <"Familienprävalenz">
+					description = <"*Summary information about the prevalence of a risk factor, problem or diagnosis in family members. (en)">
 				>
 				["at0030"] = <
 					text = <"Beschreibung">
@@ -399,12 +399,11 @@ ontology
 				["at0031"] = <
 					text = <"Betroffene Familienmitglieder">
 					description = <"Angaben über die Anzahl der betroffenen Familienmitglieder.">
-					comment = <"Dieses Cluster wird für jede Verwandtschaft, Familienlinie, Geschlechtswert oder Kombination aller drei wiederholt. Zum Beispiel wird dieses Cluster für einen oder alle männlichen Verwandten ersten Grades (ohne Geschlecht angegeben), einen Verwandten ersten Grades von der mütterlichen Linie, einen Verwandten ersten Grades männlichen Verwandten oder weiblichen Verwandten ersten Grades oder alle männlichen, alle weiblichen Verwandten wiederholt.
-">
+					comment = <"*This cluster will be repeated for each relationship degree, relationship group, family line, sex value or combination of all four. For example, the cluster will be repeated for any or all of first degree relative (without sex specified), first degree relative from maternal line; parents; grandparents; first degree male relative or first degree female relative; or all males, all females. (en)">
 				>
 				["at0032"] = <
 					text = <"*Relationship degree (en)">
-					description = <"Der Verwandtschaftsgrad zwischen dem Pflegebedürftigen und einer bestimmten Gruppe von Familienmitgliedern.">
+					description = <"*The degree of relationship between the subject of care and a selected group of family members. (en)">
 				>
 				["at0033"] = <
 					text = <"Biologisches Geschlecht">
@@ -413,9 +412,7 @@ ontology
 				["at0034"] = <
 					text = <"Anzahl der Betroffenen">
 					description = <"Die Anzahl der Familienmitglieder, von denen bekannt ist, daß sie betroffen sind.">
-					comment = <"Die Anzahl der betroffenen Familienmitglieder, die auch zu ausgewählten Beziehungs-, Familienlinien- und Geschlechterkriterien passen. Diese Zahl ist faktisch der Zähler für die Berechnung eines \"Affected Ratio\".
-
-">
+					comment = <"*This is the number of family members who are affected AND who also fit selected relationship category, relationship group, family line and sex criteria. Effectively this number is the numerator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0037"] = <
 					text = <"Verwandter ersten Grades">
@@ -465,7 +462,7 @@ ontology
 				["at0054"] = <
 					text = <"Anzahl der infrage Kommenden">
 					description = <"Die Anzahl der infrage kommenden Familienmitglieder.">
-					comment = <"Die Anzahl der Familienmitglieder, die möglicherweise betroffen sein könnten UND die auch zu ausgewählten Beziehungs-, Familienlinien- und Geschlechterkriterien passen. Diese Zahl ist faktisch der Nenner für die Berechnung eines \"Affected Ratio\".">
+					comment = <"*This is the number of family members who potentially could be affected AND who also fit selected relationship degree, relationship group, family line and sex criteria. Effectively this number is the denominator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0055"] = <
 					text = <"Genetische Veranlagung?">
@@ -487,8 +484,8 @@ ontology
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"family_prevalence">
-					description = <"Sammanfattningsinformation om förekomsten av en riskfaktor, problem eller diagnos hos alla familjemedlemmar.">
+					text = <"Familjär prevalens">
+					description = <"*Summary information about the prevalence of a risk factor, problem or diagnosis in family members. (en)">
 				>
 				["at0030"] = <
 					text = <"Beskrivning">
@@ -497,11 +494,11 @@ ontology
 				["at0031"] = <
 					text = <"Berörd familj">
 					description = <"Detaljer om antalet berörda familjemedlemmar.">
-					comment = <"Denna cluster kommer att upprepas för varje förhållande, familj, könsvärde eller kombination av alla tre. Till exempel kommer cluster att upprepas för några eller alla första graders relativa (utan kön specificerat), första gradens relativ från moderlinjen; första gradens manliga släkting eller första gradens kvinnliga släkting; eller alla män, alla kvinnor.">
+					comment = <"*This cluster will be repeated for each relationship degree, relationship group, family line, sex value or combination of all four. For example, the cluster will be repeated for any or all of first degree relative (without sex specified), first degree relative from maternal line; parents; grandparents; first degree male relative or first degree female relative; or all males, all females. (en)">
 				>
 				["at0032"] = <
 					text = <"*Relationship degree (en)">
-					description = <"Graden av förhållande mellan patient och en utvald grupp familjemedlemmar.">
+					description = <"*The degree of relationship between the subject of care and a selected group of family members. (en)">
 				>
 				["at0033"] = <
 					text = <"Biologiskt kön">
@@ -510,7 +507,7 @@ ontology
 				["at0034"] = <
 					text = <"Antal berörda">
 					description = <"Antalet familjemedlemmar som påverkas.">
-					comment = <"Detta är antalet familjemedlemmar som berörs OCH som också passar utvalda förhållanden, härstamning och sexkriterier. Detta nummer är täljaren för beräkning av ett 'Affected ratio'.">
+					comment = <"*This is the number of family members who are affected AND who also fit selected relationship category, relationship group, family line and sex criteria. Effectively this number is the numerator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0037"] = <
 					text = <"Förstagradssläkting">
@@ -560,7 +557,7 @@ ontology
 				["at0054"] = <
 					text = <"Antal berättigade">
 					description = <"Antalet berättigade familjemedlemmar.">
-					comment = <"Det här är antalet familjemedlemmar som potentiellt kan påverkas OCH som också passar utvalda förhållanden, härstamning och sexkriterier. Detta nummer är nämnaren för beräkning av ett 'Affected ratio'.">
+					comment = <"*This is the number of family members who potentially could be affected AND who also fit selected relationship degree, relationship group, family line and sex criteria. Effectively this number is the denominator for calculation of an 'Affected ratio'. (en)">
 				>
 				["at0055"] = <
 					text = <"Genetisk diates?">
@@ -583,7 +580,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Familieprevalens">
-					description = <"Oppsummerende informasjon om forekomsten av en bestemt risikofaktor, problem eller diagnose hos alle familiemedlemmer.">
+					description = <"Oppsummerende informasjon om forekomsten av en bestemt risikofaktor, problem eller diagnose hos familiemedlemmer.">
 				>
 				["at0030"] = <
 					text = <"Beskrivelse">
@@ -592,7 +589,7 @@ ontology
 				["at0031"] = <
 					text = <"Affiserte familiemedlemmer">
 					description = <"Detaljer om antall familiemedlemmer som er affisert">
-					comment = <"Dette clusteret blir repetert for hvert slektskap, relasjonsgruppe, familielinje eller kjønn eller kombinasjonen av alle fire. For eksempel vil clusteret bli repetert for hver førstegradsslektninger (uten å nevne kjønn), mannlige førstegradsslektninger fra morssiden, foreldre, besteforeldre, mannlige førstegradsslektninger eller kvinnelige førstegradsslektninger; eller alle menn, alle kvinner.">
+					comment = <"Dette clusteret blir repetert for hver grad av slektskap, relasjonsgruppe, familielinje eller kjønn eller kombinasjonen av alle fire. For eksempel vil clusteret bli repetert for alle eller noen førstegradsslektninger (uten å nevne kjønn), førstegradsslektninger fra morssiden, foreldre, besteforeldre, mannlige førstegradsslektninger eller kvinnelige førstegradsslektninger; eller alle menn, alle kvinner.">
 				>
 				["at0032"] = <
 					text = <"Grad av slektskap">
@@ -605,7 +602,7 @@ ontology
 				["at0034"] = <
 					text = <"Antall affisert">
 					description = <"Antall familiemedlemmer som er kjent affisert av tilstanden.">
-					comment = <"Dette er antall familiemedlemmer som er rammet OG som passer det valgte slektskapet, familieside eller kjønn. I praksis er dette telleren for å regne ut andel affiserte familiemedlemmer.">
+					comment = <"Dette er antall familiemedlemmer som er rammet OG som passer den valgte grad av slektskap, relasjonsgruppe, familieside og kjønn. I praksis er dette telleren for å regne ut andel affiserte familiemedlemmer.">
 				>
 				["at0037"] = <
 					text = <"Førstgradsslektning">
@@ -655,7 +652,7 @@ ontology
 				["at0054"] = <
 					text = <"Antall familiemedlemmer i gruppen">
 					description = <"Antall familiemedlemmer som passer i dette utvalget.">
-					comment = <"Dette er antall familiemedlemmer som potensielt kan ha blitt rammet OG som også passer det valgte slektskapet, familieside og kjønn. I praksis er dette nevneren for å regne ut andel affiserte familiemedlemmer.">
+					comment = <"Dette er antall familiemedlemmer som potensielt kan ha blitt rammet OG som også passer den valgte grad av slektskap, relasjonsgruppe, familieside og kjønn. I praksis er dette nevneren for å regne ut andel affiserte familiemedlemmer.">
 				>
 				["at0055"] = <
 					text = <"Genetisk predisposisjon?">
