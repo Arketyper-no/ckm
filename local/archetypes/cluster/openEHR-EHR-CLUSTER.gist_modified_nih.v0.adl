@@ -2,13 +2,16 @@
 	openEHR-EHR-CLUSTER.gist_modified_nih.v0
 
 concept
-	[at0000]	-- GIST risk assessment (Modified NIH criteria)
+	[at0000]	-- Modified NIH Criteria for GIST risk assessment
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
+				["name"] = <"Kanika Kuwelker">
+				["organisation"] = <"Helse Vest IKT">
+				["email"] = <"kanika.kuwelker@helse-vest-ikt.no">
 			>
 		>
 	>
@@ -25,51 +28,98 @@ description
 			purpose = <"For å registrere risikovurdering for tilbakefall etter kirurgi for GIST i henhold til modifiserte NIH-kriterier.">
 			use = <"Brukes for å registrere risikovurdering for tilbakefall etter kirurgi for GIST i henhold til modifiserte NIH-kriterier.
 
-Arketypen er utviklet for å brukes i en ENTRY-arketype som vil gi den kliniske eller patologiske konteksten for registreringen. For eksempel: I SLOTet \"Spesifikke detaljer\" i arketypen Problem/diagnose (EVALUATION.problem_diagnosis), i en relevant patologirelatert CLUSTER-arketype som igjen nøstes i arketypen Laboratorieresultat (OBSERVATION.laboratory_test_result). Dette gir også mulighet for å registrere kroppssted.
-
-Denne arketypen inneholder kun ett dataelement for å registrere risikovurderingen. Dataelementer for å registrere parameterne \"Diameter\", \"Mitosetall\" og \"Lokasjon\" som utgjør grunnlaget for risikovurderingen, vil bli registrert ved hjelp av andre relevante arketyper.">
-			keywords = <"gastrointestinal stromal tumor, GIST, sarkom, kreft, neoplasme, onkologi, malignitet", ...>
-			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+Arketypen er utviklet for å brukes i en ENTRY-arketype som vil gi den kliniske eller patologiske konteksten for registreringen. For eksempel: I SLOTet \"Spesifikke detaljer\" i arketypen Problem/diagnose (EVALUATION.problem_diagnosis), i en relevant patologirelatert CLUSTER-arketype som igjen nøstes i arketypen Laboratorieresultat (OBSERVATION.laboratory_test_result). Dette gir også mulighet for å registrere kroppssted.">
+			keywords = <"gastrointestinal stromal tumor, GIST, sarkom, kreft, neoplasme, onkologi, malignitet, risiko", ...>
+			misuse = <"Skal ikke brukes for primærregistrering av diameter og mitosetall av svulsten - bruk en relevant patologirelatert ENTRY-arketype for dette.">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record an assessment of risk of recurrence after surgery for GIST based on the Modified NIH Criteria.">
 			use = <"Use to record an assessment of risk of recurrence after surgery for GIST based on the Modified NIH Criteria.
 
-The archetype is designed to be used in an ENTRY archetype that will provide the clinical or pathological context. For example: In the \"Specific Details\" SLOT in the EVALUATION.problem_diagnose (Problem/Diagnosis) archetype, or nested in a relevant pathology-related CLUSTER archetype which is again nested in the laboratory response archetype (OBSERVATION.laboratory_test_result). This will also allow for documentation of body site. 
-
-This archetype only contains a data element to record the risk assessment. Data elements pertaining to the parameters \"Diameter\", \"Mitotic count\", and \"Location\" that are the basis for the risk assessment will be recorded using other relevant archetypes.">
-			keywords = <"gastrointestinal stromal tumour, GIST, sarcoma, cancer, neoplasm, oncology, malignancy", ...>
-			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+The archetype is designed to be used in an ENTRY archetype that will provide the clinical or pathological context. For example: In the \"Specific Details\" SLOT in the EVALUATION.problem_diagnosis archetype, or nested in a relevant pathology-related CLUSTER archetype that is again nested in the OBSERVATION.laboratory_test_result archetype. This will also allow for documentation of body site.">
+			keywords = <"gastrointestinal stromal tumour, tumor, GIST, sarcoma, cancer, neoplasm, oncology, malignancy, risk", ...>
+			misuse = <"Not to be used for the primary recording of diameter and mitotic count of the tumour - use a relevant pathology-related archetype for this purpose.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Grant Forrest, Lunaria Ltd, United Kingdom", "Marianne Gårderhagen, OUS, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Eli Larsen, UNN, Norway (openEHR Editor)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "June Marie Nepstad Knappskog, Helse Nord IKT AS, Norway (openEHR Editor), Norway (openEHR Editor)", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Bjørn Næss, DIPS ASA, Norway", "Sonja Steigen, Universitetssykehuset Nord-Norge, Norway", "Kanthan Theivendran, NHS, United Kingdom", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Olga Zaikova, OUS, Radiumhospitalet, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Nasjonal IKT">
-		["references"] = <"GIST riskovurdering (Modified NIH criteria), Utkast arketype [Internet]. openEHR Foundation, OpenEHR International Clinical Knowledge Manager [sitert: 2024-10-29]. Hentet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.7266
-
-Joensuu H, Hohenberger P, Corless CL. Gastrointestinal stromal tumour. Lancet. 2013 Sep 14;382(9896):973-83. doi: 10.1016/S0140-6736(13)60106-3. Epub 2013 Apr 24. Review. PubMed PMID: 23623056
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Joensuu H, Hohenberger P, Corless CL. Gastrointestinal stromal tumour. Lancet. 2013 Sep 14;382(9896):973-83. doi: 10.1016/S0140-6736(13)60106-3. Epub 2013 Apr 24. Review. PubMed PMID: 23623056
 
 Joensuu H. Risk stratification of patients diagnosed with gastrointestinal stromal tumor. Hum Pathol. 2008 Oct;39(10):1411-9. doi: 10.1016/j.humpath.2008.06.025. PubMed PMID: 18774375.
 
 Jones RL. Practical aspects of risk assessment in gastrointestinal stromal tumors. J Gastrointest Cancer. 2014 Sep;45(3):262-7. doi: 10.1007/s12029-014-9615-x. Review. PubMed PMID: 24802226; PubMed Central PMCID: PMC4126997.
 
 Norwegian translation: Helsedirektoratet. Nasjonalt handlingsprogram med retningslinjer for diagnostikk, behandling og oppfølging av sarkom. [revised 2022 February]. [Internet]. 2022 February. Available from: https://www.helsedirektoratet.no/retningslinjer/sarkomer-handlingsprogram">
-		["original_namespace"] = <"no.nasjonalikt">
-		["original_publisher"] = <"Nasjonal IKT">
-		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"B67EB34BF705387001220BD3F9A6E9D0">
-		["build_uid"] = <"92bef341-46f7-4c0e-97e6-0fc83ba6d39a">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"4CADC60AB62DAE4368A0D005117C8D8E">
+		["build_uid"] = <"8f2eae40-2223-43e7-8653-76694c97fe5d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- GIST risk assessment (Modified NIH criteria)
+	CLUSTER[at0000] matches {    -- Modified NIH Criteria for GIST risk assessment
 		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0025] occurrences matches {0..1} matches {    -- Diameter
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"cm">
+								magnitude = <|>=0.0|>
+								precision = <|1|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0033] occurrences matches {0..1} matches {    -- Mitotic count
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::763]>
+						list = <
+							["1"] = <
+								units = <"{mitoses}/5.mm2">
+								magnitude = <|>=0.0|>
+							>
+							["2"] = <
+								units = <"{mitoses}/50.[HPF]">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {    -- Location
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0029,    -- Gastric
+							at0030]    -- Not gastric
+						}
+					}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {    -- Rupture
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0031,    -- Yes
+							at0032]    -- No
+						}
+					}
+				}
+			}
 			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Risk category
 				value matches {
 					DV_CODED_TEXT matches {
@@ -86,14 +136,17 @@ definition
 		}
 	}
 
+
+
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"GIST risk assessment (Modified NIH criteria)">
-					description = <"An assessment of the recurrence risk after surgery based on the Modified NIH Criteria for GIST (gastrointestinal stromal tumour).">
-					comment = <"NIH - National Institutes of Health.">
+					text = <"Modified NIH Criteria for GIST risk assessment">
+					description = <"An assessment of the recurrence risk of GastroIntestinal Stromal Tumours (GIST) after surgery, based on the Modified NIH Criteria.">
+					comment = <"Also known as Joensuu criteria.
+NIH - National Institutes of Health.">
 				>
 				["at0004"] = <
 					text = <"Risk category">
@@ -115,34 +168,103 @@ ontology
 					text = <"High risk">
 					description = <"">
 				>
+				["at0025"] = <
+					text = <"Diameter">
+					description = <"">
+					comment = <"In clinical practice the primary registration of the tumour diameter would be recorded using a relevant pathology-related archetype. In this case, the ‘Diameter’ result in this archetype should be copied from the primary recording.">
+				>
+				["at0027"] = <
+					text = <"Location">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Tumour rupture">
+					description = <"Presence of tumour rupture.">
+				>
+				["at0029"] = <
+					text = <"Gastric">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Not gastric">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Mitotic count">
+					description = <"">
+					comment = <"In clinical practice the primary registration of the mitotic count would be recorded using a relevant pathology-related archetype. In this case, the ‘Mitotic count’ result in this archetype should be copied from the primary recording.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"GIST riskovurdering (Modified NIH criteria)">
+					text = <"Modifiserte NIH-kriterier for risikovurdering av GIST">
 					description = <"En vurdering av risikoen for tilbakefall etter kirurgi i henhold til modifiserte NIH-kriterier for GIST (gastrointestinal stromal tumor).">
-					comment = <"NIH - National Institutes of Health.">
+					comment = <"Også kjent som Joensuu kriterier. 
+NIH - National Institutes of Health.">
 				>
 				["at0004"] = <
 					text = <"Risikokategori">
 					description = <"">
 				>
 				["at0021"] = <
-					text = <"Meget lav">
+					text = <"Meget lav risiko">
 					description = <"">
 				>
 				["at0022"] = <
-					text = <"Lav">
+					text = <"Lav risiko">
 					description = <"">
 				>
 				["at0023"] = <
-					text = <"Intermediær">
+					text = <"Intermediær risiko">
 					description = <"">
 				>
 				["at0024"] = <
 					text = <"Høy risiko">
 					description = <"">
+				>
+				["at0025"] = <
+					text = <"Diameter">
+					description = <"">
+					comment = <"I klinisk praksis vil den primære registreringen av tumordiameteren bli registrert ved bruk av en relevant patologirelatert arketype. I dette tilfellet bør resultatet for 'Diameter'-elementet i denne arketypen kopieres fra den primære registreringen.">
+				>
+				["at0027"] = <
+					text = <"Lokasjon">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Tumorruptur">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Ventrikkel">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Ikke ventrikkel">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Mitosetall">
+					description = <"">
+					comment = <"I klinisk praksis vil den primære registreringen av mitosetall bli registrert ved bruk av en relevant patologirelatert arketype. I dette tilfellet bør resultatet for 'Mitosetall'-elementet i denne arketypen kopieres fra den primære registreringen.">
 				>
 			>
 		>
