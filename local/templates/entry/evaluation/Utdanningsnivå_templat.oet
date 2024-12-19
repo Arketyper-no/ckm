@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>e06e9183-36a4-4758-a4a1-4a5f4d598c5f</id>
+    <name>Utdanningsnivå_templat</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-06-16</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>Et templat inneholdende utdanningsnivå og et standardisert verdisett basert på arbeidet gjort i regi av Direktoratet for e-helse.</purpose>
+            <use>Et templat inneholdende utdanningsnivå og et standardisert verdisett basert på arbeidet gjort i regi av Direktoratet for e-helse. 
+Dette templatet vil bli brukt i det interregionale "felles kreftjournal" prosjektet under sosialanamnese.
+Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hvor det lages skjema hvor man vil dokumentere utdanningsnivå i journal.
+
+Verdisettet med tilhørende forklaring i dette templatet for utdanningsnivå er:
+-Ingen utdanning = Ingen skolegang.
+-Grunnskole = Grunnskole 7-10 år, framhaldsskole eller folkehøyskole.
+-Videregående = Inkluderer VGS I og VGS II, allmenn/ studiespesialisering. Yrkesfaglig, påbygning.
+-Universitet/Høyskole &lt;4 år = Mindre enn 4 år.
+-Universitet/Høyskole ≥4 år = 4 år eller mer. Inkl. forskerutdanning.
+-Ukjent = Utdanningsnivået er ukjent.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>2.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>cf1dcf665b359be383c22dfa7058b63d</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>0A5231D7B62977A3C73DC17A92BFE36F</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition
+        archetype_id="openEHR-EHR-EVALUATION.education_summary.v1"
+        concept_name="Utdanningssammendrag"
+        name="Utdanningsnivå_templat" xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule max="0" path="/data[at0001]/items[at0018]"/>
+        <Rule max="0" path="/data[at0001]/items[at0003]">
+            <constraint xsi:type="tem:durationConstraint">
+                <pattern>PYM</pattern>
+                <minMagnitude>P0Y</minMagnitude>
+                <includesMaximum>false</includesMaximum>
+                <includesMinimum>true</includesMinimum>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0031]">
+            <constraint xsi:type="tem:durationConstraint">
+                <pattern>PYM</pattern>
+                <minMagnitude>P0Y</minMagnitude>
+                <includesMaximum>false</includesMaximum>
+                <includesMinimum>true</includesMinimum>
+            </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>local_terms::0::Ingen utdanning</includedValues>
+                <includedValues>local_terms::1::Grunnskole</includedValues>
+                <includedValues>local_terms::2::Videregående</includedValues>
+                <includedValues>local_terms::3::Universitet/Høyskole &lt;4 år</includedValues>
+                <includedValues>local_terms::4::Universitet/Høyskole ≥4 år</includedValues>
+                <includedValues>local_terms::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks
+        archetype_id="openEHR-EHR-EVALUATION.education_summary.v1"
+        xmlns:tem="openEHR/v1/Template"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">0A5231D7B62977A3C73DC17A92BFE36F</digest>
+    </integrity_checks>
+</template>
