@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>a3223b62-18ad-4cf3-a64f-ce26dfa21643</id>
+    <name>omsorgsansvar_kartlegging</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2024-10-10</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>OUS / NRUA</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere om et individ har ansvar/omsorg for mindreårige barn og andre individer over 18 år.</purpose>
+            <keywords>
+                <item>Omsorg, verge</item>
+            </keywords>
+            <use>
+For å ha en sjekkliste for å kunne registrere om et individ/en pasient har ansvar for mindreårige barn i tillegg til å ha omsorg for individer som er over 18 år. 
+Det er brukt kartleggingsarketypen for sosiale forhold (openEHR-EHR-OBSERVATION.social_context_screening.v1) med to spørsmål, ett for om pasienten har ansvar for barn under 18 år og et spørsmål for om pasienten har ansvar for n ansvar for egne barn/andre over 18 år?På begge spørsmålene kan det velges enten å krysse av for ja/nei/ukjent, eller bare ha en boolean - sant/ikke sant. 
+
+Templatet er utarbeidet i forbindelse med det interregionale arbeidet med "felles kreftjournal"
+Det er ment å brukes i sosialanamnese sammenheng og ikke ment å erstatte den formelle PAS delen i EPJ</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>daa529b3dba144852f783df3f0ecd35c</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>37EF3307E2D27B0F8783AF8A3E2D6811</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>2.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingsspørsmål om sosiale forhold" name="Kartlegging omsorgsansvar" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule max="1" path="/data[at0001]/events[at0002]"/>
+        <Rule default="no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="1" name="Omsorgsperson for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule default="no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år</includedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Har pasienten ansvar for barn under 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0005]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Coded_text</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0025]"/>
+        <Rule clone="true" max="1" name="Omsorgsperson for personer over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule default="no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år</includedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Har pasienten ansvar for egne barn/andre over 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0005]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Coded_text</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0025]"/>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">37EF3307E2D27B0F8783AF8A3E2D6811</digest>
+    </integrity_checks>
+</template>
