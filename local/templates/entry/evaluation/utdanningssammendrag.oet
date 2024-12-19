@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<template xmlns="openEHR/v1/Template">
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
     <id>e06e9183-36a4-4758-a4a1-4a5f4d598c5f</id>
-    <name>Utdanningsnivå_templat</name>
+    <name>utdanningssammendrag</name>
     <description>
         <original_author>
             <item>
@@ -59,7 +58,7 @@ Verdisettet med tilhørende forklaring i dette templatet for utdanningsnivå er:
             </item>
             <item>
                 <key>sem_ver</key>
-                <value>2.0.0</value>
+                <value>3.0.1</value>
             </item>
             <item>
                 <key>build_uid</key>
@@ -77,13 +76,13 @@ Verdisettet med tilhørende forklaring i dette templatet for utdanningsnivå er:
                 <key>original_language</key>
                 <value>ISO_639-1::nb</value>
             </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
         </other_details>
     </description>
-    <definition
-        archetype_id="openEHR-EHR-EVALUATION.education_summary.v1"
-        concept_name="Utdanningssammendrag"
-        name="Utdanningsnivå_templat" xmlns:tem="openEHR/v1/Template"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+    <definition archetype_id="openEHR-EHR-EVALUATION.education_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
         <Rule max="0" path="/data[at0001]/items[at0018]"/>
         <Rule max="0" path="/data[at0001]/items[at0003]">
             <constraint xsi:type="tem:durationConstraint">
@@ -103,19 +102,16 @@ Verdisettet med tilhørende forklaring i dette templatet for utdanningsnivå er:
         </Rule>
         <Rule path="/data[at0001]/items[at0002]">
             <constraint xsi:type="tem:textConstraint">
-                <includedValues>local_terms::0::Ingen utdanning</includedValues>
-                <includedValues>local_terms::1::Grunnskole</includedValues>
-                <includedValues>local_terms::2::Videregående</includedValues>
-                <includedValues>local_terms::3::Universitet/Høyskole &lt;4 år</includedValues>
-                <includedValues>local_terms::4::Universitet/Høyskole ≥4 år</includedValues>
-                <includedValues>local_terms::9::Ukjent</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::0::Ingen utdanning</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::1::Grunnskole</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::2::Videregående</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::3::Universitet/Høyskole &lt;4 år</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::4::Universitet/Høyskole ≥4 år</includedValues>
+                <includedValues>no.openehr.utdaningsnivaa::9::Ukjent</includedValues>
             </constraint>
         </Rule>
     </definition>
-    <integrity_checks
-        archetype_id="openEHR-EHR-EVALUATION.education_summary.v1"
-        xmlns:tem="openEHR/v1/Template"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.education_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
         <digest id="MD5-CAM-1.0.1">0A5231D7B62977A3C73DC17A92BFE36F</digest>
     </integrity_checks>
 </template>
