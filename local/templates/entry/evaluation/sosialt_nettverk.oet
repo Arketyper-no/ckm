@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>bed707d2-ef7a-431a-8fca-b861fd43c56d</id>
+    <name>sosialt_nettverk</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-08-22</value>
+            </item>
+        </original_author>
+        <lifecycle_state>release_candidate</lifecycle_state>
+        <details>
+            <purpose>Et templat hvor det er mulig å registrere om pasientens samlivsstatus - NB! dette er ikke den juridiske sivilstand som man vanligvis vil registrere i PAS delen av journalen. </purpose>
+            <use>Et templat inneholdende partnerskap/samlivsstatus med et standardisert verdisett. Det er med vilje ikke brukt juridisk sivilstand da dette ofte registreres i PAS delen til EPJ, men heller hvordan pasientene lever sammen. Det er meningen at dette da kan brukes i innkomstjournalen til pasientene.
+
+Dette templatet vil bli brukt i det interregionale "felles kreftjournal" prosjektet under sosialanamnese.
+Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hvor det lages skjema hvor man vil dokumentere samlivsformen i EPJ.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>94384f8a492da1fc97adadff5351a391</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>10DEC845F5AC63AC05E7B0C214121D5A</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>2.0.3</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.social_network.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule max="0" path="/data[at0001]/items[at0015]"/>
+        <Rule name="Samlivsstatus" path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.openehr.samlivsstatus::1::Ugift/enslig</includedValues>
+                <includedValues>no.openehr.samlivsstatus::2::Gift/samboer/registrert partner</includedValues>
+                <includedValues>no.openehr.samlivsstatus::3::Enke/enkemann/gjenlevende partner eller samboer</includedValues>
+                <includedValues>no.openehr.samlivsstatus::4::Skilt/separert</includedValues>
+                <includedValues>no.openehr.samlivsstatus::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.social_network.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">10DEC845F5AC63AC05E7B0C214121D5A</digest>
+    </integrity_checks>
+</template>
