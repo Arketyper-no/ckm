@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>0604559a-b8c7-472c-a937-17990b1ed749</id>
+    <name>arbeidssammendrag</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-06-16</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>Et templat inneholdende arbeidsstatus og et standardisert verdisett basert på arbeidet gjort i regi av Direktoratet for e-helse. </purpose>
+            <use>Et templat inneholdende arbeidsstatus og et standardisert verdisett basert på arbeidet gjort i regi av Direktoratet for e-helse. 
+Dette templatet vil bli brukt i det interregionale "felles kreftjournal" prosjektet under sosialanamnese.
+Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hvor det lages skjema hvor man vil dokumentere arbeidsstatus i journal.
+
+Verdisettet med tilhørende forklaring i dette templatet for arbeidsstatus er:
+- I arbeid = Alle som har jobb og identifiserer seg med at deres hovedkategori er å være i arbeid (dvs. sannsynligvis ikke studenter med deltidsarbeid). Både fulltid og deltid.
+- Ikke i arbeid = Alle som ikke har et arbeidsforhold: hjemmeværende, permitterte, arbeidssøkende, uføretrygdet, under rehabilitering, under attføring eller arbeidsmarkedskurs o.l., samt avtjener verneplikt, siviltjeneste. De med et arbeidsforhold, men som er midlertidig sykemeldt ansees for å være i arbeid.
+- Alderspensjonist = Ikke uførepensjon eller andre pensjonsformer annet enn aldersrelatert. AFP er inkludert.
+- Under utdanning/studerer = Innrullert i et studieløp og identifiserer seg som hovedsakelig student/elev. Både fulltid og deltid.
+- Ukjent = Ukjent arbeidsstatus.
+
+
+</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>3.0.1</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>f944db1b9161653c9d135e1f53b1415e</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>390FE85BFBBBFFD67B213B1D55F7E680</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.occupation_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule max="0" path="/data[at0001]/items[at0002]"/>
+        <Rule max="1" path="/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.openehr.arbeidsstatus::1::I arbeid</includedValues>
+                <includedValues>no.openehr.arbeidsstatus::2::Ikke i arbeid</includedValues>
+                <includedValues>no.openehr.arbeidsstatus::3::Alderspensjonist</includedValues>
+                <includedValues>no.openehr.arbeidsstatus::4::Under utdanning/studerer</includedValues>
+                <includedValues>no.openehr.arbeidsstatus::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.occupation_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">390FE85BFBBBFFD67B213B1D55F7E680</digest>
+    </integrity_checks>
+</template>
