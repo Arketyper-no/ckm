@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>ef8050f1-0d6a-4f48-a318-8ef56406e522</id>
+    <name>stimulantia</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-11-23</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>NRUA</value>
+            </item>
+        </original_author>
+        <lifecycle_state>release_candidate</lifecycle_state>
+        <details>
+            <purpose>Et standardisert templat for Stimulantia - alkoholbruk, røyk, røykfri tobakk og andre substanser annet enn alkohol og tobakk.
+</purpose>
+            <keywords>
+                <item>røyk, tobakk, rusmidler, snus, røykfri tobakk, alkohol, narkotika, hasj, opiater, CNS-stimulerende, substansbruk</item>
+            </keywords>
+            <use>Et standardiser templat for Stimulantia - alkoholbruk, røyk, røykfri tobakk og andre substanser annet enn alkohol og tobakk.
+
+Det er brukt arketypene: 
+- Alkoholanamnese (EVALUATION.alcohol_consumption_summary)
+- Røykeanamnese (EVALUATION.tobacco_smoking_summary)
+- Røykfri tobakkanamnese (EVALUATION.smokeless_tobacco_summary.v1)
+
+For å si noe om bruk av andre rusmidler enn tobakk/snus/alkohol kan man velge to tilnærminger (evt. begge):
+  1. Detaljerte registreringer av spesifikk substansbruk.  
+  2. Fritekstbeskrivelse av substansbruk.
+</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>178a0722806c67b77b42b6c1328b54b9</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>9D358EB1048EA1401802C3E1FDFB9A29</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>20.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Templat-overskrift" name="Stimulantia" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:SECTION">
+        <Item archetype_id="openEHR-EHR-EVALUATION.alcohol_consumption_summary.v1" concept_name="Alkoholanamnese" max="1" name="Alkohol" path="/items" xsi:type="tem:EVALUATION">
+            <Rule max="0" path="/data[at0001]/items[at0015]"/>
+            <Rule max="0" path="/data[at0001]/items[at0080]"/>
+            <Rule max="0" path="/data[at0001]/items[at0114]"/>
+            <Rule max="1" path="/data[at0001]/items[at0064]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0052]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0112]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0081]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Count</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0013]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0082]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0030]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0097]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>1/a</unit>
+                        <maxMagnitude>365.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>1/wk</unit>
+                        <maxMagnitude>7.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>1/mo</unit>
+                        <maxMagnitude>31.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0113]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0110]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>1/wk</unit>
+                        <maxMagnitude>7.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>1/mo</unit>
+                        <maxMagnitude>31.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule path="/data[at0001]/items[at0064]/items[at0023]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>1/wk</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>1/d</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>1/mo</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0025]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0064]/items[at0087]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016]"/>
+            <Rule max="0" path="/data[at0001]/items[at0019]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0071]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0085]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0075]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0076]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0079]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0104]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>g</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>[oz_av]</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+        </Item>
+        <Item archetype_id="openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1" concept_name="Røykeanamnese" max="1" name="Røyk" path="/items" xsi:type="tem:EVALUATION">
+            <Rule max="0" path="/data[at0001]/items[at0015]"/>
+            <Rule max="0" path="/data[at0001]/items[at0080]"/>
+            <Rule max="0" path="/data[at0001]/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016]"/>
+            <Rule max="0" path="/data[at0001]/items[at0093]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>a</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0094]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0019]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0071]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0085]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0075]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0076]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0079]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0072]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Count</includedTypes>
+                    <includedTypes>Quantity</includedTypes>
+                </constraint>
+            </Rule>
+        </Item>
+        <Item archetype_id="openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1" concept_name="Røykfri tobakkanamnese" max="1" name="Røykfri tobakk/snus" path="/items" xsi:type="tem:EVALUATION">
+            <Rule max="0" path="/data[at0001]/items[at0015]"/>
+            <Rule max="0" path="/data[at0001]/items[at0080]"/>
+            <Rule max="0" path="/data[at0001]/items[at0029]"/>
+            <Rule max="0" path="/data[at0001]/items[at0016]"/>
+            <Rule max="0" path="/data[at0001]/items[at0074]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0019]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0071]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0085]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0075]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0076]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0079]"/>
+            <Rule max="0" path="/protocol[at0021]/items[at0072]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Count</includedTypes>
+                    <includedTypes>Quantity</includedTypes>
+                </constraint>
+            </Rule>
+        </Item>
+        <Item archetype_id="openEHR-EHR-EVALUATION.substance_use_summary.v1" concept_name="Substansanamnese" max="1" name="Sammendrag andre substanser" path="/items" xsi:type="tem:EVALUATION">
+            <Rule path="/data[at0001]/items[at0002]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.onk.substansbruk::osub::Annen substans</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0003]"/>
+            <Rule max="0" path="/data[at0001]/items[at0008]"/>
+            <Rule max="0" path="/data[at0001]/items[at0009]"/>
+            <Rule max="0" path="/data[at0001]/items[at0010]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0013]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Count</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0016]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0017]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0018]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0019]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Text</includedTypes>
+                    <includedTypes>Coded_text</includedTypes>
+                    <includedTypes>Quantity</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0023]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Quantity</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0015]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0024]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0026]"/>
+            <Rule max="0" path="/data[at0001]/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0030]"/>
+        </Item>
+        <Item archetype_id="openEHR-EHR-EVALUATION.substance_use_summary.v1" max="1" path="/items" xsi:type="tem:EVALUATION">
+            <Rule max="0" path="/data[at0001]/items[at0008]"/>
+            <Rule max="0" path="/data[at0001]/items[at0009]"/>
+            <Rule max="0" path="/data[at0001]/items[at0010]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0013]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Count</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0014]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0016]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0017]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0018]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0019]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Text</includedTypes>
+                    <includedTypes>Coded_text</includedTypes>
+                    <includedTypes>Quantity</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0023]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Quantity</includedTypes>
+                    <includedTypes>Text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0015]"/>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0024]">
+                <constraint xsi:type="tem:countConstraint">
+                    <minMagnitude>0</minMagnitude>
+                    <includesMaximum>false</includesMaximum>
+                    <includesMinimum>true</includesMinimum>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/items[at0012]/items[at0026]"/>
+            <Rule max="0" path="/data[at0001]/items[at0028]"/>
+            <Rule max="0" path="/data[at0001]/items[at0030]"/>
+        </Item>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9D358EB1048EA1401802C3E1FDFB9A29</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.alcohol_consumption_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">8C31F1995FB30F288AA6075949813E8F</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A91E957509CD6EABCD1648EDEBA467DD</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">AF1E2C2C024AF015A10CE89EAF906AEA</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.substance_use_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">E01A4B0AC9649F318C3C91C8F0946D51</digest>
+    </integrity_checks>
+</template>
