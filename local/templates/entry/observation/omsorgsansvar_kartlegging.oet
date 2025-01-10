@@ -18,16 +18,17 @@
         </original_author>
         <lifecycle_state>unmanaged</lifecycle_state>
         <details>
-            <purpose>For å registrere om et individ har ansvar/omsorg for mindreårige barn og andre individer over 18 år.</purpose>
+            <purpose>For å registrere om et individ har ansvar/omsorg for mindreårige barn og andre individer over 18 år i forbindelse med prosjektet Strukturert Kreftjournal.</purpose>
             <keywords>
                 <item>Omsorg, verge</item>
             </keywords>
-            <use>
-For å ha en sjekkliste for å kunne registrere om et individ/en pasient har ansvar for mindreårige barn i tillegg til å ha omsorg for individer som er over 18 år. 
-Det er brukt kartleggingsarketypen for sosiale forhold (openEHR-EHR-OBSERVATION.social_context_screening.v1) med to spørsmål, ett for om pasienten har ansvar for barn under 18 år og et spørsmål for om pasienten har ansvar for n ansvar for egne barn/andre over 18 år?På begge spørsmålene kan det velges enten å krysse av for ja/nei/ukjent, eller bare ha en boolean - sant/ikke sant. 
+            <use>Brukes for å registrere om et individ har ansvar/omsorg for mindreårige barn og andre individer over 18 år i forbindelse med prosjektet Strukturert Kreftjournal.
 
-Templatet er utarbeidet i forbindelse med det interregionale arbeidet med "felles kreftjournal"
-Det er ment å brukes i sosialanamnese sammenheng og ikke ment å erstatte den formelle PAS delen i EPJ</use>
+Dette templatet vil bli brukt i prosjektet Strukturert Kreftjournal under sosialanamnese.
+
+Arketypen Kartleggingsspørsmål om sosiale forhold (openEHR-EHR-OBSERVATION.social_context_screening.v1) er benyttet med to spørsmål, ett for om pasienten har ansvar for barn under 18 år og et spørsmål for om pasienten har ansvar for egne barn/andre over 18 år. 
+
+Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om arbeidsstatus.</use>
         </details>
         <other_details>
             <item>
@@ -52,11 +53,11 @@ Det er ment å brukes i sosialanamnese sammenheng og ikke ment å erstatte den f
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>daa529b3dba144852f783df3f0ecd35c</value>
+                <value>9610cd52fb781da2f87df83df4ad8a15</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
-                <value>37EF3307E2D27B0F8783AF8A3E2D6811</value>
+                <value>4497A200481B873C4E004B98E97F3631</value>
             </item>
             <item>
                 <key>sem_ver</key>
@@ -76,7 +77,7 @@ Det er ment å brukes i sosialanamnese sammenheng og ikke ment å erstatte den f
             </item>
         </other_details>
     </description>
-    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingsspørsmål om sosiale forhold" name="Kartlegging omsorgsansvar" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingspørsmål om sosiale forhold" name="Kartlegging omsorgsansvar" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule max="1" path="/data[at0001]/events[at0002]"/>
         <Rule default="no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
             <constraint xsi:type="tem:textConstraint">
@@ -109,6 +110,6 @@ Det er ment å brukes i sosialanamnese sammenheng og ikke ment å erstatte den f
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0025]"/>
     </definition>
     <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">37EF3307E2D27B0F8783AF8A3E2D6811</digest>
+        <digest id="MD5-CAM-1.0.1">4497A200481B873C4E004B98E97F3631</digest>
     </integrity_checks>
 </template>
