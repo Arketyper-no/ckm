@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
     <id>f1626dd3-deb5-41e6-a9d0-73d6e6451ef1</id>
-    <name>Komorbiditet_utredning_inkl_CCI_smaatemplat</name>
+    <name>komorbiditet_utredning_inkl_CCI_smaatemplat</name>
     <description>
         <original_author>
             <item>
@@ -18,18 +18,15 @@
         </original_author>
         <lifecycle_state>unmanaged</lifecycle_state>
         <details>
-            <purpose> For å registrere komorbiditet strukturert.</purpose>
+            <purpose>For å registrere komorbiditet i forbindelse med prosjektet Strukturert Kreftjournal.</purpose>
             <keywords>
-                <item>CCI, komorbiditet, samtidig sykdom</item>
+                <item>CCI, komorbiditet, samtidig sykdom, kreftjournal, sjk</item>
             </keywords>
-            <use>Brukes for å  registrere komorbiditet strukturert.
-Det er meningen å bruke til å registrere komorbiditet hos en pasient, både i form av gruppering på ICD-10 kapitler (overordnet gruppering), i form av ICD-10 spesifikke koder og vha. CCI. 
-Først er det brukt kartleggingsspørsmål arketypen om Problem og diagnoser (OBSERVATION.problem_screening), hvis man svarer ja på denne vil problem/diagnosene (komorbiditet) legges inn i Forholdsregel arketypen (EVALUATION.precaution.). 
-Det er laget to underoverskrifter i templatet
-- Komorbiditet ICD-10 kap. som inneholder arketypen forholdsregel hvor man kan legge inn ICD-10 kapitlene. Denne arketypen må gjentas da det skal være mulig å krysse av flere samtidig.
-- Komorbiditet spsifikk ICD-10 kode - x-ant.ggr som også inneholder arketypen forholdsregel. Her er det meningen at man kan legge inn den spesifikke ICD-10 koden man har brukt for. Denne må man søke opp selv, og per nå er det ikke noe logikk i forhold til overordnet koder og disse kodene. Denne må også kunne gjentas hvis man ønsker å legge til flere enn en ICD-10 kode.
+            <use>Brukes for å registrere komorbiditet i forbindelse med prosjektet Strukturert Kreftjournal.
 
-Templater er laget i forbindelse med interregionalt felles kreftjournal prosjektet.</use>
+Templatet gir mulighet for registrering av komorbiditet hos en pasient, både i form av gruppering på ICD-10 kapitler (overordnet gruppering), i form av ICD-10 spesifikke koder og vha. Charlston Comorbidity Index. 
+
+Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om komorbiditeter.</use>
         </details>
         <other_details>
             <item>
@@ -54,7 +51,7 @@ Templater er laget i forbindelse med interregionalt felles kreftjournal prosjekt
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>26ab312d97a0ca7928e96b10306d4a5c</value>
+                <value>7ec9f34a14d5183352efc8c6c6530d85</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
