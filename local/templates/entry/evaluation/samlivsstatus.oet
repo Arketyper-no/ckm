@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
     <id>bed707d2-ef7a-431a-8fca-b861fd43c56d</id>
-    <name>sosialt_nettverk</name>
+    <name>samlivsstatus</name>
     <description>
         <original_author>
             <item>
@@ -10,11 +10,15 @@
         </original_author>
         <lifecycle_state>release_candidate</lifecycle_state>
         <details>
-            <purpose>Et templat hvor det er mulig å registrere om pasientens samlivsstatus - NB! dette er ikke den juridiske sivilstand som man vanligvis vil registrere i PAS delen av journalen. </purpose>
-            <use>Et templat inneholdende partnerskap/samlivsstatus med et standardisert verdisett. Det er med vilje ikke brukt juridisk sivilstand da dette ofte registreres i PAS delen til EPJ, men heller hvordan pasientene lever sammen. Det er meningen at dette da kan brukes i innkomstjournalen til pasientene.
+            <purpose>For å registrere et individs samlivsstatus i forbindelse med prosjektet Strukturert Kreftjournal.</purpose>
+            <use>Brukes for å registrere et individs samlivsstatus i forbindelse med prosjektet Strukturert Kreftjournal. Det er med vilje ikke brukt juridisk sivilstand da dette registreres i PAS delen av EPJ.
 
-Dette templatet vil bli brukt i det interregionale "felles kreftjournal" prosjektet under sosialanamnese.
-Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hvor det lages skjema hvor man vil dokumentere samlivsformen i EPJ.</use>
+Verdisettet for dataelementet "Samlivsstatus" er standardisert med bakgrunn i variabler fra SSB (https://www.ssb.no/klass/klassifikasjoner/19).
+
+Dette templatet vil bli brukt i prosjektet Strukturert Kreftjournal under sosialanamnese.
+
+Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om samlivsstatus.</use>
+            <misuse>Brukes ikke for å registrere juridisk sivilstand. Dette vil registreres i den pasientadministrative delen av pasientjournal.</misuse>
         </details>
         <other_details>
             <item>
@@ -39,7 +43,7 @@ Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hv
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>019bd4e4bd7a8c5efadd326a75e91db3</value>
+                <value>b7e5c1f1608237bef324338e68fa31fa</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
@@ -47,7 +51,7 @@ Videre bør dette eller tilhørende verdisett også brukes i andre prosjekter hv
             </item>
             <item>
                 <key>sem_ver</key>
-                <value>3.0.0</value>
+                <value>4.0.0</value>
             </item>
             <item>
                 <key>build_uid</key>
