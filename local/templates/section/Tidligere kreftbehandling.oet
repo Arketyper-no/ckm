@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>4ed39691-e162-43d3-862c-bc3d4406534e</id>
+    <name>Tidligere kreftbehandling</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-11-23</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere tidligere kreftbehandling i forbindelse med prosjektet Strukturert kreftjournal.
+</purpose>
+            <use>Brukes for å registrere tidligere kreftbehandling i forbindelse med prosjektet Strukturert kreftjournal.
+
+Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om tidligere kreftbehandling.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>29c96cb499f5d62dbab8b1734bffd3a3</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>9D358EB1048EA1401802C3E1FDFB9A29</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Templat-overskrift" name="Tidligere kreftbehandling" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:SECTION">
+        <Item archetype_id="openEHR-EHR-OBSERVATION.management_screening.v1" concept_name="Kartleggingsspørsmål om sykdomshåndtering" max="1" name="Tidligere kreftbehandling" path="/items" xsi:type="tem:OBSERVATION">
+            <Rule max="1" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::1::Sarkom</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::2::Kreft i hode og hals</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::3::Hjernesvulst</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::4::Brystkreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::5::Lungekreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::6::Kreft i fordøyelsessystemet</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::7::Gynekologisk kreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::8::Kreft i nyre og urinveier</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::9::Benmargs- og blodkreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::10::Lymfom</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::11::Hudkreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::12::Kreft i mannlige kjønnsorganer</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::13::Kreft i endokrine kjertler</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::14::Nevroendokrin kreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::15::Barnekreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::16::Øyekreft</includedValues>
+                    <includedValues>no.onk.kart.tidligere_kreftbehandling::17::Svulst av ukjent opprinnelse / Annet</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" name="Har pasient vært behandlet for kreft tidligere?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0039]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Coded_text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0044]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>SNOMED-CT::128303001::Kirurgisk fjerning</includedValues>
+                    <includedValues>SNOMED-CT::64597002::Ablasjon</includedValues>
+                    <includedValues>SNOMED-CT::1287742003::Stråleterapi (alle typer)</includedValues>
+                    <includedValues>SNOMED-CT::1156506007::Fotonterapi - stråle (ekstern)</includedValues>
+                    <includedValues>SNOMED-CT::169314007::Protonterapi - stråle (ekstern)</includedValues>
+                    <includedValues>SNOMED-CT::45643008::Elektronterapi - stråle (ekstern)</includedValues>
+                    <includedValues>SNOMED-CT::152198000::Brakyterapi - stråle (intern)</includedValues>
+                    <includedValues>SNOMED-CT::399315003::Radioisotope/systemisk radionuklidebehandling - stråle (intern)</includedValues>
+                    <includedValues>SNOMED-CT::416608005::Medikamentell behandling (alle typer)</includedValues>
+                    <includedValues>SNOMED-CT::367336001::Kjemoterapi - medikamentell</includedValues>
+                    <includedValues>SNOMED-CT::347531000202105::Målrettet - medikamentell</includedValues>
+                    <includedValues>SNOMED-CT::76334006::Immunterapi - medikamentell behandling</includedValues>
+                    <includedValues>SNOMED-CT::169413002::Hormonterapi - medikamentell</includedValues>
+                    <includedValues>SNOMED-CT::74964007::Annen behandling</includedValues>
+                    <includedValues>SNOMED-CT::373818007::Ingen kreftbehandling - aktiv oppfølging</includedValues>
+                    <includedValues>SNOMED-CT::438758006::Ekspektans</includedValues>
+                </constraint>
+            </Rule>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0024</excludedValues>
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" name="Behandlingsstart" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Date_Time</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="1" name="Behandlingsslutt" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0038]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Date_Time</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule name="Merknad" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0035]"/>
+        </Item>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9D358EB1048EA1401802C3E1FDFB9A29</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.management_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A0F3403523FEE9FF7E648A02423C8131</digest>
+    </integrity_checks>
+</template>
