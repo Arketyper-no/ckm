@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>fdc53018-81b5-4961-aa86-9f53ead3120d</id>
+    <name>samlivsform_kartlegging</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2025-01-28</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>openEHR Norway</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>For å registrere om et individs samlivsform (bor eller bor ikke alene).</purpose>
+            <keywords>
+                <item>samliv, samboer, særboer</item>
+            </keywords>
+            <use>Brukes for å registrere et individs samlivsform, dvs. om individet bor sammen med noen eller ikke.
+
+Dette templatet vil bli brukt i prosjektet Strukturert Kreftjournal under sosialanamnese.
+
+Arketypen Kartleggingsspørsmål om sosiale forhold (openEHR-EHR-OBSERVATION.social_context_screening.v1) er benyttet med spørsmål om hvilken samlivsform pasienten har. 
+
+Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om en pasients samlivsstatus.
+
+Verdisettet med tilhørende forklaring i dette templatet for samlivsstatus er:
+1 - Bor alene (Inkl. Alene med barn &lt;18).
+2 - Bor med noen (Partner og eller barn &gt;18 år, bofelleskap, venner).
+3 - Bor på institusjon/ sykehjem (Fast plass, ikke korttidsopphold. Gjelder også der egen bolig er døgnbemannet).
+9 - Ukjent</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>adb981c754154b04dbf3b4da9c0d6c45</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>9D358EB1048EA1401802C3E1FDFB9A29</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>4.1.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Templat-overskrift" name="Samlivsform" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:SECTION">
+        <Item archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingsspørsmål om sosiale forhold" max="1" name="Kartleggingspørsmål om sosiale forhold samlivsform" path="/items" xsi:type="tem:OBSERVATION">
+            <Rule max="1" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.onk.sosiale_forhold::SAM::Samlivsform</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Hvilken samlivsform har pasienten?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.samlivsform::1::Bor alene (Inkl. alene med barn &lt;18)</includedValues>
+                    <includedValues>no.samlivsform::2::Bor med noen (Partner og/eller med barn &gt;18 år, bofelleskap, venner)</includedValues>
+                    <includedValues>no.samlivsform::3::Bor på institusjon/ sykehjem (Fast plass, ikke korttidsopphold. Gjelder også der egen bolig er døgnbemannet)</includedValues>
+                    <includedValues>no.samlivsform::9::Ukjent</includedValues>
+                </constraint>
+            </Rule>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0024</excludedValues>
+                    <excludedValues>local::at0027</excludedValues>
+                </constraint>
+            </Rule>
+        </Item>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9D358EB1048EA1401802C3E1FDFB9A29</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">37EF3307E2D27B0F8783AF8A3E2D6811</digest>
+    </integrity_checks>
+</template>
