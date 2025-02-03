@@ -57,7 +57,7 @@ Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturer
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
-                <value>4497A200481B873C4E004B98E97F3631</value>
+                <value>37EF3307E2D27B0F8783AF8A3E2D6811</value>
             </item>
             <item>
                 <key>sem_ver</key>
@@ -77,7 +77,7 @@ Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturer
             </item>
         </other_details>
     </description>
-    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingspørsmål om sosiale forhold" name="Kartlegging omsorgsansvar" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingsspørsmål om sosiale forhold" name="Kartlegging omsorgsansvar" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
         <Rule max="1" path="/data[at0001]/events[at0002]"/>
         <Rule default="no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
             <constraint xsi:type="tem:textConstraint">
@@ -87,7 +87,9 @@ Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturer
         <Rule max="1" name="Omsorgsperson for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
         <Rule default="no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0004]">
             <constraint xsi:type="tem:textConstraint">
-                <includedValues>no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år</includedValues>
+                <includedValues>no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år</includedValues>				
+				<excludedValues>local::at0048</excludedValues>
+				<excludedValues>local::at0049</excludedValues>
             </constraint>
         </Rule>
         <Rule name="Har pasienten ansvar for barn under 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0005]">
@@ -99,7 +101,9 @@ Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturer
         <Rule clone="true" max="1" name="Omsorgsperson for personer over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
         <Rule default="no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0004]">
             <constraint xsi:type="tem:textConstraint">
-                <includedValues>no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år</includedValues>
+                <includedValues>no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år</includedValues>				
+				<excludedValues>local::at0048</excludedValues>
+				<excludedValues>local::at0049</excludedValues>
             </constraint>
         </Rule>
         <Rule name="Har pasienten ansvar for egne barn/andre over 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0005]">
@@ -110,6 +114,6 @@ Småtemplatet med det standardiserte verdisettet kan benyttes utenfor Strukturer
         <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0025]"/>
     </definition>
     <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">4497A200481B873C4E004B98E97F3631</digest>
+        <digest id="MD5-CAM-1.0.1">37EF3307E2D27B0F8783AF8A3E2D6811</digest>
     </integrity_checks>
 </template>
