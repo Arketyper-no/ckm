@@ -39,7 +39,7 @@ Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>29c96cb499f5d62dbab8b1734bffd3a3</value>
+                <value>d3addeab8e30757ff0ee4b3d3c2e1a2b</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
@@ -56,7 +56,7 @@ Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data
         </other_details>
     </description>
     <definition archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Templat-overskrift" name="Tidligere kreftbehandling" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:SECTION">
-        <Item archetype_id="openEHR-EHR-OBSERVATION.management_screening.v1" concept_name="Kartleggingsspørsmål om sykdomshåndtering" max="1" name="Tidligere kreftbehandling" path="/items" xsi:type="tem:OBSERVATION">
+        <Item archetype_id="openEHR-EHR-OBSERVATION.management_screening.v2" max="1" path="/items" xsi:type="tem:OBSERVATION">
             <Rule max="1" path="/data[at0001]/events[at0002]"/>
             <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
                 <constraint xsi:type="tem:textConstraint">
@@ -109,6 +109,7 @@ Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data
                 <constraint xsi:type="tem:textConstraint">
                     <excludedValues>local::at0024</excludedValues>
                     <excludedValues>local::at0027</excludedValues>
+                    <excludedValues>local::at0046</excludedValues>
                 </constraint>
             </Rule>
             <Rule max="1" name="Behandlingsstart" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]">
@@ -116,7 +117,7 @@ Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data
                     <includedTypes>Date_Time</includedTypes>
                 </constraint>
             </Rule>
-            <Rule max="1" name="Behandlingsslutt" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0038]">
+            <Rule clone="true" max="1" name="Behandlingsslutt" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]">
                 <constraint xsi:type="tem:multipleConstraint">
                     <includedTypes>Date_Time</includedTypes>
                 </constraint>
@@ -127,7 +128,7 @@ Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data
     <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
         <digest id="MD5-CAM-1.0.1">9D358EB1048EA1401802C3E1FDFB9A29</digest>
     </integrity_checks>
-    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.management_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">A0F3403523FEE9FF7E648A02423C8131</digest>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.management_screening.v2" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">182A23C49E45E1C560537841A1D0EA4B</digest>
     </integrity_checks>
 </template>
