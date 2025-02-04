@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>3d268aac-eeb5-4f95-b1a8-1d4dec5d0ae7</id>
+    <name>Henvisningsaarsak</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2025-01-31</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>OUS/NRUA</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>release_candidate</lifecycle_state>
+        <details>
+            <purpose>For å registrere henvisningsårsak i forbindelse med prosjektet Strukturert kreftjournal.</purpose>
+            <keywords>
+                <item>kontaktårsak, henvisningsårsak</item>
+            </keywords>
+            <use>Brukes få registrere henvisningsårsak i forbindelse med prosjektet Strukturert kreftjournal.
+
+Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om henvisningsårsak/kontaktårsak.
+
+Verdisettet: 
+1 - Screening
+2 - Symptomer
+3 - Tilfeldig funn
+4 - Kontroll
+</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>0f03d2d691f2e8ba1edf00ed1e2abe61</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>A0968391FAAE7AC826B3AF4B9950E1D6</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>0.1.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Kontaktårsak" name="Henvisningsårsak" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:EVALUATION">
+        <Rule max="0" path="/data[at0001]/items[at0002]"/>
+        <Rule max="1" name="Henvisningsårsak" path="/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.henvisningsaarsak::1::Screening</includedValues>
+                <includedValues>no.onk.henvisningsaarsak::2::Symptomer</includedValues>
+                <includedValues>no.onk.henvisningsaarsak::3::Tilfeldig funn</includedValues>
+                <includedValues>no.onk.henvisningsaarsak::4::Kontroll</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A0968391FAAE7AC826B3AF4B9950E1D6</digest>
+    </integrity_checks>
+</template>
