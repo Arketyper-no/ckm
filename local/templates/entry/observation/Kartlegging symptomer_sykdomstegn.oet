@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>dcae10b9-634e-4fa7-b695-1995af5c89dd</id>
+    <name>Kartlegging symptomer_sykdomstegn</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2025-01-31</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>QA - strukturert kreftjournal</value>
+            </item>
+        </original_author>
+        <lifecycle_state>release_candidate</lifecycle_state>
+        <details>
+            <purpose>For å registrere symptomer og sykdomstegn i forbindelse med prosjektet Strukturert kreftjournal.</purpose>
+            <use>Brukes for å registrere symptomer og sykdomstegn i forbindelse med prosjektet Strukturert kreftjournal.
+
+Småtemplatet kan benyttes utenfor Strukturert kreftjournal hvor det lagres data om symptomer og sykdomstegn.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>f533f688d683875653d2f7d9df05bbe6</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>2C619AEB7356EC3C65163C23789A74C1</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>1.0.1</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v1" concept_name="Kartleggingsspørsmål om symptomer/sykdomstegn" name="Symptomer/sykdomstegn" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:OBSERVATION">
+        <Rule max="1" path="/data[at0001]/events[at0002]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.kart.symptom::1::Sarkom</includedValues>
+                <includedValues>no.onk.kart.symptom::2::Kreft i hode og hals</includedValues>
+                <includedValues>no.onk.kart.symptom::3::Hjernesvulst</includedValues>
+                <includedValues>no.onk.kart.symptom::4::Brystkreft</includedValues>
+                <includedValues>no.onk.kart.symptom::5::Lungekreft</includedValues>
+                <includedValues>no.onk.kart.symptom::6::Kreft i fordøyelsessystemet</includedValues>
+                <includedValues>no.onk.kart.symptom::7::Gynekologisk kreft</includedValues>
+                <includedValues>no.onk.kart.symptom::8::Kreft i nyre og urinveier</includedValues>
+                <includedValues>no.onk.kart.symptom::9::Benmargs- og blodkreft</includedValues>
+                <includedValues>no.onk.kart.symptom::10::Lymfom</includedValues>
+                <includedValues>no.onk.kart.symptom::11::Hudkreft</includedValues>
+                <includedValues>no.onk.kart.symptom::12::Kreft i mannlige kjønnsorganer</includedValues>
+                <includedValues>no.onk.kart.symptom::13::Kreft i endokrine kjertler</includedValues>
+                <includedValues>no.onk.kart.symptom::14::Nevroendokrin kreft</includedValues>
+                <includedValues>no.onk.kart.symptom::15::Barnekreft</includedValues>
+                <includedValues>no.onk.kart.symptom::16::Øyekreft</includedValues>
+                <includedValues>no.onk.kart.symptom::17::Svulst av ukjent opprinnelse / Annet</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="1" name="Finnes det symptomer eller sykdomstegn?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0028]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0040</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="1" name="Debut første symptom/sykdomstegn" path="/data[at0001]/events[at0002]/data[at0003]/items[at0029]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Date_Time</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0036]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0024</excludedValues>
+                <excludedValues>local::at0027</excludedValues>
+                <excludedValues>local::at0041</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Date_Time</includedTypes>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.symptom_sign_screening.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">2C619AEB7356EC3C65163C23789A74C1</digest>
+    </integrity_checks>
+</template>
