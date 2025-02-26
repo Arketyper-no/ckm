@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.sporreskjema_urinlekkasje_nkir_no.v0
 
 concept
-	[at0000]	-- Spørreskjema for urinlekkasje NKIR version 02.10.24
+	[at0000]	-- Spørreskjema for urinlekkasje NKIR versjon 02.10.24
 language
 	original_language = <[ISO_639-1::nb]>
 description
@@ -15,33 +15,39 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere pasientrapporterte data til Norsk kvinnelig inkontinensregister, basert på selvrapportert vurdering av inkontinens.">
-			use = <"Brukes for å registrere pasientrapporterte data til Norsk kvinnelig inkontinensregister, basert på selvrapportert vurdering av inkontinens.
+			purpose = <"For å registrere pasientrapporterte data til Norsk kvinnelig inkontinensregister, basert på pasientens egen vurdering av inkontinensplager.">
+			use = <"Brukes for å registrere pasientrapporterte data til Norsk kvinnelig inkontinensregister, basert på pasientens egen vurdering av inkontinensplager.
 
-Ordinalen \"-1\" i alle dataelementer representerer et svaralternativ uten en verdi.
+Ordinalen \"-1\" i alle dataelementer representerer et ikke besvart svaralternativ.
 
-Arketypen er basert på den pasientrapporterte delen av versjon 02.10.24 av skjemaet fra Norsk kvinnelig inkontinensregister, \"Spørreskjema for urinlekkasje. Pre- per og postoperativt skjema (registrering før, under og etter behandling)\".">
-			misuse = <"Skal ikke brukes for registering av inkontinens utenfor kontekst av registrering til Norsk kvinnelig inkontinensregister. Bruk en passende arketype for dette formålet.">
+Arketypen er basert på den pasientrapporterte delen av \"Spørreskjema for urinlekkasje\" fra Norsk kvinnelig inkontinensregister. Skjemaet fylles ut før, under og etter behandling (pre- per og postoperativt skjema).
+Arketypen er basert på versjon 02.10.2024 av \"Spørreskjema for urinlekkasje\" utviklet av Norsk kvinnelig inkontinensregister (NKIR).">
+			misuse = <"Brukes ikke for registrering av inkontinens utenfor Norsk kvinnelig inkontinensregister
+Til andre formål anbefales andre, passende arketyper.">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Mona Didriksen, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)">
+	other_contributors = <>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Norsk kvinnelig inkontinensregister. Spørreskjema for urinlekkasje, 02.10.24. Oslo (Norway): Oslo Universitetssykehus. Hentet fra https://arketyper.no/ckm/documents/1078.51.140
 
-Norsk kvinnelig inkontinensregister. Kodeveileder til spørreskjema for urinlekkasje, 02.10.24. Oslo (Norway): Oslo Universitetssykehus. Hentet fra https://arketyper.no/ckm/documents/1078.51.139">
+Norsk kvinnelig inkontinensregister. Kodeveileder til spørreskjema for urinlekkasje, 02.10.24. Oslo (Norway): Oslo Universitetssykehus. Hentet fra https://arketyper.no/ckm/documents/1078.51.139
+
+Kulseng-Hanssen S, Borstad E. The development of a questionnaire to measure the severity
+of symptoms and the quality of life before and after surgery for stress incontinence. BJOG
+2003; 110(11): 983-8.">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"CE300A59BB47747420BC445B2BE07567">
-		["build_uid"] = <"7649056c-5a0c-427c-b3e8-30f2942465bc">
+		["MD5-CAM-1.0.1"] = <"F9C43E797EED5F1DE23409EC1E420E2D">
+		["build_uid"] = <"b759a0f0-fcfe-4fce-bcf1-5bbe3798afb2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Spørreskjema for urinlekkasje NKIR
+	OBSERVATION[at0000] matches {    -- Spørreskjema for urinlekkasje NKIR versjon 02.10.24
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -318,7 +324,7 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Spørreskjema for urinlekkasje NKIR version 02.10.24">
+					text = <"Spørreskjema for urinlekkasje NKIR versjon 02.10.24">
 					description = <"Spørreskjema for urinlekkasje utviklet av Norsk kvinnelig inkontinensregister (NKIR).">
 				>
 				["at0001"] = <
@@ -455,11 +461,11 @@ ontology
 					description = <"">
 				>
 				["at0241"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0242"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0243"] = <
@@ -471,7 +477,7 @@ ontology
 					description = <"">
 				>
 				["at0245"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0246"] = <
@@ -483,7 +489,7 @@ ontology
 					description = <"">
 				>
 				["at0248"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0249"] = <
@@ -495,7 +501,7 @@ ontology
 					description = <"">
 				>
 				["at0251"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0252"] = <
@@ -507,7 +513,7 @@ ontology
 					description = <"">
 				>
 				["at0254"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0255"] = <
@@ -523,7 +529,7 @@ ontology
 					description = <"">
 				>
 				["at0258"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0259"] = <
@@ -539,7 +545,7 @@ ontology
 					description = <"">
 				>
 				["at0262"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0263"] = <
@@ -555,7 +561,7 @@ ontology
 					description = <"">
 				>
 				["at0266"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0267"] = <
@@ -579,7 +585,7 @@ ontology
 					description = <"">
 				>
 				["at0272"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0273"] = <
@@ -603,7 +609,7 @@ ontology
 					description = <"">
 				>
 				["at0278"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0279"] = <
@@ -627,7 +633,7 @@ ontology
 					description = <"">
 				>
 				["at0284"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0285"] = <
@@ -651,7 +657,7 @@ ontology
 					description = <"">
 				>
 				["at0290"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0291"] = <
@@ -671,7 +677,7 @@ ontology
 					description = <"">
 				>
 				["at0295"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0296"] = <
@@ -695,7 +701,7 @@ ontology
 					description = <"">
 				>
 				["at0301"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0302"] = <
@@ -719,7 +725,7 @@ ontology
 					description = <"">
 				>
 				["at0307"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0308"] = <
@@ -743,7 +749,7 @@ ontology
 					description = <"">
 				>
 				["at0313"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0314"] = <
@@ -767,7 +773,7 @@ ontology
 					description = <"">
 				>
 				["at0319"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0320"] = <
@@ -787,7 +793,7 @@ ontology
 					description = <"">
 				>
 				["at0324"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0325"] = <
@@ -803,7 +809,7 @@ ontology
 					description = <"">
 				>
 				["at0328"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0329"] = <
@@ -819,7 +825,7 @@ ontology
 					description = <"">
 				>
 				["at0332"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0333"] = <
@@ -835,7 +841,7 @@ ontology
 					description = <"">
 				>
 				["at0336"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0337"] = <
@@ -847,7 +853,7 @@ ontology
 					description = <"">
 				>
 				["at0339"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0340"] = <
@@ -875,7 +881,7 @@ ontology
 					description = <"">
 				>
 				["at0346"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0356"] = <
@@ -925,7 +931,7 @@ ontology
 					description = <"">
 				>
 				["at0374"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0385"] = <
@@ -937,7 +943,7 @@ ontology
 					description = <"">
 				>
 				["at0387"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 				["at0389"] = <
@@ -953,7 +959,7 @@ ontology
 					description = <"">
 				>
 				["at0392"] = <
-					text = <"Mangelfullt utfylt">
+					text = <"Ikke utfylt">
 					description = <"">
 				>
 			>
