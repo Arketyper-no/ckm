@@ -26,7 +26,7 @@ description
 			use = <"Brukes for å registrere resultatene for hver enkelt parameter og totalskår for the Gugging Swallowing Screen (GUSS).">
 			keywords = <"dysfagi, aspirasjon, svelging", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -34,22 +34,20 @@ description
 			use = <"Use to record the result for each component parameter and the total sum for The Gugging Swallowing Screen (GUSS).">
 			keywords = <"dysphagia, aspiration, swallowing", ...>
 			misuse = <"">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Norge">
-		["references"] = <"The Gugging Swallowing Screen (GUSS), Utkast arketype [Internet]. openEHR Foundation, OpenEHR International Clinical Knowledge Manager [sitert: 2025-03-04]. Hentet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.7751
-
-Trapl M, Enderle P, Nowotny M, Teuschl Y, Matz K, Dachenhausen A, Brainin M. Dysphagia bedside screening for acute-stroke patients: the Gugging Swallowing Screen. Stroke. 2007 Nov;38(11):2948-52. doi: 10.1161/STROKEAHA.107.483933. Epub 2007 Sep 20. PMID: 17885261.">
-		["original_namespace"] = <"no.openehr">
-		["original_publisher"] = <"openEHR Norge">
-		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"9E359210FED9F01AC08A1AF9F307CC00">
-		["build_uid"] = <"25e9bcac-8204-4955-af8f-7956009ceee2">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Trapl M, Enderle P, Nowotny M, Teuschl Y, Matz K, Dachenhausen A, Brainin M. Dysphagia bedside screening for acute-stroke patients: the Gugging Swallowing Screen. Stroke. 2007 Nov;38(11):2948-52. doi: 10.1161/STROKEAHA.107.483933. Epub 2007 Sep 20. PMID: 17885261.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"864097EFCAD42DDBF230EA89133240B6">
+		["build_uid"] = <"67b966ba-b95b-40e5-a0e6-a52403961200">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -130,7 +128,7 @@ definition
 													1|[local::at0033]
 												}
 											}
-											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Sum Semisolid
+											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Semisolid sum
 												value matches {
 													DV_COUNT matches {
 														magnitude matches {|0..5|}
@@ -166,7 +164,7 @@ definition
 													1|[local::at0049]
 												}
 											}
-											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Sum Liquid
+											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Liquid sum
 												value matches {
 													DV_COUNT matches {
 														magnitude matches {|0..5|}
@@ -202,7 +200,7 @@ definition
 													1|[local::at0064]
 												}
 											}
-											ELEMENT[at0065] occurrences matches {0..1} matches {    -- Sum Solid
+											ELEMENT[at0065] occurrences matches {0..1} matches {    -- Solid sum
 												value matches {
 													DV_COUNT matches {
 														magnitude matches {|0..5|}
@@ -249,6 +247,8 @@ definition
 			}
 		}
 	}
+
+
 
 ontology
 	term_definitions = <
@@ -300,7 +300,7 @@ ontology
 				>
 				["at0011"] = <
 					text = <"Swallowing successful">
-					description = <"Saliva swallowing.">
+					description = <"">
 				>
 				["at0012"] = <
 					text = <"Yes">
@@ -312,7 +312,7 @@ ontology
 				>
 				["at0014"] = <
 					text = <"Drooling">
-					description = <"After saliva swallowing.">
+					description = <"">
 				>
 				["at0015"] = <
 					text = <"Yes">
@@ -324,8 +324,7 @@ ontology
 				>
 				["at0017"] = <
 					text = <"Voice change">
-					description = <"After saliva swallowing.">
-					comment = <"For example: hoarse, gurgly, coated, weak.">
+					description = <"">
 				>
 				["at0018"] = <
 					text = <"Yes">
@@ -349,7 +348,7 @@ ontology
 				>
 				["at0023"] = <
 					text = <"Swallowing delayed">
-					description = <"> 2 sec (Solid textures > 10 sec)">
+					description = <"> 2 sec (Solid textures > 10 sec).">
 				>
 				["at0024"] = <
 					text = <"Swallowing successful">
@@ -396,7 +395,7 @@ ontology
 					description = <"">
 				>
 				["at0035"] = <
-					text = <"Sum Semisolid">
+					text = <"Semisolid sum">
 					description = <"">
 				>
 				["at0036"] = <
@@ -413,7 +412,7 @@ ontology
 				>
 				["at0039"] = <
 					text = <"Swallowing delayed">
-					description = <"> 2 sec (Solid textures > 10 sec)">
+					description = <"> 2 sec (Solid textures > 10 sec).">
 				>
 				["at0040"] = <
 					text = <"Swallowing successful">
@@ -456,7 +455,7 @@ ontology
 					description = <"">
 				>
 				["at0050"] = <
-					text = <"Sum Liquid">
+					text = <"Liquid sum">
 					description = <"">
 				>
 				["at0051"] = <
@@ -473,7 +472,7 @@ ontology
 				>
 				["at0054"] = <
 					text = <"Swallowing delayed">
-					description = <"> 2 sec (Solid textures > 10 sec)">
+					description = <"> 2 sec (Solid textures > 10 sec).">
 				>
 				["at0055"] = <
 					text = <"Swallowing successful">
@@ -516,7 +515,7 @@ ontology
 					description = <"">
 				>
 				["at0065"] = <
-					text = <"Sum Solid">
+					text = <"Solid sum">
 					description = <"">
 				>
 				["at0066"] = <
@@ -602,7 +601,7 @@ ontology
 				>
 				["at0011"] = <
 					text = <"Vellykket svelging">
-					description = <"Svelging av saliva.">
+					description = <"">
 				>
 				["at0012"] = <
 					text = <"Ja">
@@ -614,7 +613,7 @@ ontology
 				>
 				["at0014"] = <
 					text = <"Sikling">
-					description = <"Etter svelging av saliva.">
+					description = <"">
 				>
 				["at0015"] = <
 					text = <"Ja">
@@ -626,8 +625,7 @@ ontology
 				>
 				["at0017"] = <
 					text = <"Stemmeforandring etter svelging">
-					description = <"Etter svelging av saliva.">
-					comment = <"For eksempel: gurglete/surklete/våt stemme etter svelging, eller hes stemme siden debut av hjerneslag.">
+					description = <"">
 				>
 				["at0018"] = <
 					text = <"Ja">
@@ -651,7 +649,7 @@ ontology
 				>
 				["at0023"] = <
 					text = <"Forsinket svelging">
-					description = <"tykt,tynt > 2 sec (fast føde > 10 sec)">
+					description = <"tykt, tynt > 2 sek (fast føde > 10 sek).">
 				>
 				["at0024"] = <
 					text = <"Vellykket svelging">
@@ -715,7 +713,7 @@ ontology
 				>
 				["at0039"] = <
 					text = <"Forsinket svelging">
-					description = <"tykt, tynt > 2 sec (fast føde > 10 sec)">
+					description = <"tykt, tynt > 2 sek (fast føde > 10 sek).">
 				>
 				["at0040"] = <
 					text = <"Vellykket svelging">
@@ -775,7 +773,7 @@ ontology
 				>
 				["at0054"] = <
 					text = <"Forsinket svelging">
-					description = <"tykt, tynt > 2 sec (fast føde > 10 sec) (en)">
+					description = <"tykt, tynt > 2 sek (fast føde > 10 sek).">
 				>
 				["at0055"] = <
 					text = <"Vellykket svelging">
