@@ -17,9 +17,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Kanika Kuwelker, John Tore Valand, Vebjørn Arntzen">
-				["organisation"] = <"Helse Vest IKT, Helse Bergen, Oslo University Hospital">
-				["email"] = <"kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no">
+				["name"] = <"Kanika Kuwelker, John Tore Valand, Vebjørn Arntzen, Liv Laugen">
+				["organisation"] = <"Helse Vest IKT, Helse Bergen, Oslo University Hospital, Oslo universitetssykehus">
+				["email"] = <"kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, liv.laugen@ous-hf.no">
 			>
 		>
 		["es"] = <
@@ -223,10 +223,10 @@ No s'ha de fer servir per registrar resultats de proves de diagnòstic formals; 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"C751046D3E6C6F31098AA43E9EC96672">
-		["build_uid"] = <"f240bfbd-5e00-49bb-8afb-c9d5a333a922">
+		["MD5-CAM-1.0.1"] = <"8B02F2D7FC54D282E09D2F23B3E67F05">
+		["build_uid"] = <"4d25329a-645b-4c04-9a2a-fc22c6aa33d1">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
-		["revision"] = <"1.0.2">
+		["revision"] = <"1.0.3">
 	>
 
 definition
@@ -310,7 +310,7 @@ definition
 											}
 										}
 									}
-									allow_archetype CLUSTER[at0044] occurrences matches {0..1} matches {    -- Additional details
+									allow_archetype CLUSTER[at0044] occurrences matches {0..*} matches {    -- Additional details
 									}
 								}
 							}
@@ -330,7 +330,6 @@ definition
 			}
 		}
 	}
-
 
 
 
@@ -605,7 +604,7 @@ Die Kodierung des \"Untersuchungsnamens\" mit einer Terminologie wird, wenn mög
 					description = <"@ internal @">
 				>
 				["at0023"] = <
-					text = <"Uspesifikk hendelse">
+					text = <"Uspesifisert hendelse">
 					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0024"] = <
