@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
     <id>41320dbb-ebc2-4c84-89d8-4289e64526fe</id>
-    <name>Generell_Innkomstjurnal_KursOslo_Mai25</name>
+    <name>no.nrua::openEHR-EHR-COMPOSITION.innkomst.kurs.oslo25.v1.0.0</name>
     <description>
         <original_author>
             <item>
@@ -70,7 +70,7 @@ Templatet inneholder felt for:
             </item>
             <item>
                 <key>sem_ver</key>
-                <value>53.0.1</value>
+                <value>54.1.0</value>
             </item>
             <item>
                 <key>build_uid</key>
@@ -78,7 +78,7 @@ Templatet inneholder felt for:
             </item>
             <item>
                 <key>MD5-CAM-1.0.1</key>
-                <value>106086c9fd3be37bd1d30b2491fcbc70</value>
+                <value>348be46c7b4372665c62d60a8c8c572a</value>
             </item>
             <item>
                 <key>PARENT:MD5-CAM-1.0.1</key>
@@ -240,7 +240,6 @@ Templatet inneholder felt for:
                     </Rule>
                     <Rule max="0" path="/items[at0164]">
                         <constraint xsi:type="tem:multipleConstraint">
-                            <includedTypes>Text</includedTypes>
                             <includedTypes>Duration</includedTypes>
                             <includedTypes>Interval</includedTypes>
                         </constraint>
@@ -462,8 +461,36 @@ Templatet inneholder felt for:
                     <Rule name="Beskrivelse røykevaner" path="/data[at0001]/items[at0043]"/>
                     <Rule max="0" path="/data[at0001]/items[at0015]"/>
                     <Rule max="0" path="/data[at0001]/items[at0080]"/>
-                    <Rule max="0" path="/data[at0001]/items[at0029]"/>
+                    <Rule max="0" path="/data[at0001]/items[at0029]">
+                        <nameConstraint>
+                            <includedValues>local::at0054</includedValues>
+                            <includedValues>local::at0055</includedValues>
+                            <includedValues>local::at0056</includedValues>
+                            <includedValues>local::at0066</includedValues>
+                            <includedValues>local::at0057</includedValues>
+                            <includedValues>local::at0062</includedValues>
+                            <includedValues>local::at0078</includedValues>
+                            <includedValues>local::at0088</includedValues>
+                        </nameConstraint>
+                    </Rule>
                     <Rule max="0" path="/data[at0001]/items[at0016]"/>
+                    <Rule max="0" path="/data[at0001]/items[at0093]">
+                        <constraint xsi:type="tem:quantityConstraint">
+                            <unitMagnitude>
+                                <unit>a</unit>
+                                <minMagnitude>0.0</minMagnitude>
+                                <includesMaximum>false</includesMaximum>
+                                <includesMinimum>true</includesMinimum>
+                            </unitMagnitude>
+                        </constraint>
+                    </Rule>
+                    <Rule max="0" path="/data[at0001]/items[at0094]">
+                        <constraint xsi:type="tem:countConstraint">
+                            <minMagnitude>0</minMagnitude>
+                            <includesMaximum>false</includesMaximum>
+                            <includesMinimum>true</includesMinimum>
+                        </constraint>
+                    </Rule>
                     <Rule max="0" path="/data[at0001]/items[at0019]"/>
                     <Rule max="0" path="/protocol[at0021]/items[at0071]"/>
                     <Rule max="0" path="/protocol[at0021]/items[at0085]"/>
@@ -1401,7 +1428,7 @@ Templatet inneholder felt for:
         <digest id="MD5-CAM-1.0.1">8C31F1995FB30F288AA6075949813E8F</digest>
     </integrity_checks>
     <integrity_checks archetype_id="openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
-        <digest id="MD5-CAM-1.0.1">EEC0430B3A770FEEE1AB7E26FCFFB81D</digest>
+        <digest id="MD5-CAM-1.0.1">A91E957509CD6EABCD1648EDEBA467DD</digest>
     </integrity_checks>
     <integrity_checks archetype_id="openEHR-EHR-EVALUATION.smokeless_tobacco_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
         <digest id="MD5-CAM-1.0.1">AF1E2C2C024AF015A10CE89EAF906AEA</digest>
