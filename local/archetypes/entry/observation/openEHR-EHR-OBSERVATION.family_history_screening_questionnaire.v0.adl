@@ -9,17 +9,17 @@ language
 		["de"] = <
 			language = <[ISO_639-1::de]>
 			author = <
-				["name"] = <"Henning Schmidt, Darin Leonhardt">
-				["organisation"] = <"Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule">
-				["email"] = <"hschmidt@n-z-a.de, leonhardt.darin@mh-hannover.de">
+				["name"] = <"Henning Schmidt, Darin Leonhardt, Martin Koch">
+				["organisation"] = <"Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule, Servei Català de la Salut">
+				["email"] = <"hschmidt@n-z-a.de, leonhardt.darin@mh-hannover.de, martinandreaskoch@catsalut.cat">
 			>
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Silje Ljosland Bakke, Marit Alice Venheim, John Tore Valand, Liv Laugen, Vebjørn Arntzen, Hanne Marte Bårholm">
+				["name"] = <"Silje Ljosland Bakke, Marit Alice Venheim, John Tore Valand, Liv Laugen, Vebjørn Arntzen, Hanne Marte Bårholm, Kanika Kuwelker">
 				["organisation"] = <"Helse Vest IKT AS, Helse Bergen, ​Oslo University Hospital, Norway">
-				["email"] = <"silje.ljosland.bakke@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no, hanne.marte.sandal.barholm@helse-vest-ikt.no">
+				["email"] = <"silje.ljosland.bakke@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no, hanne.marte.sandal.barholm@helse-vest-ikt.no, kanika.kuwelker@helse-vest-ikt.no">
 			>
 		>
 	>
@@ -33,29 +33,38 @@ description
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
-			purpose = <"*To create a framework for recording answers to pre-defined screening questions about significant health-related problems found in both genetic and non-genetic family members. (en)">
-			use = <"*Use to create a framework for recording answers to pre-defined screening questions about significant health-related problems found in both genetic and non-genetic family members.
+			purpose = <"Für die Erstellung eines Rahmens für die Aufzeichnung von Antworten auf vordefinierte Screening-Fragen zu gesundheitlichen Problemen bei genetischen und nicht-genetischen Familienmitgliedern.">
+			use = <"*Use to create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.
 
-The intended scope of this archetype is deliberately kept loose to include the broadest range of problems or issues that might be found within families. It specifically includes known problems and diagnoses, identified biological markers, plus any relevant psychosocial factors and environmental factors. Templates for specific use cases may be constrained to relationships with genetic family members if required. 
+Traditionally the scope of family history has been focused on identifying factors or biomarkers in genetically related family members. Non-genetic family members may also be included, such as adopted or long term fostered children, those related by marriage, or other unrelated individuals who participate in the regular life and influence of the family.
+
+The intended scope of this archetype is to include the broadest range of problems or issues that might be found within families. It includes problems or diagnoses that are:
+- genetically inheritable, such as breast cancer or Huntington’s disease
+- not genetically inheritable but influenced by psychological, social, or environmental factors related to the family, such as exposure to toxins in the family home, domestic violence, sexual abuse, alcoholism and other addictions.
+
+This archetype has two discrete approaches for screening for family history:
+- All relationships - Does  *anyone* in the family have ‘Problem/diagnosis name’? 
+- Specified relationship - Does your 'Relationship'  have ‘Problem/diagnosis name’? 
 
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation, for example:
---- Are there any known diseases in the family?
 --- Is there a history of heart disease in the family?
 --- Is there a history of mental health problems in the family?
 --- Is there a history of addiction in the family?
 --- Did your mother have diabetes?
 - Specific questioning related to chronic disease management or preventive health.
 
+Templates for specific use cases may be constrained to relationships with genetic family members if required.
+
 The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.
 
-The EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a significant health-related problem the family at any time in the past and information about a significant health-related problem the family in a specified time interval - for example the difference between \"Have any family members COVID now?\" compared to \"Have any family members had COVID the past 4 weeks?\"
+Use separate EVENTs to specify whether the questions relate to a point in time or an interval of time. For example: \"Do any family members have COVID now?\" as a point in time EVENT and \"Have any family members had COVID during the past 4 weeks?\" as an interval EVENT.
 
 The source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.
 
-This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a health concern in a family member, it is recommended that the clinical system record the specific details using the EVALUATION.family_history archetype. (en)">
-			keywords = <"*family, history, health, condition, problem, diagnosis, family history, relative, biological, relationship, background, genetic (en)", ...>
-			misuse = <"*Not to be used to record details about the presence or absence of a significant health-related problem, outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a health concern in a family member, it is recommended that the clinical system record the specific details using the EVALUATION.family_history archetype or the CLUSTER.family_prevalence archetype. (en)">
+			keywords = <"Familie, Geschichte, Gesundheit, Zustand, Problem, Diagnose, Familiengeschichte, relativ, biologisch, Beziehung, Hintergrund, genetisch", ...>
+			misuse = <"*Not to be used to record details about the presence or absence of a family-related problem outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
 
 Not to be used to record details about a specific health-related problem. Use EVALUATION.problem_diagnosis for this purpose.
 
@@ -66,29 +75,35 @@ Not to be used to record a Family Pedigree chart of health problems/diagnoses. U
 			purpose = <"For å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om helserelaterte forhold hos både genetiske og ikke-genetiske familiemedlemmer.">
 			use = <"Brukes for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om helserelaterte forhold hos både genetiske og ikke-genetiske familiemedlemmer.
 
-Omfanget av denne arketypen er er med vilje løst definert, for å inkludere et bredest mulig spekter av problemer eller utfordringer som kan oppstå i familier. Arketypen omfatter kjente problemer eller diagnoser, identifiserte biologiske markører, samt alle relevante psykososiale faktorer og miljøfaktorer.
-Templater for spesifikke brukstilfeller kan, om nødvendig, begrenses til relasjoner med genetiske familiemedlemmer.
+Tradisjonelt har omfanget av en familieanamnese vært fokusert på å identifisere faktorer eller biomarkører hos genetisk beslektede familiemedlemmer. Denne arketypen utvider omfanget til også å kunne inkludere ikke-genetiske familiemedlemmer, for eksempel adopterte barn, fosterbarn, ektefeller, eller andre ubeslektede individer som inngår i familiens daglige liv og påvirkning.
+
+Arketypen omfatter et bredest mulig spekter av problemer, bekymringer eller plager som kan oppstå i familier. Dette omfatter kjente problemer eller diagnoser som:
+- Genetisk arvelige, for eksempel brystkreft eller Huntingtons sykdom.
+- Ikke-genetisk arvelige, men som likevel kan være påvirket av psykologiske, sosiale eller miljømessige faktorer knyttet til familien, for eksempel eksponering for giftstoffer i hjemmet, vold i hjemmet, seksuelle overgrep, alkoholisme eller andre avhengigheter.
+
+Denne arketypen har to tilnærminger for å kartlegge familieanamnese:
+- Alle relasjoner – Har et hvilket som helst familiemedlem «Problem-/diagnosenavn»?
+- Spesifikk relasjon – Har det spesifikke familiemedlemmet, som er angitt under \"Relasjon\" \"Problem-/diagnosenavn\"?
 
 Vanlige bruksområder inkluderer, men er ikke begrenset til:
 - Systematiske spørsmål ved konsultasjoner, for eksempel:
 --- Er det kjent hjertesykdom i familien?
 --- Er det psykiske helseproblemer i familien?
---- Finnes det avhengighet i familien?
+--- Finnes det avhengighetsproblemer i familien?
 --- Har din mor diabetes?
 - Spesifikke spørsmål relatert til håndtering av kronisk sykdom eller forebyggende helse.
 
-Semantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikkert i konteksten av det spesifikke templatet. I et templat vil hvert dataelement vanligvis døpes om til det spesifikke spørsmålet man ønsker svar på. Flere steder er det foreslått verdisett som passer til de vanligste bruksområder, men det er allikevel mulig å tilpasse/endre verdisett for lokal bruk ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN for å harmonere verdisettet til hvert enkelt brukstilfelle.
+Templater for spesifikke brukstilfeller kan, om nødvendig, begrenses til relasjoner med genetiske familiemedlemmer.
 
-EVENT-strukturen fra arketypens referansemodell kan brukes for å spesifisere om spørsmålene relateres til et tidspunkt eller til et tidsintervall.
-Bruk egne instanser av denne arketypen for å skille mellom spørsmål om signifikante helserelaterte forhold i familien på et hvilket som helst tidspunkt eller i et tidsintervall. For eksempel; \"Har noen familiemedlemmer COVID nå?\" sammenlignet med \"Har noen familiemedlemmer hatt COVID de siste fire ukene?\"
+Semantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikker i konteksten av det spesifikke templatet. I et templat vil hvert dataelement vanligvis døpes om til det spesifikke spørsmålet man ønsker svar på. Flere steder er det foreslått verdisett som passer til de vanligste bruksområder, men det er allikevel mulig å tilpasse/endre verdisett for lokal bruk ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN for å harmonere verdisettet til hvert enkelt brukstilfelle.
 
-Kilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte \"Information provider\" elementet i openEHR referansemodellen.
+Bruk egne EVENTer for å skille mellom spørsmål som omhandler et hvilket som helst tidspunkt eller et tidsintervall. For eksempel; \"Har noen familiemedlemmer COVID nå?\" som en tidspunktshendelse (point in time EVENT) sammenlignet med \"Har noen familiemedlemmer hatt COVID de siste fire ukene?\" som en intervallhendelse (Interval EVENT)
 
-Denne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Dersom det i spørreskjemaet identifiseres at signifikante helserelaterte forhold er tilstede, anbefales det at disse registreres og lagres i pasientjournalen i en relevant arketype, for eksempel i arketypene EVALUATION.family_history (Familieanamnese) eller i CLUSTER.family_prevalence (Familieprevalens).">
-			keywords = <"familie, historie, helse, forhold, problem, diagnose, familiehistorie, slektning, biologisk, bakgrunn, genetisk", ...>
-			misuse = <"Brukes ikke for å registrere tilstedeværelse eller fravær av signifikante helserelaterte forhold hos familiemedlemmer utenfor konteksten av kartleggingen. Bruk arketypene EVALUATION.family_history (Familieanamnese) eller EVALUATION.exclusion_specific (Eksklusjonsutsagn - spesifikt) for dette formålet.
+Kilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte \"Information provider\"-elementet i openEHR referansemodellen.
 
-Brukes ikke for å registrere detaljer om et spesifikt helserelatert problem. Bruk arketypen EVALUATION.problem_diagnosis (Problem/diagnose) for dette formålet.
+Denne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Dersom det i spørreskjemaet identifiseres at signifikante helserelaterte forhold er tilstede hos et familiemedlem, anbefales det at disse registreres og lagres i pasientjournalen i en relevant arketype, for eksempel i arketypene EVALUATION.family_history (Familieanamnese) eller i CLUSTER.family_prevalence (Familieprevalens).">
+			keywords = <"familie, historie, anamnese, helse, forhold, problem, diagnose, familiehistorie, slektning, biologisk, bakgrunn, genetisk", ...>
+			misuse = <"Brukes ikke for å registrere tilstedeværelse eller fravær av helserelaterte forhold hos familiemedlemmer utenfor konteksten av kartleggingen. Bruk arketypene EVALUATION.family_history (Familieanamnese) eller EVALUATION.exclusion_specific (Eksklusjonsutsagn - spesifikt) for dette formålet.
 
 Brukes ikke som basis for et slektstre over helseproblemer og diagnoser. Bruk arketypen EVALUATION.family_history (Familieanamnese) for dette formålet.">
 		>
@@ -97,7 +112,15 @@ Brukes ikke som basis for et slektstre over helseproblemer og diagnoser. Bruk ar
 			purpose = <"To create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.">
 			use = <"Use to create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.
 
-The intended scope of this archetype is deliberately kept loose to include the broadest range of problems or issues that might be found within families. It specifically includes known problems and diagnoses, identified biological markers, plus any relevant psychosocial factors and environmental factors. Templates for specific use cases may be constrained to relationships with genetic family members if required. 
+Traditionally the scope of family history has been focused on identifying factors or biomarkers in genetically related family members. Non-genetic family members may also be included, such as adopted or long term fostered children, those related by marriage, or other unrelated individuals who participate in the regular life and influence of the family.
+
+The intended scope of this archetype is to include the broadest range of problems or issues that might be found within families. It includes problems or diagnoses that are:
+- genetically inheritable, such as breast cancer or Huntington’s disease
+- not genetically inheritable but influenced by psychological, social, or environmental factors related to the family, such as exposure to toxins in the family home, domestic violence, sexual abuse, alcoholism and other addictions.
+
+This archetype has two discrete approaches for screening for family history:
+- All relationships - Does *anyone* in the family have ‘Problem/diagnosis name’? 
+- Specified relationship - Does your 'Relationship' have ‘Problem/diagnosis name’? 
 
 Common use cases include, but are not limited to:
 - Systematic questioning in any consultation, for example:
@@ -107,32 +130,32 @@ Common use cases include, but are not limited to:
 --- Did your mother have diabetes?
 - Specific questioning related to chronic disease management or preventive health.
 
+Templates for specific use cases may be constrained to relationships with genetic family members if required.
+
 The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.
 
-The EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a significant health-related problem the family at any time in the past and information about a significant health-related problem the family in a specified time interval - for example the difference between \"Have any family members COVID now?\" compared to \"Have any family members had COVID the past 4 weeks?\"
+Use separate EVENTs to specify whether the questions relate to a point in time or an interval of time. For example: \"Do any family members have COVID now?\" as a point in time EVENT and \"Have any family members had COVID during the past 4 weeks?\" as an interval EVENT.
 
 The source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.
 
 This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a health concern in a family member, it is recommended that the clinical system record the specific details using the EVALUATION.family_history archetype or the CLUSTER.family_prevalence archetype.">
 			keywords = <"family, history, health, condition, problem, diagnosis, family history, relative, biological, relationship, background, genetic", ...>
-			misuse = <"Not to be used to record details about the presence or absence of a significant health-related problem, outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
-
-Not to be used to record details about a specific health-related problem. Use EVALUATION.problem_diagnosis for this purpose.
+			misuse = <"Not to be used to record details about the presence or absence of a family-related problem outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
 
 Not to be used to record a Family Pedigree chart of health problems/diagnoses. Use the EVALUATION.family_history archetype for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Clara Calleja Vega, CatSalut. Servei Català de la Salut., Spain", "Christian Chevalley, ADOC, Thailand", "Hugo Claudio Briceño García, Catsalut, Spain", "Giovanni Delussu, crs4, Italy", "Mona Didriksen, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Manuela Domingo, hospital general universitario dr. balmis, Spain", "Rosane Gotardo, Systema Ltda., Brazil", "Heather Grain, Llewelyn Grain Informatics, Australia", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "June Marie Knappskog, Helse Nord IKT AS, Norway (Nasjonal IKT redaktør), Norway", "Lise Kristin Knutsen, Oslo universitetssykehus, Norway", "Martin Koch, Servei Català de la Salut, Spain", "Ronald Krawec, Alberta Health Services, Canada", "Anjali Kulkarni, Karkinos, India", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Eli Larsen, UNN, Norway", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Darin Leonhardt, PLRI für medizinische Informatik/ Medizinische Hochschule, Germany", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Ruth Lochan, Akademiska Sjukhuset Uppsala, Sweden", "Michael Lutz, BITsoft, Germany", "June Marie Nepstad Knappskog, Helse Nord IKT AS, Norway (openEHR Editor), Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Arunakiry Natarajan, medondo, Germany", "Svenne Naumann, Finnmarkssykehuset, Norway", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Terje Nordberg, Helse Bergen, Norway", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Marlene Pérez Colman, Digital Health and Care Wales, United Kingdom", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Andre Smitt-Ingebretsen, Sørlandet sykehus HF, Norway", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Wouter Zanen, Eurotranplant, Netherlands">
+	other_contributors = <"Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (openEHR Norway redaktør)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Norway redaktør)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Gunn Elin Blakkisrud, DIPS ASA, Norway", "Hanne Marte Bårholm, Helse Vest IKT, Norway (openEHR Norway redaktør)", "Clara Calleja Vega, CatSalut. Servei Català de la Salut., Spain", "Christian Chevalley, ADOC, Thailand", "Hugo Claudio Briceño García, Catsalut, Spain", "Giovanni Delussu, crs4, Italy", "Mona Didriksen, Helse Vest IKT, Norway", "Manuela Domingo, hospital general universitario dr. balmis, Spain", "Aleksander Furnes, Helse Nord IKT, Norway", "Ciprian Gerstenberger, HN IKT, Norway (openEHR Norway redaktør)", "Rosane Gotardo, Systema Ltda., Brazil", "Heather Grain, Llewelyn Grain Informatics, Australia", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Susanna Jönsson, Region Värmland, Sweden", "Mika Kiviaho, Tietoevry Care, Finland", "Lise Kristin Knutsen, Oslo universitetssykehus, Norway", "Martin Koch, Servei Català de la Salut, Spain", "Ronald Krawec, Alberta Health Services, Canada", "Anjali Kulkarni, Karkinos, India", "Kanika Kuwelker, Helse Vest IKT, Norway", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Eli Larsen, UNN, Norway", "Liv Laugen, Oslo universitetssykehus, Norway (openEHR Norway redaktør)", "Darin Leonhardt, PLRI für medizinische Informatik/ Medizinische Hochschule, Germany", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Ruth Lochan, Akademiska Sjukhuset Uppsala, Sweden", "Michael Lutz, BITsoft, Germany", "June Marie Nepstad Knappskog, Helse Nord IKT AS, Norway (openEHR Editor), Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Arunakiry Natarajan, medondo, Germany", "Svenne Naumann, Finnmarkssykehuset, Norway", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Terje Nordberg, Helse Bergen, Norway", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Marlene Pérez Colman, Digital Health and Care Wales, United Kingdom", "Benjamin Senst, Germany", "Andre Smitt-Ingebretsen, Sørlandet sykehus HF, Norway", "John Tore Valand, Helse Vest IKT, Norway (openEHR Norway redaktør)", "Wouter Zanen, Eurotranplant, Netherlands">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"BEDF9C7B2A79D5BB26BC064E5AD8EDE4">
-		["build_uid"] = <"38325e02-d706-4ab6-b7dc-ae626fae31fb">
+		["MD5-CAM-1.0.1"] = <"5192C1C48F4F8150203CEE781F15B509">
+		["build_uid"] = <"a39c57ad-ce49-4bd2-9903-cb3e57f4604d">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -156,7 +179,7 @@ definition
 											DV_TEXT matches {*}
 										}
 									}
-									CLUSTER[at0042] occurrences matches {0..*} matches {    -- Problem or diagnosis in the family
+									CLUSTER[at0042] occurrences matches {0..*} matches {    -- Any family member
 										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0043] matches {    -- Problem/diagnosis name
 												value matches {
@@ -176,6 +199,11 @@ definition
 													}
 													DV_TEXT matches {*}
 													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Comment
+												value matches {
+													DV_TEXT matches {*}
 												}
 											}
 										}
@@ -211,6 +239,9 @@ definition
 												value matches {
 													DV_DATE_TIME matches {*}
 													DV_INTERVAL<DV_DATE_TIME> matches {*}
+													DV_DURATION matches {*}
+													DV_INTERVAL<DV_DURATION> matches {*}
+													DV_TEXT matches {*}
 												}
 											}
 											allow_archetype CLUSTER[at0036] occurrences matches {0..*} matches {    -- Additional details
@@ -278,13 +309,13 @@ ontology
 				>
 				["at0009"] = <
 					text = <"Specific relationship">
-					description = <"Details about a specific problem or diagnosis in identified family member(s).">
+					description = <"Details about an identified problem or diagnosis in a specific relationship or relationship degree.">
+					comment = <"‘Relationship’ is the focus of the question, and in order to answer the question both the 'Relationship' and the 'Problem/diagnosis name' need to be mandatory. For example: 'Does your father have diabetes?' or 'Have any of your first degree relations had colorectal cancer?'">
 				>
 				["at0010"] = <
 					text = <"Presence?">
 					description = <"Is there a history of a problem or diagnosis in family members?">
-					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'.
-For example: Does your father have diabetes?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'. For example: Does your father have diabetes?">
 				>
 				["at0011"] = <
 					text = <"Yes">
@@ -338,19 +369,19 @@ For example: Does your father have diabetes?">
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"Problem or diagnosis in the family">
-					description = <"Details about a specific problem or diagnosis or grouping of problems or diagnoses in the family.">
+					text = <"Any family member">
+					description = <"Presence of a specific problem or diagnosis in any family member.">
+					comment = <"'Problem/Diagnosis name' has been made mandatory as it is the sole focus of the question with no further details anticipated. For example: “Does anyone in the family have diabetes?”.">
 				>
 				["at0043"] = <
 					text = <"Problem/diagnosis name">
-					description = <"Identification of a problem or diagnosis, or grouping of problems or diagnoses in the family.">
-					comment = <"Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible.">
+					description = <"Identification of a specific problem or diagnosis, or a grouping of problems or diagnoses, in the family.">
+					comment = <"For example: 'Colorectal cancer' or 'Cancer'; 'Angina' or 'Cardiovascular disease'. Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible.">
 				>
 				["at0044"] = <
 					text = <"Presence?">
 					description = <"Is there a history of a problem or diagnosis, or grouping of problems or diagnoses in the family?">
-					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'.
-For example: Does any in your family have diabetes?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'. For example: Does any in your family have diabetes?">
 				>
 				["at0045"] = <
 					text = <"Yes">
@@ -372,6 +403,10 @@ For example: Does any in your family have diabetes?">
 					text = <"Timing">
 					description = <"Indication of timing related to the problem or diagnosis.">
 					comment = <"The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when an issue, problem or diagnosis occured. The specific and intended semantics can be further clarified in a template. For example: the actual date and/or time; the start and stop time for when the issue, problem or diagnosis occured; the interval of time during which the issue, problem or diagnosis occured; the duration of the issue, problem or diagnosis; the age of the individual at the time of the issue, problem or diagnosis; or the duration of time since it occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year.">
+				>
+				["at0050"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the specific problem or diagnosis in the family, not captured in other fields.">
 				>
 			>
 		>
@@ -401,7 +436,8 @@ For example: Does any in your family have diabetes?">
 				>
 				["at0009"] = <
 					text = <"Spesifikk relasjon">
-					description = <"Detaljer om et spesifikt problem eller diagnose, eller gruppe av problemer eller diagnoser hos familiemedlemmer.">
+					description = <"Detaljer om et identifisert problem eller en diagnose i en bestemt familierelasjon eller slektsgrad.">
+					comment = <"\"Relasjon\" er hovedfokuset i spørsmålet, og for å kunne besvare det må både \"Relasjon\" og \"Problem/diagnosenavn\" være obligatoriske. For eksempel: \"Har din far diabetes?\" eller \"Har noen av dine førstegradsslektninger hatt kolorektal kreft?\"">
 				>
 				["at0010"] = <
 					text = <"Tilstede?">
@@ -432,12 +468,12 @@ For eksempel: Har faren din diabetes?">
 				>
 				["at0028"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekst om det spesifikke problem- eller diagnosespørsmålet som ikke er omfattet av andre felt.">
+					description = <"Ytterligere fritekst om det spesifikke problemet, diagnosen eller familiemedlemmet som ikke er omfattet av andre felt.">
 				>
 				["at0029"] = <
 					text = <"Utvidelse">
-					description = <"Tilleggsinformasjon for å fange opp lokalt innhold eller for å sammenstille med andre referansemodeller/formalismer.">
-					comment = <"For eksempel: Lokale informasjonsbehov eller ytterligere metadata eller for å sammenstille med FHIR.">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 				["at0035"] = <
 					text = <"Problem/diagnosenavn">
@@ -450,7 +486,7 @@ For eksempel: Har faren din diabetes?">
 				>
 				["at0038"] = <
 					text = <"Beskrivelse">
-					description = <"Fritekstbeskrivelse om problemer eller diagnoser hos familiemedlemmer">
+					description = <"Fritekstbeskrivelse om problemer eller diagnoser hos familiemedlemmer.">
 				>
 				["at0039"] = <
 					text = <"Ytterligere detaljer">
@@ -461,18 +497,19 @@ For eksempel: Har faren din diabetes?">
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"Problem eller diagnose i familien">
-					description = <"Detaljer om et spesifikt problem eller diagnose, eller en gruppe av problemer eller diagnoser i familien.">
+					text = <"I familien">
+					description = <"Detaljer om et spesifikt problem eller diagnose hos et hvilket som helst familiemedlem.">
+					comment = <"\"Problem/diagnosenavn\" har blitt gjort obligatorisk ettersom det er hovedfokuset i spørsmålet, og ingen ytterligere detaljer er forventet. For eksempel: \"Har noen i familien diabetes?\".">
 				>
 				["at0043"] = <
 					text = <"Problem/diagnosenavn">
-					description = <"Navnet på problemet eller diagnosen, eller en gruppe av problemer eller diagnoser i familien.">
-					comment = <"Koding av problem/diagnosenavnet med en terminologi foretrekkes, der det er mulig.">
+					description = <"Navnet på problemet eller diagnosen, eller på en gruppe av problemer eller diagnoser i familien.">
+					comment = <"For eksempel: \"Kolorektal kreft\" eller \"Kreft\", \"Angina\" eller \"Hjerte- og karsykdom\". Koding av \"Problem-/diagnosenavn\" med en terminologi foretrekkes der det er mulig.">
 				>
 				["at0044"] = <
 					text = <"Tilstede?">
 					description = <"Har det spesifikke problemet eller diagnosen noen gang vært tilstede i familien?">
-					comment = <"Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN. I tilfeller der et individ er adoptert eller ingen informasjon er tilgjengelig anbefales det å registere \"Ukjent.
+					comment = <"Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN. I tilfeller der et individ er adoptert eller ingen informasjon er tilgjengelig anbefales det å registere \"Ukjent\".
 For eksempel: Har noen i familien din diabetes?">
 				>
 				["at0045"] = <
@@ -496,13 +533,17 @@ For eksempel: Har noen i familien din diabetes?">
 					description = <"Tidsangivelse for problemet eller diagnosen.">
 					comment = <"Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for bekymringen, plagen, problemet eller diagnosen i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Bekymringen, plagen, problemet eller diagnosen faktiske dato og/eller klokkeslett, start- og slutttid for bekymringen, plagen, problemet eller diagnosen, et tidsintervall for når bekymringen, plagen, problemet eller diagnosen oppstod, varigheten av bekymringen, plagen, problemet eller diagnosen, individets alder på tidspunktet for bekymringen, plagen, problemet eller diagnosen, eller hvor lenge det siden det oppstod. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME.">
 				>
+				["at0050"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om det spesifikke problemet eller diagnosen som ikke er omfattet av andre felt.">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
 					text = <"Fragebogen zur Familienanamnese">
-					description = <"*Series of questions and associated answers used to screen for health-related problems found in genetic and non-genetic family members. (en)">
+					description = <"Eine Reihe von Fragen und zugehörigen Antworten dient zum Screening auf gesundheitliche Probleme bei genetischen und nicht genetischen Familienmitgliedern.">
 					comment = <"Die Antworten können selbstberichtet sein.">
 				>
 				["at0001"] = <
@@ -524,13 +565,14 @@ For eksempel: Har noen i familien din diabetes?">
 				>
 				["at0009"] = <
 					text = <"Spezifisches Problem oder Diagnose">
-					description = <"Details zu einem spezifischen Problem oder einer Diagnose oder Gruppierung von Problemen oder Diagnosen, die bei Familienmitgliedern relevant für den Screening-Zweck gefunden wurden.">
+					description = <"*Details about an identified problem or diagnosis in a specific relationship or relationship degree. (en)">
+					comment = <"*‘Relationship’ is the focus of the question, and in order to answer the question both the relationship and the diagnosis need to be mandatory. For example: “Does your father have diabetes?” or “Have any of your first degree relations had colorectal cancer?” (en)">
 				>
 				["at0010"] = <
 					text = <"Präsenz">
 					description = <"Gibt es eine Vorgeschichte der spezifischen Probleme oder Diagnosen bei Familienmitgliedern?">
-					comment = <"*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'.
-For example: Does your father have diabetes? (en)">
+					comment = <"In einem Template wird das Datenelement üblicherweise in die konkrete Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypen DV_TEXT oder DV_BOOLEAN verwendet werden, um dem jeweiligen Anwendungsfall gerecht zu werden. Bei Adoptionen ohne verfügbare Informationen empfiehlt sich die Angabe „Unbekannt“.
+Beispiel: Gibt es in Ihrer Familie Diabetes?">
 				>
 				["at0011"] = <
 					text = <"Ja">
@@ -573,29 +615,31 @@ For example: Does your father have diabetes? (en)">
 				>
 				["at0038"] = <
 					text = <"Beschreibung">
-					description = <"*Narrative description about the history of any problem or diagnosis in the family. (en)">
+					description = <"Narrative Beschreibung der Vorgeschichte etwaiger Probleme oder Diagnosen in der Familie.">
 				>
 				["at0039"] = <
 					text = <"Zusätzliche Details">
 					description = <"Strukturierte Angaben oder Fragen zum Screening auf signifikante Probleme oder Diagnosen bei Familienmitgliedern.">
 				>
 				["at0041"] = <
-					text = <"*Unsure (en)">
+					text = <"Unsicher">
 					description = <"">
 				>
 				["at0042"] = <
-					text = <"*CLUSTER (en)">
-					description = <"*Details about a specific problem or diagnosis or grouping of problems or diagnoses in the family. (en)">
+					text = <"*Any family member (en)">
+					description = <"Details zu einem bestimmten Problem oder einer Diagnose oder einer Gruppierung von Problemen oder Diagnosen in der Familie.">
+					comment = <"*'Problem/Diagnosis name' has been made mandatory as it is the sole focus of the question with no further details anticipated. For example: “Does anyone in the family have diabetes?”.  (en)">
 				>
 				["at0043"] = <
-					text = <"*DV_TEXT (en)">
-					description = <"*Identification of a problem or diagnosis, or grouping of problems or diagnoses in the family. (en)">
+					text = <"Problem-/Diagnosename">
+					description = <"*Identification of a specific problem or diagnosis, or a grouping of problems or diagnoses, in the family. (en)">
+					comment = <"*For example: 'Colorectal cancer' or 'Cancer'; 'Angina' or 'Cardiovascular disease'. Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible. (en)">
 				>
 				["at0044"] = <
 					text = <"Präsenz">
 					description = <"Gibt es eine Vorgeschichte der spezifischen Probleme oder Diagnosen bei Familienmitgliedern?">
-					comment = <"*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'.
-For example: Does any in your family have diabetes? (en)">
+					comment = <"In einem Template wird das Datenelement üblicherweise in die konkrete Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypen DV_TEXT oder DV_BOOLEAN verwendet werden, um dem jeweiligen Anwendungsfall gerecht zu werden. Bei Adoptionen ohne verfügbare Informationen empfiehlt sich die Angabe „Unbekannt“.
+Beispiel: Gibt es in Ihrer Familie Diabetes?">
 				>
 				["at0045"] = <
 					text = <"Ja">
@@ -610,12 +654,17 @@ For example: Does any in your family have diabetes? (en)">
 					description = <"">
 				>
 				["at0048"] = <
-					text = <"*Unsure (en)">
+					text = <"Unsicher">
 					description = <"">
 				>
 				["at0049"] = <
-					text = <"*DV_DATE_TIME (en)">
-					description = <"">
+					text = <"Zeitablauf">
+					description = <"Angabe des Zeitablaufs des Problems oder der Diagnose.">
+					comment = <"Das Datenelement „Zeitablauf“ wurde bewusst locker modelliert, um die vielfältigen Einsatzmöglichkeiten in Fragebögen zur Erfassung des Auftretens eines Problems oder einer Diagnose zu unterstützen. Die spezifische und beabsichtigte Semantik kann in einem Template weiter präzisiert werden. Beispiele: das tatsächliche Datum und/oder die Uhrzeit; der Start- und Endzeitpunkt des Auftretens des Problems oder der Diagnose; der Zeitraum, in dem das Problem oder die Diagnose auftrat; die Dauer des Problems oder der Diagnose; das Alter der Person zum Zeitpunkt des Auftretens des Problems oder der Diagnose; oder der Zeitraum seit dem Auftreten. Ein Teildatum ist mit dem Datentyp DV_DATE_TIME gültig, um nur ein Jahr aufzuzeichnen.">
+				>
+				["at0050"] = <
+					text = <"*Comment (en)">
+					description = <"*Additional narrative about the specific problem or diagnosis in the family, not captured in other fields. (en)">
 				>
 			>
 		>
