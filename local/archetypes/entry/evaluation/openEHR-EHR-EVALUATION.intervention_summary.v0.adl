@@ -25,9 +25,8 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere et sammendrag av en terapeutisk intervensjon.
-">
-			use = <"Bruk for å registrere et sammendrag av en terapeutisk intervensjon.
+			purpose = <"For å registrere et sammendrag av en terapeutisk intervensjon som har startet eller blitt utført.">
+			use = <"Bruk for å registrere et sammendrag av en terapeutisk intervensjon som har startet eller blitt utført.
 
 Eksempler på bruk inkluderer, men er ikke begrenset til:
 - Et stråleterapiforløp som en del av en kreftbehandling.
@@ -44,7 +43,9 @@ Elementet \"Intervensjonskategori\" kan brukes til å dokumentere en overordnet 
 - Kategori: \"Kirurgisk\", Navn: \"Appendektomi\", og Type: \"Laparoskopisk\"
 - Kategori: \"Psykososial\", Navn: \"Kort intervensjon for røykeslutt\", og Type: \"Motiverende intervju (MI)\".">
 			keywords = <"behandling, forløp, protokoll, terapi, terapeutisk, kirurgi, omsorg, prosedyre, forebyggende, diagnostisk", ...>
-			misuse = <"Skal ikke brukes til å registrere alle detaljer om hver enkelt intervensjonshendelse eller aktivitet. Bruk en passende ACTION-arketype til dette formålet, for eksempel ACTION.procedure.
+			misuse = <"Skal ikke brukes til å registrere alle detaljer om hver enkelt intervensjonshendelse eller aktivitet. Bruk en passende ACTION-arketype til dette formålet.
+
+Skal ikke brukes til et sammendrag av planlagte eller foreslåtte intervensjoner som ikke er påbegynt. Bruk andre passende arketyper for dette formålet, for eksempel EVALUATION.recommendation (Anbefaling) , hvilken som helst INSTRUCTION, eller en ACTION i tilstand \"Planned\" or \"Scheduled\".
 
 Skal ikke brukes til å registrere individets vaksinasjonsstatus eller status for immunisering mot en spesifikk sykdom eller agens. Bruk EVALUATION.vaccination_summary arketypen til dette formålet.
 
@@ -52,8 +53,8 @@ Skal ikke brukes i tilfeller der det finnes mer spesifikke sammendragsarketyper 
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record a summary of a therapeutic intervention.">
-			use = <"Use to record a summary of a therapeutic intervention.
+			purpose = <"To record a summary of a commenced or completed therapeutic intervention.">
+			use = <"Use to record a summary of a commenced or completed therapeutic intervention.
 
 Examples of use include, but are not limited to:
 - A course of radiotherapy carried out as part of a cancer protocol.
@@ -72,6 +73,8 @@ The 'Intervention category' element can be used to record an overarching groupin
 			keywords = <"treatment", "course", "protocol", "therapy", "therapeutic", "surgery", "management", "care", "procedure", "preventive", "diagnostic">
 			misuse = <"Not to be used to record all details of each intervention event or activity. Use an appropriate ACTION archetype for this purpose, for example ACTION.procedure.
 
+Not to be used for summarising planned or proposed interventions which have not been started. Use other appropriate archetypes for this purpose, for example EVALUATION.recommendation, any INSTRUCTION, or an ACTION in a ‘planned’ or ‘scheduled’ state.
+
 Not to be used to record the individual's immunisation or vaccination status for a specific vaccine or disease/agent. Use the EVALUATION.vaccination_summary archetype for this purpose.
 
 Not to be used in cases where there are more specific summary archetypes available for the intervention in question, for example 'Vaccination summary', 'Transfusion summary' or 'Medication summary'. Use the available specific archetypes for such purposes.">
@@ -85,8 +88,8 @@ Not to be used in cases where there are more specific summary archetypes availab
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"28F6D5C051290E7C21C8782D9D8179BE">
-		["build_uid"] = <"f9f0c844-1c8e-457d-8af7-d9a9d3eea342">
+		["MD5-CAM-1.0.1"] = <"A54792DE808836FC050AD47079A85D79">
+		["build_uid"] = <"54154686-d06d-4c57-80a9-8dcad135188b">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -134,11 +137,6 @@ definition
 					ELEMENT[at0055] occurrences matches {0..*} matches {    -- Therapeutic role
 						value matches {
 							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0056] occurrences matches {0..1} matches {    -- Number of interventions
-						value matches {
-							DV_COUNT matches {*}
 						}
 					}
 					ELEMENT[at0051] occurrences matches {0..1} matches {    -- Therapeutic sequence
@@ -234,7 +232,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Intervention summary">
-					description = <"A summary about a single therapeutic activity, or series of activities, intended to prevent, diagnose, treat, or manage health conditions, support mental or physical well-being, or address social and environmental factors that influence health outcomes.">
+					description = <"A summary about a therapeutic activity intended to prevent, diagnose, treat, or manage health conditions, support mental or physical well-being, or address social and environmental factors that influence health outcomes.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
@@ -338,14 +336,10 @@ Coding with an external terminology is preferred, where possible.">
 					description = <"The clinical purpose of an intervention within the context of a broader treatment protocol, specifying its intended timing or function in relation to the overall therapeutic strategy.">
 					comment = <"For example main treatment, neoadjuvant, concomitant, adjuvant, preoperative or postoperative, acute, continuation, maintenance.">
 				>
-				["at0056"] = <
-					text = <"Number of interventions">
-					description = <"The total number of times the specified intervention was or are to be delivered, or the cumulative number of component sessions that comprise the intervention.">
-					comment = <"For example '3' representing the number of \"Smoking cessation brief intervention\" sessions.">
-				>
 				["at0057"] = <
 					text = <"Intervention ID">
 					description = <"Identification of the intervention.">
+					comment = <"The identifier assigned to the intervention by the clinical system requesting or performing the intervention. This can be from the local EHR in a INSTRUCTION or ACTION archetype, or from an external requester or health service provider.">
 				>
 				["at0058"] = <
 					text = <"Intervention type">
@@ -371,7 +365,7 @@ Coding with an external terminology is preferred, where possible.">
 			items = <
 				["at0000"] = <
 					text = <"Intervensjonssammendrag">
-					description = <"Et sammendrag av en enkelt terapeutisk aktivitet, eller en serie av aktiviteter, som har til hensikt å forebygge, diagnostisere, behandle eller håndtere helsetilstander, støtte mental eller fysisk velvære, eller adressere sosiale og miljømessige faktorer som påvirker helseutfall.">
+					description = <"Et sammendrag av en terapeutisk aktivitet som har til hensikt å forebygge, diagnostisere, behandle eller håndtere helsetilstander, støtte mental eller fysisk velvære, eller adressere sosiale og miljømessige faktorer som påvirker helseutfall.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
@@ -475,14 +469,10 @@ Koding med en terminologi er foretrukket, dersom det er mulig.">
 					description = <"Den kliniske hensikten med en intervensjon innenfor rammen av en bredere behandlingsprotokoll, som spesifiserer dens tiltenkte tidspunkt eller funksjon i forhold til den overordnede terapeutiske strategien.">
 					comment = <"For eksempel hovedbehandling, neoadjuvant, samtidig (concomitant), adjuvant, preoperativ eller postoperativ, akutt, videreføring/oppfølging eller vedlikehold.">
 				>
-				["at0056"] = <
-					text = <"Antall intervensjoner">
-					description = <"Det totale antallet ganger den spesifiserte intervensjonen skal bli, eller ble gjennomført, eller det kumulative antallet enkeltsesjoner som inngår i intervensjonen.">
-					comment = <"For eksempel «3» for antall sesjoner med kort intervensjon for røykeslutt.">
-				>
 				["at0057"] = <
 					text = <"Intervensjons ID">
 					description = <"Identifiksjons-ID til intervensjonen.">
+					comment = <"*The identifier assigned to the intervention by the clinical system requesting or performing the intervention. This can be from the local EHR in a INSTRUCTION or ACTION archetype, or from an external requester or health service provider. (en)">
 				>
 				["at0058"] = <
 					text = <"Intervensjonstype">
