@@ -2,7 +2,7 @@
 	openEHR-EHR-OBSERVATION.intraocular_pressure.v0
 
 concept
-	[at0000]	-- Intraocular pressure measurement
+	[at0000]	-- Intraocular pressure
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -25,33 +25,34 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en eller flere målinger av intraokulært trykk på ett eller begge øyne hos et individ.">
-			use = <"Brukes til å registrere måling av intraokulært trykk i ett øye per hendelse. Registrer detaljene for testing av begge øye ved å bruke separate hendelser.
+			purpose = <"For å registrere en eller flere intraokulære trykkmålinger av øyene hos et individ.">
+			use = <"Brukes for å registrere en eller flere intraokulære trykkmålinger av øyene hos et individ. Registrer detaljene om testing av hvert øye ved å bruke separate hendelser.
 
-Arketypen CLUSTER.exclusion_exam kan legges inn i \"Måling ikke utført\"-SLOTet for eventuelt å registrere eksplisitt at målingen ikke ble utført.">
+Arketypen CLUSTER.exclusion_exam kan legges inn i \"Måling ikke utført\"-SLOTet for eventuelt å registrere eksplisitt at målingen ikke ble utført.
+
+Når intraokulært trykk i et øye måles flere ganger ved bruk av metoder som benytter ulike dataelementer for resultatet, for eksempel ikke-kontakt tonometri og palpasjon, skal man ikke registrere begge i samme hendelse. Bruk separate hendelser i stedet.">
 			keywords = <"IOT", "tonometri", "glaukom", "øye", "øyetrykk">
 			misuse = <"">
-			copyright = <"© openEHR Norway">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record one or multiple intraocular pressure measurements of the or eyes of an individual.">
-			use = <"Use to record the measurement of intraocular pressure in a single eye per event. Record the details of each test of each eye using seperate events. 
+			purpose = <"To record one or multiple intraocular pressure measurements of the eyes of an individual.">
+			use = <"Use to record the measurement of intraocular pressure in a single eye per event. Record the details of each test of each eye using separate events. 
 
-The CLUSTER.exclusion_exam archetype can be nested within the 'Measurement not done' SLOT to optionally record explicit details about the measurement not being performed.">
+The CLUSTER.exclusion_exam archetype can be nested within the 'Measurement not done' SLOT to optionally record explicit details about the measurement not being performed.
+
+When intraocular pressure in an eye is measured multiple times using methods that use different data elements for the result, such as noncontact tonometry and palpation, do not record both in one event. Use separate events instead.">
 			keywords = <"IOP", "tonometry", "glaucoma", "eye", "eye pressure">
 			misuse = <"">
-			copyright = <"© openEHR Norway">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <"Ian McNicoll, freshEHR Informatics, UK", "Ian Rodrigues, Guy's and St Thomas'​ NHS Foundation Trust, UK", "Lars Fuhrmann, Deutsche Ophthalmologische Gesellschaft (DOG), Germany", "Ariel Ong, University College London, UK", "Heather Leslie, Atomica Informatics, Australia", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway", "Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"openEHR Norge">
-		["references"] = <"Intraokulær trykkmåling, Arketypeutkas [Internet]. openEHR Foundation, OpenEHR International Clinical Knowledge Manager [sitert: 2025-10-27]. Hentet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.1369
-
-IHE Eye Care Domain. General Eye Evaluation (GEE) [Internet]. IHE; 2012. Available from: http://www.ihe.net/Technical_Framework/upload/IHE_EyeCare_Supp_GEE_Rev1-1_TI_2012-06-29.pdf
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"IHE Eye Care Domain. General Eye Evaluation (GEE) [Internet]. IHE; 2012. Available from: http://www.ihe.net/Technical_Framework/upload/IHE_EyeCare_Supp_GEE_Rev1-1_TI_2012-06-29.pdf
 
 Royal College of Opthalmologists. Cataract National Dataset for Adults [Internet]. 2011. Available from: http://www.rcophth.ac.uk/page.asp?section=583&sectionTitle=Cataract+National+Data+Set+for+Adults
 
@@ -65,19 +66,19 @@ Vantomme M, Pourjavan S, Detry-Morel M. The range of the waveform score of the o
 
 Haag-Streit. INSTRUCTIONS FOR USE Applanation tonometer AT 900® / AT 870 [Internet]. Haag-Streit; [cited 2025 Oct 6]. Available from: https://haag-streit.com/2%20Products/General%20diagnostics/Tonometers/Tonometer%20AT%20900/Instructions%20for%20use/1500%207006000%2004270_IFU_AT_900_01_en_web.pdf
 
-">
+Liu P, Wang F, Song Y, Wang M, Zhang X. Current situation and progress of drugs for reducing intraocular pressure. Ther Adv Chronic Dis. 2022 Dec 2;13:20406223221140392. doi: 10.1177/20406223221140392. PMID: 36479139; PMCID: PMC9720821.">
 		["current_contact"] = <"Lars Fuhrmann, lars.fuhrmann@dog.org">
-		["original_namespace"] = <"no.openehr">
-		["original_publisher"] = <"openEHR Norge">
-		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"83A516E2ECD5301FEB9451283A89C2E2">
-		["build_uid"] = <"9f67af4a-af78-49e2-8662-3c11c34a6bb0">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"DBA5AD9AA8F5EEFEA461035D2ED6A8CB">
+		["build_uid"] = <"cec9e08d-dba3-4c76-a0d4-ac1bca6b02ab">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Intraocular pressure measurement
+	OBSERVATION[at0000] matches {    -- Intraocular pressure
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -103,67 +104,14 @@ definition
 												list = <
 													["1"] = <
 														units = <"mm[Hg]">
-														magnitude = <|0.0..30000.0|>
+														magnitude = <|0.0..1000.0|>
 														precision = <|1|>
 													>
 												>
 											>
 										}
 									}
-									ELEMENT[at0081] occurrences matches {0..1} matches {    -- Corrected pressure
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::125]>
-												list = <
-													["1"] = <
-														units = <"mm[Hg]">
-														magnitude = <|0.0..30000.0|>
-														precision = <|1|>
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0094] occurrences matches {0..1} matches {    -- Waveform Score
-										value matches {
-											DV_QUANTITY matches {*}
-										}
-									}
-									ELEMENT[at0083] occurrences matches {0..1} matches {    -- Semiquantitative Estimation
-										value matches {
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[local::
-													at0085,    -- Unpressurized
-													at0086,    -- Low
-													at0087,    -- Normal
-													at0088,    -- High
-													at0089]    -- Very HIgh
-												}
-											}
-										}
-									}
-									ELEMENT[at0061] occurrences matches {0..*} matches {    -- Clinical interpretation
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
-									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Comment
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
-									allow_archetype CLUSTER[at0078] occurrences matches {0..*} matches {    -- Test not done
-										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
-									}
-								}
-							}
-						}
-						state matches {
-							ITEM_TREE[at0007] matches {    -- Tree
-								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Method
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Tonometry type
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
@@ -173,76 +121,117 @@ definition
 													at0049,    -- Tono-Pen
 													at0050,    -- Rebound
 													at0051,    -- Dynamic Contour
-													at0053,    -- Transpalpebral tonometer
-													at0066,    -- Non-contact tonometry
+													at0053,    -- Transpalpebral
+													at0066,    -- Non-contact
 													at0095,    -- Implanted pressure sensor
-													at0096,    -- Goldmann-Correlated Ocular Response Analysis
-													at0097,    -- Palpation
-													at0098,    -- Visual Inspection
+													at0096,    -- Goldmann-correlated ocular response analysis
 													at0099,    -- Pneumatotonometer
 													at0100]    -- Schiøtz
 												}
 											}
 										}
 									}
-									ELEMENT[at0082] occurrences matches {0..1} matches {    -- Correction Type
+									ELEMENT[at0081] occurrences matches {0..1} matches {    -- Corrected pressure
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::125]>
+												list = <
+													["1"] = <
+														units = <"mm[Hg]">
+														magnitude = <|0.0..1000.0|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0082] occurrences matches {0..1} matches {    -- Correction type
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0090,    -- IOPcc - corneal-compensated ocular response analysis
-													at0091,    -- bIOP - biomechanically corrected noncontact IOP
-													at0092]    -- Corrected for CCT
+													at0090,    -- Corneal-compensated ocular response analysis
+													at0091,    -- Biomechanically corrected noncontact tonometry
+													at0092]    -- Corrected for central corneal thickness
 												}
 											}
 										}
 									}
-									ELEMENT[at0074] occurrences matches {0..*} matches {    -- Confounding factors
-										value matches {
-											DV_TEXT matches {*}
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[local::
-													at0101,    -- General anaesthesia
-													at0102,    -- Sedation
-													at0103,    -- Blepharospasm
-													at0104,    -- Reduced Cooperation
-													at0105]    -- Measurement Interrupted
-												}
-											}
-										}
-									}
-									allow_archetype CLUSTER[at0093] occurrences matches {0..*} matches {    -- Citation of central corneal thickness used for correction
+									allow_archetype CLUSTER[at0093] occurrences matches {0..1} matches {    -- Citation of central corneal thickness used for correction
 										include
 											archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation\.v0/}
 									}
-									ELEMENT[at0107] occurrences matches {0..1} matches {    -- Prism graduation mark on 43° offset mark
+									ELEMENT[at0083] occurrences matches {0..1} matches {    -- Palpation finding
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0085,    -- Unpressurized
+													at0086,    -- Softer than normal
+													at0087,    -- Normal
+													at0088,    -- Harder than normal
+													at0089]    -- Very hard
+												}
+											}
+										}
+									}
+									ELEMENT[at0123] occurrences matches {0..1} matches {    -- Inspection finding
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0124,    -- The eye shows signs of being unpressurized.
+													at0125,    -- The eye shows no signs of being unpressurized.
+													at0126]    -- Uncertain
+												}
+											}
+										}
+									}
+									ELEMENT[at0094] occurrences matches {0..1} matches {    -- Waveform score
 										value matches {
 											C_DV_QUANTITY <
-												property = <[openehr::497]>
+												property = <[openehr::755]>
 												list = <
 													["1"] = <
-														units = <"deg">
+														units = <"[arb'U]">
+														magnitude = <|0.0..10.0|>
 													>
 												>
 											>
 										}
 									}
-									ELEMENT[at0108] occurrences matches {0..1} matches {    -- Prism graduation mark on horizontal meridian
+									ELEMENT[at0061] occurrences matches {0..*} matches {    -- Clinical interpretation
 										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::497]>
-												list = <
-													["1"] = <
-														units = <"deg">
-													>
-												>
-											>
+											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype CLUSTER[at0055] occurrences matches {0..1} matches {    -- Device details
+									allow_archetype CLUSTER[at0078] occurrences matches {0..*} matches {    -- Test not done
 										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
+									}
+									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0007] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0117] occurrences matches {0..1} matches {    -- Pupil state
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0121,    -- Normal
+													at0122,    -- Medically induced mydriasis
+													at0118,    -- Medically induced miosis
+													at0120]    -- Pathological pupil state
+												}
+											}
+										}
 									}
 									ELEMENT[at0109] occurrences matches {0..1} matches {    -- Position
 										value matches {
@@ -259,17 +248,44 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0117] occurrences matches {0..1} matches {    -- Pupil state
+									ELEMENT[at0127] occurrences matches {0..1} matches {    -- Anaesthesia state
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0118,    -- Medically induced Miosis
-													at0122,    -- Medically induced Mydriasis
-													at0120,    -- Pathological Pupil State
-													at0121]    -- Normal
+													at0128,    -- General anesthesia
+													at0129,    -- Sedation
+													at0130]    -- No anesthesia
 												}
 											}
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..*} matches {    -- Confounding factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0134] occurrences matches {0..1} matches {    -- Medication regimen exposure
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0135,    -- Complete regimen exposure (presumed)
+													at0136,    -- Incomplete regimen exposure (presumed)
+													at0137,    -- Uncertain regimen exposure.
+													at0138]    -- No IOP lowering drugs
+												}
+											}
+										}
+									}
+									ELEMENT[at0132] occurrences matches {0..1} matches {    -- Number of topical pressure lowering medication classes
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0133] occurrences matches {0..1} matches {    -- Number of systemic pressure lowering medication classes
+										value matches {
+											DV_COUNT matches {*}
 										}
 									}
 								}
@@ -286,10 +302,16 @@ definition
 						include
 							archetype_id/value matches {/.*/}
 					}
+					allow_archetype CLUSTER[at0055] occurrences matches {0..1} matches {    -- Device details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+					}
 				}
 			}
 		}
 	}
+
+
 
 ontology
 	terminologies_available = <"SNOMED-CT", "LOINC">
@@ -297,7 +319,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Intraocular pressure measurement">
+					text = <"Intraocular pressure">
 					description = <"The local measurement of intraocular pressure, most commonly using a tonometry device.">
 				>
 				["at0001"] = <
@@ -318,36 +340,36 @@ ontology
 				>
 				["at0042"] = <
 					text = <"Pressure">
-					description = <"Measured intraocular pressure, using the method described in the 'Method' element.">
-					comment = <"For devices that output multiple pressure values based on one measurement, this element is used for the uncorrected output. Use the 'Corrected Pressure' and 'Correction type' elements for outputs that have taken more variable such as corneal parameters into consideration. ">
+					description = <"Intraocular pressure, as measured by the type of tonometry described in the 'Tonometry type' element.">
+					comment = <"For devices that only output one pressure value per measurement, this element is used. For devices that output multiple pressure values per measurement, this element is used for the output that did not undergo a correction step or is correlated with an uncorrected method by design. Use the 'Corrected pressure' and 'Correction type' elements for outputs that have been corrected for factors such as corneal thickness or biomechanics.">
 				>
 				["at0046"] = <
-					text = <"Method">
-					description = <"Type of tonometery used to measure intraocular pressure.">
+					text = <"Tonometry type">
+					description = <"Type of tonometry used to measure the intraocular pressure.">
 				>
 				["at0047"] = <
 					text = <"Goldmann">
-					description = <"Goldmann applanation tonometry was used to perform the test.">
+					description = <"A Goldmann applanation tonometer was used to perform the test.">
 				>
 				["at0048"] = <
 					text = <"Perkins">
-					description = <"Perkins tonometry was used to perform the test.">
+					description = <"A Perkins tonometer was used to perform the test.">
 				>
 				["at0049"] = <
 					text = <"Tono-Pen">
-					description = <"Tono-Pen Tono-Pen applanation tonometry was used to perform the test..">
+					description = <"A Tono-Pen applanation tonometer was used to perform the test.">
 				>
 				["at0050"] = <
 					text = <"Rebound">
-					description = <"Rebound tonometry, including iCare® devices, was used to perform the test.">
+					description = <"A rebound tonometer, such as an iCare® device, was used to perform the test.">
 				>
 				["at0051"] = <
 					text = <"Dynamic Contour">
-					description = <"Dynamic contour tonometry including PASCAL® devices was used to perform the test.">
+					description = <"A Dynamic Contour Tonometer, such as a PASCAL® device was used to perform the test.">
 				>
 				["at0053"] = <
-					text = <"Transpalpebral tonometer">
-					description = <"Tonometry through an eyelid, using a device such as the TGDc-01, was used to perform the test.">
+					text = <"Transpalpebral">
+					description = <"A tonometer that measures through the eyelid, such as the TGDc-01, was used to perform the test.">
 				>
 				["at0055"] = <
 					text = <"Device details">
@@ -367,15 +389,15 @@ ontology
 				>
 				["at0061"] = <
 					text = <"Clinical interpretation">
-					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.">
+					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the findings.">
 				>
 				["at0063"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the measurement, not captured in other fields.">
 				>
 				["at0066"] = <
-					text = <"Non-contact tonometry">
-					description = <"Non-contact tonometry was used to perfrom the test.">
+					text = <"Non-contact">
+					description = <"A non-contact tonometer was used to perform the test.">
 				>
 				["at0068"] = <
 					text = <"Tree">
@@ -384,6 +406,7 @@ ontology
 				["at0074"] = <
 					text = <"Confounding factors">
 					description = <"Description of any incidental factors related to the state of the subject which may affect clinical interpretation of the measurement.">
+					comment = <"Examples: blepharospasm, reduced cooperation, measurement interrupted, difficulty holding lid open.">
 				>
 				["at0078"] = <
 					text = <"Test not done">
@@ -391,63 +414,62 @@ ontology
 				>
 				["at0079"] = <
 					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
 				>
 				["at0081"] = <
 					text = <"Corrected pressure">
 					description = <"Corrected value for intraocular pressure.">
-					comment = <"For devices that output multiple pressure values, this element should be used for the values that take aditional parameters into account for a correction of the raw pressure value.  The method of correction used is specified in the 'correction type' element. ">
+					comment = <"For devices that output multiple pressure values, this element should be used for the values that take additional parameters into account for a correction of the raw pressure value. The method of correction used is specified in the 'correction type' element.">
 				>
 				["at0082"] = <
-					text = <"Correction Type">
-					description = <"The method used to produce the corrected pressure value.">
+					text = <"Correction type">
+					description = <"The type of correction applied to produce the 'Corrected pressure' value.">
 				>
 				["at0083"] = <
-					text = <"Semiquantitative Estimation">
-					description = <"Semi-quantitative description of the hardness of the eye. Typically performed by palpation with the examiners fingers.">
-					comment = <"Use of this element instead of the pressure element may be appropriate when the method used is insufficiently precise to express in mmHg. 
-">
+					text = <"Palpation finding">
+					description = <"Semi-quantitative description of the softness or hardness of the eye based on palpation with the examiners fingers.">
+					comment = <"Palpation of unpressurised eyes.">
 				>
 				["at0085"] = <
 					text = <"Unpressurized">
 					description = <"The eyeball appears to lack any internal pressure.">
 				>
 				["at0086"] = <
-					text = <"Low">
-					description = <"The pressure appears to be below the normal range.">
+					text = <"Softer than normal">
+					description = <"The pressure is approximated to be below the normal range, but some pressure is present.">
 				>
 				["at0087"] = <
 					text = <"Normal">
-					description = <"The pressure appears to be within the normal range.">
+					description = <"The pressure is approximated to be within the normal range (10-21mmHg).">
 				>
 				["at0088"] = <
-					text = <"High">
-					description = <"The pressure appears to be above the normal range.">
+					text = <"Harder than normal">
+					description = <"The pressure is approximated to be above the normal range, but not very hard or rock-hard.">
 				>
 				["at0089"] = <
-					text = <"Very HIgh">
+					text = <"Very hard">
 					description = <"The pressure appears to be extremely elevated, sometimes referred to as a rock-hard eye.">
 				>
 				["at0090"] = <
-					text = <"IOPcc - corneal-compensated ocular response analysis">
-					description = <"The Ocular Response Analyser output value that is corrected for corneal parameters.">
+					text = <"Corneal-compensated ocular response analysis">
+					description = <"The corneal-compensated intraocular pressure as measured by the Ocular Response Analyzer.">
 				>
 				["at0091"] = <
-					text = <"bIOP - biomechanically corrected noncontact IOP">
-					description = <"The Corvis ST Scheimpflug noncontact tonometer's output value that is corrected based on biomechanical parameters.">
+					text = <"Biomechanically corrected noncontact tonometry">
+					description = <"The biomechanically corrected intraocular pressure as measured by the Corvis ST scheimpflug noncontact tonometer.">
 				>
 				["at0092"] = <
-					text = <"Corrected for CCT">
-					description = <"The Pressure was corrected for central corneal thickness.">
+					text = <"Corrected for central corneal thickness">
+					description = <"The pressure was corrected for central corneal thickness (CCT).">
 				>
 				["at0093"] = <
 					text = <"Citation of central corneal thickness used for correction">
-					description = <"">
+					description = <"A SLOT to cite the central corneal thickness measurement that was used as a basis for the correction.">
 				>
 				["at0094"] = <
-					text = <"Waveform Score">
-					description = <"Waveform Score produced by the Ocular Response Analyser device.">
+					text = <"Waveform score">
+					description = <"Waveform score produced by the Ocular Response Analyzer device.">
 					comment = <"Higher values indicate higher reliability.">
 				>
 				["at0095"] = <
@@ -455,53 +477,16 @@ ontology
 					description = <"An implanted pressure sensor was used to perform the test.">
 				>
 				["at0096"] = <
-					text = <"Goldmann-Correlated Ocular Response Analysis">
-					description = <"Ocular Response Analyzer® was used to perform the test, with the goldmann-correlated (IOPg) output.">
-				>
-				["at0097"] = <
-					text = <"Palpation">
-					description = <"The intraocular pressure was estimated by palpation using the examiners fingers.">
-				>
-				["at0098"] = <
-					text = <"Visual Inspection">
-					description = <"The Intraocular pressure was estimated by visual inspection. Typically only possible in unpressurized or open globes.">
+					text = <"Goldmann-correlated ocular response analysis">
+					description = <"An Ocular Response Analyzer® was used to perform the test, with the goldmann-correlated (IOPg) output.">
 				>
 				["at0099"] = <
 					text = <"Pneumatotonometer">
-					description = <"Pneumatotonometry was used to perform the test.">
+					description = <"A pneumatotonometer was used to perform the test.">
 				>
 				["at0100"] = <
 					text = <"Schiøtz">
-					description = <"Schiøtz Tonomety was used to perform the test.">
-				>
-				["at0101"] = <
-					text = <"General anaesthesia">
-					description = <"The patient was under general anaesthesia during the measurement.">
-				>
-				["at0102"] = <
-					text = <"Sedation">
-					description = <"The patient was under sedation during the measurement.">
-				>
-				["at0103"] = <
-					text = <"Blepharospasm">
-					description = <"">
-				>
-				["at0104"] = <
-					text = <"Reduced Cooperation">
-					description = <"">
-				>
-				["at0105"] = <
-					text = <"Measurement Interrupted">
-					description = <"">
-				>
-				["at0107"] = <
-					text = <"Prism graduation mark on 43° offset mark">
-					description = <"The value of the degree of the graduation mark on the Goldmann prism probe that was aligned with 43° offset mark, usually a visible by a red line or the letter A.">
-				>
-				["at0108"] = <
-					text = <"Prism graduation mark on horizontal meridian">
-					description = <"The value of the degree of the graduation mark on the Goldmann prism probe that was aligned with the horizontal meridian mark of the probe holder at the time of measurement.">
-					comment = <"Important in the context of high astigmatism. See Goldmann tonometry Instruction booklet in references for details. ">
+					description = <"A Schiøtz tonometer was used to perform the test.">
 				>
 				["at0109"] = <
 					text = <"Position">
@@ -525,38 +510,111 @@ ontology
 				>
 				["at0114"] = <
 					text = <"Lying in left lateral decubitus position">
-					description = <"Lying on the left hand side of the intraocular pressure measurement.">
+					description = <"Lying on the left hand side at the time of the intraocular pressure measurement.">
 				>
 				["at0115"] = <
 					text = <"Lying in right lateral decubitus position">
-					description = <"Lying on the right hand side of the intraocular pressure measurement.">
+					description = <"Lying on the right hand side at the time of the intraocular pressure measurement.">
 				>
 				["at0117"] = <
 					text = <"Pupil state">
-					description = <"">
+					description = <"The state of the individual's pupils during the measurement.">
+					comment = <"Note this is not an examination of the pupil, but an assertion on its state.">
 				>
 				["at0118"] = <
-					text = <"Medically induced Miosis">
-					description = <"The pupil is constricted due to administration of miotic agents.">
+					text = <"Medically induced miosis">
+					description = <"The pupil was constricted due to prior administration of miotic agents.">
 				>
 				["at0120"] = <
-					text = <"Pathological Pupil State">
-					description = <"The pupil i s due to disease, trauma, or structural abnormalities.">
+					text = <"Pathological pupil state">
+					description = <"The pupil was in an unphysiological state due to disease, trauma, or structural abnormalities.">
 				>
 				["at0121"] = <
 					text = <"Normal">
 					description = <"The pupil is in its natural physiological state without pharmacological intervention or pathological changes.">
 				>
 				["at0122"] = <
-					text = <"Medically induced Mydriasis">
-					description = <"The pupil is dilated due to administration of mydriatic agents.">
+					text = <"Medically induced mydriasis">
+					description = <"The pupil was dilated due to prior administration of mydriatic agents.">
+				>
+				["at0123"] = <
+					text = <"Inspection finding">
+					description = <"Record of presence or absence of visible signs of a total lack of internal pressure of the examined eye.">
+					comment = <"Typically reserved for rare situations where physical interaction with the globe is inadviseable, such as physically aggressive individuals or when an open globe injury is strongly suspected.">
+				>
+				["at0124"] = <
+					text = <"The eye shows signs of being unpressurized.">
+					description = <"Based on visual examination, there are signs of a total loss of intraocular pressure. For instance, the eye may have lost its round shape in the setting of significant trauma.">
+				>
+				["at0125"] = <
+					text = <"The eye shows no signs of being unpressurized.">
+					description = <"Based on visual examination, there are no signs of a total loss of intraocular pressure.">
+				>
+				["at0126"] = <
+					text = <"Uncertain">
+					description = <"Based on visual examination, it is uncertain if there are signs of a total loss of intraocular pressure.">
+				>
+				["at0127"] = <
+					text = <"Anaesthesia state">
+					description = <"An assertion on the anesthesia of the individual during the measurement.">
+					comment = <"The detail of the anaesthesia procedure and specific medication used is to be recorded in other archetypes.">
+				>
+				["at0128"] = <
+					text = <"General anesthesia">
+					description = <"The patient was under general anaesthesia during the measurement.">
+				>
+				["at0129"] = <
+					text = <"Sedation">
+					description = <"The patient was under sedation during the measurement.">
+				>
+				["at0130"] = <
+					text = <"No anesthesia">
+					description = <"The patient was not under anaesthesia during the measurement.">
+				>
+				["at0132"] = <
+					text = <"Number of topical pressure lowering medication classes">
+					description = <"The number of topical pressure-lowering medication classes thought to be affecting this eye's pressure at measurement.">
+					comment = <"Commonly called 'number of medications'. Combination drops count by their components (e.g., prostaglandin analogue + beta-blocker = 2 classes).
+May differ between the eyes. 
+See Liu et al in references for an overview of pharmacological classes. 
+">
+				>
+				["at0133"] = <
+					text = <"Number of systemic pressure lowering medication classes">
+					description = <"The number of systemic pressure-lowering medication classes thought to intentionally affect this eye's pressure at measurement.">
+					comment = <"Typical examples include carbonic anhydrase inhibitors, mannitol or glycerol. 
+
+Note that substances like betablockers are commonly used systemically, but rarely with the intention of lowering the intraocular pressure. Such incidental use for another indication is not counted. 
+See Liu et al in references for an overview of pharmacological classes. 
+This is not expected to differ between the eyes. 
+">
+				>
+				["at0134"] = <
+					text = <"Medication regimen exposure">
+					description = <"An assertion about the exposure to the planned medication regimen in the time period prior to the intraocular pressure measurement.">
+				>
+				["at0135"] = <
+					text = <"Complete regimen exposure (presumed)">
+					description = <"The measured eye had presumably been exposed to IOP-lowering drugs as planned before this measurement.">
+				>
+				["at0136"] = <
+					text = <"Incomplete regimen exposure (presumed)">
+					description = <"The measured eye had presumably been incompletely exposed to IOP-lowering drugs compared to the treatment plan before this measurement.">
+				>
+				["at0137"] = <
+					text = <"Uncertain regimen exposure.">
+					description = <"It is uncertain if or how the measured eye had been exposed to the IOP-lowering drug regimen.">
+				>
+				["at0138"] = <
+					text = <"No IOP lowering drugs">
+					description = <"The measured eye has not been exposed to IOP-lowering drugs in a way that affects the current measurement.">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Intraokulær trykkmåling">
+					text = <"Intraokulært trykk">
 					description = <"Lokal måling av intraokulært trykk, vanligvis ved bruk av et tonometer.">
 				>
 				["at0001"] = <
@@ -578,35 +636,35 @@ ontology
 				["at0042"] = <
 					text = <"Trykk">
 					description = <"Målt intraokulært trykk, ved bruk av metoden beskrevet i \"Metode\"-elementet.">
-					comment = <"For enheter som gir flere trykkverdier basert på én måling, brukes dette elementet for den ukorrigerte verdien. Bruk elementene \"Korrigert trykk\" og \"Korrigeringstype\" for verdier som tar hensyn til flere variabler, som for eksempel hornhinneparametere.">
+					comment = <"Dette elementet brukes for måleenheter som kun gir én trykkverdi per måling. For enheter som gir flere trykkverdier per måling, brukes dette elementet for den verdien som ikke har gjennomgått et korreksjonstrinn, eller som er korrelert med en ukorrigert metode. Bruk elementene \"Korrigert trykk\" og \"Korreksjonstype\" for verdier som er korrigert for faktorer som hornhinnetykkelse eller biomekanikk.">
 				>
 				["at0046"] = <
-					text = <"Metode">
-					description = <"Type tonometri brukt til å måle intraokulært trykk.">
+					text = <"Tonometritype">
+					description = <"Type tonometri brukt til å måle det intraokulære trykket.">
 				>
 				["at0047"] = <
 					text = <"Goldmann">
-					description = <"Goldmann-applanasjonstonometri ble brukt til å utføre testen.">
+					description = <"Et Goldmann-applanasjonstonometer (GAT) ble brukt til å utføre målingen.">
 				>
 				["at0048"] = <
 					text = <"Perkins">
-					description = <"Perkins-tonometri ble brukt til å utføre testen.">
+					description = <"Et Perkins-tonometer ble brukt til å utføre målingen.">
 				>
 				["at0049"] = <
 					text = <"Tono-Pen">
-					description = <"Tono-Pen applanasjonstonometri ble brukt til å utføre testen.">
+					description = <"Et Tono-Pen applanasjonstonometer ble brukt til å utføre målingen.">
 				>
 				["at0050"] = <
 					text = <"Rebound">
-					description = <"Rebound-tonometri, inkludert iCare®-enheter, ble brukt til å utføre testen.">
+					description = <"Et rebound-tonometer, for eksemel en iCare®-enhet, ble brukt til å utføre målingen.">
 				>
 				["at0051"] = <
 					text = <"Dynamisk kontur">
-					description = <"Dynamisk konturtonometri, inkludert PASCAL®-enheter, ble brukt til å utføre testen.">
+					description = <"Et dynamisk konturtonometer, for eksempel en PASCAL®-enhet, ble brukt til å utføre målingen.">
 				>
 				["at0053"] = <
-					text = <"Transpalpebralt tonometer">
-					description = <"Tonometri gjennom et øyelokk, ved bruk av en enhet som TGDc-01, ble brukt til å utføre testen.">
+					text = <"Transpalpebral">
+					description = <"Et tonometer som måler gjennom øyelokket, for eksempel TGDc-01, ble brukt til å utføre målingen.">
 				>
 				["at0055"] = <
 					text = <"Detaljer om måleenheten">
@@ -614,7 +672,7 @@ ontology
 				>
 				["at0057"] = <
 					text = <"Undersøkt øye">
-					description = <"Hvilket øye det er som ble undersøkt.">
+					description = <"Angivelse av det undersøkte øyet.">
 				>
 				["at0058"] = <
 					text = <"Venstre øye">
@@ -633,8 +691,8 @@ ontology
 					description = <"Tilleggsinformasjon om målingen som ikke fanges opp i andre felt.">
 				>
 				["at0066"] = <
-					text = <"Ikke-kontakt tonometri">
-					description = <"Ikke-kontakt tonometri ble brukt til å utføre testen.">
+					text = <"Ikke-kontakt">
+					description = <"Et ikke-kontakt tonometer ble brukt til å utføre målingen.">
 				>
 				["at0068"] = <
 					text = <"Tree">
@@ -643,6 +701,7 @@ ontology
 				["at0074"] = <
 					text = <"Konfunderende faktorer">
 					description = <"Beskrivelse av faktorer som kan påvirke tolkningen av målingen.">
+					comment = <"For eksempel blefarospasme, redusert samarbeid, måling avbrutt eller vanskeligheter med å holde øyet åpent.">
 				>
 				["at0078"] = <
 					text = <"Måling ikke utført">
@@ -656,55 +715,55 @@ ontology
 				["at0081"] = <
 					text = <"Korrigert trykk">
 					description = <"Korrigert verdi for intraokulært trykk.">
-					comment = <"For enheter som gir flere trykkverdier, skal dette elementet brukes for verdier som tar hensyn til ekstra parametere ved korrigering av den rå trykkverdien. Metoden som brukes for korrigeringen, er angitt i elementet \"Korrigeringstype\".">
+					comment = <"For enheter som gir flere trykkverdier, skal dette elementet brukes for verdiene som tar hensyn til tilleggskriterier for å korrigere den målte trykkverdien. Korreksjonsmetoden angis i elementet \"Korreksjonstype\".">
 				>
 				["at0082"] = <
-					text = <"Korrigeringstype">
-					description = <"Metoden brukt for å beregne korrigert trykkverdi.">
+					text = <"Korreksjonstype">
+					description = <"Typen korreksjon som ble brukt for å beregne verdien i \"Korrigert trykk\".">
 				>
 				["at0083"] = <
-					text = <"Semikvantitativ vurdering">
-					description = <"Semikvantitativ beskrivelse av øyets hardhet, vanligvis ved palpasjon med fingrene.">
-					comment = <"Bruk av dette elementet i stedet for trykkelementet kan være hensiktsmessig når metoden som brukes er for lite presis til å uttrykkes i mmHg.">
+					text = <"Palpasjonsfunn">
+					description = <"Semikvantitativ beskrivelse av øyets mykhet eller hardhet basert på palpasjon med fingrene.">
+					comment = <"Palpasjon av øyne uten intraokulært trykk.">
 				>
 				["at0085"] = <
 					text = <"Uten trykk">
 					description = <"Øyeeplet ser ut til å mangle indre trykk.">
 				>
 				["at0086"] = <
-					text = <"Lavt">
-					description = <"Trykket ser ut til å være under normalområdet.">
+					text = <"Mykere enn normalt">
+					description = <"Trykket antas å være under normalområdet, men noe trykk er tilstede.">
 				>
 				["at0087"] = <
 					text = <"Normalt">
-					description = <"Trykket ser ut til å være innenfor normalområdet.">
+					description = <"Trykket antas å være innenfor normalområdet (10-21 mmHg).">
 				>
 				["at0088"] = <
-					text = <"Høyt">
-					description = <"Trykket ser ut til å være over normalområdet.">
+					text = <"Hardere enn normalt">
+					description = <"Trykket antas å være over normalområdet, men ikke veldig hardt eller steinhardt.">
 				>
 				["at0089"] = <
-					text = <"Svært høyt">
+					text = <"Veldig hardt">
 					description = <"Trykket ser ut til å være ekstremt høyt, noen ganger omtalt som steinhardt øye.">
 				>
 				["at0090"] = <
-					text = <"IOPcc - hornhinnekompensert okulær responsanalyse">
-					description = <"Verdien fra Ocular Response Analyzer som er korrigert for hornhinneparametere.">
+					text = <"Hornhinnekompensert okulær responsanalyse">
+					description = <"Det hornhinnekompenserte intraokulære trykket målt med en Ocular Response Analyzer.">
 				>
 				["at0091"] = <
-					text = <"bIOP - biomekanisk korrigert ikke-kontakt IOP">
-					description = <"Verdien fra Corvis ST Scheimpflug ikke-kontakt tonometer korrigert basert på biomekaniske parametere.">
+					text = <"Biomekanisk korrigert ikke-kontakt tonometri">
+					description = <"Det biomekanisk korrigerte intraokulære trykket målt med Corvis ST Scheimpflug ikke-kontakt tonometer.">
 				>
 				["at0092"] = <
-					text = <"Korrigert for CCT">
-					description = <"Trykket ble korrigert for sentral hornhinnetykkelse.">
+					text = <"Korrigert for sentral hornhinnetykkelse">
+					description = <"Trykket ble korrigert for sentral hornhinnetykkelse (CCT).">
 				>
 				["at0093"] = <
 					text = <"Referanse til hornhinnetykkelse brukt for korrigering">
-					description = <"">
+					description = <"Et SLOT for å angi målingen av sentral hornhinnetykkelse som ble brukt som grunnlag for korreksjonen.">
 				>
 				["at0094"] = <
-					text = <"Waveform Score">
+					text = <"Waveform score">
 					description = <"Waveform Score produsert av Ocular Response Analyzer-enheten.">
 					comment = <"Høyere verdier indikerer høyere pålitelighet.">
 				>
@@ -714,52 +773,15 @@ ontology
 				>
 				["at0096"] = <
 					text = <"Goldmann-korrelert okulær responsanalyse">
-					description = <"Ocular Response Analyzer® ble brukt til å utføre testen, med Goldmann-korrelert (IOPg) verdi.">
-				>
-				["at0097"] = <
-					text = <"Palpasjon">
-					description = <"Det intraokulære trykket ble estimert ved palpasjon med undersøkerenes fingre.">
-				>
-				["at0098"] = <
-					text = <"Visuell inspeksjon">
-					description = <"Det intraokulære trykket ble estimert ved visuell inspeksjon. Vanligvis kun mulig ved åpne eller trykkløse øyne.">
+					description = <"En Ocular Response Analyzer® ble brukt til å utføre målingen, med Goldmann-korrelert (IOPg) verdi.">
 				>
 				["at0099"] = <
 					text = <"Pneumatotonometer">
-					description = <"Pneumatotonometri ble brukt til å utføre testen.">
+					description = <"Et pneumatotonometer ble brukt til å utføre målingen.">
 				>
 				["at0100"] = <
 					text = <"Schiøtz">
-					description = <"Schiøtz-tonometri ble brukt til å utføre testen.">
-				>
-				["at0101"] = <
-					text = <"Narkose">
-					description = <"Pasienten var i narkose under målingen.">
-				>
-				["at0102"] = <
-					text = <"Sedasjon">
-					description = <"Pasienten var under sedasjon under målingen.">
-				>
-				["at0103"] = <
-					text = <"Blefarospasme">
-					description = <"">
-				>
-				["at0104"] = <
-					text = <"Redusert samarbeid">
-					description = <"">
-				>
-				["at0105"] = <
-					text = <"Måling avbrutt">
-					description = <"">
-				>
-				["at0107"] = <
-					text = <"Prismemerke på 43° offset-merke">
-					description = <"Graden av prismemerket på Goldmann-prismen som var justert med 43° offset-merket, vanligvis synlig som en rød linje eller bokstaven A.">
-				>
-				["at0108"] = <
-					text = <"Prismemerke på horisontal meridian">
-					description = <"Graden av prismemerket på Goldmann-prismen som var justert med den horisontale meridianen på holderen ved måling.">
-					comment = <"Viktig i sammenheng med høy astigmatisme. Se instruksjonsheftet for Goldmann-tonometri i referansene for detaljer.">
+					description = <"Et Schiøtz-tonometer ble brukt til å utføre målingen.">
 				>
 				["at0109"] = <
 					text = <"Kroppsstilling">
@@ -767,31 +789,32 @@ ontology
 				>
 				["at0110"] = <
 					text = <"Stående">
-					description = <"Stående ved måling av intraokulært trykk.">
+					description = <"Stående under målingen av intraokulært trykk.">
 				>
 				["at0111"] = <
 					text = <"Sittende">
-					description = <"Sittende ved måling av intraokulært trykk.">
+					description = <"Sittende under målingen av intraokulært trykk.">
 				>
 				["at0112"] = <
 					text = <"Liggende i ryggleie">
-					description = <"Liggende i ryggleie (ansikt opp) ved måling av intraokulært trykk.">
+					description = <"Liggende i ryggleie (ansikt opp) under målingen av intraokulært trykk.">
 				>
 				["at0113"] = <
 					text = <"Liggende i mageleie">
-					description = <"Liggende i mageleie (ansikt ned) ved måling av intraokulært trykk.">
+					description = <"Liggende i mageleie (ansikt ned) under målingen av intraokulært trykk.">
 				>
 				["at0114"] = <
 					text = <"Liggende på venstre side">
-					description = <"Liggende på venstre side ved måling av intraokulært trykk.">
+					description = <"Liggende på venstre side under målingen av intraokulært trykk.">
 				>
 				["at0115"] = <
 					text = <"Liggende på høyre side">
-					description = <"Liggende på høyre side ved måling av intraokulært trykk.">
+					description = <"Liggende på høyre side under målingen av intraokulært trykk.">
 				>
 				["at0117"] = <
 					text = <"Pupilltilstand">
-					description = <"">
+					description = <"Tilstanden til individets pupiller under målingen.">
+					comment = <"Merk at dette ikke er ment å brukes til å registrere resultatet av en undersøkelse av pupillen, kun et utsagn om dens tilstand.">
 				>
 				["at0118"] = <
 					text = <"Medisinsk indusert miose">
@@ -799,7 +822,7 @@ ontology
 				>
 				["at0120"] = <
 					text = <"Patologisk pupilltilstand">
-					description = <"Pupillen er påvirket av sykdom, traume eller strukturelle avvik.">
+					description = <"Pupillen var i en unormal fysiologisk tilstand på grunn av sykdom, traume eller strukturelle avvik.">
 				>
 				["at0121"] = <
 					text = <"Normal">
@@ -808,6 +831,70 @@ ontology
 				["at0122"] = <
 					text = <"Medisinsk indusert mydriase">
 					description = <"Pupillen er utvidet på grunn av administrasjon av mydriatiske midler.">
+				>
+				["at0123"] = <
+					text = <"Inspeksjonsfunn">
+					description = <"Registrering av tilstedeværelse eller fravær av synlige tegn på total mangel av indre trykk i det undersøkte øyet.">
+					comment = <"Typisk reservert for sjeldne situasjoner der fysisk kontakt med øyeeplet er uheldig, for eksempel ved fysisk aggressive personer eller ved sterk mistanke om perforerende øyeskade.">
+				>
+				["at0124"] = <
+					text = <"Øyet viser tegn til å være uten trykk">
+					description = <"Basert på visuell undersøkelse er det tegn til totalt tap av intraokulært trykk. For eksempel kan øyet ha mistet sin runde form i et traumesituasjon.">
+				>
+				["at0125"] = <
+					text = <"Øyet viser ingen tegn til å være uten trykk">
+					description = <"Basert på visuell undersøkelse er det ingen tegn til totalt tap av intraokulært trykk.">
+				>
+				["at0126"] = <
+					text = <"Usikker">
+					description = <"Basert på visuell undersøkelse er det usikkert om det er tegn til totalt tap av intraokulært trykk.">
+				>
+				["at0127"] = <
+					text = <"Anestesitilstand">
+					description = <"Et utsagn om individets anestesitilstand under målingen.">
+					comment = <"Detaljene om anestesiprosedyren og de spesifikke legemidlene som ble brukt registreres ved hjelp av andre arketyper.">
+				>
+				["at0128"] = <
+					text = <"Generell anestesi">
+					description = <"Pasienten var i generell anestesi under målingen.">
+				>
+				["at0129"] = <
+					text = <"Sedasjon">
+					description = <"Pasienten var sedert under målingen.">
+				>
+				["at0130"] = <
+					text = <"Ingen anestesi">
+					description = <"Pasienten var ikke under anestesi under målingen.">
+				>
+				["at0132"] = <
+					text = <"Antall klasser av topikale trykksenkende legemidler">
+					description = <"Antall klasser av trykksenkende topikale legemidler som antas å påvirke dette øyets trykk ved måletidspunktet.">
+					comment = <"Vanligvis omtalt som \"antall legemidler\". Kombinasjonsdråper telles etter komponentene (f.eks. prostaglandinanalog + betablokker = 2 klasser). Kan variere mellom øynene. Se Liu et al i referansene for en oversikt over farmakologiske klasser.">
+				>
+				["at0133"] = <
+					text = <"Antall klasser av systemiske trykksenkende medisiner">
+					description = <"Antall klasser av systemiske trykksenkende medisiner som antas å ha som hensikt å påvirke dette øyets trykk ved måletidspunktet.">
+					comment = <"Dette forventes ikke å variere mellom øynene. Merk at stoffer som betablokkere ofte brukes systemisk, men sjelden med hensikt å senke det intraokulære trykket. Slik tilfeldig bruk for en annen indikasjon regnes ikke med. Se Liu et al i referansene for en oversikt over farmakologiske klasser.">
+				>
+				["at0134"] = <
+					text = <"Legemiddelregime">
+					description = <"Et utsagn om eksponeringen for det planlagte legemiddelregimet i tidsperioden før målingen av intraokulært trykk.">
+				>
+				["at0135"] = <
+					text = <"Fullstendig eksponering for legemiddelregimet (antatt)">
+					description = <"Det målte øyet hadde antakelig vært eksponert for trykksenkende legemidler som planlagt før denne målingen.">
+				>
+				["at0136"] = <
+					text = <"Ufullstendig eksponering for legemiddelregimet (antatt)">
+					description = <"Det målte øyet hadde antakelig vært ufullstendig eksponert for trykksenkende legemidler sammenlignet med behandlingsplanen før denne målingen.">
+				>
+				["at0137"] = <
+					text = <"Usikker eksponering for legemiddelregimet">
+					description = <"Det er usikkert om eller hvordan det målte øyet hadde vært eksponert for trykksenkende legemidler før denne målingen.">
+				>
+				["at0138"] = <
+					text = <"Ingen trykksenkende legemidler">
+					description = <"Det målte øyet har ikke vært eksponert for trykksenkende legemidler på en måte som påvirker den aktuelle målingen.">
 				>
 			>
 		>
@@ -823,7 +910,6 @@ ontology
 				["at0051"] = <[SNOMED-CT::1286902005]>
 				["at0096"] = <[SNOMED-CT::1286913008]>
 				["at0066"] = <[SNOMED-CT::389150000]>
-				["at0097"] = <[SNOMED-CT::1286917009]>
 				["at0100"] = <[SNOMED-CT::389149000]>
 				["at0099"] = <[SNOMED-CT::252804008]>
 				["at0110"] = <[SNOMED-CT::10904000]>
@@ -832,6 +918,8 @@ ontology
 				["at0113"] = <[SNOMED-CT::1240000]>
 				["at0114"] = <[SNOMED-CT::102536004]>
 				["at0115"] = <[SNOMED-CT::102535000]>
+				["at0128"] = <[SNOMED-CT::420653000]>
+				["at0129"] = <[SNOMED-CT::17971005]>
 			>
 		>
 		["LOINC"] = <
