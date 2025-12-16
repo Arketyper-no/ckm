@@ -17,9 +17,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"Eli Larsen, Liv Laugen">
+				["name"] = <"Eli Larsen, Liv Laugen, Vebjørn Arntzen">
 				["organisation"] = <"Universitetssykehuset Nord-Norge, ​Oslo University Hospital, Norway">
-				["email"] = <"eli.larsen@unn.no, liv.laugen@ous-hf.no">
+				["email"] = <"eli.larsen@unn.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no">
 			>
 		>
 	>
@@ -33,88 +33,92 @@ description
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
-			purpose = <"Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person, die nur zum Zeitpunkt der Feststellung als richtig anzusehen ist.">
-			use = <"*Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. 
+			purpose = <"*To record a clinician’s determination about whether the individual is pregnant, considered accurate only at the time of assertion. (en)">
+			use = <"*Use to record a clinician’s determination about whether or not the individual is pregnant, based on the clinician’s best current knowledge. It should be accompanied by the evidence that provides the rationale for the assertion.
 
-This data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.
+‘May be pregnant’ is intentionally omitted as a value for this assertion as it reflects an assumed, rather than recorded, state for any woman of child-bearing age until a pregnancy assertion is made. 
 
-‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. 
+The assertion that a woman is currently pregnant or not is a critical factor in safe clinical decision-making. For example, the differential diagnosis of abdominal pain can differ significantly between pregnant and non-pregnant women, and may lead to distinct diagnostic and treatment pathways.
 
-Asserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.
-
-Absolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.
-
-An assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive. (en)">
-			keywords = <"Schwangerschaft, schwanger, Ausschluss", ...>
+Any assertion should be considered accurate only at the time it is made. For example, an assertion of ‘Pregnant' may be valid during the process of diagnosing an ectopic pregnancy but becomes invalid following surgical resolution. Similarly, an assertion of 'Not pregnant’ based on history and a negative urine test may need revision if subsequent symptoms, examination findings, or test results have changed. (en)">
+			keywords = <"*pregnancy (en)", "*pregnant (en)", "*exclusion (en)", "*confirmation (en)">
 			misuse = <"*Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.
 
-Not to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.
+Not to be used to record the status or phase of an active pregnancy, such as preconception, pregnant, or postpartum. At the time of authoring it is not yet determined which archetype should be used for this purpose.
 
 Not to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.
 
-Not to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose. (en)">
+Not to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you currently pregnant?' At the time of authoring it is not yet determined which archetype should be used for this purpose.
+
+Not to be used to record absence of known pregnancy history. At the time of authoring it is not yet determined which archetype should be used for this purpose.
+
+Not to be used to record an estimated due date of delivery. Use the EVALUATION.estimated_date_delivery archetype for this purpose.
+
+Not to be used to record the gestational age of a fetus at a point in time. Use the OBSERVATION.gestation_assertion archetype for this purpose. (en)">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Å registrere et utsagn om graviditetsstatusen til en person, som kun skal anses som nøyaktig på datoen og tidspunktet for utsagnet.">
-			use = <"Brukes til å registrere et utsagn om graviditetsstatusen til individet på et bestemt tidspunkt.
+			purpose = <"For å registrere en klinikers avgjørelse om individet er gravid, ansett som passende kun på tidspunktet utsagnet er gitt.">
+			use = <"Bruk for å registrere en klinikers avgjørelse om individet er gravid eller ikke, basert på klinikerens beste tilgjengelige kunnskap på det aktuelle tidspunktet. Den bør ledsages av bevis som begrunner avgjørelsen.
 
-Denne typen data er spesifikt definert som registrering av et utsagn, en nøye klinisk uttalelse fra en kliniker om hvorvidt de tror, ​​basert på deres beste kunnskap, at en person er gravid eller ikke gravid.
+«Kan være gravid» er med vilje utelatt som verdi for utsagnet, fordi det gjenspeiler en antatt, heller enn registrert, tilstand for enhver kvinne i fertil alder inntil en bestemmelse om kvinnen er gravid er tatt.
 
-\"Kan være gravid\" tilbys vanligvis ikke som en verdi, langt mindre registrert i helsejournalen, da dette er en klinikers antakelse for enhver kvinne i fertil alder, inntil det motsatte er bevist.
+Utsagnet om at en kvinne for tiden er gravid eller ikke er en kritisk faktor for trygg klinisk beslutningstaking. For eksempel kan differensialdiagnosen ved magesmerter variere betydelig mellom gravide og ikke-gravide kvinner, og kan føre til forskjellige diagnostiske forløp og behandling.
 
-Å hevde at en person er gravid er relativt enkelt og trygt å gjøre på grunnlag av bevis som en positiv urin- eller blodprøve eller fysiske undersøkelse. Vanligvis fører konsekvensene av en feil i dette scenariet til svært forsiktige behandlingsvalg, som neppe vil forårsake klinisk skade. Imidlertid er den motsatte situasjonen hvor en kliniker trenger å hevde at en person som ble født som kvinne ikke er gravid, ofte ikke er en enkel eller sikker avgjørelse. Feil utsagn om at individet ikke er gravid kan ha betydelige kliniske konsekvenser dersom det resulterer i kliniske valg som kan skade en gravid kvinne eller fosteret i et ukjent svangerskap.
+Ethvert utsagn bør anses som nøyaktig bare på tidspunktet det fremsettes. For eksempel kan et utsagn om «Gravid» være gyldig under utredning av en ektopisk graviditet (svangerskap utenfor livmoren), men blir ugyldig etter kirurgisk fjerning. Tilsvarende kan en utsagn om «Ikke gravid», basert på sykehistorie og en negativ urinprøve, trenge revisjon hvis senere symptomer, undersøkelsesfunn eller prøvesvar har endret seg.">
+			keywords = <"graviditet", "gravid", "ekskludering", "utelukkelse", "bekreftelse", "svangerskap">
+			misuse = <"Skal ikke brukes til å registrere sammendrag om én enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary (Graviditetssammenfatning) til dette formålet.
 
-Absolutt utelukkelse av graviditet er bare mulig i begrensede tilfeller, for eksempel etter bekreftet fjerning av både eggstokkene og livmoren. I de fleste andre situasjoner kan klinikere bare ta en avgjørelse om \"ikke gravid\" basert på en kombinasjon av anamnese, fysisk undersøkelse, diagnostisk testing og klinisk vurdering. Enhver erklæring om utelukkelse av graviditet bør inkludere klinikerens begrunnelse, som kan referere til samtidige testresultater, manglende organ eller en tidligere historie med diagnoser og prosedyrer.
+Skal ikke brukes til å registrere fasen av en graviditet, slik som før unnfangelsen, graviditeten eller etter fødselen. Da denne arketypen ble utarbeidet var det ennå ikke avklart hvilken arketype som bør brukes til dette formålet.
 
-Et utsagn bør kun anses som nøyaktig på tidspunktet for utsagnet. For eksempel er et utsagn om at en person er gravid nødvendig for å diagnostisere en graviditet utenfor livmoren, men personen bør ikke lenger være gravide etter en operasjon. På samme måte kan et utsagn om at en person ikke er gravid, basert på anamnese og et uringraviditetstestresultat, måtte revideres kort tid etter hvis en blodprøve for graviditet returnerer positiv.">
-			keywords = <"graviditet, gravid, ekskludering, utelukkelse", ...>
-			misuse = <"Skal ikke brukes til å registrere sammendrag om en enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary til dette formålet.
+Skal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk arketypen ACTION.prosedure (Prosedyre) eller andre relevante arketyper for dette formålet.
 
-Skal ikke brukes til å registrere fasen av en graviditet, slik som før unnfangelsen, graviditeten eller etter fødselen. Bruk arketypen EVALUATION.pregnancy_phase til dette formålet.
+Skal ikke brukes i sammenheng med spørreskjema for eksempel selvrapporterte data med spørsmål som \"Er du gravid?\". Da denne arketypen ble utarbeidet var det ennå ikke avklart hvilken arketype som bør brukes til dette formålet.
 
-Skal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk ACTION.prosedyren eller andre relevante arketyper for dette formålet.
+Skal ikke brukes til å registrere fravær av kjent svangeskapshistorikk. Da denne arketypen ble utarbeidet var det ennå ikke avklart hvilken arketype som bør brukes til dette formålet.
 
-Skal ikke brukes i sammenheng med spørreskjema for eksempel selvrapporterte data med spørsmål som \"Er du gravid?\". Bruk openEHR-EHR-OBSERVATION.problem_screening.v1 eller andre relevante arketyper for dette formålet.">
+Skal ikke brukes til å registrere en estimert termindato. Bruk EVALUATION.estimated_date_delivery (Termindato) til dette formålet.
+
+Skal ikke brukes til å registrere gestasjonsalder til et foster på et gitt tidspunkt. Bruk OBSERVATION.gestation_assertion (Gestasjonsalder) til dette formålet.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record a statement or declaration about the pregnancy status of the individual, which is to be considered accurate only at the date and time of assertion.">
-			use = <"Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. 
+			purpose = <"To record a clinician’s determination about whether the individual is pregnant, considered accurate only at the time of assertion.">
+			use = <"Use to record a clinician’s determination about whether or not the individual is pregnant, based on the clinician’s best current knowledge. It should be accompanied by the evidence that provides the rationale for the assertion.
 
-This data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.
+‘May be pregnant’ is intentionally omitted as a value for this assertion as it reflects an assumed, rather than recorded, state for any woman of child-bearing age until a pregnancy assertion is made. 
 
-‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. 
+The assertion that a woman is currently pregnant or not is a critical factor in safe clinical decision-making. For example, the differential diagnosis of abdominal pain can differ significantly between pregnant and non-pregnant women, and may lead to distinct diagnostic and treatment pathways.
 
-Asserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.
-
-Absolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.
-
-An assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive.">
-			keywords = <"pregnancy, pregnant, exclusion,", ...>
+Any assertion should be considered accurate only at the time it is made. For example, an assertion of ‘Pregnant' may be valid during the process of diagnosing an ectopic pregnancy but becomes invalid following surgical resolution. Similarly, an assertion of 'Not pregnant’ based on history and a negative urine test may need revision if subsequent symptoms, examination findings, or test results have changed.">
+			keywords = <"pregnancy", "pregnant", "exclusion", "confirmation">
 			misuse = <"Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.
 
-Not to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.
+Not to be used to record the status or phase of an active pregnancy, such as preconception, pregnant, or postpartum. At the time of authoring it is not yet determined which archetype should be used for this purpose.
 
 Not to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.
 
-Not to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose.">
+Not to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you currently pregnant?' At the time of authoring it is not yet determined which archetype should be used for this purpose.
+
+Not to be used to record absence of known pregnancy history. At the time of authoring it is not yet determined which archetype should be used for this purpose.
+
+Not to be used to record an estimated due date of delivery. Use the EVALUATION.estimated_date_delivery archetype for this purpose.
+
+Not to be used to record the gestational age of a fetus at a point in time. Use the OBSERVATION.gestation_assertion archetype for this purpose.">
 			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <"Heather Leslie, Atomica Informatics, Australia (openEHR Editor); Marit Alice Venheim, Helse Vest IKT, Norway (openEHR Editor)", ...>
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Michelle Currie, SavantSolutions4HIT, LLC, United States", "Ciprian Gerstenberger, Helse Nord IKT, Norway (openEHR Editor)", "Heather Grain, Llewelyn Grain Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Henri Huttunen, UNA Oy, Finland", "June Marie Nepstad Knappskog, Helse Nord IKT AS, Norway (openEHR Editor), Norway (openEHR Editor)", "Jörgen Kuylenstierna, eWeave AB, Sweden", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Darin Leonhardt, PLRI für medizinische Informatik/ Medizinische Hochschule, Germany", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Cecilia Mascia, CRS4, Italy", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Jayashree Panickar, India", "Ana Pascual Segura, Catsalut, Spain", "Anton Pichugin, GKU IAC at Department of Information Technologies of the city of Moscow (DIT Moscow), Russia", "Marlene Pérez Colman, Digital Health and Care Wales, United Kingdom", "Bipinkumar Rathod, NHS, United Kingdom", "Videha Sharma, University of Manchester, United Kingdom", "Norwegian Review Summary, Norwegian Public Hospitals, Norway", "John Tore Valand, Helse Vest IKT, Norway (openEHR Editor)", "Wouter Zanen, Eurotranplant, Netherlands">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
-		["references"] = <"Note the similar approach in FHIR Pregnancy status Observation, but without the same semantics in terms of a clinician making an assertion:
- - AU Core Pregnancy Status, HL7 AU Core FHIR Profile [Internet]. Health Level Seven Australia; [cited: 2024 Oct 18]. Available from: https://hl7.org.au/fhir/core/0.1.0-draft/StructureDefinition-au-core-pregnancystatus.html.
- - Observation Pregnancy - Status (IPS) profile, International Patient Summary Implementation Guide, [Internet]. Patient Care Working Group, Health Level Seven International; [cited: 2024 Oct 18]. Available from: https://build.fhir.org/ig/HL7/fhir-ips/StructureDefinition-Observation-pregnancy-status-uv-ips.html">
+		["references"] = <"">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"FDF18DE29F8B4DAC4B4ED56E6493AE0E">
-		["build_uid"] = <"8a5f423f-6fe9-4930-a20f-9d084564af1d">
+		["MD5-CAM-1.0.1"] = <"0A571660EA5EFC87520970E32F076A10">
+		["build_uid"] = <"ecd15386-b3d5-4fc0-b411-c8a97605425d">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -139,7 +143,7 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0009] occurrences matches {0..*} matches {    -- Justification
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Justification
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -181,7 +185,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Pregnancy assertion">
-					description = <"A statement or declaration by a clinician about the known pregnancy state of the individual at a specific point-in-time, to be used as the basis for clinical decision-making.">
+					description = <"A clinical determination made by a clinician about whether or not the individual is pregnant at a specific point in time, based on the best available evidence and supporting safe clinical decision making.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -197,7 +201,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Pregnancy assertion">
-					description = <"A statement or declaration about the pregnancy status of the individual at a specified point in time.">
+					description = <"A clinical determination made by a clinician about whether or not the individual is pregnant at a specific point in time.">
 				>
 				["at0005"] = <
 					text = <"Pregnant">
@@ -235,7 +239,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Feststellung der Schwangerschaft">
-					description = <"*A statement or declaration by a clinician about the known pregnancy state of the individual at a specific point-in-time, to be used as the basis for clinical decision-making. (en)">
+					description = <"*A clinical determination made by a clinician about whether or not the individual is pregnant at a specific point in time, based on the best available evidence and supporting safe clinical decision making. (en)">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -247,7 +251,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Feststellung der Schwangerschaft">
-					description = <"Eine Aussage oder Feststellung über den Schwangerschaftsstatus einer Person zu einem bestimmten Zeitpunkt.">
+					description = <"*A clinical determination made by a clinician about whether or not the individual is pregnant at a specific point in time. (en)">
 				>
 				["at0005"] = <
 					text = <"Schwanger">
@@ -289,7 +293,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Utsagn om graviditet">
-					description = <"En uttalelse eller erklæring fra en kliniker om den kjente graviditetstilstanden til individet på et bestemt tidspunkt, som skal brukes som grunnlag for klinisk beslutningstaking.">
+					description = <"En klinisk avgjørelse gjort av en kliniker om individet er gravid eller ikke på et bestemt tidspunkt. Avgjørelsen er basert på tilgjengelige bevis, og skal støtte trygge kliniske beslutninger.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -301,7 +305,7 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Utsagn om graviditet">
-					description = <"Et utsagn om graviditetsstatusen til den enkelte på et spesifisert tidspunkt.">
+					description = <"En klinisk avgjørelse gjort av en kliniker om individet er gravid eller ikke på et gitt tidspunkt.">
 				>
 				["at0005"] = <
 					text = <"Gravid">
@@ -328,9 +332,9 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0018"] = <
-					text = <"Tillegg">
-					description = <"Ytterligere informasjon som kreves for å utvide modellen med lokalt innhold eller for å tilpasse seg andre referansemodeller eller formaliteter.">
-					comment = <"For eksempel: lokale informasjonskrav, eller ytterligere metadata for og tilpasses FHIR.">
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller eller formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 				["at0019"] = <
 					text = <"Klinisk dokumentasjon">
