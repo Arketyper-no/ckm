@@ -9,24 +9,25 @@ language
 		["de"] = <
 			language = <[ISO_639-1::de]>
 			author = <
-				["name"] = <"Caroline Thoms, Eva-Maria Rieß, Natalia Strauch">
+				["name"] = <"Caroline Thoms, Eva-Maria Rieß, Natalia Strauch, Alina Rehberg">
 				["organisation"] = <"UMG, Universitätsmedizin Göttingen, Medizinische Hochschule Hannover">
-				["email"] = <"Caroline.Thoms@med.uni-goettingen.de, eva-maria.riess@med.uni-goettingen.de, Strauch.Natalia@mh-hannover.de">
+				["email"] = <"Caroline.Thoms@med.uni-goettingen.de, eva-maria.riess@med.uni-goettingen.de, Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de">
 			>
 		>
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
 			author = <
-				["name"] = <"Erik Sundvall">
-				["organisation"] = <"Region Östergötland + Linköping University">
-				["email"] = <"erik.sundvall@regionostergotland.se">
+				["name"] = <"Erik Sundvall, Anette Larsson, Manna Vosta">
+				["organisation"] = <"Region Östergötland + Linköping University, Tieto Sweden AB, Karolinska University Hospital">
+				["email"] = <"erik.sundvall@regionostergotland.se, anette.a.larsson@tietoevry.com, manna.vosta@regionstockholm.se">
 			>
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"John Tore Valand">
-				["organisation"] = <"Helse Bergen HF">
+				["name"] = <"John Tore Valand, Vebjørn Arntzen">
+				["organisation"] = <"Helse Bergen HF, Oslo University Hospital">
+				["email"] = <"varntzen@ous-hf.no">
 			>
 		>
 		["fr"] = <
@@ -92,20 +93,20 @@ Nicht zur Darstellung von anderen Verabreichungen von Nikotin wie e-Zigaretten, 
 		>
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
-			purpose = <"Att registrera sammanfattande information om rökvanor gällande tobak och produkter som innehåller tobak.">
+			purpose = <"Att registrera sammanfattande information om en individs rökvanor gällande tobak och produkter som innehåller tobak.">
 			use = <"Används för att beskriva sammanfattad information om individens rökvanor gällande tobak och tobaks-innehållande produkter.
 
 Denna arketyp kan användas för att beskriva både nuvarande och tidigare rökvanor.
 
 Arketypen omfattar dokumentation av rökvanor för alla sorters tobaksbruk där man andas in tobaksröken eftersom det finns specifika hälsorisker associerade till direkt inandning av tobaksrök och tillhörande kemikalier. 
 
-Mängden nikotin och tjära, användning av filter och tillsatser har lämnats utanför vad kärnan av arketypen omfattar, men kan t.ex. läggas till (med hjälp av ytterligare arketyper) under rubriken \"Episoddetaljer\"
+Mängden nikotin och tjära, användning av filter och tillsatser har lämnats utanför vad kärnan av arketypen omfattar, men kan t.ex. läggas till (med hjälp av ytterligare arketyper) under rubriken \"Per episod\". 
 
 Observera att denna arketyp inte omfattar oavsiktlig exponering för tobaksrök (se \"Misuse\"/felaktig användning).
 
-I många fall kommer individen bara röka en typ av tobak, till exempel vanliga cigaretter. Om flera sorters tobaksprodukter röks så repeteras \"Per typ\"-delträdet (\"cluster\") på ett sätt som gör det möjligt att registrera specifika detaljer och episoder om varje typ av tobak som röks. Det kan upprepas för varje typ som behöver dokumenteras. 
+I många fall kommer individen bara röka en typ av tobak, till exempel vanliga cigaretter. Om flera sorters tobaksprodukter röks repeteras \"Per typ\"-clustret på ett sätt som gör det möjligt att registrera specifika detaljer och episoder om varje typ av tobak som röks. Det kan upprepas för varje typ som behöver dokumenteras. 
 
-Att rökvanor varierar i omfattning och typ av rökning kan fångas med det repeterbara \"Per episod\"-klustret (delträdet). Detta kluster av dataelement gör det möjligt att beskriva mönster av rökvanor mycket detaljerat för varje typ av tobak som röks, exempelvis daglig rökning av handrullade cigaretter, kombinerat med veckovis cigarrrökning varje fredagskväll och ibland Bidi-rökning på semester på Bali.
+Att rökvanor varierar i omfattning och typ av rökning kan fångas med det repeterbara \"Per episod\"-clustret. Detta kluster av dataelement gör det möjligt att beskriva mönster av rökvanor mycket detaljerat för varje typ av tobak som röks, exempelvis daglig rökning av handrullade cigaretter, kombinerat med veckovis cigarrrökning varje fredagskväll och ibland Bidi-rökning på semester på Bali.
 
 Anledningar för att stänga en episod och starta en ny kommer i hög grad att återspegla lokala datainsamlingspreferenser, inklusive om personen:
 - slutar röka under en betydande tidsperiod (vilket sannolikt kommer att vara lokalt definierat) eller
@@ -113,7 +114,7 @@ Anledningar för att stänga en episod och starta en ny kommer i hög grad att �
 
 Om endast en typ av tobak rökts, kommer värdet för \"Paketår\" att vara identiskt med värdet för \"Totala paketår\". Om mer än en typ av tobak har rökts så kommer beräkningen för värdet för \"Totala paketår\" att kräva en mer komplex algoritm, exempelvis från http://smokingpackyears.com/.
 
-För att införliva beskrivande information (t.ex. fritext) om rökvanor från befintliga eller gamla vård-IT-system till arketyp-baserade system, används lämpligen dataelementet \"Övergripande beskrivning\".
+För att införliva beskrivande information (t.ex. fritext) om rökvanor från befintliga eller gamla vård-IT-system till arketyp-baserade system, används lämpligen datafältet \"Övergripande beskrivning\".
 
 Notera att definitionen av \"rökare\" och \"före detta rökare\" t.ex. kan variera avseende perioder. Exempelvis använder amerikanska CDC 1 månad/31 dagar och nya Zealand använder 28 dagar.">
 			keywords = <"rökning", "rökanamnes", "tobak", "cigarett", "cigarr", "pipa", "kretek", "bidi", "cigarill", "rökare", "vattenpipa", "shisha", "hookah", "narguileh", "n'arghile", "ghelion", "bong", "rulltobak">
@@ -123,7 +124,7 @@ Använd inte denna arketyp för att registrera information om rökfri tobaksanv�
 
 Använd inte denna arketyp för att registrera evidens eller bedömning av cigarett- eller nikotinberoende. Använd då istället arketypen OBSERVATION.fagerstrom
 
-Använd inte denna arketyp för att registrera detaljer om oavsiktilg tobaksröksexponering eller passiv rökning. Använd då istället arketypen EVALUATION.exposure.
+Använd inte denna arketyp för att registrera detaljer om oavsiktlig tobaksröksexponering eller passiv rökning. Använd då istället arketypen EVALUATION.exposure.
 
 Använd inte denna arketyp för att registrera annat nikotinbruk, exempelvis e-cigaretter, nikotinplåster eller nikotintuggummi. Använd separata arketyper för de ändamålen.">
 		>
@@ -198,7 +199,7 @@ Not to be used to record evidence of nicotine dependency. Use the OBSERVATION.fa
 Not to be used to record details about unintended exposure to tobacco smoke or passive smoking. Use the archetype EVALUATION.exposure for this purpose.
 
 Not to be used for recording any other administration of nicotine, such as e-cigarettes, nicotine patches or nicotine chewing gum. Use separate archetypes for this purpose.">
-			copyright = <"© openEHR Foundation, Australian Digital Health Agency, Nasjonal IKT (Norway)">
+			copyright = <"© openEHR Foundation, Australian Digital Health Agency, openEHR Norway">
 		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
@@ -272,7 +273,7 @@ Niet te gebruiken voor het vastleggen van enige andere vorm van toediening van n
 		>
 	>
 	lifecycle_state = <"published">
-	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (Nasjonal IKT redaktør)", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Kristian Berg, Vestvågøy kommune - Fagutviklingsavdelingen, Norway", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Fredrik Borchsenius, Oslo universitetssykehus, Norway", "Chris Bullen, University of Auckland, New Zealand", "Hanne Marte Bårholm, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Fatemeh Chalabianloo, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Are Edvardsen, SKDE, Helse Nord RHF, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Mikkel Johan Gaup Grønmo, Helse Nord IKT, Norway (Nasjonal IKT redaktør)", "Liv Grøtvedt, Folkehelseinstituttet, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Anca Heyd, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, Nordlandssykehuset Bodø, Norway", "Adriana Kitajima, CORE Consulting, Brazil", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Kanika Kuwelker, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Liv Laugen, Oslo universitetssykehus, Norway (Nasjonal IKT redaktør)", "Heather Leslie, Atomica Informatics, Australia", "Siv Marie Lien, DIPS ASA, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Camilla Lund, Institute for Cancer Genetics and Informatics, Norway", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Terje Sagmyr, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Rosalie Schultz, Anyinginyi Health Aboriginal Corporation, Australia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Lisbeth Sommervoll, Akershus Universitetssykehus, Norway", "Arne Løberg Sæter, OUS, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Marit Alice Venheim, Helse Vest IKT, Norway (Nasjonal IKT redaktør)", "Jørn Henrik Vold, Helse Bergen, Avdeling for rusmedisin, Norway", "Ping-Cheng Wei, New Zealand">
+	other_contributors = <"Amund Aakerholt, Helse Stavanger, KORFOR, Norway", "Morten Aas, Oslo Universitetssykehus, Norway", "Tomas Alme, DIPS ASA, Norway", "Ole Andreas Bjordal, Webmed, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT editor)", "Koray Atalag, University of Auckland, New Zealand", "Gustavo Bacelar-Silva, Healthcare Designs, Brazil", "Marcus Baw, openGPSoC / BawMedical Ltd, United Kingdom", "Kristian Berg, Universitetssykehuset Nord Norge, Norway", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Fredrik Borchsenius, Oslo universitetssykehus, Norway", "Chris Bullen, University of Auckland, New Zealand", "Fatemeh Chalabianloo, Helse Bergen, Norway", "Bjørn Christensen, Helse Bergen HF, Norway", "Stephen Chu, NEHTA, Australia", "Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway", "Are Edvardsen, SKDE, Norway", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom", "Heather Grain, Llewelyn Grain Informatics, Australia", "Liv Grøtvedt, Folkehelseinstituttet, Norway", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Jørn Henrik Vold, Helse Bergen, Avdeling for rusmedisin, Norway", "Anca Heyd, DIPS ASA, Norway", "Evelyn Hovenga, EJSH Consulting, Australia", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Lars Morgan Karlsen, DIPS ASA, Norway", "Adriana Kitajima, CORE Consulting, Brazil", "Nils Kolstrup, Skansen Legekontor og Nasjonalt Senter for samhandling og telemedisin, Norway", "Ole Kristian Losvik, Losol AS, Norway", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Silje Ljosland Bakke, Nasjonal IKT HF, Norway", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Camilla Lund, Institute for Cancer Genetics and Informatics, Norway", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Siv Marie Lien, DIPS ASA, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., United Kingdom", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Bjørn Næss, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Andrej Orel, Marand d.o.o., Slovenia", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Rune Pedersen, Universitetssykehuset i Nord Norge, Norway", "Tanja Riise, Nasjonal IKT HF, Norway", "Rosalie Schultz, Anyinginyi Health Aboriginal Corporation, Australia", "Line Silsand, Universitetssykehuset i Nord-Norge, Norway", "Raymond Simkus, Brookswood Family Practice, Canada", "Lisbeth Sommervoll, Akershus Universitetssykehus, Norway", "Norwegian Review Summary, Nasjonal IKT HF, Norway", "Nyree Taylor, Ocean Informatics, Australia", "Jon Tysdahl, Furst medlab AS, Norway", "John Tore Valand, Helse Bergen, Norway", "Ping-Cheng Wei, New Zealand">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -295,9 +296,9 @@ Wood DM, Mould MG, Ong SB, Baker EH. \"Pack year\" smoking histories: what about
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"964F37D84B1508162A0E640FB60F40BD">
-		["build_uid"] = <"0cbf4605-98a8-45b4-9d3a-baec5ab1a8bd">
-		["revision"] = <"2.0.0">
+		["MD5-CAM-1.0.1"] = <"F2F6E592805E44D6F0E541CA4541BDE5">
+		["build_uid"] = <"2ef46018-d9b2-419f-96bb-4b56884579a5">
+		["revision"] = <"2.0.1">
 	>
 
 definition
@@ -349,6 +350,7 @@ definition
 											at0088]    -- Kreteks
 										}
 									}
+									DV_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0052] occurrences matches {0..1} matches {    -- Status
@@ -356,9 +358,9 @@ definition
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
+											at0091,    -- Never smoked
 											at0061,    -- Current smoker
-											at0059,    -- Former smoker
-											at0091]    -- Never smoked
+											at0059]    -- Former smoker
 										}
 									}
 								}
@@ -376,6 +378,17 @@ definition
 												magnitude matches {|>=1|}
 											}
 											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0096] occurrences matches {0..1} matches {    -- Status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0097,    -- Smoker
+													at0098]    -- Non-smoker
+												}
+											}
 										}
 									}
 									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Episode start date
@@ -597,7 +610,6 @@ definition
 			}
 		}
 	}
-
 
 
 
@@ -847,6 +859,18 @@ ontology
 					text = <"Type">
 					description = <"The type of tobacco smoked by the individual.">
 				>
+				["at0096"] = <
+					text = <"Status">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Smoker">
+					description = <"The individual smoked during this episode.">
+				>
+				["at0098"] = <
+					text = <"Non-smoker">
+					description = <"The individual did not smoke during this episode.">
+				>
 			>
 		>
 		["nb"] = <
@@ -961,7 +985,7 @@ ontology
 					description = <"Løs tobakk plassert i pipens hode.">
 				>
 				["at0059"] = <
-					text = <"Tidligere røyker">
+					text = <"Tidligere røykt">
 					description = <"Individet har tidligere røykt den spesifiserte typen tobakk, men er ikke en nåværende røyker.">
 				>
 				["at0061"] = <
@@ -1028,7 +1052,7 @@ ontology
 				>
 				["at0079"] = <
 					text = <"Definisjon på Aldri røykt">
-					description = <"Den anvendte definisjonen på verdien \"Tidligere røyker\" i dataelementet \"Status\" benyttet i denne arketypen.">
+					description = <"Den anvendte definisjonen på verdien \"Aldri røykt\" i dataelementet \"Status\" benyttet i denne arketypen.">
 					comment = <"Definisjonen kan spesifiseres per tobakkstype. For eksempel kan definisjon være ikke null, men mindre enn en spesifisert mengde (som antall enheter eller vekt) røykt over et spesifisert tidsintervall.">
 				>
 				["at0080"] = <
@@ -1093,6 +1117,18 @@ ontology
 					text = <"Type">
 					description = <"Typen røyketobakk indvidet røyker.">
 				>
+				["at0096"] = <
+					text = <"Status">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Røykte">
+					description = <"Individet røykte tobakk i løpet av denne episoden.">
+				>
+				["at0098"] = <
+					text = <"Røykte ikke">
+					description = <"Individet røykte ikke tobakk i løpet av denne episoden.">
+				>
 			>
 		>
 		["sv"] = <
@@ -1121,24 +1157,24 @@ ontology
 				["at0013"] = <
 					text = <"Episodens startdatum">
 					description = <"Datum när den här episoden startade.">
-					comment = <"Kan vara del av ett datum, till exempel bara ett årtal.">
+					comment = <"Kan vara del av ett datum, till exempel endast ett årtal.">
 				>
 				["at0014"] = <
 					text = <"Slutdatum">
 					description = <"Datum när individen senast rökte den angivna sortens tobaksprodukt.">
-					comment = <"Kan vara del av ett datum, till exempel bara ett årtal.
+					comment = <"Kan vara del av ett datum, till exempel endast ett årtal.
 
-Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan preciseras/definieras med hjälp av dataelementet \"Definition av slutdatum\" i protokolldelen i den här arketypen. Detta datum kommer att vara identiskt med \"Episodens slutdatum\" för den senaste episoden. Detta datum kan användas av beslutsstödssystem för att avgöra om individen är i riskzonen för återfall, till exempel under de första 12 månaderna sedan hen slutade röka.">
+Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan preciseras/definieras med hjälp av datafältet \"Definition av slutdatum\" i protokolldelen i den här arketypen. Detta datum kommer att vara identiskt med \"Episodens slutdatum\" för den senaste episoden. Detta datum kan användas av beslutsstödssystem för att avgöra om individen är i riskzonen för återfall, till exempel under de första 12 månaderna sedan hen slutade röka.">
 				>
 				["at0015"] = <
 					text = <"Började röka regelbundet">
-					description = <"Datum, eller del av datum när individen först började röka någon sorts tobak regelbundet, men inte dagligen">
-					comment = <"Det kan vara del av ett datum, till exempel bara ett årtal. Datumet kan t.ex. representera när individen började röka varje fredagskväll eller på fester.">
+					description = <"Datum, eller del av datum när individen först började röka någon sorts tobak regelbundet, men inte dagligen.">
+					comment = <"Kan vara del av ett datum, till exempel endast ett årtal. Datumet kan t.ex. representera när individen började röka varje fredagskväll eller på fester.">
 				>
 				["at0016"] = <
 					text = <"Övergripande slutdatum">
 					description = <"Det datum då individen (senast) helt slutade röka tobak.">
-					comment = <"Kan vara del av ett datum, till exempel bara ett årtal. Detta datum kan användas av beslutsstödssystem för att avgöra om individen är i riskzonen för återfall, till exempel under de första 12 månaderna sedan hen slutade röka.
+					comment = <"Kan vara del av ett datum, till exempel endast ett årtal. Detta datum kan användas av beslutsstödssystem för att avgöra om individen är i riskzonen för återfall, till exempel under de första 12 månaderna sedan hen slutade röka.
 
 ">
 				>
@@ -1150,8 +1186,8 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0019"] = <
 					text = <"Övergripande kommentar">
-					description = <"Ytterligare övergripande beskrivning av rökvanor som inte redan beskrivits i andra fält.">
-					comment = <"Exempelvis: slutade röka eller minskade rökning i samband med graviditet">
+					description = <"Ytterligare övergripande beskrivning av rökvanor som inte redan beskrivits i andra datafält.">
+					comment = <"Exempelvis: slutade röka eller minskade rökning i samband med graviditet.">
 				>
 				["at0021"] = <
 					text = <"Tree">
@@ -1164,7 +1200,7 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				["at0023"] = <
 					text = <"Typisk användning (enheter)">
 					description = <"Uppskattning av antal enheter av den angivna typen av tobaksprodukt som konsumeras.">
-					comment = <"Till exempel: antalet cigaretter eller \"portioner\" per dag eller per vecka. Detta dataelement är överflödigt/redundant om ett värde registrerats för \"Typisk användning (massa)\".">
+					comment = <"Till exempel: antalet cigaretter eller \"portioner\" per dag eller per vecka. Detta datafält är överflödigt om ett värde registrerats för \"Typisk användning (massa)\".">
 				>
 				["at0025"] = <
 					text = <"Antal försök att sluta">
@@ -1185,11 +1221,11 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				["at0043"] = <
 					text = <"Övergripande beskrivning">
 					description = <"Beskrivande sammanfattning av en individs rökvanor och rökhistorik.">
-					comment = <"Använd endast det här fältet för att ge en beskrivande sammanfattning om de strukturerade fälten inte ger en adekvat bild av individens rökvanor, eller för att införliva ostrukturerad information om rökvanor från befintliga eller gamla vård-IT-system till arketyp-baserade system.">
+					comment = <"Använd endast det här datafältet för att ge en beskrivande sammanfattning om de strukturerade fälten inte ger en adekvat bild av individens rökvanor, eller för att införliva ostrukturerad information om rökvanor från befintliga eller gamla vård-IT-system till arketyp-baserade system.">
 				>
 				["at0052"] = <
 					text = <"Status">
-					description = <"Nuvarande rökbeteende/status för just denna sorts tobak">
+					description = <"Nuvarande rökbeteende/status för just denna sorts tobak.">
 				>
 				["at0053"] = <
 					text = <"Beskrivning">
@@ -1205,7 +1241,7 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0056"] = <
 					text = <"Cigarrer">
-					description = <"\"Stora\" cigarrer. Rulle av tobak inrullad i ett tobaksblad eller i annat tobaksinehållande material.">
+					description = <"\"Stora\" cigarrer. Rulle av tobak inrullad i ett tobaksblad eller i annat tobaksinnehållande material.">
 				>
 				["at0057"] = <
 					text = <"Pipa">
@@ -1213,16 +1249,16 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0059"] = <
 					text = <"Före detta rökare">
-					description = <"Individen har tidigare rökt den här sortens tobak, men gör det inte nuförtiden.
+					description = <"Individen har tidigare rökt den här sortens tobak, men gör inte det nuförtiden.
 ">
 				>
 				["at0061"] = <
 					text = <"Rökare">
-					description = <"Individen röker denna typ av tobak">
+					description = <"Individen röker denna typ av tobak.">
 				>
 				["at0062"] = <
 					text = <"Vattenpipa">
-					description = <"Tobak, ofta smaksatt som bränns och sedan kyls genom ett vattenbad och inhaleras genom en slang och munstycke. Kallas även shisha, hookah, n'arghile, narguileh, ghelion
+					description = <"Tobak, ofta smaksatt som bränns och sedan kyls genom ett vattenbad och inhaleras genom en slang och munstycke. Kallas även shisha, hookah, n'arghile, narguileh, ghelion.
 ">
 				>
 				["at0064"] = <
@@ -1232,7 +1268,7 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				["at0065"] = <
 					text = <"Typisk användning (massa)">
 					description = <"Beräkning/uppskattning av motsvarande vikt lös tobak som röks.">
-					comment = <"Detta dataelement används typiskt för tobaksbruk med lös tobak, t.ex. pipor och handrullade cigaretter. Detta värde är överflödigt/redundant om ett värde registrerats för \"Typisk användning (enheter)\".">
+					comment = <"Detta datafält används typiskt för tobaksbruk med lös tobak, t.ex. pipor och handrullade cigaretter. Detta värde är överflödigt/redundant om ett värde registrerats för \"Typisk användning (enheter)\".">
 				>
 				["at0066"] = <
 					text = <"Cigariller">
@@ -1244,18 +1280,18 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0071"] = <
 					text = <"Definition av slutdatum">
-					description = <"Definitionen av \"slutdatum\" som använts i denna arketyps fält/dataelement
+					description = <"Definitionen av \"slutdatum\" som använts i denna arketyps datafält.
 ">
 				>
 				["at0072"] = <
 					text = <"Definition av paket">
-					description = <"Definition av den paketstorlek som används som en del i beräkningen av \"Paketår\" i \"data\"-delen av denna arketyp.">
+					description = <"Definition av den paketstorlek som används som en del i beräkningen av \"Paketår\" datafält i denna arketyp.">
 					comment = <"Definitionen kan behöva anges per typ. Till exempel kan antalet enheter (cigaretter) i ett cigarettpaket skilja sig från antalet cigarrer i ett cigarr-paket. Definitionen kan också baseras på massan (vikten) lös tobak i en förpackning som används för handrullade cigaretter eller pipor.">
 				>
 				["at0073"] = <
 					text = <"Tilläggsinformation">
 					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.
+					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR motsvarigheter.
 
 ">
 				>
@@ -1267,14 +1303,14 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0075"] = <
 					text = <"Definition av rökare">
-					description = <"Definitionen av \"rökare\" som använts i denna arketyps fält \"Status\" och \"Övergripande status\"
+					description = <"Definitionen av \"rökare\" som använts i denna arketyps datafält \"Status\" och \"Övergripande status\".
 ">
-					comment = <"Definitionen kan behöva anges per typ. Defintionen av \"rökare\" varierar mellan olika sammanhang och länder . Till exempel: USA Center for Disease Control definierar det som rökning under den senaste en månaden och New Zealand Ministry of Health använder 28 dagar">
+					comment = <"Definitionen kan behöva anges per typ. Definitionen av \"rökare\" varierar mellan olika sammanhang och länder . Till exempel: USA Center for Disease Control definierar det som rökning under den senaste en månaden och New Zealand Ministry of Health använder 28 dagar.">
 				>
 				["at0076"] = <
 					text = <"Definition av \"Före detta rökare\"">
-					description = <"Definitionen av \"Före detta rökare\" som använts i denna arketyps fält \"Status\" och \"Övergripande status\"">
-					comment = <"Definitionen kan behöva anges per typ. Defintionen av \"Före detta rökare\" varierar mellan olika sammanhang och länder. Exempelvis så definierar New Zealand Ministry of Health det som att ha varit rökfri de senaste 28 dagarna.">
+					description = <"Definitionen av \"Före detta rökare\" som använts i denna arketyps datafält \"Status\" och \"Övergripande status\".">
+					comment = <"Definitionen kan behöva anges per typ av tobak. Definitionen av \"Före detta rökare\" varierar mellan olika sammanhang och länder. Exempelvis definierar New Zealand Ministry of Health det som att ha varit rökfri de senaste 28 dagarna.">
 				>
 				["at0077"] = <
 					text = <"Typdetaljer">
@@ -1286,23 +1322,23 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0079"] = <
 					text = <"Definition av \"Har aldrig rökt\"">
-					description = <"Definitionen av \"Har aldrig rökt\" som använts i denna arketyps fält \"Status\" och \"Övergripande status\"">
-					comment = <"Definitionen kan behöva anges per typ. Exempelvis så behöver den inte vara noll, men kanske istället mindre än en specificerad mängd (antal eller massa) rökt tobak under en specificerad tidsperiod.">
+					description = <"Definitionen av \"Har aldrig rökt\" som använts i denna arketyps datafält \"Status\" och \"Övergripande status\"">
+					comment = <"Definitionen kan behöva anges per typ av tobak. Exempelvis behöver den inte vara noll, men mindre än en specificerad mängd (antal eller massa) rökt tobak under en specificerad tidsperiod.">
 				>
 				["at0080"] = <
 					text = <"Började röka dagligen">
 					description = <"Datum, eller del av datum när individen först började röka någon sorts tobak dagligen.">
-					comment = <"Det kan vara del av ett datum, t.ex. bara ett årtal.">
+					comment = <"Kan vara del av ett datum, t.ex. endast ett årtal.">
 				>
 				["at0081"] = <
 					text = <"Episodbeteckning">
-					description = <"Beskrivande beteckning/namn för att identifiera en specifik konsumtionsperiod för den angivna typen av tobak.">
+					description = <"Beskrivande beteckning/namn för att identifiera en specifik konsumtionsperiod för den angivna typen av tobak, antingen som ett nummer i en sekvens och/eller en namngiven händelse.">
 					comment = <"Till exempel: \"2\" som den andra episoden inom en sekvens av episoder om man inte ger beskrivande namn; eller \"Graviditeten med tvillingar\" om man beskriver tobaksbruket under en hälsotillståndsperiod, t.ex. under en viss graviditet.">
 				>
 				["at0082"] = <
 					text = <"Episodens slutdatum">
 					description = <"Datum när den här episoden slutade.">
-					comment = <"Kan vara del av ett datum, till exempel bara ett årtal. Det här fältet kommer att vara tomt om epsioden är aktuell och pågående.">
+					comment = <"Kan vara del av ett datum, till exempel endast ett årtal. Det här datafältet kommer att vara tomt om episoden är aktuell och pågående.">
 				>
 				["at0083"] = <
 					text = <"Dagligen">
@@ -1314,9 +1350,9 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0085"] = <
 					text = <"Definition av avslutningsförsök">
-					description = <"Definitionen av avslutningsförsök som använts i denna arketyps fält \"Antal försök att sluta\".
+					description = <"Definitionen av avslutningsförsök som använts i denna arketyps datafält \"Antal försök att sluta\".
 ">
-					comment = <"Exempelvis: \"Slutade röka en dag eller längre, med avsikt att sluta röka\"">
+					comment = <"Exempelvis: \"Slutade röka en dag eller längre, med avsikt att sluta röka\".">
 				>
 				["at0086"] = <
 					text = <"Övergripande detaljer">
@@ -1324,7 +1360,7 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0087"] = <
 					text = <"Kommentarer om episoden">
-					description = <"Ytterligare beskrivning av rökvanor under det angivna episoden som inte redan beskrivits i andra fält.">
+					description = <"Ytterligare beskrivning av rökvanor under den angivna episoden som inte redan beskrivits i andra datafält.">
 				>
 				["at0088"] = <
 					text = <"Kretek">
@@ -1332,11 +1368,11 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				>
 				["at0089"] = <
 					text = <"Övergripande status">
-					description = <"Beskrivning av aktuellt bruk för alla typer av röktobak">
+					description = <"Beskrivning av aktuellt bruk för alla typer av röktobak.">
 				>
 				["at0091"] = <
 					text = <"Har aldrig rökt">
-					description = <"Individen har aldrig rökt denna typ av tobak">
+					description = <"Individen har aldrig rökt denna typ av tobak.">
 				>
 				["at0093"] = <
 					text = <"Totalt antal år som rökare">
@@ -1353,6 +1389,18 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				["at0095"] = <
 					text = <"Typ">
 					description = <"Typ av tobaksprodukt som individen rökt.">
+				>
+				["at0096"] = <
+					text = <"*Status (en)">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"*Smoker (en)">
+					description = <"*The individual smoked during this episode. (en)">
+				>
+				["at0098"] = <
+					text = <"*Non-smoker (en)">
+					description = <"*The individual did not smoke during this episode. (en)">
 				>
 			>
 		>
@@ -1602,6 +1650,18 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 					text = <"Art">
 					description = <"Art von Tabak die von der Person geraucht wird.">
 				>
+				["at0096"] = <
+					text = <"Status">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Raucher">
+					description = <"Die Person rauchte während dieser Episode.">
+				>
+				["at0098"] = <
+					text = <"Nicht-Raucher">
+					description = <"Die betreffende Person rauchte während dieser Episode nicht.">
+				>
 			>
 		>
 		["fr"] = <
@@ -1848,6 +1908,18 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 					text = <"Type">
 					description = <"Le type de tabac fumé par l'individu.">
 				>
+				["at0096"] = <
+					text = <"*Status (en)">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"*Smoker (en)">
+					description = <"*The individual smoked during this episode. (en)">
+				>
+				["at0098"] = <
+					text = <"*Non-smoker (en)">
+					description = <"*The individual did not smoke during this episode. (en)">
+				>
 			>
 		>
 		["nl"] = <
@@ -2092,6 +2164,18 @@ Definitionen av vad som menas med ett \"Slutdatum\" kan variera enormt och kan p
 				["at0095"] = <
 					text = <"Type">
 					description = <"The type tabak gerookt door het individu.">
+				>
+				["at0096"] = <
+					text = <"*Status (en)">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"*Smoker (en)">
+					description = <"*The individual smoked during this episode. (en)">
+				>
+				["at0098"] = <
+					text = <"*Non-smoker (en)">
+					description = <"*The individual did not smoke during this episode. (en)">
 				>
 			>
 		>
