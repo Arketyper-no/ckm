@@ -1,0 +1,343 @@
+﻿archetype (adl_version=1.4; uid=645b1c0b-556d-4554-9a6e-c8f835c3e9e2)
+	openEHR-EHR-OBSERVATION.barthel_0_100_no.v0
+
+concept
+	[at0000]	-- Barthel ADL-indeks 0-100
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["date"] = <"2026-04-13">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Å registrere en pasients grad av selvstendighet i grunnleggende aktiviteter i dagliglivet og støtte vurdering av funksjonsstatus og endring over tid. Totalskår varierer fra 0 (fullstendig avhengighet) til 100 (selvstendighet).">
+			use = <"Brukes for å registrere en persons selvstendighet i basale aktiviteter i dagliglivet (ADL).">
+			keywords = <"aktiviteter i dagliglivet, funksjonsstatus, rehabilitering, avhengighet, selvstendighet, funksjonsvurdering, hjerneslag, geriatri, nevrologi, utfallsmål", ...>
+			misuse = <"Brukes ikke som et helhetlig mål på en pasients evne til å leve selvstendig eller til diagnostiske formål. 
+
+Denne arketypen er basert på den norske oversettelsen i Pakkeforløp hjerneslag v. 1.1. Geriatrisk forening har en egen versjon med skåring fra 0-20 og noe annerledes ordlyd. Denne arketypen brukes ikke for å registrere grad av selvstendighet på ADL-indeks fra 0 til 20. Bruk annen egnet arketype til dette formålet: openEHR-EHR-OBSERVATION.barthel_no.v1.">
+			copyright = <"© openEHR Norway">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Norge">
+		["references"] = <"Mahoney FI, Barthel DW. Functional evaluation: the Barthel Index. Md State Med J. 1965;14:61–65.
+
+Helsedirektoratet. Pakkeforløp hjerneslag – Barthel ADL indeks [Internett]. Oslo: Helsedirektoratet; 2019 [hentet 2026-04-13]. Tilgjengelig fra: https://www.helsedirektoratet.no/nasjonale-forlop/hjerneslag/hjerneslag-pakkeforlop-dokumenter/Pakkeforl%C3%B8p%20hjerneslag%20-%20Barthel%20ADL%20indeks.pdf
+
+Sunnaas sykehus HF. Måleverktøy: Barthel Index [Internett]. Bjørnemyr: Sunnaas sykehus HF [hentet 2026-04-13]. Tilgjengelig fra: https://www.sunnaas.no/fag-og-forskning/kompetansesentre-og-tjenester/regional-kompetansetjeneste-for-rehabilitering-rkr/Fagutvikling/maleverktoy/maleverktoydatabase/maleverktoy-barthel-index/">
+		["original_namespace"] = <"no.openehr">
+		["original_publisher"] = <"openEHR Norge">
+		["custodian_namespace"] = <"no.openehr">
+		["MD5-CAM-1.0.1"] = <"60FA025BBC75E2C4E5ABF41A2B150B1D">
+		["build_uid"] = <"6c862e6f-e28e-4cd9-9639-8084bee3c6b6">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Barthel ADL-indeks 0-100
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Uspesifisert hendelse
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Spising
+										value matches {
+											10|[local::at0017],
+											5|[local::at0018],
+											0|[local::at0019]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Bading/dusj
+										value matches {
+											5|[local::at0020],
+											0|[local::at0021]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Personlig hygiene
+										value matches {
+											5|[local::at0022],
+											0|[local::at0023]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Påkledning
+										value matches {
+											10|[local::at0024],
+											5|[local::at0025],
+											0|[local::at0026]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Tarmkontroll
+										value matches {
+											10|[local::at0027],
+											5|[local::at0028],
+											0|[local::at0029]
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Blærekontroll
+										value matches {
+											10|[local::at0030],
+											5|[local::at0031],
+											0|[local::at0032]
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Toalettbesøk
+										value matches {
+											10|[local::at0033],
+											5|[local::at0034],
+											0|[local::at0035]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Stol/seng-forflytning
+										value matches {
+											15|[local::at0036],
+											10|[local::at0037],
+											5|[local::at0038],
+											0|[local::at0039]
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Forflytning
+										value matches {
+											15|[local::at0040],
+											10|[local::at0041],
+											5|[local::at0042],
+											0|[local::at0043]
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Trappegang
+										value matches {
+											10|[local::at0044],
+											5|[local::at0045],
+											0|[local::at0046]
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Sumskår
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..100|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0004] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Barthel ADL-indeks 0-100">
+					description = <"En standardisert indeks for å vurdere en pasients grad av selvstendighet i aktiviteter i dagliglivet (ADL), basert på hvor mye hjelp som kreves for å utføre ti grunnleggende funksjoner. ">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre   referansemodeller eller formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0006"] = <
+					text = <"Spising">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Bading/dusj">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Personlig hygiene">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Påkledning">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Tarmkontroll">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Blærekontroll">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Toalettbesøk">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Stol/seng-forflytning">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Forflytning">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Trappegang">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Sumskår">
+					description = <"Summen av de 10 elementene.">
+				>
+				["at0017"] = <
+					text = <"Helt selvhjulpen. Kan bruke nødvendige hjelpemidler og spiser innen rimelig tid.">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Må ha hjelp til enkelte funksjoner, f.eks. det å skjære.">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Totalt avhengig.">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Helt selvhjulpen.">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Trenger hjelp.">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Selvhjulpen. Klarer å vaske ansikt, kamme hår, børste tenner og barbering.">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Trenger hjelp til en eller flere funksjoner.">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Selvhjulpen. Klarer å knyte sko, kneppe knapper.">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Trenger hjelp, men klarer halvparten innen rimelig tid.">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Trenger hjelp til mer enn halvparten.">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Kontinent, Klarer selv event. sette stikkpiller/klyx.">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Nedsatt kontroll og enkelte \"uhell\" eller trenger hjelp til eventuelt å sette stikkpille/klyx.">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Helt inkontinent eller hyppige \"uhell\".">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Kontinent. Selvhjulpen ved toalettbesøk eller bruk av uridom.">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Nedsatt kontroll og enkelte \"uhell\" eller holder seg tørr med uridom o.l. men trenger hjelp til å bruke dette.">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Helt inkontinent eller trenger permanent kateter.">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Selvhjulpen ved toalettbesøk eller bruk av bekken. Ordner klær, tørker seg, spyler toalettet eller tømmer bekken.">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Trenger hjelp til forflytning, klær, papir.">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Kan ikke bruke toalett.">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Selvhjulpen. Klarer også å låse rullestol og bevege fotstøtte.">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Klarer forflytningen med litt hjelp eller tilsyn.">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Kan sitte, men må ha hjelp ved forflytning.">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Kan ikke sitte. Sengeliggende.">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Klarer å gå 50 meter, kan bruke stokk eller krykker, men ikke rullator.">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Kan gå 50 meter med rullator og/eller med støtte/tilsyn av en person.">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Kan ikke gå, men kan kjøre rullestol uten hjelp i 50 meter.">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Kan ikke kjøre rullestol uten hjelp.">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Selvhjulpen. Kan event. bruke hjelpemidler.">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Trenger hjelp/tilsyn av en person.">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Kan ikke gå i trapp.">
+					description = <"">
+				>
+			>
+		>
+	>
