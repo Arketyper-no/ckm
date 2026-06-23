@@ -7,6 +7,9 @@ language
 	original_language = <[ISO_639-1::nb]>
 description
 	original_author = <
+		["name"] = <"Karsten Øvretveit">
+		["organisation"] = <"Helse Vest IKT">
+		["email"] = <"karsten.ovretveit@helse-vest-ikt.no">
 		["date"] = <"2026-04-13">
 	>
 	details = <
@@ -14,28 +17,27 @@ description
 			language = <[ISO_639-1::nb]>
 			purpose = <"Å registrere en pasients grad av selvstendighet i grunnleggende aktiviteter i dagliglivet og støtte vurdering av funksjonsstatus og endring over tid. Totalskår varierer fra 0 (fullstendig avhengighet) til 100 (selvstendighet).">
 			use = <"Brukes for å registrere en persons selvstendighet i basale aktiviteter i dagliglivet (ADL).">
-			keywords = <"aktiviteter i dagliglivet, funksjonsstatus, rehabilitering, avhengighet, selvstendighet, funksjonsvurdering, hjerneslag, geriatri, nevrologi, utfallsmål", ...>
+			keywords = <"aktiviteter i dagliglivet, funksjonsstatus, rehabilitering, selvstendighet, funksjonsvurdering, hjerneslag, geriatri, nevrologi, utfallsmål", ...>
 			misuse = <"Brukes ikke som et helhetlig mål på en pasients evne til å leve selvstendig eller til diagnostiske formål. 
 
 Denne arketypen er basert på den norske oversettelsen i Pakkeforløp hjerneslag v. 1.1. Geriatrisk forening har en egen versjon med skåring fra 0-20 og noe annerledes ordlyd. Denne arketypen brukes ikke for å registrere grad av selvstendighet på ADL-indeks fra 0 til 20. Bruk annen egnet arketype til dette formålet: openEHR-EHR-OBSERVATION.barthel_no.v1.">
-			copyright = <"© openEHR Norway">
 		>
 	>
 	lifecycle_state = <"in_development">
 	other_contributors = <>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Norge">
+		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"Mahoney FI, Barthel DW. Functional evaluation: the Barthel Index. Md State Med J. 1965;14:61–65.
 
 Helsedirektoratet. Pakkeforløp hjerneslag – Barthel ADL indeks [Internett]. Oslo: Helsedirektoratet; 2019 [hentet 2026-04-13]. Tilgjengelig fra: https://www.helsedirektoratet.no/nasjonale-forlop/hjerneslag/hjerneslag-pakkeforlop-dokumenter/Pakkeforl%C3%B8p%20hjerneslag%20-%20Barthel%20ADL%20indeks.pdf
 
 Sunnaas sykehus HF. Måleverktøy: Barthel Index [Internett]. Bjørnemyr: Sunnaas sykehus HF [hentet 2026-04-13]. Tilgjengelig fra: https://www.sunnaas.no/fag-og-forskning/kompetansesentre-og-tjenester/regional-kompetansetjeneste-for-rehabilitering-rkr/Fagutvikling/maleverktoy/maleverktoydatabase/maleverktoy-barthel-index/">
-		["original_namespace"] = <"no.openehr">
-		["original_publisher"] = <"openEHR Norge">
-		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"60FA025BBC75E2C4E5ABF41A2B150B1D">
-		["build_uid"] = <"6c862e6f-e28e-4cd9-9639-8084bee3c6b6">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"EBE7AC8A281FB3929A26D8FC12FCD00D">
+		["build_uid"] = <"8eb554cd-b4e4-4589-aa01-2250b1b22a9b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -151,7 +153,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Barthel ADL-indeks 0-100">
-					description = <"En standardisert indeks for å vurdere en pasients grad av selvstendighet i aktiviteter i dagliglivet (ADL), basert på hvor mye hjelp som kreves for å utføre ti grunnleggende funksjoner. ">
+					description = <"En standardisert indeks for å vurdere en pasients grad av selvstendighet i aktiviteter i dagliglivet (ADL), basert på hvor mye hjelp som kreves for å utføre ti grunnleggende funksjoner.">
 				>
 				["at0001"] = <
 					text = <"History">
@@ -159,7 +161,7 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Uspesifisert hendelse">
-					description = <"@ internal @">
+					description = <"Standard uspesifisert tidspunkt- eller intervallhendelse som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
 				>
 				["at0003"] = <
 					text = <"Tree">
@@ -263,7 +265,7 @@ ontology
 					description = <"">
 				>
 				["at0028"] = <
-					text = <"Nedsatt kontroll og enkelte \"uhell\" eller trenger hjelp til eventuelt å sette stikkpille/klyx.">
+					text = <"Nedsatt kontroll og enkelte \"uhell\" eller trenger hjelp til event. å sette stikkpille/klyx.">
 					description = <"">
 				>
 				["at0029"] = <
