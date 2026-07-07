@@ -29,7 +29,6 @@ description
 			use = <"Brukes for å registrere et individs foretrukne hånd for å gjøre ulike motoriske handlinger.">
 			keywords = <"Høyrehendt, venstrehendt, keivhendt, lateralitet", ...>
 			misuse = <"Brukes ikke for å registrere andre aspekter av menneskelig lateralitet, som dominant fot, øye eller øre. En separat arketype er ment for dette bruket, men var ikke tilgjengelig ved publiseringen.">
-			copyright = <"© openEHR Norway">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -37,24 +36,24 @@ description
 			use = <"Use to record an individual's natural preference for using a specific hand for various motor tasks.">
 			keywords = <"handedness, right handed, left handed, laterality", ...>
 			misuse = <"Not to be used to record other aspects of human laterality, such as dominant foot, eye or ear. A separate archetype is intended for this use case but was not available at the time of authoring or publication.">
-			copyright = <"© openEHR Norway">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Stein Arne Rimehaug, Sunnaas sykehus, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Hanne Marte Bårholm, Helse Vest IKT, Norway (openEHR Editor)", "Ciprian Gerstenberger, Helse Nord IKT, Norway (openEHR Editor)", "Marte Vassli Gullesen, Helse Nord IKT, Norway (openEHR Editor)", "Kanika Kuwelker, Helse Vest IKT, Norway (openEHR Editor)", "Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Michael Lutz, BITsoft, Germany", "Tone Løkse, UNN, Norway", "Andjela Marjanovic, Better, Slovenia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom", "Hana Medvesek, Slovenia", "Martin Milde, Helse Vest IKT, Norway (openEHR Editor)", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Vuk Radnić, Better, Slovenia", "Ruben Rognmo, Helse Nord IKT, Norway", "Norwegian Review Summary, Norwegian Public Hospitals, Norway", "Nyree Taylor, CSIRO, Australia", "Kanthan Theivendran, NHS, United Kingdom", "John Tore Valand, Helse Vest IKT, Norway (openEHR Editor)", "Karsten Øvretveit, Helse Vest IKT, Norway (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Norge">
-		["references"] = <"Hånddominans, Utkast arketype [Internet]. openEHR Foundation, OpenEHR International Clinical Knowledge Manager [sitert: 2026-03-06]. Hentet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.8191
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Hand dominance, Draft archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2026-07-07]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.8191
 
 Papadatou-Pastou M, Ntolka E, Schmitz J, Martin M, Munafò MR, Ocklenburg S, Paracchini S. Human handedness: A meta-analysis. Psychol Bull. 2020 Jun;146(6):481-524. doi:10.1037/bul0000229. Epub 2020 Apr 2. PMID: 32237881.
 
 Oldfield RC. The assessment and analysis of handedness: the Edinburgh inventory. Neuropsychologia. 1971 Mar;9(1):97-113. doi:10.1016/0028-3932(71)90067-4. PMID: 5146491.">
-		["original_namespace"] = <"no.openehr">
-		["original_publisher"] = <"openEHR Norge">
-		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"4C81E8735330FC34BDCFDB1CAF7E2FC3">
-		["build_uid"] = <"ba9e7a6e-e796-4844-b5c9-d074f54c090c">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9BAD6DC9E73CC5E09A64F9E1C79D8779">
+		["build_uid"] = <"f1d03438-b34a-4d6f-aabb-fd65cac4839b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -63,22 +62,17 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Handedness
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Dominant hand
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0003,    -- Right Handed
-									at0004,    -- Left Handed
+									at0003,    -- Right-handed
+									at0004,    -- Left-handed
 									at0005,    -- Ambidextrous
-									at0006]    -- Cross Dominant
+									at0006]    -- Mixed-handed
 								}
 							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Assessment method
-						value matches {
 							DV_TEXT matches {*}
 						}
 					}
@@ -93,6 +87,16 @@ definition
 		protocol matches {
 			ITEM_TREE[at0014] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Assessment method
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {    -- Last updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
 					allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {    -- Extension
 						include
 							archetype_id/value matches {/.*/}
@@ -101,6 +105,8 @@ definition
 			}
 		}
 	}
+
+
 
 ontology
 	term_definitions = <
@@ -115,15 +121,15 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Handedness">
+					text = <"Dominant hand">
 					description = <"Which hand the individual typically uses for common tasks.">
 				>
 				["at0003"] = <
-					text = <"Right Handed">
+					text = <"Right-handed">
 					description = <"The individual primarily uses their right hand.">
 				>
 				["at0004"] = <
-					text = <"Left Handed">
+					text = <"Left-handed">
 					description = <"The individual primarily uses their left hand.">
 				>
 				["at0005"] = <
@@ -131,12 +137,12 @@ ontology
 					description = <"The individual uses both hands equally.">
 				>
 				["at0006"] = <
-					text = <"Cross Dominant">
-					description = <"The individual uses different hands depending on the task, such as writing with their right, while using a hammer with their left.">
+					text = <"Mixed-handed">
+					description = <"The individual prefers different hands for different tasks, such as writing with the right hand and using a hammer with the left.">
 				>
 				["at0013"] = <
 					text = <"Comment">
-					description = <"Additional narrative about the hand dominance, not captured in other fields.">
+					description = <"Additional narrative about the dominant hand, not captured in other fields.">
 				>
 				["at0014"] = <
 					text = <"Item tree">
@@ -145,12 +151,16 @@ ontology
 				["at0015"] = <
 					text = <"Extension">
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
-					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
+					comment = <"For example, local information requirements; or additional metadata to align with FHIR.">
 				>
 				["at0016"] = <
 					text = <"Assessment method">
 					description = <"The method used to acertain the individual's handedness.">
-					comment = <"For example: Edinburgh Handedness Inventory.">
+					comment = <"For example, Edinburgh Handedness Inventory.">
+				>
+				["at0023"] = <
+					text = <"Last updated">
+					description = <"The date when the dominant hand was last updated.">
 				>
 			>
 		>
@@ -165,7 +175,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Hånddominans">
+					text = <"Dominant hånd">
 					description = <"Hvilken hånd individet vanligvis bruker for vanlige oppgaver.">
 				>
 				["at0003"] = <
@@ -177,8 +187,8 @@ ontology
 					description = <"Individet bruker hovedsakelig sin venstre hånd.">
 				>
 				["at0005"] = <
-					text = <"Ambidextrøs">
-					description = <"Individet bruker bruker begge hender like mye.">
+					text = <"Ambidekster">
+					description = <"Individet bruker bruker begge hender like mye. Også kalt kapphendt eller tvehendt.">
 				>
 				["at0006"] = <
 					text = <"Kryssdominant">
@@ -186,7 +196,7 @@ ontology
 				>
 				["at0013"] = <
 					text = <"Kommentar">
-					description = <"Ytterligere fritekst om hånddominans som ikke er registrert/omfattet i andre felter.">
+					description = <"Ytterligere fritekst om hånddominans som ikke er omfattet i andre felter.">
 				>
 				["at0014"] = <
 					text = <"Item tree">
@@ -194,13 +204,17 @@ ontology
 				>
 				["at0015"] = <
 					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller eller formalismer.">
-					comment = <"For eksempel: lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 				["at0016"] = <
 					text = <"Vurderingsmetode">
 					description = <"Hvilken metode som ble brukt for å fastslå individets hånddominans.">
-					comment = <"For eksempel: Edinburgh Handedness Inventory">
+					comment = <"For eksempel, Edinburgh Handedness Inventory.">
+				>
+				["at0023"] = <
+					text = <"Sist oppdatert">
+					description = <"Datoen da hånddominans sist ble oppdatert.">
 				>
 			>
 		>
