@@ -50,8 +50,8 @@ Not to be used to record immigration status, residence permits, long-term visas,
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"581CB9339730B7372D1CE1B903E75AEE">
-		["build_uid"] = <"3ed2c670-d879-446b-890f-7fcf7d37e031">
+		["MD5-CAM-1.0.1"] = <"6D47993ECD247644BBC04640AAF4E035">
+		["build_uid"] = <"2db8d171-da27-43de-887e-f9f458ca1d91">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -74,8 +74,9 @@ definition
 					}
 					CLUSTER[at0016] occurrences matches {0..*} matches {    -- Specific citizenship
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0003] matches {    -- Country
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Country
 								value matches {
+									DV_CODED_TEXT matches {*}
 									DV_TEXT matches {*}
 								}
 							}
@@ -144,24 +145,18 @@ definition
 	}
 
 
-
 ontology
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"Citizenship">
-					description = <"A record of the individual’s legal citizenship status, identifying the state or states of which the individual is a citizen.  ">
+					description = <"A record of the individual’s legal citizenship status, identifying the state or states of which the individual is a citizen.">
 					comment = <"While \"citizenship\" and \"nationality\" can differ in some legal contexts, they are often used interchangeably in practice. In this archetype, the term \"citizenship\" is used.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Country">
-					description = <"The country of the citizenship.">
-					comment = <"Coding with an external terminology is preferred, where possible, for example ISO 3166-1 alpha-2.">
 				>
 				["at0004"] = <
 					text = <"Valid from">
@@ -190,7 +185,7 @@ ontology
 				>
 				["at0010"] = <
 					text = <"Self-reported">
-					description = <"">
+					description = <"Information provided directly by the individual.">
 				>
 				["at0011"] = <
 					text = <"Document-based">
@@ -207,7 +202,7 @@ ontology
 				["at0016"] = <
 					text = <"Specific citizenship">
 					description = <"Details about a specific current or former citizenship held by the individual.">
-					comment = <"Multiple citizenship can be recorded by repeating this cluster.">
+					comment = <"Multiple citizenships can be recorded by repeating this cluster.">
 				>
 				["at0017"] = <
 					text = <"Status">
@@ -241,22 +236,22 @@ ontology
 					text = <"Overall comment">
 					description = <"Additional narrative about citizenship, not captured in other fields.">
 				>
+				["at0030"] = <
+					text = <"Country">
+					description = <"The country of the citizenship.">
+					comment = <"Coding with an external terminology is preferred, where possible, for example ISO 3166-1 alpha-2.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
 					text = <"Statsborgerskap">
-					description = <"En registrering av personens juridiske statsborgerskap, som identifiserer hvilken stat eller hvilke stater personen er statsborger i. ">
+					description = <"En registrering av personens juridiske statsborgerskap, som identifiserer hvilken stat eller hvilke stater personen er statsborger i.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Land">
-					description = <"Landet for statsborgerskap.">
-					comment = <"Koding med en ekstern terminologi bør brukes der det er mulig, for eksempel ISO 3166-1 alpha-2.">
 				>
 				["at0004"] = <
 					text = <"Gyldig fra">
@@ -276,24 +271,24 @@ ontology
 					comment = <"Bruk fritekst til å beskrive andre opplysningskilder for statsborgerskap.">
 				>
 				["at0008"] = <
-					text = <"Tidligere">
-					description = <"Tidligere statsborger.">
-				>
-				["at0009"] = <
 					text = <"Nåværende">
 					description = <"Nåværende statsborger.">
 				>
+				["at0009"] = <
+					text = <"Tidligere">
+					description = <"Tidligere statsborger.">
+				>
 				["at0010"] = <
 					text = <"Selvrapportert">
-					description = <"">
+					description = <"Informasjon oppgitt direkte av personen.">
 				>
 				["at0011"] = <
 					text = <"Dokumentbasert">
-					description = <"">
+					description = <"For eksempel pass eller andre offisielle dokumenter.">
 				>
 				["at0012"] = <
 					text = <"Registerbasert">
-					description = <"">
+					description = <"For eksempel et nasjonalt folkeregister.">
 				>
 				["at0014"] = <
 					text = <"Kommentar">
@@ -328,12 +323,17 @@ ontology
 					description = <"Datoen statsborgerskap sist ble oppdatert.">
 				>
 				["at0028"] = <
-					text = <"Detaljer om Informasjonskilde">
+					text = <"Detaljer om informasjonskilde">
 					description = <"Ytterligere detaljer om kilde til det spesifikke statsborgerskapet.">
 				>
 				["at0029"] = <
 					text = <"Generell kommentar">
 					description = <"Ytterligere fritekst om statsborgerskap som ikke er registrert i andre felt.">
+				>
+				["at0030"] = <
+					text = <"Land">
+					description = <"Landet for statsborgerskap.">
+					comment = <"Koding med en ekstern terminologi bør brukes der det er mulig, for eksempel ISO 3166-1 alpha-2.">
 				>
 			>
 		>
