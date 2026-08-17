@@ -1,0 +1,85 @@
+﻿archetype (adl_version=1.4; uid=a42faa71-2310-419e-9828-cef61c77222e)
+	openEHR-EHR-CLUSTER.analyseresultat_tillegg_no.v0
+
+concept
+	[at0000]	-- Analyseresultat_tillegg_no
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["date"] = <"2026-06-30">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å representere særnorske krav til analyseresultat når de sendes som elektroniske meldinger.">
+			use = <"Bruk for å representere særnorske krav til analyseresultat når de sendes som elektroniske meldinger.
+
+Elementet \"Resultatidentifikator\" brukes til å entydig identifisere og skille mellom individuelle analyseresultater innenfor samme rapport. Når flere resultater finnes for samme undersøkelse, angir ID-en deres kronologiske rekkefølge: 
+Id = 1 representerer det eldste resultatet
+Id = 2 det nest eldste
+og så videre.
+
+Elementet \"Referanse resultatidentifikator\" brukes til å henvise til et annet analyseresultat ved å peke på dets tilhørende \"Resultatidentifikator\". Dette muliggjør strukturerte relasjoner mellom funn innenfor samme rapport og er særlig viktig i medisinsk mikrobiologi, der funn av organismer og resultater for antimikrobiell resistens må kobles korrekt.
+
+Arketypen er tenkt inkludert i elementet \"Tilleggsinformasjon\" i arketypen Laboratorieresultat (OBSERVATION.laboratory_test_result.v1).">
+			misuse = <"Skal bare brukes som tillegg til analyseresultat ved elektroniske forsendelser.">
+			copyright = <"© openEHR Norway">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Norge">
+		["references"] = <"https://www.helsedirektoratet.no/standarder/svarrapportering-av-medisinske-tjenester-v1.4">
+		["original_namespace"] = <"no.openehr">
+		["original_publisher"] = <"openEHR Norge">
+		["custodian_namespace"] = <"no.openehr">
+		["MD5-CAM-1.0.1"] = <"44EB659E78B0902987D018A6E23B8F20">
+		["build_uid"] = <"63db350c-27b2-4b0e-a2e1-b225adf200ec">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Analyseresultat_tillegg_no
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Resultatidentifikator
+				value matches {
+					DV_TEXT matches {*}
+					DV_IDENTIFIER matches {*}
+					DV_URI matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Referanse resultatidentifikator
+				value matches {
+					DV_TEXT matches {*}
+					DV_IDENTIFIER matches {*}
+					DV_URI matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Analyseresultat_tillegg_no">
+					description = <"Tillegg til arketypen Analyseresultat (CLUSTER.laboratory_test_analyte.v1) til bruk for å representere særnorske krav til analyseresultat når de sendes som elektroniske meldinger.">
+				>
+				["at0001"] = <
+					text = <"Resultatidentifikator">
+					description = <"En unik identifikator som brukes til å skille og referere til et bestemt analyttesultat innenfor samme laboratoriesvarrapport.">
+					comment = <"Angir en identifikator som muliggjør eksplisitt kobling mellom relaterte analyseresultater, ved at andre analyser kan referere til den gjennom elementet Referanse resultatidentifikator elementet (for eksempel for avledede beregninger, panel‑sammensetning eller ‘kilde‑til’‑relasjoner). Dette tilsvarer \"IdResultItem\" i den norske meldingsspesifikasjonen.">
+				>
+				["at0002"] = <
+					text = <"Referanse resultatidentifikator">
+					description = <"En referanse til identifikatoren til et annet analyttresultat innenfor samme laboratoriesvarrapport.">
+					comment = <"Støtter eksplisitt, strukturert kobling mellom relaterte analytt-resultater ved å peke til  den tilhørende Resultatidentifikator for undersøkelsen. Dette tilsvarer \"RefIdResultItem\" i den norske meldingsspesifikasjonen.">
+				>
+			>
+		>
+	>
