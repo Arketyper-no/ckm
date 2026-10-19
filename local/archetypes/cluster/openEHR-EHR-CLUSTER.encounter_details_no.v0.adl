@@ -65,8 +65,8 @@ Source, Source category, Destination and Destination category are intended to pr
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9F1073443A48C9DEA3698D3852FB06D8">
-		["build_uid"] = <"a14a5a43-c612-4e53-93d4-5b3c0db1d696">
+		["MD5-CAM-1.0.1"] = <"001948EDEC1660A8F1954E9D381451B6">
+		["build_uid"] = <"376d4171-49e4-40cc-bc92-99952c317cee">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -109,7 +109,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Sub-episode
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.encounter_details\.v0|openEHR-EHR-CLUSTER\.encounter_details\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.encounter_details\.v0|openEHR-EHR-CLUSTER\.encounter_details\.v1|openEHR-EHR-CLUSTER\.encounter_details_no\.v0|openEHR-EHR-CLUSTER\.encounter_details_no\.v1/}
 			}
 			allow_archetype CLUSTER[at0045] occurrences matches {0..1} matches {    -- Destination
 				include
@@ -136,7 +136,6 @@ definition
 			}
 		}
 	}
-
 
 
 ontology
