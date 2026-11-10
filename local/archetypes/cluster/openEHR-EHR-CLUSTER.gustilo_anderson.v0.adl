@@ -56,29 +56,27 @@ Problems in the management of type III (severe) open fractures: a new classifica
 Gustilo RB, Mendoza RM, Williams DN. J Trauma. 1984 Aug;24(8):742-6.
 
 Gustilo RB, Merkow RL, Templeman D. The management of open fractures. J Bone Joint Surg Am.
-1990;72(2):299-304.
-
-https://pmc.ncbi.nlm.nih.gov/articles/PMC3462875/ viser aktuell gradering">
+1990;72(2):299-304.">
 		["original_namespace"] = <"no.openehr">
 		["original_publisher"] = <"openEHR Norge">
 		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"E08F7F6EAE4E038413D502828D810CB5">
-		["build_uid"] = <"68d9ccac-3cd6-4ec7-b134-595b5590599a">
+		["MD5-CAM-1.0.1"] = <"3F8C7DFB9CD2CE98226C8C349323894B">
+		["build_uid"] = <"d23dcaae-6a8e-48ec-986f-190d4a40428d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
 	CLUSTER[at0000] matches {    -- Gustilo-Anderson Classification
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Classification
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Category
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0013,    -- Type 1
-							at0014,    -- Type 2
-							at0015,    -- Type 3a
-							at0016,    -- Type 3b
+							at0013,    -- Type I
+							at0014,    -- Type II
+							at0015,    -- Type IIIA
+							at0016,    -- Type IIIB
 							at0017]    -- Type 3c
 						}
 					}
@@ -128,23 +126,23 @@ ontology
 					description = <"A revised classification of the severity of open fracture injuries based on the Gustilo-Anderson Classification that was introdused in 1976.">
 				>
 				["at0012"] = <
-					text = <"Classification">
+					text = <"Category">
 					description = <"">
 				>
 				["at0013"] = <
-					text = <"Type 1">
-					description = <"Open fracture with a clean wound less than 1 cm in length and minimal soft tissue damage.">
+					text = <"Type I">
+					description = <"An open fracture with a wound less than one centimeter long and clean.">
 				>
 				["at0014"] = <
-					text = <"Type 2">
-					description = <"Open fracture with a wound greater than 1 cm in length, without extensive soft tissue damage, flaps, avulsions, or severe contamination.">
+					text = <"Type II">
+					description = <"An open fracture with a laceration more than one centimeter long without extensive soft-tissue damage, flaps, or avulsions.">
 				>
 				["at0015"] = <
-					text = <"Type 3a">
+					text = <"Type IIIA">
 					description = <"Adequate soft-tissue coverage of a fractured bone despite extensive soft-tissue laceration or flaps, or high-energy trauma irrespective of the size of the wound.">
 				>
 				["at0016"] = <
-					text = <"Type 3b">
+					text = <"Type IIIB">
 					description = <"Extensive soft-tissue injury with periosteal stripping and bony exposure. This is usually associated with massive contamination.">
 				>
 				["at0017"] = <
