@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>ed31a0c1-f2eb-49c6-9992-29f3aed264cf</id>
+    <name>no.openehr__openEHR-EHR-EVALUATION.sjk_omsorgsansvar_kartlegging.v1.0.0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2024-10-10</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>OUS / NRUA</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details/>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>8fba1c8eb547a9f2de215393ab285bd4</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>C502781CE2175D8031AA6AAE37C4A794</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>5.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>98f560ce-4abb-41c3-84f3-b54340fb1a33</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::en</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Social context screening questionnaire" name="Kartlegging omsorgsansvar" xsi:type="tem:OBSERVATION" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Rule max="1" path="/data[at0001]/events[at0002]">
+            <eventConstraint>
+                <allowedType>PointInTime</allowedType>
+            </eventConstraint>
+        </Rule>
+        <Rule default="no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar" path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::OA::Kartlegging av om individet har omsorgsansvar</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="1" name="Omsorgsperson for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule default="no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::U18::Ansvarlig for barn under 18 år</includedValues>
+                <excludedValues>local::at0048</excludedValues>
+                <excludedValues>local::at0049</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Har pasienten ansvar for barn under 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0050</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0051]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Text</includedTypes>
+                <includedTypes>Date_Time</includedTypes>
+                <includedTypes>Duration</includedTypes>
+                <includedTypes>Interval</includedTypes>
+                <includedTypes>Interval</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år']/items[at0025]"/>
+        <Rule clone="true" max="1" name="Omsorgsperson for barn under 18 år (2)" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år (2)']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::BPU18::Barn som pårørende</includedValues>
+                <excludedValues>local::at0048</excludedValues>
+                <excludedValues>local::at0049</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Har pasienten ansvar for barn under 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år (2)']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0050</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for barn under 18 år (2)']/items[at0051]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Text</includedTypes>
+                <includedTypes>Date_Time</includedTypes>
+                <includedTypes>Duration</includedTypes>
+                <includedTypes>Interval</includedTypes>
+                <includedTypes>Interval</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule clone="true" max="1" name="Omsorgsperson for personer over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+        <Rule default="no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.onk.sosiale_forhold::O18::Ansvarlig for barn/andre over 18 år</includedValues>
+                <excludedValues>local::at0048</excludedValues>
+                <excludedValues>local::at0049</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule name="Har pasienten ansvar for egne barn/andre over 18 år?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0005]">
+            <constraint xsi:type="tem:textConstraint">
+                <excludedValues>local::at0050</excludedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0051]">
+            <constraint xsi:type="tem:multipleConstraint">
+                <includedTypes>Text</includedTypes>
+                <includedTypes>Date_Time</includedTypes>
+                <includedTypes>Duration</includedTypes>
+                <includedTypes>Interval</includedTypes>
+                <includedTypes>Interval</includedTypes>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022, 'Omsorgsperson for personer over 18 år']/items[at0025]"/>
+        <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0052]"/>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">C502781CE2175D8031AA6AAE37C4A794</digest>
+    </integrity_checks>
+</template>
