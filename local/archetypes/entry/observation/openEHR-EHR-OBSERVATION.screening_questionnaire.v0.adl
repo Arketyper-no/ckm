@@ -1,0 +1,246 @@
+﻿archetype (adl_version=1.4; uid=a04ff8f1-56bd-4d5a-84c0-e1aad91269f5)
+	openEHR-EHR-OBSERVATION.screening_questionnaire.v0
+
+concept
+	[at0000]	-- Generic screening questionnaire
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"">
+				["organisation"] = <"">
+				["email"] = <"">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+		["organisation"] = <"">
+		["email"] = <"">
+		["date"] = <"2026-08-10">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål til generell kartlegging, der spørsmålene og kartleggingsformålet defineres på templatnivå.">
+			use = <"Brukes for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål til generell kartlegging, der spørsmålene og kartleggingsformålet defineres på templatnivå.
+
+Vanlige bruksområder inkluderer, men er ikke begrenset til:
+- lokalt definerte sjekklister eller spørreskjemaer der det ikke finnes en domenespesifikk kartleggingsarketype, for eksempel:
+--- Trenger du hotell? Ja, Nei, Ukjent, Usikker.
+--- Trenger pasienten ledsager? Ja, Nei, Ukjent, Usikker.
+
+Hvert spørsmål registreres som én instans av CLUSTER.screening_question, sammen med svaret som ble gitt. I et templat vil dataelementet \"Svar\" i CLUSTER.screening_question vanligvis døpes om til spørsmålet slik det ble stilt til individet, og den fullstendige spørsmålsteksten kan i tillegg registreres i dataelementet \"Spørsmål\". Dataelementene \"Kategori\" og \"Relatert kode\" angir den maskinlesbare betydningen av spørsmålet. Oppfølgingsspørsmål som bare stilles, eller bare gir mening, ved et bestemt svar på det overordnede spørsmålet, registreres som nøstede instanser av CLUSTER.screening_question i SLOTet \"Underspørsmål\" i det overordnede spørsmålet.
+
+Bruk dataelementet \"Kartleggingsformål\" for å registrere konteksten eller årsaken for kartleggingen. Dataelementet gir kontekst dersom man senere ønsker å gjøre spørringer på dataene, og er normalt ikke synlig for individet som kartlegges.
+
+Semantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikkert i konteksten av det spesifikke templatet. I motsetning til de domenespesifikke kartleggingsarketypene har denne arketypen ingen fast klinisk semantikk eller bundne verdisett, og den er verken en generisk overordnet arketype for, eller en erstatning for, disse arketypene.
+
+Bruk separate EVENT-er for å angi om spørsmålene gjelder et tidspunkt eller et tidsintervall. For eksempel: \"Trenger du hotell?\" som en tidspunkthendelse og \"Har du byttet fastlege i løpet av det siste året?\" som en intervallhendelse.
+
+Kilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte elementet \"Information provider\" i openEHR referansemodellen.
+
+Denne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Arketypen registrerer at et spørsmål ble stilt og hva som ble svart, men ikke den kliniske konklusjonen som trekkes ut fra svaret. Dersom det i kartleggingen identifiseres noe som bør lagres i pasientjournalen, anbefales det at dette registreres og lagres i arketyper som er spesifikke for det kliniske formålet.">
+			keywords = <"kartlegging", "spørreskjema", "screening", "vurdering", "spørsmål", "svar", "skjema", "spørreundersøkelse">
+			misuse = <"Brukes ikke for å registrere svar på kartleggingsspørsmål som dekkes av en domenespesifikk kartleggingsarketype.
+
+Brukes ikke for å registrere skårer, skalaer eller andre validerte vurderingsinstrumenter. Bruk en egnet arketype for skåren eller skalaen for dette formålet.
+
+Brukes ikke for å registrere kliniske funn som har egne arketyper, for eksempel problemer, diagnoser eller symptomer. Bruk arketypen som er spesifikk for det kliniske funnet, for eksempel EVALUATION.problem_diagnosis (Problem/diagnose) eller CLUSTER.symptom_sign, for dette formålet.">
+			copyright = <"© openEHR Norway">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To create a framework for recording answers to pre-defined screening questions used for general screening where the questions and screening purpose are defined at the template level.
+
+">
+			use = <"Use to create a framework for recording answers to pre-defined screening questions used for general screening where the questions and screening purpose are defined at the template level.
+
+Common use cases include, but are not limited to:
+- Locally defined checklists or questionnaires where no domain-specific screening questionnaire archetype is available, for example:
+--- Do you need a hotel? Yes, No, Unknown, Unsure.
+--- Does the patient need an escort? Yes, No, Unknown, Unsure.
+
+Each question is recorded as one instance of CLUSTER.screening_question, together with the answer given. In a template, the 'Answer' data element in CLUSTER.screening_question would usually be renamed to the question as put to the individual, and the full question text may also be recorded in the 'Question' data element. The 'Category' and 'Related code' data elements carry the machine-readable meaning of the question. Follow-up questions that are only asked, or only meaningful, given a particular answer to the parent question are recorded as nested instances of CLUSTER.screening_question within the 'Sub-question' SLOT of the parent question.
+
+Use the 'Screening purpose' data element to record the context or reason for the screening. This data element provides context when the data are queried at a later date, and is not normally shown to the individual being screened.
+
+The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. Unlike the domain-specific screening questionnaire archetypes, this archetype has no fixed clinical semantics or bound value sets, and it is neither a generic parent of, nor a substitute for, those archetypes.
+
+Use separate EVENTs to specify whether the questions relate to a point in time or an interval of time. For example: 'Do you need a hotel?' as a point-in-time EVENT and 'Have you changed your general practitioner during the past year?' as an interval EVENT.
+
+The source of the information in a questionnaire response may vary in different contexts, but can be specifically identified using the 'Information provider' element in the Reference Model.
+
+This archetype has been designed to be used as a screening tool, or to record simple questionnaire-format data for use in situations such as a disease registry. It records that a question was asked and what was answered; it does not record the clinical conclusion drawn from the answer. If the screening process identifies something that should be persisted as part of an ongoing health record, it is recommended that this is recorded using archetypes specific for the clinical purpose.">
+			keywords = <"screening", "questionnaire", "assessment", "question", "answer", "form", "survey">
+			misuse = <"Not to be used to record answers to screening questions that are covered by a domain-specific screening questionnaire archetype.
+
+Not to be used to record scores, scales or other validated assessment instruments. Use a specific score or scale archetype for this purpose.
+
+Not to be used as a general-purpose container for clinical findings which have their own archetypes, such as problems, diagnoses or symptoms. Use the archetype specific for the clinical finding, such as EVALUATION.problem_diagnosis or CLUSTER.symptom_sign, for this purpose.">
+			copyright = <"© openEHR Norway">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Norge">
+		["references"] = <"Medication screening questionnaire, Published archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2026-08-10]. Available from: https://ckm.openehr.org/ckm/archetypes/1013.1.4677">
+		["original_namespace"] = <"no.openehr">
+		["original_publisher"] = <"openEHR Norge">
+		["custodian_namespace"] = <"no.openehr">
+		["MD5-CAM-1.0.1"] = <"A40914FF99709E0585A9274E78BF9198">
+		["build_uid"] = <"87e177be-e351-41f8-a72a-1c181de704f3">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Generic screening questionnaire
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Screening purpose
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0006] occurrences matches {1..*} matches {    -- Specific question or statement
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.screening_question(-[a-zA-Z0-9_]+)*\.v0/}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0009] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Generic screening questionnaire">
+					description = <"Series of questions and associated answers used for general screening where the questions and purpose are defined at the template level.">
+					comment = <"The answers may be self-reported.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point-in-time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Screening purpose">
+					description = <"The context or reason for screening.">
+					comment = <"This data element is intended to provide collection context for the question/answer groups when queried at a later date. It is not expected that this data element will be exposed to the individual, but only stored in data. For example: pre-admission screening or the name of the actual questionnaire.">
+				>
+				["at0005"] = <
+					text = <"Description">
+					description = <"Narrative description of the screening as a whole.">
+				>
+				["at0006"] = <
+					text = <"Specific question or statement">
+					description = <"A single question or statement presented to the individual, along with their answer.">
+					comment = <"Use a separate instance for each question in the questionnaire. Follow-up questions that depend on the answer to another question are recorded in the 'Sub-question' SLOT of that question in CLUSTER.screening_question.">
+				>
+				["at0007"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the screening as a whole, not captured in other fields.">
+				>
+				["at0009"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Generiske kartleggingsspørsmål">
+					description = <"Spørsmål og tilhørende svar som brukes til generell kartlegging, der spørsmålene og formålet defineres på templatnivå.">
+					comment = <"Svarene kan være selvrapporterte.">
+				>
+				["at0001"] = <
+					text = <"Hendelsesserie">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tre">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Kartleggingsformål">
+					description = <"Konteksten eller årsaken for kartleggingen.">
+					comment = <"Dette dataelementet er ment for å sette en kontekst for spørsmålene om man senere ønsker å gjøre spørringer på dataene. Det er ikke forventet at dette dataelementet skal være synlig for en bruker av skjemaet, men kun tilgjengelig i de lagrede dataene. For eksempel: \"Kartlegging før innleggelse\" eller navnet på det faktiske spørreskjemaet.">
+				>
+				["at0005"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse av kartleggingen som helhet.">
+				>
+				["at0006"] = <
+					text = <"Spesifikt spørsmål eller utsagn">
+					description = <"Et enkelt spørsmål eller utsagn som presenteres for individet, sammen med svaret.">
+					comment = <"Bruk en separat instans for hvert spørsmål i spørreskjemaet. Oppfølgingsspørsmål som avhenger av svaret på et annet spørsmål, registreres i SLOTet \"Underspørsmål\" i det aktuelle spørsmålet i CLUSTER.screening_question.">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om kartleggingen som helhet, som ikke er omfattet av andre felt.">
+				>
+				["at0009"] = <
+					text = <"Tre">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller eller formalismer.">
+					comment = <"For eksempel: lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+			>
+		>
+	>
