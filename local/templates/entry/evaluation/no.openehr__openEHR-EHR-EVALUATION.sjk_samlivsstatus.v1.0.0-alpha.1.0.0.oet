@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>6fc3effe-1b7a-4026-8d49-02ebf506e15b</id>
+    <name>no.openehr::openEHR-EHR-EVALUATION.sjk_samlivsstatus.v1.0.0-alpha.1.0.0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-08-22</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details/>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>f70afb5447d1b84cceac604ddd25e985</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>10DEC845F5AC63AC05E7B0C214121D5A</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>6.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>509df6f3-d950-433e-9200-0eb5c7b4d19d</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::en</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.social_network.v1" xsi:type="tem:EVALUATION" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Rule max="0" path="/data[at0001]/items[at0015]"/>
+        <Rule name="Samlivsstatus" path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.samlivsstatus::1::Ugift/enslig</includedValues>
+                <includedValues>no.samlivsstatus::2::Gift/samboer/registrert partner</includedValues>
+                <includedValues>no.samlivsstatus::3::Enke/enkemann/gjenlevende partner eller samboer</includedValues>
+                <includedValues>no.samlivsstatus::4::Skilt/separert</includedValues>
+                <includedValues>no.samlivsstatus::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.social_network.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">10DEC845F5AC63AC05E7B0C214121D5A</digest>
+    </integrity_checks>
+</template>
