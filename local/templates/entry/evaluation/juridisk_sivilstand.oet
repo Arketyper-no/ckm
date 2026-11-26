@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>156d915e-6f7f-4400-84d1-3ac3b5ddb500</id>
+    <name>juridisk_sivilstand</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-06-16</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere et individs juridiske sivilstand. Templatet er ikke i bruk i prosjektet Strukturert kreftjournal, fordi juridisk sivilstand registreres i PAS-delen av EPJ. Det er laget som et foreslått verdisett.</purpose>
+            <keywords>
+                <item>sivilstand</item>
+                <item>juridisk sivilstand</item>
+            </keywords>
+            <use>Templatet er ikke i bruk i prosjektet Strukturert kreftjournal. Juridisk sivilstand registreres i den pasientadministrative delen (PAS) av EPJ. I Strukturert kreftjournal registreres i stedet samlivsstatus.
+
+Verdisettet er basert på SSBs Standard for sivilstand (https://dataportal.ssb.no/classifications/19), forenklet ved at partnerkategoriene er slått sammen med de tilsvarende kategoriene for ekteskap.
+
+Templatet kan brukes i andre prosjekter der det er behov for å dokumentere juridisk sivilstand i journalen.
+
+Verdisettet med tilhørende forklaring:
+1 – Ugift
+2 – Gift/registrert partner (SSB 2 og 6)
+3 – Enke/enkemann/gjenlevende partner (SSB 3 og 9)
+4 – Skilt/skilt partner (SSB 4 og 8)
+5 – Separert/separert partner (SSB 5 og 7)
+9 – Ukjent</use>
+            <misuse>Brukes ikke for å registrere samlivsstatus, for eksempel samboerskap. Bruk templatet for samlivsstatus til det.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>5.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>2c46ecd0-86be-4423-a609-1d00e1546740</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>d37d36d664dbc16895d40c1240e92237</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>10DEC845F5AC63AC05E7B0C214121D5A</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.social_network.v1" concept_name="Sosialt nettverk" name="Sivilstatus_juridisk_templat" xsi:type="tem:EVALUATION" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Rule max="0" path="/data[at0001]/items[at0015]"/>
+        <Rule name="Juridisk sivilstand" path="/data[at0001]/items[at0002]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.juridisk_sivilstand::1::Ugift</includedValues>
+                <includedValues>no.juridisk_sivilstand::2::Gift//registrert partner</includedValues>
+                <includedValues>no.juridisk_sivilstand::3::Enke/enkemann/gjenlevende partner</includedValues>
+                <includedValues>no.juridisk_sivilstand::4::Skilt</includedValues>
+                <includedValues>no.juridisk_sivilstand::5::Separert</includedValues>
+                <includedValues>no.juridisk_sivilstand::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.social_network.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">10DEC845F5AC63AC05E7B0C214121D5A</digest>
+    </integrity_checks>
+</template>
