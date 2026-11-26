@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>d8aa1521-988a-42f2-9cb5-ff9dab328ba4</id>
+    <name>no.openehr__openEHR-EHR-EVALUATION.sjk_arbeidsstatus.v1.0.0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2023-06-16</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Oslo universitetssykehus</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>liv.laugen@ous-hf.no</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere et individs arbeidsstatus i prosjektet Strukturert kreftjournal.</purpose>
+            <keywords>
+                <item>kreftjournal</item>
+                <item>SJK</item>
+                <item>arbeid</item>
+                <item>arbeidsstatus</item>
+            </keywords>
+            <use>Brukes for å registrere et individs arbeidsstatus i prosjektet Strukturert kreftjournal.
+
+Verdisettet for dataelementet «Arbeidsstatus» bygger på foreslåtte variabeldefinisjoner i «Saksunderlag for harmonisering av variabler – personpakke» (Direktoratet for e-helse m.fl., 2020). Definisjonene er oppdatert med gjeldende begreper, blant annet arbeidsavklaringspenger (AAP) og uføretrygd.
+
+Templatet brukes i prosjektet Strukturert kreftjournal under sosialanamnese.
+
+Småtemplatet med det standardiserte verdisettet kan også brukes utenfor Strukturert kreftjournal, der det lagres data om arbeidsstatus.
+
+Verdisettet med tilhørende forklaring:
+- I arbeid = Har arbeid som hovedaktivitet, heltid eller deltid. Personer som er midlertidig sykmeldt, regnes som i arbeid.
+- Ikke i arbeid = Har ikke et arbeidsforhold, for eksempel hjemmeværende, permitterte, arbeidssøkende, uføretrygdede, personer som mottar arbeidsavklaringspenger (AAP) eller deltar i arbeidsmarkedstiltak, og personer som avtjener verneplikt.
+- Alderspensjonist = Mottar alderspensjon, inkludert AFP. Omfatter ikke uføretrygd eller andre pensjonsformer.
+- Under utdanning/studerer = Er i gang med et studieløp og er hovedsakelig student eller elev, heltid eller deltid.
+- Ukjent = Arbeidsstatus er ukjent.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>8.0.2</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>20e6ec61-952e-4454-a9a9-a410d3a833b7</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>535dcfac03e6ab50898676a3d26ae707</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>390FE85BFBBBFFD67B213B1D55F7E680</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-EVALUATION.occupation_summary.v1" xsi:type="tem:EVALUATION" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Rule max="0" path="/data[at0001]/items[at0002]"/>
+        <Rule max="1" path="/data[at0001]/items[at0004]">
+            <constraint xsi:type="tem:textConstraint">
+                <includedValues>no.arbeidsstatus::1::I arbeid</includedValues>
+                <includedValues>no.arbeidsstatus::2::Ikke i arbeid</includedValues>
+                <includedValues>no.arbeidsstatus::3::Alderspensjonist</includedValues>
+                <includedValues>no.arbeidsstatus::4::Under utdanning/studerer</includedValues>
+                <includedValues>no.arbeidsstatus::9::Ukjent</includedValues>
+            </constraint>
+        </Rule>
+        <Rule max="0" path="/data[at0001]/items[at0006]"/>
+        <Items archetype_id="openEHR-EHR-CLUSTER.occupation_record.v1" max="1" path="/data[at0001]/items[at0005]" xsi:type="tem:CLUSTER">
+            <Rule max="0" path="/items[at0016]"/>
+            <Rule max="0" path="/items[at0007]"/>
+            <Rule max="0" path="/items[at0001]"/>
+            <Rule max="0" path="/items[at0013]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Proportion</includedTypes>
+                    <includedTypes>Coded_text</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0019]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <unitMagnitude>
+                        <unit>h/d</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>h/wk</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>h/mo</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>h/a</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>d/wk</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>d/mo</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>wk/mo</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>d/a</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>wk/a</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                    <unitMagnitude>
+                        <unit>mo/a</unit>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/items[at0002]"/>
+            <Rule max="0" path="/items[at0006]"/>
+            <Rule max="0" path="/items[at0008]"/>
+            <Rule max="0" path="/items[at0014]"/>
+        </Items>
+        <Items archetype_id="openEHR-EHR-CLUSTER.sick_note_ous.v0" max="1" path="/data[at0001]/items[at0005]" xsi:type="tem:CLUSTER">
+            <Rule max="0" path="/items[at0002]"/>
+            <Rule max="0" path="/items[at0003]"/>
+            <Rule name="Sykemelding - fra dato" path="/items[at0004]"/>
+            <Rule max="0" path="/items[at0005]"/>
+        </Items>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.occupation_summary.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">390FE85BFBBBFFD67B213B1D55F7E680</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-CLUSTER.occupation_record.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">E6C56867FAA44D4D86E669619D4FB455</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-CLUSTER.sick_note_ous.v0" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">455D000ABFC991D93DF8E97338E79320</digest>
+    </integrity_checks>
+</template>
