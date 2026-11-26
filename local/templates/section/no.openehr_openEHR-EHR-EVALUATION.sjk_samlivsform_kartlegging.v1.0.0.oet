@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="openEHR/v1/Template">
+    <id>479ac9b2-f988-4080-9f1e-f6b1769b46ce</id>
+    <name>no.openehr_openEHR-EHR-EVALUATION.sjk_samlivsform_kartlegging.v1.0.0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2025-01-28</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Liv Laugen</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>openEHR Norway</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>For å registrere et individs samlivsform, det vil si om individet bor alene, bor sammen med noen eller bor på institusjon.</purpose>
+            <keywords>
+                <item>samliv</item>
+                <item>samlivsform</item>
+                <item>samboer</item>
+                <item>særboer</item>
+            </keywords>
+            <use>Brukes for å registrere et individs samlivsform i prosjektet Strukturert kreftjournal.
+
+Verdisettet bygger på variabelen «Bostatus» i «Saksunderlag for harmonisering av variabler – personpakke» (Direktoratet for e-helse m.fl., 2020).
+
+Templatet brukes i prosjektet Strukturert kreftjournal under sosialanamnese.
+
+Arketypen Kartleggingsspørsmål om sosiale forhold (openEHR-EHR-OBSERVATION.social_context_screening.v1) er brukt med spørsmålet «Hvilken samlivsform har pasienten?».
+
+Småtemplatet med det standardiserte verdisettet kan også brukes utenfor Strukturert kreftjournal, der det lagres data om samlivsform.
+
+Verdisettet med tilhørende forklaring:
+1 – Bor alene (inkludert alene med barn under 18 år)
+2 – Bor med noen (partner og/eller barn 18 år eller eldre, bofellesskap, venner)
+3 – Bor på institusjon/sykehjem (fast plass, ikke korttidsopphold; gjelder også egen bolig med døgnbemanning)
+9 – Ukjent</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value>openEHR Foundation</value>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value>org.openehr</value>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>a1e2829e97322b50a06552c17af2591d</value>
+            </item>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>9D358EB1048EA1401802C3E1FDFB9A29</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>6.0.1</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value>32efd4db-de69-49b4-95e5-3811fbebb948</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::nb</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Templat-overskrift" name="Samlivsform" xsi:type="tem:SECTION" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Item archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" concept_name="Kartleggingsspørsmål om sosiale forhold" max="1" name="Kartleggingspørsmål om sosiale forhold samlivsform" path="/items" xsi:type="tem:OBSERVATION">
+            <Rule max="1" path="/data[at0001]/events[at0002]"/>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.onk.sosiale_forhold::SAM::Samlivsform</includedValues>
+                </constraint>
+            </Rule>
+            <Rule max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]"/>
+            <Rule name="Hvilken samlivsform har pasienten?" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]">
+                <constraint xsi:type="tem:textConstraint">
+                    <includedValues>no.samlivsform::1::Bor alene (Inkl. alene med barn &lt;18)</includedValues>
+                    <includedValues>no.samlivsform::2::Bor med noen (Partner og/eller med barn >18 år, bofelleskap, venner)</includedValues>
+                    <includedValues>no.samlivsform::3::Bor på institusjon/ sykehjem (Fast plass, ikke korttidsopphold. Gjelder også der egen bolig er døgnbemannet)</includedValues>
+                    <includedValues>no.samlivsform::9::Ukjent</includedValues>
+                    <excludedValues>local::at0048</excludedValues>
+                    <excludedValues>local::at0049</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]">
+                <constraint xsi:type="tem:textConstraint">
+                    <excludedValues>local::at0024</excludedValues>
+                    <excludedValues>local::at0027</excludedValues>
+                    <excludedValues>local::at0050</excludedValues>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0051]">
+                <constraint xsi:type="tem:multipleConstraint">
+                    <includedTypes>Text</includedTypes>
+                    <includedTypes>Date_Time</includedTypes>
+                    <includedTypes>Duration</includedTypes>
+                    <includedTypes>Interval</includedTypes>
+                    <includedTypes>Interval</includedTypes>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0002]/data[at0003]/items[at0052]"/>
+        </Item>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">9D358EB1048EA1401802C3E1FDFB9A29</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.social_context_screening.v1" xsi:type="tem:ArchetypeIntegrity" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <digest id="MD5-CAM-1.0.1">C502781CE2175D8031AA6AAE37C4A794</digest>
+    </integrity_checks>
+</template>
