@@ -25,66 +25,92 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere sammendragsinformasjon om en enkelt funksjonsnedsettelse som påvirker en kroppsfunksjon eller kroppsstruktur.">
-			use = <"Brukes for å registrere sammendragsinformasjon om en enkelt funksjonsnedsettelse som påvirker en kroppsfunksjon eller kroppsstruktur.
+			purpose = <"For å registrere oppsummerende informasjon om én enkelt funksjonsnedsettelse.">
+			use = <"Brukes til å registrere oppsummerende informasjon om én enkelt svekkelse i en fysiologisk eller psykologisk funksjon som begrenser individets evne til å utføre en aktivitet uten assistanse. Svekkelsen kan bestå av en mangel, nedsettelse eller en annen funksjonsendring som ligger utenfor normalvariasjonen i befolkningen. Eksempler er nedsatt motorisk kontroll på grunn av redusert muskelstyrke, hypertoni, ataksi eller tremor.
 
-En funksjonsnedsettelse som påvirker en kroppsfunksjon er et problem som påvirker hvordan et kroppssystem eller en funksjon fungerer. Eksempler omfatter nedsatt syn, hørsel, sansing, tale, språk, hukommelse, kognisjon, bevegelse, koordinasjon, balanse, emosjonell funksjon eller psykologisk funksjon.
+Detaljeringsgraden som benyttes for å identifisere den berørte funksjonen, er et spørsmål om klinisk skjønn. For eksempel kan «kognitiv funksjon» registreres på et overordnet nivå, eller mer spesifikke funksjoner som «korttidshukommelse» og «oppmerksomhetsspenn» kan registreres hver for seg, slik at de kan følges uavhengig av hverandre over tid.
 
-En funksjonsnedsettelse som påvirker en kroppsstruktur er et problem som påvirker kroppens anatomi, inkludert strukturelt tap, fravær, skade, deformitet eller annet strukturelt avvik som påvirker en anatomisk del av kroppen. Eksempler omfatter tap av lem, fravær av en kroppsdel, vevstap, strukturell skade eller deformitet av en anatomisk struktur.
+Hver funksjonsnedsettelse kan registreres som en enkelt, vedvarende tilstand som revideres over tid for å dokumentere det kliniske forløpet. Oppdateringer kan baseres på observasjoner som vurderer eller måler funksjonsnedsettelsen, for eksempel motoriske undersøkelser, kognitive screeningtester, depresjonsskalaer eller audiometri. Når funksjonsnedsettelsen ikke lenger er til stede, oppdateres den eksisterende registreringen ved å angi «Alvorlighetsgrad» til «Ingen funksjonsnedsettelse» og registrere «Dato for opphør». Støttetiltak som personlig assistanse, hjelpemidler, miljøtilpasninger eller kompenserende strategier kan forbedre personens funksjonsevne, men påvirker ikke klassifiseringen av selve funksjonsnedsettelsen. Dersom funksjonsnedsettelsen senere gjenoppstår, oppdateres den samme registreringen.
 
-Forholdet mellom funksjonsnedsettelser og diagnoser er ikke nødvendigvis én-til-én. En enkelt funksjonsnedsettelse kan ha flere underliggende årsaker, og en enkelt diagnose kan gi opphav til flere funksjonsnedsettelser.
+Hos barn kan en funksjon som ligger utenfor det forventede området for alder og utvikling, vurderes av kliniker som en funksjonsnedsettelse.
 
-Denne arketypen er én av tre relaterte arketyper som er utformet for å representere ulike aspekter av hvordan et individ fungerer i hverdagen. Til sammen støtter disse arketypene en strukturert representasjon av funksjonell evne, funksjonsnedsettelser som bidrar til funksjonelle begrensninger, og den støtten som er nødvendig for å sette et individ i stand til eller hjelpe et individ med å utføre en aktivitet. De øvrige arketypene er:
-- OBSERVATION.functional_ability (Funksjonell evne),
-- EVALUATION.functional_support_requirements (Funksjonelle støttebehov).">
-			misuse = <"Brukes ikke for å registrere den underliggende diagnosen, sykdommen, skaden, den medfødte tilstanden eller andre helsetilstander knyttet til funksjonsnedsettelsen. Bruk arketypen EVALUATION.problem_diagnosis (Problem/diagnose) til dette formålet.
+Det er to andre relaterte arketyper som beskriver ulike sider av individets funksjon i dagliglivet i tillegg til denne:
+OBSERVATION.functional_ability, som beskriver individets funksjonsevne ved utførelse av en aktivitet.
+EVALUATION.functional_support_requirements, som beskriver hvilken type og grad av hjelp som er nødvendig for at individet skal kunne utføre aktiviteten.
 
-Brukes ikke for å registrere et individs evne til å utføre en aktivitet eller delta i en livssituasjon. Bruk arketypen OBSERVATION.functional_ability (Funksjonell evne) til dette formålet.
+I praksis brukes disse arketypene ofte sammen med andre arketyper, som for eksempel CLUSTER.symptom_sign (Symptom/Sykdomstegn) og EVALUATION.problem_diagnosis (Problem/diagnose).
+For eksempel:
+- Hos en voksen person med Parkinsons sykdom registreres 'tremor' ved å bruke CLUSTER.symptom_sign (Symptom/Sykdomstegn), 'tilstanden' ved å bruke EVALUATION.problem_diagnosis (Problem/diagnose), 'evnen til å drikke fra en kopp' ved å bruke OBSERVATION.functional_ability, 'motorisk kontroll' ved å bruke EVALUATION.impairment_summary, og 'behovet for en kopp med lokk' ved å bruke EVALUATION.functional_support_requirements.
 
-Brukes ikke for å registrere en vurdering av omfanget av støtte som kreves for å optimalisere et individs evne til å utføre en aktivitet eller delta i en livssituasjon som følge av en funksjonsnedsettelse. Bruk arketypen EVALUATION.functional_support_requirements (Funksjonelle støttebehov) til dette formålet.
+- Hos en voksen person etter hjerneslag registreres 'venstresidig svakhet' ved å bruke CLUSTER.symptom_sign (Symptom/Sykdomstegn), 'tilstanden' ved å bruke EVALUATION.problem_diagnosis (Problem/diagnose), 'evnen til å forflytte seg fra seng til stol' ved å bruke OBSERVATION.functional_ability, 'motorisk kontroll' i venstre underekstremitet ved å bruke EVALUATION.impairment_summary, og 'behovet for fysisk assistanse fra to personer ved forflytning fra seng til stol' ved å bruke EVALUATION.functional_support_requirements.
 
-Brukes ikke for å registrere informasjon om et symptom eller et klinisk tegn. Bruk arketypen CLUSTER.symptom_sign (Symptom/Sykdomstegn) til dette formålet.">
-			copyright = <"© openEHR Norway">
+- Hos en voksen person med Alzheimers sykdom registreres 'glemsomhet' ved å bruke CLUSTER.symptom_sign (Symptom/Sykdomstegn), 'tilstanden' ved å bruke EVALUATION.problem_diagnosis (Problem/diagnose), 'evnen til å håndtere legemidler' ved å bruke OBSERVATION.functional_ability, 'korttidshukommelse' ved å bruke EVALUATION.impairment_summary, og 'behovet for påminnelser fra en omsorgsperson' ved å bruke EVALUATION.functional_support_requirements.
+
+- Hos et barn med kronisk mellomørebetennelse registreres 'øresekresjon' ved å bruke CLUSTER.symptom_sign (Symptom/Sykdomstegn), 'tilstanden' ved å bruke EVALUATION.problem_diagnosis (Problem/diagnose), 'evnen til å følge instruksjoner i klasserommet' ved å bruke OBSERVATION.functional_ability, 'hørsel' ved å bruke EVALUATION.impairment_summary, og 'behovet for sitteplass nær læreren' ved å bruke EVALUATION.functional_support_requirements.">
+			misuse = <"Brukes ikke for å registrere en persons evne til å utføre en aktivitet. For dette formålet benyttes arketypen OBSERVATION.functional_ability.
+
+Brukes ikke for å registrere utviklingsmilepæler. For dette formålet benyttes arketypen OBSERVATION.developmental_milestone.
+
+Brukes ikke for å registrere en vurdering av omfanget av støtte som kreves for å optimalisere en persons evne til å utføre en aktivitet som følge av en funksjonsnedsettelse. For dette formålet benyttes arketypen EVALUATION.functional_support_requirements.
+
+Brukes ikke for å registrere den underliggende diagnosen, sykdommen, skaden, den medfødte tilstanden eller annen helsetilstand som er assosiert med funksjonsnedsettelsen. For dette formålet benyttes arketypen EVALUATION.problem_diagnosis (Problem/diagnose).
+
+Brukes ikke for å registrere informasjon om et symptom eller klinisk tegn. For dette formålet benyttes arketypen CLUSTER.symptom_sign (Symptom/Sykdomstegn).
+
+Brukes ikke for å registrere vurdering eller måling av en funksjonsnedsettelse på et gitt tidspunkt. For dette formålet benyttes den relevante OBSERVATION-arketype.
+
+Brukes ikke for å registrere en forbigående funksjonsendring, som akutt ruspåvirkning eller sedasjon. For dette formålet benyttes den relevante OBSERVATION-arketype.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record summary information about a single impairment affecting a body function or body structure.">
-			use = <"Use to record summary information about a single impairment affecting a body function or body structure.
+			purpose = <"To record summary information about a single impairment.">
+			use = <"Use to record summary information about a single impairment of a physiological or psychological function that limits an individual's ability to perform an activity unaided. An impairment may be a deficit, excess or other alteration of a function that is outside the range found in the general population. For example, motor control may be impaired by loss of muscle power, hypertonicity, ataxia or tremor.
 
-A body function impairment is a problem affecting how a body system or function works. Examples include impairment of vision, hearing, sensation, speech, language, memory, cognition, movement, coordination, balance, emotional function, or psychological function.
+The level of detail used to identify the affected function is a matter of clinical judgement. For example, \"Cognitive function\" may be recorded generally, or \"Short-term memory\" and \"Attention span\" separately, so that each can be followed independently over time.
 
-A body structure impairment is a problem affecting the anatomy of the body, including structural loss, absence, damage, deformity, or other structural abnormality affecting an anatomical part of the body. Examples include limb loss, absence of a body part, tissue loss, structural damage, or deformity of an anatomical structure.
+Each impairment can be recorded as a single, persistent instance, updated over time to document its clinical course. Revisions may be informed by observations that assess or measure the impairment, such as motor assessments, cognitive screening scores, depression rating scales or audiometry. When the impairment resolves, the existing instance is revised by recording 'Severity' as 'No impairment' and adding the 'Date of resolution'. Supports, such as human assistance, assistive devices, environmental modifications or compensatory strategies, may improve functional ability, but do not change or resolve the impairment. If the impairment recurs, the same instance is revised.
 
-The relationship between impairments and diagnoses is not necessarily one-to-one. A single impairment may have multiple underlying causes, and a single diagnosis may give rise to multiple impairments.
+In children, a clinician may identify a function that is outside the age-appropriate range as an impairment.
 
-This archetype is one of a set of three related archetypes designed to represent different aspects of how an individual functions in everyday life. Together, these archetypes support structured representation of functional ability, impairments contributing to functional limitations, and the supports required to enable or assist an individual to perform an activity. The other archetypes are: 
-- OBSERVATION.functional_ability and 
-- EVALUATION.functional_support_requirements.">
-			misuse = <"Not to be used to record the underlying diagnosis, disease, injury, congenital condition, or other health condition associated with the impairment. Use the EVALUATION.problem_diagnosis archetype for this purpose.
+This archetype is one of a set of three related archetypes designed to represent different aspects of how an individual functions in everyday life:
+- OBSERVATION.functional_ability, which records what an individual can do when performing an activity;
+- EVALUATION.impairment_summary, which records an impairment that may limit what an individual can do; and
+- EVALUATION.functional_support_requirements, which records the type and level of support an individual needs for an activity.
 
-Not to be used to record an individual's ability to perform an activity or participate in a life situation. Use the OBSERVATION.functional_ability archetype for this purpose.
+In practice, these archetypes are often used alongside others, such as CLUSTER.symptom_sign and EVALUATION.problem_diagnosis. For example:
+- For an adult with Parkinson’s disease, tremor is recorded using CLUSTER.symptom_sign, the condition using EVALUATION.problem_diagnosis, the ability to drink from a cup using OBSERVATION.functional_ability, motor control using EVALUATION.impairment_summary, and the need for a cup with a lid using EVALUATION.functional_support_requirements.
+- For an adult after a stroke, left-sided weakness is recorded using CLUSTER.symptom_sign, the condition using EVALUATION.problem_diagnosis, the ability to transfer from bed to chair using OBSERVATION.functional_ability, left lower limb motor control using EVALUATION.impairment_summary, and the need for physical assistance from two people to transfer from bed to chair using EVALUATION.functional_support_requirements.
+- For an adult with Alzheimer’s disease, forgetfulness is recorded using CLUSTER.symptom_sign, the condition using EVALUATION.problem_diagnosis, the ability to manage medications using OBSERVATION.functional_ability, short-term memory using EVALUATION.impairment_summary, and the need for prompting from a carer using EVALUATION.functional_support_requirements.
+- For a child with chronic otitis media, ear discharge is recorded using CLUSTER.symptom_sign, the condition using EVALUATION.problem_diagnosis, the ability to follow instructions in the classroom using OBSERVATION.functional_ability, hearing using EVALUATION.impairment_summary, and the need for seating near the teacher using EVALUATION.functional_support_requirements.">
+			misuse = <"Not to be used to record an individual's ability to perform an activity. Use the OBSERVATION.functional_ability archetype for this purpose.
 
-Not to be used to record an assessment of the range of supports required to optimise an individual's ability to perform an activity or participate in a life situation as a result of an impairment. Use the EVALUATION.functional_support_requirements archetype for this purpose.
-  
-Not to be used to record information about a symptom or physical sign. Use the CLUSTER.symptom_sign archetype for this purpose.">
-			copyright = <"© openEHR Norway">
+Not to be used to record developmental milestones. Use the OBSERVATION.developmental_milestone archetype for this purpose.
+
+Not to be used to record an assessment of the range of supports required to optimise an individual's ability to perform an activity as a result of an impairment. Use the EVALUATION.functional_support_requirements archetype for this purpose.
+
+Not to be used to record the underlying diagnosis, disease, injury, congenital condition, or other health condition associated with the impairment. Use the EVALUATION.problem_diagnosis archetype for this purpose.
+
+Not to be used to record information about a symptom. Use the CLUSTER.symptom_sign archetype for this purpose.
+
+Not to be used to record the assessment or measurement of an impairment at a point in time. Use the relevant OBSERVATION archetype for this purpose.
+
+Not to be used to record a transient alteration of function, such as acute intoxication or sedation. Use the relevant OBSERVATION archetype for this purpose.">
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"in_development">
-	other_contributors = <>
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway", "Sparked AU, CSIRO, Australia (openEHR Editor)", "SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India", "Tara Bonet Chinillach, Catalan Health Service, Spain", "kim Drever, Kudos Paediatrics, Australia", "William Goossen, Results 4 Care, Netherlands", "Joost Holslag, Joost Holslag Geneeskunde & Advies, Netherlands", "Patricia Homem-Silva, University of Porto, Portugal", "Evelyn Hovenga, EJSH Consulting, Australia", "Heather Leslie, Atomica Informatics, Australia (openEHR Editor)", "Michael Lutz, BITsoft, Germany", "Olha Nikolaieva, University Hospital Basel, Switzerland", "Mikael Nyström, Cambio Healthcare Systems AB, Sweden", "Vuk Radnić, Better, Slovenia", "Norwegian Review Summary, Norwegian Public Hospitals, Norway", "Averil Tam, CSIRO, Australia", "Nyree Taylor, CSIRO, Australia (openEHR Editor)">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Norge">
-		["references"] = <"Sammendrag av funksjonsnedsettelse, Utkast arketype [Internet]. openEHR Foundation, OpenEHR International Clinical Knowledge Manager [sitert: 2026-08-19]. Hentet fra: https://ckm.openehr.org/ckm/archetypes/1013.1.8345
-
-Impairment summary, Proposed data group. Sparked AU FHIR accelerator, Australian Clinical Data for Interoperability.
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Impairment summary, Proposed data group, Australian Clinical Data for Interoperability (AUCDI) Release 4 [Internet]. Sparked FHIR Accelerator, CSIRO; [cited 2026 Oct 01]. Unpublished.
 
 World Health Organization. International classification of functioning, disability and health (ICF) [Internet]. Geneva: World Health Organization; 2001 [cited 2026 Jan 19]. Available from: https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health">
-		["original_namespace"] = <"no.openehr">
-		["original_publisher"] = <"openEHR Norge">
-		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"E78029E947B493E18B5DAE448D52B703">
-		["build_uid"] = <"8828aee6-aad6-4cac-93cb-bcbc0124f5db">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"AF97418CAD38D814A4476F691DA462E2">
+		["build_uid"] = <"e11476cd-d203-45be-93f2-51554c7afb80">
 		["revision"] = <"0.0.1-alpha">
 	>
 
@@ -93,12 +119,22 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] matches {    -- Impairment name
+					ELEMENT[at0002] matches {    -- Impaired function name
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Clinical description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Date of onset
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..*} matches {    -- Contributing factor
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -138,19 +174,19 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Date of onset
+					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Course description
 						value matches {
-							DV_DATE matches {*}
-						}
-					}
-					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Date of resolution
-						value matches {
-							DV_DATE matches {*}
+							DV_TEXT matches {*}
 						}
 					}
 					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Additional details
 						include
 							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Date of resolution
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
 					}
 					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Comment
 						value matches {
@@ -183,21 +219,22 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Impairment summary">
-					description = <"Summary information about loss, limitation, deficit, or alteration of a body function or body structure.">
+					description = <"Summary information about a deficit, excess or other alteration of a single physiological or psychological function that limits the individual's ability to perform an activity unaided.">
+					comment = <"Throughout this archetype, the phrase \"perform an activity\", or similar, refers to carrying out a single activity or a grouping of related activities, or participating in an everyday life situation.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Impairment name">
-					description = <"The name of the impairment.">
-					comment = <"For example: memory impairment; or deformity of the right foot.">
+					text = <"Impaired function name">
+					description = <"Identification of the affected function.">
+					comment = <"For example: motor control; short-term memory; motivation; or hearing. The name may include the anatomical location, where relevant, such as right lower limb motor control. Coding with a terminology is preferred, where possible.">
 				>
 				["at0003"] = <
 					text = <"Severity">
-					description = <"The extent or magnitude of the impairment.">
-					comment = <"The value set is aligned with the ICF 'Extent or magnitude of impairment' qualifier scale. The value 'No impairment' may be recorded when a previously identified impairment has resolved.">
+					description = <"The overall extent or magnitude of the impairment.">
+					comment = <"The value set is aligned with the ICF \"Extent or magnitude of impairment\" qualifier scale. Severity is a summary clinical judgement and may be informed by one or more observations recorded over time. In children, severity is assessed relative to the age-appropriate range. 'No impairment' is used to record the resolution of a previously identified impairment, together with the 'Date of resolution'.">
 				>
 				["at0004"] = <
 					text = <"No impairment">
@@ -221,51 +258,53 @@ ontology
 				>
 				["at0009"] = <
 					text = <"Impact">
-					description = <"Narrative description of the impact of the impairment on the individual, including effects on body functions, activities, participation, or wellbeing.">
-					comment = <"For example: Difficulty remembering recent conversations, instructions, or appointments without reminders; or altered gait, unsteadiness and difficulty walking long distances.">
+					description = <"Narrative description of the effect of the impairment on the individual.">
+					comment = <"For example: difficulty fastening buttons and writing; forgets to take medications without prompting; unable to sustain employment, and withdrawn from friends; or difficulty following instructions in the classroom.">
 				>
 				["at0010"] = <
 					text = <"Trajectory">
-					description = <"The overall trend in the severity and impact of the impairment over time.">
+					description = <"The overall observed trend in the severity or impact of the impairment.">
+					comment = <"Trajectory is a summary clinical judgement of the observed trend, based on previous observations. In children, it is assessed relative to the age-appropriate range. It is not a prediction of the future course of the impairment.">
 				>
 				["at0011"] = <
 					text = <"Stable">
-					description = <"The overall trend in the severity or impact of the impairment over time is unchanged; no improvement or worsening noted over time.">
+					description = <"The severity and impact of the impairment have not changed overall.">
 				>
 				["at0012"] = <
 					text = <"Improving">
-					description = <"The severity or impact of the impairment is decreasing over time.">
+					description = <"The severity or impact of the impairment has decreased overall.">
 				>
 				["at0013"] = <
 					text = <"Worsening">
-					description = <"The severity or impact of the impairment is increasing over time.">
+					description = <"The severity or impact of the impairment has increased overall.">
 				>
 				["at0014"] = <
 					text = <"Fluctuating">
-					description = <"The severity or impact of the impairment varies over time, with periods of improvement and worsening.">
+					description = <"The severity or impact of the impairment has varied, with periods of improvement and worsening.">
 				>
 				["at0015"] = <
 					text = <"Unknown">
-					description = <"The overall trend in the severity or impact of the impairment over time cannot be determined.">
+					description = <"The overall trend in the severity or impact of the impairment cannot be determined.">
 				>
 				["at0016"] = <
 					text = <"Date of onset">
-					description = <"The date on which the impairment was first identified.">
-					comment = <"Partial dates are permitted.">
+					description = <"Estimated or actual date when the impairment began.">
+					comment = <"Can be a partial date, for example, only a year.">
 				>
 				["at0017"] = <
 					text = <"Date of resolution">
-					description = <"The date on which the impairment resolved.">
-					comment = <"Partial dates are permitted.">
+					description = <"Estimated or actual date when the impairment ceased.">
+					comment = <"Can be a partial date, for example, only a year.">
 				>
 				["at0018"] = <
 					text = <"Clinical description">
-					description = <"Narrative description of the impairment, including relevant clinical characteristics.">
-					comment = <"For example: Impairment of short-term memory affecting the ability to retain and recall recently acquired information; or structural deformity of the foot affecting normal alignment and weight distribution.">
+					description = <"Narrative description of the current characteristics of the impairment.">
+					comment = <"Describes the nature, extent and pattern of the impairment as currently understood. Changes over time are recorded in 'Course description'. For example: slow, imprecise hand movements with resting tremor; inability to recall new information after five minutes; marked loss of drive and initiative; or bilateral conductive hearing loss of 30–40 dB.">
 				>
 				["at0019"] = <
 					text = <"Additional details">
 					description = <"Additional structured details about the specified impairment.">
+					comment = <"For example: CLUSTER.anatomical_location, where the anatomical location of the affected function is not included in the 'Impairment name'.">
 				>
 				["at0020"] = <
 					text = <"Comment">
@@ -284,13 +323,24 @@ ontology
 					text = <"Last updated">
 					description = <"The date when this impairment summary was last updated.">
 				>
+				["at0024"] = <
+					text = <"Contributing factor">
+					description = <"A clinical, social or environmental factor identified as contributing to the impairment.">
+					comment = <"Clinical factors include diagnoses, symptoms, findings, medications or other treatments, and procedures, for example Parkinson's disease or anticholinergic medication. Social and environmental factors include, for example, social isolation or exposure to cigarette smoke. Recording a diagnosis here links it to the impairment, which cannot be discerned from a separate problem list. This data element has multiple occurrences to allow the recording of more than one contributing factor per impairment. Coding with a terminology is preferred, where possible.">
+				>
+				["at0025"] = <
+					text = <"Course description">
+					description = <"Narrative description of the course of the impairment since onset.">
+					comment = <"Describes how the impairment has developed over time, including onset, progression, episodes, response to treatment, and any resolution or recurrence. The current characteristics are recorded in 'Clinical description'. For example: gradual worsening over four years; rapid decline after a hospital admission; partial improvement after starting treatment; or improvement after grommet insertion, with recurrence each winter.">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Sammendrag av funksjonsnedsettelse">
-					description = <"Sammendragsinformasjon om tap, begrensning, mangel eller endring av en kroppsfunksjon eller kroppsstruktur.">
+					text = <"Sammendrag om én funksjonsnedsettelse">
+					description = <"Oppsummerende informasjon om en mangel, nedsettelse eller en annen funksjonsendring i en fysiologisk eller psykologisk funksjon som begrenser personens evne til å utføre en aktivitet uten hjelp.">
+					comment = <"I denne arketypen betyr formuleringer som «utføre en aktivitet» eller lignende, å utføre en enkelt aktivitet, en gruppe relaterte aktiviteter eller deltagelse i hverdagsaktiviteter.">
 				>
 				["at0001"] = <
 					text = <"Item tree">
@@ -298,13 +348,13 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Navn på funksjonsnedsettelse">
-					description = <"Navnet på funksjonsnedsettelsen.">
-					comment = <"For eksempel: hukommelsessvikt eller deformitet av høyre fot.">
+					description = <"Identifikasjon av den berørte funksjonen.">
+					comment = <"For eksempel: motorisk kontroll, korttidshukommelse, motivasjon eller hørsel. \"Navn på funksjonsnedsettelse\" kan ved behov spesifiseres med anatomisk lokalisasjon, for eksempel motorisk kontroll i høyre underekstremitet. Det anbefales å kode begrepet ved hjelp av en terminologi når dette er mulig.">
 				>
 				["at0003"] = <
 					text = <"Alvorlighetsgrad">
-					description = <"Omfanget eller graden av funksjonsnedsettelsen.">
-					comment = <"Verdisettet er i samsvar med ICF-kvalifikatorskalaen \"Extent or magnitude of impairment\". Verdien \"Ingen funksjonsnedsettelse\" kan registreres dersom en tidligere identifisert funksjonsnedsettelse er opphørt.">
+					description = <"Det samlede omfanget eller graden av funksjonsnedsettelsen.">
+					comment = <"Verdisettet er harmonisert med ICFs kvalifikatorskala for «omfang eller grad av funksjonsnedsettelse». Graden av funksjonsnedsettelse er en samlet klinisk vurdering og kan baseres på én eller flere observasjoner registrert over tid. Hos barn vurderes graden av funksjonsnedsettelse opp mot det aldersadekvate funksjonsnivået. Verdien «Ingen funksjonsnedsettelse» brukes for å registrere at en tidligere identifisert funksjonsnedsettelse har opphørt, sammen med «Dato for opphør».">
 				>
 				["at0004"] = <
 					text = <"Ingen funksjonsnedsettelse">
@@ -328,51 +378,53 @@ ontology
 				>
 				["at0009"] = <
 					text = <"Innvirkning">
-					description = <"Fritekstbeskrivelse av funksjonsnedsettelsens innvirkning på individet, inkludert effekter på kroppsfunksjoner, aktiviteter, deltakelse eller velvære.">
-					comment = <"For eksempel: vansker med å huske nylige samtaler, instruksjoner eller avtaler uten påminnelser; eller endret gangmønster, ustøhet og vansker med å gå lange strekninger.">
+					description = <"Fritekstbeskrivelse av funksjonsnedsettelsens innvirkning på individet.">
+					comment = <"For eksempel: vansker med å kneppe knapper og skrive; glemmer å ta legemidler uten påminnelse; ute av stand til å opprettholde arbeid og trekker seg tilbake fra venner; eller vansker med å følge instruksjoner i klasserommet.">
 				>
 				["at0010"] = <
 					text = <"Forløp">
-					description = <"Den generelle utviklingen i funksjonsnedsettelsens alvorlighetsgrad og innvirkning over tid.">
+					description = <"Overordnet observert utvikling i funksjonsnedsettelsens alvorlighetsgrad eller konsekvenser.">
+					comment = <"Forløp er en samlet klinisk vurdering av den observerte utviklingen, basert på tidligere observasjoner. Hos barn vurderes utviklingen i forhold til det aldersadekvate funksjonsnivået. Forløpet er ikke en prediksjon av funksjonsnedsettelsens fremtidige utvikling.">
 				>
 				["at0011"] = <
 					text = <"Stabil">
-					description = <"Den generelle utviklingen i funksjonsnedsettelsens alvorlighetsgrad eller innvirkning er uendret over tid; ingen forbedring eller forverring observert over tid.">
+					description = <"Funksjonsnedsettelsens alvorlighetsgrad og konsekvenser har samlet sett vært uendret.">
 				>
 				["at0012"] = <
-					text = <"Bedres">
-					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller innvirkning avtar over tid.">
+					text = <"Bedring">
+					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller konsekvenser har samlet sett blitt redusert.">
 				>
 				["at0013"] = <
-					text = <"Forverres">
-					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller innvirkning øker over tid.">
+					text = <"Forverring">
+					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller konsekvenser har samlet sett økt.">
 				>
 				["at0014"] = <
 					text = <"Fluktuerende">
-					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller innvirkning varierer over tid, med perioder med forbedring og forverring.">
+					description = <"Funksjonsnedsettelsens alvorlighetsgrad eller konsekvenser har variert, med perioder med bedring og forverring.">
 				>
 				["at0015"] = <
 					text = <"Ukjent">
-					description = <"Den generelle utviklingen i funksjonsnedsettelsens alvorlighetsgrad eller innvirkning over tid kan ikke fastslås.">
+					description = <"Den samlede utviklingen i funksjonsnedsettelsens alvorlighetsgrad eller konsekvenser kan ikke vurderes.">
 				>
 				["at0016"] = <
-					text = <"Debutdato">
-					description = <"Datoen da funksjonsnedsettelsen først ble identifisert.">
-					comment = <"Delvise datoer er tillatt.">
+					text = <"Dato for debut">
+					description = <"Estimert eller kjent dato da funksjonsnedsettelsen begynte.">
+					comment = <"Kan være en del av en dato, for eksempel kun år.">
 				>
 				["at0017"] = <
-					text = <"Opphørsdato">
-					description = <"Datoen da funksjonsnedsettelsen opphørte.">
-					comment = <"Delvise datoer er tillatt.">
+					text = <"Dato for opphør">
+					description = <"Estimert eller faktisk dato da funksjonsnedsettelsen opphørte.">
+					comment = <"Kan være en del av en dato, for eksempel kun år.">
 				>
 				["at0018"] = <
 					text = <"Klinisk beskrivelse">
-					description = <"Fritekstbeskrivelse av funksjonsnedsettelsen, inkludert relevante kliniske kjennetegn.">
-					comment = <"For eksempel: nedsatt korttidshukommelse som påvirker evnen til å huske og gjenkalle nylig tilegnet informasjon; eller strukturell deformitet av foten som påvirker normal stillingsplassering og vektfordeling.">
+					description = <"Fritekstbeskrivelse av funksjonsnedsettelsens nåværende karakteristika.">
+					comment = <"Beskriver funksjonsnedsettelsens art, omfang og mønster slik den er forstått på registreringstidspunktet. Endringer over tid registreres i \"Beskrivelse av forløp\". For eksempel: langsomme og unøyaktige håndbevegelser med hviletremor; manglende evne til å huske ny informasjon etter fem minutter; uttalt tap av motivasjon; eller bilateralt konduktivt hørselstap på 30–40 dB.">
 				>
 				["at0019"] = <
 					text = <"Ytterligere detaljer">
 					description = <"Ytterligere strukturerte detaljer om den spesifiserte funksjonsnedsettelsen.">
+					comment = <"For eksempel: CLUSTER.anatomical_location, når den anatomiske lokalisasjonen til den berørte funksjonen ikke inngår i «Navn på funksjonsnedsettelse».">
 				>
 				["at0020"] = <
 					text = <"Kommentar">
@@ -390,6 +442,16 @@ ontology
 				["at0023"] = <
 					text = <"Sist oppdatert">
 					description = <"Datoen da dette sammendraget av funksjonsnedsettelsen sist ble oppdatert.">
+				>
+				["at0024"] = <
+					text = <"Medvirkende faktor">
+					description = <"Klinisk, sosial eller miljømessig faktor med betydning for funksjonsnedsettelsen.">
+					comment = <"Kliniske faktorer kan være diagnoser, symptomer, kliniske funn, legemidler, andre behandlingstiltak eller prosedyrer, for eksempel Parkinsons sykdom eller antikolinerg behandling. Sosiale og miljømessige faktorer kan for eksempel være sosial isolasjon eller eksponering for tobakksrøyk. Ved å registrere en diagnose som medvirkende faktor etableres en eksplisitt kobling mellom diagnosen og funksjonsnedsettelsen, noe som ikke nødvendigvis fremgår av en separat problemliste. Dataelementet tillater flere forekomster for å kunne registrere flere medvirkende faktorer knyttet til samme funksjonsnedsettelse. Det anbefales å kode begrepene ved hjelp av en terminologi når dette er mulig.">
+				>
+				["at0025"] = <
+					text = <"Beskrivelse av forløp">
+					description = <"Fritekstbeskrivelse av hvordan funksjonsnedsettelsen har utviklet seg siden debut.">
+					comment = <"Beskriver funksjonsnedsettelsens forløp siden debut, inkludert utvikling, episoder, behandlingsrespons samt eventuell opphør eller tilbakekomst. Funksjonsnedsettelsens nåværende karakteristika registreres i «Klinisk beskrivelse». For eksempel: gradvis forverring over fire år; rask tilbakegang etter sykehusinnleggelse; delvis bedring etter oppstart av behandling; eller bedring etter innsetting av ventilasjonsrør, med tilbakefall hver vinter.">
 				>
 			>
 		>
