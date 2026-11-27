@@ -9,17 +9,17 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
-				["name"] = <"">
-				["organisation"] = <"">
-				["email"] = <"">
+				["name"] = <"John Tore Valand">
+				["organisation"] = <"Helse Vest IKT">
+				["email"] = <"john.tore.valand@helse-vest-ikt.no">
 			>
 		>
 	>
 description
 	original_author = <
-		["name"] = <"">
-		["organisation"] = <"">
-		["email"] = <"">
+		["name"] = <"Silje Ljosland Bakke">
+		["organisation"] = <"Helse Vest IKT AS">
+		["email"] = <"silje.ljosland.bakke@helse-vest-ikt.no">
 		["date"] = <"2026-08-10">
 	>
 	details = <
@@ -38,7 +38,7 @@ Bruk dataelementet \"Kategori\" for å registrere hvilket aspekt ved emnet spør
 
 Bruk SLOTet \"Underspørsmål\" for å registrere oppfølgingsspørsmål som bare stilles, eller bare gir mening, ved et bestemt svar på dette spørsmålet. Hvert oppfølgingsspørsmål registreres som en nøstet instans av denne arketypen.
 
-Svar som uttrykker at individet ikke vet, for eksempel \"Ukjent\" eller \"Usikker\", registreres med det definerte verdisettet, og ikke som null flavour. Et svar om at individet ikke vet, er en faktisk opplysning og noe annet enn at spørsmålet ikke er besvart.
+Svar som uttrykker at individet ikke vet, for eksempel \"Ukjent\" eller \"Usikker\", registreres med det definerte verdisettet. Et svar om at individet ikke vet, er en faktisk opplysning og noe annet enn at spørsmålet ikke er besvart.
 
 Arketypen registrerer at et spørsmål ble stilt og hva som ble svart, men ikke den kliniske konklusjonen som trekkes ut fra svaret. Data som er registrert med denne arketypen, kan ikke tolkes sikkert uten templatet som produserte dem, fordi både spørsmålsteksten og betydningen av \"Kategori\" og \"Relatert kode\" fastsettes i templatet.">
 			keywords = <"spørsmål", "svar", "kartlegging", "screening", "spørreskjema", "vurdering", "underspørsmål">
@@ -56,21 +56,19 @@ Brukes ikke for å registrere enkeltledd i en validert skår eller vurderingsska
 
 This archetype is designed to be used within the 'Specific question or statement' SLOT in OBSERVATION.screening_questionnaire, or nested within the 'Sub-question' SLOT of another instance of this archetype.
 
-The question text is carried by the name of the 'Answer' data element, which is renamed in a template to the question as put to the individual. For example: 'Do you need a hotel?'. Where the full question text as presented to the individual needs to be recorded, for example where it is long or differs from the renamed data element, use the 'Question' data element.
-
-The 'Answer' data element allows a choice of data types, since the answer to a question may be a code, free text, a quantity, a count, a date or a duration. In a template, the choice would usually be constrained to a single data type. A default value set of generic answers is provided for the coded text option, and may be replaced in a template.
+The question text is carried by the name of the 'Answer' data element, which is renamed in a template to the question as put to the individual. For example: 'Do you need a hotel?'. Where the full question text as presented to the individual needs to be recorded, for example where it is long or differs from the renamed data element, use the 'Question' data element. The 'Answer' data element allows a choice of data types, since the answer to a question may be a code, free text, a quantity, a count, a date or a duration. In a template, the choice would usually be constrained to a single data type. A default value set of generic answers is provided for the coded text option, and may be replaced in a template.
 
 Use the 'Category' data element to record what aspect of the subject the question addresses, and the 'Related code' data element to record the subject itself. For example, the question 'Do you need a hotel?' may have a 'Category' of 'Accommodation need' and a 'Related code' of 'Hotel accommodation', while the follow-up question 'How many nights?' may have a 'Category' of 'Accommodation duration' and the same 'Related code'. Either data element may be left empty where no meaningful code exists.
 
 Use the 'Sub-question' SLOT to record follow-up questions that are only asked, or only meaningful, given a particular answer to this question. Each follow-up question is recorded as a nested instance of this archetype.
 
-Answers expressing that the individual does not know, such as 'Unknown' or 'Unsure', are recorded using the value set provided, and not as a null flavour. An individual stating that they do not know is positive information, and is distinct from the question not having been answered.
+Answers expressing that the individual does not know, such as 'Unknown' or 'Unsure', are recorded using the value set provided. An individual stating that they do not know is positive information, and is distinct from the question not having been answered.
 
 This archetype records that a question was asked and what was answered; it does not record the clinical conclusion drawn from the answer. Data recorded using this archetype are not safely interpretable without the template that produced them, since both the question text and the meaning of 'Category' and 'Related code' are assigned in the template.">
 			keywords = <"question", "answer", "screening", "questionnaire", "assessment", "sub-question">
 			misuse = <"Not to be used to record a clinical finding in its own right, such as a problem, diagnosis or symptom identified from the answer. Use the archetype specific for the clinical finding, such as EVALUATION.problem_diagnosis or CLUSTER.symptom_sign, for this purpose.
 
-Not to be used outside OBSERVATION.screening_questionnaire, for example within the SLOTs of a domain-specific screening questionnaire archetype. Use the data elements of the domain-specific screening questionnaire archetype for this purpose.
+Not to be used outside OBSERVATION.screening_questionnaire archetypes.
 
 Not to be used to record items of a validated score or assessment scale. Use the specific score or scale archetype for this purpose.">
 			copyright = <"© openEHR Norway">
@@ -84,8 +82,8 @@ Not to be used to record items of a validated score or assessment scale. Use the
 		["original_namespace"] = <"no.openehr">
 		["original_publisher"] = <"openEHR Norge">
 		["custodian_namespace"] = <"no.openehr">
-		["MD5-CAM-1.0.1"] = <"4F5573D6ABB2ADE39D96858CF93C53B1">
-		["build_uid"] = <"9b8aaa50-542e-4a5e-9349-e32e0d7b85a3">
+		["MD5-CAM-1.0.1"] = <"4326335F9913129FCF01B64DDE9AD7AC">
+		["build_uid"] = <"30f3a688-e516-406d-8f83-e89086558990">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -154,13 +152,13 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Category">
-					description = <"The aspect of the subject that the question addresses.">
-					comment = <"For example: 'Accommodation need'; 'Transport need'; or 'Accommodation duration'. Records what kind of thing is being asked about, not the section or heading under which the question appears in a form.">
+					description = <"The clinical concept to which the question belongs.">
+					comment = <"For example: 'Functional status', 'Health technology', 'Social circumstances'. Coding of 'Category' with a terminology is preferred, where possible.">
 				>
 				["at0002"] = <
 					text = <"Related code">
-					description = <"A code identifying the subject that this question is about, or the question itself.">
-					comment = <"For example: 'Hotel accommodation'; or 'Escort'. Coding of 'Related code' with a terminology is preferred, where possible.">
+					description = <"A code identifying the specific concept, topic or subject addressed by the question.">
+					comment = <"For example: 'Mobility'; 'Health monitoring technology use' or 'Financial insecurity'. Coding of 'Related code' with a terminology is preferred, where possible.">
 				>
 				["at0003"] = <
 					text = <"Answer">
@@ -169,28 +167,27 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Yes">
-					description = <"The individual answered in the affirmative.">
+					description = <"">
 				>
 				["at0005"] = <
 					text = <"No">
-					description = <"The individual answered in the negative.">
+					description = <"">
 				>
 				["at0006"] = <
 					text = <"Partially">
-					description = <"The individual answered that the statement is only partly true.">
+					description = <"">
 				>
 				["at0007"] = <
 					text = <"Uncertain">
-					description = <"The individual answered that they are unsure whether the statement is true.">
+					description = <"">
 				>
 				["at0008"] = <
 					text = <"Unknown">
-					description = <"The individual answered that they do not know.">
-					comment = <"Distinct from the question not having been answered, which is represented by absence of a value.">
+					description = <"">
 				>
 				["at0009"] = <
 					text = <"Not applicable">
-					description = <"The individual answered that the question does not apply to them.">
+					description = <"">
 				>
 				["at0010"] = <
 					text = <"Comment">
@@ -199,12 +196,12 @@ ontology
 				["at0011"] = <
 					text = <"Sub-question">
 					description = <"A follow-up question that is only asked, or only meaningful, given a particular answer to this question.">
-					comment = <"Each follow-up question is recorded as a nested instance of CLUSTER.screening_question. The nested question inherits the recall period of the event in which it is recorded.">
+					comment = <"Each follow-up question is recorded as a nested instance of CLUSTER.screening_question.">
 				>
 				["at0012"] = <
 					text = <"Question">
 					description = <"The full question or statement as presented to the individual.">
-					comment = <"For example: 'Do you need a hotel during the treatment period?'.">
+					comment = <"For example: 'Do you have difficulty climbing stairs?', 'Do you use any wearable device to monitor your health?' or 'Are you worried about paying for food or housing?'.">
 				>
 			>
 		>
@@ -216,13 +213,13 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Kategori">
-					description = <"Det aspektet ved emnet som spørsmålet gjelder.">
-					comment = <"For eksempel: \"Behov for overnatting\", \"Behov for transport\" eller \"Varighet av overnatting\". Angir hva slags forhold det spørres om, ikke seksjonen eller overskriften spørsmålet står under i et skjema.">
+					description = <"Kategorien eller temaområdet som spørsmålet er gruppert under.">
+					comment = <"For eksempel: «Funksjonsstatus», «Helseteknologi» og «Sosialt». Det anbefales å kode «Kategori» ved hjelp av en terminologi der dette er mulig.">
 				>
 				["at0002"] = <
 					text = <"Relatert kode">
-					description = <"En kode som identifiserer emnet spørsmålet handler om, eller spørsmålet selv.">
-					comment = <"For eksempel: \"Hotellopphold\" eller \"Ledsager\". Koding av \"Relatert kode\" med en terminologi foretrekkes, der det er mulig.">
+					description = <"En kode som identifiserer det spesifikke konseptet eller temaet som spørsmålet gjelder.">
+					comment = <"«Mobilitet», «Bruk av teknologi for helseovervåkning» eller «Økonomisk utrygghet». Koding av «Relatert kode» med et terminologisystem er foretrukket der det er mulig.">
 				>
 				["at0003"] = <
 					text = <"Svar">
@@ -231,28 +228,27 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Ja">
-					description = <"Individet svarte bekreftende.">
+					description = <"">
 				>
 				["at0005"] = <
 					text = <"Nei">
-					description = <"Individet svarte benektende.">
+					description = <"">
 				>
 				["at0006"] = <
 					text = <"Delvis">
-					description = <"Individet svarte at utsagnet bare delvis stemmer.">
+					description = <"">
 				>
 				["at0007"] = <
 					text = <"Usikker">
-					description = <"Individet svarte at hen er usikker på om utsagnet stemmer.">
+					description = <"">
 				>
 				["at0008"] = <
 					text = <"Ukjent">
-					description = <"Individet svarte at hen ikke vet.">
-					comment = <"Er noe annet enn at spørsmålet ikke er besvart, som representeres ved at verdien mangler.">
+					description = <"">
 				>
 				["at0009"] = <
 					text = <"Ikke aktuelt">
-					description = <"Individet svarte at spørsmålet ikke gjelder for hen.">
+					description = <"">
 				>
 				["at0010"] = <
 					text = <"Kommentar">
@@ -265,8 +261,8 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Spørsmål">
-					description = <"Det fullstendige spørsmålet eller utsagnet slik det ble presentert for individet.">
-					comment = <"For eksempel: \"Trenger du hotell i behandlingsperioden?\".">
+					description = <"Den fullstendige ordlyden i spørsmålet eller utsagnet slik det presenteres for individet.">
+					comment = <"For eksempel: «Har du vansker med å gå i trapper?», «Bruker du en aktivitetsmåler, smartklokke eller annen teknologi for å følge med på helsen din?» eller «Er du bekymret for å dekke kostnader til mat eller bolig?».">
 				>
 			>
 		>
@@ -277,6 +273,9 @@ ontology
 				["at0004"] = <[SNOMED-CT::373066001]>
 				["at0005"] = <[SNOMED-CT::373067005]>
 				["at0008"] = <[SNOMED-CT::261665006]>
+				["at0009"] = <[SNOMED-CT::385432009]>
+				["at0007"] = <[SNOMED-CT::64957009]>
+				["at0006"] = <[SNOMED-CT::255609007]>
 			>
 		>
 	>
